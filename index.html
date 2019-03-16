@@ -14,7 +14,11 @@ title: Home
 
     <span class="post-date">{{ post.date | date_to_string }}</span>
 
-    {{ post.content }}
+    {% if post.layout == 'presentation' and post.description %}
+        {{ post.description }}
+    {% else %}
+        {{ post.content }}
+    {% endif %}
   </div>
   {% endfor %}
 </div>

@@ -1,26 +1,25 @@
-# Dependencies
-markdown:         redcarpet
-highlighter:      pygments
-
 # Permalinks
 permalink:        pretty
-relative_permalinks: true
 
 # Setup
-title:            Hyde
-tagline:          'A Jekyll theme'
-description:      'A brazen two-column <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that pairs a prominent sidebar with uncomplicated content. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
-url:              http://hyde.getpoole.com
+title:            Just Some Code
+tagline:
+description:      "I'm Cesar Aguirre. Software engineer. Lifelong learner"
+url:              https://canro91.github.io
 baseurl:          /
 
 author:
-  name:           'Mark Otto'
-  url:            https://twitter.com/mdo
+  name:           'Cesar Aguirre'
+  url:
 
 paginate:         5
 
 # Custom vars
-version:          2.1.0
+version:
 
 github:
-  repo:           https://github.com/poole/hyde
+  repo:           https://github.com/canro91
+
+plugins:
+  - jekyll-paginate
+  - jekyll-gist
