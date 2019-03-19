@@ -13,7 +13,11 @@ Hello, if you are a beginner programmer or you just took a programming course at
 Visual Studio is the de-facto IDE for C#. Although, Visual Studio Code has gained a lot attention recently. Since you will spend most of your workdays with Visual Studio, you should sharpen your tools.
 
 * Find a colorscheme you like, Solarized
-* Learn the basic shortcuts, `Ctrl + Shift + b`, `Ctrl + ,`, `Ctrl + .`, `Ctrl + q`
+* Learn the basic shortcuts
+	* `Ctrl + Shift + b`: Build your solution
+	* `Ctrl + ,`: Navigate to any method in your solution
+	* `Ctrl + .`: Apply a refactor or any action in the current code block
+	* `Ctrl + q`: Search and execute settings or menus of Visual Studio
 * Install some plugins to make your life easier
 	* Productivity Power Tools
 	* AutoSave, no more `Ctrl + S`
@@ -22,30 +26,6 @@ Visual Studio is the de-facto IDE for C#. Although, Visual Studio Code has gaine
 	* Wumpf Solution Color, you don't want to mess with your production codebase. You can change your Visual Studio menu bar color based on your folder solution.
 	* VS Color Output
 * C# Interactive. You don't have to create a dummy Console project just to try things out. With C# interactive, you have a C# REPL at your disposition. You can load a dll of your own or from a Nuget package, load a C# script (.csx file) or simply try a few lines of C#
-
-## Linq
-
-Language-Integrated Query, Linq, is the declarative way for C# to operate with or "query" collections or anything that looks like one. Instead of writing the looping and the business logic with `foreach`, `for` or `while`, you should try to do it with Linq.
-
-**Example**: Given a string of emails separated by commas, create an array with the trimmed emails
-
-```csharp
-string emails = "email1@yourdomain.com,    email2@yourdomain.com,email2@yourdomain.com";
-string[] trimmed = emails.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
-                         .Select(t => t.Trim())
-                         .ToArray();
-
-```
-
-* Learn the most frequently used methods: `Where`, `Select`, `FirstOrDefault`, `Any`, `GroupBy`, `Distinct`.
-* Learn about lambda expressions. `Predicate`, `Action` and `Func`
-
-## Design Patterns and OOP Principles
-
-Desing patterns are recipes to solve common problems in code. This is, given a certain problem, there is a blueprint or an outline that will help you to solve that problem.
-
-* Recognize some of the most common patterns and learn to use them. For example: Factory, Builder, Composite, Command, Template, Strategy, Null Object, Adapter.
-* Learn Uncle Bob's SOLID principles
 
 ## Git and Github
 
@@ -64,6 +44,13 @@ Programming is about collaboration. Github is the programmers social network to 
 
 * [Udacity Github course](https://www.udacity.com/course/how-to-use-git-and-github--ud775)
 
+## Design Patterns and OOP Principles
+
+Desing patterns are recipes to solve common problems in code. This is, given a certain problem, there is a blueprint or an outline that will help you to solve that problem.
+
+* Recognize some of the most common patterns and learn to use them. For example: Factory, Builder, Composite, Command, Template, Strategy, Null Object, Adapter.
+* Learn Uncle Bob's SOLID principles
+
 ## Dealing with large codebases
 
 Programming is also about [reading code](https://changelog.com/posts/one-sure-fire-way-to-improve-your-coding). So you should get used to navigate throught large codebases.
@@ -75,16 +62,6 @@ Programming is also about [reading code](https://changelog.com/posts/one-sure-fi
 * Debug a test case scenario for a feature you would like to know about
 * Find out how a feature was implemented
 
-## async/await
-
-Asyncronous code is code that doesn't block when executing long-running operations.
-
-* Learn the flow of control of a method marked with `async` and `await`. The flow of execution is return to the caller method in the `await` statement and the rest of the method is executed later in a context. Read [async and await](http://blog.stephencleary.com/2012/02/async-and-await.html)
-* Learn to await your code all-the-way-down to avoid deadlocks. [Don't block on async code](http://blog.stephencleary.com/2012/07/dont-block-on-async-code.html)
-* Avoid `async void` methods, use `async Task` instead
-* Learn how to use `Task.WhenAny` and `Task.WhenAll`
-* [The Ultimate Guide to Asynchronous Programming in C# and ASP.NET](https://exceptionnotfound.net/asynchronous-programming-in-asp-net-csharp-ultimate-guide/)
-
 ## Unit tests
 
 An unit test is a "safety net" to make sure you don't break things when you add new features or modify your code base. An unit test is a piece of code that uses your code base from a "user" point of view and verifies a given behaviour.
@@ -93,7 +70,34 @@ An unit test is a "safety net" to make sure you don't break things when you add 
 * Learn what unit test really means [Unit Test - Definition](http://artofunittesting.com/definition-of-a-unit-test/)
 * Watch [Understand Test Driven Development](https://www.youtube.com/watch?v=q5Xd1tmIgec)
 * Write some unit test for some parts of your codebase or practice writing unit test for a library you know
-* Read The Art of Unit Testing
+* Read Roy Osherove's _The Art of Unit Testing_
+
+## Linq
+
+Language-Integrated Query, Linq, is the declarative way for C# to operate with or "query" collections or anything that looks like one. Instead of writing the looping and the business logic with `foreach`, `for` or `while`, you should try to do it with Linq.
+
+**Example**: Given a string of emails separated by commas, create an array with the trimmed emails
+
+```csharp
+string emails = "email1@yourdomain.com,    email2@yourdomain.com,email2@yourdomain.com";
+string[] trimmed = emails.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                         .Select(t => t.Trim())
+                         .ToArray();
+
+```
+
+* Learn the most frequently used methods: `Where`, `Select`, `FirstOrDefault`, `Any`, `GroupBy`, `Distinct`.
+* Learn about lambda expressions. `Predicate`, `Action` and `Func`
+
+## async/await
+
+Asyncronous code is code that doesn't block when executing long-running operations.
+
+* Learn the flow of control of a method marked with `async` and `await`. The flow of execution is return to the caller method in the `await` statement and the rest of the method is executed later in a context. Read [async and await](http://blog.stephencleary.com/2012/02/async-and-await.html)
+* Learn to await your code all-the-way-down to avoid deadlocks. Read [Don't block on async code](http://blog.stephencleary.com/2012/07/dont-block-on-async-code.html)
+* Avoid `async void` methods, use `async Task` instead
+* Learn how to use `Task.WhenAny` and `Task.WhenAll`
+* [The Ultimate Guide to Asynchronous Programming in C# and ASP.NET](https://exceptionnotfound.net/asynchronous-programming-in-asp-net-csharp-ultimate-guide/)
 
 ## Some new features in C# since version 6
 
@@ -171,9 +175,6 @@ public void Method(string param1)
 ## Bonus Points
 
 * Learn how to type with all your fingers
-* Learn some Vim
-* Learn about C# extensions methods
-* Read _The Art of Readable Code_ or _Clean Code_
-
-
-
+* Learn some Vim. Take a look at _Practical Vim_
+* Learn about C# [extensions methods](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods)
+* Read _The Art of Readable Code_ or _Clean Code_ books
