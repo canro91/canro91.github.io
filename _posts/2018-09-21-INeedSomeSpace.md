@@ -10,67 +10,71 @@ First, the obvious solution. Manually trim all columns, but this could be boring
 
 One alternative is to do some post-processing with your ORM of choise after reading your records. Use [Insight.Database](https://github.com/jonwagner/Insight.Database). It provides a mechanism to do additional changes to each record after they are read. So, you can use a method to trim all string properties.
 
-        using (var connection = new SqlConnection(_ConnectionString))
-        {
-            var someRecords = connection.QuerySql(
-                        $@"SELECT * FROM SCHEMA.TABLE",
-                        Parameters.Empty,
-                        Query.Returns(TrimRecords));
+```csharp
+using (var connection = new SqlConnection(_ConnectionString))
+{
+    var someRecords = connection.QuerySql(
+                $@"SELECT * FROM SCHEMA.TABLE",
+                Parameters.Empty,
+                Query.Returns(TrimRecords));
 
-            return someRecords;
+    return someRecords;
+}
+
+private readonly PostProcessRecordReader<RawRecord> TrimRecords
+	= new PostProcessRecordReader<RawRecord>((reader, record) =>
+    {
+        if (record != null)
+        {
+            record.TrimAllStrings();
         }
 
-    private readonly PostProcessRecordReader<RawRecord> TrimRecords
-        = new PostProcessRecordReader<RawRecord>((reader, record) =>
-        {
-            if (record != null)
-            {
-                record.TrimAllStrings();
-            }
-
-            return record;
-        });
+        return record;
+    });
+```
 
 Now, you could use Reflection to trim all string properties of your dto's. Also, you can annotate your dto's to avoid trimming some properties.
 
-    [AttributeUsage(AttributeTargets.Property)]
-    public sealed class DoNotTrimAttribute : Attribute
-    {
-    }
+```csharp
+[AttributeUsage(AttributeTargets.Property)]
+public sealed class DoNotTrimAttribute : Attribute
+{
+}
 
-    public static class ObjectExtensions
+public static class ObjectExtensions
+{
+    public static void TrimAllStrings<TSelf>(this TSelf obj)
     {
-        public static void TrimAllStrings<TSelf>(this TSelf obj)
+        BindingFlags flags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy;
+
+        foreach (PropertyInfo p in obj.GetType().GetProperties(flags))
         {
-            BindingFlags flags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy;
+            if (Attribute.IsDefined(p, typeof(DoNotTrimAttribute)))
+                continue;
 
-            foreach (PropertyInfo p in obj.GetType().GetProperties(flags))
+            Type currentNodeType = p.PropertyType;
+            Object value = p.GetValue(obj, null);
+            if (value == null)
+                continue;
+
+            if (value is String str)
             {
-                if (Attribute.IsDefined(p, typeof(DoNotTrimAttribute)))
-                    continue;
-
-                Type currentNodeType = p.PropertyType;
-                Object value = p.GetValue(obj, null);
-                if (value == null)
-                    continue;
-
-                if (value is String str)
+                p.SetValue(obj, str.Trim(), null);
+            }
+            else if (value is IEnumerable collection)
+            {
+                foreach (var e in collection)
                 {
-                    p.SetValue(obj, str.Trim(), null);
+                    e.TrimAllStrings();
                 }
-                else if (value is IEnumerable collection)
-                {
-                    foreach (var e in collection)
-                    {
-                        e.TrimAllStrings();
-                    }
-                }
-                else if (currentNodeType != typeof(object) && Type.GetTypeCode(currentNodeType) == TypeCode.Object)
-                {
-                    value.TrimAllStrings();
-                }
+            }
+            else if (currentNodeType != typeof(object) && Type.GetTypeCode(currentNodeType) == TypeCode.Object)
+            {
+                value.TrimAllStrings();
             }
         }
     }
+}
+```
 
 That's all, folks! Now, all your string properties are trimmed. Your code isn't full of `Trim` methods after every property, so you won't forget to trim new properties.
