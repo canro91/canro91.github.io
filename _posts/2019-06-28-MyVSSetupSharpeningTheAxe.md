@@ -42,6 +42,6 @@ This VS setup is heavily inspired by [De-Cruft Visual Studio](	https://jackmott.
 	* [LocateInTFS](https://marketplace.visualstudio.com/items?itemName=AlexPendleton.LocateinTFS2017) It finds the location of the selected file in the Source Control Explorer
 	* [AddNewFile](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.AddNewFile) It adds  new files directly from the Solution Explorer 
 	* [SemanticColorizer](https://github.com/hicknhack-software/semantic-colorizer) It colors fields, classes, methods and more. _Make extension methods italics, only_
- 	* [NUnit 3 Test Adapter](https://marketplace.visualstudio.com/items?itemName=NUnitDevelopers.NUnit3TestAdapter). A must-have
+	* [NUnit 3 Test Adapter](https://marketplace.visualstudio.com/items?itemName=NUnitDevelopers.NUnit3TestAdapter). A must-have
 
  Voilà!
