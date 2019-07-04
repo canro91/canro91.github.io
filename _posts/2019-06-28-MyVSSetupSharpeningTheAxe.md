@@ -28,6 +28,9 @@ This VS setup is heavily inspired by [De-Cruft Visual Studio](	https://jackmott.
 	* Enable **Line numbers**
 	* Hide **Navigation Bar** and **Code Outlining**
 	* Unselect **Selection and Indicator** margins
+	* Unselect **Ctrl + click** to go to definition
+* Shortcuts
+	* 	`Ctrl+Shift+w`: Close all documents
 * Plugins
 	* ~~HideMainMenu/HideTitleBar~~ Not available in VS2019 yet
 	* [VSVim](https://github.com/jaredpar/VsVim) It enables Vim keybindings in the text editor
