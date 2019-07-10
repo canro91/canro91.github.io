@@ -11,7 +11,7 @@ There you are, a normal day at your office with a new challenge. One of your cli
 
 * You can receive pdf files with any structure. Two clients won't have the same file structure.
 * Eventually, you will receive not only pdf files, but any plain-text file
-* You will have to build something easy to grap for your coworkers or your future self to maintaint.
+* You will have to build something easy to grap for your coworkers or your future self to maintain.
 * You will have to ship it by the end of the week
 
 ## Actual implementation
