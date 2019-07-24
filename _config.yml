@@ -20,6 +20,8 @@ version:
 github:
   repo:           https://github.com/canro91
 
+devto:            https://dev.to/canro91
+
 plugins:
   - jekyll-paginate
   - jekyll-gist

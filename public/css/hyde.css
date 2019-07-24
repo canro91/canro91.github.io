@@ -98,7 +98,11 @@ a.sidebar-nav-item:focus {
 .sidebar-nav-item.active {
   font-weight: bold;
 }
-
+.sidebar-nav-item.icon {
+  font-size: 1.25rem;
+  display: inline-block;
+  margin: 0 0.25em;
+}
 /* Sticky sidebar
  *
  * Add the `sidebar-sticky` class to the sidebar's container to affix it the
