@@ -5,8 +5,14 @@ title: About
 
 I'm Cesar Aguirre. I'm a [software engineer](https://github.com/canro91), lifelong learner, language enthusiast and vivid reader.
 
-I wrote [Parsinator](https://github.com/canro91/Parsinator), a library to extract relevant data from text-based pdfs and plain-text files. Also, [BaseXml](https://github.com/canro91/BaseXml) to work and validate with xml files. From time to time, I contribute to OSS by opening issues and sending pull requests to the libraries and projects I use. I have contributed to [DateTimeExtensions](https://github.com/joaomatossilva/DateTimeExtensions) adding holidays for my country, for example.
+I’m passionate about learning and programming. I want to share what I have learned in my journey as a software engineer. In this blog you can find tips and advice, libraries I have used, issues I have found and how I have solved them, lessons learned the hard way, success and failure stories.
 
-I'm passionate about learning and programming, in general. I want to share what I have learned in my journey as a software engineer.
+If you don’t know where to start reading or if you want to find something to read, head to any of these posts:
+
+* [The C# Definitive Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %})
+* [Parsinator, a tale of a pdf parser]({% post_url 2019-03-08-ATaleOfAPdfParser %})
+* [The query and the index]({% post_url 2019-03-20-TheQueryAndTheIndex %})
+* My take on the difference between [Func and Action]({% post_url 2019-03-22-WhatTheFuncAction %})
+* Plugins and settings for [my VS setup]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %})
 
 Thanks for reading!

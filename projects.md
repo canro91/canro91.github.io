@@ -3,6 +3,8 @@ layout: page
 title: Projects
 ---
 
+I wrote [Parsinator](https://github.com/canro91/Parsinator), a library to extract relevant data from text-based pdfs and plain-text files. Also, [BaseXml](https://github.com/canro91/BaseXml) to work and validate with xml files. From time to time, I contribute to OSS by opening issues and sending pull requests to the libraries and projects I use. I have contributed to [DateTimeExtensions](https://github.com/joaomatossilva/DateTimeExtensions) adding holidays for my country, for example.
+
 This is some of the code I have written. Feel free to take a look, leave an star, report any bug, ask for a new feature or send a pull-request.
 
 [![canro91/parsinator - GitHub](https://gh-card.dev/repos/canro91/parsinator.svg)](https://github.com/canro91/parsinator)
