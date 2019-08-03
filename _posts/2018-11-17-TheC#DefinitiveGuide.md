@@ -89,6 +89,22 @@ string[] trimmed = emails.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEnt
 * Learn the most frequently used methods: `Where`, `Select`, `FirstOrDefault`, `Any`, `GroupBy`, `Distinct`.
 * Learn about lambda expressions. `Predicate`, `Action` and `Func`
 
+## Regular Expressions
+
+Have you ever used `*.txt` in the file explorer to find all text files in a folder? You have already used a regular expression. But, `*.txt` is just the tip of the iceberg. Regular expressions give you a search syntax to find patterns of text in a string. For example, find all phone numbers like this one `(+57) 3XX XXX-XXX`, you could use `(\(\+\d{2}\))\s(\d{3})\s(\d{3})\-(\d{3})`. 
+
+* Learn the basics 
+	* Character sets: `[]` and `[^]`
+	* Shorthand: `\d` for digits, `\w` for alphanumeric chars, `\s` for whitespace.
+	* Repetions: `*`, `?`, `{min,max}`
+	* Any character: the dot `.`
+	* Escape reserved characters: `^$()[]\|-.*+`
+	* Groups
+* Learn how to match and replace a regex in C#. Take a look at `Match`, `IsMatch`, `Replace` methods in `Regex` class. 
+* Learn how to acess named groups in C#
+* Read [Regular expressions Quickstart](https://www.regular-expressions.info/quickstart.html)
+
+
 ## async/await
 
 Asyncronous code is code that doesn't block when executing long-running operations.
