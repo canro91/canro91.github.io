@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Time complexity: An interview exercise II
+title: Time complexity&colon; An interview exercise II
 ---
 
 You nailed it at your first interview. You impressed the interviewer with your answers. Now, another interview. This time, it's the interviewer's boss turn.
@@ -27,9 +27,15 @@ Your first and obvious approach is to roll two loops and check every pair of ele
 
 ```csharp
 for (int i = 0; i < a.Length; i++)
+{
 	for (int j = 0; j < b.Length; j++)
+	{
 		if (a[i] + b[j] == 0)
+		{
 			Console.WriteLine("Found");
+		}
+	}
+}
 ```
 
 The interviewer asks you about the time complexity of this solution. Since, you have to traverse the second array per every element in the first array, you will end up with `n x m` operations. So, you answer quadratic time or `O(n^2)`. Right!
@@ -41,8 +47,12 @@ Then, he asks you to do better. A linear solution. To have a linear solution, yo
 ```csharp
 var set = new HashSet<int>(b);
 for (int i = 0; i < a.Length; i++)
-		if (set.Contains(-a[i]))
-			Console.WriteLine("Found");
+{
+	if (set.Contains(-a[i]))
+	{
+		Console.WriteLine("Found");
+	}
+}
 ```
 
 Here it is! Another interview! Now you have in your toolbox time complexity. Not only for next interviews, but for everyday programming.
