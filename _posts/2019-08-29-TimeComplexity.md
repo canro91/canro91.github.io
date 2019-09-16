@@ -17,7 +17,7 @@ Time complexity is a mechanism to compare the performance of two algorithms as t
 
 Well-known algorithms and common patterns of code have already a time complexity associated. For example, performing an assignment or checking if a dictionary contains a key have **constant time**. Looping through the elements of an array has **linear time**. Dealing with matrices using two nested arrays has **quadratic time**. Dividing an array into halves each time (_do you remember binary search?_) has **logarithmic time**.
 
-Time complexity uses a mathematical notation to describe the complexity of an algorithm, **Big O notation**. It assigns a function (_you remember functions from Math class, right?_ to the complexity of each algorithm. So, constant time is `O(1)`, linear time is `O(n)`, quadratic time is `O(n^2)` and logarithmic time is `O(logn)`. You could use [this cheatsheet](https://www.bigocheatsheet.com/) to find the complexity and BigO notation of well-know algorithms.
+Time complexity uses a mathematical notation to describe the complexity of an algorithm, **Big O notation**. It assigns a function (_you remember functions from Math class, right?_) to the complexity of each algorithm. So, constant time is `O(1)`, linear time is `O(n)`, quadratic time is `O(n^2)` and logarithmic time is `O(logn)`. You could use [this cheatsheet](https://www.bigocheatsheet.com/) to find the complexity and BigO notation of well-know algorithms.
 
 ## The solution
 
