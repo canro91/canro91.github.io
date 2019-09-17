@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Rotating an array: An interview exercise III
+title: Rotating an array&colon; An interview exercise III
 ---
 
 There you are. You start to feel confident in your interview. You have already gone through some exercises. Now, the interviewer challenges you with a new exercise. So, you open a new tab or create a new file in your editor. And, start!
