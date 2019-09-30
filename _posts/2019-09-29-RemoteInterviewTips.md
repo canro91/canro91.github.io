@@ -3,7 +3,7 @@ layout: post
 title: Remote interview. Here I go
 ---
 
-Are you applying for a remote position? Or for a on-site position but the interviewer is on another branch outside your city? Are preparing yourself for your future interviews? These tips are for you. Read on!
+Are you applying for a remote position? Or for a on-site position but the interviewer is on another branch outside your city? Are preparing yourself for future interviews? These tips are for you. Read on!
 
 ## Interview types
 
@@ -57,3 +57,5 @@ Now, you know the type of interviews you will find. Be prepared for them! Practi
 [7 Interview Tips That Will Help You Get Hired](https://www.thebalancecareers.com/top-interview-tips-2058577)
 
 [60 seconds and you are hired](https://www.youtube.com/watch?v=J_lgyK37JJM)
+
+> *This post was inspired by all the tips I have received from colleagues, managers and the Internet while preparing for remote interviews*
