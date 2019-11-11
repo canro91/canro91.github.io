@@ -52,7 +52,7 @@ Now you know the interview types, it's time to move on to the interview preparat
 
 ## Final tips
 
-Now, you know the type of interviews you will find. Be prepared for them! Practice your elevator pitch and your project descriptions. Have a printed copy of them next to you during the interview. Be enthusiast and precise. Happy interviewing!
+Now, you know the type of interviews you will find. Be prepared for them! Practice your elevator pitch and your project descriptions. Have a printed copy of them next to you during the interview, in case of panic attack. Be enthusiast and precise. Happy interviewing!
 
 [7 Interview Tips That Will Help You Get Hired](https://www.thebalancecareers.com/top-interview-tips-2058577)
 
