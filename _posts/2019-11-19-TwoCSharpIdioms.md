@@ -7,12 +7,12 @@ Two useful C# idioms you can find and its alternative solutions.
 
 * **Instead of lots of or’s, use an array**. You can find this code when checking preconditions or validating objects.
 
-```
+```csharp
 if (myVar == 2 || myVar == 5 || myVar == 10)
 	DoSomeOperation();
 ```
 
-```
+```csharp
 var allowedValues = new int[] { 2, 5, 10 };
 if (allowedValues.Any(t => myVar == t))
 	DoSomeOperations();
@@ -20,9 +20,9 @@ if (allowedValues.Any(t => myVar == t))
 
 If you need to validate a new value, you add it in the array instead of adding a new condition in the `if` statement.
 
-- **Instead of lots of if to find a value, use an array of** `Func` and pick the first value different from `null` or a default value. You can find this code when finding a value among multiple choices.
+* **Instead of lots of if to find a value, use an array of** `Func` and pick the first value different from `null` or a default value. You can find this code when finding a value among multiple choices.
 
-```
+```csharp
 var someKey = FindKey();
 if (someKey == null)
 	someKey = FindAlternateKey();
@@ -30,7 +30,7 @@ if (someKey == null)
 	someKey = FindDefaultKey();
 ```
 
-```
+```csharp
 var fallback = new List<Func<SomeObject>>
 {
 	FindKey(),
@@ -42,7 +42,7 @@ var someKey = fallback.FirstOrDefault(t => t != null);
 
 But, you could take advantage of _Null coleasing operator (??)_ if these choice functions return `null` when a value isn't found.
 
-```
+```csharp
 var someKey = FindKey() ?? FindAlternateKey() ?? FindDefaultKey();
 ```
 
