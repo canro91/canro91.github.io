@@ -10,8 +10,10 @@ I’m passionate about learning and programming. I want to share what I have lea
 If you don’t know where to start reading or if you want to find something to read, head to any of these posts:
 
 * [The C# Definitive Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %})
+* [Git Guide for TFS Users]({% post_url 2019-11-11-GitGuideForTfsUsers  %})
 * [Parsinator, a tale of a pdf parser]({% post_url 2019-03-08-ATaleOfAPdfParser %})
 * [The query and the index]({% post_url 2019-03-20-TheQueryAndTheIndex %})
+* [Remote interview, here I go]({% post_url 2019-09-29-RemoteInterviewTips %})
 * My take on the difference between [Func and Action]({% post_url 2019-03-22-WhatTheFuncAction %})
 * Plugins and settings for [my VS setup]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %})
 
