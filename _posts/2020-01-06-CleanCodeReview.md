@@ -33,3 +33,5 @@ This book presents the concept that *code should be written to minimize the time
 * Use named parameters or try to mimic them. For example: `connect(/*timeout_ms=*/10, /*use_ssl=*/false)`
 * Separate business logic from problem specific code. This encourages to keep code at a single level of abstraction and to write reusable methods.
 * **The most readable code is not code at all**. This book recommend reading documentation and method signatures from your libraries and tools. So you don't roll out your own code.
+
+*The Art of Readable Code* is a good starting point to introduce the concept of readability and clean code to your team. These tips and tricks are a good reference for code standards and reviews.
