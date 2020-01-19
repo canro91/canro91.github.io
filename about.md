@@ -14,6 +14,7 @@ If you don’t know where to start reading or if you want to find something to r
 * [Parsinator, a tale of a pdf parser]({% post_url 2019-03-08-ATaleOfAPdfParser %})
 * [The query and the index]({% post_url 2019-03-20-TheQueryAndTheIndex %})
 * [Remote interview, here I go]({% post_url 2019-09-29-RemoteInterviewTips %})
+* [Postfix Notation: An Interview Exercise]({% post_url 2019-08-02-PostfixNotationAnInterviewExercise %})
 * My take on the difference between [Func and Action]({% post_url 2019-03-22-WhatTheFuncAction %})
 * Plugins and settings for [my VS setup]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %})
 
