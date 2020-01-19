@@ -128,9 +128,9 @@ These are one of the new features in C# since version 6.0 you can use more often
 ```csharp
 string name = ReadNameFromSomewhere();
 if (name == null)
-	name = "none";
+    name = "none";
 else
-	name.Trim();
+    name.Trim();
 ```
 
 After,
@@ -163,7 +163,7 @@ greeting.Name
 ```csharp
 public static async Task Main(string[] args)
 {
-	await DoSomethingAsync();
+    await DoSomethingAsync();
 }
 ```
 
@@ -174,7 +174,7 @@ import static System.Console;
 
 static void Main()
 {
-	WriteLine("Hello, world!");
+    WriteLine("Hello, world!");
 }
 ```
 

@@ -12,8 +12,8 @@ var document = @"{ ""date"": ""2019-07-09T19:52:58-05:00"" }";
 var xml = JsonConvert.DeserializeXmlNode(document);
 using (var sw = new StringWriter())
 {
-	xml.Save(sw);
-	Console.WriteLine(sw.ToString());
+    xml.Save(sw);
+    Console.WriteLine(sw.ToString());
 }
 
 // <?xml version="1.0" encoding="utf-16"?>
@@ -30,17 +30,17 @@ But, wait! There isn't any overloaded method to pass a `JsonSetting`. Head to Gi
 var document = @"{ ""date"": ""2019-07-09T19:52:58-05:00"" }";
 var settings = new JsonSerializerSettings
 {
-	Converters = new List<JsonConverter>()
-	{
-		new XmlNodeConverter()
-	},
- 	DateParseHandling = DateParseHandling.None
+    Converters = new List<JsonConverter>()
+    {
+        new XmlNodeConverter()
+    },
+    DateParseHandling = DateParseHandling.None
 };
 var xml = JsonConvert.DeserializeObject<XmlDocument>(document, settings);
 using (var sw = new StringWriter())
 {
-	xml.Save(sw);
-	Console.WriteLine(sw.ToString());
+    xml.Save(sw);
+    Console.WriteLine(sw.ToString());
 }
 
 //<?xml version="1.0" encoding="utf-16"?>

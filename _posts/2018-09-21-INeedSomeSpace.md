@@ -23,7 +23,7 @@ using (var connection = new SqlConnection(_ConnectionString))
 }
 
 private readonly PostProcessRecordReader<RawRecord> TrimRecords
-	= new PostProcessRecordReader<RawRecord>((reader, record) =>
+    = new PostProcessRecordReader<RawRecord>((reader, record) =>
     {
         if (record != null)
         {

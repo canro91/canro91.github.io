@@ -38,11 +38,11 @@ To a declare a method that uses `Func` or `Action`, you have to use it like a re
 ```csharp
 public Employee DoSomething(Func<Employee, string> f)
 {
-	// Create an employee
-	var employee = new Employee();
-	
-	// string result = f.Invoke(employee);
-	string result = f(employee);
+    // Create an employee
+    var employee = new Employee();
+    
+    // string result = f.Invoke(employee);
+    string result = f(employee);
 }
 ```
 
@@ -55,46 +55,46 @@ This is the method that does the actual retry and uses `Func` for the operation 
 ```csharp
 public class RetryStrategy : IRetryStrategy
 {
-	public TResult ExecuteWithRetry<TResult>(IDbCommand commandContext, Func<TResult> func)
-	{
-		int attempt = 0;
-		TimeSpan delay = MinBackOff;
+    public TResult ExecuteWithRetry<TResult>(IDbCommand commandContext, Func<TResult> func)
+    {
+        int attempt = 0;
+        TimeSpan delay = MinBackOff;
 
-		while (true)
-		{
-			try
-			{
-				return func();
-			}
-			catch (Exception ex)
-			{
-				// if it's not a transient error, then let it go
-				if (!IsTransientException(ex))
-					throw;
+        while (true)
+        {
+            try
+            {
+                return func();
+            }
+            catch (Exception ex)
+            {
+                // if it's not a transient error, then let it go
+                if (!IsTransientException(ex))
+                    throw;
 
-				// if the number of retries has been exceeded then throw
-				if (attempt >= MaxRetryCount)
-					throw;
-					
-				// some lines removed for brevity
+                // if the number of retries has been exceeded then throw
+                if (attempt >= MaxRetryCount)
+                    throw;
+                    
+                // some lines removed for brevity
 
-				// wait before retrying the command
-				// unless this is the first attempt or first retry is disabled
-				if (attempt > 0 || !FastFirstRetry)
-				{
-					Thread.Sleep(delay);
+                // wait before retrying the command
+                // unless this is the first attempt or first retry is disabled
+                if (attempt > 0 || !FastFirstRetry)
+                {
+                    Thread.Sleep(delay);
 
-					// update the increment
-					delay += IncrementalBackOff;
-					if (delay > MaxBackOff)
-						delay = MaxBackOff;
-				}
+                    // update the increment
+                    delay += IncrementalBackOff;
+                    if (delay > MaxBackOff)
+                        delay = MaxBackOff;
+                }
 
-				// increment the attempt
-				attempt++;
-			}
-		}
-	}
+                // increment the attempt
+                attempt++;
+            }
+        }
+    }
 }
 ```
 
@@ -103,10 +103,10 @@ And, this is how to use the method to open a connection.
 ```csharp
 public class ReliableConnection : DbConnectionWrapper
 {
-	public override void Open()
-	{
-		RetryStrategy.ExecuteWithRetry(null, () => { InnerConnection.Open(); return true; });
-	}
+    public override void Open()
+    {
+        RetryStrategy.ExecuteWithRetry(null, () => { InnerConnection.Open(); return true; });
+    }
 }
 ```
 

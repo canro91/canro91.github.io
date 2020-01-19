@@ -32,11 +32,11 @@ This is the pseudocode to evaluate a postfix expression:
 Create an stack
 Split input string
 foreach splitted value:
-	if it's an operand:
-		push it to the stack
-	if it's an operator:
-		pop the two operands from the stack
-		perfom the operation and push the result back to the stack
+    if it's an operand:
+        push it to the stack
+    if it's an operator:
+        pop the two operands from the stack
+        perfom the operation and push the result back to the stack
 return value in the stack
 ```
 
@@ -50,7 +50,6 @@ So, this is the evaluation of the given example:
 (2 3 +) 9 -
 5 9 -
 -4
-
 ```
 
 

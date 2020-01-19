@@ -9,13 +9,13 @@ Two useful C# idioms you can find and its alternative solutions.
 
 ```csharp
 if (myVar == 2 || myVar == 5 || myVar == 10)
-	DoSomeOperation();
+    DoSomeOperation();
 ```
 
 ```csharp
 var allowedValues = new int[] { 2, 5, 10 };
 if (allowedValues.Any(t => myVar == t))
-	DoSomeOperations();
+    DoSomeOperations();
 ```
 
 If you need to validate a new value, you add it in the array instead of adding a new condition in the `if` statement.
@@ -25,17 +25,17 @@ If you need to validate a new value, you add it in the array instead of adding a
 ```csharp
 var someKey = FindKey();
 if (someKey == null)
-	someKey = FindAlternateKey();
+    someKey = FindAlternateKey();
 if (someKey == null)
-	someKey = FindDefaultKey();
+    someKey = FindDefaultKey();
 ```
 
 ```csharp
 var fallback = new List<Func<SomeObject>>
 {
-	FindKey(),
-	FindAlternateKey(),
-	FindDefaultKey()
+    FindKey(),
+    FindAlternateKey(),
+    FindDefaultKey()
 };
 var someKey = fallback.FirstOrDefault(t => t != null);
 ```

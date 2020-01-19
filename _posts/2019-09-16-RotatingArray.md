@@ -18,15 +18,15 @@ Your first approach is to roll a loop through the array and put in another array
 ```csharp
 static int[] Shift(int[] array, int k)
 {
-var result = new int[array.Length];
-for (int i = 0; i < array.Length; i++)
-{
-  if ((i + k) >= array.Length)
-    result[(i + k) - array.Length] = array[i];
-  else
-    result[i + k] = array[i];
-}
-return result;
+    var result = new int[array.Length];
+    for (int i = 0; i < array.Length; i++)
+    {
+      if ((i + k) >= array.Length)
+        result[(i + k) - array.Length] = array[i];
+      else
+        result[i + k] = array[i];
+    }
+    return result;
 }
 ```
 
@@ -37,12 +37,12 @@ _You can do better. Can you remove the bound checking?_ –the interviewer says.
 ```csharp
 static int[] Shift(int[] array, int k)
 {
-	var result = new int[array.Length];
-	for (int i = 0; i < array.Length; i++)
-	{
-	  result[(i + k) % array.Length] = array[i];
-	}
-	return result;
+    var result = new int[array.Length];
+    for (int i = 0; i < array.Length; i++)
+    {
+      result[(i + k) % array.Length] = array[i];
+    }
+    return result;
 }
 ```
 
@@ -55,17 +55,17 @@ _Right!_ –the interviewer replies. _Can you come up with a constant solution?_
 ```csharp
 static int[] Shift(int[] array, int k)
 { 
-	for (int times = 0; times < k; times++)
-	{
-	  int tmp = array[array.Length - 1];
-	  for (int i = array.Length - 1; i > 0; i--)
-	  {
-	      array[i] = array[i - 1];
-	  }
-	  array[0] = tmp;
-	}
-	    
-	return array;
+    for (int times = 0; times < k; times++)
+    {
+      int tmp = array[array.Length - 1];
+      for (int i = array.Length - 1; i > 0; i--)
+      {
+          array[i] = array[i - 1];
+      }
+      array[0] = tmp;
+    }
+        
+    return array;
 }
 ```
 
@@ -75,8 +75,8 @@ _**Bonus**_ What about a one-line declarative LINQ solution? The interview could
 
 ```csharp
 static int[] Shift(int[] array, int k)
-	=> array.Skip(array.Length - k)
-		.Concat(array.Take(array.Length - k))
-		.ToArray();
+    => array.Skip(array.Length - k)
+        .Concat(array.Take(array.Length - k))
+        .ToArray();
 ```
 

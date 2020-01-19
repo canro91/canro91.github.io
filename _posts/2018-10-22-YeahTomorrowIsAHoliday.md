@@ -16,25 +16,25 @@ Here you have an example of how to add holidays to a given date.
 using System;
 using DateTimeExtensions;
 using DateTimeExtensions.WorkingDays;
-					
+                    
 public class Program
 {
-	public static void Main()
-	{
-		var fridayBeforeHoliday = new DateTime(2018, 10, 12);
-		
-		// Add two days including Saturday and Sunday
-		var plusTwoDays = fridayBeforeHoliday.AddDays(2);
-		Console.WriteLine(plusTwoDays);
-		
-		// Add two days without Saturdays and Sundays
-		var withoutHoliday = fridayBeforeHoliday.AddWorkingDays(2);
-		Console.WriteLine(withoutHoliday);
-		
-		// Add two days without holiday. Oct 15 is holiday in Colombia, for example
-		var tuesdayAfterHoliday = fridayBeforeHoliday.AddWorkingDays(2, new WorkingDayCultureInfo("es-CO"));
-		Console.WriteLine(tuesdayAfterHoliday);
-	}
+    public static void Main()
+    {
+        var fridayBeforeHoliday = new DateTime(2018, 10, 12);
+        
+        // Add two days including Saturday and Sunday
+        var plusTwoDays = fridayBeforeHoliday.AddDays(2);
+        Console.WriteLine(plusTwoDays);
+        
+        // Add two days without Saturdays and Sundays
+        var withoutHoliday = fridayBeforeHoliday.AddWorkingDays(2);
+        Console.WriteLine(withoutHoliday);
+        
+        // Add two days without holiday. Oct 15 is holiday in Colombia, for example
+        var tuesdayAfterHoliday = fridayBeforeHoliday.AddWorkingDays(2, new WorkingDayCultureInfo("es-CO"));
+        Console.WriteLine(tuesdayAfterHoliday);
+    }
 }
 ```
 

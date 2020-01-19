@@ -11,7 +11,7 @@ The reported query looked like this:
 SELECT Id, SomeColumn, Date, Column4
 FROM schema.TableWithLotsOfRows
 WHERE Id = @Id AND SomeColumn = @SomeColumn
-		AND ABS(DATEDIFF(MINUTE, Date, @Date)) <= @THRESHOLD_IN_MIN)
+        AND ABS(DATEDIFF(MINUTE, Date, @Date)) <= @THRESHOLD_IN_MIN)
 ```
 
 An index can't be used if there are expressions using functions in the where clause. This will cause a full scan. Since the query is in an store procedure, this slow query is exhausting all database connections.
@@ -26,7 +26,7 @@ Rewrite your query to use equality, inequality, `BETWEEN` and `IN` operators in 
 SELECT Id, SomeColumn, Date, Column4
 FROM schema.TableWithLotsOfRows
 WHERE Id = @Id AND SomeColumn = @SomeColumn
-		AND Date BETWEEN DATEADD(MINUTE, -1 * @THRESHOLD_IN_MIN, @Date) AND DATEADD(MINUTE, @THRESHOLD_IN_MIN, @Date)
+        AND Date BETWEEN DATEADD(MINUTE, -1 * @THRESHOLD_IN_MIN, @Date) AND DATEADD(MINUTE, @THRESHOLD_IN_MIN, @Date)
 ```
 
 ### The Index
@@ -35,8 +35,8 @@ Create an index for the columns in the predicate. The `ONLINE` option will allow
 
 ```sql
 CREATE INDEX IX_TableWithLotsOfRows_Date
-	ON schema.TableWithLotsOfRows (Id, SomeColumn, Date) 
-	WITH (ONLINE = ON);
+    ON schema.TableWithLotsOfRows (Id, SomeColumn, Date) 
+    WITH (ONLINE = ON);
 ```
 
 [1]: https://www.red-gate.com/simple-talk/sql/performance/index-selection-and-the-query-optimizer/
