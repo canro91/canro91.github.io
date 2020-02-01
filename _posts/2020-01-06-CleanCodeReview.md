@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A review of two clean code books
+title: A Review of Two Clean Code Books
 ---
 
 ## Clean Code
