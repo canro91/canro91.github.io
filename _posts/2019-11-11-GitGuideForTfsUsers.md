@@ -24,7 +24,7 @@ This distinction brings some differences between TFS and Git. Here are some of t
 * **Check-in = Commit + Push**: `git commit -m 'A beatiful commit message'` + `git push origin my-branch`
 * **Get latest version = Pull**: `git pull origin my-branch` By convention, the url of the sync server is _origin_
 * **Branch = Branch + Checkout**: `git checkout -b a-new-branch`
-* **Shelve = stash**: If you want to temporary suspend your work and resume it later, you use a shelve in TFS or an stash wiht Git. To create an stash `git stash -u` and `git stash apply` to bring back your changes.
+* **Shelve = stash**: If you want to temporary suspend your work and resume it later, you use a shelve in TFS or an stash with Git. To create an stash `git stash -u` and `git stash apply` to bring back your changes.
 
 ## Integration
 
