@@ -12,3 +12,5 @@ This is some of the code I have written. Feel free to take a look, leave an star
 [![canro91/basexml - GitHub](https://gh-card.dev/repos/canro91/basexml.svg)](https://github.com/canro91/basexml)
 
 [![canro91/Kiukie - GitHub](https://gh-card.dev/repos/canro91/Kiukie.svg)](https://github.com/canro91/Kiukie)
+
+[![canro91/Pipelinie - GitHub](https://gh-card.dev/repos/canro91/Pipelinie.svg)](https://github.com/canro91/Pipelinie)
