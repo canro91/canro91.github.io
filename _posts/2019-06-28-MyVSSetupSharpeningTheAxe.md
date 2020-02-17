@@ -9,8 +9,8 @@ VisualStudio 2019 is out! Either you installed it from scratch or you updated fr
 This VS setup is heavily inspired by [De-Cruft Visual Studio](	https://jackmott.github.io/programming/tools/editor/ide/visual/studio/2016/07/11/decruft-visual-studio.html). It aims to leave more space to the text editor. Here it is:
 
 * Color theme: Dark
-* Text Editor theme: Solarized Dark
-* Font: FiraCode 14pt
+* Text Editor theme: [Solarized](https://ethanschoonover.com/solarized/) Dark
+* Font: [FiraCode](https://github.com/tonsky/FiraCode) 14pt
 * Windows:
 	* Left
 		* Source Control Explorer
