@@ -16,19 +16,26 @@ There you are, a normal day at your office with a new challenge. One of your cli
 
 ## Actual implementation
 
-Since you're asked to support files with any format, a `for` through the lines with lots of `if`s and regular expressions isn't the most adequate solution. A file with a different format will imply to code the whole thing again. There must be a better way!
+Since you're asked to support files with any format, a `for` through the lines with lots of `if`s and regular expressions isn't the most adequate solution. A file with a different format will imply to code the whole thing again. _There must be a better way!_
 
-On one hand, one of your concerns is how to given a pdf file turn it into actual text. But, a few lines with [itextsharp](https://github.com/itext/itextsharp) will do [the reading](https://stackoverflow.com/a/5003230). So, no big deal after all! Now, a pdf file is a list of lists of strings. One list per page and one string per line. You could abstract this step to support not only pdf files.
+On one hand, one of your concerns is how to given a pdf file turn it into actual text. But, a few lines with [itextsharp](https://github.com/itext/itextsharp) will do [the reading](https://stackoverflow.com/a/5003230). So, no big deal after all! Now, a pdf file is a list of lists of strings, `List<List<string>>`. One list per page and one string per line. You could abstract this step to support not only pdf files.
 
-On the other hand, how can you do the actual parsing? Parser combinators to the rescue! You could borrow this idea from Haskell and other functional languages. You can create small composable pieces of code to extract or discard some text at the page or line level. 
+On the other hand, how can you do the actual parsing? Parser combinators to the rescue! You could borrow this idea from [Haskell](https://www.haskell.org/) and other functional languages. You can create small composable pieces of code to extract or discard some text at the page or line level. 
 
-First, you can assume that your file has some content that spawns from one page to another and some content that can be read from a given page. A header/detail representation.
+First, you can assume that your file has some content that spawns from one page to another and some content that can be read from a given page and line. A header/detail representation. Imagine an invoice with lots of purchased items that requires a couple of pages.
 
 Second, there are some lines you don't care about since they don't have any relevant information. So you can ignore them. For example, you can _"skip"_ the first or last lines in a page, all blank lines, everything between two line numbers or two regular expression. Then, you have the _skippers_.
 
 ```csharp
 public class SkipLineCountFromStart : ISkip
-{    
+{
+    private readonly int LineCount;
+
+    public SkipLineCountFromStart(int lineCount = 1)
+    {
+        this.LineCount = lineCount;
+    }
+            
     // The first LineCount lines are removed from the 
     // input text
     public List<List<string>> Skip(List<List<string>> lines)
@@ -44,7 +51,18 @@ After ignoring all the unnecessary text, you can create separate little function
 
 ```csharp
 public class ParseFromLineNumberWithRegex : IParse
-{    
+{
+    private readonly string Key;
+    private readonly int LineNumber;
+    private readonly Regex Pattern;
+        
+    public ParseFromLineNumberWithRegex(string key, int lineNumber, Regex pattern)
+    {
+        this.Key = key;
+        this.LineNumber = lineNumber;
+        this.Pattern = pattern;
+    }
+        
     // Parse if the given line matches a regex and
     // return the first matching group
     public IDictionary<String, String> Parse(String line, int lineNumber)
@@ -66,7 +84,34 @@ public class ParseFromLineNumberWithRegex : IParse
 
 But, what about the text spawning multiple lines? Now, you can introduce the _transformations_ to flatten all lines spawning multiple pages into a single stream of lines. So, you can use the same parsers in every single of these lines.
 
-Finally, with this approach, you or any of your coworkers could reuse the same constructs to parse a new file or add new ones without coding the whole thing every time you are asked to support a new file.
+Then, you can create a method put everything in place. You apply all _skippers_ in every page, so you only keep relevant information. After that, you run all _parsers_ in the appropiate pages and lines from the output of _skippers_.
 
-PS: All these ideas and other suggestions from my coworkers gave birth to [Parsinator](https://github.com/canro91/Parsinator), a library to turn structured or unstructured text into a header-detail representation. Feel free to take a look at it. All ideas and contributions are more than welcome!
+```csharp
+public Dictionary<string, Dictionary<string, string>> Parse(List<List<String>> lines)
+{
+    List<List<String>> pages = _headerSkipers.Chain(lines);
+
+    foreach (var page in pages.Select((Content, Number) => new { Number, Content }))
+    {
+        var parsers = FindPasersForPage(_headerParsers, page.Number, lines.Count);
+        if (parsers.Any())
+            ParseOnceInPage(parsers, page.Content);
+    }
+
+    if (_detailParsers != null && _detailParsers.Any())
+    {
+        List<String> details = (_transform != null)
+                ? _transform.Transform(pages)
+                : pages.SelectMany(t => t).ToList();
+
+        ParseInEveryLine(_detailParsers, details);
+    }
+
+    return _output;
+}
+```
+
+Finally, with this approach, you or any of your coworkers could reuse the same constructs to parse a new file or add new ones without coding the whole thing every time you are asked to support a new file. You need to come up with the right skippers and parsers based on the structure of the new file.
+
+PS: All these ideas and other suggestions from my coworkers gave birth to [Parsinator](https://github.com/canro91/Parsinator), a library to turn structured or unstructured text into a header-detail representation. I use Parsinator to connect 4 legacy client software to a document API by parsing pdfs and plain text files to input xml files. In the [Sample project](https://github.com/canro91/Parsinator/tree/master/Parsinator.Sample) you can see how to parse a plain-text invoice and a GPS frame. Feel free to take a look at it. All ideas and contributions are more than welcome!
 
