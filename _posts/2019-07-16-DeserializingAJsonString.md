@@ -5,7 +5,7 @@ title: <em>#BugOfTheDay</em> Deserializing a json string, an horror debugging se
 
 ## Problem 
 
-A typical day in the office: coping and pasting code from StackOverflow, waiting for the CI pipeline to finish... All of a sudden, a json refuses to be deserialized into a class. A normal class annotated with `JsonProperty` attributes. Are you kidding me? The code looked like this:
+A typical day in the office: coping and pasting code from StackOverflow, waiting for the Continuous Integration pipeline to finish... All of a sudden, a json refuses to be deserialized into a class. A normal class annotated with `JsonProperty` attributes. Are you kidding me? The code looked like this:
 
 ```csharp
 XmlDocument xmlDocument = new XmlDocument();
@@ -38,6 +38,6 @@ He is about to quit, looking down. In a final move, he asks you to go to the def
 using Exceptionless.Json;
 ```
 
-Somebody resolved the missing `using` by hitting `Ctrl + .` and `Enter`. _Exceptionless instead of Newtonsoft.Json_. Exceptionless uses its own version of Newtonsoft.Json
+Somebody resolved the missing `using` by hitting `Ctrl + .` and `Enter`. _Exceptionless instead of Newtonsoft.Json_. [Exceptionless client](https://github.com/exceptionless/Exceptionless.Net) uses its own version of Newtonsoft.Json
 
 _The End_
