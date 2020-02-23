@@ -104,4 +104,6 @@ But, some steps of the pipeline can be delayed for later processing. The user do
 
 This is a pattern you may find out there or may need to write. It's an assembly of steps to perform some actions based on a input object. You could extend this pattern to add custom action on the execution of the pipeline or each step. Also, depending on the expected load of your pipeline, you could use [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview) to run your steps.
 
+I have used and implemented this pattern before. I used in an invoicing platform to generate documents. Each document type had a different pipeline and factories could generate pipelines with different steps depending on the type of client and operation. Also, I have used this pattern in a reservation management system. In this case, I used separate pipelines to create, modify and cancel reservations.
+
 PS: You can take a look at [Pipelinie](https://github.com/canro91/Pipelinie) to see more examples. Pipelinie offers abstractions and default implementations to roll your own pipelines and builders. All ideas and contributions are more than welcome!
