@@ -12,19 +12,19 @@ Hello, if you are a beginner programmer or you just took a programming course at
 
 Visual Studio is the de-facto IDE for C#. Although, Visual Studio Code has gained a lot attention recently. Since you will spend most of your workdays with Visual Studio, you should sharpen your tools.
 
-* Find a colorscheme you like, Solarized
+* Find a colorscheme you like, [Solarized](https://ethanschoonover.com/solarized/)
 * Learn the basic shortcuts
 	* `Ctrl + Shift + b`: Build your solution
 	* `Ctrl + ,`: Navigate to any method in your solution
 	* `Ctrl + .`: Apply a refactor or any action in the current code block
 	* `Ctrl + q`: Search and execute settings or menus of Visual Studio
 * Install some plugins to make your life easier
-	* Productivity Power Tools
-	* AutoSave, no more `Ctrl + S`
-	* AddNewFile, `Alt + F2` to add a bunch of files in with a single shortcut
-	* VsVim, if you are fan of Vim. You don't know Vim? C'mmon!
-	* Wumpf Solution Color, you don't want to mess with your production codebase. You can change your Visual Studio menu bar color based on your folder solution.
-	* VS Color Output
+	* [Productivity Power Tools](https://marketplace.visualstudio.com/items?itemName=VisualStudioPlatformTeam.ProductivityPowerTools)
+	* [Auto Save](https://github.com/anaisbetts/SaveAllTheTime/issues), no more `Ctrl + S`
+	* [AddNewFile](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.AddNewFile), `Alt + F2` to add a bunch of files in with a single shortcut
+	* [VsVim](https://marketplace.visualstudio.com/items?itemName=JaredParMSFT.VsVim), if you are fan of Vim. You don't know Vim? C'mmon!
+	* [Wumpf Solution Color](https://marketplace.visualstudio.com/items?itemName=Wumpf.SolutionColor), you don't want to mess with your production codebase. You can change your Visual Studio menu bar color based on your folder solution.
+	* [VS Color Output](https://marketplace.visualstudio.com/items?itemName=MikeWard-AnnArbor.VSColorOutput)
 * C# Interactive. You don't have to create a dummy Console project just to try things out. With C# interactive, you have a C# REPL at your disposition. You can load a dll of your own or from a Nuget package, load a C# script (.csx file) or simply try a few lines of C#
 
 ## Git and Github
@@ -69,7 +69,7 @@ An unit test is a "safety net" to make sure you don't break things when you add 
 * Learn a test naming convention. For example, [Roy Osherove's convention](http://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html)
 * Learn what unit test really means [Unit Test - Definition](http://artofunittesting.com/definition-of-a-unit-test/)
 * Watch [Understand Test Driven Development](https://www.youtube.com/watch?v=q5Xd1tmIgec)
-* Write some unit test for some parts of your codebase or practice writing unit test for a library you know
+* Write some unit tests for some parts of your codebase or practice writing unit tests for a library you know
 * Read Roy Osherove's _The Art of Unit Testing_
 
 ## Linq
@@ -87,7 +87,7 @@ string[] trimmed = emails.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEnt
 ```
 
 * Learn the most frequently used methods: `Where`, `Select`, `FirstOrDefault`, `Any`, `GroupBy`, `Distinct`.
-* Learn about lambda expressions. `Predicate`, `Action` and `Func`
+* Learn about lambda expressions. `Predicate`, `Action` and `Func`. [What the Func, Action?]({% post_url 2019-03-22-WhatTheFuncAction %})
 
 ## Regular Expressions
 
@@ -193,4 +193,4 @@ public void Method(string param1)
 * Learn how to type with all your fingers
 * Learn some Vim. Take a look at _Practical Vim_
 * Learn about C# [extensions methods](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods)
-* Read _The Art of Readable Code_ or _Clean Code_ books
+* Read _The Art of Readable Code_ or _Clean Code_ books. [A review and takeaways]({% post_url 2020-01-06-CleanCodeReview %})
