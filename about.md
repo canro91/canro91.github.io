@@ -16,6 +16,8 @@ If you don’t know where to start reading or if you want to find something to r
 * [Remote interview, here I go]({% post_url 2019-09-29-RemoteInterviewTips %})
 * [Postfix Notation: An Interview Exercise]({% post_url 2019-08-02-PostfixNotationAnInterviewExercise %})
 * My take on the difference between [Func and Action]({% post_url 2019-03-22-WhatTheFuncAction %})
+* My take on the [Pipeline pattern]({% post_url 2020-02-14-PipelinePattern %})
+* My story about [a horrific debugging session]({% post_url 2019-07-16-DeserializingAJsonString %})
 * Plugins and settings for [my VS setup]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %})
 
 Thanks for reading!
