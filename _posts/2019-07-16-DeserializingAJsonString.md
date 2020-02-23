@@ -1,6 +1,6 @@
 ---
 layout: post
-title: <em>#BugOfTheDay</em> Deserializing a json string, an horror debugging session
+title: <em>#BugOfTheDay</em> Deserializing a json string, a horror debugging session
 ---
 
 ## Problem 
