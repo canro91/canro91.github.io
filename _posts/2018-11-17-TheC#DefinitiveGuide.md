@@ -25,7 +25,7 @@ Visual Studio is the de-facto IDE for C#. Although, Visual Studio Code has gaine
 	* [VsVim](https://marketplace.visualstudio.com/items?itemName=JaredParMSFT.VsVim), if you are fan of Vim. You don't know Vim? C'mmon!
 	* [Wumpf Solution Color](https://marketplace.visualstudio.com/items?itemName=Wumpf.SolutionColor), you don't want to mess with your production codebase. You can change your Visual Studio menu bar color based on your folder solution.
 	* [VS Color Output](https://marketplace.visualstudio.com/items?itemName=MikeWard-AnnArbor.VSColorOutput)
-* C# Interactive. You don't have to create a dummy Console project just to try things out. With C# interactive, you have a C# REPL at your disposition. You can load a dll of your own or from a Nuget package, load a C# script (.csx file) or simply try a few lines of C#
+* C# Interactive. You don't have to create a dummy Console project just to try things out. With C# interactive, you have a [C# REPL](https://dzone.com/articles/c-interactive-in-visual-studio) at your disposition. You can load a dll of your own or from a Nuget package, load a C# script (.csx file) or simply try a few lines of C#. From Visual Studio, head to View Menu, Other Windows and click C# Interactive.
 
 ## Git and Github
 
@@ -33,7 +33,7 @@ Visual Studio is the de-facto IDE for C#. Although, Visual Studio Code has gaine
 
 Git is a version control system. A time machine to go back in time, create alternate stories from a point in time and make alternate stories join your present. You got the analogy?. So if you are creating a zip file with your code and named it after the date of your latest change, Git is a better way.
 
-* Install Git locally
+* Install [Git](https://git-scm.com/downloads) locally
 * Learn the basic commands: `init`, `add`, `status`, `commit`, `push`
 * Use Git inside of your IDE. You use an IDE, right?
 * [Udacity Git course](https://www.udacity.com/course/version-control-with-git--ud123)
@@ -70,7 +70,7 @@ An unit test is a "safety net" to make sure you don't break things when you add 
 * Learn what unit test really means [Unit Test - Definition](http://artofunittesting.com/definition-of-a-unit-test/)
 * Watch [Understand Test Driven Development](https://www.youtube.com/watch?v=q5Xd1tmIgec)
 * Write some unit tests for some parts of your codebase or practice writing unit tests for a library you know
-* Read Roy Osherove's _The Art of Unit Testing_
+* Read Roy Osherove's _The Art of Unit Testing_. [Four takeaways]({% post_url 2020-03-06-TheArtOfUnitTetsReview %})
 
 ## Linq
 
