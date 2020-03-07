@@ -70,7 +70,7 @@ An unit test is a "safety net" to make sure you don't break things when you add 
 * Learn what unit test really means [Unit Test - Definition](http://artofunittesting.com/definition-of-a-unit-test/)
 * Watch [Understand Test Driven Development](https://www.youtube.com/watch?v=q5Xd1tmIgec)
 * Write some unit tests for some parts of your codebase or practice writing unit tests for a library you know
-* Read Roy Osherove's _The Art of Unit Testing_. [Four takeaways]({% post_url 2020-03-06-TheArtOfUnitTetsReview %})
+* Read Roy Osherove's _The Art of Unit Testing_. [Four takeaways]({% post_url 2020-03-06-TheArtOfUnitTestingReview %})
 
 ## Linq
 
