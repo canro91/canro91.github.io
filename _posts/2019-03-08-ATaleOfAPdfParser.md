@@ -11,7 +11,7 @@ There you are, a normal day at your office with a new challenge. One of your cli
 
 * You can receive pdf files with any structure. Two clients won't have the same file structure.
 * Eventually, you will receive not only pdf files, but any plain-text file
-* You will have to build something easy to grap for your coworkers or your future self to maintain.
+* You will have to build something easy to grasp for your coworkers or your future self to maintain.
 * You will have to ship it by the end of the week
 
 ## Actual implementation
@@ -22,9 +22,11 @@ On one hand, one of your concerns is how to given a pdf file turn it into actual
 
 On the other hand, how can you do the actual parsing? Parser combinators to the rescue! You could borrow this idea from [Haskell](https://www.haskell.org/) and other functional languages. You can create small composable pieces of code to extract or discard some text at the page or line level. 
 
-First, you can assume that your file has some content that spawns from one page to another and some content that can be read from a given page and line. A header/detail representation. Imagine an invoice with lots of purchased items that requires a couple of pages.
+### Skippers
 
-Second, there are some lines you don't care about since they don't have any relevant information. So you can ignore them. For example, you can _"skip"_ the first or last lines in a page, all blank lines, everything between two line numbers or two regular expression. Then, you have the _skippers_.
+First, you can assume that your file has some content that spawns from one page to another. Also, there are some content that can be read from a given page and line. A header/detail representation. Imagine an invoice with lots of purchased items that requires a couple of pages.
+
+Second, there are some lines you don't care about since they don't have any relevant information. So you can ignore them. For example, you can _"skip"_ the first or last lines in a page, all blank lines, everything between two line numbers or two regular expressions. Then, you have the _skippers_.
 
 ```csharp
 public class SkipLineCountFromStart : ISkip
@@ -47,7 +49,9 @@ public class SkipLineCountFromStart : ISkip
 }
 ```
 
-After ignoring all the unnecessary text, you can create separate little functions to extract text. For example, extract a line if it matches a regular expression, read all text between two consecutives line numbers or regexes, read a fixed string. Here, you have the _parsers_. Now, you can read text in a line of a page or use a default value if no text is found.
+### Parsers
+
+After ignoring all the unnecessary text, you can create separate small functions to extract text. For example, extract a line if it matches a regular expression, read all text between two consecutive line numbers or regexes, read a fixed string. Here, you have the _parsers_. Now, you can read text in a line of a page or use a default value if there isn't any.
 
 ```csharp
 public class ParseFromLineNumberWithRegex : IParse
@@ -64,7 +68,7 @@ public class ParseFromLineNumberWithRegex : IParse
     }
         
     // Parse if the given line matches a regex and
-    // return the first matching group
+    // returns the first matching group
     public IDictionary<String, String> Parse(String line, int lineNumber)
     {
         if (lineNumber == this.LineNumber)
@@ -82,9 +86,44 @@ public class ParseFromLineNumberWithRegex : IParse
 }
 ```
 
-But, what about the text spawning multiple lines? Now, you can introduce the _transformations_ to flatten all lines spawning multiple pages into a single stream of lines. So, you can use the same parsers in every single of these lines.
+### Transformations
 
-Then, you can create a method put everything in place. You apply all _skippers_ in every page, so you only keep relevant information. After that, you run all _parsers_ in the appropiate pages and lines from the output of _skippers_.
+But, what about the text spawning many pages? Now, you can introduce the _transformations_ to flatten all lines spawning many pages into a single stream of lines. So, you can use the same parsers in every one of these lines.
+
+For example, in the case of an invoice, imagine all purchased items are in a table. It starts with a header and ends with the subtotal of all purchased items. So you can use again some _skippers_ to extract these lines between the header and the subtotal.
+
+```csharp
+public class TransformFromMultipleSkips : ITransform
+{
+    private readonly IList<ISkip> ToSkip;
+
+    public TransformFromMultipleSkips(IList<ISkip> skippers)
+    {
+        ToSkip = skippers;
+    }
+
+    public List<string> Transform(List<List<string>> allPages)
+    {
+       // Chain applies the next skipper in the output of the previous one
+        List<String> details = ToSkip.Chain(allPages)
+                                     .SelectMany(t => t)
+                                     .ToList();
+        return details;
+    }
+}
+
+// Table header start "Code Description Price Total"
+// and ends with "S U B T O T A L"
+new TransformFromMultipleSkips(
+    new SkipBeforeRegexAndAfterRegex(
+        before: new Regex(@"\|\s+Code\s+.+Total\s+\|"),
+        after: new Regex(@"\|\s+\|\s+S U B T O T A L\s+\|")),
+    new SkipBlankLines());
+```
+
+### All the pieces
+
+Then, you can create a method put everything in place. You apply all _skippers_ in every page, so you only keep relevant information. After that, you run all _parsers_ in the appropriate pages and lines from the output of _skippers_.
 
 ```csharp
 public Dictionary<string, Dictionary<string, string>> Parse(List<List<String>> lines)
@@ -111,7 +150,9 @@ public Dictionary<string, Dictionary<string, string>> Parse(List<List<String>> l
 }
 ```
 
-Finally, with this approach, you or any of your coworkers could reuse the same constructs to parse a new file or add new ones without coding the whole thing every time you are asked to support a new file. You need to come up with the right skippers and parsers based on the structure of the new file.
+## Conclusion
 
-PS: All these ideas and other suggestions from my coworkers gave birth to [Parsinator](https://github.com/canro91/Parsinator), a library to turn structured or unstructured text into a header-detail representation. I use Parsinator to connect 4 legacy client software to a document API by parsing pdfs and plain text files to input xml files. In the [Sample project](https://github.com/canro91/Parsinator/tree/master/Parsinator.Sample) you can see how to parse a plain-text invoice and a GPS frame. Feel free to take a look at it. All ideas and contributions are more than welcome!
+Finally, with this approach, you or any of your coworkers could reuse the same constructs to parse a new file. You can add new files without coding the whole thing every time you are asked to support a new file. You need to come up with the right skippers and parsers based on the structure of the new file.
+
+PS: All these ideas and other suggestions from my coworkers gave birth to [Parsinator](https://github.com/canro91/Parsinator), a library to turn structured or unstructured text into a header-detail representation. I used Parsinator to connect 4 legacy client softwares to a document API by parsing pdfs and plain text files to input xml files. In the [Sample project](https://github.com/canro91/Parsinator/tree/master/Parsinator.Sample) you can see how to parse a plain-text invoice and a GPS frame. Feel free to take a look at it. All ideas and contributions are more than welcome!
 
