@@ -3,6 +3,8 @@ layout: post
 title: <em>#BugOfTheDay</em> Back to the future, date and time with Newtonsoft.Json
 ---
 
+## Problem
+
 QA team reported a bug. The display time of a operation in a web page is a couple of hours, even a day, after the actual time. What's wrong?
 
 You inspect all the code trying to find a line where the date isn't properly parsed. But, at first glance, all seems right. Then, you ask for the log files. And all your suspictions boil down to deserialize a json to xml using `DeserializeXmlNode` of Newtonsoft.Json. You isolate the lines of code and there you are! The actual time zone of your date is changed!
