@@ -22,7 +22,7 @@ This VS setup is heavily inspired by [De-Cruft Visual Studio](	https://jackmott.
 	* Bottom
 		* Output
 		* Error List
-		* C# Interactive: A C# REPL, so you don't have to create a Console project to try things out
+		* C# Interactive: A [C# REPL](https://dzone.com/articles/c-interactive-in-visual-studio), so you don't have to create a Console project to try things out
 * Settings:
 	* Disable **CodeLens**: Only activate **Show Test Status** and **C# References**
 	* Enable **Line numbers**
@@ -40,7 +40,7 @@ This VS setup is heavily inspired by [De-Cruft Visual Studio](	https://jackmott.
 		* Custom Document Well
 		* Match Margin
 	* [VSColorOutput](https://github.com/mike-ward/VSColorOutput) It gives you a fancy Output tab
-	* [SaveAllTheTime](https://github.com/pragmatrix/SaveAllTheTime) No more `Ctrl + S`. It saves automatically modified files. Why this feature isn't included in VS out-of-the-box? It's already present in VisualStudioCode!
+	* [SaveAllTheTime](https://github.com/pragmatrix/SaveAllTheTime) No more `Ctrl + S`. It saves automatically modified files. Why this feature isn't included in Visual Studio out-of-the-box? It's already present in Visual Studio Code!
 	* [SolutionColor](https://marketplace.visualstudio.com/items?itemName=Wumpf.SolutionColor) It colors the solution bar per project. No more editing production code without noticing it. _Use Solarized theme, too. Red for Beta and Magenta for Production_
 	* [LocateInTFS](https://marketplace.visualstudio.com/items?itemName=AlexPendleton.LocateinTFS2017) It finds the location of the selected file in the Source Control Explorer
 	* [AddNewFile](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.AddNewFile) It adds  new files directly from the Solution Explorer 
