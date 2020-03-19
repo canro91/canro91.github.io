@@ -104,7 +104,7 @@ public class TransformFromMultipleSkips : ITransform
 
     public List<string> Transform(List<List<string>> allPages)
     {
-       // Chain applies the next skipper in the output of the previous one
+       // Chain applies the next skipper on the output of the previous one
         List<String> details = ToSkip.Chain(allPages)
                                      .SelectMany(t => t)
                                      .ToList();
@@ -112,7 +112,7 @@ public class TransformFromMultipleSkips : ITransform
     }
 }
 
-// Table header start "Code Description Price Total"
+// Table starts with "Code Description Price Total"
 // and ends with "S U B T O T A L"
 new TransformFromMultipleSkips(
     new SkipBeforeRegexAndAfterRegex(
