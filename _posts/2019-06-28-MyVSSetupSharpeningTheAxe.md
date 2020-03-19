@@ -4,7 +4,7 @@ title: My Visual Studio Setup, sharpening the axe
 description: VisualStudio 2019 is out. These are my settings, layout and extensions
 ---
 
-VisualStudio 2019 is out! Either you installed it from scratch or you updated from a previous version, it's time to sharpen your axe! Or maybe, you came back from your vacations and the IT decided to uninstall previous versions of VS, leaving the new one without your customization. This is a true story, and it happened to a friend of a friend of mine.
+VisualStudio 2019 is out! Either you installed it from scratch or you updated from a previous version, it's time to sharpen your axe! Or maybe, you came back from your vacations and the IT team decided to uninstall previous versions of VS, leaving the new one without any of your customizations. _This is a true story, it happened to a friend of a friend of mine._
 
 This VS setup is heavily inspired by [De-Cruft Visual Studio](	https://jackmott.github.io/programming/tools/editor/ide/visual/studio/2016/07/11/decruft-visual-studio.html). It aims to leave more space to the text editor. Here it is:
 
