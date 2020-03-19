@@ -13,9 +13,9 @@ The main takeaway from this book is that you should treat your tests as producti
 	
 With this naming convention is clear the logic under test, the inputs and the expected result. You will end up with long test names, but it's OK to have long test names for the sake of readability.
 
-## Builders vs `Setup` 
+## Builders vs `SetUp` 
 
-**Use builders instead of `Setup` methods**. Tests should be isolated from other tests. Sometimes, `Setup` methods create shared state among your tests. You will find tests that passes in isolation but don't pass alongside other tests and tests that need to be run many times to pass. 
+**Use builders instead of `SetUp` methods**. Tests should be isolated from other tests. Sometimes, `SetUp` methods create shared state among your tests. You will find tests that passes in isolation but don't pass alongside other tests and tests that need to be run many times to pass. 
 
 Often `SetUp` methods end up with initialization for only some tests. Tests should create their own world. So, initialize what's need inside every test using builders.
 
