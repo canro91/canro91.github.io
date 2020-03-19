@@ -3,6 +3,8 @@ layout: post
 title: <em>#BugOfTheDay</em> The query and the index
 ---
 
+## Problem
+
 A report from IT, the database is hitting 100% of CPU usage. Some users describe that the main application is slowing down and displaying error messages related to database issues. The report includes a very slow query to a huge table. What's wrong?
 
 The reported query looked like this:
