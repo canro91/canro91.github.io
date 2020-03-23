@@ -11,6 +11,7 @@ If you don’t know where to start reading or if you want to find something to r
 
 * [The C# Definitive Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %})
 * [Git Guide for TFS Users]({% post_url 2019-11-11-GitGuideForTfsUsers  %})
+* [ASP.NET Core Guide for ASP.NET Framework Users]({% post_url 2020-03-23-GuideToNetCore  %})
 * [Parsinator, a tale of a pdf parser]({% post_url 2019-03-08-ATaleOfAPdfParser %})
 * [The query and the index]({% post_url 2019-03-20-TheQueryAndTheIndex %})
 * [Remote interview, here I go]({% post_url 2019-09-29-RemoteInterviewTips %})
