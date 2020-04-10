@@ -26,7 +26,7 @@ There are four types of interviews you can find while applying for a new job.
 	* what's the difference between LINQ and extension methods?
 	* what's the difference between `async` and `await`?
 	* what is ASP.NET Core?
-	* How do you do dependency injection in a ASP.NET Core project? *You got the idea!*
+	* [How do you do dependency injection in a ASP.NET Core project?]({% post_url 2020-03-23-GuideToNetCore %}) *You got the idea!*
 3. **Programming exercise**: *Have a dev environment ready!* The interviewer will ask you to open your favorite IDE or text editor to solve [one]({% post_url 2019-08-02-PostfixNotationAnInterviewExercise %}) or [two]({% post_url 2019-08-29-TimeComplexity %}) [exercises]({% post_url 2019-09-16-RotatingArray %}). 
 4. **Homework**: The interviewer will ask you to solve a medium-size exercise in a couple of hours or even days. *Make sure you follow best practices and code as clean as possible! It's time to show off your coding skills*
 

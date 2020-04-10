@@ -7,7 +7,7 @@ I wrote [Parsinator](https://github.com/canro91/Parsinator), a library to extrac
 
 From time to time, I contribute to OSS by opening issues and sending pull requests to the libraries and projects I use. I have contributed to [DateTimeExtensions](https://github.com/joaomatossilva/DateTimeExtensions) adding holidays for my country, for example.
 
-This is some of the code I have written. Feel free to take a look, leave an star, report any bug, ask for a new feature or send a pull-request.
+This is some of the code I have written. Feel free to take a look, report any bug, ask for a new feature or send a pull-request.
 
 [![canro91/parsinator - GitHub](https://gh-card.dev/repos/canro91/parsinator.svg)](https://github.com/canro91/parsinator)
 

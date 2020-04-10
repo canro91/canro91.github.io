@@ -26,7 +26,7 @@ If you don’t know where to start reading or if you want to find something to r
 
 #### _BugOfTheDay_
 
-* [The query and the index]({% post_url 2019-03-20-TheQueryAndTheIndex %})
+* [The query and the index]({% post_url 2019-03-20-TheQueryAndTheIndex %}) When a Production database went down
 * My story about [a horrific debugging session]({% post_url 2019-07-16-DeserializingAJsonString %})
 
 Thanks for reading!

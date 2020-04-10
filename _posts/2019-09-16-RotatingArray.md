@@ -30,7 +30,7 @@ static int[] Shift(int[] array, int k)
 }
 ```
 
-## Modulus operator
+### Modulus operator
 
 _You can do better. Can you remove the bound checking?_ –the interviewer says. Now, you start to use an example. If `array=[1,2,3,4,5,6]`, `k=1` and `i=5`, the last element must be the first one and so on and so forth. It reminds you the modulus operator (%). Instead of dividing two numbers, it calculates the remainder of dividing those two numbers. Since the remainder is less than the divisor, you will always be inside the size of the array if you apply the modulus with the array length. So, you modify your previous solution.
 
@@ -46,7 +46,7 @@ static int[] Shift(int[] array, int k)
 }
 ```
 
-## Space complexity
+### Space complexity
 
 _What is the space complexity of this solution?_ –the interviewer asks. Space complexity is a metric to compare the amount of memory required to run an algorithm in relation to the input size. If the input gets bigger, how much storage the algorithm requires? Since you are using a temporay array, the storage will be proportional to the size of the array. So, it's linear!
 
