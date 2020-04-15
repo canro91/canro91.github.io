@@ -41,7 +41,7 @@ alias lb='sleep 900 && echo "Long break" && tput bel'
 
 ### Hook
 
-I work in a project that uses a convention to name branches. You need to include the type of task and the task number in the branch name. And, every commit message should include the ticket number too. [You can automate that with a hook](https://medium.com/better-programming/how-to-automatically-add-the-ticket-number-in-git-commit-message-bda5426ded05). So no more mental burden to include that name, specially when task numbers end up like a virus names :D
+I work in a project that uses a convention to name branches. You need to include the type of task and the task number in the branch name. And, every commit message should include the task number too. [You can automate that with a hook](https://medium.com/better-programming/how-to-automatically-add-the-ticket-number-in-git-commit-message-bda5426ded05). So no more mental burden to include that name, specially when task numbers end up like virus names :D
 
 ```bash
 #!/bin/bash
