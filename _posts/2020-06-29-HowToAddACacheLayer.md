@@ -1,15 +1,15 @@
 ---
 layout: post
-title: How to add an in-memory and Redis-powered cache layer with ASP.NET Core 3
+title: How to add an in-memory and a Redis-powered cache layer with ASP.NET Core 3
 ---
 
-Imagine you have a service `SettingsService` that makes a REST request with a `HttpClient`. This service calls a microservice for the configurations of a property. These configuration can be stored in a Amazon DynamoDB or Azure DocumentDB. But, it takes a couple of seconds to respond and it is accessed lots of times. It would be a great to have this value stored somewhere else for faster reads.
+Imagine you have a service `SettingsService` that makes a REST request with a `HttpClient`. This service calls a microservice for the configurations of a property. But, it takes a couple of seconds to respond and it is accessed frequently. It would be a great to have this value stored somewhere else for faster respond times. _Let's see how to use caching for this!_
 
-A cache is an storage layer to speed up future requests. Reading from cache is faster than computing data every time it is requested. Let's see how to add caching to this `SettingsService`.
+A cache is an storage layer to speed up future requests. Reading from cache is faster than computing data every time it is requested. Let's add caching to this `SettingsService` using ASP.NET Core.
 
 ## In-Memory approach
 
-Let's assume you have an ASP.NET Core 3.1 API site with a controller that uses your `SettingsService` class. First, install the `Microsoft.Extensions.Caching.Memory` NuGet package. Then, register the in-memory cache in the `ConfigureServices` method of the `Startup` class. You need to use the `AddMemoryCache` method.
+Let's start with an ASP.NET Core 3.1 API site with a controller that uses your `SettingsService` class. First, install the `Microsoft.Extensions.Caching.Memory` NuGet package. Then, register the in-memory cache in the `ConfigureServices` method of the `Startup` class. You need to use the `AddMemoryCache` method.
 
 ```csharp
 // Startup.cs
@@ -24,7 +24,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Since memory isn't infinite, you want to put limits on the number of items stored in the cache. Make use of expiration times, `SizeLimit` and `SetLimit`. `SizeLimit` when registering the cache into the container and `SetLimit` when adding an entry to the cache. These two methods are unitless, they receive a "number of items". 
+Since memory isn't infinite, you want to limit the number of items stored in the cache. Make use of `SizeLimit`. It is the maximum number of "slots" or "places" the cache can hold. Also, you need to tell how many "places" a cache entry takes when stored. _More on that later!_
 
 ### Decorator pattern
 
@@ -52,11 +52,19 @@ public class CachedSettingsService : ISettingsService
 }
 ```
 
-Now, let's create the `GetOrSetValueAsync` extension method. It will check first if the given key is present in the cache. Otherwise, it will use a factory method to compute the value and store it. This method receives a custom `MemoryCacheEntryOptions` to overwrite the default values.
+### Limits and Expiration Time
 
-If you use `SlidingExpiration` option, it will reset the expiration time when an entry is used. But, `AbsoluteExpirationRelativeToNow` will expire the entry after the given time, no matter if it was accessed or not. If you use both, the entry will expire when the first of the two times expire.
+Now, let's create the `GetOrSetValueAsync` extension method. It will check first if a key is in the cache. Otherwise, it will use a factory method to compute the value and store it. This method receives a custom `MemoryCacheEntryOptions` to overwrite the default values.
 
-Don't forget to include a size for each cache entry, if you used `SizeLimit` when registering the cache into the dependency container. When this limit is reached, no more values will be stored until some entries are expired. For more details, see [Use SetSize, Size, and SizeLimit to limit cache size](https://docs.microsoft.com/en-us/aspnet/core/performance/caching/memory?view=aspnetcore-3.1#use-setsize-size-and-sizelimit-to-limit-cache-size).
+Make sure to use expiration times when storing items. You can choose between sliding and absolute expiration times:
+
+* `SlidingExpiration` will reset the expiration time every time an entry is used before it expires
+* `AbsoluteExpirationRelativeToNow` will expire the entry after the given time, no matter how many times it's been used
+* If you use both, the entry will expire when the first of the two times expire
+
+_If parents used `SlidingExpiration`, kids would never stop watching TV or using smartphones!_
+
+Don't forget to include a size for each cache entry, if you use `SizeLimit` when registering the cache into the dependency container. This `Size` tells how many "places" from `SizeLimit` an entry takes. When this limit is reached, the cache won't store any more entries until some of them expire. For more details, see [Use SetSize, Size, and SizeLimit to limit cache size](https://docs.microsoft.com/en-us/aspnet/core/performance/caching/memory?view=aspnetcore-3.1#use-setsize-size-and-sizelimit-to-limit-cache-size).
 
 ```csharp
 public static class MemoryCacheExtensions
@@ -88,7 +96,9 @@ public static class MemoryCacheExtensions
 }
 ```
 
-To start using the new `CachedSettingsService`, you need to register it into the container. _Back to the `Startup` class!_. Register the existing `SettingsService` and the new decorated service. You can use [Scrutor](https://github.com/khellang/Scrutor) to register your decorator. You could read more about this approach on [this Andrew Lock post](https://andrewlock.net/adding-decorated-classes-to-the-asp.net-core-di-container-using-scrutor/)
+### Registration
+
+To start using the new `CachedSettingsService`, you need to register it into the container. _Back to the `Startup` class!_ Register the existing `SettingsService` and the new decorated service. You can use [Scrutor](https://github.com/khellang/Scrutor) to [register your decorator](https://andrewlock.net/adding-decorated-classes-to-the-asp.net-core-di-container-using-scrutor/).
 
 ```csharp
 // Startup.cs
@@ -105,8 +115,7 @@ public void ConfigureServices(IServiceCollection services)
     // The same as before...
     services.AddMemoryCache(options =>
     {
-        var sizeLimit = appSettings.MaximumCacheSizeLimit;
-        options.SizeLimit = sizeLimit;
+        options.SizeLimit = 1024
     });
     
     // ...
@@ -151,11 +160,11 @@ public class CachedPropertyServiceTests
 
 ## Distributed approach
 
-A distributed cache layer lives in a separate server. You aren't limited to the memory of the server running your API site. A distributed cache make sense when your site is running behind a load-balancer along many instances of the same server. For more advantages, see [Distributed caching in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/performance/caching/distributed?view=aspnetcore-3.1)
+_Now, let's move to the distribute cache_. A distributed cache layer lives in a separate server. You aren't limited to the memory of the server running your API site. A distributed cache make sense when your site is running behind a load-balancer along many instances of the same server. For more advantages, see [Distributed caching in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/performance/caching/distributed?view=aspnetcore-3.1)
 
 There is an implementation of the distributed cache using Redis for ASP.NET Core. [Redis](https://redis.io/) is "an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker".
 	
-Using a distributed cache is like the in-memory approach. This time you need to install `Microsoft.Extensions.Caching.StackExchangeRedis` NuGet package and use the `AddStackExchangeRedisCache` method in your `ConfigureServices` method. Also, you need to use a Redis connection string and an `InstanceName`. The `InstaceName` groups entries on a single Redis service.
+Using a distributed cache is similar to the in-memory approach. This time you need to install `Microsoft.Extensions.Caching.StackExchangeRedis` NuGet package and use the `AddStackExchangeRedisCache` method in your `ConfigureServices` method. Also, you need a Redis connection string and an `InstanceName`. The `InstaceName` groups entries with a prefix. It's helpful when using a single Redis server with different sites.
 
 > Notice, there are two similar NuGet packages to use Redis with ASP.NET Core: [Microsoft.Extensions.Caching.Redis and Microsoft.Extensions.Caching.StackExchangeRedis](https://stackoverflow.com/questions/59847571/differences-between-microsoft-extensions-cashing-redis-and-microsoft-extensions)
 
@@ -182,6 +191,8 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
+### Redecorate
+
 Make sure to change the cache interface from `IMemoryCache` to `IDistributedCache`. Go to your `CachedSettingsService` class and the `ConfigureService` method.
 
 ```csharp
@@ -204,7 +215,7 @@ public class CachedSettingsService : ISettingsService
 }
 ```
 
-Now, let's create a new `GetOrSetValueAsync` extension method to use the distributed cache. You need to use asynchronous methods and a serializer for the values to cache. These methods are `GetStringAsync` and `SetStringAsync`. This time you don't need a size for cache entries.
+Now, let's create a new `GetOrSetValueAsync` extension method to use the distributed cache. You need to use asynchronous methods and a serializer for the values to cache. These methods are `GetStringAsync` and `SetStringAsync`. This time you don't need sizes for cache entries.
 
 ```csharp
 public static class DistributedCacheExtensions
