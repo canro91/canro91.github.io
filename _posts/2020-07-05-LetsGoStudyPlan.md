@@ -78,3 +78,5 @@ You can find more project ideas here: [40 project ideas for software engineers](
 Go was design to reduce the clutter and complexity of other languages. Go syntax is like C. Go is like C on asteroids. _Goodbye, C pointers!_ Go doesn't include expected features like inheritance, exceptions or generics. _Yes, Go doesn't have exceptions_. But, Go is batteries-included. You have included, for free, a testing and benchmarking library, a formatter and a race-condition detector. Coming from C#, you can still miss assertions like the ones from NUnit or XUnit. _Aren't you curious about a language without exceptions? Happy Go time!_
 
 > _You can find my own 30-day journey following the resources from this post in [LetsGo](https://github.com/canro91/LetsGo)_
+
+<img src="https://golang.org/lib/godoc/images/footer-gopher.jpg" width="80" height="50" />
