@@ -9,7 +9,7 @@ Code reviews are a great tool to indentify bugs before the code head to the QA t
 
 ## What to look for in a code review?
 
-_What should I look at?_ You're new to code reviews and you don't know what it's going to be review in the code you wrote. Or you have been asked to review somebody else's code, and you don't know what to look for. You can take a look at this:
+_What should I look at?_ You're new to code reviews and you don't know what it's going to be review in the code you wrote? Or you have been asked to review somebody else's code, and you don't know what to look for? You can take a look at this:
 
 Does the code...
 
@@ -24,33 +24,33 @@ Does the code...
 
 ## For the reviewer
 
-Before you start any review, make sure to understand the requirement and look at the tests, they should be like documentation. It's a good idea to look at the diff twice: one for the general picture and another for the details.
+Before you start any review, make sure to understand the requirements and look at the tests, they should be like documentation. It's a good idea to look at the diff twice: one for the general picture and another for the details.
 
-* Be humble: We all have something to learn
+* Be humble: We all have something to learn.
 * Take out the person when giving feedback. Remember you are reviewing the code, not the author.
-* Be clear: You may be reviewing code from juniors, mid-level or seniors. Even from non native speakers of your language. Everybody doesn’t have your same amount of experience. Obvious things for you aren’t obvious for somebody else. 
+* Be clear: You may be reviewing code from juniors, mid-level or seniors. Even from non-native speakers of your language. Everybody doesn’t have your same level of experience. Obvious things for you aren’t obvious for somebody else. 
 * Always give at least one positive remark. For example: _It looks good to me (LGTM)_
 * Use questions instead of commands or orders. For example, _Could this be changed?_ vs _Change it_
 * Use "we" instead of "you"
-* Instead of showing an ugly code, teach. Link to resource to explain even more. For example: blog posts and StackOverflow questions.
-* Review only the code that has changed
-* Find bugs while reading the code, instead of style issues
+* Instead of showing an ugly code, teach. Link to resources to explain even more. For example: blog posts and StackOverflow questions.
+* Review only the code that has changed.
+* Find bugs while reading the code, instead of style issues.
 
 ## For the reviewee
 
 * Don't take it personal. It's the code under review, not you
 * Find in every review an opportunity to learn
-* Make sure the reviewer have enough context to review. For example: write a description of your PR,  what it does, what decision you made
-* Keep all the discussion online. If you contacted the reviewer by chat or email, bring some relevant comments online
+* Make sure the reviewer have enough context to review. For example: write a description of your PR,  what it does, what decisions you made
+* Keep all the discussion online. If you contacted the reviewer by chat or email, bring relevant comments online
 
 ## For team management
 
 * Code reviews should be the highest priority
-* Code reviews are as important as writing code. They take time too. Make sure to add code review to your estimates
-* Make someone familiar with the code base review it
+* Code reviews are as important as writing code. They take time too. Make sure to add code reviews to your estimates
+* Make someone familiar with the code review it
 * Have at least two reviewers. For example, pick one reviewer, then he will pick another one until the two of them agree
 
-You may feel frustrated with code reviews, either reviewer or reviewee. Reviews could end up being a discussion about styling issues. But, be humble and nice. Every code review is a chance to learn something new.
+You may feel frustrated with code reviews, either as reviewer or reviewee. Reviews could end up being a discussion about styling issues. _I know..._ But, be humble and nice! Every code review is a chance to learn something new.
 
 Sources:
 
