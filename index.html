@@ -12,7 +12,9 @@ title: Home
       </a>
     </h1>
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+    {% include tags_for_page.html %}
+
+    <span class="post-date">{{ post.date | date_to_string }} {{ tags_content }}</span>
 
     {% if post.layout == 'presentation' and post.description %}
         {{ post.description }}
