@@ -3,6 +3,8 @@ layout: post
 title: Two CSharp idioms
 ---
 
+> [Another Two C# idioms - Part 2]({% post_url 2020-07-28-AnotherTwoCSharpIdioms %})
+
 Two useful C# idioms you can find and its alternative solutions.
 
 * **Instead of lots of or’s, use an array**. You can find this code when checking preconditions or validating objects.
