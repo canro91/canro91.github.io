@@ -1,6 +1,7 @@
 ---
 layout: post
 title: <em>#BugOfTheDay</em> Deserializing a json string, a horror debugging session
+tags: bugoftheday csharp
 ---
 
 ## Problem 

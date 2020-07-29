@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Pragmatic Thinking and Learning&colon; Three takeaways
+tags: books learning
 ---
 
 This books sits between learning and programming. It's like a learning guide for developers. Well, it's more than that. It starts with an expertise model, moves to an analogy of how the brain works until how to capture new ideas and organize your learning.

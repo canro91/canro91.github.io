@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Ultralearning&colon; Takeaways
+tags: books learning
 ---
 
 Scott Young describes in Ultralearning the strategy behind his own challenges, like "MIT Challenge in 1 year" and "A year without English". Also, he reveals the methods from some ultralearners, like Benny Lewis with his "Fluent in 3 Month" projects. _What is it all about?_

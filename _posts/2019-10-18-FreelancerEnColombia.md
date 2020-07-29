@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Trámites para ser un desarrollador independiente en Colombia
+tags: career
 ---
 
 Quieres ser un trabajador independiente? Dejaste de tener la calidad de empleado para ser independiente? Trabajas desde casa para una empresa extranjera? Ahora que has dado el paso hacia tu independencia, hay un par de cosas que tienes que hacer que antes eran responsabilidad de tu empleador y que ahora son tuyas.

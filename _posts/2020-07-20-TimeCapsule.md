@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Programming Time Capsule
+tags: career interview
 ---
 
 _Future developers, this is how programming looks like in 2020_

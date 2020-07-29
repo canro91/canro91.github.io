@@ -1,6 +1,7 @@
 ---
 layout: post
 title: A Review of Two Clean Code Books
+tags: books
 ---
 
 ## Clean Code

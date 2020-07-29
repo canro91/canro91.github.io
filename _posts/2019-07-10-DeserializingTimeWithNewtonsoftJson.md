@@ -1,6 +1,7 @@
 ---
 layout: post
 title: <em>#BugOfTheDay</em> Back to the future, date and time with Newtonsoft.Json
+tags: bugoftheday csharp
 ---
 
 ## Problem

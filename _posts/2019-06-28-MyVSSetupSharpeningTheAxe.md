@@ -2,6 +2,7 @@
 layout: post
 title: My Visual Studio Setup, sharpening the axe
 description: Visual Studio 2019 is out. These are my settings, layout and extensions
+tags: productivity visualstudio
 ---
 
 Visual Studio 2019 is out! Either you installed it from scratch or you updated from a previous version, it's time to sharpen your axe! Or maybe, you came back from your vacations and the IT team decided to uninstall previous versions of Visual Studio, leaving the new one without any of your customizations. _This is a true story, it happened to a friend of a friend of mine._

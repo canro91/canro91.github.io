@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How to version control your projects with Git. A guide to time travel
+tags: tutorial git
 ---
 
 Have you ever tried to version control your projects by appending dates on names? Are you doing it now? I have to confess I did it back in school with my class projects. If you're doing it this way. There is a better way! Read on!

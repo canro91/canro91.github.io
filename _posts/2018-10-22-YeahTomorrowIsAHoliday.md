@@ -2,6 +2,7 @@
 layout: post
 title: Yeah, tomorrow is a holiday
 description: Is it a holiday today? How do add only working days to a date? An alternative to handle holidays and working days in C# using DateTimeExtensions
+tags: tutorial showdev csharp
 ---
 
 Have you ever had to add only working days to a given date? Or do you have to do it now? For example, users might have to confirm an action after a given number of working days.

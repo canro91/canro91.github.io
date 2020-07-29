@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How to create a CRUD API with ASP.NET Core and Insight.Database
+tags: tutorial showdev asp.net
 ---
 
 A common task when working with web applications is querying the database. You want to store and retrieve any information from your database. If you choose to use [ADO.NET](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/), you end up writing boilerplate code. But, you could use a ORM instead.

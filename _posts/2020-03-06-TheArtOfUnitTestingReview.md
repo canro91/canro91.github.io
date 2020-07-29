@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The Art of Unit Testing&colon; Four Takeaways
+tags: books
 ---
 
 This is THE book to learn how to write unit tests. It starts from the definition of an unit test to how to implement them at your organization. Although, it covers extensively the subject, it doesn't advocate writing unit tests before or after the production code.

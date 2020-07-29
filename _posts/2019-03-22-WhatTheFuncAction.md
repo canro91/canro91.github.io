@@ -2,6 +2,7 @@
 layout: post
 title: What the Func, Action?
 description: What's the difference between Func and Action? How do I use them? This is a frequently asked question and a tricky subject. Here it is another take.
+tags: tutorial csharp
 ---
 
 What's the difference between `Func` and `Action`? It all starts with delegates. A delegate is a pointer to a method with certain parameters and possibly a return type. In other words, it's a variable that can hold any method with that signature. `Func` and `Action` are built-in delegate types.

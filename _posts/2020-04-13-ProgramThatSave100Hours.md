@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Programs that saved you 100 hours?
+tags: productivity git visualstudio
 ---
 
 Today I saw this HN thread on [Programs that saved you 100 hours](https://news.ycombinator.com/item?id=22849208). So I want to show some of the tools that have saved me a lot of time. _Probably not 100 hours yet._

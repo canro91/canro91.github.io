@@ -1,7 +1,8 @@
 ---
 layout: post
 title: ASP.NET Core Guide for ASP.NET Framework Developers
-excerpt: ASP.NET Core is here to stay. Let's see what has changed from the ASP.NET you've known for years
+description: ASP.NET Core is here to stay. Let's see what has changed from the ASP.NET you've known for years
+tags: tutorial asp.net 
 ---
 
 If you are a C# developer, chances are you have heard about this new .NET Core thing and the new version of the ASP.NET framework. You can continue to work with ASP.NET Web API or any other framework from the old ASP.NET you've known for years. But, ASP.NET Core is here to stay.

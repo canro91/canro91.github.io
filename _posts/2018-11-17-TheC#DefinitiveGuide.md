@@ -2,6 +2,7 @@
 layout: post
 title: The C# Definitive Guide
 description: A very opinionated guide to C# for beginners and intermediate developers
+tags: tutorial csharp
 ---
 
 Hello, if you are a beginner programmer or you just took a programming course at school, and you want to find a pathway to be _"fluent"_ in C#, this is the right place for you!

@@ -2,6 +2,7 @@
 layout: post
 title: I need some space, the database said
 description: How to select and post-process database records with Insight.Database
+tags: tutorial showdev csharp
 ---
 
 Imagine one day you come to your workplace and you get this new task. You have to connect your code to a legacy database system to extract some data, do some processing and notify back. But, you realize all string fields are rigth-padded with whitespace. What can you do now?

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Postfix Notation&colon; An Interview Exercise
+tags: tutorial interview csharp
 ---
 
 You are applying for your first position or for a new job. You have already sent your CV and your LinkedIn profile. You have gone through initial interviews. Now, the technical interview. You are asked to complete a coding exercise. Maybe, you are nervous because there are some algorithms, a method in the standard library or a pattern you forgot. Relax! It's time to show your skills!

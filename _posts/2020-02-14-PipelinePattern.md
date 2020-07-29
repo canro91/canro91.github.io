@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Pipeline pattern&colon; Perform tasks with an assembly line of steps
+tags: tutorial csharp
 ---
 
 > TL;DR Pipeline pattern is like the enrich pattern with factories. Pipeline = Command + Factory + Enricher

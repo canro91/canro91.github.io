@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Time complexity&colon; An interview exercise II
+tags: interview tutorial csharp
 ---
 
 You nailed it at your [first interview]({% post_url 2019-08-02-PostfixNotationAnInterviewExercise %}). You impressed the interviewer with your answers. Now, another interview. This time, it's the interviewer's boss turn.

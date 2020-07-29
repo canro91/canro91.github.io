@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Five lessons after five years as a software developer
+tags: career
 ---
 
 Five years of experience. Two companies. Two positions. These are 5 lessons I learned:

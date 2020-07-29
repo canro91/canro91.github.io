@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Rotating an array&colon; An interview exercise III
+tags: tutorial interview csharp
 ---
 
 There you are. You start to feel confident in your interview. You have already gone through [some]({% post_url 2019-08-02-PostfixNotationAnInterviewExercise %}) [exercises]({% post_url 2019-08-29-TimeComplexity %}). Now, the interviewer challenges you with a new exercise. So, you open a new tab or create a new file in your editor. And, start!

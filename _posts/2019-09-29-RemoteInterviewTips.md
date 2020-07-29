@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Remote interview. Here I go
+tags: interview career
 ---
 
 Are you applying for a remote position? Or for a on-site position but the interviewer is on another branch outside your city? Are preparing yourself for future interviews? These tips are for you. Read on!

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Parsinator, a tale of a pdf parser
+tags: tutorial showdev csharp
 ---
 
 One day your boss asks you to read a pdf file to extract relevant information to later process it in your main software. What can you do now? How in the world are you going to read the pdf file?

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How I started blogging
+tags: career writing
 ---
 
 ### _Once upon a time, a junior engineer at his first job_

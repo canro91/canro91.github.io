@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Git guide for TFS users
+tags: tutorial git
 ---
 
 Dear developer, you're working in a project that uses Team Foundation Server, TFS. You're used to check-out and check-in your files. You feel comfortable with it. But, now you have moved to a different project that uses Git or your company has decided to migrate to Git. _Where are my changesets now? How do I check-out my files? How these two things relate to each other?_–you ask. Keep reading!

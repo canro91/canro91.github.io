@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Tips and Tricks for Better Code Reviews
+tags: productivity career
 ---
 
 Code reviews are a great tool to indentify bugs before the code head to the QA team or the clients. Sometimes you need another pair of eyes to spot unnoticed things. Also, they are great to keep the code clean as the project moves forward, spread knowledge inside a team and mentor newcomers or juniors. But, it's true that code reviews can be terse and frustating for the reviewer and the reviewee. No worries! Here, you have a collected list of tips and tricks for better code reviews.

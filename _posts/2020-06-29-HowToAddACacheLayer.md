@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How to add an in-memory and a Redis-powered cache layer with ASP.NET Core 3
+tags: tutorial asp.net csharp
 ---
 
 Imagine you have a service `SettingsService` that makes a REST request with a `HttpClient`. This service calls a microservice for the configurations of a property. But, it takes a couple of seconds to respond and it is accessed frequently. It would be a great to have this value stored somewhere else for faster respond times. _Let's see how to use caching for this!_

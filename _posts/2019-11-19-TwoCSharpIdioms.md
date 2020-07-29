@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Two CSharp idioms
+tags: tutorial csharp
 ---
 
 > [Another Two C# idioms - Part 2]({% post_url 2020-07-28-AnotherTwoCSharpIdioms %})

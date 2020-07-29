@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The Clean Coder&colon; Three Takeaways
+tags: books
 ---
 
 The Clean Coder is the second book on the Clean Code trilogy. It should be a mandatory reading for any professional programmer. This book isn't about programming in itself. It's about the professional practice of programming. It covers from what is professionalism to testing strategies, pressure and time management.

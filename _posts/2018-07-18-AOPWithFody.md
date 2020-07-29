@@ -2,6 +2,7 @@
 layout: post
 title: When logging met AOP with Fody
 description: Are you tired of manually logging all entry and exit points of your code? How to use Fody to log every entry and exit method!
+tags: tutorial showdev csharp
 ---
 
 How many times have you had to log the entry and the exit of every single method in a service or in a class? So, your code ends up entangled with lots of `Log.XXX` lines. Something like this:
