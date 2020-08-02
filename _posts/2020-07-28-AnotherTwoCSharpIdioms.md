@@ -4,7 +4,7 @@ title: Another two C# idioms
 tags: tutorial csharp
 ---
 
-> [Two C# idioms - Part 1]({% post_url 2019-11-19-TwoCSharpIdioms %})
+> [Two C# idioms - Part 1]({% post_url 2019-11-19-TwoCSharpIdioms %}), [Another Two C# idioms - Part 3]({% post_url 2020-08-01-AnotherTwoCSharpIdiomsPart3 %})
 
 ### Separate versions of commands and events using namespaces and static classes
 
