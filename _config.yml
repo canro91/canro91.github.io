@@ -26,7 +26,3 @@ linkedin:         https://linkedin.com/in/iamcesaraguirre
 plugins:
   - jekyll-paginate
   - jekyll-gist
-  - jekyll/tagging
-
-tag_page_layout: tag_page
-tag_page_dir: tag
