@@ -4,13 +4,13 @@ title: Tips and Tricks for Better Code Reviews
 tags: productivity career
 ---
 
-Code reviews are a great tool to indentify bugs before the code head to the QA team or the clients. Sometimes you need another pair of eyes to spot unnoticed things. Also, they are great to keep the code clean as the project moves forward, spread knowledge inside a team and mentor newcomers or juniors. But, it's true that code reviews can be terse and frustating for the reviewer and the reviewee. No worries! Here, you have a collected list of tips and tricks for better code reviews.
+Code reviews are a great tool to identify bugs before the code head to the QA team or the clients. Sometimes you need another pair of eyes to spot unnoticed things. Also, code reviews are great to keep the code clean as the project moves forward. They help to spread knowledge inside a team and mentor newcomers or juniors. But, it's true that code reviews can be terse and frustrating for the reviewer and the reviewee. _No worries!_ Here, you have a collected list of tips and tricks for better code reviews.
 
 > TL;DR For the reviewer: be nice and remember you are reviewing the code, not the writer. For the reviewee: don't take it personal, every code review is an opportunity to learn. For all the dev team: reviews take time too, add them to the estimates.
 
 ## What to look for in a code review?
 
-_What should I look at?_ You're new to code reviews and you don't know what it's going to be review in the code you wrote? Or you have been asked to review somebody else's code, and you don't know what to look for? You can take a look at this:
+_What should I look at?_ Are you new to code reviews and you don't know what it's going to be reviewed in the code you wrote? Or have you been asked to review somebody else's code and you don't know what to look for? You can take a look at this:
 
 Does the code...
 
@@ -25,7 +25,7 @@ Does the code...
 
 ## For the reviewer
 
-Before you start any review, make sure to understand the requirements and look at the tests, they should be like documentation. It's a good idea to look at the diff twice: one for the general picture and another for the details.
+Before you start any review, make sure to understand the requirements. Start by looking at the tests, they should be like documentation. It's a good idea to look at the diff twice: one for the general picture and another for the details.
 
 * Be humble: We all have something to learn.
 * Take out the person when giving feedback. Remember you are reviewing the code, not the author.
@@ -41,17 +41,17 @@ Before you start any review, make sure to understand the requirements and look a
 
 * Don't take it personal. It's the code under review, not you
 * Find in every review an opportunity to learn
-* Make sure the reviewer have enough context to review. For example: write a description of your PR,  what it does, what decisions you made
+* Make sure the reviewer have enough context to review the code. For example: write a description of your PR,  what it does, what decisions you made
 * Keep all the discussion online. If you contacted the reviewer by chat or email, bring relevant comments online
 
 ## For team management
 
 * Code reviews should be the highest priority
 * Code reviews are as important as writing code. They take time too. Make sure to add code reviews to your estimates
-* Make someone familiar with the code review it
+* Have as reviewer someone familiar with the code being reviewed
 * Have at least two reviewers. For example, pick one reviewer, then he will pick another one until the two of them agree
 
-You may feel frustrated with code reviews, either as reviewer or reviewee. Reviews could end up being a discussion about styling issues. _I know..._ But, be humble and nice! Every code review is a chance to learn something new.
+You may feel frustrated with code reviews, either as reviewer or reviewee. Sometimes, reviews could end up being a discussion about styling issues. _I know..._ But, be humble and nice! Every code review is a chance to learn something new.
 
 Sources:
 
