@@ -41,6 +41,10 @@ If you don’t know where to start reading or if you want to find something to r
 * [Postfix Notation: An Interview Exercise]({% post_url 2019-08-02-PostfixNotationAnInterviewExercise %})
 * My take on the difference between [Func and Action]({% post_url 2019-03-22-WhatTheFuncAction %})
 * My take on the [Pipeline pattern]({% post_url 2020-02-14-PipelinePattern %})
+
+#### Productivity
+
+* [Programs that saved you 100 hours]({% post_url 2020-04-13-ProgramThatSave100Hours %})
 * Plugins and settings for [my VS setup]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %})
 
 #### _BugOfTheDay_
@@ -50,8 +54,9 @@ If you don’t know where to start reading or if you want to find something to r
 
 #### Books
 
+* [The Clean Coder]({% post_url 2020-06-15-CleanCoder %})
 * [Pragmatic Thinking and Learning]({% post_url 2020-05-07-PragmaticThinkingAndLearning %})
 * [The Art of Unit Testing]({% post_url 2020-03-06-TheArtOfUnitTestingReview %})
-* [The Clean Coder]({% post_url 2020-06-15-CleanCoder %})
+
 
 Thanks for reading!
