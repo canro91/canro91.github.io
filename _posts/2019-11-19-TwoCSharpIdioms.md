@@ -2,9 +2,8 @@
 layout: post
 title: Two CSharp idioms
 tags: tutorial csharp
+series: C# idioms
 ---
-
-> [Another Two C# idioms - Part 2]({% post_url 2020-07-28-AnotherTwoCSharpIdioms %}), [Another Two C# idioms - Part 3]({% post_url 2020-08-01-AnotherTwoCSharpIdiomsPart3 %})
 
 Two useful C# idioms you can find and its alternative solutions.
 

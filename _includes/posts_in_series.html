@@ -1,0 +1,19 @@
+{% assign post = page %}
+{% if post.series %}
+  <blockquote>
+    <p>This post is part of the series <em>&quot;{{ post.series | replace: '-', ' '| capitalize }}&quot;</em></p>
+    <ol>
+    {% for a_post in site.posts reversed %}
+      {% if a_post.series == post.series %}
+      <li>
+        {% if a_post.url == post.url %}
+          <a href="{{ a_post.url }}">{{ a_post.title }}</a> <em>This post</em>
+        {% else %}
+          <a href="{{ a_post.url }}">{{ a_post.title }}</a>
+        {% endif %}
+      </li>
+      {% endif %}
+    {% endfor %}
+    </ol>
+  </blockquote>
+{% endif %}

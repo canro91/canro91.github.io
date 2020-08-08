@@ -16,6 +16,8 @@ title: Home
 
     <span class="post-date">{{ post.date | date_to_string }} {{ tags_content }}</span>
 
+    {% include posts_in_series.html %}
+
     {% if post.layout == 'presentation' and post.description %}
         {{ post.description }}
     {% else %}

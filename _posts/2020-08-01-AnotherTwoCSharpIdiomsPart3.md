@@ -2,9 +2,8 @@
 layout: post
 title: Another two C# idioms - Part 3
 tags: tutorial csharp
+series: C# idioms
 ---
-
-> [Two C# idioms - Part 1]({% post_url 2019-11-19-TwoCSharpIdioms %}), [Another Two C# idioms - Part 2]({% post_url 2020-07-28-AnotherTwoCSharpIdioms %})
 
 * **Instead of checking if a dictionary contains an item before adding it, use `TryAdd`**. It will return if the item was added or not. Unlike `Add`, if the given key is already in the dictionary, `TryAdd` won't throw any exception. It will simply do nothing.
 
