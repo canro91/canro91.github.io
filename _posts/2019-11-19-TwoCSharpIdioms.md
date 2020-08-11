@@ -22,7 +22,7 @@ if (allowedValues.Any(t => myVar == t))
 
 If you need to validate a new value, you add it in the array instead of adding a new condition in the `if` statement.
 
-* **Instead of lots of if to find a value, use an array of** `Func` and pick the first value different from `null` or a default value. You can find this code when finding a value among multiple choices.
+* **Instead of lots of `if`'s to find a value, use an array of `Func`** and pick the first value different from `null` or a default value. You can find this code when finding a value among multiple choices.
 
 ```csharp
 var someKey = FindKey();
