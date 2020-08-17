@@ -4,15 +4,15 @@ title: How to create a CRUD API with ASP.NET Core and Insight.Database
 tags: tutorial showdev asp.net
 ---
 
-A common task when working with web applications is querying the database. You want to store and retrieve any information from your database. If you choose to use [ADO.NET](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/), you end up writing boilerplate code. But, you could use a ORM instead.
+A common task when working with web applications is querying the database. You want to store and retrieve any information from your database. If you choose to use [ADO.NET](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/), you end up writing boilerplate code. But, you could use an ORM instead.
 
-## Why to use a ORM?
+## Why to use an ORM?
 
-A ORM, Object-relational mapping,  is a library that translates between your program and your database. It converts objects to database records and vice-versa.
+An ORM, Object-relational mapping, is a library that translates between your program and your database. It converts objects to database records and vice-versa.
 
 ORMs vary in size and features. You can find ORMs that create and maintain your database objects and generate SQL statements. Also, you can find micro-ORMs that make you write SQL queries.
 
-You can roll your own database access layer. But, a ORM helps you to:
+You can roll your own database access layer. But, an ORM helps you to:
 
 * Open and close connections, commands and readers
 * Parse query results into C# objects
@@ -93,7 +93,7 @@ public class ProductController : ControllerBase
 }
 ```
 
-Now, if you run the project and make a GET request to `https://localhost:44343/api/Product`. You will get the two result values. The port number may be different for you.
+Now, if you run the project and make a GET request to `https://localhost:44343/api/Product`. You will get the two result values. _The port number may be different for you._
 
 ```json
 [
