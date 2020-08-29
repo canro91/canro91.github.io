@@ -64,7 +64,7 @@ This is a relationship between TFS and Git concepts.
 
 Please, do not be afraid of using the command line and memorizing lots of commands. There are  Git clients and out-of-the-box integrations (or plugins) for Git in most popular IDEs. For example, Visual Studio and Visual Studio Code support Git out-of-the-box, and [SourceTree](https://www.sourcetreeapp.com/) is a Git client you can dowload for free.
 
-For a more in-depth guide to version control with Git, read my guide on [How to version control your projects with Git]({% post_url 2020-05-29-HowToVersionControl %}).
+> For a more in-depth guide to version control with Git, read my guide on [How to version control your projects with Git]({% post_url 2020-05-29-HowToVersionControl %}).
 
 _Happy Git time!_
 
