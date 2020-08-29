@@ -29,7 +29,7 @@ A version control system, among other things, allows to
 
 To better understand it, let’s use an analogy. **A version control system is a time machine**. With it you can go backwards in time, create timelines and merge two separate timelines. You don’t travel to historical events in time, but to checkpoints in your project.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/TeamTimeCar.com-BTTF_DeLorean_Time_Machine-OtoGodfrey.com-JMortonPhoto.com-04.jpg/640px-TeamTimeCar.com-BTTF_DeLorean_Time_Machine-OtoGodfrey.com-JMortonPhoto.com-04.jpg" width="800" height="400" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/TeamTimeCar.com-BTTF_DeLorean_Time_Machine-OtoGodfrey.com-JMortonPhoto.com-04.jpg/640px-TeamTimeCar.com-BTTF_DeLorean_Time_Machine-OtoGodfrey.com-JMortonPhoto.com-04.jpg" alt="DeLorean time machine" width="800" height="400" />
 
 ## Centralized vs Distributed
 
@@ -49,7 +49,7 @@ Up to this point, Git doesn’t need any further introduction. From its [officia
 
 You can install Git from it’s official page. You can find instructions to install it using package managers for all major OS's. 
 
-Before starting to work, you need some one-time setups. You need to configure a name and an email. This name and email will appear in any file history you have created or modified. Let's go to the command line 
+Before starting to work, you need some one-time setups. You need to configure a name and an email. This name and email will appear in the file history of any file you have created or modified. Let's go to the command line 
 
 ```bash
 # Replace "John Doe" and "johndoe@example.com" with your own name and email
@@ -92,7 +92,7 @@ $ git add README
 $ git commit -m 'Add README file'
 ```
 
-Now Git knows about a file called `README`. You have a commit (a checkpoint) in your project you can go back to. Git has stored your changes. This commit has an unique code (a SHA-1) and a author.
+Now Git knows about a file called `README`. You have a commit (a checkpoint) in your project you can go back to. Git has stored your changes. This commit has an unique code (a SHA-1) and an author.
 
 You can use `log` to see all commits created so far.
 
@@ -105,7 +105,7 @@ $ git log
 
 The staging area or index is a concept that makes Git different. This is an intermediate area where you can review your files before committing them. It’s like making your files wait in a line before keeping track of them. This allows you to commit only a group of files or portions of a single file.
 
-If you’re coming from TFS, notice you need two steps to store your changes. These are: `add` to include files into the staging area and `commit` to create a checkpoint from them.
+If you’re coming from TFS, notice you need two steps to store your changes. These are: `add` to include files into the staging area and `commit` to create a checkpoint from them. With TFS, you only "check-in" your files.
 
 ### Ignoring files
 
@@ -125,7 +125,7 @@ Git won’t notice any files from the patterns included in the `.gitignore` file
 
 ### Commit messages
 
-> _Please, please don’t use “uploading changes” or any variations._
+> _Please, please don’t use “uploading changes” or any variations on your commit messages._
 
 A [good commit message](https://thoughtbot.com/blog/5-useful-tips-for-a-better-commit-message) should tell why the change is needed, what problem it fixes and any side effect it might have.
 
@@ -138,6 +138,12 @@ Depending on your workplace or project, you have to follow a naming convention f
 ### Branching
 
 Using the time machine analogy, **a branch is a separate timeline**. Chances in a timeline don’t interfere with changes other timelines. Timelines are called **branches**. By convention, the main timeline is called **master**.
+
+> Master/slave methaphor is discouraged these days. Starting from [Git 2.28](https://github.blog/2020-07-27-highlights-from-git-2-28/#introducing-init-defaultbranch), when you run `git init`, Git will look for the configuration value `init.defaultBranch` to replace the hard-coded name. 
+> 
+> For existing repositories, you can follow [this Scott Hanselman post](https://www.hanselman.com/blog/EasilyRenameYourGitDefaultBranchFromMasterToMain.aspx) to rename master to main.
+> 
+> Other alternatives for master are: main, primary or default.
 
 This is one the most awesome Git features. Git branches are lightweight and fast when compared to other VCS. 
 
@@ -235,9 +241,9 @@ No matter what hosting you choose, your code isn't sync automatically with your 
 
 You can [create a repo](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-new-repository) from your GitHub account. Go to `Your Repositories`. You need to use a name and a description. The wizard will give you some instructions to start from scratch or from an existing project.
 
+Then, associate the GitHub endpoint to your local project. Endpoints are called remotes. Now you can upload or push your local changes to the cloud.
+
 ```bash
-# Associate an endpoint to your local project. 
-# Endpoints are called remotes.
 # Replace this url with you own
 $ git remote add origin https://github.com/canro91/GitDemo.git
 # push uploads the local master to a branch called master in the remote too
@@ -247,6 +253,8 @@ $ git push -u origin master
 
 ## Conclusion
 
-_Voilà!_ You have learned the most frequent commands for everyday use. You know how to use Git from the command line. But most of IDE's offer Git integration through plugins or extensions. Now try to use Git from your favorite IDE. If you want to continue to practice these concepts, follow [First Contributions](https://github.com/firstcontributions/first-contributions) to open your first Pull Request. _Happy Git time!_
+_Voilà!_ You have learned the most frequent commands for everyday use. You know how to use Git from the command line. But, most IDE's offer Git integration through plugins or extensions. Now try to use Git from your favorite IDE. If you want to continue to practice these concepts, follow [First Contributions](https://github.com/firstcontributions/first-contributions) to open your first Pull Request. You can use my [Git Demo repository](https://github.com/canro91/GitDemo) too.
+
+_Happy Git time!_
 
 > _Your mission, Jim, should you decide to accept it, is to get the latest changes from your repository. After pushing, clone your project in another folder, change any file and push this change. Next, go back to your first folder, modify another file and try to push. This post will self-destruct in five seconds. Good luck, Jim._
