@@ -4,7 +4,7 @@ title: How to read configuration values in ASP.NET Core
 tags: tutorial asp.net csharp
 ---
 
-ASP.NET Core has brought a lot of new features [compared to ASP.NET Framework](https://canro91.github.io/2020/06/29/HowToAddACacheLayer/), the previous version. It has new project files, a dependency container, [a caching layer](https://canro91.github.io/2020/06/29/HowToAddACacheLayer/), among other features.
+ASP.NET Core has brought a lot of new features [compared to ASP.NET Framework](https://canro91.github.io/2020/03/23/GuideToNetCore/), the previous version. It has new project files, a dependency container, [a caching layer](https://canro91.github.io/2020/06/29/HowToAddACacheLayer/), among other features.
 
 Configuration has changed too. There is no `ConfigurationManager` to read configuration values. ASP.NET Core has introduced json files and configuration objects. _Let's see how to use the Options pattern to read and overwrite configuration values with ASP.NET Core._
 
