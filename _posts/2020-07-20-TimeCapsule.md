@@ -10,7 +10,7 @@ _Future developers, this is how programming looks like in 2020_
 
 GitHub has archived all the public repositories until July 2020. It was part of his [archive initiative](https://archiveprogram.github.com/). You have earned a batch on your GitHub profile, if any of your repositories got into a vault in the Arctic. It will show future generations how code was in 2020. But it doesn't show some of the practices around it.
 
-Dear developers from the future, this is how is programming like in 2020.
+Dear developers from the future, this is how coding and interviewing look like in 2020.
 
 ## On coding
 
@@ -24,7 +24,7 @@ Dear developers from the future, this is how is programming like in 2020.
 * Everybody when stocked use StackOverflow. It's a place to post questions and receive answers.
 * Null is still a problem in mainstream languages.
 * When things broken, we say _"It works on my machine"_. Then, we came up with containers. So we can ship developer's machines to the clients.
-* Most developers upload and share their code on GitHub. Oh yes! Git is the most popular version control system. There's also GitLab and BitBucket.
+* Most developers upload and share their code on GitHub. Oh yes! Git is the most popular version control system. There are also GitLab and BitBucket.
 * Every day, we have a short meeting called "daily meeting" as part of a ceremony called SCRUM methodology. Everyone call himself "Agile".
 * I'm writing this from a laptop with a 1.8GHz 4-Core processor, 16GB of memory, 500GB of hard drive and 6-hour battery life.
 

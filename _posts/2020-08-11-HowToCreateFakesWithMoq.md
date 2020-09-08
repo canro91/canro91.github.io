@@ -83,6 +83,6 @@ For Moq, `MockRepository` is a factory of mocks. You can verify all mocks create
 
 ### Conclusion
 
-Moq is a great library! It keeps its promise. It's an straight-forward library to setup dependencies in your tests. You need to know a few method to start using it: `Setup`, `Returns`, `Throws` and `Verify`. It has chosen to lower the barrier of writing tests. Give it a try! _To mock or not to mock!_
+Moq is a great library! It keeps its promise. It's an straight-forward library to setup dependencies in your tests. You need to know a few methods to start using it: `Setup`, `Returns`, `Throws` and `Verify`. It has chosen to lower the barrier of writing tests. Give it a try! _To mock or not to mock!_
 
 _Happy mocking time!_

@@ -49,7 +49,7 @@ Up to this point, Git doesn’t need any further introduction. From its [officia
 
 You can install Git from it’s official page. You can find instructions to install it using package managers for all major OS's. 
 
-Before starting to work, you need some one-time setups. You need to configure a name and an email. This name and email will appear in the file history of any file you have created or modified. Let's go to the command line 
+Before starting to work, you need some one-time setups. You need to configure a name and an email. This name and email will appear in the file history of any file you create or modify. Let's go to the command line 
 
 ```bash
 # Replace "John Doe" and "johndoe@example.com" with your own name and email

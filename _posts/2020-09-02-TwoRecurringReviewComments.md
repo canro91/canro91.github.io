@@ -4,7 +4,7 @@ title: How I got rid of two recurring code review comments?
 tags: productivity git visualstudio
 ---
 
-During code review, one or two of your coworkers look at your code to spot any potential issues and to check if the code follows existing conventions. Sometimes, code review ends up checking style issues. _Brackets in the same line, disorganized using statements, extra blank lines_. You can use extensions or linters to format your code.
+During code review, one or two of your coworkers look at your code to spot any potential issues and to check if the code follows existing conventions. Sometimes, code review ends up checking style issues. _Brackets in the same line, disorganized using statements, extra blank lines_. You can use extensions on your IDE or linters to format your code.
 
 For a project I was working on, **I had to include the ticket number in every commit message and add `Async` suffix to all asynchronous C# methods**. I used a Git hook to add the ticket number in the commit messages. And, an `.editorconfig` file (and, alternatively an extension) to raise an error if the `Async` suffix was missed.
 

@@ -6,7 +6,10 @@ tags: productivity career
 
 Code reviews are a great tool to identify bugs before the code head to the QA team or the clients. Sometimes you need another pair of eyes to spot unnoticed things. Also, code reviews are great to keep the code clean as the project moves forward. They help to spread knowledge inside a team and mentor newcomers or juniors. But, it's true that code reviews can be terse and frustrating for the reviewer and the reviewee. _No worries!_ Here, you have a collected list of tips and tricks for better code reviews.
 
-> TL;DR For the reviewer: be nice and remember you are reviewing the code, not the writer. For the reviewee: don't take it personal, every code review is an opportunity to learn. For all the dev team: reviews take time too, add them to the estimates.
+> TL;DR
+> 1. For the reviewer: be nice and remember you are reviewing the code, not the writer.
+> 2. For the reviewee: don't take it personal, every code review is an opportunity to learn.
+> 3. For all the dev team: reviews take time too, add them to the estimates.
 
 ## What to look for in a code review?
 
