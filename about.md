@@ -44,6 +44,7 @@ If you don’t know where to start reading or if you want to find something to r
 
 #### Productivity
 
+* [Just Vim It! Learning Vim For Fun and Profit]({% post_url 2020-09-14-LearnVimForFunAndProfit %}) I wrote this post as a Guest Writer for [exceptionnotfound.net](https://exceptionnotfound.net/learning-vim-for-fun-and-profit/)
 * [Programs that saved you 100 hours]({% post_url 2020-04-13-ProgramThatSave100Hours %})
 * Plugins and settings for [my VS setup]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %})
 
