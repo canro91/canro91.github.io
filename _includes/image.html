@@ -1,0 +1,17 @@
+{% capture imagePath %}{{ page.path | replace: '_posts/', '' | replace: '.md', '' }}/{{ include.name }}{% endcapture %}
+{% if include.caption %}
+<figure>
+    <img src="/assets/posts/{{ imagePath }}"
+        {% if include.alt %} alt="{{ include.alt }}" {% endif %}
+        {% if include.width %} width="{{ include.width }}" {% endif %}
+        {% if include.height %} height="{{ include.height }}" {% endif %}
+    />
+    <figcaption>{{ include.caption }}</figcaption>
+</figure>
+{% else %}
+<img src="/assets/posts/{{ imagePath }}"
+    {% if include.alt %} alt="{{ include.alt }}" {% endif %}
+    {% if include.width %} width="{{ include.width }}" {% endif %}
+    {% if include.height %} height="{{ include.height }}" {% endif %}
+/>
+{% endif %}

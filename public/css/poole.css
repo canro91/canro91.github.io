@@ -233,6 +233,16 @@ img {
   border-radius: 5px;
 }
 
+figure img {
+  margin: 0 0 .5rem;
+}
+
+figcaption {
+  font-size: 0.7rem;
+  text-align: center;
+  opacity: .8;
+}
+
 /* Tables */
 table {
   margin-bottom: 1rem;
