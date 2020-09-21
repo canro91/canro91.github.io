@@ -8,12 +8,12 @@ You are applying for your first position or for a new job. You have already sent
 
 ## Interview Question
 
-> Write a C# program to evaluate an postfix mathematical expression. For example, `1 1 +`, `1 1 1 + +`, `1 1 + 2 3 * -`.
+> Write a C# program to evaluate a postfix mathematical expression. For example, `1 1 +`, `1 1 1 + +`, `1 1 + 2 3 * -`.
 
 Before starting to code:
 
 * Understand the problem
-* Come up with some examples. What's the simplest case? Edge cases?
+* Come up with some examples. What's the simplest case? Any edge cases?
 * Ask clarification questions.
 * Think out loud your solution.
 * Make assumptions on the input.
@@ -23,9 +23,9 @@ Before starting to code:
 From Math and some programming languages, you are used to the **infix notation**. You place the operator between the two operands, `a + b` and use parenthesis to group operations, `(a + b)*c`. But, **postfix notation** places the operator after the two operands, `a b +` , and doesn't use any parenthesis, `a b + c *`, so expressions are evaluated from left to right. For example, `2 3 1 * + 9 -` is equivalent to `(2 + (3 * 1)) - 9`.
 
 
-## Solution Strategy: An Stack
+## Solution Strategy: A Stack
 
-To solve this problem, you need an stack. An stack is a pile-like data structure. Stacks support two operations: add something to the pile, **push**, and remove something from the pile, **pop**. In the solution, an stack will hold values from the input or already computed values.
+To solve this problem, you need a stack. A stack is a pile-like data structure. Stacks support two operations: add something to the pile, **push**, and remove something from the pile, **pop**. In our solution to evaluate a postfix notation, a stack will hold either values from the input or already computed values.
 
 This is the pseudocode to evaluate a postfix expression:
 
@@ -56,7 +56,7 @@ So, this is the evaluation of the given example:
 
 ## Let's CSharp it!!!
 
-Now, head to VS or VSCode  and create a new project:
+Now, head to Visual Studio or Visual Studio Code and create a new project:
 
 ```csharp
 Regex _operandRegex = new Regex(@"-?[0-9]+");
@@ -102,3 +102,5 @@ private static string EvaluateSingleExpression(string value1, string value2, str
     return null;
 }
 ```
+
+_Happy coding!_
