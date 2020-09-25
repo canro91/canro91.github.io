@@ -24,7 +24,11 @@ Don't worry if you haven't started to worked with ASP.NET Core yet. This is a ne
 
 ## Every journey begins with the first step
 
-![toddler's standing in front of beige concrete stair](https://source.unsplash.com/bJhT_8nbUA0/800x400)
+<figure>
+<img src="https://source.unsplash.com/bJhT_8nbUA0/800x400" alt="toddler's standing in front of beige concrete stair" />
+
+<figcaption>Photo by <a href="https://unsplash.com/@tateisimikito?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Jukan Tateisi</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></figcaption>
+</figure>
 
 If you are adventurous, download and install the ASP.NET Core [developer (SDK)](https://dotnet.microsoft.com/download) and create a new empty web project from Visual Studio. These are the files that you get from it.
 
