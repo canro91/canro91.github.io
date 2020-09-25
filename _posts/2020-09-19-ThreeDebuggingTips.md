@@ -19,7 +19,7 @@ One of [my takeaways from the book Pragmatic Thinking and Learning]({% post_url 
 Debugging is thinking. Pen and paper are your friends. But, sometimes you have to explain your problem to somebody else. And, the answer seems to come by magic. _You don't have anyone around?_ Think out loud or explain it to a rubber duck.
 
 <figure>
-<img src="https://source.unsplash.com/LhqLdDPcSV8/800x400" width="800" heigth="400" />
+<img src="https://source.unsplash.com/LhqLdDPcSV8/800x400" width="800" />
 <figcaption>Photo by <a href="https://unsplash.com/@timothycdykes?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Timothy Dykes</a> on <a href="https://unsplash.com/s/photos/debug?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></figcaption>
 </figure>
 
