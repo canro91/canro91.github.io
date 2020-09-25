@@ -30,7 +30,7 @@ A version control system, among other things, allows to
 To better understand it, let’s use an analogy. **A version control system is a time machine**. With it you can go backwards in time, create timelines and merge two separate timelines. You don’t travel to historical events in time, but to checkpoints in your project.
 
 <figure>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/TeamTimeCar.com-BTTF_DeLorean_Time_Machine-OtoGodfrey.com-JMortonPhoto.com-04.jpg/640px-TeamTimeCar.com-BTTF_DeLorean_Time_Machine-OtoGodfrey.com-JMortonPhoto.com-04.jpg" alt="DeLorean time machine" width="800" height="400" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/TeamTimeCar.com-BTTF_DeLorean_Time_Machine-OtoGodfrey.com-JMortonPhoto.com-04.jpg/640px-TeamTimeCar.com-BTTF_DeLorean_Time_Machine-OtoGodfrey.com-JMortonPhoto.com-04.jpg" alt="DeLorean time machine" width="800" />
 
 <figcaption>Photo by <a href="https://commons.wikimedia.org/wiki/File:TeamTimeCar.com-BTTF_DeLorean_Time_Machine-OtoGodfrey.com-JMortonPhoto.com-04.jpg" title="via Wikimedia Commons">JMortonPhoto.com &amp; OtoGodfrey.com</a> / <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA</a></figcaption>
 </figure>

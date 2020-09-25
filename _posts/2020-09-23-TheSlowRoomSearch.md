@@ -53,7 +53,7 @@ When calling the room search from [Postman](https://www.postman.com/), the execu
 | After  | 19.48 17.61 18.65 |
 
 <figure>
-<img src="https://source.unsplash.com/DGa0LQ0yDPc/800x400" height="400" width="800">
+<img src="https://source.unsplash.com/DGa0LQ0yDPc/800x400" width="800">
 <figcaption>Encuentro Guadalupe, El Porvenir, Mexico. <span>Photo by <a href="https://unsplash.com/@manuelmx?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Manuel Moreno</a> on <a href="https://unsplash.com/s/photos/hotel?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
 </figure>
 
