@@ -155,5 +155,10 @@ public Dictionary<string, Dictionary<string, string>> Parse(List<List<String>> l
 
 Finally, with this approach, you or any of your coworkers could reuse the same constructs to parse a new file. You can add new files without coding the whole thing every time you are asked to support a new file. You need to come up with the right skippers and parsers based on the structure of the new file.
 
-PS: All these ideas and other suggestions from my coworkers gave birth to [Parsinator](https://github.com/canro91/Parsinator), a library to turn structured or unstructured text into a header-detail representation. I used Parsinator to connect 4 legacy client softwares to a document API by parsing pdfs and plain text files to input xml files. In the [Sample project](https://github.com/canro91/Parsinator/tree/master/Parsinator.Sample) you can see how to parse a plain-text invoice and a GPS frame. Feel free to take a look at it. All ideas and contributions are more than welcome!
+> PS: All these ideas and other suggestions from my coworkers gave birth to [Parsinator](https://github.com/canro91/Parsinator), a library to turn structured or unstructured text into a header-detail representation.
+>
+> I used Parsinator to connect 4 legacy client softwares to a document API by parsing pdfs and plain text files to input xml files. In the [Sample project](https://github.com/canro91/Parsinator/tree/master/Parsinator.Sample) you can see how to parse a plain-text invoice and a GPS frame. Feel free to take a look at it.
+>
+> All ideas and contributions are more than welcome!
 
+[![canro91/parsinator - GitHub](https://gh-card.dev/repos/canro91/parsinator.svg)](https://github.com/canro91/parsinator)

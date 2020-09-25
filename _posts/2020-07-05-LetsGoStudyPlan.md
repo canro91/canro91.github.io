@@ -80,4 +80,6 @@ Go was design to reduce the clutter and complexity of other languages. Go syntax
 
 > _You can find my own 30-day journey following the resources from this post in [LetsGo](https://github.com/canro91/LetsGo)_
 
+[![canro91/LetsGo - GitHub](https://gh-card.dev/repos/canro91/LetsGo.svg)](https://github.com/canro91/LetsGo)
+
 <img src="https://golang.org/lib/godoc/images/footer-gopher.jpg" width="80" height="50" />

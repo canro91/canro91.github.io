@@ -107,4 +107,8 @@ This is a pattern you may find out there or may need to write. It's an assembly 
 
 I have used and implemented this pattern before. I used it in an invoicing platform to generate documents. Each document type had a different pipeline. Factories generated pipelines with different steps depending on the type of client and operation. Also, I have used this pattern in a reservation management system. In this case, I used separate pipelines to create, modify and cancel reservations.
 
-> PS: You can take a look at [Pipelinie](https://github.com/canro91/Pipelinie) to see more examples. Pipelinie offers abstractions and default implementations to roll your own pipelines and builders. All ideas and contributions are more than welcome!
+> PS: You can take a look at [Pipelinie](https://github.com/canro91/Pipelinie) to see more examples. Pipelinie offers abstractions and default implementations to roll your own pipelines and builders.
+>
+> All ideas and contributions are more than welcome!
+
+[![canro91/Pipelinie - GitHub](https://gh-card.dev/repos/canro91/Pipelinie.svg)](https://github.com/canro91/Pipelinie)
