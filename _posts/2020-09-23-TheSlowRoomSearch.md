@@ -90,7 +90,7 @@ public async Task<IActionResult> RoomSearchAsync([FromQuery] RoomSearchRequest r
 }
 ```
 
-To find any bottlenecks, I wrapped some parts of the code using the `Stopwatch` class. The `Stopwatch` measures the elapsed time of a method. For more details, see [the `Stopwatch` documentation](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch?view=netcore-3.1).
+To find any bottlenecks, I wrapped some parts of the code using the `Stopwatch` class. The `Stopwatch` measures the elapsed time of a method. For more details, see [the Stopwatch documentation](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch?view=netcore-3.1).
 
 On one hand, the log with the execution times  before any change looked like this:
 
@@ -375,7 +375,7 @@ It was the last low-hanging fruit issue I addressed. After the above three chang
 
 ## Conclusion
 
-From this task there are two things I learned. First, don't assume a bottleneck is here or there until you measure it. And, avoid the `N + 1 SELECT` anti-pattern and nested loops on collections.
+From this task, I learned two things. First, don't assume a bottleneck is here or there until you measure it. And, avoid the `N + 1 SELECT` anti-pattern and nested loops on collections.
 
 I didn't mess with any store procedure or query trying to optimize it. But, I had some metrics in place and identified which the store procedures to tune.
 
