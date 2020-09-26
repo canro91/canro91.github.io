@@ -18,7 +18,7 @@ Here's the thing. The difference between `Func` and `Action` is the return type.
 
 ## How to use a method?
 
-You have already used `Func`, if you have used LINQ. But, in general, you use them as _lambda expressions_. A lambda expression is an anonymous method. It’s a shorthand notation to write a method without a name and the parameter types.
+You have already used `Func`, if you have used LINQ. But, in general, you use them as _lambda expressions_. A lambda expression is an anonymous method. It’s a shorthand notation to write a method without a name and only the parameter types.
 
 For example: Find the employees who have worked for more than ten years.
 
@@ -111,6 +111,8 @@ public class ReliableConnection : DbConnectionWrapper
 }
 ```
 
-In summary, `Func` and `Action` represent just the signature of a method. A method with no body. You can define or pass around the body later. Happy Funcy time!
+In summary, `Func` and `Action` represent just the signature of a method. A method with no body. You can define or pass around the body later.
+
+_Happy Funcy time!_
 
 
