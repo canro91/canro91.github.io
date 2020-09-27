@@ -48,6 +48,7 @@ This Visual Studio setup is heavily inspired by [De-Cruft Visual Studio](	https:
 	* [SemanticColorizer](https://github.com/hicknhack-software/semantic-colorizer) It colors fields, classes, methods and more. _Make extension methods italics, only_
 	* [NUnit 3 Test Adapter](https://marketplace.visualstudio.com/items?itemName=NUnitDevelopers.NUnit3TestAdapter). A must-have
 	* [MappingGenerator](https://marketplace.visualstudio.com/items?itemName=54748ff9-45fc-43c2-8ec5-cf7912bc3b84.mappinggenerator) It creates mappings from one object to another and from a list of parameters to an object. You need to initialize an object with sample values? In your tests for example? MappingGenerator does it for you!
-	* [CodeMaid](https://marketplace.visualstudio.com/items?itemName=SteveCadwallader.CodeMaid) It cleans and formats your files. It remove extra blank lines. It removes and sorts your using. It removes extra spaces before and after parenthesis. _You got the idea_.
+	* [CodeMaid](https://marketplace.visualstudio.com/items?itemName=SteveCadwallader.CodeMaid) It cleans and formats your files. It remove extra blank lines. It removes and sorts your using statements. It removes extra spaces before and after parenthesis. _You got the idea_.
+	* [AsyncMethodNameFixer](https://github.com/priyanshu92/AsyncMethodNameFixer) To not to forget to add the `Async` suffix on async method name.
 
  Voilà!
