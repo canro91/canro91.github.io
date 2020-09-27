@@ -21,7 +21,7 @@ You can roll your own database access layer. But, an ORM helps you to:
 
 ## Insight.Database
 
-[Insight.Database](https://github.com/jonwagner/Insight.Database) is a _"fast, lightweight .NET micro-ORM"_. It allows you to query your database with almost no mapping code. It maps fields/properties to query parameters and columns to fields/properties. Also, you can make extra changes to records as their being read. For example, [you can trim whitespace-padded string columns]({post_url 2018-09-21-INeedSomeSpace}) from a legacy database.
+[Insight.Database](https://github.com/jonwagner/Insight.Database) is a _"fast, lightweight .NET micro-ORM"_. It allows you to query your database with almost no mapping code. It maps fields/properties to query parameters and columns to fields/properties. Also, you can make extra changes to records as their being read. For example, [you can trim whitespace-padded string columns]({% post_url 2018-09-21-INeedSomeSpace %}) from a legacy database.
 
 > _Insight.Database is the .NET micro-ORM that nobody knows about because it's so easy, automatic, and fast, (and well-documented) that nobody asks questions about it on StackOverflow._
 
