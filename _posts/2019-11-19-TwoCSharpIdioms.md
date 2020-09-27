@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Two CSharp idioms
+title: Two C# idioms
 tags: tutorial csharp
 series: C# idioms
 ---
