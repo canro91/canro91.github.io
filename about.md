@@ -46,7 +46,7 @@ If you don’t know where to start reading or if you want to find something to r
 
 * [Just Vim It! Learning Vim For Fun and Profit]({% post_url 2020-09-14-LearnVimForFunAndProfit %}) I wrote this post as a Guest Writer for _[exceptionnotfound.net](https://exceptionnotfound.net/learning-vim-for-fun-and-profit/)_
 * [Programs that saved you 100 hours]({% post_url 2020-04-13-ProgramThatSave100Hours %})
-* Plugins and settings for [my VS setup]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %})
+* Plugins and settings for [my Visual Studio setup]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %})
 * [How I take notes]({% post_url 2020-08-29-HowITakeNotes %})
 
 #### _BugOfTheDay_
