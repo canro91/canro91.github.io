@@ -26,11 +26,11 @@ Before starting to work with a project under TFS, you need some _"mappings"_, wh
 
 After modifying some files, you want to version control them. With TFS you "check-in" your files. This means, those files are kept in the history of the project and synced with the server. But, with Git, your committed files live only in your local copy of the project, until you sync or _push_ them to a server.
 
-### Branching
+## Branching
 
 With Git, branches have a new meaning. You could have lots of light-weight and short-lived branches to try things out, solve bugs or do your work. By convention, all Git repositories start with a branch called _master_.
 
-> Master/slave methaphor is discouraged these days. Starting from [Git 2.28](https://github.blog/2020-07-27-highlights-from-git-2-28/#introducing-init-defaultbranch), Git will use the configuration value `init.defaultBranch` to name the default branch. Other alternatives for master are: main, primary or default.
+> The master/slave methaphor is discouraged these days. Starting from [Git 2.28](https://github.blog/2020-07-27-highlights-from-git-2-28/#introducing-init-defaultbranch), Git will use the configuration value `init.defaultBranch` to name the default branch. Other alternatives for master are: main, primary or default.
 
 #### Gitflow, a branching model
 
@@ -48,7 +48,7 @@ Some projects adopt another convention. _Nobody pushes or syncs directly to the 
 
 Instead, every new task needs to go through a review phase using a pull or merge request. _"The author of the task asks to merge his changes into the current codebase"_, hence that name.
 
-Most of the time, this review is done through a web tool or web interface. After the review, the same tool will allow the reviewer to merge the changes to the appropriate branch.
+Most of the time, this review is done through a web tool or web interface. After the review, the same tool will allow the reviewer to merge the changes to the destination branch.
 
 ## Reference
 
