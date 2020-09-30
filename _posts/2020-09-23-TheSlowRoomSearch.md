@@ -254,9 +254,9 @@ Task.WhenAll: 12075ms
     GetRatesAsync: 12060ms
         GetBestRates: 5075ms
         UpdateRateDetailsAsync: 5741ms
-    UpdatePackagesAsync: 1222ms
+        UpdatePackagesAsync: 1222ms
     GetRoomListAsync: 3774ms
-        FindMultiAvailableRoomsAsync: 2555ms
+        FindAvailableRoomsAsync: 2555ms
         GetRoomTypesAsync:            1209ms
     GetRulesAsync: 2772ms
 GetRoomClassGaleriesAsync: 4851ms
