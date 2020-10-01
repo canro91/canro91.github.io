@@ -1,7 +1,7 @@
 ---
 layout: post
 title: TIL&colon; How to add gzip compression to ASP.NET Core API responses
-tags: til asp.net
+tags: todayilearned asp.net
 ---
 
 If you're using ASP.NET Core 2.x, you need to install the NuGet `Microsoft.AspNetCore.ResponseCompression`
