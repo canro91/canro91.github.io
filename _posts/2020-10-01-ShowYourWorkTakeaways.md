@@ -13,7 +13,7 @@ Show your work is a New York Times bestseller by Austin Kleon. He describes his 
 
 Good work isn't enough. This book teaches your work has to be out there. **If your work isn't online, it doesn't exist**.
 
-"Be so good they can't ignore you" summarizes the purpose of the book. You have to be findable. Build a routine of sharing. Take advantage of your network. Imagine you don't need a resume because your next boss already reads your blog.
+"Be so good they can't ignore you" summarizes the purpose of the book. To not to be ignored, you have to be findable. Build a routine of sharing. Take advantage of your network. Imagine you don't need a resume because your next boss already reads your blog.
 
 ## You don't have to be a genius
 
