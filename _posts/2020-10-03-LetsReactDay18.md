@@ -4,7 +4,7 @@ title: Let's React. Day 18 of 30
 tags: letsX react
 ---
 
-After doing [Let's Go]({ post_url 2020-07-05-LetsGoStudyPlan.md }), I moved on to React. I decided to _"be fluent"_ in React in 30 days. I'm using the same approach from Let's Go. This is getting my hands dirty with examples and walk-throughs, instead of reading books from cover to cover and passively watching videos.
+After doing [Let's Go]({% post_url 2020-07-05-LetsGoStudyPlan %}), I moved on to React. I decided to _"be fluent"_ in React in 30 days. I'm using the same approach from Let's Go. This is getting my hands dirty with examples and walk-throughs, instead of reading books from cover to cover and passively watching videos.
 
 This is some of my progress after 18 days.
 
