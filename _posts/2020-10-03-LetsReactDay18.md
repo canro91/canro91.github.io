@@ -16,7 +16,7 @@ This is some of my progress after 18 days.
 * Each component should have a single `render` method. It should return only one JSX element. Think JSX as html templates inside JavaScript
 * You can pass functions to components, not only strings and primitive values
 * Prefer function-based components over class-based components
-* Use `const [value, func] = React.useState(initialValue)` to change state inside function-components to change state. See [A Simple Intro to React Hooks](https://daveceddia.com/intro-to-hooks/)
+* Use `const [value, func] = React.useState(initialValue)` to change state inside function-components. See [A Simple Intro to React Hooks](https://daveceddia.com/intro-to-hooks/)
 * Instead of having a single big state object, separate state into multiple states variables. Group them if they change together. See [Should I use one or many state variables?](https://reactjs.org/docs/hooks-faq.html#should-i-use-one-or-many-state-variables)
 * Use `React.UseEffect(func, [variables])` to call your API endpoints. It runs after the first render and after every state change. If you want this effect to be called only once, pass an empty array. See: [Fix useEffect re-running on every render](https://daveceddia.com/useeffect-triggers-every-change) and [Five common mistakes writing react components (with hooks) in 2020](https://www.lorenzweiss.de/common_mistakes_react_hooks/)
 
