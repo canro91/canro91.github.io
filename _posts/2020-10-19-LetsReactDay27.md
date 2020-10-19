@@ -50,21 +50,21 @@ class App extends React.Component {
 
 ## What should I put into Redux store? Should I put everything into a Redux store?
 
-**Ask yourself if other component will need that state too**. Otherwise, you can keep it inside a component. See [Do I have to put all my state into Redux?](https://redux.js.org/faq/organizing-state#do-i-have-to-put-all-my-state-into-redux-should-i-ever-use-reacts-setstate)
+Ask yourself if other component will need that state too. Otherwise, you can keep it inside a component. See [Do I have to put all my state into Redux?](https://redux.js.org/faq/organizing-state#do-i-have-to-put-all-my-state-into-redux-should-i-ever-use-reacts-setstate)
 
 ## Where should I call my API's?
 
-**Don't try to make your API calls from your reducers**. Use actions. You can use thunks. A fancy word to name methods that make asynchronous work and dispatch some other actions.
+Don't try to make your API calls from your reducers. Use actions. You can use thunks. A fancy word to name methods that make asynchronous work and dispatch some other actions.
 
 As an alternative, you can use sagas. I knew sagas from a different context. But, they're listeners to actions. See [Trying to put API calls in the correct place](https://github.com/reduxjs/redux/issues/291) and [Where should I put synchronous side effects linked to actions in redux?](https://stackoverflow.com/questions/32982237/where-should-i-put-synchronous-side-effects-linked-to-actions-in-redux/33036344)
 
 ## Why can't I put async on my reducers?
 
-**You want your reducers to be pure**. You should only change state inside reducers. See [Reducers Must Not Have Side Effects](https://redux.js.org/style-guide/style-guide#reducers-must-not-have-side-effects)
+You want your reducers to be pure. You should only change state inside reducers. See [Reducers Must Not Have Side Effects](https://redux.js.org/style-guide/style-guide#reducers-must-not-have-side-effects)
 
 ## You can't put a button inside an anchor tag
 
-**You can, but it isn't sematically valid**. If you're working with Bootstrap and need to style your anchor tags, you can use `LinkContainer` from [react-router-bootstrap](https://github.com/react-bootstrap/react-router-bootstrap)
+You can, but it isn't sematically valid. If you're working with Bootstrap and need to style your anchor tags, you can use `LinkContainer` from [react-router-bootstrap](https://github.com/react-bootstrap/react-router-bootstrap)
 
 ## A simple counter example
 
@@ -109,6 +109,8 @@ ReactDOM.render(
 );
 ```
 
+### Step 2: Create the action types and action creators
+
 ```javascript
 // actions.js
 
@@ -124,7 +126,7 @@ export const decrement = () => {
 }
 ```
 
-## Step 2: Connect your component and receive props
+### Step 3: Connect your component and receive props
 
 To connect your component to Redux, you need to pull from the state what your component needs. To achieve this you need a `mapStateToProps` method.
 
