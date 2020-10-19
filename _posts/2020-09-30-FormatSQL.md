@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Two free tools to format SQL queries
-tags: sql productivity
+tags: sql productivity showdev
 description: The lazy way to format your SQL queries. Learn how to format your SQL queries with two free tools
 ---
 
