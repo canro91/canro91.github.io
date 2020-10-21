@@ -50,11 +50,11 @@ class App extends React.Component {
 
 ## What should I put into Redux store? Should I put everything into a Redux store?
 
-Ask yourself if other component will need that state too. Otherwise, you can keep it inside a component. See [Do I have to put all my state into Redux?](https://redux.js.org/faq/organizing-state#do-i-have-to-put-all-my-state-into-redux-should-i-ever-use-reacts-setstate)
+Ask yourself if other components will need that state too. Otherwise, you can keep it inside a component. See [Do I have to put all my state into Redux?](https://redux.js.org/faq/organizing-state#do-i-have-to-put-all-my-state-into-redux-should-i-ever-use-reacts-setstate)
 
 ## Where should I call my API's?
 
-Don't try to make your API calls from your reducers. Use actions. You can use thunks. A fancy word to name methods that make asynchronous work and dispatch some other actions.
+Don't try to make your API calls from your reducers. Use actions. You can use thunks. A fancy word to name functions that make asynchronous work and dispatch some other actions.
 
 As an alternative, you can use sagas. I knew sagas from a different context. But, they're listeners to actions. See [Trying to put API calls in the correct place](https://github.com/reduxjs/redux/issues/291) and [Where should I put synchronous side effects linked to actions in redux?](https://stackoverflow.com/questions/32982237/where-should-i-put-synchronous-side-effects-linked-to-actions-in-redux/33036344)
 
@@ -128,13 +128,13 @@ export const decrement = () => {
 
 ### Step 3: Connect your component and receive props
 
-To connect your component to Redux, you need to pull from the state what your component needs. To achieve this you need a `mapStateToProps` method.
+To connect your component to Redux, you need to pull from the state what your component needs. To achieve this you need a `mapStateToProps` function.
 
 Once you connect your component to Redux, you can use `dispatch` to update state. Receive `dispatch` from `props` and use `dispatch({ type: INCREMENT });`
 
-But, you can choose to abstract the creation of actions, too. For example, you can use `dispatch(increment());`
+But, you can choose to abstract the creation of actions, too. For example, you can use `dispatch(increment());` instead
 
-Even, you can choose to pass custom functions instead of using `dispatch` inside your components. You need a `mapDispatchToProps` method when connecting your component to the store.
+Even, you can choose to pass custom functions instead of using `dispatch` inside your components. You need a `mapDispatchToProps` function when connecting your component to the store.
 
 ```javascript
 import React from 'react';
