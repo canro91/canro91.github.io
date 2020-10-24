@@ -9,7 +9,7 @@ This post is about learning new languages. But, not programming languages. Forei
 I want to share three lessons I learned while traveling to France to practice my French speaking skills. Each lesson is behind a funny story that happened on my first visit to France.
 
 <figure>
-<img src="https://source.unsplash.com/xzoD4P7Lu7M/800x400" width="800" alt="Kid walking in a museum" />
+<img src="https://source.unsplash.com/xzoD4P7Lu7M/800x400" width="800" alt="Three language lessons I learned in my First visit to France" />
 
 <figcaption>Eiffel Tower, Paris, France. <span>Photo by <a href="https://unsplash.com/@pl_gt?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Paul Gaudriault</a> on <a href="https://unsplash.com/s/photos/france?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
 </figure>
