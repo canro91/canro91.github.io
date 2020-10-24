@@ -4,7 +4,7 @@ title: Let's React. Day 27 of 30
 tags: letsX react
 ---
 
-Up to [Day 18](https://canro91.github.io/2020/10/03/LetsReactDay18/) of learning React in 30, I worked with function-based components and Hooks. Recently, I switched to manage state with Redux.
+Up to [Day 18](https://canro91.github.io/2020/10/03/LetsReactDay18/) of learning React in 30 days, I worked with function-based components and Hooks. Recently, I switched to manage state with Redux.
 
 I found Redux the most challenging subject so far. _store, actions, reducers, thunks, sagas, dispatching_. Some tutorials cover Redux differently from others. A bit confusing some times. 
 
