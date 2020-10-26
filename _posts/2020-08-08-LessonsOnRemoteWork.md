@@ -16,6 +16,12 @@ It's been a year since I started to work remotely. These are the lessons I learn
 
 **Have your developers up and running as quickly as possible**. You don’t want them to scratch their heads trying to install the right version of your tools and projects. Create README files, install scripts or anything else that helps to setup the working environment. Anyone should start using your projects by pressing a button or running an script.
 
+<figure>
+<img src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop&ixid=eyJhcHBfaWQiOjF9" alt="Zoom call with coffee" width="800">
+<figcaption>Zoom call with coffee <span>Photo by <a href="https://unsplash.com/@cwmonty?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Chris Montgomery</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+</figcaption>
+</figure>
+
 ### For employees or workers
 
 **Control noise and light in your environment** Have a high-quality headset. Reduce the background noise as much as you can. Make sure to mute and unmute your microphone when appropriate. _You're muted, John!_ Position yourself in a way people won't appear walking in the back. Light up your environment to clear your face.
