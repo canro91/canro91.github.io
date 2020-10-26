@@ -12,6 +12,12 @@ I write all my notes using [Markdown](https://www.markdownguide.org/). It's form
 
 To write and organize my notes I use [Notable](https://notable.app/).
 
+<figure>
+<img src="https://images.unsplash.com/photo-1483546416237-76fd26bbcdd1?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop&ixid=eyJhcHBfaWQiOjF9" width="800" alt="A pencil and a notebook" />
+
+<figcaption><span>Photo by <a href="https://unsplash.com/@honza_kahanek?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Jan Kahánek</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+</figure>
+
 For my task list, I have a [todo.txt](http://todotxt.org/) file. One task per line. Each task has a priority, due date and optional tags. For ideas and tasks in the future, I have a later.txt. Once a task is done, I move it to a done.txt. I keep it as a brag document. For more ideas to use plain text, you can read [Lifehacker Ten clever uses for plain text](https://lifehacker.com/ten-clever-uses-for-plain-text-files-that-can-increase-1662774267).
 
 I have a note for every blog post, podcast, video and book I found interesting. I group these notes using the tag: "til", short for "Today I learned". I write the date, the source, the keypoints and my reaction.
