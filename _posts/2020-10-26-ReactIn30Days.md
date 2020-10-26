@@ -6,14 +6,14 @@ tags: letsX react
 
 Do you want to learn React and you don't where to start? Don't look for any other curated list of resources. _Let's React._
 
-React is an user-interface library. It doesn't do a lot of things. It renders elements. Period. React isn't a Swiss-army knive framework full of functionalities. From [2020 StackOverflow developer Survey](https://insights.stackoverflow.com/survey/2020#technology-web-frameworks), React is the second most popular Web Framework. 
+React is an user-interface library. It doesn't do a lot of things. It renders elements. Period. React isn't a Swiss-army knife framework full of functionalities. From [2020 StackOverflow developer Survey](https://insights.stackoverflow.com/survey/2020#technology-web-frameworks), React is the second most popular Web Framework. 
 
 > _"React is a JavaScript library for building user interfaces"_ [reactjs.org](https://reactjs.org/)
 
 One of my takeaways from the [Ultralearning book](https://canro91.github.io/2020/07/14/UltralearningTakeaways/) is you should learn a new skill in the context where that skill will be applied. So, it's better to learn by doing, instead of reading a book from cover to cover or passively watching videos. _No copy and paste!_
 
 <figure>
-<img src="https://source.unsplash.com/JRVxgAkzIsM/800x400" alt="Building a rocket ship" width="800">
+<img src="https://images.unsplash.com/photo-1485783522162-1dbb8ffcbe5b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop&ixid=eyJhcHBfaWQiOjF9" alt="Building a rocket ship" width="800">
 <figcaption>Building a rocket ship. <span>Photo by <a href="https://unsplash.com/@kellysikkema?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Kelly Sikkema</a> on <a href="https://unsplash.com/s/photos/blocks?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 </figcaption>
 </figure>
@@ -27,7 +27,7 @@ These are some resources to learn React, its prerequisites and related subjects.
 * [CSS Layout tutorial](https://daveceddia.com/implement-a-design-with-css/)
 * [Build a Professional Website](https://www.youtube.com/watch?v=5bMdjkfvONE)
 
-### Javascript
+### JavaScript
 
 * [A re-introduction to Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) or [Learn Javascript in an hour](https://www.youtube.com/watch?v=W6NZfCO5SIk)
 * [ES6 Tutorial](https://www.youtube.com/watch?v=NCwa_xi0Uuc) or [Coursera ES6 Basics](https://www.coursera.org/projects/modern-javascript-es6-basics?edocomorp=freegpmay2020)
