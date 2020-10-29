@@ -4,13 +4,15 @@ title: BugOfTheDay, The slow room search
 tags: bugoftheday csharp
 ---
 
-Another day at work! This time, the room search was running slow. For one of the big clients, searching all available rooms in a one-week period took about 15 seconds.
+Another day at work! This time, the room search was running slow. For one of the big hotels, searching all available rooms in a week took about 15 seconds.
 
 This room search was a public page to book a room into a hotel without using any external booking system. This page used an ASP.NET Core API project to combine data from different microservices. 
 
 ## Room type details
 
-At first glance, I found an _N + 1 SELECT_. This is a common anti-pattern. The code called the database per each element from the input set to find more details about each item. This _N + 1 SELECT_ was in the code to find the details of each room type. The code looked something like this:
+At first glance, I found an _N + 1 SELECT_. This is a common anti-pattern. The code called the database per each element from an input set to find more details about each item.
+
+This _N + 1 SELECT_ was in the code to find the details of each room type. The code looked something like this:
 
 ```csharp
 public async Task<IEnumerable<RoomTypeViewModel>> GetRoomTypesAsync(int hotelId, IEnumerable<int> roomTypeIds)
@@ -28,9 +30,9 @@ public async Task<RoomTypeViewModel> GetRoomTypeAsync(int hotelId, int roomTypeI
 }
 ```
 
-These two methods made a request per each room type found, instead of searching more than one room types in a single call. I decided to create a new method to receive a list of room types.
+These two methods made a request per each room type found, instead of searching more than one room type in a single call. I decided to create a new method to receive a list of room types.
 
-I cloned the existing method in the appropriate microservice and renamed it. The new method received an array of room types. Also, I removed all unneeded queries from the store procedure it used. The store procedure returned three results sets. But, the room search only used one.
+I cloned the existing method in the appropriate microservice and renamed it. The new method received an array of room types. Also, I removed all unneeded queries from the store procedure it used. The store procedure returned three results sets. But, the room search only cared about one.
 
 Before any change, it took ~4 seconds to find a single room type. But, with the new method, it took ~600ms to find more than one room type in a single request. The client facing the problem had about 30 different room types. _Hurray!_
 
@@ -45,7 +47,7 @@ public async Task<IEnumerable<RoomTypeViewModel>> GetRoomTypesAsync(int hotelId,
 }
 ```
 
-When calling the room search from [Postman](https://www.postman.com/), the execution time didn't seem to improve at all. These were some of the times for the room search for one week. _What went wrong?_
+But, when calling the room search from [Postman](https://www.postman.com/), the execution time didn't seem to improve at all. These were some of the times for the room search for one week. _What went wrong?_
 
 | Room Type | Time in seconds |
 |---|---|
@@ -92,7 +94,7 @@ public async Task<IActionResult> RoomSearchAsync([FromQuery] RoomSearchRequest r
 
 To find any bottlenecks, I wrapped some parts of the code using the `Stopwatch` class. The `Stopwatch` measures the elapsed time of a method. For more details, see [the Stopwatch documentation](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch?view=netcore-3.1).
 
-On one hand, the log with the execution times  before any change looked like this:
+On one hand, the log with the execution times before any change looked like this:
 
 ```
 GetHotelTimeZoneAsync: 486ms
@@ -163,9 +165,9 @@ private RoomGallery MapToRoomGallery(int roomTypeId, int hotelId, IEnumerable<Ro
 }
 ```
 
-The `MapToRoomGallery` method filtered the collection of result images with every element. It was a nested loop over the same collection, an `O(nm)` operation. Also, since all the code was synchronous, there was no need for `Task.Run` and `Task.WhenAll`.
+The `MapToRoomGallery` method was the problem. It filtered the collection of result images with every element. It was a nested loop over the same collection, an `O(nm)` operation. Also, since all the code was synchronous, there was no need for `Task.Run` and `Task.WhenAll`.
 
-To fix this problem, the code grouped the images by room type first. And, then it passed a filtered collection to the mapping method.
+To fix this problem, the code grouped the images by room type first. And then, it passed a filtered collection to the mapping method.
 
 ```csharp
 public async Task<IEnumerable<RoomGallery>> GetRoomGalleriesAsync(IEnumerable<int> roomTypeIds)
