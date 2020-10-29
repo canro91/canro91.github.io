@@ -4,30 +4,32 @@ title: Parsinator, a tale of a pdf parser
 tags: tutorial showdev csharp
 ---
 
-One day your boss asks you to read a pdf file to extract relevant information to later process it in your main software. What can you do now? How in the world are you going to read the pdf file?
+One day your boss asks you to read a pdf file to extract relevant information to later process it in your main software. What are you going to do now? How in the world are you going to read the pdf file?
 
-## The Requirements
+## Requirements
 
-There you are, a normal day at your office with a new challenge. One of your clients can't connect to your main software, the only input he can provide is a text-based pdf file. This is the challenge: parse this pdf file into something that can be processed later on. But, these are the requirements:
+There you are, a normal day at your office with a new challenge. One of your clients can't connect to your main software. The only input he can provide is a text-based pdf file. This is the challenge: parse this pdf file into something that can be processed later on. But, these are the requirements:
 
 * You can receive pdf files with any structure. Two clients won't have the same file structure.
-* Eventually, you will receive not only pdf files, but any plain-text file
+* Eventually, you will receive not only pdf files, but any plain-text file.
 * You will have to build something easy to grasp for your coworkers or your future self to maintain.
-* You will have to ship it by the end of the week
+* You will have to ship it by the end of the week.
 
 ## Actual implementation
 
 Since you're asked to support files with any format, a `for` through the lines with lots of `if`s and regular expressions isn't the most adequate solution. A file with a different format will imply to code the whole thing again. _There must be a better way!_
 
-On one hand, one of your concerns is how to given a pdf file turn it into actual text. But, a few lines with [itextsharp](https://github.com/itext/itextsharp) will do [the reading](https://stackoverflow.com/a/5003230). So, no big deal after all! Now, a pdf file is a list of lists of strings, `List<List<string>>`. One list per page and one string per line. You could abstract this step to support not only pdf files.
+On one hand, one of your concerns is how to given a pdf file turn it into actual text. But, a few lines using [itextsharp pdf library](https://github.com/itext/itextsharp) will do [the reading](https://stackoverflow.com/a/5003230). So, no big deal after all! Now, a pdf file is a list of lists of strings, `List<List<string>>`. One list per page and one string per line. You could abstract this step to support not only pdf files.
 
-On the other hand, how can you do the actual parsing? Parser combinators to the rescue! You could borrow this idea from [Haskell](https://www.haskell.org/) and other functional languages. You can create small composable pieces of code to extract or discard some text at the page or line level. 
+On the other hand, how can you do the actual parsing? [Parser combinators](https://en.wikipedia.org/wiki/Parser_combinator) to the rescue! You could borrow this idea from [Haskell](https://www.haskell.org/) and other functional languages. You can create small composable pieces of code to extract or discard some text at the page or line level. 
 
 ### Skippers
 
-First, you can assume that your file has some content that spawns from one page to another. Also, there are some content that can be read from a given page and line. A header/detail representation. Imagine an invoice with lots of purchased items that requires a couple of pages.
+First, you can assume that your file has some content that spawns from one page to another. Also, there is some content that can be read from a given page and line. A header/detail representation. Imagine an invoice with lots of purchased items that requires a couple of pages.
 
-Second, there are some lines you don't care about since they don't have any relevant information. So you can ignore them. For example, you can _"skip"_ the first or last lines in a page, all blank lines, everything between two line numbers or two regular expressions. Then, you have the _skippers_.
+Second, there are some lines you don't care about. Since they don't have any relevant information to extract. So you can ignore them. For example, you can _"skip"_ the first or last lines in a page, all blank lines, everything between two line numbers or two regular expressions. Then, you have the **skippers**.
+
+An skipper to ignore the first lines of every page will look like this:
 
 ```csharp
 public class SkipLineCountFromStart : ISkip
@@ -52,7 +54,9 @@ public class SkipLineCountFromStart : ISkip
 
 ### Parsers
 
-After ignoring all the unnecessary text, you can create separate small functions to extract text. For example, extract a line if it matches a regular expression, read all text between two consecutive line numbers or regexes, read a fixed string. Here, you have the _parsers_. Now, you can read text in a line of a page or use a default value if there isn't any.
+After ignoring all the unnecessary text, you can create separate small functions to extract text. For example, extract a line if it matches a regular expression, read all text between two consecutive line numbers or regular expressions. Here, you have the **parsers**. Now, you can read text in a line of a page or use a default value if there isn't any.
+
+A parser to read a line at a given number if it matches a regular expression will look like this:
 
 ```csharp
 public class ParseFromLineNumberWithRegex : IParse
@@ -89,9 +93,11 @@ public class ParseFromLineNumberWithRegex : IParse
 
 ### Transformations
 
-But, what about the text spawning many pages? Now, you can introduce the _transformations_ to flatten all lines spawning many pages into a single stream of lines. So, you can use the same parsers in every one of these lines.
+But, what about the text spawning many pages? Now, you can introduce the **transformations**. They flatten all lines spawning many pages into a single stream of lines. So, you can use the same parsers in every one of these lines.
 
-For example, in the case of an invoice, imagine all purchased items are in a table. It starts with a header and ends with the subtotal of all purchased items. So you can use again some _skippers_ to extract these lines between the header and the subtotal.
+For example, imagine an invoice with all purchased items organize in a table. This table can spawn into two or more pages. The items table starts with a header and ends with the subtotal of all purchased items. You can use again some skippers to extract these items between the header and the subtotal.
+
+The next snippet shows a transformation that composes some skippers and applies them one by one to generate a single stream of text.
 
 ```csharp
 public class TransformFromMultipleSkips : ITransform
@@ -112,7 +118,11 @@ public class TransformFromMultipleSkips : ITransform
         return details;
     }
 }
+```
 
+Then, you can use the previous transformation to grab the purchased items of an invoice. The next snippet uses two skippers. One to ignore everything before and after two regular expressions. And another to ignore blank lines.
+
+```csharp
 // Table starts with "Code Description Price Total"
 // and ends with "S U B T O T A L"
 new TransformFromMultipleSkips(
@@ -124,7 +134,7 @@ new TransformFromMultipleSkips(
 
 ### All the pieces
 
-Then, you can create a method put everything in place. You apply all _skippers_ in every page, so you only keep relevant information. After that, you run all _parsers_ in the appropriate pages and lines from the output of _skippers_.
+Then, you can create a method put everything in place. You apply all **skippers** in every page to keep relevant only the information. After that, you run all **parsers** in the appropriate pages and lines from the output of **skippers**.
 
 ```csharp
 public Dictionary<string, Dictionary<string, string>> Parse(List<List<String>> lines)
