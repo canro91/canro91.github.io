@@ -13,7 +13,9 @@ I’m a software engineer based in Colombia (_not Columbia_) with more than 6 ye
 
 ### What I've done
 
-I have worked in public services, electronic invoicing and reservation management. In electronic invoicing, I updated a platform to comply with the latest regulations from the Colombian government, so existing users can continue to work with the least amount of breaking changes. Among other things,
+I have worked in public services, electronic invoicing and reservation management.
+
+In electronic invoicing, I updated a platform to comply with the latest regulations from the Colombian government, so existing users can continue to work with the least amount of breaking changes. Among other things,
 
 * I changed document creation to follow UBL standard v2.1, instead of v2.0.
 * I created a library to parse pdf's and plain-text files into xml files to feed a document API
@@ -25,6 +27,8 @@ In my free time, I like to read books (_on paper_) and learn and teach foreign l
 I’m passionate about learning and programming. I want to share what I have learned in my journey as a software engineer.
 
 In this blog you can find tips and advice, libraries I have used, issues I have found and how I have solved them, lessons learned the hard way, success and failure stories. If you're interested, you can read [how I started blogging]({% post_url 2020-07-18-HowIStartedBlogging %}) and the story behind the first post.
+
+### Start here
 
 If you don’t know where to start reading or if you want to find something to read, head to any of these posts:
 
