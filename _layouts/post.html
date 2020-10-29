@@ -5,6 +5,11 @@ layout: default
 {% include tags_for_page.html %}
 
 <div class="post">
+  {% if page.cover %}
+  <div class="post-cover">
+  {% include image.html name=page.cover alt=page.cover-alt %}
+  </div>
+  {% endif %}
   <h1 class="post-title">{{ page.title }}</h1>
   <span class="post-date">{{ page.date | date_to_string }} {{ tags_content }}</span>
   {% include posts_in_series.html %}

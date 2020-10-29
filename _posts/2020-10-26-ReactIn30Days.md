@@ -2,6 +2,8 @@
 layout: post
 title: Let's React. Learn React in 30 days
 tags: letsX react
+cover: LearnReact.png
+cover-alt: Resources to learn React in 30 days
 ---
 
 Do you want to learn React and you don't where to start? Don't look for any other curated list of resources. _Let's React._
