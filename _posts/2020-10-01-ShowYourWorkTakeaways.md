@@ -19,7 +19,7 @@ Good work isn't enough. This book teaches your work has to be out there. **If yo
 <figcaption>Natural History Museum, London, United Kingdom. <span>Photo by <a href="https://unsplash.com/@mparzuchowski?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Michał Parzuchowski</a> on <a href="https://unsplash.com/s/photos/museum?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
 </figure>
 
-"Be so good they can't ignore you" summarizes the purpose of the book. To not to be ignored, you have to be findable. Build a routine of sharing. Take advantage of your network. Imagine you don't need a resume because your next boss already reads your blog.
+**"Be so good they can't ignore you"** summarizes the purpose of the book. To not to be ignored, you have to be findable. Build a routine of sharing. Take advantage of your network. Imagine you don't need a resume because your next boss already reads your blog.
 
 ## You don't have to be a genius
 
