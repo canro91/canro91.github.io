@@ -26,7 +26,9 @@ In my free time, I like to read books (_on paper_) and learn and teach foreign l
 
 I’m passionate about learning and programming. I want to share what I have learned in my journey as a software engineer.
 
-In this blog you can find tips and advice, libraries I have used, issues I have found and how I have solved them, lessons learned the hard way, success and failure stories. If you're interested, you can read [how I started blogging]({% post_url 2020-07-18-HowIStartedBlogging %}) and the story behind the first post.
+In this blog you can find tips and advice, libraries I have used, issues I have found and how I have solved them, lessons learned the hard way, success and failure stories.
+
+If you're interested, you can read [how I started blogging]({% post_url 2020-07-18-HowIStartedBlogging %}) and the story behind my first post.
 
 ### Start here
 
