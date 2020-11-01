@@ -47,11 +47,11 @@ Let's say your cursor is at the beginning of a line and you need to change the p
 
 Without Vim, you place your cursor in the opening parenthesis with the mouse. Then, while holding Control and Shift, you press the right arrow until the closing parenthesis.
 
-{% include image.html name="ChangeParametersWithoutVim.gif" caption="Change the parameter list of a method without Vim" alt="Change the parameter list of a method without Vim" width="600px" height="400px" %}
+{% include image.html name="ChangeParametersWithoutVim.gif" caption="Change the parameter list of a method without Vim" alt="Change the parameter list of a method without Vim" width="600px" %}
 
 But, with Vim, you need fewer keystrokes. You go to the opening parenthesis with `f(`. Then press `ci(` to change everything inside the parenthesis. _Faster, isn't it?_
 
-{% include image.html name="ChangeParametersWithVim.gif" caption="Change the parameter list of a method with Vim inside Visual Studio" alt="Change the parameter list of a method with Vim inside Visual Studio" width="600px" height="400px" %}
+{% include image.html name="ChangeParametersWithVim.gif" caption="Change the parameter list of a method with Vim inside Visual Studio" alt="Change the parameter list of a method with Vim inside Visual Studio" width="600px" %}
 
 ## How to start learning Vim
 
