@@ -4,12 +4,16 @@ title: Tips and Tricks for Better Code Reviews
 tags: productivity career
 ---
 
-Code reviews are a great tool to identify bugs before the code head to the QA team or the clients. Sometimes you need another pair of eyes to spot unnoticed things. Also, code reviews are great to keep the code clean as the project moves forward. They help to spread knowledge inside a team and mentor newcomers or juniors. But, it's true that code reviews can be terse and frustrating for the reviewer and the reviewee. _No worries!_ Here, you have a collected list of tips and tricks for better code reviews.
+Code reviews are a great tool to identify bugs before the code head to the QA team or the clients. Sometimes you need another pair of eyes to spot unnoticed things.
+
+Also, code reviews are great to keep the code clean as the project moves forward. They help to spread knowledge inside a team and mentor newcomers or juniors.
+
+But, it's true that code reviews can be terse and frustrating for the reviewer and the reviewee. _No worries!_ Here, you have a collected list of tips and tricks for better code reviews.
 
 > TL;DR
-> 1. For the reviewer: be nice. Remember you are reviewing the code, not the writer.
-> 2. For the reviewee: don't take it personal. Every code review is an opportunity to learn.
-> 3. For all the dev team: reviews take time too. Add them to your estimates.
+> 1. For the reviewer: Be nice. Remember you are reviewing the code, not the writer.
+> 2. For the reviewee: Don't take it personal. Every code review is an opportunity to learn.
+> 3. For all the dev team: Reviews take time too. Add them to your estimates.
 
 ## What to look for in a code review?
 
@@ -26,6 +30,8 @@ Does the code...
 * Kill performance?
 * Have duplication? Has code been copied and pasted?
 
+It's a good idea to have a checklist next to you while reviewing code. You could create your own checklist or start using [Doctor McKayla Code Review Checklist](https://www.michaelagreiler.com/code-review-checklist-2/).
+
 <figure>
 <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop&ixid=eyJhcHBfaWQiOjF9" alt="Tips and tricks for better code reviews" width="800">
 <figcaption><span>Photo by <a href="https://unsplash.com/@charlesdeluvio?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Charles Deluvio</a> on <a href="https://unsplash.com/s/photos/review?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
@@ -33,7 +39,7 @@ Does the code...
 
 ## For the reviewer
 
-Before you start any review, make sure to understand the requirements. Start by looking at the tests, they should be like documentation. It's a good idea to look at the diff twice: one for the general picture and another for the details.
+Before you start any review, make sure to understand the requirements. Start by looking at the tests, they should be like documentation. It's a good idea to look at the diff twice. One for the general picture and another for the details.
 
 * Be humble: We all have something to learn.
 * Take out the person when giving feedback. Remember you are reviewing the code, not the author.
@@ -49,7 +55,8 @@ Before you start any review, make sure to understand the requirements. Start by 
 
 * Don't take it personal. It's the code under review, not you
 * Find in every review an opportunity to learn
-* Make sure the reviewer have enough context to review the code. For example: write a description of your PR,  what it does, what decisions you made
+* Make sure the reviewer have enough context to review the code. For example: write a description of your Pull Request. Include what it does and what decisions you made
+* Keep your work short and focused. Don't make the reviewer go through thousand of lines of code in a single review session.
 * Keep all the discussion online. If you contacted the reviewer by chat or email, bring relevant comments online
 
 ## For team management
