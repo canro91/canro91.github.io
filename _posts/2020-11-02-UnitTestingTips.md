@@ -2,6 +2,8 @@
 layout: post
 title: How to write good unit tests? Avoid these two issues
 tags: tutorial csharp
+cover: WriteUnitTests.png
+cover-alt: Two issues to avoid to write good unit test
 ---
 
 These days, I needed to update some tests. I found two issues on them. Please, continue to read. Maybe, you're a victim of those issues, too.
