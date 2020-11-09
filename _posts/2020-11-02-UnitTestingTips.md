@@ -158,6 +158,6 @@ public void AccountController_SenderEmailIsNull_ThrowsException()
 
 Voilà! That's easier to read. Do you have those two issues on your own tests? Remember, readability is one of the pillars of unit testing.
 
-For other tips on writing unit tests, you can check my takeaways from the book [The Art of Unit Testing]({% post_url 2020-03-06-TheArtOfUnitTestingReview %}).
+For other tips on writing unit tests, you can check my takeaways from the book [The Art of Unit Testing]({% post_url 2020-03-06-TheArtOfUnitTestingReview %}) and my post on [how to write fakes with Moq]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}).
 
 _Happy unit testing!_
