@@ -50,7 +50,7 @@ public Task AccountController_SenderEmailIsNull_ThrowsException()
 
 The tests used [Moq](https://github.com/moq/moq4), a mocking library for .NET. I already wrote about the things [I like and dislike about Moq]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}). Let's see the two issues with this test.
 
-Two issues to avoid when writing unit tests are **noise** and **hidden test scenarios**. First, tests are often full of noise in the form of complex arrange or setup scenarios. And, test values aren't obvious. Test names states an scenario, but you have to dig into the test to find the test values. Remember, readability is king when writing unit tests.
+Two issues to avoid when writing unit tests are **noise** and **hidden test scenarios**. First, tests are often full of noise in the form of complex arrange or setup scenarios. And, test values aren't obvious. Test names state an scenario, but you have to dig into the tests to find the test values. Remember, readability is king when writing unit tests.
 
 _Did you spot these issues on our sample test? No. It wasn't the naming convention._
 
@@ -110,7 +110,7 @@ private AccountController MakeAccountController(IOptions<EmailConfiguration> ema
 
 Also, since our test doesn't have any asynchronous code, we could remove the return statement and make our test a `void` method.
 
-With this refactor, our test started to look simplier and easier to read. Now, it's clear this test only cares about the email configuration.
+With this refactor, our test started to look simpler and easier to read. Now, it's clear this test only cares about the email configuration.
 
 ## Make your test values obvious
 
