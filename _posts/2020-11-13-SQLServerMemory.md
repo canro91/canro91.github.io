@@ -10,7 +10,7 @@ This is normal behavior. SQL Server caches data into memory to reduce access to 
 
 But, you can limit the amount of memory available by setting the option "Maximum Server Memory". By default, it is a ridiculous huge number.
 
-{% include image.html name="SQLServerEatingMyRAM.PNG" caption="SQL Server eating my RAM" alt="SQL Server uses all available memory" width="600px" %}
+{% include image.html name="SQLServerEatingMyRAM.png" caption="SQL Server eating my RAM" alt="SQL Server uses all available memory" width="600px" %}
 
 This is specially true, if you're running SQL Server on your development machine.
 
