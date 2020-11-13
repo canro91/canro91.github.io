@@ -109,7 +109,7 @@ For example, if you forgot to add a semicolon in a line, in normal mode you woul
 | `;` | Insert ; |
 | `Esc` | Go back to normal mode |
 
-{% include image.html name="AddSemicolon.gif" caption="Add a missing semicolon to a line with Vim" alt="Add a missing semicolon to a line with Vim" width="600px" height="400px" %}
+{% include image.html name="AddSemicolon.gif" caption="Add a missing semicolon to a line with Vim" alt="Add a missing semicolon to a line with Vim" width="600px" %}
 
 ### How to copy and paste
 
