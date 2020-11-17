@@ -31,6 +31,12 @@ There are four types of interviews you can find while applying for a new job.
 3. **Programming exercise**: *Have a dev environment ready!* The interviewer will ask you to open your favorite IDE or text editor to solve [one]({% post_url 2019-08-02-PostfixNotationAnInterviewExercise %}) or [two]({% post_url 2019-08-29-TimeComplexity %}) [exercises]({% post_url 2019-09-16-RotatingArray %}). 
 4. **Homework**: The interviewer will ask you to solve a medium-size exercise in a couple of hours or even days. *Make sure you follow best practices and code as clean as possible! It's time to show off your coding skills*
 
+<figure>
+<img src="https://images.unsplash.com/photo-1515973069-1e40b62f107f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop&ixid=eyJhcHBfaWQiOjF9" alt="Tips for your next remote interview" />
+
+<figcaption><span>Photo by <a href="https://unsplash.com/@d_mccullough?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Daniel McCullough</a> on <a href="https://unsplash.com/s/photos/interview?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
+</figure>
+
 ## Before, during and after
 
 Now you know the interview types, it's time to move on to the interview preparation.
