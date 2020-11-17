@@ -16,7 +16,7 @@ This is specially true, if you're running SQL Server on your development machine
 
 _True story! SQL Server was eating my memory. We needed some limits._
 
-Sources: [Setting a fixed amount of memory for SQL Server](https://www.mssqltips.com/sqlservertip/4182/setting-a-fixed-amount-of-memory-for-sql-server/), 
+_Sources_: [Setting a fixed amount of memory for SQL Server](https://www.mssqltips.com/sqlservertip/4182/setting-a-fixed-amount-of-memory-for-sql-server/), 
 [Limit SQL Server Memory Use on Dev Machine
 ](https://ardalis.com/limit-sql-server-memory-use-on-dev-machine/)
 
