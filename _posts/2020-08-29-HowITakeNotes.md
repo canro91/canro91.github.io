@@ -24,6 +24,8 @@ I have a note for every blog post, podcast, video and book I found interesting. 
 
 I capture ideas and thoughts on my phone. "Always have something to keep notes" suggests [Pragmatic Thinking and Learning]({% post_url 2020-05-07-PragmaticThinkingAndLearning %})
 
-Recently I found a note-taking system: [Zettelkasten](https://en.wikipedia.org/wiki/Zettelkasten). In short, write on your own words what you learn on a piece of paper or card, put an index number and connect it to your existing notes. Althought there are editors for Zettelkasten, I have my own slipbox and I keep my cards with pen and paper.
+Recently I found a note-taking system: [Zettelkasten](https://en.wikipedia.org/wiki/Zettelkasten). In short, write on your own words what you learn on a piece of paper or card, put an index number and connect it to your existing notes. Althought there are editors for Zettelkasten, I have my own slip-box and I keep my cards with pen and paper.
+
+To read more about the Zettelkasten method, check my takeaways from the book [How to Take Smart Notes]({% post_url 2020-11-18-HowToTakeSmartNotes %}).
 
 _Happy note taking!_
