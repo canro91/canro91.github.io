@@ -6,7 +6,7 @@ tags: todayilearned csharp
 
 LINQ `DefaultIfEmpty` extension method returns a collection containing a single element if the given collection is empty. Otherwise, it returns the same collection.
 
-Example: Find all the movies with score greater than 9. Otherwise, return you’re all-time favorite movie.
+Example: Find all the movies with score greater than 9. Otherwise, return your all-time favorite movie.
 
 ```csharp
 var movies = new List<Movie>
