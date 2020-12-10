@@ -116,6 +116,6 @@ public void UseAType()
 
 Voilà! That's how we can get rid of primitive obsession. A type alias was more expressive than encoding units of measure on names. But, a class was a better alternative. By the way, F# supports [unit of measures](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/units-of-measure) to variables. And, the compiler will warn you if you forget to use the right unit of measure.
 
-Looking for more content on C#? Check my post series on [C# idioms]({% post_url 2019-11-19-TwoCSharpIdioms %}) and [my C# definitve guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %})
+Looking for more content on C#? Check my post series on [C# idioms]({% post_url 2019-11-19-TwoCSharpIdioms %}) and my [C# definitive guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %})
 
 _Happy coding!_
