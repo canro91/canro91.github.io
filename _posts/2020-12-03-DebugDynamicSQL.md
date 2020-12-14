@@ -6,7 +6,7 @@ tags: todayilearned sql
 
 ## Format your dynamic SQL queries for more readability
 
-To read your dynamic queries stored in the plan cache, make sure to insert new lines when appropiate. Use a variable for the line endings. For example, `DECLARE @crlf NVARCHAR(2) = NCHAR(13) + NCHAR(10)`.
+To read your dynamic queries stored in the plan cache, make sure to insert new lines when appropriate. Use a variable for the line endings. For example, `DECLARE @crlf NVARCHAR(2) = NCHAR(13) + NCHAR(10)`.
 
 Also, to identify the source of a dynamic query, add as a comment the name of the store procedure generating it. But, don't use inside that comment a timestamp or any other dynamic text. Otherwise, you will end up with almost identical entries in the plan cache.
 
