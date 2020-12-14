@@ -6,7 +6,7 @@ tags: tutorial csharp
 
 These days I was working with Stripe API to take payments. And I found a case of primitive obsession. Keep reading to learn how to get rid of it.
 
-Primitive obsession is when developers choose primitive types (strings, integers, decimals) to represent entities of the business domain. For example, plain strings for usernames or decimals for currencies. To solve this code smell, create classes to model the business entities. And, use those classes to enforce the appropriate business rules.
+**Primitive obsession is when developers choose primitive types (strings, integers, decimals) to represent entities of the business domain.** For example, plain strings for usernames or decimals for currencies. To solve this code smell, create classes to model the business entities. And, use those classes to enforce the appropriate business rules.
 
 ## Using Stripe API
 
