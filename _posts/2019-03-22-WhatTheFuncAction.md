@@ -46,9 +46,9 @@ Or just simply
 allEmployees.Where(t => t.YearsWorked >= 10);
 ```
 
-## How to declare a method that uses `Func` and `Action`?
+## How to declare a method that receives `Func` or `Action`?
 
-To a declare a method that uses `Func` or `Action`, you have to use them like regular paramaters. Then, you have to either call `Invoke` on it or put parenthesis around the name passing the appropiate parameter values.
+To a declare a method that uses `Func` or `Action` as an input parameter, you have to use them like regular paramaters. Then, you have to either call `Invoke` on it or put parenthesis around the name passing the appropiate parameter values.
 
 Let's see an example of a method that uses `Func`.
 
