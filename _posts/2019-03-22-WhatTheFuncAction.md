@@ -5,24 +5,38 @@ description: What's the difference between Func and Action? How do I use them? T
 tags: tutorial csharp
 ---
 
-What's the difference between `Func` and `Action`? It all starts with delegates. A delegate is a pointer to a method with certain parameters and possibly a return type. In other words, it's a variable that can hold any method with that signature. `Func` and `Action` are built-in delegate types.
+What's the difference between `Func` and `Action`? This is a common C# interview question. Let's find it out!
 
-Delegates are helpful when working with _higher-order functions_. This is, functions that take functions as parameter and return another function. For example, Javascript's callbacks or Python's decorators.
+**The difference between `Func` and `Action` is the return type of the method they point to.** Both `Func` and `Action` are delegates. They point to a method instead of a built-in or custom type. On one hand, `Action` references a void method, a method with no return type. And, on the other hand, `Func` references a method with a return type.
 
-Here's the thing. The difference between `Func` and `Action` is the return type. On one hand, `Action` has no return type, a void method. But, on the other hand, `Func` has a return type. For example:
+## What are delegates?
 
-* `Action<Employee>` is a void method that receives `Employee`.
-* `Action` is a void method without parameters.
-* `Func<Employee, string>` represents a method that receives an `Employee` and returns an `string`.
+It all starts with delegates. A delegate is a pointer to a method with some input parameters and possibly a return type. In other words, a delegate is a variable that can hold any method with a given signature. `Func` and `Action` are built-in delegate types.
+
+Delegates are helpful when working with higher-order functions. This is, functions that take functions as parameter or return another function. For example, Javascript's callbacks or Python's decorators are high-order functions.
+
+Now, that is clear what delegates are, let's see some `Func` and `Action` declarations. For example,
+
+* `Action<Employee>` holds a void method that receives `Employee` as parameter.
+* `Action`, a void method without any parameters.
+* `Func<Employee, string>` represents a method that receives an `Employee` and returns a `string`.
 * `Func<string>` doesn't have any parameters and returns `string`.
 
-## How to use a method?
+<figure>
+<img src="https://images.unsplash.com/photo-1483821838526-8d9756a6e1ed?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop" alt="What the Func, Action?" />
 
-You have already used `Func`, if you have used LINQ. But, in general, you use them as _lambda expressions_. A lambda expression is an anonymous method. It’s a shorthand notation to write a method without a name and only the parameter types.
+<figcaption>Let's get Funcy. <span>Photo by <a href="https://unsplash.com/@greysonjoralemon?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Greyson Joralemon</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
+</figure>
 
-For example: Find the employees who have worked for more than ten years.
+## How to use `Func` and `Action` in a method?
+
+You have already used `Func`, if you have used LINQ. But, in general, you use them as lambda expressions. A lambda expression is an anonymous method. It's a shorthand notation to write a method only with the body and the parameter list.
+
+For example, let's find the employees who have worked for more than ten years.
 
 ```csharp
+var allEmployees = new List<Employee> { /* Some employees here */ };
+
 Func<Employee, bool> p = (t) => t.YearsWorked >= 10;
 allEmployees.Where(p);
 ```
@@ -32,9 +46,11 @@ Or just simply
 allEmployees.Where(t => t.YearsWorked >= 10);
 ```
 
-## How to declare a method?
+## How to declare a method that uses `Func` and `Action`?
 
-To a declare a method that uses `Func` or `Action`, you have to use it like a regular paramater and later call `Invoke` on it or put parenthesis around the name passing the appropiate variables.
+To a declare a method that uses `Func` or `Action`, you have to use them like regular paramaters. Then, you have to either call `Invoke` on it or put parenthesis around the name passing the appropiate parameter values.
+
+Let's see an example of a method that uses `Func`.
 
 ```csharp
 public Employee DoSomething(Func<Employee, string> f)
@@ -43,15 +59,22 @@ public Employee DoSomething(Func<Employee, string> f)
     var employee = new Employee();
     
     // string result = f.Invoke(employee);
+    // Or simply
     string result = f(employee);
+    
+    // Do something with the result here
+
+    return employee;
 }
 ```
 
 ## A real-world example
 
-`Func` and `Action` are great as small factory methods. They can be used in helper or utility methods to separete business logic from generic code. Here is an example of `Func` in [Insight.Database](https://github.com/jonwagner/Insight.Database) to create a [ReliableConnection](https://github.com/jonwagner/Insight.Database/wiki/ReliableConnection-and-Cloud-Databases), a database connection that automatically retries on certain errors.
+`Func` and `Action` are great as small factory methods. They can be used in helper or utility methods to separete business logic from generic code.
 
-This is the method that does the actual retry and uses `Func` for the operation to retry. (Some of the code has been removed for brevity)
+Let's see `Func` in action! Here is an example of `Func` from [Insight.Database](https://github.com/jonwagner/Insight.Database) to create a [ReliableConnection](https://github.com/jonwagner/Insight.Database/wiki/ReliableConnection-and-Cloud-Databases), a database connection that automatically retries on certain errors.
+
+The `ExecuteWithRetry` method retries things and uses `Func` for the operation to retry. Some of the code has been removed for brevity.
 
 ```csharp
 public class RetryStrategy : IRetryStrategy
@@ -111,8 +134,6 @@ public class ReliableConnection : DbConnectionWrapper
 }
 ```
 
-In summary, `Func` and `Action` represent just the signature of a method. A method with no body. You can define or pass around the body later.
+Voilà! That's the difference between `Func` and `Action`. Remember that they only represent the signature of a method. You can define or pass around the body later.
 
 _Happy Funcy time!_
-
-
