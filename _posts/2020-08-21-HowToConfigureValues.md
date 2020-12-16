@@ -4,13 +4,19 @@ title: How to read configuration values in ASP.NET Core
 tags: tutorial asp.net csharp
 ---
 
-ASP.NET Core has brought a lot of new features [compared to ASP.NET Framework](https://canro91.github.io/2020/03/23/GuideToNetCore/), the previous version. It has new project files, a dependency container, [a caching layer](https://canro91.github.io/2020/06/29/HowToAddACacheLayer/), among other features.
+ASP.NET Core has brought a lot of new features [compared to ASP.NET Framework](https://canro91.github.io/2020/03/23/GuideToNetCore/), the previous version. It has new project files, a dependency container, [a caching layer](https://canro91.github.io/2020/06/29/HowToAddACacheLayer/), among other features. Configuration has changed too. Let's see how to read and overwrite configuration values with ASP.NET Core.
 
-Configuration has changed too. There is no `ConfigurationManager` to read configuration values. ASP.NET Core has introduced json files and configuration objects. _Let's see how to use the Options pattern to read and overwrite configuration values with ASP.NET Core._
+**To read configuration values in ASP.NET Core, you need to implement the Options pattern.** There is no `ConfigurationManager` class to read configuration values from a `web.config` file. ASP.NET Core has introduced json files. To implement the Options pattern, you define a configuration class matching the values you want to read from the `appsetttings.json` file and use the default dependency container to receive the read values in your code.
+
+<figure>
+<img src="https://images.unsplash.com/photo-1589210212007-20415bd621b1?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop" alt="Macaroons in the showcase of a pastry shop" />
+
+<figcaption>Those are Macaroons options. Not the Options pattern. <span>Photo by <a href="https://unsplash.com/@veredcc?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Vered Caspi</a> on <a href="https://unsplash.com/s/photos/choices?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
+</figure>
 
 ### Options pattern
 
-First, add in the `appsettings.json` files, the values you want to configure. Unlike, the previous version of ASP.NET you can use sections and subsections to group your values. And, you can use booleans, integers and arrays, instead of only strings.
+Let's see how to implement the Options pattern to read configuration values. First, add in the `appsettings.json` files, the values you want to configure. Unlike, the previous version of ASP.NET you can use sections and subsections to group your values. And, you can use booleans, integers and arrays, instead of only strings.
 
 ```json
 {
@@ -23,7 +29,7 @@ First, add in the `appsettings.json` files, the values you want to configure. Un
 }
 ```
 
-Then, create a class `MySettings`. This class name matches your section in the `appsettings.json` file. Also, name of properties should match the value to configure inside your section. 
+Then, create a class `MySettings`. This class name matches your section in the `appsettings.json` file. Also, property names should match the values inside your sections in the settings file.
 
 ```csharp
 public class MySettings
@@ -35,7 +41,7 @@ public class MySettings
 }
 ```
 
-Next, bind the custom section in the settings file and the configuration object. In the `ConfigureServices` method of the `Startup` class, use the `Configure` method. Like this, 
+Next, bind the custom section in the settings file and the `MySettings` configuration class. In the `ConfigureServices` method of the `Startup` class, use the `Configure` method. Like this, 
 
 ```csharp
 services.Configure<MySettings>(_configuration.GetSection("MySettings"));
@@ -96,11 +102,11 @@ public class ValuesController : Controller
 }
 ```
 
-In your tests, you can use the method `Options.Create` with an instance of the `MySettings` class to fake configuration values.
+That's it! That's the Options pattern in action. In your tests, you can use the method `Options.Create` with an instance of the `MySettings` class to fake configuration values.
 
 ### Use multiple environments
 
-You can separate your configuration values per environment. You could have settings files for Development, QA or any other environment. If a value isn't found in an environment-specific file, ASP.NET Core uses the `appsettings.json` file.
+You can separate your configuration values per environment. You could have settings files for Development, QA or any other environment. If a value isn't found in an environment-specific file, ASP.NET Core uses the default `appsettings.json` file.
 
 You can change the current environment with the `ASPNETCORE_ENVIRONMENT` environment variable. On a develop machine, you can use [the launchSettings.json file](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-3.1#development-and-launchsettingsjson) to set environment variables.
 
@@ -134,7 +140,7 @@ Imagine one day, you start to work on a legacy project. But, you can't find some
 
 You can add those environment variables in the `launchSettings.json` file. New developers won't have to struggle to find those values again.
 
-But, you can refactor the code to use the Options pattern instead of  environment variables. To make things obvious, you can add the right values in the `appsettings.json` file.
+But, you can refactor the code to use the Options pattern instead of environment variables. To make things obvious, you can add the right values in the `appsettings.json` file.
 
 _What about the existing environment variables?_ If you can't rename the existing environment variables to follow your settings file, use [the PostConfigure method](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-3.1#options-post-configuration). You can overwrite the values read from the settings file using the existing environment variables.
 
@@ -160,6 +166,8 @@ public void ConfigureServices(IServiceCollection services)
 
 ### Conclusion
 
-Voilà! Now you know how to read configuration values with ASP.NET Core. Be aware, there are other [options interfaces](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-3.1#options-interfaces). Also, you can use other configuration providers to read your values from an ini file, an xml file or Azure Key Vault.
+Voilà! Now you know how to read configuration values with ASP.NET Core. Be aware, there are other [options interfaces](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-3.1#options-interfaces): `IOptionSnapshot` and `IOptionsMonitor`. Also, you can use other configuration providers to read your values from an ini file, an xml file or Azure Key Vault.
+
+If you're interested in more ASP.NET Core content, check my posts on [how to create a caching layer](https://canro91.github.io/2020/06/29/HowToAddACacheLayer/) and [how to create a CRUD API with Insight.Database](https://canro91.github.io/2020/05/01/InsightDatabase/).
 
 _Happy coding!_
