@@ -66,7 +66,7 @@ Make sure to use expiration times when storing items. You can choose between sli
 <figure>
 <img src="https://images.unsplash.com/photo-1591976711776-4a91184e0bf7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop" alt="A child playing colorful videogames" />
 
-<figcaption>If parents used `SlidingExpiration`, kids would never stop watching TV or using smartphones! <span>Photo by <a href="https://unsplash.com/@sigmund?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Sigmund</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
+<figcaption>If parents used SlidingExpiration, kids would never stop watching TV or using smartphones! <span>Photo by <a href="https://unsplash.com/@sigmund?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Sigmund</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
 </figure>
 
 Don't forget to include a size for each cache entry, if you use `SizeLimit` when registering the in-memory cache into the dependency container. This `Size` tells how many "places" from `SizeLimit` an entry takes. When this limit is reached, the cache won't store any more entries until some of them expire. For more details, see [Use SetSize, Size, and SizeLimit to limit cache size](https://docs.microsoft.com/en-us/aspnet/core/performance/caching/memory?view=aspnetcore-3.1#use-setsize-size-and-sizelimit-to-limit-cache-size).
