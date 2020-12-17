@@ -2,6 +2,7 @@
 layout: post
 title: Let's Go&colon; Learn Go in 30 days
 tags: letsX go
+cover: LetsGo.png
 ---
 
 You want to learn a new programming language? You aren't sure about what language to choose? Have you heard about Go? _Well, let's Go!_
