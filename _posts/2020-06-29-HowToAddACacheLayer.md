@@ -137,7 +137,7 @@ Be aware of removing cached entries if you need to update or delete entities in 
 
 ### Unit Tests
 
-Let's see how you can create a test for this decorator. You will need to create a fake for the decorated service. Then, assert it's called only once after two consecutive calls to the cached method. Let's use [Moq](https://github.com/moq/moq4).
+Let's see how you can create a test for this decorator. You will need to create a fake for the decorated service. Then, assert it's called only once after two consecutive calls to the cached method. Let's use [Moq]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}) to create fakes.
 
 ```csharp
 [TestClass]
@@ -282,6 +282,6 @@ For unit testing, you can use `MemoryDistributedCache`, an in-memory implementat
 
 Voilà! Now you know how to cache the results of a slow service using an in-memory and a distributed approach implementing the Decorator pattern on your ASP.NET Core API sites. Additionally, you can turn on or off the cache layer using a toggle in your `appsettings` file to either create a decorated o a plain service. If you need to cache outside of an ASP.NET Core site, you can use libraries like [CacheManager](https://github.com/MichaCo/CacheManager), [Foundatio](https://github.com/FoundatioFx/Foundatio#caching) and [Cashew](https://github.com/joakimskoog/Cashew).
 
-To learn more about configuration in ASP.NET Core, read my post on [how to read configuration values in ASP.NET Core](https://canro91.github.io/2020/08/21/HowToConfigureValues/)
+To learn more about configuration in ASP.NET Core, read my post on [how to read configuration values in ASP.NET Core](https://canro91.github.io/2020/08/21/HowToConfigureValues/). Also, check my post on [how to write good unit test]({% post_url 2020-11-02-UnitTestingTips %}).
 
 _Happy caching time!_
