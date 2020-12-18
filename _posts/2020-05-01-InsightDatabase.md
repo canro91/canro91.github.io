@@ -327,4 +327,6 @@ _Voilà!_ You know how to use Insight.Database to retrieve results and execute a
 
 > _Your mission, Jim, should you decide to accept it, is to change the `Update` and `Delete` methods to comple all CRUD operations. This post will self-destruct in five seconds. Good luck, Jim._
 
+If you're new to ASP.NET Core, check my [ASP.NET Core Guide for ASP.NET Framework Developers]({% post_url 2020-03-23-GuideToNetCore %})
+
 _Happy coding!_
