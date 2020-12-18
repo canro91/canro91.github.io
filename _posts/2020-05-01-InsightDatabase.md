@@ -8,7 +8,7 @@ A common task when working with web applications is querying the database. You w
 
 ## Why to use an ORM?
 
-An ORM, Object-relational mapping, is a library that translates between your program and your database. It converts objects to database records and vice-versa.
+**An ORM, Object-relational mapping, is a library that translates between your program and your database.** It converts objects to database records and vice-versa.
 
 ORMs vary in size and features. You can find ORMs that create and maintain your database objects and generate SQL statements. Also, you can find micro-ORMs that make you write SQL queries.
 
@@ -21,11 +21,11 @@ You can roll your own database access layer. But, an ORM helps you to:
 
 ## Insight.Database
 
-[Insight.Database](https://github.com/jonwagner/Insight.Database) is a _"fast, lightweight .NET micro-ORM"_. It allows you to query your database with almost no mapping code. It maps fields/properties to query parameters and columns to fields/properties. Also, you can make extra changes to records as their being read. For example, [you can trim whitespace-padded string columns]({% post_url 2018-09-21-INeedSomeSpace %}) from a legacy database.
+[Insight.Database](https://github.com/jonwagner/Insight.Database) is a _"fast, lightweight .NET micro-ORM"_. It allows you to query your database with almost no mapping code. It maps fields/properties to query parameters and columns to fields/properties. Also, you can make extra changes to records as they're being read. For example, [you can trim whitespace-padded string columns]({% post_url 2018-09-21-INeedSomeSpace %}) from a legacy database.
 
 > _Insight.Database is the .NET micro-ORM that nobody knows about because it's so easy, automatic, and fast, (and well-documented) that nobody asks questions about it on StackOverflow._
 
-Insight.Database recommends you to call your database through [store procedures](https://www.essentialsql.com/what-is-a-stored-procedure/). It doesn't generate any SQL statements for you.
+Insight.Database recommends you to call your database through [store procedures](https://www.essentialsql.com/what-is-a-stored-procedure/). It doesn't generate any SQL statements for you. You have to write your own SQL queries.
 
 ## Roll-up your sleeves
 
@@ -326,3 +326,5 @@ POST https://localhost:44343/api/Product
 _Voilà!_ You know how to use Insight.Database to retrieve results and execute actions with store procedures using `Query` and `Execute` methods. If you stick to naming conventions, you won't need any mapping code. Insight.Database helped you to keep your data access to a few lines of code. 
 
 > _Your mission, Jim, should you decide to accept it, is to change the `Update` and `Delete` methods to comple all CRUD operations. This post will self-destruct in five seconds. Good luck, Jim._
+
+_Happy coding!_
