@@ -50,4 +50,6 @@ public static class FromattingExtensions
 }
 ```
 
+For other tips on writing unit tests, you can check [How to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %})
+
 _All tests turned green!_
