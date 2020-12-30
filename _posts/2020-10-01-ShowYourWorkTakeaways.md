@@ -5,7 +5,7 @@ tags: books
 description: Be so good they can’t ignore you. Learn how and why you should show your work
 ---
 
-Show your work is a New York Times bestseller by Austin Kleon. He describes his book as _"a book for people who hate the very idea of self-promotion"_. This book tells how and why you should show your work. It quotes artists and well-known figures to make each chapter more memorable.
+Show your work is a New York Times bestseller by Austin Kleon. He describes his book as _"a book for people who hate the very idea of self-promotion"_. This book tells you how and why you should show your work online. It quotes artists and well-known figures to make each chapter more memorable.
 
 > _"Be so good they can’t ignore you."_
 > 
@@ -23,9 +23,9 @@ Good work isn't enough. This book teaches your work has to be out there. **If yo
 
 ## You don't have to be a genius
 
-**Creativity is about collaboration too**. Find a place where you can share your ideas and flourish your creativity. Find your scenius. Famous musicians and artists were surrounded by other artists to share, copy, acknowledge and sparkle their ideas.
+**Creativity is about collaboration too**. Find a place where you can share your ideas and flourish your creativity. Find your creativity circle or scenius. Famous musicians and artists were surrounded by other artists to share, copy, acknowledge and sparkle their ideas.
 
-Ask yourself what you want to learn. Make a commitment of learning in front of others. Share what you love and the people who love the same thing will find you.
+Ask yourself what you want to learn. And make a commitment of learning in front of others. Share what you love and the people who love the same thing will find you.
 
 > _"The minute you learn something, teach it"_
 
