@@ -4,7 +4,9 @@ title: Pragmatic Thinking and Learning&colon; Three takeaways
 tags: books learning
 ---
 
-This books sits between learning and programming. It's like a learning guide for developers. Well, it's more than that. It starts with an expertise model, moves to an analogy of how the brain works until how to capture new ideas and organize your learning.
+This books sits between learning and programming. It's like a learning guide for developers. Well, it's more than that.
+
+"Pragmatic Thinking and Learning" starts with an expertise model, moves to an analogy of how the brain works until how to capture new ideas and organize your learning.
 
 Since learning is the best skill to have, this book is valuable and worth reading. You will find helpful tips for your learning and your everyday work. For example, _always keep a piece of paper with you to note ideas_ and _prefer ink over memory_. At the end of each chapter, there are exercises to add into your routine and practice daily.
 
@@ -24,14 +26,21 @@ You aren't a novice or an expert at everything. You are in different stages per 
 
 Roughly speaking, **the brain is a single-bus dual-core processor**. Only one CPU can access memory banks at a time.
 
-Our brain works in two modes: **linear mode** (or L-mode) and **rich mode** (or R-mode). [Learning to Learn](https://www.coursera.org/learn/learning-how-to-learn/) calls these two modes: focus and diffuse mode. You need these two modes to work together.
+<figure>
+<img src="https://images.unsplash.com/photo-1555617766-c94804975da3?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop" alt="A computer processor" width="800">
+
+<figcaption>Another single-bus multiple core processor. <span>Photo by <a href="https://unsplash.com/@christianw?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Christian Wiediger</a> on <a href="https://unsplash.com/s/photos/processor?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+</figcaption>
+</figure>
+
+Our brain works in two modes: **linear mode** (or L-mode) and **rich mode** (or R-mode). Coursera [Learning How to Learn](https://www.coursera.org/learn/learning-how-to-learn/) course calls these two modes: focus and diffuse mode. You need these two modes to work together.
 
 **The L-mode is rational and the R-mode is asynchronous.** The L-mode or focus mode is when you are actively studying a subject. You're sitting in front of your computer or a textbook figuring out the details of that subject. But the diffuse mode is when you are doing something else and that subject start to make more sense all of a sudden. _Have you woken up with the solution to a problem you left at work the day before? Have you come up with a solution in the shower?_ That's the R-mode or diffuse mode.
 
 Since most of the thinking happens away from the keyboard, let the R-mode be free:
 
 * **Use metaphors**
-* **Put something head-up**. Look at your problem from a different perspective. Try to come up with 3 or 4 ways to cause deliberately the problem your debugging.
+* **Put something head-up**. Look at your problem from a different perspective. Try to come up with 3 or 4 ways to cause deliberately the problem you are debugging.
 * **Try [oblique strategies](https://en.wikipedia.org/wiki/Oblique_Strategies)**. For example: for musicians, how your composition will sound from outside a room? On a dark room? For developers, how would your library look like once is finished? How would someone use it?
 * **Change your routine**
 * **Go for a walk**. Have you seen children playing to not to step on tree sheets on the floor? the floor is lava? That's the idea.
@@ -46,6 +55,7 @@ Since most of the thinking happens away from the keyboard, let the R-mode be fre
 * **Have always something to keep notes**. You don't know where you will be when your next idea will show up.
 * **Learn something by doing or building**. Instead of dissecting a frog, build one.
 
+_Happy thinking and learning!_
 
 
 

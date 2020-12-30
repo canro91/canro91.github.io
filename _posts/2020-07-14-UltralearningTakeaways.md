@@ -6,7 +6,7 @@ tags: books learning
 
 Scott Young describes in Ultralearning the strategy behind his own challenges, like "MIT Challenge in 1 year" and "A year without English". Also, he reveals the methods from some ultralearners, like Benny Lewis with his "Fluent in 3 Month" projects. _What is it all about?_
 
-Ultralearning is an strategy to learn that is self-directed and intense. You want to start an ultralearning project to advance your career or excel at a particular subject. Ultralearning is an alternative to high tuition.
+**Ultralearning is an strategy to learn that is self-directed and intense.** You want to start an ultralearning project to advance your career or excel at a particular subject. Ultralearning is an alternative to high tuition.
 
 ## Before starting
 
@@ -30,6 +30,12 @@ For example, vocabulary and expressions are facts when learning a foreign langua
 
 Spend about 10% of your learning time doing research. Find how people are learning that subject. For example, syllabus of courses, textbooks, bootcamps, experts in that field. Filter what won't help you to achieve your goal.
 
+<figure>
+<img src="https://images.unsplash.com/photo-1524591282491-edb48a0fca8f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop" alt="Library collection" />
+
+<figcaption>Find how people are learning your study subject. <span>Photo by <a href="https://unsplash.com/@christianw?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Christian Wiediger</a> on <a href="https://unsplash.com/s/photos/studying?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
+</figure>
+
 ## During
 
 **Learning should be in the context where those skills will be applied**. It's doing the thing you want to get good at where most of the learning happen. For example, doing problem sets instead of watching lectures. Or learning languages through conversations instead of vocabulary lists. You can try project-based learning or immerse learning. For example, learn how to create a website in a month or going on a trip to learn a language.
@@ -39,3 +45,5 @@ Spend about 10% of your learning time doing research. Find how people are learni
 **Identify the bottleneck components in your learning**. Separate your skill into sub-skills. And practice each sub-skill . Like a musician who practice tricky parts of a piece in isolation and then practice everything.
 
 **Recall is better than concept maps and passive note reviewing**. Recall concepts and facts. Your memory is a leaky bucket. Try space-repetition software or flashcards. After watching a lecture, write all you can remember. When practicing, avoid using your resources.
+
+_Happy ultralearning!_
