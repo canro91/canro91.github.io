@@ -39,3 +39,7 @@ Take every chance to share what you know and mentor junior members of your team.
 An awesome website or mobile app can make a huge difference. But, start small with finished core features and iterate on that.
 
 At the beginning, you will have to setup the system through scripts or do some manual configuration. It's better to demo a whole feature with an unpolished UI than a very awesome UI that does nothing.
+
+Interested on more career lessons? Check my lessons on [remote work]({% post_url 2020-08-08-LessonsOnRemoteWork %}).
+
+_Happy coding!_

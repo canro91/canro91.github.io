@@ -34,6 +34,8 @@ It's been a year since I started to work remotely. These are the lessons I learn
 
 **Connect with others.** You could be working from home for weeks without getting outside. Don't be home alone! Interact with others! Call your friends, go out with your family, work from a coworking space. _At the time of writing, we are at home due to COVID-19 disease. But, this advice is still applicable, staying at home and keeping social distancing_
 
-**Before presentations, turn off auto updates and notifications**. You don’t want your computer to restart updating the operating system in the middle of a presentation or an important meeting. _This is a true story happened to a friend of a friend of mine_
+**Before presentations, turn off auto updates and notifications**. You don’t want your computer to restart updating the operating system in the middle of a presentation or an important meeting. _This is a true story happened to a friend of a friend of mine._
+
+For more career lessons, check the five lessons I learned after [five years as a software engineer]({% post_url 2019-08-19-FiveLessonsAfterFiveYears %}).
 
 _Happy remote work!_
