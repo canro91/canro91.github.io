@@ -15,7 +15,7 @@ It all starts with delegates. A delegate is a pointer to a method with some inpu
 
 Delegates are helpful when working with higher-order functions. This is, functions that take functions as parameter or return another function. For example, Javascript's callbacks or Python's decorators are high-order functions.
 
-Now, that is clear what delegates are, let's see some `Func` and `Action` declarations. For example,
+Now that is clear what delegates are, let's see some `Func` and `Action` declarations. For example,
 
 * `Action<Employee>` holds a void method that receives `Employee` as parameter.
 * `Action`, a void method without any parameters.
