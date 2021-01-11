@@ -34,7 +34,7 @@ GO
 
 ## WHERE clause
 
-The first difference is about the WHERE clause. **One one hand, DELETE accept a WHERE clause to only delete only some records from a table. But, TRUNCATE doesn't.** It deletes all records from a table. If you try to add a WHERE clause with TRUNCATE, you get _"Incorrect syntax near the keyword 'WHERE'"_.
+The first difference is about the WHERE clause. **One one hand, DELETE accept a WHERE clause to only delete some records from a table. But, TRUNCATE doesn't.** It deletes all records from a table. If you try to add a WHERE clause with TRUNCATE, you get _"Incorrect syntax near the keyword 'WHERE'"_.
 
 ```sql
 SELECT * FROM dbo.Movies
@@ -48,11 +48,11 @@ TRUNCATE TABLE dbo.Movies WHERE Name = 'Armageddon'
 
 ## Identity columns
 
-An identity column is a column with automatic incremented values. It use to create key values in tables.
+An identity column is a column with automatic incremented values. It's used to create key values in tables.
 
 Values for identity columns start from a "seed" value and increase by an "increment" value. You can use any number as seed and any positive or negative number as increment. By default, if you don't use any seed or increment, it starts from 1 and increments by 1. `IDENTITY = IDENTITY(1, 1)`
 
-**DELETE statements don't reset indentity columns.** It means new rows will have the next value in the identity columns. But, TRUNCATE does reset identity columns. The next new row will have the seed in the identity column.
+**DELETE statements don't reset identity columns.** It means new rows will have the next value in the identity columns. But, TRUNCATE does reset identity columns. The next new row will have the seed in the identity column.
 
 Let's delete all movies from our sample table and see the Id columns for the new movies.
 
@@ -94,13 +94,13 @@ Notice the Id of 'Platoon'. It's 1 again. When we created our `Movies` table, we
 
 ## Triggers
 
-A triggers is an special tpye of store procedures that runs when a given action has happened at the database or table level. For example, you can run a custom action inside a trigger after INSERT, DELETE or UPDATE to a table.
+A triggers is an special type of store procedure that runs when a given action has happened at the database or table level. For example, you can run a custom action inside a trigger after INSERT, DELETE or UPDATE to a table.
 
 When you work with triggers, you have two virtual tables: `INSERTED`, `DELETED`. These tables hold the values inserted or deleted in the statement that started the trigger in the first place.
 
-Now, back to the differences between TRUNCATE and DELETE. **DELETE fire triggers, TRUNCATE doesn't.**
+Now, back to the differences between TRUNCATE and DELETE. **DELETE fires triggers, TRUNCATE doesn't.**
 
-Let's create a trigger that shows the deleted values. It uses the `DeLETED` table.
+Let's create a trigger that shows the deleted values. It uses the `DELETED` table.
 
 ```sql
 CREATE OR ALTER TRIGGER dbo.PrintDeletedMovies
@@ -113,7 +113,7 @@ BEGIN
 END
 ```
 
-Now, let's delete our movies with DELETE and TRUCANTE to see what happens. First, let's add some new movies and let's use the DELETE.
+Now, let's delete our movies with DELETE and TRUNCATE to see what happens. First, let's add some new movies and let's use the DELETE.
 
 ```sql
 INSERT INTO dbo.Movies
