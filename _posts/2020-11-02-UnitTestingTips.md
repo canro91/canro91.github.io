@@ -8,11 +8,15 @@ cover-alt: Two issues to avoid to write good unit test
 
 These days, I needed to update some tests. I found two issues on them. Please, continue to read. Maybe, you're a victim of those issues, too.
 
-The tests were for an ASP.NET Core API controller, `AccountController`. This controller created, updated and suspended user accounts. Also, it sent a welcome email to new users.
+To write good unit tests, avoid **complex setup scenarios** and **hidden test values** in your tests. Often tests are bloated with unneeded or complex code in the arrange part and full of magic or hidden test values. Unit tests should be readable, even more than production code.
 
-These tests checked a configuration object for the sender, reply-to and contact-us email addresses. The welcome email contained the three. If one of the email addresses were null or empty, the controller threw an exception from its constructor.
+## The tests
 
-Let's see one of the tests. This test checks for the sender email. _Can you spot any issues?_
+The tests I needed to update were for an ASP.NET Core API controller, `AccountController`. This controller created, updated and suspended user accounts. Also, it sent a welcome email to new users.
+
+These tests checked a configuration object for the sender, reply-to and contact-us email addresses. The welcome email contained those three emails. If the configuration files miss one of the email addresses, the controller threw an exception from its constructor.
+
+Let's see one of the tests. This test checks for the sender email.
 
 ```csharp
 [TestMethod]
@@ -48,11 +52,9 @@ public Task AccountController_SenderEmailIsNull_ThrowsException()
 }
 ```
 
-The tests used [Moq](https://github.com/moq/moq4), a mocking library for .NET. I already wrote about the things [I like and dislike about Moq]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}). Let's see the two issues with this test.
+The tests used [Moq](https://github.com/moq/moq4), a mocking library for .NET. I already wrote about the things [I like and dislike about Moq]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}). Let's see the two issues in our sample test.
 
-Two issues to avoid when writing unit tests are **noise** and **hidden test scenarios**. First, tests are often full of noise in the form of complex arrange or setup scenarios. And, test values aren't obvious. Test names state an scenario, but you have to dig into the tests to find the test values. Remember, readability is king when writing unit tests.
-
-_Did you spot these issues on our sample test? No. It wasn't the naming convention._
+_Can you spot any other issues? The naming convention isn't one._
 
 <figure>
 <img src="https://images.unsplash.com/32/6Icr9fARMmTjTHqTzK8z_DSC_0123.jpg?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop&ixid=eyJhcHBfaWQiOjF9" alt="Adjusting dials on a mixer" />
@@ -108,9 +110,9 @@ private AccountController MakeAccountController(IOptions<EmailConfiguration> ema
 }
 ```
 
-Also, since our test doesn't have any asynchronous code, we could remove the return statement and make our test a `void` method.
+Also, since our test doesn't have any asynchronous code, we could remove the return statement and turned our test into a `void` method.
 
-With this refactor, our test started to look simpler and easier to read. Now, it's clear this test only cares about the email configuration.
+With this refactor, our test started to look simpler and easier to read. Now, it's clear this test only cares about the `EmailConfiguration` class.
 
 ## Make your test values obvious
 
@@ -138,7 +140,7 @@ public void AccountController_SenderEmailIsNull_ThrowsException()
 }
 ```
 
-Finally, as an aside, we don't need a mock on `IOptions<EmailConfiguration>`. We can use `Option.Create` instead. Let's do it.
+Finally, as an aside, we don't need a mock on `IOptions<EmailConfiguration>`. We can use the `Option.Create` method instead. Let's do it.
 
 ```csharp
 [TestMethod]
@@ -156,7 +158,7 @@ public void AccountController_SenderEmailIsNull_ThrowsException()
 }
 ```
 
-Voilà! That's easier to read. Do you have those two issues on your own tests? Remember, readability is one of the pillars of unit testing.
+Voilà! That's way easier to read. Do you have noise and hidden test values in your own tests? Remember, readability is one of the pillars of unit testing.
 
 For other tips on writing unit tests, you can check my takeaways from the book [The Art of Unit Testing]({% post_url 2020-03-06-TheArtOfUnitTestingReview %}) and my post on [how to write fakes with Moq]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}).
 
