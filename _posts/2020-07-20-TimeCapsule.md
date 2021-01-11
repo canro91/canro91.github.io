@@ -8,7 +8,7 @@ tags: career interview
 
 _Future developers, this is how programming looks like in 2020_
 
-GitHub has archived all the public repositories until July 2020. It was part of his [archive initiative](https://archiveprogram.github.com/). You have earned a batch on your GitHub profile, if any of your repositories got into a vault in the Arctic. It will show future generations how code was in 2020. But it doesn't show some of the practices around it.
+GitHub has archived all the public repositories until July 2020. It was part of his [archive initiative](https://archiveprogram.github.com/). We have earned a batch on our GitHub profiles, if any of our repositories got into a vault in the Arctic. It will show future generations how code was in 2020. _Should we be ashamed or proud?_ But it doesn't show some of the practices around it.
 
 Dear developers from the future, this is how coding and interviewing look like in 2020.
 
@@ -21,9 +21,9 @@ Dear developers from the future, this is how coding and interviewing look like i
 * Single-page applications seem the norm now. Specially when you build them with one of the trending frameworks. Or with a library built on-top of one of them.
 * Everyone is doing microservices these days. Monolith are the evil doers.
 * Machine Learning and Artificial Intelligence are the next big things.
-* Everybody when stocked use StackOverflow. It's a place to post questions and receive answers.
+* Everybody when stocked use StackOverflow. It's a place to post questions and receive answers. A forum.
 * Null is still a problem in mainstream languages.
-* When things broken, we say _"It works on my machine"_. Then, we came up with containers. So we can ship developer's machines to the clients.
+* When things broke, we say _"It works on my machine"_. Then, we came up with containers. So we can ship developer's machines to the clients or to the cloud.
 * Most developers upload and share their code on GitHub. Oh yes! Git is the most popular version control system. There are also GitLab and BitBucket.
 * Every day, we have a short meeting called "daily meeting" as part of a ceremony called SCRUM methodology. Everyone call himself "Agile".
 * I'm writing this from a laptop with a 1.8GHz 4-Core processor, 16GB of memory, 500GB of hard drive and 6-hour battery life.
@@ -33,10 +33,10 @@ Dear developers from the future, this is how coding and interviewing look like i
 * Interviewing is broken. Everybody with a blog complain about the interview process. Even on Twitter (Oh Twitter, the place to complain in less than 280 characters)
 * We solve (or attempt to solve) algorithms and data structures exercises on whiteboards. Although, [a study](https://www.sciencedaily.com/releases/2020/07/200714101228.htm) reveals whiteboarding only test candidate's ability to deal with stress. Most of the time, we don't use those subjects after the interview process. 
 * There are pages to train for whiteboarding: [HackerRank](https://www.hackerrank.com/), [LeetCode](https://leetcode.com/), [CodeWars](https://www.codewars.com/)...
-* Interviewing is based on rejection. Only a small percentage of applicants are hired. A story tells some managers at a big company rejected all applications they were asked to review. Later, the secret was revealed. They were their own applications.
+* Interviewing is based on rejection. Only a small percentage of applicants are hired. A story tells some managers at a big company rejected all applications they were asked to review. Later, the secret was revealed. They reviewed their own applications.
 * Ninjas, superheroes, wizards, 10x engineers...Ping-pong tables, open spaces, cool offices, being "agile" and [put the latest next big thing here] are often listed on job descriptions.
 
-During 2020 world pandemic, some companies turned remote. We started to use Zoom, a conference room tool. Most people started to work from home without any previous experience on working remote. _"Please, turn off your microphone"_, _"you're muted"_, we all heard these phrases in meetings every once in a while.
+During 2020 world pandemic, some companies turned remote. We started to use Zoom, a conference room tool. Most people started to work from home without any previous experience on working remotely. _"Please, turn off your microphone"_, _"you're muted"_, we all heard these phrases in meetings every once in a while.
 
 I hope 2020 world pandemic is still on Wikipedia or whatever you have these days to look things up...or brains are already connected to the Internet, like in the Matrix movie? You watch Matrix in class? Wait! Do you still have schools?
 
