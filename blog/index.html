@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+<div class="posts">
+  {% for post in paginator.posts %}
+  <div class="post">
+    {% if post.cover %}
+    {% capture imagePath %}{{ post.path | replace: '_posts/', '' | replace: '.md', '' }}/{{ post.cover }}{% endcapture %}
+    <div class="post-cover">
+    <img src="/assets/posts/{{ imagePath }}"
+        {% if include.alt %} alt="{{ include.alt }}" {% endif %}
+    />
+    </div>
+    {% endif  %}
+    <h1 class="post-title">
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
+
+    {% include tags_for_page.html %}
+
+    <span class="post-date">{{ post.date | date_to_string }} {{ tags_content }}</span>
+
+    {% include posts_in_series.html %}
+
+    {% if post.layout == 'presentation' and post.description %}
+        {{ post.description | markdownify }}
+    {% else %}
+        {{ post.content }}
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+
+<div class="pagination">
+  {% if paginator.next_page %}
+      <a class="pagination-item older" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older</a>
+  {% else %}
+    <span class="pagination-item older">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    <a class="pagination-item newer" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' | replace: 'index.html', '' }}">Newer</a>
+  {% else %}
+    <span class="pagination-item newer">Newer</span>
+  {% endif %}
+</div>

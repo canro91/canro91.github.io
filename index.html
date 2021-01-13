@@ -1,49 +1,33 @@
 ---
 layout: default
-title: Home
+title: Hola, I'm Cesar Aguirre
 ---
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    {% if post.cover %}
-    {% capture imagePath %}{{ post.path | replace: '_posts/', '' | replace: '.md', '' }}/{{ post.cover }}{% endcapture %}
-    <div class="post-cover">
-    <img src="/assets/posts/{{ imagePath }}"
-        {% if include.alt %} alt="{{ include.alt }}" {% endif %}
-    />
-    </div>
-    {% endif  %}
-    <h1 class="post-title">
-      <a href="{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
+<img src="/assets/800x300.png" alt="Hola, I'm Cesar">
 
-    {% include tags_for_page.html %}
+<h1>Hola, I’m Cesar</h1>
 
-    <span class="post-date">{{ post.date | date_to_string }} {{ tags_content }}</span>
+<p>I’m a software engineer, lifelong learner, language enthusiast and vivid reader.</p>
 
-    {% include posts_in_series.html %}
+<p><em>I help teams to grow high-quality backend software through clean code.</em> I work remotely as a C# backend engineer. I have worked in public services, electronic invoicing and reservation management.</p>
 
-    {% if post.layout == 'presentation' and post.description %}
-        {{ post.description }}
-    {% else %}
-        {{ post.content }}
-    {% endif %}
-  </div>
-  {% endfor %}
-</div>
+<p>I’m a cat owner, <a href="/2020/09/14/LearnVimForFunAndProfit/">vim user</a>, <a href="/2020/08/29/HowITakeNotes/">plain-text lover</a> and <a href="/2020/11/18/HowToTakeSmartNotes/">Zettelkasten practitioner</a>.</p>
 
-<div class="pagination">
-  {% if paginator.next_page %}
-      <a class="pagination-item older" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    <a class="pagination-item newer" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' | replace: 'index.html', '' }}">Newer</a>
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div>
+<p>I blog to share my journey as a software engineer. I write about <a href="/tags/books/">books I read</a>, <a href="/tags/showdev/">libraries I use</a>, <a href="/tags/bugoftheday/">bugs I find</a> and <a href="/tags/todayilearned/">things I learn</a>.</p>
+
+<p>These are some of my favorite posts:</p>
+
+<ul>
+  <li><a href="/2020/10/26/ReactIn30Days/">Let’s React. Learn React in 30 days</a></li>
+  <li><a href="/2020/10/26/ReactIn30Days/">The Clean Coder: Three Takeaways</a></li>
+  <li><a href="/2020/10/26/ReactIn30Days/">Git guide for TFS users</a></li>
+  <li><a href="/2020/10/26/ReactIn30Days/">What the Func, Action?</a></li>
+  <li><a href="/2018/11/17/TheC-DefinitiveGuide/">The C# Definitive Guide</a></li>
+  <li><a href="/2019/11/19/TwoCSharpIdioms/">Two C# idioms</a></li>
+</ul>
+
+<p>To read my most recent posts, head to the <a href="/blog">blog page</a>.</p>
+
+<p>You can find me online at: <a href="https://dev.to/canro91">dev.to</a>, <a href="https://github.com/canro91">GitHub</a> and <a href="https://linkedin.com/in/iamcesaraguirre">LinkedIn</a>.</p>
+
+<p><em>Keep in touch!</em></p>
