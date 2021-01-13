@@ -10,7 +10,6 @@
     </div>
 
     <nav class="sidebar-nav">
-        <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="/">Home</a>
         <a class="sidebar-nav-item{% if page.url contains site.sidebar_blog_link' %} active{% endif %}" href="/blog/">Blog</a>
 
       {% comment %}
@@ -18,7 +17,7 @@
         `layout: page` in the front-matter. See readme for usage.
       {% endcomment %}
 
-      {% assign pages_list = site.pages %}
+      {% assign pages_list = site.pages|sort:"sidebar_sort_order" %}
       {% for node in pages_list %}
         {% if node.title != null %}
           {% if node.layout == "page" %}
