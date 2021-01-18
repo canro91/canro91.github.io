@@ -27,7 +27,7 @@ Good work isn't enough. This book teaches your work has to be out there. **If yo
 
 Ask yourself what you want to learn. And make a commitment of learning in front of others. Share what you love and the people who love the same thing will find you.
 
-> _"The minute you learn something, teach it"_
+{% include image.html name="Quote.png" alt="The minute you learn something, teach it" caption="" %}
 
 ## Share something small every day
 
