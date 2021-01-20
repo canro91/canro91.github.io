@@ -4,7 +4,11 @@ title: TIL&colon; Always Use a Culture When Parsing Numeric Strings in C#
 tags: todayilearned csharp
 ---
 
-This week, I reinstalled the operating system of my computer. The new version uses Spanish, instead of English. After that, lots of unit tests started to break in one of my projects. The broken tests verified the formatting of currencies. Some of the these tests looked like the one below.
+This week, I reinstalled the operating system of my computer. The new version uses Spanish, instead of English. After that, lots of unit tests started to break in one of my projects. The broken tests verified the formatting of currencies. This is what I learned about parsing numeric strings and unit tests.
+
+**To have a set of always-passing unit tests, use a default culture when parsing numeric strings**. Instead of using the plain `Parse` and `ToString` methods on decimals, add a default culture with these two methods. As an alternative, you could wrap your tests in a helper method to set the appropriate culture to run your tests.
+
+Some of the failing tests looked like the one below. These tests verified the separator for each supported currency in the project.
 
 ```csharp
 [TestMethod]
@@ -26,9 +30,9 @@ public static string ToCurrency(this decimal amount)
 }
 ```
 
-The `ToCurrency` method didn't specify any culture. It used the user current culture. And, the test expected `.` as the separator for decimal places. It wasn't the case for the culture I was using. The separator for my locale was `,`. That's why those tests failed.
+The `ToCurrency` method didn't specify any culture. It used the user's current culture. And, the test expected `.` as the separator for decimal places. It wasn't the case for the culture I was using after resintalling my operating system. The separator for my locale was `,`. That's why those tests failed.
 
-**To have a set of always passing unit tests, use a default culture when parsing numeric strings**. Instead of using a plain `Parse` and `ToString` on decimals, add a default culture with these two methods. As an alternative, you could wrap your tests in a helper method to set the appropriate culture to run your tests.
+To make sure my failing tests always passed, no matter the culture being used, I added a default culture when parsing numeric strings.
 
 For example, you can create `ToCurrency` and `FromCurrency` methods like this:
     
