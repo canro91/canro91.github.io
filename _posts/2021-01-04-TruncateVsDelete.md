@@ -94,9 +94,9 @@ Notice the Id of 'Platoon'. It's 1 again. When we created our `Movies` table, we
 
 ## Triggers
 
-A triggers is an special type of store procedure that runs when a given action has happened at the database or table level. For example, you can run a custom action inside a trigger after INSERT, DELETE or UPDATE to a table.
+A trigger is an special type of store procedure that runs when a given action has happened at the database or table level. For example, you can run a custom action inside a trigger after INSERT, DELETE or UPDATE to a table.
 
-When you work with triggers, you have two virtual tables: `INSERTED`, `DELETED`. These tables hold the values inserted or deleted in the statement that started the trigger in the first place.
+When you work with triggers, you have two virtual tables: `INSERTED` and `DELETED`. These tables hold the values inserted or deleted in the statement that started the trigger in the first place.
 
 Now, back to the differences between TRUNCATE and DELETE. **DELETE fires triggers, TRUNCATE doesn't.**
 
