@@ -64,7 +64,9 @@ WHERE CAST(query_plan AS NVARCHAR(MAX)) LIKE ('%CONVERT_IMPLICIT%')
 ORDER BY qs.total_worker_time DESC OPTION (RECOMPILE);
 ```
 
+<div class="video-container">
 <iframe src="https://www.youtube-nocookie.com/embed/ef-BmyNipU4?start=196&rel=0&fs=0" width="640" height="360" frameborder="0"></iframe>
+</div>
 
 ## Change compatibility level
 
@@ -112,7 +114,9 @@ ORDER BY Avg_Estimated_Impact DESC
 GO
 ```
 
+<div class="video-container">
 <iframe src="https://www.youtube-nocookie.com/embed/fX05yEkSkpo?start=706&rel=0&fs=0" width="640" height="360" frameborder="0"></iframe>
+</div>
 
 ## Delete most of your indexes
 
@@ -122,7 +126,9 @@ Delete most your indexes. Identify your main table and check if it has more than
 
 Also, keep in mind if you rebuild an index for a table, SQL Server will remove all caches related to that table. Rebuilding your indexes is the most expensive way of updating statistics.
 
+<div class="video-container">
 <iframe src="https://www.youtube-nocookie.com/embed/SqhX8OaOI6A?start=395&rel=0&fs=0" width="640" height="360" frameborder="0"></iframe>
+</div>
 
 You can [find your unused indexes](https://blog.sqlauthority.com/2011/01/04/sql-server-2008-unused-index-script-download/) with this script:
 
