@@ -5,13 +5,15 @@ description: A very opinionated guide to C# for beginners and intermediate devel
 tags: tutorial csharp
 ---
 
-Hello, if you are a beginner programmer or you just took a programming course at school, and you want to find a pathway to be _"fluent"_ in C#, this is the right place for you!
+Hello, if you are a beginner programmer or you just took a programming course at school, and you want to find a pathway to be _"fluent"_ in C#, this is the right place for you! This is my guide to what every beginner and intermediate C# developer should know.
+
+Every intermediate C# developer should know how to work productively with a text editor of choice. Visual Studio and Visual Studio Code are two popular choices. He should know how to use `async` and `await` keywords, most common LINQ methods and regular expressions. Also, he should find his way around large codebases and be aware of the latest C# features. 
 
 ## Environment
 	
 > _Give me six hours to chop down a tree and I will spend the first four sharpening the axe._ Abraham Lincon
 
-Visual Studio is the de-facto IDE for C#. Although, Visual Studio Code has gained a lot attention recently. Since you will spend most of your workdays with Visual Studio, you should sharpen your tools.
+Visual Studio is the de-facto Integrated Development Environment (IDE) for C#. Although, Visual Studio Code has gained a lot attention recently. Since you will spend most of your workdays with Visual Studio, you should sharpen your tools.
 
 * Find a colorscheme you like. For example, [Solarized](https://ethanschoonover.com/solarized/)
 * Learn the basic shortcuts
@@ -26,7 +28,7 @@ Visual Studio is the de-facto IDE for C#. Although, Visual Studio Code has gaine
 	* [VsVim](https://marketplace.visualstudio.com/items?itemName=JaredParMSFT.VsVim), if you are fan of Vim. You don't know Vim? C'mmon!
 	* [Wumpf Solution Color](https://marketplace.visualstudio.com/items?itemName=Wumpf.SolutionColor), you don't want to mess with your production codebase. You can change your Visual Studio menu bar color based on your folder solution.
 	* [VS Color Output](https://marketplace.visualstudio.com/items?itemName=MikeWard-AnnArbor.VSColorOutput)
-* C# Interactive. You don't have to create a dummy Console project just to try things out. With C# interactive, you have a [C# REPL](https://dzone.com/articles/c-interactive-in-visual-studio) at your disposition. You can load a dll of your own or from a Nuget package, load a C# script (.csx file) or simply try a few lines of C#. From Visual Studio, head to View Menu, Other Windows and click C# Interactive.
+* C# Interactive. You don't have to create a dummy Console project just to try things out. With C# interactive, you have a [C# REPL](https://dzone.com/articles/c-interactive-in-visual-studio) at your disposition. You can load a NuGet package or your own dll's, load a C# script (.csx file) or simply try a few lines of C# code. From Visual Studio, head to View Menu, Other Windows and click C# Interactive.
 
 ## Git and Github
 
@@ -36,13 +38,13 @@ Git is a version control system. A time machine to go back in time, create alter
 
 * Install [Git](https://git-scm.com/downloads) locally
 * Learn the basic commands: `init`, `add`, `status`, `commit`, `push`
-* Use Git inside of your IDE. You use an IDE, right?
+* Use Git inside of your text editor or IDE of choice. _You use an IDE, right?_
 * [Udacity Git course](https://www.udacity.com/course/version-control-with-git--ud123)
-* My own guide on [How to version control your projects with Git    ]({% post_url 2020-05-29-HowToVersionControl %})
+* My own guide on [How to version control your projects with Git]({% post_url 2020-05-29-HowToVersionControl %})
 
-### Github
+### GitHub
 
-Programming is about collaboration. Github is the programmers social network to show your own code, ask for features in a library, report bugs in the software you use, read and make questions about someone else's code. Microsoft, Facebook, Google have some of their own code available on Github.
+Programming is about collaboration. GitHub is the social network for programmers. With GitHub, you can show your own code, ask for features in a library, report bugs in the software you use, read and make questions about someone else's code. Microsoft, Facebook, Google have some of their own code available on Github.
 
 * [Udacity Github course](https://www.udacity.com/course/how-to-use-git-and-github--ud775)
 
@@ -66,7 +68,7 @@ Programming is also about [reading code](https://changelog.com/posts/one-sure-fi
 
 ## Unit tests
 
-An unit test is a "safety net" to make sure you don't break things when you add new features or modify your code base. An unit test is a piece of code that uses your code base from a "user" point of view and verifies a given behaviour.
+An unit test is a "safety net" to make sure you don't break things when you add new features or modify your codebase. An unit test is a piece of code that uses your code base from a "user" point of view and verifies a given behaviour.
 
 * Learn a test naming convention. For example, [Roy Osherove's convention](http://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html)
 * Learn what unit test really means [Unit Test - Definition](http://artofunittesting.com/definition-of-a-unit-test/)
@@ -76,7 +78,7 @@ An unit test is a "safety net" to make sure you don't break things when you add 
 
 ## LINQ
 
-Language-Integrated Query, LINQ, is the declarative way for C# to work with collections or anything that looks like one. Instead of writing the looping and the business logic with `foreach`, `for` or `while`, you should try to do it with LINQ.
+Language-Integrated Query, LINQ, is the declarative way to work with collections in C# or anything that looks like one. Instead of writing the looping and the business logic with `foreach`, `for` or `while`, you should try to do it with LINQ.
 
 **Example**: Given a string of emails separated by commas, create an array with the trimmed emails
 
@@ -90,10 +92,11 @@ string[] trimmed = emails.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEnt
 
 * Learn the most frequently used methods: `Where`, `Select`, `FirstOrDefault`, `Any`, `GroupBy`, `Distinct`.
 * Learn about lambda expressions. `Predicate`, `Action` and `Func`. Read my take on Func vs Action, [What the Func, Action?]({% post_url 2019-03-22-WhatTheFuncAction %})
+* Check my [quick guide to LINQ with examples]({% post_url 2021-01-18-LinqGuide %})
 
 ## Regular Expressions
 
-Have you ever used `*.txt` in the file explorer to find all text files in a folder? You have already used a regular expression. But, `*.txt` is just the tip of the iceberg.
+Have you ever used `*.txt` in the file explorer to find all text files in a folder? If so, you have already used a regular expression. But, `*.txt` is just the tip of the iceberg.
 
 Regular expressions give you a search syntax to find patterns of text in a string. For example, find all phone numbers like this one `(+57) 3XX XXX-XXX`, you could use `(\(\+\d{2}\))\s(\d{3})\s(\d{3})\-(\d{3})`. 
 
@@ -108,7 +111,6 @@ Regular expressions give you a search syntax to find patterns of text in a strin
 * Learn how to acess named groups in C#
 * Read [Regular expressions Quickstart](https://www.regular-expressions.info/quickstart.html)
 
-
 ## async/await
 
 Asyncronous code is code that doesn't block when executing long-running operations.
@@ -117,17 +119,19 @@ Asyncronous code is code that doesn't block when executing long-running operatio
 * Learn to await your code all-the-way-down to avoid deadlocks. Read [Don't block on async code](http://blog.stephencleary.com/2012/07/dont-block-on-async-code.html)
 * Avoid `async void` methods, use `async Task` instead
 * Learn how to use `Task.WhenAny` and `Task.WhenAll`
-* [The Ultimate Guide to Asynchronous Programming in C# and ASP.NET](https://exceptionnotfound.net/asynchronous-programming-in-asp-net-csharp-ultimate-guide/)
+* Read [The Ultimate Guide to Asynchronous Programming in C# and ASP.NET](https://exceptionnotfound.net/asynchronous-programming-in-asp-net-csharp-ultimate-guide/)
 
 ## Some new features in C# since version 6
 
-These are one of the new features in C# since version 6.0 you can use more often. All the new features are available on [What's new on C# X](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/)
+C# is an evolving language. With every new version, you will have more features to write more concise code. These are some of the new features in C# you can use more often. It start from version 6.0. All the new features are available on [What's new on C# X](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/).
 
 ### C# 6.0
 
 * **String interpolation**: Before `string.Format("Hello, {0}", name)`, after `$"Hello, {name}"`
 
-* **Null conditional operators**: Before,
+* **Null conditional operators**. There are two new operators: `??` and `?.` to check for null values.
+
+Before,
 
 ```csharp
 string name = ReadNameFromSomewhere();
@@ -169,11 +173,25 @@ public void Method(string param1)
 
 ### C# 7.X
 
-* **`out` variables**: Before `int count = 0; int.TryParse(readFromKey, out count)`, after `int.TryParse(readFromKey, out var count)`
+* **`out` variables**: You can inline the variable declaration next to the `out` keyword
+
+Before,
+
+```sql
+int count = 0; int.TryParse(readFromKey, out count)
+```
+
+After,
+
+```csharp
+int.TryParse(readFromKey, out var count)
+```
 
 * **Discards**: You can use `_` to ignore a value when you're force to declare one. For example, `int.TryParse(readFromKey, out _)`
 
-* **Tuples**: Before,
+* **Tuples**: You can access values inside tuples by name, instead of `ItemX`.
+
+Before,
 
 ```csharp
 Tuple<string, string> Greet() { }
@@ -189,7 +207,7 @@ var greeting = Greet()
 greeting.Name
 ```
 
-* **`async Main` method**: Now, `async` Main method is available in Console apps
+* **`async Main` method**: Now, `async` Main methods are available in Console applications.
 
 ```csharp
 public static async Task Main(string[] args)
@@ -200,10 +218,13 @@ public static async Task Main(string[] args)
 
 ### C# 8.0
 
-* **Null-coalescing assignment**: Before,
+* **Null-coalescing assignment**: Now, there is the operator `??=` to only assign a variable if its value isn't null.
+
+Before,
 
 ```csharp
 int? magicNumber = null;
+
 if (magicNumber == null)
     magicNumber = 7;
 ```
@@ -212,10 +233,13 @@ After,
 
 ```csharp
 int? magicNumber = null;
+
 magicNumber ??= 7;
 ```
 
-* **Using declarations**: A variable preceded by `using` is disposed at the end of the scope. Before,
+* **Using declarations**: A variable preceded by `using` is disposed at the end of the scope.
+
+Before,
 
 ```csharp
 using (var reader = new StreamReader(fileName))
@@ -239,7 +263,7 @@ while ((line = reader.ReadLine()) != null)
 }
 ```
 
-* **Nullable reference types** All reference variables are non-nullable by default. Any attempt to dereference a nullable reference gets a warning from the compiler. _Goodbye, NullReferenceException_. Be aware, you need to turn on this feature. Add `<Nullable>enable</Nullable>` inside the `PropertyGroup` in your csproj files.
+* **Nullable reference types**: All reference variables are non-nullable by default. Any attempt to dereference a nullable reference gets a warning from the compiler. _Goodbye, NullReferenceException!_. Be aware, you need to turn on this feature at the project level. Add `<Nullable>enable</Nullable>` inside the `PropertyGroup` in your csproj files.
 
 Before,
 
@@ -264,6 +288,47 @@ string? canBeNullName = null;
 SayHi(name);
 // ^^^^^
 // warning CS8604: Possible null reference argument for parameter 'name'
+```
+
+### C# 9.0
+
+* **Records**: A record is an immutable reference type with built-in equality methods. When you create a record, the compiler creates a `ToString` method, a value-based equality methods and other methods for you. Records are helpful to replace value-objects in your code.
+
+```csharp
+public record Movie
+{
+    public string Title { get; }
+    public int ReleaseYear { get; }
+    
+    public Movie(string title, int releaseYear) => (Title, ReleaseYear) = (title, releaseYear);
+}
+```
+
+* **Top-level statements** All the boilerplate is now gone from `Main` methods.
+
+Before,
+
+```csharp
+using System;
+
+namespace HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+    }
+}
+```
+
+After,
+
+```csharp
+using System;
+
+Console.WriteLine("Hello World!");
 ```
 
 ## Bonus Points
