@@ -278,6 +278,31 @@ public static class DistributedCacheExtensions
 
 For unit testing, you can use `MemoryDistributedCache`, an in-memory implementation of `IDistributedCache`. So you don't need to roll a Redis server to test your code. From the previous unit test, you need to replace the `IMemoryCache` dependency with `var memoryCache = new MemoryDistributedCache(Options.Create(new MemoryDistributedCacheOptions()));`.
 
+```csharp
+[TestClass]
+public class CachedPropertyServiceTests
+{
+    [TestMethod]
+    public async Task GetSettingsAsync_ByDefault_UsesCachedValues()
+    {
+        // This time, CachedSettingsService uses an in-memory implementation of IDistributedCache
+        var memoryCache = new MemoryDistributedCache(Options.Create(new MemoryDistributedCacheOptions()));
+        var fakeSettingsService = new Mock<ISettingsService>();
+        fakeSettingsService.Setup(t => t.GetSettingsAsync(It.IsAny<int>()))
+                           .ReturnsAsync(new Settings());
+        var service = new CachedSettingsService(memoryCache, fakeSettingsService.Object);
+
+        var propertyId = 1;
+        var settings = await service.GetSettingsAsync(propertyId);
+
+        fakeSettingsService.Verify(t => t.GetSettingsAsync(propertyId), Times.Once);
+
+        settings = await service.GetSettingsAsync(propertyId);
+        decoratedService.Verify(t => t.GetSettingsAsync(propertyId), Times.Once);
+    }
+}
+```
+
 ## Conclusion
 
 Voilà! Now you know how to cache the results of a slow service using an in-memory and a distributed approach implementing the Decorator pattern on your ASP.NET Core API sites. Additionally, you can turn on or off the cache layer using a toggle in your `appsettings` file to either create a decorated o a plain service. If you need to cache outside of an ASP.NET Core site, you can use libraries like [CacheManager](https://github.com/MichaCo/CacheManager), [Foundatio](https://github.com/FoundatioFx/Foundatio#caching) and [Cashew](https://github.com/joakimskoog/Cashew).
