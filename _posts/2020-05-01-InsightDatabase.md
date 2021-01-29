@@ -290,7 +290,7 @@ namespace ProductCatalog.Controllers
 }
 ```
 
-After this refactor, this `Get` method should continue to work. _I hope so!_ To know more about configuration in ASP.NET Core, read my post on [how to read configuration values]({% post_utl 2020-08-21-HowToConfigureValues %}).
+After this refactor, this `Get` method should continue to work. _I hope so!_ To know more about configuration in ASP.NET Core, read my post on [how to read configuration values]({% post_url 2020-08-21-HowToConfigureValues %}).
 
 #### Pagination
 
