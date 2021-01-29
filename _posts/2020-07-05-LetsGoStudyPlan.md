@@ -15,6 +15,10 @@ Go is a popular language these days. According to Stack Overflow 2020 Developer 
 
 **Go reduces the complexity of writing concurrent software**. Go uses the concept of **channels** and **goroutines**. These two constructs allow you to have a "queue" and "two threads" to write to and read from it, out of the box. Rob Pike, one of the creators of Go, explains these concepts in his talk [Concurrency is not parallelism](https://blog.golang.org/waza-talk). In other languages, you would need error-prone code to achieve similar results. _Threads, locks, semaphores, etc, ..._
 
+<div class="video-container">
+<iframe src="https://www.youtube-nocookie.com/embed/oV9rvDllKEg?rel=0&fs=0" width="640" height="360" frameborder="0"></iframe>
+</div>
+
 ## Method
 
 **Learn something by doing**. This is one of the takeaways from the book [Pragmatic Thinking and Learning]({% post_url  2020-05-07-PragmaticThinkingAndLearning %}). Instead of watching videos or skimming books, recreate examples and build mini-projects. _"Instead of dissecting a frog, build one"_.
