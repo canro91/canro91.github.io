@@ -91,4 +91,6 @@ For Moq, `MockRepository` is a factory of mocks. You can verify all mocks create
 
 Moq is a great library! It keeps its promise. It's an straight-forward library to setup dependencies in your tests. You need to know a few methods to start using it. You only need `Setup`, `Returns`, `Throws` and `Verify`. It has chosen to lower the barrier of writing tests. Give it a try! _To mock or not to mock!_
 
+For more tips on writing unit tests, check my post [How to write good unit tests?]({% post_url 2020-11-02-UnitTestingTips %})
+
 _Happy mocking time!_
