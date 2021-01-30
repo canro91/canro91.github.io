@@ -59,21 +59,21 @@ Let's see how these two tools format our sample query.
 
 [Poor Man's T-SQL Formatter](https://github.com/TaoK/PoorMansTSqlFormatter) is a free and open source .NET and JavaScript library to format your SQL queries. It's available for Notepad++, Visual Studio, SQL Server Management Studio and others. You can try its formatting options [online](http://poorsql.com/) too.
 
-This is how Poor Man's T-SQL format our sample query.
+This is how Poor Man's T-SQL format our sample query in Notepad++.
 
 {% include image.html name="PoorManTSQL.PNG" caption="Sample query formatted by Poor Man's T-SQL inside Notepad++" alt="Sample query formatted by Poor Man's T-SQL inside Notepad++" width="700px" %}
 
-It doesn't make function names uppercase. It indents `AND`'s clauses. But, it's a good starting point. Sometimes, it need a bit of help if the query has single-line comments in it.
+It doesn't make function names uppercase. Notice the functions `len` and `count`. Also, it indents `AND` clauses in the `WHERE` clause. But, it's a good starting point. Sometimes, it need a bit of help if the query has single-line comments in it.
 
 ### ApexSQL Refactor
 
 [ApexSQL Refactor](https://www.apexsql.com/sql-tools-refactor.aspx) is a free query formatter for Visual Studio and SQL Server Management Studio. It has over 160 formatting options. You can create your own formattig profiles and preview them. It comes with four built-in profiles. Also, you can try it [online](https://sql-formatter.online/options/formatting).
 
-This is how ApexSQL Refactor format our sample query.
+This is how ApexSQL Refactor format our sample query in Visual Studio 2019.
 
 {% include image.html name="ApexSQL.PNG" caption="Sample query formatted by ApexSQL Refactor inside Visual Studio" alt="Sample query formatted by ApexSQL Refactor inside Visual Studio" width="600px" %}
 
-It isn't perfect either. It indents `AND` clauses too. I couldn't find an option to change it. But, there is an option to indent `ON` in `SELECT` statements with `JOIN`, but it affects `ON` for index creation too.
+It isn't perfect either. It makes functions uppercase. It indents `AND` clauses in the `WHERE` too. I couldn't find an option to change it. But, there is an option to indent `ON` in `SELECT` statements with `JOIN`. It affects `ON` for index creation too.
 
 Voilà! Please, save you some time formatting your SQL queries with any of these two free tools. For other alternatives, check [this SQLShack collection of formatter tools](https://www.sqlshack.com/sql-formatter-tools/).
 
