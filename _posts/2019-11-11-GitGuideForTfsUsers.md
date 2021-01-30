@@ -8,7 +8,7 @@ Dear developer, you're working in a project that uses Team Foundation Server, TF
 
 ## Centralized vs Distributed
 
-Centralized version control systems need a server in place to operate. To check a file, view the history of a file or perform any other operation you need to communicate to a server.
+Centralized version control systems need a server in place to operate. To version control a file, view the history of a file or perform any other operation you need to communicate to a server.
 
 But, distributed version control systems don't need a server. Each operation is performed in a local copy of the project. And you could choose to sync your local copy with a server later on. _Have you guest which one belongs to each category?_ TFS is a centralized version control system and Git a distributed one.<sup>[1]</sup>
 
@@ -24,7 +24,7 @@ Before starting to work with a project under TFS, you need some _"mappings"_, wh
 
 ### Checking and Pushing
 
-After modifying some files, you want to version control them. With TFS you "check-in" your files. This means, those files are kept in the history of the project and synced with the server. But, with Git, your committed files live only in your local copy of the project, until you sync or _push_ them to a server.
+After modifying some files, you want to version control them. With TFS you "check-in" your files. This means, those files are kept in the history of the project and synced with the server. But, with Git, you "commit" your files. And, your committed files live only in your local copy of the project, until you sync or _push_ them to a server.
 
 ## Branching
 
@@ -44,11 +44,13 @@ Every release has a separate branch, too. This release branch is also merged to 
 
 #### Pull or Merge Requests
 
-Some projects adopt another convention. _Nobody pushes or syncs directly to the master branch_.
+Some projects adopt another convention. _Nobody pushes or syncs directly to the master or develop branch_.
 
-Instead, every new task needs to go through a review phase using a pull or merge request. _"The author of the task asks to merge his changes into the current codebase"_, hence that name.
+Instead, every new task needs to go through a code review phase using a pull or merge request. _"The author of the task asks to merge his changes into the current codebase"_, hence that name.
 
-Most of the time, this review is done through a web tool or web interface. After the review, the same tool will allow the reviewer to merge the changes to the destination branch.
+Most of the time, this code review is done through a web tool or web interface. After one or two team members review your changes for bugs or any other issues, the same tool will allow the reviewer to merge the changes to the destination branch.
+
+> If you're interested in the code review process, check my post on [Tips and Tricks for Better Code Reviews]({% post_url 2019-12-17-BetterCodeReviews %}).
 
 ## Reference
 
