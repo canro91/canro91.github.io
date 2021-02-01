@@ -5,14 +5,24 @@ tags: tutorial csharp
 series: C# idioms
 ---
 
-Two useful C# idioms you can find and its alternative solutions.
+You have heard about Pythonic code? Languages have an expressive or "native" way of doing things. But, what about C#? Is there C-Sharpic code?
 
-* **Instead of lots of or’s, use an array**. You can find this code when checking preconditions or validating objects.
+In this series of posts, I wil attempt to present some idioms or "expressions" to write more expressive C# code. I collected these idioms after reviewing code and getting mine reviewed too.
+
+In this first part, you have two useful C# idioms on conditionals and its alternative solutions.
+
+## Instead of lots of or’s, use an array of possible values
+
+Use an array of known or correct values, instead of a bunch of comparison inside an `if` statement. You can find this code when checking preconditions or validating objects.
+
+Before,
 
 ```csharp
 if (myVar == 2 || myVar == 5 || myVar == 10)
     DoSomeOperation();
 ```
+
+After,
 
 ```csharp
 var allowedValues = new int[] { 2, 5, 10 };
@@ -20,9 +30,13 @@ if (allowedValues.Any(t => myVar == t))
     DoSomeOperations();
 ```
 
-If you need to validate a new value, you add it in the array instead of adding a new condition in the `if` statement.
+If you need to check for a new value, you add it in the array instead of adding a new condition in the `if` statement.
 
-* **Instead of lots of `if`'s to find a value, use an array of `Func`** and pick the first value different from `null` or a default value. You can find this code when finding a value among multiple choices.
+## Instead of lots of `if`'s to find a value, use an array of `Func`
+
+Replace consecutive `if` statements to find a value with an array of `Func` or small choice functions. Then, pick the first value different from a default value or `null`. You can find this code when finding a value among multiple choices.
+
+Before,
 
 ```csharp
 var someKey = FindKey();
@@ -31,6 +45,8 @@ if (someKey == null)
 if (someKey == null)
     someKey = FindDefaultKey();
 ```
+
+After,
 
 ```csharp
 var fallback = new List<Func<SomeObject>>
@@ -42,7 +58,7 @@ var fallback = new List<Func<SomeObject>>
 var someKey = fallback.FirstOrDefault(t => t != null);
 ```
 
-But, you could take advantage of _Null coleasing operator (??)_ if these choice functions return `null` when a value isn't found.
+Also, you could take advantage of the **Null Coleasing Operator** (??) if these choice functions return `null` when a value isn't found.
 
 ```csharp
 var someKey = FindKey() ?? FindAlternateKey() ?? FindDefaultKey();
@@ -50,4 +66,4 @@ var someKey = FindKey() ?? FindAlternateKey() ?? FindDefaultKey();
 
 Similarly, if you need to add a new alternative, either you add it in the array or nest it instead of adding the new alternative in the `if` statement.
 
-> I have found these two idioms more readable. But, make sure to follow the conventions in your codebase.
+Voilà! These are our first two idioms on conditionals. I have found these two idioms more readable in some scenarios. But, don't start to rewrite or refactor your code to follow any convention online. Make sure to follow the conventions in your own codebase.
