@@ -5,13 +5,15 @@ tags: tutorial csharp
 series: C# idioms
 ---
 
+In this part of the C# idioms serie, we have one idiom to organize versions of commands, events or view models. And another idiom, on coditionals inside `switch` statements.
+
 ### Separate versions of commands and events using namespaces and static classes
 
-When working with CQRS, you need to support versions of your commands and queries. For example, you need to add new properties or remove old ones. You don't want to mess with your existing commands and queries.
+When working with Command Query Responsibility Segregation (CQRS), sometimes you need to support versions of your commands and queries. For example, you need to add new properties or remove old ones. You don't want to mess with your existing commands and queries. Also, it applies to request and response view models in your API projects.
 
 One alternative is to encode the version number in the class name itself. For example, `DoSomethingCommandV2`. 
 
-For better organization, you can group your commands and queries inside a namespace. This namespace's name will contain the version number. But, someone could  use one version instead of the other. In this situation, a named alias comes handy.
+For better organization, you can group your commands and queries inside a namespace. This namespace's name will contain the version number. But, someone could use one version instead of the other by mistake. In this situation, a named alias comes handy.
 
 ```csharp
 namespace Commands.V2
@@ -22,7 +24,7 @@ namespace Commands.V2
 }
 ```
 
-Another option, you can wrap your commands and queries inside an static class, named after the version number. They will be used like : `V2.DoSomethingCommand`. It's obvious which version is used.
+Another option, you can wrap your commands and queries inside an static class, named after the version number. They will be used like : `V2.DoSomethingCommand`. This time, it's obvious which version is used.
 
 ```csharp
 namespace Commands
@@ -52,12 +54,14 @@ namespace Commands.V2
 }
 ```
 
-### Conditional cases in switch statements
+### Conditional cases in `switch` statements
 
 When working with `switch` statements, you can use a `when` clause instead of an `if/else` in your `case` expressions. Order is important in this case. The `case/when` should be higher than the corresponding `case` without `when`.
 
+Before,
+
 ```csharp
-switch myVar
+switch (myVar)
 {
   case aCase:
     if (someCondition)
@@ -71,9 +75,11 @@ switch myVar
     break;
 }
 ```
-	
+
+After,
+
 ```csharp
-switch myVar
+switch (myVar)
 {
   case aCase when someCondition:
       DoX();
