@@ -105,8 +105,7 @@ private AccountController MakeAccountController(IOptions<EmailConfiguration> ema
             accountPersonService.Object,
             emailService.Object,
             emailConfiguration,
-            httpContextAccessor.Object
-        ));
+            httpContextAccessor.Object);
 }
 ```
 
@@ -116,9 +115,9 @@ With this refactor, our test started to look simpler and easier to read. Now, it
 
 ## Make your test values obvious
 
-In our example, the test name says the sender email is null. Anyone reading this test would expect to see a variable set to null and passed around. But, that's not the case.
+In our example, the test name states the sender email is null. Anyone reading this test would expect to see a variable set to null and passed around. But, that's not the case.
 
-**Make your scenario under test and test value extremely obvious**. Please, don't make developers to decode your tests.
+**Make your scenario under test and test values extremely obvious**. Please, don't make developers to decode your tests.
 
 To make the test scenario obvious in our example, let's add `SenderEmail = null`.
 
