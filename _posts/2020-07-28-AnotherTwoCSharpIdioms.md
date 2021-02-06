@@ -5,7 +5,7 @@ tags: tutorial csharp
 series: C# idioms
 ---
 
-In this part of the C# idioms serie, we have one idiom to organize versions of commands, events or view models. And another idiom, on coditionals inside `switch` statements.
+In this part of the C# idioms series, we have one idiom to organize versions of commands, events or view models. And another idiom, on coditionals inside `switch` statements.
 
 ### Separate versions of commands and events using namespaces and static classes
 
