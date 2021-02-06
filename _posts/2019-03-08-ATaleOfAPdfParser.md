@@ -19,7 +19,7 @@ There you are, a normal day at your office with a new challenge. One of your cli
 
 Since you're asked to support files with any format, a `for` through the lines with lots of `if`s and regular expressions isn't the most adequate solution. A file with a different format will imply to code the whole thing again. _There must be a better way!_
 
-On one hand, one of your concerns is how to given a pdf file turn it into actual text. But, a few lines using [itextsharp pdf library](https://github.com/itext/itextsharp) will do [the reading](https://stackoverflow.com/a/5003230). So, no big deal after all! Now, a pdf file is a list of lists of strings, `List<List<string>>`. One list per page and one string per line. You could abstract this step to support not only pdf files.
+On one hand, one of your concerns is how to given a pdf file turn it into actual text. But, after Googling a bit, you find the [iTextSharp pdf library](https://github.com/itext/itextsharp) and a StackOverflow answer to [read a text-based pdf file](https://stackoverflow.com/a/5003230) using iTextSharp. So, no big deal after all! Now, a pdf file is a list of lists of strings, `List<List<string>>`. One list per page and one string per line. You could abstract this step to support not only pdf files.
 
 On the other hand, how can you do the actual parsing? [Parser combinators](https://en.wikipedia.org/wiki/Parser_combinator) to the rescue! You could borrow this idea from [Haskell](https://www.haskell.org/) and other functional languages. You can create small composable pieces of code to extract or discard some text at the page or line level. 
 
@@ -134,7 +134,7 @@ new TransformFromMultipleSkips(
 
 ### All the pieces
 
-Then, you can create a method put everything in place. You apply all **skippers** in every page to keep relevant only the information. After that, you run all **parsers** in the appropriate pages and lines from the output of **skippers**.
+Then, you can create a method put everything in place. You apply all **skippers** in every page to keep only the relevant information. After that, you run all **parsers** in the appropriate pages and lines from the output of **skippers**.
 
 ```csharp
 public Dictionary<string, Dictionary<string, string>> Parse(List<List<String>> lines)
