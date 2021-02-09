@@ -38,6 +38,8 @@ My Visual Studio setup is heavily inspired by [De-Cruft Visual Studio](https://j
 * Shortcuts
 	* `Ctrl+Shift+w`: Close all documents
 
+{% include image.html name="VSSetup.PNG" caption="My Visual Studio opened with a sample Console project" alt="My Visual Studio 2019 setup" width="800px" %}
+
 ## Extensions
 
 * ~~HideMainMenu/HideTitleBar~~ Not available in VS2019 yet
