@@ -7,11 +7,12 @@ tags: tutorial csharp
 
 Hello, if you are a beginner programmer or you just took a programming course at school, and you want to find a pathway to be _"fluent"_ in C#, this is the right place for you! This is my guide to what every beginner and intermediate C# developer should know.
 
-Every intermediate C# developer should know how to work productively with a text editor of choice. Visual Studio and Visual Studio Code are two popular choices. He should know how to use `async` and `await` keywords, most common LINQ methods and regular expressions. Also, he should find his way around large codebases and be aware of the latest C# features. 
+Every intermediate C# developer should know how to work productively with a text editor of choice. Visual Studio and Visual Studio Code are two popular choices. He should know how to use `async` and `await` keywords, most common LINQ methods and regular expressions. Also, he should find his way around large codebases and be aware of the latest C# features.
 
 ## Environment
 	
-> _Give me six hours to chop down a tree and I will spend the first four sharpening the axe._ Abraham Lincon
+> _Give me six hours to chop down a tree and I will spend the first four sharpening the axe._ 
+> -Abraham Lincon
 
 Visual Studio is the de-facto Integrated Development Environment (IDE) for C#. Although, Visual Studio Code has gained a lot attention recently. Since you will spend most of your workdays with Visual Studio, you should sharpen your tools.
 
@@ -29,6 +30,12 @@ Visual Studio is the de-facto Integrated Development Environment (IDE) for C#. A
 	* [Wumpf Solution Color](https://marketplace.visualstudio.com/items?itemName=Wumpf.SolutionColor), you don't want to mess with your production codebase. You can change your Visual Studio menu bar color based on your folder solution.
 	* [VS Color Output](https://marketplace.visualstudio.com/items?itemName=MikeWard-AnnArbor.VSColorOutput)
 * C# Interactive. You don't have to create a dummy Console project just to try things out. With C# interactive, you have a [C# REPL](https://dzone.com/articles/c-interactive-in-visual-studio) at your disposition. You can load a NuGet package or your own dll's, load a C# script (.csx file) or simply try a few lines of C# code. From Visual Studio, head to View Menu, Other Windows and click C# Interactive.
+
+<figure>
+<img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="The C# Definitive Guide" />
+
+<figcaption>Have everything ready to level up your C#. <span>Photo by <a href="https://unsplash.com/@andrewtneel?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Andrew Neel</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
+</figure>
 
 ## Git and Github
 
@@ -48,7 +55,7 @@ Programming is about collaboration. GitHub is the social network for programmers
 
 * [Udacity Github course](https://www.udacity.com/course/how-to-use-git-and-github--ud775)
 
-## Design Patterns and OOP Principles
+## Design Patterns and Object-Oriented Design Principles
 
 Desing patterns are recipes to solve common problems in code. This is, given a certain problem, there is a blueprint or an outline that will help you to solve that problem.
 
@@ -333,7 +340,13 @@ Console.WriteLine("Hello World!");
 
 ## Bonus Points
 
-* Learn how to type with all your fingers
-* Learn some Vim. Take a look at _Practical Vim_
-* Learn about C# [extensions methods](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods)
-* Read _The Art of Readable Code_ or _Clean Code_ books. [A review and takeaways]({% post_url 2020-01-06-CleanCodeReview %})
+* Learn how to type with all your fingers. _At least you will impress people_.
+* Learn some Vim. Read my post on [Learning Vim For Fun and Profit](2020/09/14/LearnVimForFunAndProfit/). If you want to master every detail, take a look at the book _Practical Vim_.
+* Learn about C# [extensions methods](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods). You will find them often.
+* Read books on Clean Code. For example: _The Art of Readable Code_ or _Clean Code_ books. You can read [my review and takeaways]({% post_url 2020-01-06-CleanCodeReview %}).
+
+## Conclusions
+
+_Voilà!_ That's my take on what every intermediate C# developer should know! Don't be overwhelm by the amount of things to learn. Don't try to learn everything at once, either. Learn one subject at a time! And, start using it in your every day coding as you learn it.
+
+_Happy coding!_
