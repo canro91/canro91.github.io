@@ -1,13 +1,13 @@
 ---
 layout: post
-title: My Visual Studio Setup, sharpening the axe
+title: My Visual Studio 2019 setup (theme, settings, extensions)
 description: Visual Studio 2019 is out. These are my settings, layout and extensions
 tags: productivity visualstudio
 ---
 
 Visual Studio 2019 is out! Either you installed it from scratch or you updated from a previous version, it's time to sharpen your axe! Or maybe, you came back from your vacations and the IT team decided to uninstall previous versions of Visual Studio, leaving the new one without any of your customizations. _This is a true story, it happened to a friend of a friend of mine._
 
-This Visual Studio setup is heavily inspired by [De-Cruft Visual Studio](	https://jackmott.github.io/programming/tools/editor/ide/visual/studio/2016/07/11/decruft-visual-studio.html). It aims to leave more space to the text editor. Here it is:
+My Visual Studio setup is heavily inspired by [De-Cruft Visual Studio](https://jackmott.github.io/programming/tools/editor/ide/visual/studio/2016/07/11/decruft-visual-studio.html). It aims to leave more space to the text editor. Here are the settings and extensions I use:
 
 ## Settings
 
@@ -16,12 +16,13 @@ This Visual Studio setup is heavily inspired by [De-Cruft Visual Studio](	https:
 * Font: [FiraCode](https://github.com/tonsky/FiraCode) 14pt
 * Windows:
 	* Left
-		* Source Control Explorer
 		* Test Explorer
+		* Source Control Explorer
 	* Right
-		* Team Explorer
 		* Properties
 		* Solution Explorer
+		* Git Changes
+		* Team Explorer
 	* Bottom
 		* Output
 		* Error List
@@ -32,10 +33,12 @@ This Visual Studio setup is heavily inspired by [De-Cruft Visual Studio](	https:
 	* Hide **Navigation Bar** and **Code Outlining**
 	* Unselect **Selection and Indicator** margins
 	* Unselect **Ctrl + click** to go to definition
+	* Unselect **Compress blank lines** and **Compress lines that do not have any alphanumeric characters** after you install "Productivity Power Tools" extension
+	* Use **Handle all with Visual Studio** after you install "VSVim" extension
 * Shortcuts
-	* 	`Ctrl+Shift+w`: Close all documents
+	* `Ctrl+Shift+w`: Close all documents
 
-## Plugins
+## Extensions
 
 * ~~HideMainMenu/HideTitleBar~~ Not available in VS2019 yet
 * [VSVim](https://github.com/jaredpar/VsVim) It enables [Vim](https://www.vim.org/) keybindings in the text editor
@@ -56,4 +59,4 @@ This Visual Studio setup is heavily inspired by [De-Cruft Visual Studio](	https:
 * [AsyncMethodNameFixer](https://github.com/priyanshu92/AsyncMethodNameFixer) To not to forget to add the `Async` suffix on async method name.
 * [Multiline Search and Replace](https://marketplace.visualstudio.com/items?itemName=PeterMacej.MultilineSearchandReplace) No need to copy and paste your code into Notepad++ to replace multiple lines.
 
- Voilà!
+ Voilà! That's how I use Visual Studio 2019 for C# coding.
