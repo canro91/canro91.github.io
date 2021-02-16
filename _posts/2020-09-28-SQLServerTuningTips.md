@@ -5,13 +5,17 @@ tags: sql
 description: Do you need to tune your SQL Server and you don't know how to start? These are six tips from Pinal Dave to tune your SQL Server
 ---
 
-Recently, I've needed to optimize some SQL Server queries. I decided to look out there what to do to tune SQL Server and SQL queries.
+Recently, I've needed to optimize some SQL Server queries. I decided to look out there what to do to tune SQL Server and SQL queries. This is what I found.
 
-I found Pinal Dave from [SQLAuthority](https://blog.sqlauthority.com/). Chances are you have already found one of his blog posts when searching for anything related to SQL Server. He's been blogging about the subject for years. These are six tips from his blog and his online presentations I've applied recently.
+**To tune your SQL Server queries, you can make changes at the database, table and query level.** At the database level, you can turn on automatic update of statistics, increase the file size autogrowth and update the compatibility level. At the table level, delete your unused indexes and create the missing ones. But, keep less than 5 indexes per table. And, at the query level, find and fix implicit conversions.
+
+While looking up what I could do to tune my queries, I found Pinal Dave from [SQLAuthority](https://blog.sqlauthority.com/). Chances are you have already found one of his blog posts when searching for SQL Server tuning tips. He's been blogging about the subject for years.
+
+These are six tips from Pinal's blog and online presentations I've applied recently. Please, test these changes in a development or staging environment before making anything on your production servers. I gained a lot of improvement by fixing implicit conversions. We had a `VARCHAR` column and in one store procedure we use a `NVARCHAR` parameter for the same column. SQL Server had to scan the whole table to make that comparison.
 
 ## Enable automatic statistics update 
 
-Turn on automatic update of statistics. You should turn it off if you're updating a really long table during your work-hours. You can [enable automatic statistic update](https://blog.sqlauthority.com/2009/10/15/sql-server-enable-automatic-statistic-update-on-database/) with this query:
+**Turn on automatic update of statistics.** You should turn it off if you're updating a really long table during your work-hours. You can [enable automatic statistic update](https://blog.sqlauthority.com/2009/10/15/sql-server-enable-automatic-statistic-update-on-database/) with this query:
 
 ```sql
 USE <YourDatabase>;
@@ -39,7 +43,7 @@ Add size and file growth to your database. Make it your weekly file growth. Othe
 
 Implicit conversions happen when SQL Server needs to convert between two data types in a `WHERE` or in `JOIN`. For example, the query `SELECT * FROM dbo.Orders WHERE OrderNumber = 123` with `OrderNumber` as a `VARCHAR(20)` column has implicit warning when compared to an integer.
 
-To decide when implicit conversion happens, you can check [Microsoft Data Type Precedence table](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-type-precedence-transact-sql?view=sql-server-ver15). Types with lower precedence convert to types with higher precedence. For example, `VARCHAR` will be always converted to `INT`.
+To decide when implicit conversion happens, you can check [Microsoft Data Type Precedence table](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-type-precedence-transact-sql?view=sql-server-ver15). Types with lower precedence convert to types with higher precedence. For example, `VARCHAR` will be always converted to `INT` and to `NVARCHAR`.
 
 You can use this script to [indentify queries with implicit conversion](https://blog.sqlauthority.com/2018/06/11/sql-server-how-to-fix-convert_implicit-warnings/).
 
@@ -120,7 +124,7 @@ GO
 
 ## Delete most of your indexes
 
-Indexes reduce perfomance all the time. They reduce performance of inserts, updates, deletes and selects. Even if a query isn't using an index, it reduces performance of the query.
+**Indexes reduce perfomance all the time.** They reduce performance of inserts, updates, deletes and selects. Even if a query isn't using an index, it reduces performance of the query.
 
 Delete most your indexes. Identify your main table and check if it has more than 5 indexes. Don't create indexes on every key of a join.
 
