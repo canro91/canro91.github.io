@@ -98,7 +98,7 @@ My Neighbor Totoro: [5]
 
 LINQ methods are extension methods on the `IEnumerable` type. This type represents objects we can loop through. Like, arrays, lists, dictionaries, among others.
 
-> _In case you missed it_...You can add methods to a type without modifying it with extension methods. They are static methods defined outside the declaration a type. But, they look like normal methods when you use them.
+> _In case you missed it_...You can add methods to a type without modifying it with extension methods. They are static methods defined outside the declaration of a type. But, they look like normal methods when you use them.
 
 To work with LINQ, you need to be comfortable with delegates and lambda functions. A lambda function is a method with only the parameters and the body. To learn more about delegates and lambda functions, check my post [What the Func, Action?]({% post_url 2019-03-22-WhatTheFuncAction %}).
 
@@ -329,7 +329,7 @@ Which LINQ syntax should you use? **Prefer the syntax used in your current codeb
 <figure>
 <img src="https://images.unsplash.com/photo-1523207911345-32501502db22?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800" alt="Popcorn" />
 
-<figcaption><span>Photo by <a href="https://unsplash.com/@christianw?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Christian Wiediger</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
+<figcaption>Speaking of taste. <span>Photo by <a href="https://unsplash.com/@christianw?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Christian Wiediger</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
 </figure>
 
 But, there is one advantage of using query syntax over extension methods. You can create intermediate variables with the `let` keyword.
