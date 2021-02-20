@@ -1,12 +1,12 @@
 ---
 layout: post
-title: How I got rid of two recurring code review comments?
+title: How to get rid of two recurring review comments (Git hook, VS extension)
 tags: productivity git visualstudio
 ---
 
 During code review, one or two of your coworkers look at your code to spot any potential issues and to check if the code follows existing conventions. Sometimes, code review ends up checking style issues. _Brackets in the same line, disorganized using statements, extra blank lines_. You can use extensions on your IDE or linters to format your code.
 
-For a project I was working on, **I had to include the ticket number in every commit message and add `Async` suffix to all asynchronous C# methods**. I used a Git hook to add the ticket number in the commit messages. And, an `.editorconfig` file (and, alternatively an extension) to raise an error if the `Async` suffix was missed.
+For a project I was working on, **I had to include the ticket number in every commit message and add `Async` suffix to all asynchronous C# methods**. I used a Git hook to add the ticket number in the commit messages. And, an `.editorconfig` file (and, alternatively a Visual Studio extension) to raise an error if the `Async` suffix was missed.
 
 ## Ticket number in commit messages
 
@@ -25,6 +25,8 @@ fi
 
 echo "$TICKET $MESSAGE" > $FILE
 ```
+
+If I name my feature branch `feat/ABC-123-my-awesome-branch`. Then when I commit my code, I don't need to include the branch name. Git will do that for me. My commit messages will look like `ABC-123 My awesome commit`. 
 
 I wrote about this hook on my list of [Programs that saved you 1000 hours](https://canro91.github.io/2020/04/13/ProgramThatSave100Hours/). Also, you can find Git aliases, Visual Studio extensions and other online tools to save you some valuable time.
 
