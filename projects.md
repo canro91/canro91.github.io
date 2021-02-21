@@ -25,7 +25,7 @@ I wrote [Kiukie](https://github.com/canro91/Kiukie) to roll queues from database
 
 ### Slow Room Search
 
-I improved the respose time of the room search functionality of a booking engine by a factor of ~1.5X. I removed N+1 problems and nested loops, and added a caching layer. From this task, I learned to always measure before rushing to optimize anything.
+I improved the response time of the room search functionality of a booking engine by a factor of ~1.5X. I removed N+1 problems and nested loops, and added a caching layer. From this task, I learned to always measure before rushing to optimize anything.
 
 For all the findings and lessons I learned, you could read [The Slow Room Search]({% post_url 2020-09-23-TheSlowRoomSearch %}). Also, you can read my tutorial on [how to add a caching layer with ASP.NET Core 3]({% post_url 2020-06-29-HowToAddACacheLayer %}).
 
