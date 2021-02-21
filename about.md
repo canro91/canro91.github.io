@@ -9,7 +9,7 @@ I'm Cesar Aguirre. I'm a [software engineer](https://github.com/canro91), lifelo
 
 I’m a software engineer based in Colombia (_not Columbia_) with more than 6 years of experience. I work remotely as a C# backend engineer. I specialize in building APIs and backend code with .NET technologies. Mostly, ASP.NET Core, ASP.NET Web API and SQL Server these days.
 
-<div class="message lead"><em>I help .NET teams to grow high-quality backend software through clean code</em></div>
+<div class="message lead"><em>I help teams to grow high-quality backend software through clean code and unit testing</em></div>
 
 ### What I've done
 
@@ -36,7 +36,7 @@ If you don’t know where to start reading or if you want to find something to r
 
 #### Guides
 
-* [Let's React. Learn React in 30 days]({ post_url 2020-10-26-ReactIn30Days })
+* [Let's React. Learn React in 30 days]({% post_url 2020-10-26-ReactIn30Days %})
 * [The C# Definitive Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %})
 * [ASP.NET Core Guide for ASP.NET Framework Users]({% post_url 2020-03-23-GuideToNetCore %}) I wrote this guide as a Guest Writer for _[exceptionnotfound.net](https://exceptionnotfound.net/asp-net-core-guide-for-asp-net-framework-developers/)_
 
@@ -45,7 +45,7 @@ If you don’t know where to start reading or if you want to find something to r
 * [Remote interview, here I go]({% post_url 2019-09-29-RemoteInterviewTips %})
 * [Postfix Notation: An Interview Exercise]({% post_url 2019-08-02-PostfixNotationAnInterviewExercise %})
 * My take on the difference between [Func and Action]({% post_url 2019-03-22-WhatTheFuncAction %})
-* My series on [C# idioms]({ post_url 2019-11-19-TwoCSharpIdioms })
+* My series on [C# idioms]({% post_url 2019-11-19-TwoCSharpIdioms %})
 
 #### Productivity
 
