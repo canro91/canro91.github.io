@@ -8,8 +8,6 @@ These days, I use Moq a lot. There are things [I like and I don't like]({% post_
 
 I use the same three or four Moq methods all the time. I decided to create snippets inside Visual Studio to avoid typing the same method names every time. These are the snippets I use.
 
-## Snippets
-
 ### Create a `Mock`
 
 <figure>
