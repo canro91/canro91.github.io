@@ -7,13 +7,13 @@ This is some of the code I have written. Feel free to take a look, report any bu
 
 ### Parsinator
 
-I wrote [Parsinator](https://github.com/canro91/Parsinator), a library to extract relevant data from text-based pdfs and plain text files. I used Parsinator to connect 4 legacy client softwares to a document API by parsing pdfs and plain text files into input xml files. You could read the motivation behind Parsinator on my post [Parsinator, a tale of a pdf parser]({% post_url 2019-03-08-ATaleOfAPdfParser %})
+I wrote [Parsinator](https://github.com/canro91/Parsinator), a library to extract data from text-based pdfs and plain text files. I used Parsinator to connect 4 legacy client softwares to a documents API by parsing pdfs and plain text files into input xml files. You could read the motivation behind Parsinator on my post [Parsinator, a tale of a pdf parser]({% post_url 2019-03-08-ATaleOfAPdfParser %})
 
 [![canro91/parsinator - GitHub](https://gh-card.dev/repos/canro91/parsinator.svg)](https://github.com/canro91/parsinator)
 
 ### BaseXml
 
-I wrote [BaseXml](https://github.com/canro91/BaseXml) to manipulate and validate XML files. I used BaseXml to add and update nodes, and read values from standard XML business documents, [UBL files](https://en.wikipedia.org/wiki/Universal_Business_Language). I used BaseXml to avoid serializing complex XML files.
+I wrote [BaseXml](https://github.com/canro91/BaseXml) to manipulate and validate XML files. I used BaseXml to add, update and read nodes from standard XML business documents, [UBL files](https://en.wikipedia.org/wiki/Universal_Business_Language). I used BaseXml to avoid serializing complex XML files.
 
 [![canro91/basexml - GitHub](https://gh-card.dev/repos/canro91/basexml.svg)](https://github.com/canro91/basexml)
 
@@ -25,7 +25,7 @@ I wrote [Kiukie](https://github.com/canro91/Kiukie) to roll queues from database
 
 ### Slow Room Search
 
-I improved the response time of the room search functionality of a booking engine by a factor of ~1.5X. I removed N+1 problems and nested loops, and added a caching layer. From this task, I learned to always measure before rushing to optimize anything.
+I improved the response time of the room search functionality of a booking page by a factor of ~1.5X. I removed N+1 problems and nested loops, and added a caching layer. From this task, I learned to always measure before rushing to optimize anything.
 
 For all the findings and lessons I learned, you could read [The Slow Room Search]({% post_url 2020-09-23-TheSlowRoomSearch %}). Also, you can read my tutorial on [how to add a caching layer with ASP.NET Core 3]({% post_url 2020-06-29-HowToAddACacheLayer %}).
 
