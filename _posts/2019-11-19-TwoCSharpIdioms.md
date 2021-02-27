@@ -34,7 +34,7 @@ If you need to check for a new value, you add it in the array instead of adding 
 
 ## Instead of lots of `if`'s to find a value, use an array of `Func`
 
-Replace consecutive `if` statements to find a value with an array of `Func` or small choice functions. Then, pick the first value different from a default value or `null`. You can find this code when finding a value among multiple choices.
+Replace consecutive `if` statements to find a value with an array of `Func` or small choice functions. Then, pick the first result different from a default value or `null`. You can find this code when finding a value among multiple choices.
 
 Before,
 
@@ -66,4 +66,6 @@ var someKey = FindKey() ?? FindAlternateKey() ?? FindDefaultKey();
 
 Similarly, if you need to add a new alternative, either you add it in the array or nest it instead of adding the new alternative in the `if` statement.
 
-Voilà! These are our first two idioms on conditionals. I have found these two idioms more readable in some scenarios. But, don't start to rewrite or refactor your code to follow any convention online. Make sure to follow the conventions in your own codebase.
+Voilà! These are our first two idioms on conditionals. I have found these two idioms more readable in some scenarios. But, don't start to rewrite or refactor your code to follow any convention you find online. Make sure to follow the conventions in your own codebase, first.
+
+_Happy coding!_
