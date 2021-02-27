@@ -35,7 +35,11 @@ Roughly speaking, **the brain is a single-bus dual-core processor**. Only one CP
 
 Our brain works in two modes: **linear mode** (or L-mode) and **rich mode** (or R-mode). Coursera [Learning How to Learn](https://www.coursera.org/learn/learning-how-to-learn/) course calls these two modes: focus and diffuse mode. You need these two modes to work together.
 
-**The L-mode is rational and the R-mode is asynchronous.** The L-mode or focus mode is when you are actively studying a subject. You're sitting in front of your computer or a textbook figuring out the details of that subject. But the diffuse mode is when you are doing something else and that subject start to make more sense all of a sudden. _Have you woken up with the solution to a problem you left at work the day before? Have you come up with a solution in the shower?_ That's the R-mode or diffuse mode.
+**The L-mode is rational and the R-mode is asynchronous.**
+
+The L-mode or focus mode works when you are actively studying a subject. You're sitting in front of your computer or a textbook figuring out the details of that subject.
+
+But, the R-mode or diffuse mode works when you are away from the subject you're studying. _Have you woken up with the solution to a problem you left at work the day before? Have you come up with a solution in the shower?_ That's the R-mode or diffuse mode.
 
 Since most of the thinking happens away from the keyboard, let the R-mode be free:
 
