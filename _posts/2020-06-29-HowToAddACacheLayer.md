@@ -8,9 +8,11 @@ Imagine you have a service `SettingsService` that makes a REST request with a `H
 
 **A cache is an storage layer used to speed up future requests.** Reading from cache is faster than computing data or retrieving it from an external source every time it is requested. ASP.NET Core has built-in abstractions to implement a caching layer using memory and Redis. You can use the Decorator pattern to separate the caching layer from your business logic.
  
-## In-Memory approach
+## In-Memory cache
 
-Let's start with an ASP.NET Core 3.1 API project with a controller that uses your `SettingsService` class. First, install the `Microsoft.Extensions.Caching.Memory` NuGet package. Then, register the in-memory cache in the `ConfigureServices` method of the `Startup` class. You need to use the `AddMemoryCache` method.
+Let's start with an ASP.NET Core 3.1 API project with a controller that uses your `SettingsService` class. 
+
+First, install the `Microsoft.Extensions.Caching.Memory` NuGet package. Then, register the in-memory cache in the `ConfigureServices` method of the `Startup` class. You need to use the `AddMemoryCache` method.
 
 ```csharp
 // Startup.cs
@@ -25,11 +27,13 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Since memory isn't infinite, you want to limit the number of items stored in the cache. Make use of `SizeLimit`. It is the maximum number of "slots" or "places" the cache can hold. Also, you need to tell how many "places" a cache entry takes when stored. _More on that later!_
+Since memory isn't infinite, you want to limit the number of items stored in the cache. Use `SizeLimit`. It is the maximum number of "slots" or "places" the cache can hold. Also, you need to tell how many "places" a cache entry takes when stored. _More on that later!_
 
 ### Decorator pattern
 
-Next, let's use the [decorator pattern](https://refactoring.guru/design-patterns/decorator) to add caching to the existing `SettingsService` without modifying it. To do that, create a new `CachedSettingsService`. It should inherit from the same interface as `SettingsService`. _That's the trick!_
+Next, let's use the [decorator pattern](https://refactoring.guru/design-patterns/decorator) to add caching to the existing `SettingsService` without modifying it.
+
+To do that, create a new `CachedSettingsService`. It should inherit from the same interface as `SettingsService`. _That's the trick!_
 
 Also, you need a constructor receiving `IMemoryCache` and `ISettingsService`. This last parameter will hold a reference to the existing `SettingService`. Then, in the `GetSettingsAsync` method, you will call the existing service if the value isn't cached.
 
@@ -57,7 +61,7 @@ public class CachedSettingsService : ISettingsService
 
 Now, let's create the `GetOrSetValueAsync` extension method. It will check first if a key is in the cache. Otherwise, it will use a factory method to compute the value and store it on the cache. This method receives a custom `MemoryCacheEntryOptions` to overwrite the default values.
 
-Make sure to use expiration times when storing items. You can choose between sliding and absolute expiration times:
+**Make sure to use expiration times when storing items in cache**. You can choose between sliding and absolute expiration times:
 
 * `SlidingExpiration` will reset the expiration time every time an entry is used before it expires
 * `AbsoluteExpirationRelativeToNow` will expire the entry after the given time, no matter how many times it's been used
@@ -137,7 +141,7 @@ Be aware of removing cached entries if you need to update or delete entities in 
 
 ### Unit Tests
 
-Let's see how you can create a test for this decorator. You will need to create a fake for the decorated service. Then, assert it's called only once after two consecutive calls to the cached method. Let's use [Moq]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}) to create fakes.
+Let's see how you can create a test for this decorator. You will need to create a fake for the decorated service. Then, assert it's called only once after two consecutive calls to the cached method. Let's use [Moq to create fakes]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}).
 
 ```csharp
 [TestClass]
@@ -163,7 +167,7 @@ public class CachedPropertyServiceTests
 }
 ```
 
-## Distributed approach
+## Distributed cache with Redis
 
 _Now, let's move to the distribute cache_. A distributed cache layer lives in a separate server. You aren't limited to the memory of the server running your API site.
 
@@ -171,7 +175,7 @@ A distributed cache make sense when you want to share your cache server among mu
 
 There is an implementation of the distributed cache using Redis for ASP.NET Core. [Redis](https://redis.io/) is _"an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker"_.
 	
-Using a distributed cache is similar to the in-memory approach. This time you need to install `Microsoft.Extensions.Caching.StackExchangeRedis` NuGet package and use the `AddStackExchangeRedisCache` method in your `ConfigureServices` method. Also, you need a Redis connection string and an optional `InstanceName`. The `InstaceName` groups entries with a prefix. It's helpful when using a single Redis server with different sites.
+Using a distributed cache is similar to the in-memory cache. This time you need to install `Microsoft.Extensions.Caching.StackExchangeRedis` NuGet package and use the `AddStackExchangeRedisCache` method in your `ConfigureServices` method. Also, you need a Redis connection string and an optional `InstanceName`. The `InstaceName` groups entries with a prefix. It's helpful when using a single Redis server with different sites.
 
 > Notice, there are two similar NuGet packages to use Redis with ASP.NET Core: [Microsoft.Extensions.Caching.Redis and Microsoft.Extensions.Caching.StackExchangeRedis](https://stackoverflow.com/questions/59847571/differences-between-microsoft-extensions-cashing-redis-and-microsoft-extensions). They use different versions of the [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) client.
 
@@ -200,7 +204,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ### Redecorate
 
-Make sure to change the cache interface from `IMemoryCache` to `IDistributedCache`. Go to your `CachedSettingsService` class and the `ConfigureService` method.
+Make sure to change the cache interface from `IMemoryCache` to `IDistributedCache`. Go to your `CachedSettingsService` class and the `ConfigureService` method in the `Startup` class.
 
 ```csharp
 public class CachedSettingsService : ISettingsService
@@ -222,7 +226,7 @@ public class CachedSettingsService : ISettingsService
 }
 ```
 
-Now, let's create a new `GetOrSetValueAsync` extension method to use the distributed cache. This time, you need to use asynchronous methods to retrieve and store items. These methods are `GetStringAsync` and `SetStringAsync`. Also, you need a serializer to cache objects. We are using [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json).
+Now, let's create a new `GetOrSetValueAsync` extension method to use the distributed cache. This time, you need asynchronous methods to retrieve and store items. These methods are `GetStringAsync` and `SetStringAsync`. Also, you need a serializer to cache objects. We are using [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json).
 
 Notice, this time you don't need sizes for cache entries.
 
@@ -276,7 +280,15 @@ public static class DistributedCacheExtensions
 
 ### Unit Tests
 
-For unit testing, you can use `MemoryDistributedCache`, an in-memory implementation of `IDistributedCache`. So you don't need to roll a Redis server to test your code. From the previous unit test, you need to replace the `IMemoryCache` dependency with `var memoryCache = new MemoryDistributedCache(Options.Create(new MemoryDistributedCacheOptions()));`.
+For unit testing, you can use `MemoryDistributedCache`, an in-memory implementation of `IDistributedCache`. So you don't need to roll a Redis server to test your code.
+
+From the previous unit test, you need to replace the `MemoryCache` dependency with the `MemoryDistributedCache`.
+
+```csharp
+var memoryCache = new MemoryDistributedCache(Options.Create(new MemoryDistributedCacheOptions()));
+```
+
+With this change, our unit test for the distributed cache looks like this:
 
 ```csharp
 [TestClass]
@@ -305,7 +317,9 @@ public class CachedPropertyServiceTests
 
 ## Conclusion
 
-Voilà! Now you know how to cache the results of a slow service using an in-memory and a distributed approach implementing the Decorator pattern on your ASP.NET Core API sites. Additionally, you can turn on or off the cache layer using a toggle in your `appsettings` file to either create a decorated o a plain service. If you need to cache outside of an ASP.NET Core site, you can use libraries like [CacheManager](https://github.com/MichaCo/CacheManager), [Foundatio](https://github.com/FoundatioFx/Foundatio#caching) and [Cashew](https://github.com/joakimskoog/Cashew).
+Voilà! Now you know how to cache the results of a slow service using an in-memory and a distributed cache implementing the Decorator pattern on your ASP.NET Core API sites. Additionally, you can turn on or off the cache layer using a toggle in your `appsettings.json` file to either create a decorated o a plain service.
+
+If you need to cache outside of an ASP.NET Core site, you can use libraries like [CacheManager](https://github.com/MichaCo/CacheManager), [Foundatio](https://github.com/FoundatioFx/Foundatio#caching) and [Cashew](https://github.com/joakimskoog/Cashew).
 
 To learn more about configuration in ASP.NET Core, read my post on [how to read configuration values in ASP.NET Core](https://canro91.github.io/2020/08/21/HowToConfigureValues/). Also, check my post on [how to write good unit test]({% post_url 2020-11-02-UnitTestingTips %}).
 
