@@ -30,7 +30,11 @@ During your technical interview, don't rush to start coding right away. Follow t
 
 ## Solution Strategy: A Stack
 
-To evaluate a postfix expression, you need a stack. A stack is a pile-like data structure. Stacks support two operations: add something to the pile, **push**, and remove something from the pile, **pop**. In our solution to evaluate a postfix notation, a stack will hold either values from the input or already computed values.
+To evaluate a postfix expression, you need a stack.
+
+A stack is a pile-like data structure. Stacks support two operations: add something to the pile, **push**, and remove something from the pile, **pop**.
+
+In our solution to evaluate a postfix notation, a stack will hold either values from the input or already computed values.
 
 This is the pseudocode to evaluate a postfix expression:
 
