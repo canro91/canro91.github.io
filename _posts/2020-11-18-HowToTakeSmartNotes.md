@@ -36,6 +36,8 @@ Alternatively, you can any text editor to use it with your computer. But, don't 
 
 ## How to start?
 
+### Type of notes
+
 The Zettlekasten method uses three types of notes: fleeting, literature and permanent notes.
 
 Write down everything that comes to your mind on **fleeting notes**. Once you process these notes, you can toss them.
@@ -45,6 +47,8 @@ While reading, make **literature notes**. Write down on a card what you don't wa
 To make **permanent notes**, review your literature notes and turn them into connections. The goal isn't to collect, but to generate new ideas and discussions. Ask yourself how it contradicts, expands or challenges your subject of interest.
 
 Keep a single idea per card. Use a fixed number to identify each card. You can use another card to expand on one. Each note should be self-explanatory.
+
+### Create a new note
 
 To add a note to your slip-box, follow these four steps:
  
