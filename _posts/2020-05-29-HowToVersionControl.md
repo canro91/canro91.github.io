@@ -4,7 +4,7 @@ title: How to version control your projects with Git. A guide to time travel
 tags: tutorial git
 ---
 
-Have you ever tried to version control your projects by appending dates on folder names? Are you doing it now? I have to confess I did it back in school with my class projects. If you're doing it this way. There is a better way! Read on!
+Have you ever tried to version control your projects by appending dates on folder names? Are you doing it now? I have to confess I did it back in school with my class projects. If you're doing it this way, there's a better way. Read on!
 
 ```bash
 $ ls
@@ -39,7 +39,7 @@ To better understand it, let’s use an analogy. **A version control system is a
 
 There is a distinction between version control systems. It makes them different. Centralized vs distributed.
 
-**A centralized VCS requires a server to perform any operation on your project**. You need to connect to this server to download all your files to start to work. If this serves goes down, users can’t work. _Bye, bye, productivity!_. Team Foundation Server (TFS) from Microsoft is a centralized VCS.
+**A centralized VCS requires a server to perform any operation on your project**. You need to connect to this server to download all your files to start to work. If this serves goes down, users can’t work. _Bye, bye, productivity!_ Team Foundation Server (TFS) from Microsoft is a centralized VCS.
 
 But, **a distributed VCS doesn’t need a centralized server in the same sense**. Each user has a complete copy of the entire project. Most of operations are performed against this local copy. So you can work offline. _A two-hour flight without internet, no problem_. For example, Git is a distributed VCS.
 
@@ -145,7 +145,7 @@ Depending on your workplace or project, you have to follow a naming convention f
 
 ### Branching
 
-Using the time machine analogy, **a branch is a separate timeline**. Chances in a timeline don’t interfere with changes other timelines. Timelines are called **branches**. By convention, the main timeline is called **master**.
+Using the time machine analogy, **a branch is a separate timeline**. Changes in a timeline don’t interfere with changes other timelines. Timelines are called **branches**. By convention, the main timeline is called **master**.
 
 > The master/slave methaphor is discouraged these days. Starting from [Git 2.28](https://github.blog/2020-07-27-highlights-from-git-2-28/#introducing-init-defaultbranch), when you run `git init`, Git will look for the configuration value `init.defaultBranch` to replace the hard-coded name. 
 > 
