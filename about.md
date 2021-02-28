@@ -20,6 +20,10 @@ In electronic invoicing, I updated a platform to comply with the latest regulati
 * I changed document creation to follow the latest standard for XML business documents.
 * I created a library to parse pdf's and plain-text files into xml files to feed a documents API.
 
+### Fun facts
+
+I’m a cat owner, [vim user]({% post_url 2020-09-14-LearnVimForFunAndProfit %}), [plain-text lover]({% post_url 2020-08-29-HowITakeNotes %}) and [Zettelkasten practitioner]({% post_url 2020-11-18-HowToTakeSmartNotes %}).
+
 In my free time, I like to read books (_on paper_) and learn and teach foreign languages. 
 
 ### What I write about
