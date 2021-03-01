@@ -55,7 +55,7 @@ public class OrderService
 }
 ```
 
-To create an unit test for this service, let's create replacements for the real payment gateway and stock service. We want to check what the `OrderService` class does when there's stock avialable and when there isn't.
+To create an unit test for this service, let's create replacements for the real payment gateway and stock service. We want to check what the `OrderService` class does when there's stock available and when there isn't.
 
 For our test name, let's follow the naming convention from [The Art of Unit Testing]({% post_url 2020-03-06-TheArtOfUnitTestingReview %}). With this naming convention, a test name shows the entry point, the scenario and the expected result separated by underscores.
 
