@@ -6,7 +6,7 @@ tags: books
 
 This is THE book to learn how to write unit tests. It starts from the definition of an unit test to how to implement them at your organization. Although, it covers extensively the subject, it doesn't advocate writing unit tests before or after the production code.
 
-The main takeaway from this book is that you should treat your tests as production code. Sometimes, tests aren't treated as code that needs to be taken care of. You should have test reviews, instead of only code reviews. Your tests are your safety net, so do not let them rot.
+"The Art of Unit Testing" teaches to treat your tests the same way you treat production code. Sometimes, tests aren't treated as code that needs to be taken care of. You should have test reviews, instead of only code reviews. Your tests are your safety net, so do not let them rot.
 
 ## Naming convention
 
@@ -19,6 +19,12 @@ With this naming convention is clear the logic under test, the inputs and the ex
 **Use builders instead of `SetUp` methods**. Tests should be isolated from other tests. Sometimes, `SetUp` methods create shared state among your tests. You will find tests that passes in isolation but don't pass alongside other tests and tests that need to be run many times to pass. 
 
 Often `SetUp` methods end up with initialization for only some tests. Tests should create their own world. So, initialize what's need inside every test using builders.
+
+<figure>
+<img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="The Art of Unit Testing Takeaways" />
+
+<figcaption>Whangarei Falls, Whangarei, New Zealand. <span>Photo by <a href="https://unsplash.com/@timswaanphotography?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Tim Swaan</a> on <a href="https://unsplash.com/s/photos/outdoor?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
+</figure>
 
 ## Safe green zone
 
