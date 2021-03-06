@@ -7,7 +7,7 @@ title: Home
   {% for post in paginator.posts %}
   <div class="post">
     {% if post.cover %}
-    {% capture imagePath %}{{ post.path | replace: '_posts/', '' | replace: '.md', '' }}/{{ post.cover }}{% endcapture %}
+    {% capture imagePath %}{{ post.path | replace: '_posts/', '' | replace: '.md', '' | replace: '#', '-' }}/{{ post.cover }}{% endcapture %}
     <div class="post-cover">
     <img src="/assets/posts/{{ imagePath }}"
         {% if include.alt %} alt="{{ include.alt }}" {% endif %}
