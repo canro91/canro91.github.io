@@ -2,6 +2,8 @@
 layout: post
 title: Parsinator, a tale of a pdf parser
 tags: tutorial showdev csharp
+cover: Parsinator.png
+cover-alt: Parsinator, a tale of a pdf parser
 ---
 
 One day your boss asks you to read a pdf file to extract relevant information to later process it in your main software. That happened to me. My first thought was: "_how in the world am I going to read the text on the pdf file?"_ This is how I built Parsinator.

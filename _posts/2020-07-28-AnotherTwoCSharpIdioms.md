@@ -3,6 +3,8 @@ layout: post
 title: Another two C# idioms
 tags: tutorial csharp
 series: C# idioms
+cover: Cover.png
+cover-alt: Two C# idioms - Part 2
 ---
 
 In this part of the C# idioms series, we have one idiom to organize versions of commands, events or view models. And another idiom, on coditionals inside `switch` statements.

@@ -3,6 +3,8 @@ layout: post
 title: Another two C# idioms - Part 3
 tags: tutorial csharp
 series: C# idioms
+cover: Cover.png
+cover-alt: Two C# idioms - Part 3
 ---
 
 This part of the C# idioms series is only about dictionaries.

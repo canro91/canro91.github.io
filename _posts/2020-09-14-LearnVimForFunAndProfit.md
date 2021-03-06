@@ -3,6 +3,8 @@ layout: post
 title: Just Vim It! Learning Vim For Fun and Profit
 tags: tutorial productivity vim
 description: Have you ever pressed Esc or Alt + F4 to close this weird text editor? Have you ever Googled how to exit Vim? Let's see why you should learn Vim and how to start using it!
+cover: Cover.png
+cover-alt: Learning Vim For Fun and Profit
 ---
 
 Have you ever heard about Vim? You might know it only as the text editor you can't even close if you don't know a key combination. But, once you know Vim, you can edit text files at the speed of light. Let's see why you should learn it and how to start using it!

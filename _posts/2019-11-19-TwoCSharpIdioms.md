@@ -3,6 +3,8 @@ layout: post
 title: Two C# idioms
 tags: tutorial csharp
 series: C# idioms
+cover: Cover.png
+cover-alt: Two C# idioms
 ---
 
 You have heard about Pythonic code? Languages have an expressive or "native" way of doing things. But, what about C#? Is there C-Sharpic code?

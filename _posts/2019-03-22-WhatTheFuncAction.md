@@ -3,6 +3,8 @@ layout: post
 title: What the Func, Action?
 description: What's the difference between Func and Action? How do I use them? This is a frequently asked question and a tricky subject. Here it is another take.
 tags: tutorial csharp
+cover: Cover.png
+cover-alt: Func vs Action
 ---
 
 What's the difference between `Func` and `Action`? This is a common C# interview question. Let's find it out!

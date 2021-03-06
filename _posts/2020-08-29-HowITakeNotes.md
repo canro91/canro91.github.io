@@ -2,6 +2,8 @@
 layout: post
 title: How I take notes?
 tags: productivity
+cover: Cover.png
+cover-alt: How I take notes
 ---
 
 A time ago, I commented a discussion on dev.to titled [How do you make notes?](https://dev.to/kvanrooyen/how-do-you-make-notes-3444) Here it is long my reply. 
