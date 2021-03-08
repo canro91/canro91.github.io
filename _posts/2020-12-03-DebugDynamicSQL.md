@@ -6,7 +6,7 @@ tags: todayilearned sql
 
 These three tips will help you to troubleshoot your dynamic queries and identify the source of a dynamic query when you find one in your query store or plan cache.
 
-**Dynamic SQL is a string with a query to execute**. This string is built based on the input parameters of an store procedure or any other condition to include the right clauses, comparisons and statements to execute. Often, Dynamic SQL is used with store procedures to search records with optional input parameters.
+**Dynamic SQL is a string with a query to execute**. This string is built based on the input parameters of a store procedure or any other condition to include the right clauses, comparisons and statements to execute. Often, Dynamic SQL is used with store procedures to search records with optional input parameters.
 
 ## Format your dynamic SQL queries for more readability
 
