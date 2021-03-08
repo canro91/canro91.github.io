@@ -1,6 +1,6 @@
 ---
 layout: post
-title: TIL&colon; Three Tricks to Debug Your Dynamic SQL Queries
+title: "TIL: Three Tricks to Debug Your Dynamic SQL Queries"
 tags: todayilearned sql
 ---
 
@@ -31,7 +31,7 @@ Also, check the two debugging parameters: `@Debug_PrintQuery` and `@Debug_Execut
 ```sql
 CREATE OR ALTER PROC dbo.usp_SearchUsers
   @SearchDisplayName NVARCHAR(100) = NULL,
-  @SearchLocation NVARCHAR(100) = NULL
+  @SearchLocation NVARCHAR(100) = NULL,
   @Debug_PrintQuery TINYINT = 0,
   @Debug_ExecuteQuery TINYINT = 1 AS
 BEGIN
@@ -52,7 +52,7 @@ BEGIN
   IF @Debug_ExecuteQuery = 1
     EXEC sp_executesql @StringToExecute, 
       N'@searchdisplayName nvarchar(100), @searchlocation nvarchar(100)', 
-      @SearchDisplayName, @SearchLocation, @SearchReputation;
+      @SearchDisplayName, @SearchLocation;
 END
 GO
 ```
