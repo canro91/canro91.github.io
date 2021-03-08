@@ -9,7 +9,7 @@ cover-alt: Two C# idioms
 
 You have heard about Pythonic code? Languages have an expressive or "native" way of doing things. But, what about C#? Is there C-Sharpic code?
 
-In this series of posts, I wil attempt to present some idioms or "expressions" to write more expressive C# code. I collected these idioms after reviewing code and getting mine reviewed too.
+In this series of posts, I will attempt to present some idioms or "expressions" to write more expressive C# code. I collected these idioms after reviewing code and getting mine reviewed too.
 
 In this first part, you have two useful C# idioms on conditionals and its alternative solutions.
 
