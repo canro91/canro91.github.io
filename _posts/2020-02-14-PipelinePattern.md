@@ -4,25 +4,25 @@ title: "Pipeline pattern: An assembly line of steps"
 tags: tutorial csharp
 ---
 
-You need to do a complex operation made of smaller consecutives tasks. This is how you can use the Pipeline pattern to achieve that. _Let's get started!_
+You need to do a complex operation made of smaller consecutives tasks. These tasks might change from client to client. This is how you can use the Pipeline pattern to achieve that. Let's implement the Pipeline pattern in C#.
 
 **With the Pipeline pattern, a complex task is divided into separated steps.** Each step is responsible for a piece of logic of that complex task. Like an assembly line, steps in a pipeline are executed one after the other, depending on the output of previous steps.
 
 > TL;DR Pipeline pattern is like the enrich pattern with factories. Pipeline = Command + Factory + Enricher
 
-## Problem
+## When to use the Pipeline pattern?
 
-You need to do a complex operation in your system. But, this complex operation consist of smaller tasks or steps. For example, make a reservation, generate an invoice or create an order. If a single task fails, you want to mark the whole operation as failed. 
+You can use the pipeline pattern if you need to do a complex operation made of smaller tasks or steps. If a single task of this complex operation fails, you want to mark the whole operation as failed. Also, the tasks in your operation vary per client or type of operation.
 
-Also, the steps in your operation won't be the same every time. For example, they will vary per client, type of operation or any other input parameter. _Let's use the Pipeline pattern._
+Some common scenarios to use the pipeline pattern are booking a room, generating an invoice or creating an order.
 
-## Solution
+## Let's use the Pipeline pattern
 
 **A pipeline is like an assembly line in a factory.** Each workstation in an assembly adds a part until the product is assembled. For example, in a car factory, there are separate stations to put the doors, the engine and the wheels.
 
-You can create reusable **steps** to perfom each action in your "assembly line". Then, you run these steps one after the other in a pipeline.
+With the pipeline pattern, you can create reusable **steps** to perfom each action in your "assembly line". Then, you run these steps one after the other in a pipeline.
 
-For example, in an e-commerce system to sell an item, you need to update the stock, charge a credit card, send a delivery order and send an email to the client.
+For example, in an e-commerce system to sell an item, you need to update the stock, charge a credit card, send a delivery order and notify the client.
 
 <figure>
 <img src="https://images.unsplash.com/photo-1567789884554-0b844b597180?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="Pipeline pattern in C#" />
@@ -56,7 +56,9 @@ public class UpdateStockStep : IStep<BuyItemCommand>
 }
 ```
     
-Next, we need a builder to create our pipeline with its steps. Since the steps may vary depending on the type of operation or the client, you can load your steps from a database or configuration files. For example, to sell an eBook, we don't need to create a delivery order.
+Next, we need a builder to create our pipeline with its steps. Since the steps may vary depending on the type of operation or the client, you can load your steps from a database or configuration files.
+
+For our e-commerce example, we don't need to create a delivery order when we sell an eBook. In that case, we need to build two pipelines: `BuyPhysicalItemPipeline` for products that require shipping and `BuyDigitalItemPipeline` for products that don't.
 
 ```csharp
 public class BuyItemPipelineBuilder : IPipelineBuilder
@@ -115,7 +117,7 @@ var pipeline = builder.CreatePipeline();
 await pipeline.ExecuteAsync();
 ```
 
-Some steps of the pipeline can be delayed for later processing. The user doesn't have to wait for these steps to finish his interaction in the system. You can run them in background jobs or schedule its execution for later processing. For example, you can use [Hangfire](https://github.com/HangfireIO/Hangfire) or roll your own queue mechanism ([Kiukie](https://github.com/canro91/Kiukie)...Ahem, ahem)
+Some steps of the pipeline can be delayed for later processing. The user doesn't have to wait for some steps to finish his interaction with the system. You can schedule the execution of some steps in background jobs for later processing. For example, you can use [Hangfire](https://github.com/HangfireIO/Hangfire) or roll your own queue mechanism ([Kiukie](https://github.com/canro91/Kiukie)...Ahem, ahem)
 
 ## Conclusion
 
