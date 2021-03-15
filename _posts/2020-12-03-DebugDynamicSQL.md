@@ -1,12 +1,12 @@
 ---
 layout: post
-title: TIL&colon; Three Tricks to Debug Your Dynamic SQL Queries
+title: "TIL: Three Tricks to Debug Your Dynamic SQL Queries"
 tags: todayilearned sql
 ---
 
 These three tips will help you to troubleshoot your dynamic queries and identify the source of a dynamic query when you find one in your query store or plan cache.
 
-**Dynamic SQL is a string with a query to execute**. This string is built based on the input parameters of an store procedure or any other condition to include the right clauses, comparisons and statements to execute. Often, Dynamic SQL is used with store procedures to search records with optional input parameters.
+**Dynamic SQL is a string with a query to execute**. This string is built based on the input parameters of a store procedure or any other condition to include the right clauses, comparisons and statements to execute. Often, Dynamic SQL is used with store procedures to search records with optional input parameters.
 
 ## Format your dynamic SQL queries for more readability
 
@@ -31,7 +31,7 @@ Also, check the two debugging parameters: `@Debug_PrintQuery` and `@Debug_Execut
 ```sql
 CREATE OR ALTER PROC dbo.usp_SearchUsers
   @SearchDisplayName NVARCHAR(100) = NULL,
-  @SearchLocation NVARCHAR(100) = NULL
+  @SearchLocation NVARCHAR(100) = NULL,
   @Debug_PrintQuery TINYINT = 0,
   @Debug_ExecuteQuery TINYINT = 1 AS
 BEGIN
@@ -52,7 +52,7 @@ BEGIN
   IF @Debug_ExecuteQuery = 1
     EXEC sp_executesql @StringToExecute, 
       N'@searchdisplayName nvarchar(100), @searchlocation nvarchar(100)', 
-      @SearchDisplayName, @SearchLocation, @SearchReputation;
+      @SearchDisplayName, @SearchLocation;
 END
 GO
 ```
