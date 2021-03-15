@@ -4,9 +4,9 @@ title: TIL&colon; How to convert 2-digit year to 4-digit year in C#
 tags: todayilearned csharp
 ---
 
-Today I was working with credit cards and I needed to convert a 2-digit year in C#. The first thing that came to my mind was adding 2000 to it. But it didn't feel right. _It wouldn't be a problem in hundreds of years._
+Today I was working with credit cards and I needed to convert a 2-digit year to a 4-digit one in C#. The first thing that came to my mind was adding 2000 to it. But it didn't feel right. _It wouldn't be a problem in hundreds of years._
 
-To convert 2-digit year into a 4-digit year, you can use the `ToFourDigitYear` method inside the `Calendar` class of the current culture.
+To convert 2-digit year into a 4-digit year, you can use the `ToFourDigitYear` method inside the `Calendar` class of your current culture.
 
 ```csharp
 CultureInfo.CurrentCulture.Calendar.ToFourDigitYear(21)
