@@ -4,7 +4,7 @@ title: How to version control your projects with Git. A guide to time travel
 tags: tutorial git
 ---
 
-Have you ever tried to version control your projects by appending dates on folder names? Are you doing it now? I have to confess I did it back in school with my class projects. If you're doing it this way, there's a better way. Read on!
+Have you ever tried to version control your projects by appending dates on folder names? Are you doing it now? I did it back in school with my class projects. If you're doing it this way, there's a better way. Let's use Git and GitHub to version control our projects. Read on!
 
 ```bash
 $ ls
@@ -17,7 +17,7 @@ Project-ThisIsTheTrueFinal/
 
 > _You can find the presentation version of this post [here]({% post_url 2020-04-09-FromZeroToPRWithGit %})._
 
-## Version Control System
+## What is a Version Control System?
 
 First, what is a version control system? A [version control system](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control), VCS, is a piece of code that keep track of changes of a file or set of files. So you can later access an specific change.
 
@@ -239,7 +239,7 @@ Git encourages working with branches. You can start to create branches per task 
 
 > _If your coming from TFS, you noticed you need to move first to the branch you want to merge into. You merge from the destination branch, not from the source branch._
 
-## Getting it to the cloud
+## GitHub: Getting our code to the cloud
 
 Up until now, all your work lives in your own computer. But, what if you want your project to live outside? You need a hosting solution. Among the most popular hosting solutions for Git, you can find [GitHub](https://github.com/), [GitLab](https://gitlab.com/) and [Bitbucket](https://bitbucket.org/).
 
