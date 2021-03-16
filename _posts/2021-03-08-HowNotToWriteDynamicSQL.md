@@ -101,6 +101,6 @@ Notice the two IF statements. Our store procedure will generate one plan for eac
 
 Voilà! That's how not to write a store procedure with optional parameters with Dynamic SQL. Notice that to make things simple, we didn't follow all the tips from [the previous post]({% post_url 2020-12-03-DebugDynamicSQL %}) to make our Dynamic SQL easier to debug.
 
-If you're interested in more SQL and SQL Server content, check my posts on [Six SQL Server performance tuning tips]({% post_url 2020-09-28-SQLServerTuningTips %}) and [How to format your SQL queries]({% post_url 2020-09-30-FormatSQL %})
+If you're interested in more content about SQL and SQL Server, check my posts on [Six SQL Server performance tuning tips]({% post_url 2020-09-28-SQLServerTuningTips %}) and [How to format your SQL queries]({% post_url 2020-09-30-FormatSQL %})
 
 _Happy coding!_
