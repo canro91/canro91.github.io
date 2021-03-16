@@ -21,21 +21,29 @@ You can roll your own database access layer. But, an ORM helps you to:
 
 ## Insight.Database
 
-[Insight.Database](https://github.com/jonwagner/Insight.Database) is a _"fast, lightweight .NET micro-ORM"_. It allows you to query your database with almost no mapping code. It maps fields/properties to query parameters and columns to fields/properties. Also, you can make extra changes to records as they're being read. For example, [you can trim whitespace-padded string columns]({% post_url 2018-09-21-INeedSomeSpace %}) from a legacy database.
+[Insight.Database](https://github.com/jonwagner/Insight.Database) is a _"fast, lightweight .NET micro-ORM"_. It allows you to query your database with almost no mapping code.
+
+Insight.Database maps properties from C# classes to parameters in queries and store procedures. Also, Insight.Database maps columns from query results back to properties in C# classes.
+
+Another feature of Insight.Database is record post-processing. You can make extra changes to records as they're being read. For example, [you can trim whitespace-padded string columns]({% post_url 2018-09-21-INeedSomeSpace %}) from a legacy database withouth using the `Trim()` method in your mapping classes.
+
+Unlike other ORMs, with Insight.Database, you have to write your own SQL queries or store procedures. It doesn't generate any SQL statements for you. In fact, Insight.Database documentation recommends to call your database through store procedures.
 
 > _Insight.Database is the .NET micro-ORM that nobody knows about because it's so easy, automatic, and fast, (and well-documented) that nobody asks questions about it on StackOverflow._
 
-Insight.Database recommends you to call your database through [store procedures](https://www.essentialsql.com/what-is-a-stored-procedure/). It doesn't generate any SQL statements for you. You have to write your own SQL queries or store procedures.
+## A CRUD application with Insight.Database
 
-## Roll-up your sleeves
+Let's create a simple CRUD application for a catalog of products.
 
-Let's create a simple CRUD application for a catalog of products. You should have installed the latest version of [ASP.NET Core SDK](https://dotnet.microsoft.com/download) and one database engine. Let's use [SQL Server Express LocalDB](https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/sql?view=aspnetcore-3.1&tabs=visual-studio#sql-server-express-localdb) shipped with Visual Studio.
+Before we begin, you should have installed the latest version of the [ASP.NET Core SDK](https://dotnet.microsoft.com/download) and one database engine. Let's use [SQL Server Express LocalDB](https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/sql?view=aspnetcore-3.1&tabs=visual-studio#sql-server-express-localdb) shipped with Visual Studio.
 
-Of course, you can use another database. Insight.Database has providers to work with MySql, SQLite or PostgreSQL. For a list of all providers, see [Database providers](https://github.com/jonwagner/Insight.Database/wiki#database-providers).
+Of course, you can use another database. Insight.Database has providers to work with MySQL, SQLite or PostgreSQL. For a list of all providers, see [Database providers](https://github.com/jonwagner/Insight.Database/wiki#database-providers).
 
 ### Create the skeleton
 
-Let's create an ASP.NET Core Web application from Visual Studio for our catalog of products. Choose API as the project type. Let's call it `ProductCatalog`. You will have a file structure like this one:
+First, let's create an ASP.NET Core Web application from Visual Studio for our catalog of products. Choose API as the project type when creating the new solution. Let's call it `ProductCatalog`.
+
+After creating an API project in Visual Studio, you will have a file structure like this one:
 
 ```
 |____appsettings.Development.json
@@ -170,7 +178,7 @@ namespace ProductCatalog.Controllers
 }
 ```
 
-Now, install Insight.Database NuGet package. After that, update the body of the `Get` method to query the database with a store procedure called `GetAllProducts`. You will need the `Query` extension method from Insight.Database. Add `using Insight.Database;` at the top of the file.
+Now, install `Insight.Database` NuGet package. After that, update the body of the `Get` method to query the database with a store procedure called `GetAllProducts`. You will need the `Query` extension method from Insight.Database. Add `using Insight.Database;` at the top of the file.
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
