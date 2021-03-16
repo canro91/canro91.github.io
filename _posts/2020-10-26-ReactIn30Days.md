@@ -6,9 +6,11 @@ cover: LearnReact.png
 cover-alt: Resources to learn React in 30 days
 ---
 
-Do you want to learn React and you don't where to start? Don't look for any other curated list of resources. _Let's React._
+Do you want to learn React and you don't where to start? Don't look for any other curated list of resources. _Let's learn React in 30 days._
 
-React is an user-interface library. It doesn't do a lot of things. It renders elements. Period. React isn't a Swiss-army knife framework full of functionalities. From [2020 StackOverflow developer Survey](https://insights.stackoverflow.com/survey/2020#technology-web-frameworks), React is the second most popular Web Framework. 
+React is an user-interface library. It doesn't do a lot of things. It renders elements on the screen. Period. React isn't a Swiss-army knife framework full of functionalities.
+
+**To learn React in 30 days, start learning to create components.** Make sure to understand the difference between props and state. Next, learn about hooks and how to style components. After that, learn about managing state with hooks. Don't rush to use Redux from the beginning.
 
 > _"React is a JavaScript library for building user interfaces"_ [reactjs.org](https://reactjs.org/)
 
@@ -23,6 +25,8 @@ One of my takeaways from the [Ultralearning book](https://canro91.github.io/2020
 These are some resources to learn React, its prerequisites and related subjects.
 
 ## Prerequisites
+
+Before starting to work with React, make sure to know about flexbox in CSS and ES6 JavaScript features. 
 
 ### CSS
 
@@ -145,7 +149,7 @@ Make sure to understand what to put into Redux store and where you should call y
 * [30 days of React](https://www.newline.co/fullstack-react/30-days-of-react/)
 * [Learn Building Applications with React and Redux](https://www.youtube.com/watch?v=4lF7IiIHliU)
 
-### Practice & Project Ideas
+### Practice and Project Ideas
 
 * [Cheat to Win: Learn React with Copywork](https://daveceddia.com/learn-react-with-copywork/). Two projects to copy: [React Snake](https://github.com/taming-the-state-in-react/react-snake), [GitHub issue viewer](https://github.com/dceddia/github-issues-viewer)
 * [Hands-on projects to learn the basics of React](https://hackernoon.com/hands-on-projects-to-learn-the-basics-of-react-3a06726514a8)
@@ -153,7 +157,7 @@ Make sure to understand what to put into Redux store and where you should call y
 * [5 React Projects You Need In Your Portfolio](https://codeartistry.io/5-react-projects-you-need/)
 * [10 React Starter Project Ideas to Get You Coding](https://medium.com/@dtkatz/10-react-starter-project-ideas-to-get-you-coding-5b35782e1831)
 
-## Misc
+## Other resources
 
 * [How to Structure Your React Project](https://daveceddia.com/react-project-structure/) or [React directory structure](https://marmelab.com/blog/2015/12/17/react-directory-structure.html)
 * [How to build Chrome extensions with React + Parcel](https://www.freecodecamp.org/news/building-chrome-extensions-in-react-parcel-79d0240dd58f/)
@@ -161,11 +165,11 @@ Make sure to understand what to put into Redux store and where you should call y
 * [Build Yourself a Redux](https://zapier.com/engineering/how-to-build-redux/)
 * [Frontend Framework Showdown](https://www.youtube.com/watch?v=1GNPzfcElyo)
 
-> _You can find my own 30-day journey following the resources from this post in [LetsReact](https://github.com/canro91/LetsReact)._
-> 
-> _You can read about my progress and takeaways on [Let's React. Day 18 of 30](https://canro91.github.io/2020/10/03/LetsReactDay18/) and [Let's React. Day 27 of 30](https://canro91.github.io/2020/10/19/LetsReactDay27/)_
+Voilà! Those are the resources and project ideas to learn React in 30 days. Start small creating components and understanding the difference between props and states. You can find my own 30-day journey following the resources from this post in [LetsReact](https://github.com/canro91/LetsReact).
 
 [![canro91/LetsReact - GitHub](https://gh-card.dev/repos/canro91/LetsReact.svg)](https://github.com/canro91/LetsReact)
+
+You can read about my progress and takeaways on [Let's React. Day 18 of 30]({% post_url 2020-10-03-LetsReactDay18 %}) and [Let's React. Day 27 of 30]({% post_url 2020-10-19-LetsReactDay27 %}).
 
 _Happy React/Redux time!_
 
