@@ -8,7 +8,9 @@ You are applying for your first position or for a new job. You have already sent
 
 ## What is Postfix Notation?
 
-Math and some programming languages use the infix notation. It places the operator between the two operands. And, it uses parenthesis to group operations. For example, `a + b` and `(a + b)*c`. Unlinke infix notation, **postfix notation places the operator after the two operands. And, it doesn't use any parenthesis to group expresions**. For example, `a b +` , and  `a b + c *`. Postfix expressions are evaluated from left to right. The expression `2 3 1 * + 9 -`  in postfix notation is equivalent to `(2 + (3 * 1)) - 9`.
+Math and some programming languages use the infix notation. It places the operator between the two operands. And, it uses parenthesis to group operations. For example, `a + b` and `(a + b)*c`.
+
+Unlinke infix notation, **postfix notation places the operator after the two operands. And, it doesn't use any parenthesis to group expresions**. For example, `a b +` , and  `a b + c *`. Postfix expressions are evaluated from left to right. The expression `2 3 1 * + 9 -`  in postfix notation is equivalent to `(2 + (3 * 1)) - 9`.
 
 ## Interview Question
 
