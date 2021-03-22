@@ -60,9 +60,9 @@ private AccountController MakeAccountController(IOptions<EmailConfiguration> ema
 
 ## A false positive
 
-This time, I had a new requirement. I needed to add a new method to our `AccountController`. This new method reads another configuration object injected into the controller.
+This time, I had a new requirement. I needed to add a new method to our `AccountController`. This new method read another configuration object injected into the controller.
 
-To follow the convention of validating required parameters inside constructors, I also check for this new configuration object. I wrote a new test and a builder method to call the constructor with only the parameters I need.
+To follow the convention of validating required parameters inside constructors, I also checked for this new configuration object. I wrote a new test and a builder method to call the constructor with only the parameters I needed.
 
 ```csharp
 [TestMethod]
@@ -121,7 +121,7 @@ I ran the test and it passed. Move on! But...Wait! There's something wrong! _Did
 
 ## Make your tests fail
 
-Of course, that test is passing. The code throws an `ArgumentNullException`. But, that exception is coming from the wrong place. It comes from the validation for the email configuration, not from our new validation. I forgot to use a valid email configuration in the new builder method. I used a mock reference instead. _I only realized that after getting my code reviewed. Point for the code review!_ 
+Of course, that test is passing. The code throws an `ArgumentNullException`. But, that exception is coming from the wrong place. It comes from the validation for the email configuration, not from our new validation. I forgot to use a valid email configuration in the new builder method. I used a mock reference without any values, instead. I only realized that after getting my code reviewed. _Point for the code review!_ 
 
 **Make sure to always start writing a failing test. And, this test should fail for the right reasons.** If you write your tests after writing the production code, comment some parts of your production code to see your tests failing. Or change the assertions on purpose.
 
