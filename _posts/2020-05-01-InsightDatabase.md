@@ -394,7 +394,7 @@ POST https://localhost:44343/api/Product
 
 ## Conclusion
 
-_Voilà!_ You know how to use Insight.Database to retrieve results and execute actions with store procedures using `Query` and `Execute` methods. If you stick to naming conventions, you won't need any mapping code. Insight.Database helped you to keep your data access to a few lines of code. 
+Voilà! You know how to use Insight.Database to retrieve results and execute actions with store procedures using `Query` and `Execute` methods. If you stick to naming conventions, you won't need any mapping code. Insight.Database helps you to keep your data access to a few lines of code. 
 
 > _Your mission, Jim, should you decide to accept it, is to change the `Update` and `Delete` methods to comple all CRUD operations. This post will self-destruct in five seconds. Good luck, Jim._
 
