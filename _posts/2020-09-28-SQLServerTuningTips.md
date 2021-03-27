@@ -11,9 +11,9 @@ Recently, I've needed to optimize some SQL Server queries. I decided to look out
 
 While looking up what I could do to tune my queries, I found Pinal Dave from [SQLAuthority](https://blog.sqlauthority.com/). Chances are you have already found one of his blog posts when searching for SQL Server tuning tips. He's been blogging about the subject for years.
 
-These are six tips from Pinal's blog and online presentations I've applied recently. Please, test these changes in a development or staging environment before making anything on your production servers. I gained a lot of improvement by fixing implicit conversions. We had a `VARCHAR` column and in one store procedure we use a `NVARCHAR` parameter for the same column. SQL Server had to scan the whole table to make that comparison.
+These are six tips from Pinal's blog and online presentations I've applied recently. Please, test these changes in a development or staging environment before making anything on your production servers.
 
-## Enable automatic statistics update 
+## 1. Enable automatic statistics update 
 
 **Turn on automatic update of statistics.** You should turn it off if you're updating a really long table during your work-hours. You can [enable automatic statistic update](https://blog.sqlauthority.com/2009/10/15/sql-server-enable-automatic-statistic-update-on-database/) with this query:
 
@@ -35,13 +35,26 @@ EXEC sp_updatestats
 GO
 ```
 
-## Fix File Autogrowth
+## 2. Fix File Autogrowth
 
 Add size and file growth to your database. Make it your weekly file growth. Otherwise set it to 200 or 250MB. You can [change the file autogrowth](https://blog.sqlauthority.com/2018/12/23/how-to-track-autogrowth-of-any-database-interview-question-of-the-week-205/) from SQL Server Management Studio.
 
-## Find and Fix Implicit conversions
+## 3. Find and Fix Implicit conversions
 
-Implicit conversions happen when SQL Server needs to convert between two data types in a `WHERE` or in `JOIN`. For example, the query `SELECT * FROM dbo.Orders WHERE OrderNumber = 123` with `OrderNumber` as a `VARCHAR(20)` column has implicit warning when compared to an integer.
+Implicit conversions happen when SQL Server needs to convert between two data types in a `WHERE` or in `JOIN`.
+
+For example, the query 
+
+```sql
+DECLARE @OrderNumber INT = 123;
+
+SELECT *
+FROM dbo.Orders
+WHERE OrderNumber = @OrderNumber;
+GO
+```
+
+with `OrderNumber` defined as a `VARCHAR(20)` column has implicit warning when compared to an integer. SQL Server has to go through all the rows in the `Orders` table to convert the order number from `VARCHAR` to `INT`.
 
 To decide when implicit conversion happens, you can check [Microsoft Data Type Precedence table](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-type-precedence-transact-sql?view=sql-server-ver15). Types with lower precedence convert to types with higher precedence. For example, `VARCHAR` will be always converted to `INT` and to `NVARCHAR`.
 
@@ -72,7 +85,7 @@ ORDER BY qs.total_worker_time DESC OPTION (RECOMPILE);
 <iframe src="https://www.youtube-nocookie.com/embed/ef-BmyNipU4?start=196&rel=0&fs=0" width="640" height="360" frameborder="0"></iframe>
 </div>
 
-## Change compatibility level
+## 4. Change compatibility level
 
 After updating your SQL Server, make sure to update the compatibility level of your database to the highest level supported by the current version of your SQL Server. You can check SqlAuthority blog on [how to change compatibility level](https://blog.sqlauthority.com/2017/05/22/sql-server-change-database-compatibility-level/).
 
@@ -81,7 +94,7 @@ ALTER DATABASE <YourDatabase>
 SET COMPATIBILITY_LEVEL = { 150 | 140 | 130 | 120 | 110 | 100 | 90 }
 ```
 
-## Create missing indexes
+## 5. Create missing indexes
 
 But, don't create all missing indexes. Create the first 10 missing indexes. You should have only ~5 indexes per table. You can use the next script to [find the missing indexes in your database](https://blog.sqlauthority.com/2011/01/03/sql-server-2008-missing-index-script-download/).
 
@@ -122,7 +135,7 @@ GO
 <iframe src="https://www.youtube-nocookie.com/embed/fX05yEkSkpo?start=706&rel=0&fs=0" width="640" height="360" frameborder="0"></iframe>
 </div>
 
-## Delete most of your indexes
+## 6. Delete most of your indexes
 
 **Indexes reduce perfomance all the time.** They reduce performance of inserts, updates, deletes and selects. Even if a query isn't using an index, it reduces performance of the query.
 
@@ -165,5 +178,11 @@ AND i.is_unique_constraint = 0
 ORDER BY (dm_ius.user_seeks + dm_ius.user_scans + dm_ius.user_lookups) ASC
 GO
 ```
+
+Voilà! These are six tips I learned from Pinal Dave to start tuning your SQL Server. Pay attention to your implicit converstions. You can get a surprise.
+
+I gained a lot of improvement only by fixing implicit conversions. In a store procedure, we had a `NVARCHAR` parameter to compare it with a `VARCHAR` column. Yes, implicit conversions happen between `VARCHAR` and `NVARCHAR`.
+
+For more SQL content, check my posts on [how to debug]({% post_url 2020-12-03-DebugDynamicSQL %}) and [how NOT to write]({% post_url 2021-03-08-HowNotToWriteDynamicSQL %}) dynamic SQL queries.
 
 _Happy SQL time!_
