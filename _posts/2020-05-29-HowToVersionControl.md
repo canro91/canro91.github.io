@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to version control your projects with Git. A guide to time travel
+title: A beginner's Guide to Git. A guide to time travel
 tags: tutorial git
 ---
 
