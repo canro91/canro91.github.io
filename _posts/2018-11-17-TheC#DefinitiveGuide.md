@@ -12,9 +12,6 @@ Hello, if you are a beginner programmer or you just took a programming course at
 Every intermediate C# developer should know how to work productively with a text editor of choice. Visual Studio and Visual Studio Code are two popular choices. He should know how to use `async` and `await` keywords, most common LINQ methods and regular expressions. Also, he should find his way around large codebases and be aware of the latest C# features.
 
 ## Environment
-	
-> _Give me six hours to chop down a tree and I will spend the first four sharpening the axe._ 
-> -Abraham Lincon
 
 Visual Studio is the de-facto Integrated Development Environment (IDE) for C#. Although, Visual Studio Code has gained a lot attention recently. Since you will spend most of your workdays with Visual Studio, you should sharpen your tools.
 
@@ -49,7 +46,7 @@ Git is a version control system. A time machine to go back in time, create alter
 * Learn the basic commands: `init`, `add`, `status`, `commit`, `push`
 * Use Git inside of your text editor or IDE of choice. _You use an IDE, right?_
 * [Udacity Git course](https://www.udacity.com/course/version-control-with-git--ud123)
-* My own guide on [How to version control your projects with Git]({% post_url 2020-05-29-HowToVersionControl %})
+* My own [beginner's guide to Git and GitHub]({% post_url 2020-05-29-HowToVersionControl %})
 
 ### GitHub
 
@@ -83,6 +80,7 @@ An unit test is a "safety net" to make sure you don't break things when you add 
 * Learn what unit test really means [Unit Test - Definition](http://artofunittesting.com/definition-of-a-unit-test/)
 * Watch [Understand Test Driven Development](https://www.youtube.com/watch?v=q5Xd1tmIgec)
 * Write some unit tests for some parts of your codebase or practice writing unit tests for a library you know
+* Read my [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %})
 * Read Roy Osherove's _The Art of Unit Testing_. Or you can read my [Four takeaways]({% post_url 2020-03-06-TheArtOfUnitTestingReview %})
 
 ## LINQ
@@ -346,8 +344,6 @@ Console.WriteLine("Hello World!");
 * Learn some Vim. Read my post on [Learning Vim For Fun and Profit](2020/09/14/LearnVimForFunAndProfit/). If you want to master every detail, take a look at the book _Practical Vim_.
 * Learn about C# [extensions methods](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods). You will find them often.
 * Read books on Clean Code. For example: _The Art of Readable Code_ or _Clean Code_ books. You can read [my review and takeaways]({% post_url 2020-01-06-CleanCodeReview %}).
-
-## Conclusions
 
 _Voilà!_ That's my take on what every intermediate C# developer should know! Don't be overwhelm by the amount of things to learn. Don't try to learn everything at once, either. Learn one subject at a time! And, start using it in your every day coding as you learn it.
 
