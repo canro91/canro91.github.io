@@ -1,6 +1,6 @@
 ---
 layout: post
-title: TIL&colon; Always Use a Culture When Parsing Numeric Strings in C#
+title: "TIL: Always Use a Culture When Parsing Numeric Strings in C#"
 tags: todayilearned csharp
 ---
 

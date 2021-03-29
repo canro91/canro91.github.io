@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Clean Coder&colon; Three Takeaways
+title: "The Clean Coder: Three Takeaways"
 tags: books
 ---
 

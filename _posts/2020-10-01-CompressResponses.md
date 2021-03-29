@@ -1,6 +1,6 @@
 ---
 layout: post
-title: TIL&colon; How to add gzip compression to ASP.NET Core API responses
+title: "TIL: How to add gzip compression to ASP.NET Core API responses"
 tags: todayilearned asp.net
 ---
 

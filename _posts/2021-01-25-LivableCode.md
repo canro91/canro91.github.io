@@ -1,6 +1,6 @@
 ---
 layout: post
-title: TIL&colon; Livable Code. Living with your mess
+title: "TIL: Livable Code. Living with your mess"
 tags: todayilearned
 cover: LivableCode.png
 cover-alt: Livable Code. Living with your mess

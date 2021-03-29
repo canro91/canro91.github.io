@@ -1,6 +1,6 @@
 ---
 layout: post
-title: TIL&colon; SQL Server uses all available memory
+title: "TIL: SQL Server uses all available memory"
 tags: todayilearned sql
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: TIL&colon; Go to the previous branch in Git
+title: "TIL: Go to the previous branch in Git"
 tags: todayilearned git
 ---
 

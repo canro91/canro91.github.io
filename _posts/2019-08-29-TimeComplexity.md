@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Time complexity&colon; An interview exercise II
+title: "Time complexity: An interview exercise II"
 tags: interview tutorial csharp
 ---
 

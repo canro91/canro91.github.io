@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Art of Unit Testing&colon; Four Takeaways
+title: "The Art of Unit Testing: Four Takeaways"
 tags: books
 ---
 

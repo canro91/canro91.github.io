@@ -1,6 +1,6 @@
 ---
 layout: post
-title: TIL&colon; EXISTS SELECT 1 vs EXISTS SELECT * in SQL Server
+title: "TIL: EXISTS SELECT 1 vs EXISTS SELECT * in SQL Server"
 tags: todayilearned sql
 ---
 

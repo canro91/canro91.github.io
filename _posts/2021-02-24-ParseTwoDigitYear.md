@@ -1,6 +1,6 @@
 ---
 layout: post
-title: TIL&colon; How to convert 2-digit year to 4-digit year in C#
+title: "TIL: How to convert 2-digit year to 4-digit year in C#"
 tags: todayilearned csharp
 ---
 

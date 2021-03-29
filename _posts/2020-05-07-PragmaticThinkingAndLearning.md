@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Pragmatic Thinking and Learning&colon; Three takeaways
+title: "Pragmatic Thinking and Learning: Three takeaways"
 tags: books learning
 ---
 

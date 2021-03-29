@@ -1,6 +1,6 @@
 ---
 layout: post
-title: TIL&colon; How to compare DateTime without the date part in SQL Server
+title: "TIL: How to compare DateTime without the date part in SQL Server"
 tags: todayilearned sql
 ---
 

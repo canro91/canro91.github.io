@@ -1,6 +1,6 @@
 ---
 layout: post
-title: TIL&colon; Three differences between TRUNCATE and DELETE
+title: "TIL: Three differences between TRUNCATE and DELETE"
 tags: todayilearned sql
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Let's Go&colon; Learn Go in 30 days
+title: "Let's Go: Learn Go in 30 days"
 tags: letsX go
 cover: LetsGo.png
 ---

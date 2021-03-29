@@ -1,6 +1,6 @@
 ---
 layout: post
-title: TIL&colon; NULL isn't LIKE anything else in SQL Server
+title: "TIL: NULL isn't LIKE anything else in SQL Server"
 tags: todayilearned sql
 ---
 

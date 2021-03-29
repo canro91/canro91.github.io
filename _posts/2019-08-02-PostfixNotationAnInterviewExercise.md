@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Postfix Notation&colon; An Interview Exercise
+title: "Postfix Notation: An Interview Exercise"
 tags: tutorial interview csharp
 ---
 
