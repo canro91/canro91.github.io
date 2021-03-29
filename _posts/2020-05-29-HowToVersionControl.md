@@ -237,7 +237,7 @@ $ git branch -d testing
 
 Git encourages working with branches. You can start to create branches per task or features. There is a convention for branch creation, [GitFlow](https://nvie.com/posts/a-successful-git-branching-model/). It suggests feature, release and hotfix branches.
 
-> _If your coming from TFS, you noticed you need to move first to the branch you want to merge into. You merge from the destination branch, not from the source branch._
+> _If you're coming from TFS, you noticed you need to move first to the branch you want to merge into. You merge from the destination branch, not from the source branch._
 
 ## GitHub: Getting our code to the cloud
 
