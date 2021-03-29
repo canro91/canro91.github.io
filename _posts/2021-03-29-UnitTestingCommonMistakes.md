@@ -1,0 +1,180 @@
+---
+layout: post
+title: 4 common mistakes when writing your first unit tests
+tags: tutorial csharp
+cover: Cover.png
+cover-alt: 4 common mistakes when writing your first unit tests
+---
+
+Last time, we covered how to [write our first unit tests]({% post_url 2021-03-15-UnitTesting101 %}) with C# and MSTest. We started from a Console program and converted it into our first unit tests. We wrote those tests for Stringie, a (fictional) library to manipulate strings with more readable methods. This time, we will cover how NOT to write unit tests. These are four common mistakes we should avoid when writing our first unit tests.
+
+## 1. Do not follow a naming convention
+
+First, keep your tests in the right place. Have one test project per project, one test class per class. Add the suffix "Tests" in the name of your test projects and classes.
+
+**Choose a naming convention for your test names and stick to it.**
+
+In our previous post, we covered two naming conventions. An "ItShould" sentence and the three-part name separated with underscores. You can choose the one you like the most.
+
+That time, for Stringie `Remove()` method, we wrote test names like:
+
+* "Remove_ASubstring_RemovesThatSubstring"
+* "Remove_NoParameters_ReturnsEmpty"
+
+Every test should tell the scenario under test and the expected result. We shouldn't worry about long test names. But, let's stop naming our tests: `Test1`, `Test2` and so on.
+
+Don't prefix our test names with "Test". If we're using a testing framework that doesn't need keywords in our test names, let's stop doing that. With MSTest, we have attributes like `[TestClass]` and `[TestMethod]` to mark our methods as tests.
+
+Also, don't use filler words like "Success" or "IsCorrect" in our test names. Instead, let's tell what "success" and "correct" means for that test. Is it a successful test because it doesn't throw exceptions? Is it successful because it returns a value? Make your test names easy to understand.
+
+## 2. Do not use the right assertion methods
+
+Follow the Arrange/Act/Assert principle. Separate the body of your tests to differentiate these three parts.
+
+For the Assert part of your tests, make sure to use an assertion library. MSTest, NUnit and XUnit are the three most popular ones for C#.
+
+**Use the right assertion methods of your library.** For example, MSTest has assertion methods for strings, collections and other objects. For a list of the most common MSTest assertions methods, check the Cheatsheet in [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}).
+
+Please, don't do.
+
+```csharp
+Assert.AreEqual(null, result);
+// or
+Assert.AreEqual(true, anotherResult);
+```
+
+Prefer.
+
+```csharp
+Assert.IsNull(result);
+// or
+Assert.IsTrue(anotherResult);
+```
+
+<figure>
+<img src="https://images.unsplash.com/photo-1521978562062-4a694d7d0e74?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjE1MzI0NDE5&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="Unit Testing 101" />
+
+<figcaption>Arrggg! Photo by <a href="https://unsplash.com/@steve_j?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Steve Johnson</a> on <a href="/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  </figcaption>
+</figure>
+
+## 3. Do not have a single assertion per test
+
+**Have only one Act and Assert part in your tests.** Don't repeat the same Act part with different test values in a single test.
+
+Please, avoid writing test like this one.
+
+```csharp
+[TestMethod]
+public void Remove_SubstringWithDifferentCase_RemovesSubstring()
+{
+    var str = "Hello, world!";
+
+    var transformed = str.RemoveAll("Hello").IgnoringCase();
+    Assert.AreEqual(", world!", transformed);
+
+    transformed = str.RemoveAll("HELLO").IgnoringCase();
+    Assert.AreEqual(", world!", transformed);
+
+    transformed = str.RemoveAll("HeLlO").IgnoringCase();
+    Assert.AreEqual(", world!", transformed);
+}
+```
+
+Or like this one.
+
+```csharp
+[TestMethod]
+public void Remove_SubstringWithDifferentCase_RemovesSubstring()
+{
+    var str = "Hello, world!";
+
+    var testCases = new string[]
+    {
+        "Hello",
+        "HELLO",
+        "HeLlO"
+    };
+    string transformed;
+    foreach (var str in testCases)
+    {
+        transformed = str.RemoveAll("Hello").IgnoringCase();
+        Assert.AreEqual(", world!", transformed);
+    }
+}
+```
+
+If we want to test the same scenario with different test values, let's use parameterized tests.
+
+### Parameterized tests with MSTest
+
+To write a parameterized test with MSTest, we can follow these steps:
+
+* Replace the `[TestMethod]` attribute with the `[DataTestMethod]` attribute in your test.
+* Add `[DataRow]` attributes for each set of test values.
+* Add parameters for each test value inside the `[DataRow]` attributes.
+* Use the input parameters in your test to arrange, act or assert.
+
+Let's convert the previous test with many test values into a parameterized test.
+
+```csharp
+[DataTestMethod]
+[DataRow("Hello")]
+[DataRow("HELLO")]
+[DataRow("HeLlo")]
+public void Remove_SubstringWithDifferentCase_RemovesSubstring(string substringToRemove)
+{
+    var str = "Hello, world!";
+
+    var transformed = str.RemoveAll(substringToRemove).IgnoringCase();
+
+    Assert.AreEqual(", world!", transformed);
+}
+```
+
+## 4. Repeat logic in your assertions
+
+I can't stress this enough. **Don't repeat the logic under test in your assertions.** Use known, hard-coded, pre-calculated values, instead.
+
+We shouldn't copy the tested logic and paste it in a private method in our tests to use it in our assertions. We will have code, and bugs, in two places.
+
+Please, don't write assertions like the one in this test.
+
+```csharp
+[TestMethod]
+public void Remove_ASubstring_RemovesThatSubstringFromTheEnd()
+{
+    string str = "Hello, world!";
+
+    string transformed = str.Remove("world!").From(The.End);
+
+    var position = str.IndexOf("world!");
+    var expected = str.Substring(0, position);
+    Assert.AreEqual(expected, transformed);
+}
+```
+
+For this test, instead of using the `Substring()` method to remove the input string, use a known expected value. Write `Assert.AreEqual("Hello,", transformed)`. For example,
+
+```csharp
+[TestMethod]
+public void Remove_ASubstring_RemovesThatSubstringFromTheEnd()
+{
+    string str = "Hello, world!";
+
+    string transformed = str.Remove("world!").From(The.End);
+
+    // Let's use a known value in our assertions
+    Assert.AreEqual("Hello,", transformed)
+}
+```
+
+Voilà! These are four common ~~misatkes~~ mistakes when writing our first unit tests. Remember to put your test in the right places following a naming convention. Also, keep one assertion per test and don't repeat logic in your assertions. You will have better tests avoiding these mistakes.
+
+If you want to practice identifying and fixing these mistakes, check my [Unit Testing 101](https://github.com/canro91/Testing101) repository. You will find the tests that Stringie developers wrote and some other ~~misatkes~~ mistakes they made. _Your mission, Jim, should you choose to accept it, is to fix them._
+
+![canro91/Testing101 - GitHub](https://gh-card.dev/repos/canro91/Testing101.svg)
+
+If you're new to unit testing, read my post [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}) to write your first unit tests in C#. For more advanced tips on writing unit tests, check my post [how to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %}).
+
+_Happy testing!_
