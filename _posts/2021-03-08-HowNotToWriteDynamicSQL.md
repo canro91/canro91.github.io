@@ -4,9 +4,9 @@ title: How not to write Dynamic SQL
 tags: tutorial sql
 ---
 
-Last time, I showed you [three tips to debug your Dynamic SQL]({% post_url 2020-12-03-DebugDynamicSQL %}). Next time, you find a query in the plan cache, you can trace down the store procedure that generated it. This time, I will show you how not to write Dynamic SQL.
+Last time, I showed you [three tips to debug your Dynamic SQL]({% post_url 2020-12-03-DebugDynamicSQL %}). The next time you find a query in the plan cache, you can trace down the store procedure that generated it. This time, I will show you how not to write Dynamic SQL.
 
-Dynamic SQL is a string with a query to execute. In a store procedure with optional parameters, Dynamic SQL is used to build a string with the comparisons for the parameters passed with a non-default value.
+**Dynamic SQL is a string with a query to execute. In a store procedure with optional parameters, Dynamic SQL is used to build a string with only the comparisons for the parameters passed with a non-default value**.
 
 ## Without Dynamic SQL
 
@@ -69,7 +69,7 @@ We moved the same query to a string in a Dynamic SQL. That won't make any differ
 
 ## With Dynamic SQL, the right way
 
-With Dynamic SQL, we want to create smaller queries for the different set of parameters passed to our store procedure. We need to add only the conditions for the parameter passed.
+With Dynamic SQL, we want to create smaller queries for the different set of parameters passed to our store procedure. We need to add only the conditions for the parameter passed with value.
 
 ```sql
 CREATE OR ALTER PROC dbo.usp_SearchUsersWithDynamicSQL
@@ -99,8 +99,8 @@ GO
 
 Notice the two IF statements. Our store procedure will generate one plan for each set of parameters. This time, SQL Server chooses the right indexes to run the query. That's the point of using Dynamic SQL.
 
-Voilà! That's how not to write a store procedure with optional parameters with Dynamic SQL. Notice that to make things simple, we didn't follow all the tips from [the previous post]({% post_url 2020-12-03-DebugDynamicSQL %}) to make our Dynamic SQL easier to debug.
+Voilà! That's how NOT to write a store procedure with optional parameters with Dynamic SQL. Notice that to make things simple, we didn't follow all the tips from [the previous post]({% post_url 2020-12-03-DebugDynamicSQL %}) to make our Dynamic SQL easier to debug.
 
-If you're interested in more content about SQL and SQL Server, check my posts on [Six SQL Server performance tuning tips]({% post_url 2020-09-28-SQLServerTuningTips %}) and [How to format your SQL queries]({% post_url 2020-09-30-FormatSQL %})
+If you're interested in more content about SQL and SQL Server, check my posts on [Six SQL Server performance tuning tips]({% post_url 2020-09-28-SQLServerTuningTips %}) and [How to format your SQL queries]({% post_url 2020-09-30-FormatSQL %}).
 
 _Happy coding!_
