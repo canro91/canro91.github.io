@@ -7,9 +7,9 @@ cover: Cover.png
 cover-alt: Two C# idioms - Part 3
 ---
 
-This part of the C# idioms series is only about dictionaries.
+This part of the C# idioms series is only about dictionaries. Let's get rid of exceptions when working with dictionaries.
 
-## Instead of checking if a dictionary contains an item before adding it, use `TryAdd`
+## Instead of checking if a dictionary contains an item before adding it, use TryAdd
 
 `TryAdd` will return if an item was added or not to the dictionary. Unlike `Add`, if the given key is already in the dictionary, `TryAdd` won't throw any exception. It will simply do nothing. The item is already there.
 
@@ -42,7 +42,7 @@ myDictionary.Add("foo", "baz");
 myDictionary.TryAdd("foo", "bar"); // false
 ```
 
-## Avoid `KeyNotFoundException` with `TryGetValue` or `GetValueOrDefault`
+## Avoid KeyNotFoundException with TryGetValue or GetValueOrDefault
 
 At least now, the `KeyNotFoundException` message contains the name of the not-found key. _The old days chasing the not-found key are over._
 
