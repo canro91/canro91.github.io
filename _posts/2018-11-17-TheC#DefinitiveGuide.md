@@ -59,6 +59,7 @@ Programming is about collaboration. GitHub is the social network for programmers
 Desing patterns are recipes to solve common problems in code. This is, given a certain problem, there is a blueprint or an outline that will help you to solve that problem.
 
 * Recognize some of the most common patterns and learn to use them. For example: Factory, Builder, Composite, Command, Template, Strategy, Null Object, Adapter.
+* Check my take on the [Decorator pattern]({% post_url 2021-02-10-DecoratorPattern %})
 * Learn Uncle Bob's SOLID principles
 
 ## Dealing with large codebases
@@ -345,6 +346,6 @@ Console.WriteLine("Hello World!");
 * Learn about C# [extensions methods](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods). You will find them often.
 * Read books on Clean Code. For example: _The Art of Readable Code_ or _Clean Code_ books. You can read [my review and takeaways]({% post_url 2020-01-06-CleanCodeReview %}).
 
-_Voilà!_ That's my take on what every intermediate C# developer should know! Don't be overwhelm by the amount of things to learn. Don't try to learn everything at once, either. Learn one subject at a time! And, start using it in your every day coding as you learn it.
+Voilà! That's my take on what every intermediate C# developer should know! Don't be overwhelm by the amount of things to learn. Don't try to learn everything at once, either. Learn one subject at a time! And, start using it in your every day coding as you learn it.
 
 _Happy coding!_
