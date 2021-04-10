@@ -145,15 +145,11 @@ Depending on your workplace or project, you have to follow a naming convention f
 
 ### Branching
 
-Using the time machine analogy, **a branch is a separate timeline**. Changes in a timeline don’t interfere with changes other timelines. Timelines are called **branches**. By convention, the main timeline is called **master**.
+Using the time machine analogy, **a branch is a separate timeline**. Changes in a timeline don’t interfere with changes in other timelines. Timelines are called **branches**. By convention, the main timeline is called **master**.
 
-> The master/slave methaphor is discouraged these days. Starting from [Git 2.28](https://github.blog/2020-07-27-highlights-from-git-2-28/#introducing-init-defaultbranch), when you run `git init`, Git will look for the configuration value `init.defaultBranch` to replace the hard-coded name. 
-> 
-> For existing repositories, you can follow [this Scott Hanselman post](https://www.hanselman.com/blog/EasilyRenameYourGitDefaultBranchFromMasterToMain.aspx) to rename master to main.
-> 
-> Other alternatives for master are: main, primary or default.
+About the master convention, starting from [Git 2.28](https://github.blog/2020-07-27-highlights-from-git-2-28/#introducing-init-defaultbranch), when you run `git init`, Git will look for the configuration value `init.defaultBranch` to replace the hard-coded "master" name. Other alternatives for master are: main, primary or default. For existing repositories, you can follow [this Scott Hanselman post](https://www.hanselman.com/blog/EasilyRenameYourGitDefaultBranchFromMasterToMain.aspx) to rename your master branch.
 
-This is one the most awesome Git features. Git branches are lightweight and fast when compared to other VCS. 
+Branching is one the most awesome Git features. Git branches are lightweight and fast when compared to other VCS. 
 
 ```bash
 # Create a new branch called testing
