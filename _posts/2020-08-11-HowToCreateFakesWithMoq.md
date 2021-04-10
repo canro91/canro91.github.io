@@ -59,6 +59,8 @@ To create a unit test for this service, let's create replacements for the real p
 
 For our test name, let's follow the naming convention from [The Art of Unit Testing]({% post_url 2020-03-06-TheArtOfUnitTestingReview %}). With this naming convention, a test name shows the entry point, the scenario and the expected result separated by underscores.
 
+To learn about other naming conventions, check my post [How to name your unit tests]({% post_url 2021-04-12-UnitTestNamingConventions %}).
+
 ```csharp
 [TestClass]
 public class OrderServiceTests
