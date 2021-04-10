@@ -63,7 +63,7 @@ This is how Poor Man's T-SQL format our sample query in Notepad++.
 
 {% include image.html name="PoorManTSQL.PNG" caption="Sample query formatted by Poor Man's T-SQL inside Notepad++" alt="Sample query formatted by Poor Man's T-SQL inside Notepad++" width="700px" %}
 
-It doesn't make function names uppercase. Notice the functions `len` and `count`. Also, it indents `AND` clauses in the `WHERE` clause. But, it's a good starting point. Sometimes, it need a bit of help if the query has single-line comments in it.
+It doesn't make function names uppercase. Notice the functions `len` and `count`. Also, it indents `AND` clauses in the `WHERE` clause. But, it's a good starting point. Sometimes, it needs a bit of help if the query has single-line comments in it with `--`. By the way, it's better to use `/* */` for single-line comments inside our queries.
 
 ### ApexSQL Refactor
 
@@ -73,7 +73,7 @@ This is how ApexSQL Refactor format our sample query in Visual Studio 2019.
 
 {% include image.html name="ApexSQL.PNG" caption="Sample query formatted by ApexSQL Refactor inside Visual Studio" alt="Sample query formatted by ApexSQL Refactor inside Visual Studio" width="600px" %}
 
-It isn't perfect either. It makes functions uppercase. It indents `AND` clauses in the `WHERE` too. I couldn't find an option to change it. But, there is an option to indent `ON` in `SELECT` statements with `JOIN`. It affects `ON` for index creation too.
+It isn't perfect either. It makes functions uppercase. And, it indents `AND` clauses in the `WHERE` too. I couldn't find an option to change it. But, there is an option to indent `ON` in `SELECT` statements with `JOIN`. It affects `ON` for index creation too. We can live with that.
 
 Voilà! Please, save you some time formatting your SQL queries with any of these two free tools. For other alternatives, check [this SQLShack collection of formatter tools](https://www.sqlshack.com/sql-formatter-tools/).
 
