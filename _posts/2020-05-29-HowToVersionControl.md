@@ -43,7 +43,7 @@ There is a distinction between version control systems. It makes them different.
 
 But, **a distributed VCS doesn’t need a centralized server in the same sense**. Each user has a complete copy of the entire project. Most of operations are performed against this local copy. So you can work offline. _A two-hour flight without internet, no problem_. For example, Git is a distributed VCS.
 
-> _If you’re coming from TFS, I’ve written a [Git Guide for TFS Users]({% post_url 2019-11-11-GitGuideForTfsUsers %})_
+If you’re coming from TFS, I’ve written a [Git Guide for TFS Users]({% post_url 2019-11-11-GitGuideForTfsUsers %}).
 
 ## What's Git anyways?
 
@@ -53,17 +53,18 @@ Up to this point, Git doesn’t need any further introduction. From its [officia
 
 You can install Git from it’s official page. You can find instructions to install it using package managers for all major OS's. 
 
-Before starting to work, you need some one-time setups. You need to configure a name and an email. This name and email will appear in the file history of any file you create or modify. Let's go to the command line 
+Before starting to work, you need some one-time setups. You need to configure a name and an email. This name and email will appear in the file history of any file you create or modify. Let's go to the command line.
+
+From the next two commands, replace "John Doe" and "johndoe@example.com" with your own name and email.
 
 ```bash
-# Replace "John Doe" and "johndoe@example.com" with your own name and email
 $ git config --global user.name "John Doe"
 $ git config --global user.email johndoe@example.com
 ```
 
 You can change this name and email between projects. If you want to use different names and emails for work, you’re covered. [You can manage different accounts](https://dev.to/balaaagi/managing-multiple-git-account-1ddd) between folders.
 
-### Let’s get started
+### Create a repository
 
 There are two ways to start working with Git. From scratch or from an existing project.
 
@@ -133,13 +134,13 @@ Git won’t notice any files from the patterns included in the `.gitignore` file
 
 ### Commit messages
 
-> _Please, please don’t use “uploading changes” or any variations on your commit messages._
-
 A [good commit message](https://thoughtbot.com/blog/5-useful-tips-for-a-better-commit-message) should tell why the change is needed, what problem it fixes and any side effect it might have.
 
-Depending on your workplace or project, you have to follow a naming convention for your commit messages. For example, using a code for the type of change (feature, test, bug or refactor) and a task number.
+Please, please don’t use “uploading changes” or any variations on your commit messages.
 
-> _Commit messages are important! I heard from a friend who received a comment in a job application exercise about his commit messages. So, when it’s time to shine, shine even for your commit messages._
+Depending on your workplace or project, you have to follow a naming convention for your commit messages. For example, you have to include the type of change (feature, test, bug or refactor) and followed by a task number from your bug tracking software. If you need to follow a convention like this one, [Git can format the commit messages]({% post_url 2020-09-02-TwoRecurringReviewComments %}) for you.
+
+Keep your commits small and focused. Work with incremental commits. Don't commit changes that break your project.
 
 ## Branching and merging
 
@@ -149,7 +150,9 @@ Using the time machine analogy, **a branch is a separate timeline**. Changes in 
 
 About the master convention, starting from [Git 2.28](https://github.blog/2020-07-27-highlights-from-git-2-28/#introducing-init-defaultbranch), when you run `git init`, Git will look for the configuration value `init.defaultBranch` to replace the hard-coded "master" name. Other alternatives for master are: main, primary or default. For existing repositories, you can follow [this Scott Hanselman post](https://www.hanselman.com/blog/EasilyRenameYourGitDefaultBranchFromMasterToMain.aspx) to rename your master branch.
 
-Branching is one the most awesome Git features. Git branches are lightweight and fast when compared to other VCS. 
+Branching is one the most awesome Git features. Git branches are lightweight and fast when compared to other VCS.
+
+Let's create a new branch called "testing".
 
 ```bash
 # Create a new branch called testing
@@ -164,7 +167,11 @@ $ git checkout testing
 $ git status
 $ git add README
 $ git commit -m 'Add example to README'
+```
 
+Now, let's switch back to the master branch and see what happened to our files there.
+
+```bash
 # Now move back to the master brach
 $ git checkout master
 # See how README hasn't changed
@@ -177,13 +184,21 @@ $ git commit -m 'Add Git awesomeness'
 $ git log --oneline --graph --all
 ```
 
+We have created two branches, let's see how we can combine what we have in the two branches.
+
+<figure>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Grays_Sports_Almanac_Back_to_the_Future.jpg/800px-Grays_Sports_Almanac_Back_to_the_Future.jpg" alt="Grays Sports Almanac" width="800" height="400" />
+
+<figcaption>Grays Sports Almanac. Photo by <a href="https://commons.wikimedia.org/wiki/File:Grays_Sports_Almanac_Back_to_the_Future.jpg">Mike Mozart</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons</figcaption>
+</figure>
+
 ### Merging
 
 Merging two branches is combining two separate timelines. 
 
-> _**SPOILER ALERT**: It’s like when Marty goes to the past to get back the almanac and he is about to run into himself. Or when captain America goes back to New York in 2012 and he ends up fighting the other captain America. You got the idea_.
+Continuing with the time travel analogy, merging is like when Marty goes to the past to get back the almanac and he is about to run into himself. Or when captain America goes back to New York in 2012 and he ends up fighting the other captain America. You got the idea!
 
-Let's create a new branch and merge it to `master`.
+Let's create a new branch and merge it to `master`. We need the command `merge`.
 
 ```bash
 # Move to master
@@ -204,7 +219,7 @@ $ git merge hotfix
 $ git branch -d hotfix
 ```
 
-Here you have created a branch called `hotfix` and merged it to `master`. But you still have some chances on your branch `testing`. Let’s merge this branch to see what will happen.
+Here we have created a branch called `hotfix` and merged it to `master`. But we still have some chances on your branch `testing`. Let’s merge this branch to see what will happen.
 
 ```bash
 $ git checkout master
@@ -231,9 +246,17 @@ $ git commit
 $ git branch -d testing
 ```
 
-Git encourages working with branches. You can start to create branches per task or features. There is a convention for branch creation, [GitFlow](https://nvie.com/posts/a-successful-git-branching-model/). It suggests feature, release and hotfix branches.
+If you're coming from TFS, you noticed you need to move first to the branch you want to merge into. You merge from the destination branch, not from the source branch.
 
-> _If you're coming from TFS, you noticed you need to move first to the branch you want to merge into. You merge from the destination branch, not from the source branch._
+Recently, I learned how to [move the previous visited branch]({% post_url 2020-11-26-PreviousBranchGit %}). Use `$ git checkout -`.
+
+### Branching model
+
+Git encourages working with branches. Git branches are cheap and light-weight. You can start to create branches per task or features.
+
+There is a convention for branch creation, [GitFlow](https://nvie.com/posts/a-successful-git-branching-model/). It suggests feature, release and hotfix branches.
+
+With Gitflow, you should have a _develop_ branch where everyday work happens. Every new task starts in a separate feature branch taken from _develop_. Once you're done with your task, you merge your feature branch back to _develop_.
 
 ## GitHub: Getting our code to the cloud
 
@@ -255,10 +278,35 @@ $ git push -u origin master
 # Head to your GitHub account and refresh
 ```
 
+## Cheatsheet
+
+Here you have all the command we have used so far.
+
+| Command | Function |
+|---|---|
+| `git init` | Create a repo in the current folder |
+| `git clone <url>` | Clone an existing repo from _url_ |
+| - | - |
+| `git status` | List pending changes |
+| `git add <file>` | Add _file_ to the staging area |
+| `git commit -m '<message>'` | Create a commit with _message_ |
+| `git log` | List committed files in current branch |
+| `git log --oneline --graph --all` | List committed files in all branches |
+| - | - |
+| `git branch <branch-name>` | Create a new branch |
+| `git checkout <branch-name>` | Change current branch to _branch-name_ |
+| `git checkout -b <branch-name>` | Create a new branch and move to it |
+| `git merge <branch-name>` | Merge _branch-name_ into current branch |
+| - | - |
+| `git remote add <remote-name> <url>` | Add a new remote pointing to _url_ |
+| `git push -u <remote-name> <branch-name>` | Push _branch-name_ to _remote-name_ |
+
 ## Conclusion
 
-_Voilà!_ You have learned the most frequent commands for everyday use. You know how to use Git from the command line. But, most IDE's offer Git integration through plugins or extensions. Now try to use Git from your favorite IDE. If you want to continue to practice these concepts, follow [First Contributions](https://github.com/firstcontributions/first-contributions) to open your first Pull Request. You can use my [Git Demo repository](https://github.com/canro91/GitDemo) too.
+Voilà! You have learned the most frequent commands for everyday use. You know how to use Git from the command line. But, most IDE's offer Git integration through plugins or extensions. Now try to use Git from your favorite IDE.
+
+If you want to continue to practice these concepts, follow [First Contributions](https://github.com/firstcontributions/first-contributions) to open your first Pull Request. You can use my [Git Demo repository](https://github.com/canro91/GitDemo) too.
+
+_Your mission, Jim, should you decide to accept it, is to get the latest changes from your repository. After pushing, clone your project in another folder, change any file and push this change. Next, go back to your first folder, modify another file and try to push. This post will self-destruct in five seconds. Good luck, Jim._
 
 _Happy Git time!_
-
-> _Your mission, Jim, should you decide to accept it, is to get the latest changes from your repository. After pushing, clone your project in another folder, change any file and push this change. Next, go back to your first folder, modify another file and try to push. This post will self-destruct in five seconds. Good luck, Jim._
