@@ -171,9 +171,9 @@ public class CachedPropertyServiceTests
 
 ## Distributed cache with Redis
 
-_Now, let's move to the distribute cache_. A distributed cache layer lives in a separate server. You aren't limited to the memory of the server running your API site.
+Now, let's move to the distribute cache. A distributed cache layer lives in a separate server. You aren't limited to the memory of the server running your API site.
 
-A distributed cache make sense when you want to share your cache server among multiple applications. Or, when your site is running behind a load-balancer along many instances of the same server. For more advantages of distributed cache, see [Distributed caching in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/performance/caching/distributed?view=aspnetcore-3.1)
+A distributed cache makes sense when you want to share your cache server among multiple applications. Or, when your site is running behind a load-balancer along many instances of the same server. For more advantages of distributed cache, see [Distributed caching in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/performance/caching/distributed?view=aspnetcore-3.1)
 
 There is an implementation of the distributed cache using Redis for ASP.NET Core. [Redis](https://redis.io/) is _"an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker"_.
 	
