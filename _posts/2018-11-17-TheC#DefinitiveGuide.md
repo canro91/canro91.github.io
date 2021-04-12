@@ -59,8 +59,8 @@ Programming is about collaboration. GitHub is the social network for programmers
 Desing patterns are recipes to solve common problems in code. This is, given a certain problem, there is a blueprint or an outline that will help you to solve that problem.
 
 * Recognize some of the most common patterns and learn to use them. For example: Factory, Builder, Composite, Command, Template, Strategy, Null Object, Adapter.
-* Check my take on the [Decorator pattern]({% post_url 2021-02-10-DecoratorPattern %})
-* Learn Uncle Bob's SOLID principles
+* Check my take on the [Decorator]({% post_url 2021-02-10-DecoratorPattern %}) and [Pipeline]({% post_url 2020-02-14-PipelinePattern %}) patterns.
+* Learn Uncle Bob's SOLID principles.
 
 ## Dealing with large codebases
 
