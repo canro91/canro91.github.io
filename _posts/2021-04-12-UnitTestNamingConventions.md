@@ -10,7 +10,7 @@ From our previous post, we learned about [4 common ~~misatkes~~ mistakes]({% pos
 
 **Test names should tell the scenario under test and the expected results**. Long names are acceptable when writing unit tests since test names show the purpose behind what they're testing. Assertion messages aren't needed if you name your test the right way. 
 
-These are 4 common naming conventions we can use. Let's continue to use Stringie, a (fictional) library to manipulate string. Stringie has a `Remove()` method to remove a substring from the beginning or the end of an input string.
+These are 4 common naming conventions we can use. Let's continue to use Stringie, a (fictional) library to manipulate strings. Stringie has a `Remove()` method to remove a substring from the beginning or the end of an input string.
 
 ## 1. UnitOfWork_Scenario_ExpectedResult
 
