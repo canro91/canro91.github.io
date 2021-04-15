@@ -42,6 +42,7 @@ If you don’t know where to start reading or if you want to find something to r
 
 * [Let's React. Learn React in 30 days]({% post_url 2020-10-26-ReactIn30Days %})
 * [The C# Definitive Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %})
+* [Git Guide For TFS Users]({% post_url 2019-11-11-GitGuideForTfsUsers %})
 * [ASP.NET Core Guide for ASP.NET Framework Users]({% post_url 2020-03-23-GuideToNetCore %}) I wrote this guide as a Guest Writer for _[exceptionnotfound.net](https://exceptionnotfound.net/asp-net-core-guide-for-asp-net-framework-developers/)_
 
 #### Tutorials
@@ -55,19 +56,20 @@ If you don’t know where to start reading or if you want to find something to r
 
 * [Just Vim It! Learning Vim For Fun and Profit]({% post_url 2020-09-14-LearnVimForFunAndProfit %}) I wrote this post as a Guest Writer for _[exceptionnotfound.net](https://exceptionnotfound.net/learning-vim-for-fun-and-profit/)_
 * [Programs that saved you 100 hours]({% post_url 2020-04-13-ProgramThatSave100Hours %})
+* [Two free tools to format SQL queries]({% post_url 2020-09-30-FormatSQL %})
 * Plugins and settings for [my Visual Studio setup]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %})
 * [How I take notes]({% post_url 2020-08-29-HowITakeNotes %})
 
 #### _BugOfTheDay_
 
-* [The query and the index]({% post_url 2019-03-20-TheQueryAndTheIndex %}) When a Production database went down
-* My story about [a horrific debugging session]({% post_url 2019-07-16-DeserializingAJsonString %})
+* [The Slow Room Search]({% post_url 2020-09-23-TheSlowRoomSearch %})
+* [Search Reservations is timing out]({% post_url 2020-10-14-SearchingReservations %})
 
 #### Books
 
-* [The Clean Coder]({% post_url 2020-06-15-CleanCoder %})
 * [Pragmatic Thinking and Learning]({% post_url 2020-05-07-PragmaticThinkingAndLearning %})
-* [The Art of Unit Testing]({% post_url 2020-03-06-TheArtOfUnitTestingReview %})
+* [How to Take Smart Notes]({% post_url 2020-11-18-HowToTakeSmartNotes %})
+* [Ultralearning]({% post_url 2020-07-14-UltralearningTakeaways %})
 
 You can follow me on [dev.to]({{ site.devto }}), [GitHub]({{ site.github }}) and [LinkedIn]({{ site.linkedin }}).
 
