@@ -60,6 +60,6 @@ My Visual Studio setup is heavily inspired by [De-Cruft Visual Studio](https://j
 * [CodeMaid](https://marketplace.visualstudio.com/items?itemName=SteveCadwallader.CodeMaid) It cleans and formats your files. It remove extra blank lines. It removes and sorts your using statements. It removes extra spaces before and after parenthesis. _You got the idea_.
 * [AsyncMethodNameFixer](https://github.com/priyanshu92/AsyncMethodNameFixer) To not to forget to add the `Async` suffix on async method name.
 * [Multiline Search and Replace](https://marketplace.visualstudio.com/items?itemName=PeterMacej.MultilineSearchandReplace) No need to copy and paste your code into Notepad++ to replace multiple lines.
-* [Line Endings Unifier](https://marketplace.visualstudio.com/items?itemName=JakubBielawa.LineEndingsUnifier) Yes, it unifies the line endings of your files. You can choose the line ending you want to use in your files. Depending on the number of files in your soulution, it could take a couple of seconds. But it does its job!
+* [Line Endings Unifier](https://marketplace.visualstudio.com/items?itemName=JakubBielawa.LineEndingsUnifier) Yes, it unifies the line endings of your files. You can choose the line ending you want to use in your files. Depending on the number of files in your solution, it could take a couple of seconds. But it does its job!
 
  Voilà! That's how I use Visual Studio 2019 for C# coding.
