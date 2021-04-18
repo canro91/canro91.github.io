@@ -78,7 +78,7 @@ Also, we can split different scenarios in separate classes. We add the scenarios
 
 For our `Remove()` method, we can name our test class `RemoveGivenASubstring` and our test methods `RemovesOnlyASubstring` and `RemovesSubstringFromTheEnd`.
 
-With this convention, we can read our test names like full sentences in the "Test Explorer" menu in Visual Studio when we group our tests by class.
+With this convention, we can read our test names like full sentences in the "Test Explorer" menu in Visual Studio when we group our tests by class. Like this: "Remove, given a substring, removes that substring".
 
 {% include image.html name="TestExplorerGroupByClasses.png" caption="Visual Studio 'Solution Explorer' showing a our sample tests group by class" alt="Visual Studio Solution Explorer with our sample tests" %}
 

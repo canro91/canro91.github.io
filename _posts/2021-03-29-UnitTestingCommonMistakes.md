@@ -14,7 +14,7 @@ First, keep your tests in the right place. Have one test project per project, on
 
 **Choose a naming convention for your test names and stick to it.**
 
-In our previous post, we covered two naming conventions. An "ItShould" sentence and the three-part name separated with underscores. You can choose the one you like the most.
+In [our previous post](({% post_url 2021-03-15-UnitTesting101 %})), we covered two naming conventions. An "ItShould" sentence and the three-part name separated with underscores. You can choose the one you like the most.
 
 That time, for Stringie `Remove()` method, we wrote test names like:
 
@@ -26,6 +26,10 @@ Every test should tell the scenario under test and the expected result. We shoul
 Don't prefix our test names with "Test". If we're using a testing framework that doesn't need keywords in our test names, let's stop doing that. With MSTest, we have attributes like `[TestClass]` and `[TestMethod]` to mark our methods as tests.
 
 Also, don't use filler words like "Success" or "IsCorrect" in our test names. Instead, let's tell what "success" and "correct" means for that test. Is it a successful test because it doesn't throw exceptions? Is it successful because it returns a value? Make your test names easy to understand.
+
+<div class="message">
+If you want to learn how to name your tests, check these <a href="/2021/04/12/UnitTestNamingConventions">4 test naming conventions</a>.
+</div>
 
 ## 2. Do not use the right assertion methods
 
