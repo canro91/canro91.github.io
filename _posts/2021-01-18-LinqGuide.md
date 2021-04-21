@@ -31,7 +31,7 @@ Let's see an example. Let's start with the collection of movies we have watched.
 
 A console program to print our favorite movies looks like the next code listing. Notice the `foreach` loop and the comparison using an `if` statement to look for ratings greater than 4.5.
 
-```sql
+```csharp
 using System;
 using System.Collections.Generic;
 
@@ -94,13 +94,13 @@ Avatar: [5]
 My Neighbor Totoro: [5]
 ```
 
-> _Change the example to use your own movies and see which ones are your favorites!_
+Change the example to use your own movies and see which ones are your favorites!
 
 ### Our first LINQ method: Where
 
 LINQ methods are extension methods on the `IEnumerable` type. This type represents objects we can loop through. Like, arrays, lists, dictionaries, among others.
 
-> _In case you missed it_...You can add methods to a type without modifying it with extension methods. They are static methods defined outside the declaration of a type. But, they look like normal methods when you use them.
+_In case you missed it_...You can add methods to a type without modifying it with extension methods. They are static methods defined outside the declaration of a type. But, they look like normal methods when you use them.
 
 To work with LINQ, you need to be comfortable with delegates and lambda functions. A lambda function is a method with only the parameters and the body. To learn more about delegates and lambda functions, check my post [What the Func, Action?]({% post_url 2019-03-22-WhatTheFuncAction %})
 
@@ -110,7 +110,7 @@ Next, we want to filter our list of movies to keep only the ones with rating gre
 
 Let's replace the first `foreach` statement from our example with the `Where` method. And use the condition inside the `if` statement as the filter condition for the `Where` method. Our example looks like this:
 
-```sql
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -194,7 +194,7 @@ foreach (var name in favorites)
 
 Notice, how this time we have nested two LINQ methods. The result from `Where` will be the input of `Select`.
 
-> _For more readability, we often align the nested LINQ methods vertically by the (.) dot_
+For more readability, we often align the nested LINQ methods vertically by the (.) dot.
 
 ### Any
 
@@ -387,6 +387,8 @@ From the above example, the file size is in bytes. Then, notice how we declared 
 
 ## Common mistakes
 
+Now that we know what LINQ is and the most common LINQ methods, let's go through three common mistakes we make when using LINQ methods in our code.
+
 ### Count vs Any
 
 Always prefer `Any` over `Count` to check if a collection has elements or if it has elements that meet a condition.
@@ -445,5 +447,7 @@ For objects, the default value would be a `null` reference. And you know what ha
 ## Conclusion
 
 Voilà! That's it, Alice. That's all you need to know to start working with LINQ in your code in 15 minutes or less. There's also this project [MoreLINQ](https://github.com/morelinq/MoreLINQ) with more extension methods, like `CountBy`, `DistinctBy`, `MinBy` and `MaxBy`. With LINQ you can write more compact and expressive code. The next time you need to write logic using loops, give LINQ a try!
+
+To learn more about C#, check my [C# Definitively Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %}) for a list of subjects every intermediate C# developer should know. Also, for quick tips to write more expressive C#, read my [C# idioms]({% post_url 2019-11-19-TwoCSharpIdioms %}) series.
 
 _Happy LINQ time!_
