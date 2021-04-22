@@ -135,7 +135,7 @@ That's why to change a parameter list, you can use `ci(` to change everything in
 
 Once you are comfortable editing and moving around your files with Vim, you can use it inside your IDE. You can start using Vim inside Visual Studio installing [VsVim](https://marketplace.visualstudio.com/items?itemName=JaredParMSFT.VsVim) extension and inside Visual Studio Code with [VSCodeVim](https://github.com/VSCodeVim/Vim).
 
-Make sure You might want to have a cheatsheet next to you. So you can look up command if you get stuck. Don't try to learn all the commands at once. Learn one or two commands at a time and practice them.
+Make sure to have a cheatsheet next to you. So you can look up commands if you get stuck. Don't try to learn all the commands at once. Learn one or two commands at a time and practice them.
 
 ## Conclusion
 
