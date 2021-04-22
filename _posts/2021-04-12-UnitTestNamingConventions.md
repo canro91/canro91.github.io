@@ -80,7 +80,7 @@ For our `Remove()` method, we can name our test class `RemoveGivenASubstring` an
 
 With this convention, we can read our test names like full sentences in the "Test Explorer" menu in Visual Studio when we group our tests by class. Like this: "Remove, given a substring, removes that substring".
 
-{% include image.html name="TestExplorerGroupByClasses.png" caption="Visual Studio 'Solution Explorer' showing a our sample tests group by class" alt="Visual Studio Solution Explorer with our sample tests" %}
+{% include image.html name="TestExplorerGroupByClasses.png" caption="Visual Studio 'Solution Explorer' showing our sample tests group by class" alt="Visual Studio Solution Explorer with our sample tests" %}
 
 You can read more about this convention in [ardalis' Unit Test Naming Convention](https://ardalis.com/unit-test-naming-convention/)
 
