@@ -48,6 +48,12 @@ If you don’t know where to start reading or if you want to find something to r
 * My take on the difference between [Func and Action]({% post_url 2019-03-22-WhatTheFuncAction %})
 * My take on the [Pipeline pattern]({% post_url 2020-02-14-PipelinePattern %})
 
+#### Unit Testing
+
+* [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %})
+* [How to create fakes with Moq]({% post_url 2020-08-11-HowToCreateFakesWithMoq %})
+* [How to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %})
+
 #### Productivity
 
 * [Just Vim It! Learning Vim For Fun and Profit]({% post_url 2020-09-14-LearnVimForFunAndProfit %}) I wrote this post as a Guest Writer for _[exceptionnotfound.net](https://exceptionnotfound.net/learning-vim-for-fun-and-profit/)_
