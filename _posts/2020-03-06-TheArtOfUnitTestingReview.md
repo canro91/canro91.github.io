@@ -4,21 +4,23 @@ title: "The Art of Unit Testing: Four Takeaways"
 tags: books
 ---
 
-This is THE book to learn how to write unit tests. It starts from the definition of an unit test to how to implement them at your organization. Although, it covers extensively the subject, it doesn't advocate writing unit tests before or after the production code.
+This is THE book to learn how to write unit tests. It starts from the definition of a unit test to how to implement them at your organization. Although, it covers extensively the subject, it doesn't advocate writing unit tests before or after the production code.
 
 "The Art of Unit Testing" teaches to treat your tests the same way you treat production code. Sometimes, tests aren't treated as code that needs to be taken care of. You should have test reviews, instead of only code reviews. Your tests are your safety net, so do not let them rot.
 
 ## Naming convention
 
-**Use `UnitOfWork_Scenario_ExpectedBehaviour` for your test names**. You can read it as follow: when calling `UnitOfWork` with `Scenario`, then `ExpectedBehaviour`. A [Unit of Work](https://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html?rq=unit%20test) is any logic exposed through public methods that returns value, changes the state of the system or makes an external invocation.
+**Use UnitOfWork_Scenario_ExpectedBehaviour for your test names**. You can read it as follow: when calling `UnitOfWork` with `Scenario`, then `ExpectedBehaviour`. 
+
+In this naming convention, a [Unit of Work](https://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html?rq=unit%20test) is any logic exposed through public methods that returns value, changes the state of the system or makes an external invocation.
 	
 With this naming convention is clear the logic under test, the inputs and the expected result. You will end up with long test names, but it's OK to have long test names for the sake of readability.
 
-## Builders vs `SetUp` 
+## Builders vs SetUp methods
 
-**Use builders instead of `SetUp` methods**. Tests should be isolated from other tests. Sometimes, `SetUp` methods create shared state among your tests. You will find tests that passes in isolation but don't pass alongside other tests and tests that need to be run many times to pass. 
+**Use builders instead of SetUp methods**. Tests should be isolated from other tests. Sometimes, `SetUp` methods create shared state among your tests. You will find tests that passes in isolation but don't pass alongside other tests and tests that need to be run many times to pass. 
 
-Often `SetUp` methods end up with initialization for only some tests. Tests should create their own world. So, initialize what's need inside every test using builders.
+Often `SetUp` methods end up with initialization for only some tests. Tests should create their own world. So, initialize what's needed inside every test using builders.
 
 <figure>
 <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="The Art of Unit Testing Takeaways" />
@@ -28,9 +30,9 @@ Often `SetUp` methods end up with initialization for only some tests. Tests shou
 
 ## Safe green zone
 
-**Keep a set of always passing unit tests**. You will need some configurations for your integration tests: a database, environment variables or some files in a folder. Integration tests will fail if those configurations aren't in place. So, developers could ignore some failing tests, and real issues, because of those configurations. 
+**Keep a set of always-passing unit tests**. You will need some configurations for your integration tests: a database connection, environment variables or some files in a folder. Integration tests will fail if those configurations aren't in place. So, developers could ignore some failing tests, and real issues, because of those missing configurations. 
 
-Therefore, separate your unit tests from your integration tests. You will distinguish between a missing setup and an actual problem with your code. A failing test should mean a real problem, not a false positive.
+Therefore, separate your unit tests from your integration tests. Put them in different projects. This way, you will distinguish between a missing setup and an actual problem with your code. **A failing test should mean a real problem, not a false positive**.
 
 ## Organization of your tests
 
