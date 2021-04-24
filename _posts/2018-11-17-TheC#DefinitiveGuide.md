@@ -75,7 +75,7 @@ Programming is also about [reading code](https://changelog.com/posts/one-sure-fi
 
 ## Unit tests
 
-An unit test is a "safety net" to make sure you don't break things when you add new features or modify your codebase. An unit test is a piece of code that uses your code base from a "user" point of view and verifies a given behaviour.
+A unit test is a "safety net" to make sure you don't break things when you add new features or modify your codebase. A unit test is a piece of code that uses your code base from a "user" point of view and verifies a given behaviour.
 
 * Learn a test naming convention. For example, [Roy Osherove's convention](http://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html)
 * Learn what unit test really means [Unit Test - Definition](http://artofunittesting.com/definition-of-a-unit-test/)
