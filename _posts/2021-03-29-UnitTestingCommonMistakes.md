@@ -23,9 +23,9 @@ That time, for Stringie `Remove()` method, we wrote test names like:
 
 Every test should tell the scenario under test and the expected result. We shouldn't worry about long test names. But, let's stop naming our tests: `Test1`, `Test2` and so on.
 
-Don't prefix our test names with "Test". If we're using a testing framework that doesn't need keywords in our test names, let's stop doing that. With MSTest, we have attributes like `[TestClass]` and `[TestMethod]` to mark our methods as tests.
+**Don't prefix our test names with "Test"**. If we're using a testing framework that doesn't need keywords in our test names, let's stop doing that. With MSTest, we have attributes like `[TestClass]` and `[TestMethod]` to mark our methods as tests.
 
-Also, don't use filler words like "Success" or "IsCorrect" in our test names. Instead, let's tell what "success" and "correct" means for that test. Is it a successful test because it doesn't throw exceptions? Is it successful because it returns a value? Make your test names easy to understand.
+Also, **don't use filler words like "Success" or "IsCorrect" in our test names**. Instead, let's tell what "success" and "correct" means for that test. Is it a successful test because it doesn't throw exceptions? Is it successful because it returns a value? Make your test names easy to understand.
 
 <div class="message">
 If you want to learn how to name your tests, check these <a href="/2021/04/12/UnitTestNamingConventions">4 test naming conventions</a>.
@@ -66,7 +66,7 @@ Assert.IsTrue(anotherResult);
 
 **Have only one Act and Assert part in your tests.** Don't repeat the same Act part with different test values in a single test.
 
-Please, avoid writing test like this one.
+Please, avoid writing tests like this one.
 
 ```csharp
 [TestMethod]
@@ -85,7 +85,9 @@ public void Remove_SubstringWithDifferentCase_RemovesSubstring()
 }
 ```
 
-Or like this one.
+Here, we tested the same method with different test values in a single test.
+
+Also, avoid writing tests like this one. 
 
 ```csharp
 [TestMethod]
@@ -107,6 +109,8 @@ public void Remove_SubstringWithDifferentCase_RemovesSubstring()
     }
 }
 ```
+
+This time, to avoid repetition, we put the test values in an array and looped through them to test each value.
 
 If we want to test the same scenario with different test values, let's use parameterized tests.
 
@@ -135,6 +139,10 @@ public void Remove_SubstringWithDifferentCase_RemovesSubstring(string substringT
     Assert.AreEqual(", world!", transformed);
 }
 ```
+
+With parameterized tests, we have separate tests. Inside Visual Studio, in the "Test Explorer" menu, we will have one test per each `[DataRow]` attribute in the parent test.
+
+Parameterized tests make troubleshooting easier when we have a test that fails for a single test value.
 
 ## 4. Repeat logic in your assertions
 
