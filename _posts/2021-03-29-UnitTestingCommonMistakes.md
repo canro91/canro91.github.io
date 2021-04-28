@@ -14,12 +14,21 @@ First, keep your tests in the right place. Have one test project per project, on
 
 **Choose a naming convention for your test names and stick to it.**
 
-In [our previous post](({% post_url 2021-03-15-UnitTesting101 %})), we covered two naming conventions. An "ItShould" sentence and the three-part name separated with underscores. You can choose the one you like the most.
+In [our previous post](({% post_url 2021-03-15-UnitTesting101 %})), we covered two naming conventions. An "ItShould" sentence and the "UnitOfWork_Scenario_ExpectedResult", a three-part name separated with underscores. You can choose the one you like the most.
 
-That time, for Stringie `Remove()` method, we wrote test names like:
+That time, for Stringie `Remove()` method, following the "UnitOfWork_Scenario_ExpectedResult" convention, we wrote test names like these ones:
 
-* "Remove_ASubstring_RemovesThatSubstring"
-* "Remove_NoParameters_ReturnsEmpty"
+```csharp
+[TestClass]
+public class RemoveTests
+{
+    [TestMethod]
+    public void Remove_ASubstring_RemovesThatSubstring() { }
+	
+    [TestMethod]
+    public void Remove_NoParameters_ReturnsEmpty() { }
+}
+```
 
 Every test should tell the scenario under test and the expected result. We shouldn't worry about long test names. But, let's stop naming our tests: `Test1`, `Test2` and so on.
 
@@ -140,8 +149,10 @@ public void Remove_SubstringWithDifferentCase_RemovesSubstring(string substringT
 }
 ```
 
-With parameterized tests, we have separate tests. Inside Visual Studio, in the "Test Explorer" menu, we will have one test per each `[DataRow]` attribute in the parent test.
+With parameterized tests, we have separate tests. Inside Visual Studio, in the "Test Explorer" menu, we will have one result per each `[DataRow]` attribute in the parent test.
 
+{% include image.html name="TestExplorerDetailSummary.png" caption="Visual Studio 'Test Explorer' showing the result outcomes for our parameterized test" alt="Visual Studio 'Test Explorer' showing the result outcomes for our parameterized test" %}
+	
 Parameterized tests make troubleshooting easier when we have a test that fails for a single test value.
 
 ## 4. Repeat logic in your assertions
