@@ -1,12 +1,12 @@
 ---
 layout: post
-title: How to write good unit tests? Have a failing test
+title: "How to write good unit tests: Write failing tests first"
 tags: tutorial csharp
 cover: FailingTest.png
 cover-alt: How to write good unit tests? Have a failing test
 ---
 
-A passing test isn't always the only thing to look for. Having a failing test is important too. I learned this lesson the hard way. Let's see what happened.
+A passing test isn't always the only thing to look for. Writing a failing test is important too. I learned this lesson the hard way. Let's see why we should start writing failing tests.
 
 **To write reliable unit tests, always start writing a failing test. And, make sure it fails for the right reasons.** Follow the Red, Green, Refactor principle of Test-Driven Development (TDD). Write a failing test, make it pass and refactor the code. Don't skip the failing test part.
 
@@ -14,7 +14,9 @@ A passing test isn't always the only thing to look for. Having a failing test is
 
 Let's continue with the same example from our previous post on [how to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %}).
 
-From our last example, we had a controller to create, update and suspend user accounts. Inside its constructor, this controller validated some email addresses from an injected configuration object. We wrote a test like this:
+From our last example, we had a controller to create, update and suspend user accounts. Inside its constructor, this controller validated some email addresses from an injected configuration object.
+
+After we refactored our test from the last post, we ended up with this:
 
 ```csharp
 [TestMethod]
@@ -28,7 +30,7 @@ public void AccountController_SenderEmailIsNull_ThrowsException()
     });
 
     Assert.ThrowsException<ArgumentNullException>(() =>
-        CreateAccountController(emailConfig));
+        MakeAccountController(emailConfig));
 }
 
 private AccountController MakeAccountController(IOptions<EmailConfiguration> emailConfiguration)
@@ -62,7 +64,7 @@ private AccountController MakeAccountController(IOptions<EmailConfiguration> ema
 
 This time, I had a new requirement. I needed to add a new method to our `AccountController`. This new method read another configuration object injected into the controller.
 
-To follow the convention of validating required parameters inside constructors, I also checked for this new configuration object. I wrote a new test and a builder method to call the constructor with only the parameters I needed.
+To follow the convention of validating required parameters inside constructors, I also checked for this new configuration object. I wrote a new test and a new `MakeAccountController()` builder method to call the constructor with only the parameters I needed.
 
 ```csharp
 [TestMethod]
@@ -70,10 +72,12 @@ public void AccountController_NoNewConfig_ThrowsException()
 {
     var options = Options.Create<SomeNewConfig>(null);
 
-    Assert.ThrowsException<ArgumentNullException>(() => CreateAccountController(options));
+    Assert.ThrowsException<ArgumentNullException>(() =>
+        MakeAccountController(options));
 }
 
-private AccountController CreateAccountController(IOptions<SomeNewConfig> someNewConfig)
+// A new builder method
+private AccountController MakeAccountController(IOptions<SomeNewConfig> someNewConfig)
 {
     var emailConfig = new Mock<IOptions<EmailConfiguration>());
     return CreateAccountController(emailConfig.Object, someNewConfig);
@@ -117,13 +121,26 @@ public class AccountController : Controller
 }
 ```
 
-I ran the test and it passed. Move on! But...Wait! There's something wrong! _Did you spot the issue?_
+I ran the test and it passed. Move on! But...Wait! There's something wrong with that test! Did you spot the issue?
 
 ## Make your tests fail
 
-Of course, that test is passing. The code throws an `ArgumentNullException`. But, that exception is coming from the wrong place. It comes from the validation for the email configuration, not from our new validation. I forgot to use a valid email configuration in the new builder method. I used a mock reference without any values, instead. I only realized that after getting my code reviewed. _Point for the code review!_ 
+Of course, that test is passing. The code throws an `ArgumentNullException`. But, that exception is coming from the wrong place. It comes from the validation for the email configuration, not from our new validation.
 
-**Make sure to always start writing a failing test. And, this test should fail for the right reasons.** If you write your tests after writing the production code, comment some parts of your production code to see your tests failing. Or change the assertions on purpose.
+I forgot to use a valid email configuration in the new `MakeAccountController()` builder method. I used a mock reference without setting up any values. I only realized that after getting my code reviewed. _Point for the code review!_
+
+```csharp
+private AccountController MakeAccountController(IOptions<SomeNewConfig> someNewConfig)
+{
+    var emailConfig = new Mock<IOptions<EmailConfiguration>());
+    // Here we need to setup a valid EmailConfiguration
+    return CreateAccountController(emailConfig.Object, someNewConfig);
+}
+```
+
+**Make sure to always start writing a failing test. And, this test should fail for the right reasons.**
+
+If you write your tests after writing your production code, comment some parts of your production code to see your tests failing. Or change the assertions on purpose.
 
 When you make a failed test pass, you're testing the test. You're making sure it fails and passes when it should. You know you aren't writing buggy tests or introducing false positives into your test suite.
 
@@ -135,7 +152,8 @@ public void AccountController_NoSomeNewConfig_ThrowsException()
 {
     var options = Options.Create<SomeNewConfig>(null);
 
-    var ex = Assert.ThrowsException<ArgumentNullException>(() => CreateAccountController(options));
+    var ex = Assert.ThrowsException<ArgumentNullException>(() => 
+        MakeAccountController(options));
     StringAssert.Contains(ex.Message, nameof(SomeNewConfig));
 }
 ```
