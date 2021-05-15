@@ -73,7 +73,9 @@ In our tests, we should give enough details to our readers, but not too many det
 
 In our previous tests, we only cared for the expiration year and month in each test. We can abstract the creation of the `CreditCard` objects to avoid repetition.
 
-One alternative to abstract the creation of `CreditCard` objects is to use an object mother. **An object mother is a factory method or property holding a ready-to-use input object**. Then, in each test we only change the properties we need to match the scenario under test. 
+One alternative to abstract the creation of `CreditCard` objects is to use an object mother.
+
+**An object mother is a factory method or property holding a ready-to-use input object. Each test changes this object to match the scenario under test**. 
 
 For our example, we can create a `CreditCard` property with valid defaults and tweak it inside each test.
 
@@ -131,7 +133,7 @@ public class CreditCardValidationTests
 
 Object mothers are fine if you don't have lots of variations of the object being constructed. But, since this is a post on Builder pattern, let's create a Builder for credit cards.
 
-A Builder is a regular class with two types of methods: a `Build()` method and one or more `WithX()` methods.
+**A Builder is a regular class with two types of methods: a `Build()` method and one or more `WithX()` methods.**
 
 The `Build()` method returns the object the builder builds.
 

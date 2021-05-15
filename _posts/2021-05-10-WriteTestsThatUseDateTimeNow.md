@@ -55,7 +55,9 @@ These two tests rely on the current date and time. Every time you run tests that
 
 We want our tests to be deterministic. We learned that from [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}). Using `DateTime.Now` in our tests isn't a good idea.
 
-To replace the `DateTime.Now` in our tests, we need seams. **A seam is a place to introduce testable behavior in our code under test**.
+To replace the `DateTime.Now` in our tests, we need seams.
+
+**A seam is a place to introduce testable behavior in our code under test**.
 
 Let's see two techniques from the books [The Art of Unit Testing](https://www.manning.com/books/the-art-of-unit-testing-second-edition) ([My takeaways here]({% post_url 2020-03-06-TheArtOfUnitTestingReview %})) and [97 things every programmer should know](https://www.oreilly.com/library/view/97-things-every/9780596809515/) to introduce seams in our code to replace `DateTime.Now`.
 
@@ -174,6 +176,7 @@ public class CreditCardValidationTests
     [TestMethod]
     public void CreditCard_ExpiredYear_ReturnsInvalid()
     {
+        // Notice the builder method here
         var validator = MakeValidator(When);
 
         var request = new CreditCardBuilder()
