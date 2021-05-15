@@ -24,9 +24,11 @@ In my free time, I like to read books (_on paper_) and learn and teach foreign l
 
 ### What I write about
 
-I’m passionate about learning and programming. I want to share what I have learned in my journey as a software engineer.
+I’m write about learning and programming. I want to share what I have learned in my journey as a software engineer.
 
 In this blog you can find tips and advice, libraries I have used, issues I have found and how I have solved them, lessons learned the hard way, success and failure stories.
+
+I've been featured in [Exception Not Found](https://exceptionnotfound.net/author/cesar-aguirre/) as a Guest Writer. And, I wrote about learning a new language (_not a programming language, a foreign language_) in [Fluent in 3 months](https://www.fluentin3months.com/speaking-french-in-france/).
 
 If you're interested, you can read [how I started blogging]({% post_url 2020-07-18-HowIStartedBlogging %}) and the story behind my first post.
 
@@ -38,7 +40,7 @@ If you don’t know where to start reading or if you want to find something to r
 
 * [The C# Definitive Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %})
 * [Git Guide for TFS Users]({% post_url 2019-11-11-GitGuideForTfsUsers  %})
-* [ASP.NET Core Guide for ASP.NET Framework Users]({% post_url 2020-03-23-GuideToNetCore %}) I wrote this guide as a Guest Writer for _[exceptionnotfound.net](https://exceptionnotfound.net/asp-net-core-guide-for-asp-net-framework-developers/)_
+* [ASP.NET Core Guide for ASP.NET Framework Users]({% post_url 2020-03-23-GuideToNetCore %})
 
 #### Tutorials
 
@@ -56,7 +58,7 @@ If you don’t know where to start reading or if you want to find something to r
 
 #### Productivity
 
-* [Just Vim It! Learning Vim For Fun and Profit]({% post_url 2020-09-14-LearnVimForFunAndProfit %}) I wrote this post as a Guest Writer for _[exceptionnotfound.net](https://exceptionnotfound.net/learning-vim-for-fun-and-profit/)_
+* [Just Vim It! Learning Vim For Fun and Profit]({% post_url 2020-09-14-LearnVimForFunAndProfit %})
 * [Programs that saved you 100 hours]({% post_url 2020-04-13-ProgramThatSave100Hours %})
 * Plugins and settings for [my Visual Studio setup]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %})
 * [How I take notes]({% post_url 2020-08-29-HowITakeNotes %})
@@ -71,6 +73,5 @@ If you don’t know where to start reading or if you want to find something to r
 * [The Clean Coder]({% post_url 2020-06-15-CleanCoder %})
 * [Pragmatic Thinking and Learning]({% post_url 2020-05-07-PragmaticThinkingAndLearning %})
 * [The Art of Unit Testing]({% post_url 2020-03-06-TheArtOfUnitTestingReview %})
-
 
 Thanks for reading!
