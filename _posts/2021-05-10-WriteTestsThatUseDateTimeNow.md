@@ -8,7 +8,7 @@ cover-alt: "How to write tests that use DateTime.Now"
 
 In our last post about using [builders to create test data]({% post_url 2021-04-26-CreateTestValuesWithBuilders %}), we wrote a validator for expired credit cards. We used `DateTime.Now` all over the place. Let's see how to write better unit tests that use the current time.
 
-**To write tests that use the current time, create a wrapper for DateTime.Now and use a fake or double with a fixed date. As alternative, create a setter or an optional constructor to pass a reference date**.
+**To write tests that use DateTime.Now, create a wrapper for DateTime.Now and use a fake or test double with a fixed date. As alternative, create a setter or an optional constructor to pass a reference date**.
 
 Let's continue where we left off. Last time, in our post about the [the Builder pattern]({% post_url 2021-04-26-CreateTestValuesWithBuilders %}), we wrote two tests to check if a credit card was expired. These are the tests we wrote that time.
 
