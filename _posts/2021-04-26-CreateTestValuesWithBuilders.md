@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "How to create test values with the Builder pattern"
+title: "How to create test data with the Builder pattern"
 tags: tutorial csharp
 cover: Cover.png
 cover-alt: How to create test values with the Builder pattern
 ---
 
-Last time, we learned [how to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %}) by reducing noise inside our tests. One way to reduce noise is to use builder methods. In that post, we used a builder method to simplify the complex setup scenarios of our tests. Let's use the Builder pattern to create test values for our unit tests.
+Last time, we learned [how to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %}) by reducing noise inside our tests. One way to reduce noise is to use builder methods. In that post, we used a builder method to simplify the complex setup scenarios of our tests. Let's use the Builder pattern to create test data for our unit tests.
 
-**With the Builder pattern, an object creates another object. A builder has methods to change some properties of an object and a method to return an object ready to use. The Builder pattern is useful to create input values inside unit tests**.
+**With the Builder pattern, an object creates another object. A builder has methods to change some properties of an object and a method to return an object ready to use. The Builder pattern is useful to create input data inside unit tests**.
 
 ## Without Builders
 
@@ -137,7 +137,9 @@ Object mothers are fine if you don't have lots of variations of the object being
 
 The `Build()` method returns the object the builder builds.
 
-The `WithX()` methods update one or more properties of the object being built. In this name, the `X` refers to the property the method changes. These `WithX()` methods return a reference to the builder. This way, we can chain many `WithX()` methods one after the other, one for each parameter we want to change.
+The `WithX()` methods update one or more properties of the object being built. In this name, the `X` refers to the property the method changes.
+
+These `WithX()` methods return a reference to the builder itself. This way, we can chain many `WithX()` methods one after the other. One for each parameter we want to change.
 
 For our example, let's create a `CreditCardBuilder` with three methods: `WithExpirationYear()`, `WithExpirationMonth()` and `Build()`.
 
