@@ -101,6 +101,8 @@ The [XUnit Tests Patterns](http://xunitpatterns.com/Mocks,%20Fakes,%20Stubs%20an
 
 Moq has chosen this simplification to make it easier to use. But, this could lead to misusing the term **mock**. Notice I have deliberately used the word "fake" instead of "mock" so far.
 
+<div class="message">If you want to learn the difference between stubs and mocks, check <a href="/2021/05/24/WhatAreFakesInTesting">What are fakes in unit testing</a>.</div>
+
 For Moq, `MockRepository` is a factory of mocks. You can verify all mocks created from this factory in a single call. But, a repository is a pattern to abstract creating and accessing records in a data store. You will find `OrderRepository` or `EmployeeRepository`. Are `MockSession` or `MockGroup` better alternatives? Probably. Naming is hard anyways.
 
 ### Conclusion
