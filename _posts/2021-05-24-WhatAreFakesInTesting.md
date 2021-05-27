@@ -71,15 +71,15 @@ public class CreditCardValidationTests
 }
 ```
 
-Well, that `FixedDateClock` is a fake. It replaces the `SystemClock` holding the real date and time with a testable replacement. With that fake in place, we make our tests use any date and time we want.
+Well, that `FixedDateClock` is a fake. It replaces the `SystemClock` holding the real date and time with a testable replacement. With that fake in place, we make our tests use any date and time we want instead of the real date and time.
 
-## Mocks vs Stubs
+To be more precise, the `FixedDateClock` is a stub. But, let's find out about stubs and mocks.
+
+## What's the difference between Mocks and Stubs
 
 Now that we know what fakes are, let's see two types of fakes: mocks and stubs. This is the difference between them.
 
 **Both mocks and stubs are fakes or test doubles. Stubs provide values or exceptions to the code under test and mocks are used to assert that a method was called with the right parameters**.
-
-From our previous `CreditCardValidator` example, the fake `FixedDateClock` is a stub. It returns a fixed date and time to the code under test.
 
 ### OrderService example
 
@@ -178,7 +178,9 @@ public class OrderServiceTests
 
 The `AlwaysAvailableStockService` fake is there to provide a value for our test. It's a stub. And, the `FakePaymentGateway` is used to assert that the `OrderService` called the method to charge a credit card. It's a mock. Actually, we could call it `MockPaymentGateway`.
 
-Again, stubs provides values and mocks are used to assert. **Use fakes when in your unit tests when you depend on external systems you don't control**. For example, third-party APIs and message queues. Assert the right call were made or the right messages were sent.
+Again, stubs provides values and mocks are used to assert.
+
+**When to use fakes in our tests?** Use fakes when in your unit tests when you depend on external systems you don't control. For example, third-party APIs and message queues. Assert the right call were made or the right messages were sent.
 
 Notice, we used the `UnitOfWork_Scenario_ExpectedResult` naming convention in our test. For the expect result part, we used the keyword "Calls". It shows we expect the `OrderService` to call a payment gateway to charge credit cards.
 
@@ -190,7 +192,7 @@ We learned about mocks and stubs. But, there are more types of fakes or doubles.
 
 The book [xUnit Patterns](http://xunitpatterns.com/Mocks,%20Fakes,%20Stubs%20and%20Dummies.html) presents a broader category of fakes. It uses: dummies, stubs, spies and mocks. Let's quickly go through them.
 
-**Dummies are used to respect the signature of methods and classes under test**. A dummy is never called inside the code under test. A `null` or a null object, like `NullLogger`, in a class constructor are dummies when we're testing one of the class methods that doesn't use that parameter.
+**Dummies are used to respect the signature of methods and classes under test**. A dummy is never called inside the code under test. A `null` value or a null object, like `NullLogger`, in a class constructor are dummies when we're testing one of the class methods that doesn't use that parameter.
 
 **Stubs feed our code under test with indirect input values**. We use stubs when the real dependencies aren't available in the test environment or when using one will have side effects. Like charging a credit card. For "xUnit Patterns" stubs are exactly the same as what we described earlier.
 
