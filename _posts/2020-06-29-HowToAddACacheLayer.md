@@ -63,7 +63,9 @@ public class CachedSettingsService : ISettingsService
 
 Now, let's create the `GetOrSetValueAsync` extension method. It will check first if a key is in the cache. Otherwise, it will use a factory method to compute the value and store it on the cache. This method receives a custom `MemoryCacheEntryOptions` to overwrite the default values.
 
-**Make sure to use expiration times when storing items in cache**. You can choose between sliding and absolute expiration times:
+**Make sure to use expiration times when storing items in cache**.
+
+You can choose between sliding and absolute expiration times:
 
 * `SlidingExpiration` will reset the expiration time every time an entry is used before it expires
 * `AbsoluteExpirationRelativeToNow` will expire the entry after the given time, no matter how many times it's been used
@@ -75,7 +77,9 @@ Now, let's create the `GetOrSetValueAsync` extension method. It will check first
 <figcaption>If parents used SlidingExpiration, kids would never stop watching TV or using smartphones! <span>Photo by <a href="https://unsplash.com/@sigmund?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Sigmund</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
 </figure>
 
-Don't forget to include a size for each cache entry, if you use `SizeLimit` when registering the in-memory cache into the dependency container. This `Size` tells how many "places" from `SizeLimit` an entry takes. When this limit is reached, the cache won't store any more entries until some of them expire. For more details, see [Use SetSize, Size, and SizeLimit to limit cache size](https://docs.microsoft.com/en-us/aspnet/core/performance/caching/memory?view=aspnetcore-3.1#use-setsize-size-and-sizelimit-to-limit-cache-size).
+Don't forget to include a size for each cache entry, if you use `SizeLimit` when registering the in-memory cache into the dependency container. This `Size` tells how many "places" from `SizeLimit` an entry takes. 
+
+When the `SizeLimit` value is reached, the cache won't store any more entries until some of them expire. For more details, see [Use SetSize, Size, and SizeLimit to limit cache size](https://docs.microsoft.com/en-us/aspnet/core/performance/caching/memory?view=aspnetcore-3.1#use-setsize-size-and-sizelimit-to-limit-cache-size).
 
 ```csharp
 public static class MemoryCacheExtensions
@@ -107,7 +111,7 @@ public static class MemoryCacheExtensions
 }
 ```
 
-### Registration
+### Register your in-memory cache
 
 To start using the new `CachedSettingsService`, you need to register it into the dependency container. _Back to the `Startup` class!_ Register the existing `SettingsService` and the new decorated service. You can use [Scrutor](https://github.com/khellang/Scrutor) to [register your decorators](https://andrewlock.net/adding-decorated-classes-to-the-asp.net-core-di-container-using-scrutor/).
 
@@ -141,7 +145,7 @@ Be aware of removing cached entries if you need to update or delete entities in 
 >
 > From [TwoHardThings](https://www.martinfowler.com/bliki/TwoHardThings.html)
 
-### Unit Tests
+### Unit Test your in-memory cache
 
 Let's see how you can create a test for this decorator. You will need to create a fake for the decorated service. Then, assert it's called only once after two consecutive calls to the cached method. Let's use [Moq to create fakes]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}).
 
@@ -280,7 +284,7 @@ public static class DistributedCacheExtensions
 }
 ```
 
-### Unit Tests
+### Unit Test your distributed cache
 
 For unit testing, you can use `MemoryDistributedCache`, an in-memory implementation of `IDistributedCache`. So you don't need to roll a Redis server to test your code.
 
