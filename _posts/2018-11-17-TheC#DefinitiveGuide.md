@@ -21,7 +21,7 @@ Visual Studio is the de-facto Integrated Development Environment (IDE) for C#. A
 	* `Ctrl + ,`: Navigate to any method in your solution
 	* `Ctrl + .`: Apply a refactor or any action in the current code block
 	* `Ctrl + q`: Search and execute settings or menus of Visual Studio
-* Install some plugins to make your life easier. You can take a look at [my Visual Studio setup]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %}) for more plugins.
+* Install some plugins to make your life easier. You can take a look at [my Visual Studio setup]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %}) for more settings and extensions.
 	* [Productivity Power Tools](https://marketplace.visualstudio.com/items?itemName=VisualStudioPlatformTeam.ProductivityPowerTools)
 	* [Auto Save](https://github.com/anaisbetts/SaveAllTheTime/issues), no more `Ctrl + S`
 	* [AddNewFile](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.AddNewFile), `Alt + F2` to add a bunch of files in with a single shortcut
@@ -75,14 +75,14 @@ Programming is also about [reading code](https://changelog.com/posts/one-sure-fi
 
 ## Unit tests
 
-A unit test is a "safety net" to make sure you don't break things when you add new features or modify your codebase. A unit test is a piece of code that uses your code base from a "user" point of view and verifies a given behaviour.
+A unit test is a "safety net" to make sure you don't break things when you add new features or modify your codebase. A unit test is a piece of code that uses your code base from a "user" point of view and verifies a given behavior.
 
-* Learn a test naming convention. For example, [Roy Osherove's convention](http://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html)
-* Learn what unit test really means [Unit Test - Definition](http://artofunittesting.com/definition-of-a-unit-test/)
+* Read my [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}) to get started writing unit tests
+* Learn what unit test really means. Read [Unit Test - Definition](http://artofunittesting.com/definition-of-a-unit-test/)
+* Learn a test naming convention. Check my post on [How to name your tests]({% post_url 2021-04-12-UnitTestNamingConventions %})
 * Watch [Understand Test Driven Development](https://www.youtube.com/watch?v=q5Xd1tmIgec)
 * Write some unit tests for some parts of your codebase or practice writing unit tests for a library you know
-* Read my [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %})
-* Read Roy Osherove's _The Art of Unit Testing_. Or you can read my [Four takeaways]({% post_url 2020-03-06-TheArtOfUnitTestingReview %})
+* Read Roy Osherove's "The Art of Unit Testing". Or you can read [my main takeaways]({% post_url 2020-03-06-TheArtOfUnitTestingReview %})
 
 ## LINQ
 
@@ -342,9 +342,9 @@ Console.WriteLine("Hello World!");
 ## Bonus Points
 
 * Learn how to type with all your fingers. _At least you will impress people_.
-* Learn some Vim. Read my post on [Learning Vim For Fun and Profit](2020/09/14/LearnVimForFunAndProfit/). If you want to master every detail, take a look at the book _Practical Vim_.
+* Learn some Vim. Read my post on [Learning Vim For Fun and Profit](2020/09/14/LearnVimForFunAndProfit/). If you want to master every detail, take a look at the book "Practical Vim".
 * Learn about C# [extensions methods](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods). You will find them often.
-* Read books on Clean Code. For example: _The Art of Readable Code_ or _Clean Code_ books. You can read [my review and takeaways]({% post_url 2020-01-06-CleanCodeReview %}).
+* Read books on Clean Code. Two good choices are "The Art of Readable Code" and "Clean Code". You can read [my review and takeaways]({% post_url 2020-01-06-CleanCodeReview %}).
 
 Voilà! That's my take on what every intermediate C# developer should know! Don't be overwhelm by the amount of things to learn. Don't try to learn everything at once, either. Learn one subject at a time! And, start using it in your every day coding as you learn it.
 
