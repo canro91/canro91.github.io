@@ -10,7 +10,7 @@ Do you want to learn React and you don't where to start? Don't look for any othe
 
 React is a JavaScript library to build user interfaces. It doesn't do a lot of things. It renders elements on the screen. Period. React isn't a Swiss-army knife framework full of functionalities.
 
-**To learn React in 30 days, start learning to create components and understand the difference between props and state**. Next, learn about hooks and how to style components. After that, learn about managing state with hooks. Don't rush to use Redux from the beginning.
+**To learn React in 30 days, start learning to create components and understand the difference between props and state. Next, learn about hooks and how to style components. After that, learn about managing state with hooks. But, don't rush to use Redux from the beginning.**
 
 <figure>
 <img src="https://images.unsplash.com/photo-1485783522162-1dbb8ffcbe5b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop&ixid=eyJhcHBfaWQiOjF9" alt="Building a rocket ship" width="800">
