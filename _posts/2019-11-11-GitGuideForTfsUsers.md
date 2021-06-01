@@ -4,9 +4,9 @@ title: Git guide for TFS users
 tags: tutorial git
 ---
 
-Dear developer, you're working in a project that uses Team Foundation Server, TFS. You're used to check-out and check-in your files. Now you have to use Git. Do you know how the two relates to each other? This is what makes TFS and Git different.
+Dear developer, you're working in a project that uses Team Foundation Server, TFS. You're used to check-out and check-in your files. Now you have to use Git. Do you know how the two relate to each other? This is what makes TFS and Git different.
 
-**Team Foundation Server (TFS) and Git belong to two different types of Version Control Systems. TFS is centralized and Git is distributed. This distinction makes syncing changes, branching and working offline different.**
+**Team Foundation Server (TFS) and Git belong to two different types of Version Control Systems. TFS is centralized and Git is distributed. This distinction makes collaborating with others, syncing changes and branching to work different.**
 
 ## Centralized vs Distributed
 
@@ -86,9 +86,10 @@ Have you ever heard about GitHub, GitLab or Bitbucket? These are third-party hos
 
 ### Check-in = Commit + Push
 
-With TFS, you "check-in" your files. But, with Git, from the command line, you need two commands: `commit` and `push`.
+With TFS, you "check-in" your files. But, with Git, from the command line, you need three commands: `add`, `commit` and `push`.
 
 ```bash
+$ git add .
 $ git commit -m 'A beatiful commit message'
 $ git push origin my-branch
 ```
@@ -97,7 +98,9 @@ $ git push origin my-branch
 
 To get the most recent changes from a server, with TFS, you "get latest version".
 
-With Git, you need to "pull" from a remote branch on a server. Use `git pull origin my-branch`. By convention, the name associated to the sync server is _origin_.
+With Git, you need to "pull" from a remote branch on a server. Use `git pull origin my-branch`.
+
+By convention, the name associated to the sync server is _origin_. You can add other remotes if needed.
 
 ### Branch = Branch + Checkout
 
