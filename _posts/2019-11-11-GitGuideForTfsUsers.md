@@ -6,7 +6,7 @@ tags: tutorial git
 
 Dear developer, you're working in a project that uses Team Foundation Server, TFS. You're used to check-out and check-in your files. Now you have to use Git. Do you know how the two relate to each other? This is what makes TFS and Git different.
 
-**Team Foundation Server (TFS) and Git belong to two different types of Version Control Systems. TFS is centralized and Git is distributed. This distinction makes collaborating with others, syncing changes and branching to work different.**
+**Team Foundation Server (TFS) and Git belong to two different types of Version Control Systems. TFS is centralized and Git is distributed. This distinction makes collaborating with others, syncing changes and branching different.**
 
 ## Centralized vs Distributed
 
