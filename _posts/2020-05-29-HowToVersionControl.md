@@ -27,7 +27,9 @@ A version control system, among other things, allows to
 * Follow all changes of a file through its lifetime
 * See who has modified a file
 
-To better understand it, let’s use an analogy. **A version control system is a time machine**. With it you can go backwards in time, create timelines and merge two separate timelines. You don’t travel to historical events in time, but to checkpoints in your project.
+To better understand this concept, let’s use an analogy.
+
+**A version control system is a time machine**. With it you can go backwards in time, create timelines and merge two separate timelines. You don’t travel to historical events in time, but to checkpoints in your project.
 
 <figure>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/TeamTimeCar.com-BTTF_DeLorean_Time_Machine-OtoGodfrey.com-JMortonPhoto.com-04.jpg/640px-TeamTimeCar.com-BTTF_DeLorean_Time_Machine-OtoGodfrey.com-JMortonPhoto.com-04.jpg" alt="DeLorean time machine" width="800" />
@@ -49,13 +51,13 @@ If you’re coming from TFS, I’ve written a [Git Guide for TFS Users]({% post_
 
 Up to this point, Git doesn’t need any further introduction. From its [official page](https://git-scm.com/), "_Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency._"
 
-### Install and Setup
+### Install and Setup Git
 
-You can install Git from it’s official page. You can find instructions to install it using package managers for all major OS's. 
+You can install Git from it’s official page. There you can find instructions to install it using package managers for all major OS's. 
 
-Before starting to work, you need some one-time setups. You need to configure a name and an email. This name and email will appear in the file history of any file you create or modify. Let's go to the command line.
+Before starting to work, you need some one-time setups. You need to configure a name and an email. This name and email will appear in the file history of any file you create or modify.
 
-From the next two commands, replace "John Doe" and "johndoe@example.com" with your own name and email.
+Let's go to the command line. From the next two commands, replace "John Doe" and "johndoe@example.com" with your own name and email.
 
 ```bash
 $ git config --global user.name "John Doe"
@@ -64,17 +66,19 @@ $ git config --global user.email johndoe@example.com
 
 You can change this name and email between projects. If you want to use different names and emails for work, you’re covered. [You can manage different accounts](https://dev.to/balaaagi/managing-multiple-git-account-1ddd) between folders.
 
-### Create a repository
+### Create a Git repository
 
 There are two ways to start working with Git. From scratch or from an existing project.
 
-If you are starting from scratch, inside the folder you want to version control, use
+If you are starting from scratch, inside the folder you want to version control, use `init`. Like this,
 
 ```bash
 $ git init
 ```
 
-But, if you have an existing project, use
+After running `git init`, Git creates a hidden folder called `.git` inside your project folder. Git keeps everything under the hood on this folder. 
+
+If you have an existing project, use `clone`, instead.
 
 ```bash
 # Replace <url> with the actual url of the project
@@ -82,13 +86,13 @@ But, if you have an existing project, use
 $ git clone <url>
 ```
 
-Here `git init` creates a hidden folder called `.git` inside your project folder. Git keeps everything under the hood on this folder. 
+Did you notice it? The command name is `clone`. Since you are getting a copy of everything a server has about a project.
 
-_You noticed it?_ The command name is `clone`. Since you are getting a copy of everything a server has about a project.
-
-### Adding new files
+### Add new files
 
 Let’s start working! Create new files or change existing ones in your project. Next, you want Git to keep track of these files. You need three commands: `status`, `add` and `commit`.
+
+First, `status` shows the pending changes in your files. `add` includes some files into the staging area. And, `commit` creates an event in the history of your project.
 
 ```bash
 # git status will show pending changes in files
@@ -110,9 +114,11 @@ You can use `log` to see all commits created so far.
 $ git log
 ```
 
-### Staging area
+### What's the Staging area
 
-The staging area or index is a concept that makes Git different. **The staging area is an intermediate area where you can review your files before committing them**. It’s like making your files wait in a line before keeping track of them. This allows you to commit only a group of files or portions of a single file.
+The staging area or index is a concept that makes Git different. **The staging area is an intermediate area where you can review your files before committing them**.
+
+It’s like making your files wait in a line before keeping track of them. This allows you to commit only a group of files or portions of a single file.
 
 If you’re coming from TFS, notice you need two steps to store your changes. These are: `add` to include files into the staging area and `commit` to create a checkpoint from them. With TFS, you only "check-in" your files.
 
@@ -138,21 +144,21 @@ A [good commit message](https://thoughtbot.com/blog/5-useful-tips-for-a-better-c
 
 Please, please don’t use “uploading changes” or any variations on your commit messages.
 
-Depending on your workplace or project, you have to follow a naming convention for your commit messages. For example, you have to include the type of change (feature, test, bug or refactor) and followed by a task number from your bug tracking software. If you need to follow a convention like this one, [Git can format the commit messages]({% post_url 2020-09-02-TwoRecurringReviewComments %}) for you.
+Depending on your workplace or project, you have to follow a naming convention for your commit messages. For example, you have to include the type of change (feature, test, bug or refactor) followed by a task number from your bug tracking software. If you need to follow a convention like this one, [Git can format the commit messages]({% post_url 2020-09-02-TwoRecurringReviewComments %}) for you.
 
-Keep your commits small and focused. Work with incremental commits. Don't commit changes that break your project.
+Keep your commits small and focused. Work with incremental commits. And, don't commit changes that break your project.
 
 ## Branching and merging
 
 ### Branching
 
-Using the time machine analogy, **a branch is a separate timeline**. Changes in a timeline don’t interfere with changes in other timelines. Timelines are called **branches**. By convention, the main timeline is called **master**.
+Using the time machine analogy, **a branch is a separate timeline**. Changes in a timeline don’t interfere with changes in other timelines. By convention, the main timeline is called **master**.
 
 About the master convention, starting from [Git 2.28](https://github.blog/2020-07-27-highlights-from-git-2-28/#introducing-init-defaultbranch), when you run `git init`, Git will look for the configuration value `init.defaultBranch` to replace the hard-coded "master" name. Other alternatives for master are: main, primary or default. For existing repositories, you can follow [this Scott Hanselman post](https://www.hanselman.com/blog/EasilyRenameYourGitDefaultBranchFromMasterToMain.aspx) to rename your master branch.
 
 Branching is one the most awesome Git features. Git branches are lightweight and fast when compared to other VCS.
 
-Let's create a new branch called "testing".
+Let's create a new branch called "testing". For this, we will need the command `branch` follow by the branch name.
 
 ```bash
 # Create a new branch called testing
@@ -169,7 +175,7 @@ $ git add README
 $ git commit -m 'Add example to README'
 ```
 
-Now, let's switch back to the master branch and see what happened to our files there.
+Now, let's switch back to the master branch and see what happened to our files there. To switch between branches, use `checkout`.
 
 ```bash
 # Now move back to the master brach
@@ -248,7 +254,7 @@ $ git branch -d testing
 
 If you're coming from TFS, you noticed you need to move first to the branch you want to merge into. You merge from the destination branch, not from the source branch.
 
-Recently, I learned how to [move the previous visited branch]({% post_url 2020-11-26-PreviousBranchGit %}). Use `$ git checkout -`.
+Recently, I learned how to [move to the previous visited branch]({% post_url 2020-11-26-PreviousBranchGit %}). Use `$ git checkout -`.
 
 ### Branching model
 
