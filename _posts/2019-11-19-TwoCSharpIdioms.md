@@ -15,30 +15,38 @@ In this first part, you have two useful C# idioms on conditionals and its altern
 
 ## Instead of lots of or’s, use an array of possible values
 
-Use an array of known or correct values, instead of a bunch of comparison inside an `if` statement. You can find this code when checking preconditions or validating objects.
+Use an array of known or valid options, instead of a bunch of comparison inside an `if` statement.
 
-Before,
+Use this idiom when checking preconditions or validating objects.
+
+Before, we used comparison with `||` inside an `if` statement.
 
 ```csharp
 if (myVar == 2 || myVar == 5 || myVar == 10)
+{
     DoSomeOperation();
+}
 ```
 
-After,
+After, we can use an array of valid options.
 
 ```csharp
 var allowedValues = new int[] { 2, 5, 10 };
 if (allowedValues.Any(t => myVar == t))
+{
     DoSomeOperations();
+}
 ```
 
 If you need to check for a new value, you add it in the array instead of adding a new condition in the `if` statement.
 
-## Instead of lots of `if`'s to find a value, use an array of `Func`
+## Instead of lots of if's to find a value, use an array of Func
 
-Replace consecutive `if` statements to find a value with an array of `Func` or small choice functions. Then, pick the first result different from a default value or `null`. You can find this code when finding a value among multiple choices.
+Replace consecutive `if` statements to find a value with an array of `Func` or small choice functions. Then, pick the first result different from a default value or `null`.
 
-Before,
+Use this idiom when finding a value among multiple choices.
+
+Before, we used consecutive `if` statements.
 
 ```csharp
 var someKey = FindKey();
@@ -48,7 +56,7 @@ if (someKey == null)
     someKey = FindDefaultKey();
 ```
 
-After,
+After, we use a list of `Func`.
 
 ```csharp
 var fallback = new List<Func<SomeObject>>
@@ -60,7 +68,9 @@ var fallback = new List<Func<SomeObject>>
 var someKey = fallback.FirstOrDefault(t => t != null);
 ```
 
-Also, you could take advantage of the **Null Coleasing Operator** (??) if these choice functions return `null` when a value isn't found.
+Also, we can take advantage of the **Null-coalescing operator** (??) if these choice functions return `null` when a value isn't found.
+
+The Null-coalescing operator returns the expression on the left it it isn't null. Otherwise, it evaluates the expression on the right.
 
 ```csharp
 var someKey = FindKey() ?? FindAlternateKey() ?? FindDefaultKey();

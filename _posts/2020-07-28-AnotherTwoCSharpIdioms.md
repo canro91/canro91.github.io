@@ -56,11 +56,13 @@ namespace Commands.V2
 }
 ```
 
-### Conditional cases in `switch` statements
+### Conditional cases in switch statements
 
-When working with `switch` statements, you can use a `when` clause instead of an `if/else` in your `case` expressions. Order is important in this case. The `case/when` should be higher than the corresponding `case` without `when`.
+When working with `switch` statements, you can use a `when` clause instead of an `if/else` in your `case` expressions.
 
-Before,
+Order is important when replacing `if/else` inside cases with `when` clauses. The `case/when` should be higher than the corresponding `case` without `when`.
+
+Before, we used `if` inside switches
 
 ```csharp
 switch (myVar)
@@ -78,7 +80,7 @@ switch (myVar)
 }
 ```
 
-After,
+After, we use `when` in our `case` expressions
 
 ```csharp
 switch (myVar)
