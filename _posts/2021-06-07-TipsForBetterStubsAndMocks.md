@@ -84,7 +84,7 @@ Assert.IsTrue(stockService.IsStockAvailable(order));
 
 It's redundant. It will never fail because we wrote the fake to always return true. We can get rid of it!
 
-If you use a [mocking library to write your fakes]({post_url 2020-08-11-HowToCreateFakesWithMoq }) and if you forget to setup your stubs, you will get a `NullReferenceException`. Your code expects some values that the stubs didn't provide. With that exception thrown, you will have a failing test.
+If you use a [mocking library to write your fakes]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}) and if you forget to setup your stubs, you will get a `NullReferenceException`. Your code expects some values that the stubs didn't provide. With that exception thrown, you will have a failing test.
 
 If you write assertions for your stubs, you're testing the mocking library, not your code.
 
