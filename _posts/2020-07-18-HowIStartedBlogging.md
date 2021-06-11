@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How I started blogging
+title: How I started blogging and why you should start too
 tags: career writing
 ---
 
@@ -20,6 +20,12 @@ I found Fody, a solution using Aspect Oriented Programming. I put up a  proof of
 
 After that, I started to write about the bugs that literally gave me  headaches, the resources I used to learn languages and frameworks, the  notes from the books I read. I started to share my learning and my  experiences. And here you are, 30 posts after that first post.
 
-You don’t need to wait to be a well-known figure in the tech field to  have a blog. A blog is a mean to share your learning. To learn in  public. To share your insights. That will make your blog unique.
+You don't need to wait to be a well-known figure in the tech field to have a blog.
+
+A blog is a mean to share your learning. To learn in  public. To share your insights. That will make your blog unique.
+
+I don't have anything to write about?-you said. Have you learned something new? Share that. Share the resources you used to learned it.
+
+Probably, next time you're Googling something, you will find your own blog posts.
 
 _Thanks for reading!_
