@@ -51,7 +51,7 @@ In our last post, we chose certain names for our fakes like "AlwaysAvailableStoc
 
 Remember, stubs are there to provide values indirectly to our code under test. We make fake return a value or throw an exception.
 
-Don't write assertions for stubs. We don't need them. Assert on the result of your tests or use mocks. 
+**Don't write assertions for stubs.** We don't need them. Assert on the result of your tests or use mocks. 
 
 Please, don't do this.
 
@@ -118,7 +118,7 @@ public class OrderServiceTests
 }
 ```
 
-Don't use multiple mocks per test. Write separate tests, instead.
+**Don't use multiple mocks per test.** Write separate tests, instead.
 
 <figure>
 <img src="https://images.unsplash.com/flagged/photo-1579750481098-8b3a62c9b85d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjE5NzExMzk1&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="Cockpit of Airbus A330-200" />
@@ -129,7 +129,7 @@ Don't use multiple mocks per test. Write separate tests, instead.
 
 ## 3. Avoid logic inside your fakes
 
-Write dumb fakes. Avoid complex logic inside your fakes. For example, don't add flags to your stubs to return one value or another. Write separate fakes, instead.
+**Write dumb fakes.** Avoid complex logic inside your fakes. For example, don't add flags to your stubs to return one value or another. Write separate fakes, instead.
 
 Let's test the `OrderService` with and without stock. Don't write the two tests with a single `FakeStockService` that uses a flag to signal the two scenarios.
 
@@ -208,7 +208,7 @@ Don't worry about creating lots of fakes. Fakes are cheap. Any decent IDE can ad
 
 ## 4. Make tests set their own values for fakes
 
-Avoid magic values in your stubs. Make the test pass their own values instead of having hard-coded values in your tests.
+**Avoid magic values in your stubs.** Make the test pass their own values instead of having hard-coded values in your tests.
 
 Let's say that `StockService` returns the units available instead of a simple `true` or `false`. Check this test,
 
@@ -267,7 +267,7 @@ It makes more sense! There's only 1 unit available and we're placing an order fo
 
 Again for our last tip, let's talk about names. Naming is hard.
 
-Name your stubs to indicate the value they return or the exception they throw.
+**Name your stubs to indicate the value they return or the exception they throw.**
 
 We named our fake stock provider `AlwaysAvailableStockService` to show it always return stock available. It obvious from its name what it's the return value.
 
