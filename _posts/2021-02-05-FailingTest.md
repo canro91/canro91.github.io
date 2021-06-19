@@ -6,7 +6,7 @@ cover: FailingTest.png
 cover-alt: How to write good unit tests? Have a failing test
 ---
 
-A passing test isn't always the only thing to look for. Writing a failing test is important too. I learned this lesson the hard way. Let's see why we should start writing failing tests.
+A passing test isn't always the only thing to look for. Seeing your test fail is important too. I learned this lesson the hard way. Let's see why we should start writing failing tests.
 
 **To write reliable unit tests, always start writing a failing test. And, make sure it fails for the right reasons.** Follow the Red, Green, Refactor principle of Test-Driven Development (TDD). Write a failing test, make it pass and refactor the code. Don't skip the failing test part.
 
@@ -62,7 +62,7 @@ private AccountController MakeAccountController(IOptions<EmailConfiguration> ema
 
 ## A false positive
 
-This time, I had a new requirement. I needed to add a new method to our `AccountController`. This new method read another configuration object injected into the controller.
+This time, I had a new requirement. I needed to add a new method to our `AccountController`. This new method [read another configuration object]({% post_url 2020-08-21-HowToConfigureValues %}) injected into the controller.
 
 To follow the convention of validating required parameters inside constructors, I also checked for this new configuration object. I wrote a new test and a new `MakeAccountController()` builder method to call the constructor with only the parameters I needed.
 
