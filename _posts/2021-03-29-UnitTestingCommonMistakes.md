@@ -46,7 +46,7 @@ Follow the Arrange/Act/Assert principle. Separate the body of your tests to diff
 
 For the Assert part of your tests, make sure to use an assertion library. MSTest, NUnit and XUnit are the three most popular ones for C#.
 
-**Use the right assertion methods of your library.** For example, MSTest has assertion methods for strings, collections and other objects. For a list of the most common MSTest assertions methods, check the Cheatsheet in [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}).
+**Use the right assertion methods of your library.** For example, MSTest has assertion methods for strings, collections and other objects. For a list of the most common MSTest assertions methods, check the MSTest Cheatsheet in [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}).
 
 Please, don't do.
 
@@ -157,7 +157,9 @@ Parameterized tests make troubleshooting easier when we have a test that fails f
 
 ## 4. Repeat logic in your assertions
 
-I can't stress this enough. **Don't repeat the logic under test in your assertions.** Use known, hard-coded, pre-calculated values, instead.
+I can't stress this enough.
+
+**Don't repeat the logic under test in your assertions. Use known, hard-coded, pre-calculated values, instead.**
 
 We shouldn't copy the tested logic and paste it in a private method in our tests to use it in our assertions. We will have code, and bugs, in two places.
 

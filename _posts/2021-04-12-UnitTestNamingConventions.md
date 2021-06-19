@@ -6,7 +6,7 @@ cover: Cover.png
 cover-alt: 4 test naming conventions
 ---
 
-From our previous post, we learned about [4 common ~~misatkes~~ mistakes]({% post_url 2021-03-29-UnitTestingCommonMistakes %}) we make when writing our first unit tests. One of them is not to follow a naming convention. Let's see four naming conventions for our unit tests.
+From our previous post, we learned about [4 common mistakes]({% post_url 2021-03-29-UnitTestingCommonMistakes %}) we make when writing our first unit tests. One of them is not to follow a naming convention. Let's see four naming conventions for our unit tests.
 
 **Test names should tell the scenario under test and the expected results**. Long names are acceptable when writing unit tests since test names show the purpose behind what they're testing. Assertion messages aren't needed if you name your test the right way. 
 
@@ -26,7 +26,7 @@ public class RemoveTests
 }
 ```
 
-We find this naming convention in the book [The Art of Unit Testing](https://www.manning.com/books/the-art-of-unit-testing-second-edition) (My takeaways [here]({% post_url 2020-03-06-TheArtOfUnitTestingReview %})). This convention uses underscores to separate the unit of work or entry point, the test scenario and the expected behavior. 
+We find this naming convention in the book [The Art of Unit Testing](https://www.manning.com/books/the-art-of-unit-testing-second-edition) ([my takeaways]({% post_url 2020-03-06-TheArtOfUnitTestingReview %})). This convention uses underscores to separate the unit of work or entry point, the test scenario and the expected behavior. 
 
 With this convention, we can read our test names out loud like this: "When calling Remove with no parameters, then it returns empty".
 

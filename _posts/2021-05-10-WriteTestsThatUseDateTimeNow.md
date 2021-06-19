@@ -71,7 +71,7 @@ Let's see two techniques from the books [The Art of Unit Testing](https://www.ma
 
 ## Use a fake or test double
 
-To make our tests more reliable, we can create an abstraction for the current time and make our validator depend on it. Later, we can pass a fake or double with a hardcoded date in our tests.
+To make our tests more reliable, we can create an abstraction for the current time and make our validator depend on it. Later, we can pass a [fake or test double]({% post_url 2021-05-24-WhatAreFakesInTesting %}) with a hardcoded date in our tests.
 
 Let's create a `ISystemClock` interface and a default implementation. The `ISystemClock ` will have a `Now` property for the current date and time.
 
