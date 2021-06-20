@@ -16,7 +16,9 @@ ASP.NET Core has brought a lot of new features [compared to ASP.NET Framework](h
 
 ### Options pattern
 
-Let's see how to implement the Options pattern to read configuration values. First, add in the `appsettings.json` files, the values you want to configure. Unlike, the previous version of ASP.NET you can use sections and subsections to group your values. And, you can use booleans, integers and arrays, instead of only strings.
+Let's see how to implement the Options pattern to read configuration values.
+
+First, add in the `appsettings.json` files, the values you want to configure. Unlike, the previous version of ASP.NET you can use sections and subsections to group your values. And, you can use booleans, integers and arrays, instead of only strings.
 
 ```json
 {
@@ -29,7 +31,7 @@ Let's see how to implement the Options pattern to read configuration values. Fir
 }
 ```
 
-Then, create a class `MySettings`. This class name matches your section in the `appsettings.json` file. Also, property names should match the values inside your sections in the settings file.
+Then, create a class `MySettings`. This class name matches your section name in the `appsettings.json` file. Also, property names should match the key names inside your sections in the `appsettings.json` file.
 
 ```csharp
 public class MySettings
@@ -73,7 +75,7 @@ public class Startup
 }
 ```
 
-If you use subsections in your settings file, separate them using `:` in the `Configure` method. For example, if  `MySettings` were inside a section `AllMyCoolSettings`, then you would use 
+If you use subsections in your settings file, separate them using `:` in the `Configure` method. For example, if  `MySettings` were inside a section `AllMyCoolSettings`, then you would use `MySettings:AllMyCoolSettings` as the section name to bind. Like this,
 
 ```csharp
 services.Configure<MySettings>(_configuration.GetSection("AllMyCoolSettings:MySettings"));
@@ -102,11 +104,15 @@ public class ValuesController : Controller
 }
 ```
 
-That's it! That's the Options pattern in action. In your tests, you can use the method `Options.Create` with an instance of the `MySettings` class to fake configuration values.
+That's it! That's the Options pattern in action.
 
-### Use multiple environments
+In your tests, you can use the method `Options.Create` with an instance of the `MySettings` class to fake configuration values. You don't need any mock for that.
 
-You can separate your configuration values per environment. You could have settings files for Development, QA or any other environment. If a value isn't found in an environment-specific file, ASP.NET Core uses the default `appsettings.json` file.
+### Use multiple configuration files per environment
+
+**You can separate your configuration values per environment in different configuration files.**
+
+You could have settings files for Development, QA or any other environment. If a value isn't found in an environment-specific file, ASP.NET Core uses the default `appsettings.json` file.
 
 You can change the current environment with the `ASPNETCORE_ENVIRONMENT` environment variable. On a develop machine, you can use [the launchSettings.json file](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-3.1#development-and-launchsettingsjson) to set environment variables.
 
