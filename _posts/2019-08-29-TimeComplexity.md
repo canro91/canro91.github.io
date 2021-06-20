@@ -4,11 +4,11 @@ title: "Time complexity: An interview exercise II"
 tags: interview tutorial csharp
 ---
 
-You nailed it at your [first interview]({% post_url 2019-08-02-PostfixNotationAnInterviewExercise %}). You impressed the interviewer with your answers. Now, it's the interviewer's boss turn. You're asked about the time complexity of finding the sum of two elements in two arrays.
+You nailed it at [evaluating postfix expressions]({% post_url 2019-08-02-PostfixNotationAnInterviewExercise %}). You impressed the interviewer with your solution. Now, you're asked about the time complexity of finding the sum of two elements in two arrays.
 
-**Time complexity is a mechanism to compare the performance of two algorithms as the input size grows.** Time complexity measures the number of operations instead of execution time in seconds or milliseconds. An algorithm with small number of operations will beat another that makes the same task with a larger amount of operations.
+**Time complexity is a mechanism to compare the performance of two algorithms as the input size grows. Time complexity measures the number of operations instead of execution time. An algorithm with smaller number of operations has better time complexity than another one with a larger amount of operations.**
 
-### Big-O Notation
+## Time complexity and Big-O Notation
 
 Well-known algorithms and common patterns of code have already a time complexity associated to it.
 
@@ -18,7 +18,9 @@ Looping through the elements of an array has **linear time**. Dealing with matri
 
 Time complexity uses a mathematical notation to describe the complexity of an algorithm, called **Big-O notation**.
 
-Big-O notation assigns a function (_you remember functions from Math class, right?_) to the complexity of an algorithm. So, constant time is `O(1)`, linear time is `O(n)`, quadratic time is `O(n^2)` and logarithmic time is `O(logn)`. You could use [this Big-O cheatsheet](https://www.bigocheatsheet.com/) to find the complexity and BigO notation of well-know algorithms.
+Big-O notation assigns a function (_you remember functions from Math class, right?_) to the complexity of an algorithm. So, constant time is `O(1)`, linear time is `O(n)`, quadratic time is `O(n^2)` and logarithmic time is `O(logn)`.
+
+You could use [this Big-O cheatsheet](https://www.bigocheatsheet.com/) to find the complexity and BigO notation of well-know algorithms.
 
 <figure>
 <img src="https://images.unsplash.com/photo-1501139083538-0139583c060f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="Time complexity: An interview exercise" />
@@ -26,7 +28,7 @@ Big-O notation assigns a function (_you remember functions from Math class, righ
 <figcaption><span>Photo by <a href="https://unsplash.com/@aronvisuals?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Aron Visuals</a> on <a href="https://unsplash.com/s/photos/time?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
 </figure>
 
-## Interview question
+## Two number sum problem
 
 The interview goes like this. The interviewer asks you to introduce yourself. You answer using the elevator pitch you prepared. Then, he suggests to start a whiteboard exercise. You open Notepad++, Visual Studio Code or your favorite editor. And, there you go.
 
