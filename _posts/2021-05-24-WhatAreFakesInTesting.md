@@ -200,7 +200,7 @@ The book [xUnit Patterns](http://xunitpatterns.com/Mocks,%20Fakes,%20Stubs%20and
 
 **Mocks are testable replacements that check if they were used correctly**. We use mocks when we know in advanced the parameters the code under test will use. With mocks, we set the expected parameters to be used before calling the code under test. Then, we use a verification method in the mock itself to check if the mock was called with those exact same parameters.
 
-Don't get confused with all these terms. Let's stick to the types of fakes presented in the book [The Art of Unit Testing](https://www.manning.com/books/the-art-of-unit-testing-second-edition) (My takeaways [here]({% post_url 2020-03-06-TheArtOfUnitTestingReview %})). In there, there are only two types of fakes or test doubles: stubs and mocks. Everything else is a fake. Easier!
+Don't get confused with all these terms. Let's stick to the types of fakes presented in the book [The Art of Unit Testing](https://www.manning.com/books/the-art-of-unit-testing-second-edition) ([My takeaways]({% post_url 2020-03-06-TheArtOfUnitTestingReview %})). In there, there are only two types of fakes or test doubles: stubs and mocks. Everything else is a fake. Easier!
 
 Voilà! That's what fakes are in unit testing. Remember, stubs provide values for our tests and mocks assert that calls were made. That's the difference between them.
 
