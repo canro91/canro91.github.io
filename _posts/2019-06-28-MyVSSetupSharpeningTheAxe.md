@@ -5,7 +5,7 @@ description: Visual Studio 2019 is out. These are my settings, layout and extens
 tags: productivity visualstudio
 ---
 
-Visual Studio is the de facto IDE for C#. You will spend countless hours inside Visual Studio. You are better off spending some time to customize to boost your productivity.
+Visual Studio is the de facto IDE for C#. You will spend countless hours inside Visual Studio. You are better off spending some time to customize it to boost your productivity.
 
 My Visual Studio setup is heavily inspired by [De-Cruft Visual Studio](https://jackmott.github.io/programming/tools/editor/ide/visual/studio/2016/07/11/decruft-visual-studio.html). It aims to leave more space to the text editor by removing unneeded menus and bars.
 
