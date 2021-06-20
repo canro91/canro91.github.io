@@ -20,6 +20,8 @@ I found Fody, a solution using Aspect Oriented Programming. I put up a  proof of
 
 After that, I started to write about the bugs that literally gave me  headaches, the resources I used to learn languages and frameworks, the  notes from the books I read. I started to share my learning and my  experiences. And here you are, 30 posts after that first post.
 
+### _Your turn_
+
 You don't need to wait to be a well-known figure in the tech field to have a blog.
 
 A blog is a mean to share your learning. To learn in  public. To share your insights. That will make your blog unique.
