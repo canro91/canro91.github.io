@@ -13,7 +13,9 @@ What's the difference between `Func` and `Action`? This is a common C# interview
 
 ## What are delegates?
 
-It all starts with delegates. A delegate is a pointer to a method with some input parameters and possibly a return type.
+It all starts with delegates.
+
+**A delegate is a pointer to a method with some input parameters and possibly a return type.**
 
 In other words, a delegate is a variable that can hold any method that has a given signature. Both, `Func` and `Action` are built-in delegate types.
 
@@ -36,7 +38,7 @@ Now that it's clear what delegates are, let's see some `Func` and `Action` decla
 
 You have already used `Func`, if you have used LINQ. But, in general, you use them as lambda expressions.
 
-A lambda expression is an anonymous method. It's a shorthand notation to write a method only with the body and the parameter list.
+**A lambda expression is an anonymous method. It's a shorthand notation to write a method only with the body and the parameter list.**
 
 For example, let's find the employees who have worked for more than ten years.
 
@@ -141,5 +143,7 @@ public class ReliableConnection : DbConnectionWrapper
 ```
 
 Voilà! That's the difference between `Func` and `Action`. Remember that they only represent the signature of a method. You can define or pass around the body later.
+
+If you want to know more about LINQ, check my [quick guide to LINQ]({% post_url 2021-01-18-LinqGuide %}). To learn how to use Insight.Datase, check [how to create a CRUD API with ASP.NET Core and Insight.Database](% post_url 2020-05-01-InsightDatabase %).
 
 _Happy Funcy time!_
