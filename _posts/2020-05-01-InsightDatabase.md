@@ -27,13 +27,13 @@ You can roll your own database access layer. But, an ORM helps you to:
 
 Insight.Database maps properties from C# classes to parameters in queries and store procedures. Also, Insight.Database maps columns from query results back to properties in C# classes.
 
-Another feature of Insight.Database is record post-processing. You can make extra changes to records as they're being read. For example, [you can trim whitespace-padded string columns]({% post_url 2018-09-21-INeedSomeSpace %}) from a legacy database withouth using the `Trim()` method in your mapping classes.
+Another feature of Insight.Database is record post-processing. You can make extra changes to records as they're being read. For example, [you can trim whitespace-padded string columns]({% post_url 2018-09-21-INeedSomeSpace %}) from a legacy database without using the `Trim()` method in your mapping classes.
 
 Unlike other ORMs, with Insight.Database, you have to write your own SQL queries or store procedures. It doesn't generate any SQL statements for you. In fact, Insight.Database documentation recommends to call your database through store procedures.
 
 ## A CRUD application with Insight.Database
 
-Let's create a simple CRUD application for a catalog of products. A CRUD application has 4 methods to create, read, update and delete entities in business domain.
+Let's create a simple CRUD application for a catalog of products. A CRUD application has 4 methods to create, read, update and delete entities in a business domain.
 
 Before we begin, you should have installed the latest version of the [ASP.NET Core SDK](https://dotnet.microsoft.com/download) and one database engine. Let's use [SQL Server Express LocalDB](https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/sql?view=aspnetcore-3.1&tabs=visual-studio#sql-server-express-localdb) shipped with Visual Studio.
 
@@ -414,6 +414,6 @@ Voilà! You know how to use Insight.Database to retrieve results and execute act
 
 Your mission, Jim, should you decide to accept it, is to change the `Update()` and `Delete()` methods to comple all CRUD operations. This post will self-destruct in five seconds. Good luck, Jim.
 
-If you're coming from the old ASP.NET Framework, check my [ASP.NET Core Guide for ASP.NET Framework Developers]({% post_url 2020-03-23-GuideToNetCore %}). To learn how to update your database schema, check my post about [migrations with Simple.Migrations]({% post_url 2020-08-15-Simple.Migrations %}).
+If you're coming from the old ASP.NET Framework, check my [ASP.NET Core Guide for ASP.NET Framework Developers]({% post_url 2020-03-23-GuideToNetCore %}). To learn how to update your database schema, check my post about [database migrations with Simple.Migrations]({% post_url 2020-08-15-Simple.Migrations %}).
 
 _Happy coding!_
