@@ -4,7 +4,7 @@ title: "Postfix Notation: An Interview Exercise"
 tags: tutorial interview csharp
 ---
 
-You are applying for your first position or for a new job. You are asked to complete a coding exercise: evaluate an expression in postfix notation. Let's what is postfix notation and how to evaluate one in C#.
+You are applying for your first position or for a new job. You are asked to complete a coding exercise: evaluate an expression in postfix notation. Let's see what is postfix notation and how to evaluate postfix expressions in C#.
 
 ## What is Postfix Notation?
 
