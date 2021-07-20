@@ -20,6 +20,8 @@ Professionalism is all about taking responsibility.
 * **Meetings are necessary and costly**. It’s unprofessional to attend to so many meetings.
 When the meetings get boring, be polite and ask if your presence is still needed.
 
+{% include image.html name="Quote.png" alt="Your career is your responsibility, not your employer's" caption="" %}
+
 ## Say No/Say Yes
 
 > _Say. Mean. Do_
