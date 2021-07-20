@@ -7,7 +7,7 @@ description: Do you need to tune your SQL Server and you don't know how to start
 
 Recently, I've needed to optimize some SQL Server queries. I decided to look out there what to do to tune SQL Server and SQL queries. This is what I found.
 
-**To tune your SQL Server queries, you can make changes at the database, table and query level.** At the database level, you can turn on automatic update of statistics, increase the file size autogrowth and update the compatibility level. At the table level, delete your unused indexes and create the missing ones. But, keep less than 5 indexes per table. And, at the query level, find and fix implicit conversions.
+**At the database level, turn on automatic update of statistics, increase the file size autogrowth and update the compatibility level. At the table level, delete your unused indexes and create the missing ones, keeping around 5 indexes per table. And, at the query level, find and fix implicit conversions.**
 
 While looking up what I could do to tune my queries, I found Pinal Dave from [SQLAuthority](https://blog.sqlauthority.com/). Chances are you have already found one of his blog posts when searching for SQL Server tuning tips. He's been blogging about the subject for years.
 
@@ -15,7 +15,9 @@ These are six tips from Pinal's blog and online presentations I've applied recen
 
 ## 1. Enable automatic statistics update 
 
-**Turn on automatic update of statistics.** You should turn it off if you're updating a really long table during your work-hours. You can [enable automatic statistic update](https://blog.sqlauthority.com/2009/10/15/sql-server-enable-automatic-statistic-update-on-database/) with this query:
+**Turn on automatic update of statistics.** You should turn it off if you're updating a really long table during your work-hours.
+
+You can [enable automatic statistic update](https://blog.sqlauthority.com/2009/10/15/sql-server-enable-automatic-statistic-update-on-database/) with this query:
 
 ```sql
 USE <YourDatabase>;
@@ -37,7 +39,11 @@ GO
 
 ## 2. Fix File Autogrowth
 
-Add size and file growth to your database. Make it your weekly file growth. Otherwise set it to 200 or 250MB. You can [change the file autogrowth](https://blog.sqlauthority.com/2018/12/23/how-to-track-autogrowth-of-any-database-interview-question-of-the-week-205/) from SQL Server Management Studio.
+Add size and file growth to your database. Make it your weekly file growth. Otherwise, change it to 200 or 250MB.
+
+From SQL Server Management Studio, to change the file autogrowth, go to your database properties and then to Files. Click on the three dots in the Autogrowth column. 
+
+{% include image.html name="FileAutogrowth.png" caption="Files page from Database properties in SQL Server Management Studio" alt="Files page from Database properties in SQL Server Management Studio" width="800px" %}
 
 ## 3. Find and Fix Implicit conversions
 
@@ -87,7 +93,9 @@ ORDER BY qs.total_worker_time DESC OPTION (RECOMPILE);
 
 ## 4. Change compatibility level
 
-After updating your SQL Server, make sure to update the compatibility level of your database to the highest level supported by the current version of your SQL Server. You can check SqlAuthority blog on [how to change compatibility level](https://blog.sqlauthority.com/2017/05/22/sql-server-change-database-compatibility-level/).
+After updating your SQL Server, make sure to update the compatibility level of your database to the highest level supported by the current version of your SQL Server.
+
+You can check SQLAuthority blog on [how to change compatibility level](https://blog.sqlauthority.com/2017/05/22/sql-server-change-database-compatibility-level/) for more details on how to change it.
 
 ```sql
 ALTER DATABASE <YourDatabase>
@@ -96,7 +104,9 @@ SET COMPATIBILITY_LEVEL = { 150 | 140 | 130 | 120 | 110 | 100 | 90 }
 
 ## 5. Create missing indexes
 
-But, don't create all missing indexes. Create the first 10 missing indexes. You should have only ~5 indexes per table. You can use the next script to [find the missing indexes in your database](https://blog.sqlauthority.com/2011/01/03/sql-server-2008-missing-index-script-download/).
+Create your missing indexes. But, don't create them all. Create the first 10 missing indexes in your database. Stick to having around 5 indexes per table.
+
+You can use the next script to [find the missing indexes in your database](https://blog.sqlauthority.com/2011/01/03/sql-server-2008-missing-index-script-download/). But, don't blindly add new indexes. Check the indexes you already have and the estimated impact of the missing indexes. 
 
 ```sql
 SELECT TOP 25
@@ -139,15 +149,17 @@ GO
 
 **Indexes reduce perfomance all the time.** They reduce performance of inserts, updates, deletes and selects. Even if a query isn't using an index, it reduces performance of the query.
 
-Delete most your indexes. Identify your main table and check if it has more than 5 indexes. Don't create indexes on every key of a join.
+**Delete most your indexes**. Identify your main table and check if it has more than 5 indexes. But, don't create indexes on every key of a JOIN.
 
-Also, keep in mind if you rebuild an index for a table, SQL Server will remove all caches related to that table. Rebuilding your indexes is the most expensive way of updating statistics.
+Also, keep in mind if you rebuild an index for a table, SQL Server will remove all plan cached related to that table.
+
+**Rebuilding your indexes is the most expensive way of updating statistics.**
 
 <div class="video-container">
 <iframe src="https://www.youtube-nocookie.com/embed/SqhX8OaOI6A?start=395&rel=0&fs=0" width="640" height="360" frameborder="0"></iframe>
 </div>
 
-You can [find your unused indexes](https://blog.sqlauthority.com/2011/01/04/sql-server-2008-unused-index-script-download/) with this script:
+You can [find your unused indexes](https://blog.sqlauthority.com/2011/01/04/sql-server-2008-unused-index-script-download/) with the next script. Look for indexes with zero seeks/scans and lots of updates. They're good candidates to drop.
 
 ```sql
 SELECT TOP 25
@@ -183,6 +195,6 @@ Voilà! These are six tips I learned from Pinal Dave to start tuning your SQL Se
 
 I gained a lot of improvement only by fixing implicit conversions. In a store procedure, we had a `NVARCHAR` parameter to compare it with a `VARCHAR` column. Yes, implicit conversions happen between `VARCHAR` and `NVARCHAR`.
 
-For more SQL content, check my posts on [how to debug]({% post_url 2020-12-03-DebugDynamicSQL %}) and [how NOT to write]({% post_url 2021-03-08-HowNotToWriteDynamicSQL %}) dynamic SQL queries.
+For more SQL content, check my posts on [how to write dynamic SQL queries]({% post_url 2021-03-08-HowNotToWriteDynamicSQL %}) and the [differences between TRUNCATE and DELETE]({% post_url 2021-01-04-TruncateVsDelete %}).
 
 _Happy SQL time!_
