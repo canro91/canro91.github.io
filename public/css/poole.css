@@ -443,6 +443,7 @@ a.pagination-item:hover {
   overflow: hidden;
   position: relative;
   width:100%;
+  margin-bottom: 1rem;
 }
 
 .video-container::after {
