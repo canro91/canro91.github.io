@@ -109,7 +109,7 @@ After that, we executed the query inside the string with `sp_executesql` with th
 
 With Dynamic SQL, our stored procedure will generate one execution plan for each set of parameters. This time, SQL Server could use the right indexes to run the query. That's the point of using Dynamic SQL.
 
-Voilà! That's how NOT to write a stored procedure with optional parameters with Dynamic SQL. Notice that to make things simple, we didn't follow all the tips from [the previous post]({% post_url 2020-12-03-DebugDynamicSQL %}) to make our Dynamic SQL easier to debug.
+Voilà! That's how NOT to write a stored procedure with optional parameters with Dynamic SQL. Notice that to make things simple, we didn't follow all the tips to [make our Dynamic SQL easier to debug]({% post_url 2020-12-03-DebugDynamicSQL %}).
 
 If you're interested in more content about SQL and SQL Server, check my posts on [Six SQL Server performance tuning tips]({% post_url 2020-09-28-SQLServerTuningTips %}) and [How to format your SQL queries]({% post_url 2020-09-30-FormatSQL %}).
 
