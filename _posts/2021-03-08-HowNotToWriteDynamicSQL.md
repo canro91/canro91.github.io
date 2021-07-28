@@ -4,9 +4,9 @@ title: How not to write Dynamic SQL
 tags: tutorial sql
 ---
 
-Last time, I showed you [three tips to debug your Dynamic SQL]({% post_url 2020-12-03-DebugDynamicSQL %}). The next time you find a query in the plan cache, you can trace down the stored procedure that generated it. Today, I will show you how NOT to write Dynamic SQL.
+Last time, I showed you [three tips to debug your Dynamic SQL]({% post_url 2020-12-03-DebugDynamicSQL %}). Let's take a step back. Let's see what is a dynamic SQL query and how to use one to rewrite a stored procedure with optional parameters.
 
-**Dynamic SQL is a string with a query to execute. In a stored procedure with optional parameters, Dynamic SQL is used to build a string with only the comparisons for the parameters passed with a non-default value**.
+**Dynamic SQL is a string with a query to execute. In a stored procedure with optional parameters, Dynamic SQL is used to build a string containing a query with only the comparisons and clauses for the parameters passed with a non-default value**.
 
 ## Without Dynamic SQL
 
@@ -42,7 +42,7 @@ The more optional parameters our stored procedure has, the worse our query gets.
 
 Probably, we hear about Dynamic SQL somewhere on the Internet and we decide to use it.
 
-Then, we write the next version of our stored procedure.
+Then, we write the next version of our stored procedure. Something like the one below.
 
 ```sql
 CREATE OR ALTER PROC dbo.usp_SearchUsersWithWrongDynamicSQL
@@ -65,13 +65,13 @@ END
 GO
 ```
 
-We moved the exact same query to a string and ask SQL Server to execute that query. That won't make any difference between the execution plans of both versions. We only put makeup on the problem. _Arggg!_
+We moved the exact same query to a string and ask SQL Server to execute that string. That won't make any difference between the execution plans of both versions. We only put makeup on the problem. _Arggg!_
 
 ## With Dynamic SQL, the right way
 
 With Dynamic SQL, we want to create smaller queries for the different set of parameters passed to our stored procedure.
 
-We need to add only the comparisons for the parameters passed with non-default values.
+We need to add only the comparisons and clauses for the parameters passed with non-default values.
 
 Let's rewrite the stored procedure to include the conditions to the WHERE based on the parameters passed.
 
@@ -107,7 +107,7 @@ Then, notice the two IF statements. We added the conditions to the WHERE clause 
 
 After that, we executed the query inside the string with `sp_executesql` with the parameter declaration and the parameters themselves.
 
-With Dynamic SQL, our stored procedure will generate one execution plan for each set of parameters. This time, SQL Server could use the right indexes to run the query. That's the point of using Dynamic SQL.
+With Dynamic SQL, our stored procedure will generate one execution plan for each set of parameters. This time, SQL Server could use the right indexes to run each query. That's the point of using Dynamic SQL.
 
 Voilà! That's how NOT to write a stored procedure with optional parameters with Dynamic SQL. Notice that to make things simple, we didn't follow all the tips to [make our Dynamic SQL easier to debug]({% post_url 2020-12-03-DebugDynamicSQL %}).
 
