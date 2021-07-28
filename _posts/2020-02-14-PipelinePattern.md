@@ -6,7 +6,7 @@ tags: tutorial csharp
 
 You need to do a complex operation made of smaller consecutives tasks. These tasks might change from client to client. This is how you can use the Pipeline pattern to achieve that. Let's implement the Pipeline pattern in C#.
 
-**With the Pipeline pattern, a complex task is divided into separated steps.** Each step is responsible for a piece of logic of that complex task. Like an assembly line, steps in a pipeline are executed one after the other, depending on the output of previous steps.
+**With the Pipeline pattern, a complex task is divided into separated steps. Each step is responsible for a piece of logic of that complex task. Like an assembly line, steps in a pipeline are executed one after the other, depending on the output of previous steps.**
 
 > TL;DR Pipeline pattern is like the enrich pattern with factories. Pipeline = Command + Factory + Enricher
 
@@ -59,6 +59,8 @@ public class UpdateStockStep : IStep<BuyItemCommand>
 Next, we need a builder to create our pipeline with its steps. Since the steps may vary depending on the type of operation or the client, you can load your steps from a database or configuration files.
 
 For our e-commerce example, we don't need to create a delivery order when we sell an eBook. In that case, we need to build two pipelines: `BuyPhysicalItemPipeline` for products that require shipping and `BuyDigitalItemPipeline` for products that don't.
+
+But, let's keep it simple. Let's create a `BuyItemPipelineBuilder`.
 
 ```csharp
 public class BuyItemPipelineBuilder : IPipelineBuilder
