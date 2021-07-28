@@ -6,21 +6,25 @@ tags: todayilearned sql
 
 These three tips will help you to troubleshoot your dynamic queries and identify the source of a dynamic query when you find one in your query store or plan cache.
 
-**Dynamic SQL is a string with a query to execute**. This string is built based on the input parameters of a store procedure or any other condition to include the right clauses, comparisons and statements to execute. Often, Dynamic SQL is used with store procedures to search records with optional input parameters.
+**To make dynamic SQL queries easier to debug, format the generated query with line breaks, add as a comment the name of the source stored procedure and use a parameter to only print the generated query.**
 
-## Format your dynamic SQL queries for more readability
+## 1. Format your dynamic SQL queries for more readability
 
-To read your dynamic queries stored in the plan cache, make sure to insert new lines when appropriate. Use a variable for the line endings. For example, `DECLARE @crlf NVARCHAR(2) = NCHAR(13) + NCHAR(10)`.
+To read your dynamic queries stored in the plan cache, make sure to insert new lines when appropriate.
 
-Also, to identify the source of a dynamic query, add as a comment the name of the store procedure generating it. But, don't use inside that comment a timestamp or any other dynamic text. Otherwise, you will end up with almost identical entries in the plan cache.
+Use a variable for the line endings. For example, `DECLARE @crlf NVARCHAR(2) = NCHAR(13) + NCHAR(10)`.
 
-## Add a parameter to print the generated query
+Also, to identify the source of a dynamic query, add as a comment the name of the stored procedure generating it. But, don't use inside that comment a timestamp or any other dynamic text. Otherwise, you will end up with almost identical entries in the plan cache.
 
-To debug the generated dynamic query, add a parameter to print it. Also, you can add a second debugging parameter to avoid executing the query. For example, you can name these two parameters, `@Debug_PrintQuery` and `@Debug_ExecuteQuery`, respectively.
+## 2. Add a parameter to print the generated query
 
-## Change the casing of variables and keywords inside your dynamic SQL
+To debug the generated dynamic query, add a parameter to print it. And, a second parameter to avoid executing the query.
 
-To distinguish errors between the actual SQL query and the dynamic query, change the casing keywords and variables inside your the dynamic query.
+For example, you can name these two parameters, `@Debug_PrintQuery` and `@Debug_ExecuteQuery`, respectively.
+
+## 3. Change the casing of variables and keywords inside your dynamic SQL
+
+To distinguish errors between the actual SQL query and the dynamic query, change the casing of keywords and variables inside your dynamic query.
 
 ## Example
 
@@ -56,5 +60,7 @@ BEGIN
 END
 GO
 ```
+
+Voilà! That's how you can make your dynamic SQL queries easier to debug. If you're new to the whole concept of dynamic SQL queries, check [how to NOT to write dynamic SQL]({% post_url 2021-03-08-HowNotToWriteDynamicSQL %}).
 
 _Source_: [Dynamic SQL Pro Tips](https://www.brentozar.com/sql/dynamic/) 
