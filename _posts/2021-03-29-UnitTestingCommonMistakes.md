@@ -14,7 +14,7 @@ First, keep your tests in the right place. Have one test project per project, on
 
 **Choose a naming convention for your test names and stick to it.**
 
-In [our previous post](({% post_url 2021-03-15-UnitTesting101 %})), we covered two naming conventions. An "ItShould" sentence and the "UnitOfWork_Scenario_ExpectedResult", a three-part name separated with underscores. You can choose the one you like the most.
+In [our previous post]({% post_url 2021-03-15-UnitTesting101 %}), we covered two naming conventions. An "ItShould" sentence and the "UnitOfWork_Scenario_ExpectedResult", a three-part name separated with underscores. You can choose the one you like the most.
 
 That time, for Stringie `Remove()` method, following the "UnitOfWork_Scenario_ExpectedResult" convention, we wrote test names like these ones:
 
