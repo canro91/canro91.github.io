@@ -277,7 +277,7 @@ Also, do you remember why we named our fake `FixedDateClock`? No? You can tell i
 
 Voilà! Those are five tips to write better stubs and mocks. Remember, write dumb fakes. Don't put too much logic in them. Let the tests fake their own values.
 
-If you want to start using a mocking library, read my post on [how to write fakes with Moq]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}).
+If you want to start using a mocking library, read my post on [how to write fakes with Moq]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}). And, if you find yourself writing lots of fakes for a single component, check [automocking with TypeBuilder and AutoFixture]({% post_url 2021-06-21-WriteSimplerTestsTypeBuilderAndAutoFixture %}).
 
 If you're new to unit testing, read [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}), [4 common mistakes when writing your first tests]({% post_url 2021-03-29-UnitTestingCommonMistakes %}) and [4 test naming conventions]({% post_url 2021-04-12-UnitTestNamingConventions %}).
 

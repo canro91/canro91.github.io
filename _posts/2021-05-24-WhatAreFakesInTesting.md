@@ -71,7 +71,7 @@ public class CreditCardValidationTests
 }
 ```
 
-Well, that `FixedDateClock` is a fake. It replaces the `SystemClock` holding the real date and time with a testable replacement. With that fake in place, we make our tests use any date and time we want instead of the real date and time.
+Well, that `FixedDateClock` is a fake. It replaces the `SystemClock` holding the real date and time with a testable alternative. With that fake in place, we make our tests use any date and time we want instead of the real date and time.
 
 To be more precise, the `FixedDateClock` is a stub. But, let's find out about stubs and mocks.
 
@@ -206,7 +206,7 @@ Voilà! That's what fakes are in unit testing. Remember, stubs provide values fo
 
 Often, we use the terms fake, stubs and mocks interchangeably. And sometimes we use the term "mocking" to mean the replacement of external components with testable equivalents. But, we have seen there's a distinction between all these terms.
 
-You can use mocking libraries to create your fakes, either stubs or mocks. If you want to start with a mocking library, read my post on [how to write fakes with Moq]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}).
+You can use mocking libraries to create your fakes, either stubs or mocks. If you want to start with a mocking library, read my post on [how to write fakes with Moq]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}). Also, check these [tips to write better stubs and mocks]({% post_url 2021-06-07-TipsForBetterStubsAndMocks %}).
 
 If you're new to unit testing, read [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}), [4 common mistakes when writing your first tests]({% post_url 2021-03-29-UnitTestingCommonMistakes %}) and [4 test naming conventions]({% post_url 2021-04-12-UnitTestNamingConventions %}).
 
