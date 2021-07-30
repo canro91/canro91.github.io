@@ -8,6 +8,12 @@ cover-alt: 4 common mistakes when writing your first unit tests
 
 Last time, we covered how to [write our first unit tests]({% post_url 2021-03-15-UnitTesting101 %}) with C# and MSTest. We started from a Console program and converted it into our first unit tests. We wrote those tests for Stringie, a (fictional) library to manipulate strings with more readable methods. This time, we will cover how NOT to write unit tests. These are four common mistakes we should avoid when writing our first unit tests.
 
+> TL;DR
+> 1. Do not follow a naming convention
+> 2. Do not use the right assertion methods
+> 3. Do not have a single assertion per test
+> 4. Repeat logic in your assertions
+
 ## 1. Do not follow a naming convention
 
 First, keep your tests in the right place. Have one test project per project, one test class per class. Add the suffix "Tests" in the name of your test projects and classes.
