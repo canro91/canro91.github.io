@@ -8,7 +8,7 @@ cover-alt: 4 test naming conventions
 
 From our previous post, we learned about [4 common mistakes]({% post_url 2021-03-29-UnitTestingCommonMistakes %}) we make when writing our first unit tests. One of them is not to follow a naming convention. Let's see four naming conventions for our unit tests.
 
-**Test names should tell the scenario under test and the expected results**. Long names are acceptable when writing unit tests since test names show the purpose behind what they're testing. Assertion messages aren't needed if you name your test the right way. 
+**Test names should tell the scenario under test and the expected result. Writing long names is acceptable since test names should show the purpose behind what they're testing. When writing tests, prefer good test names over assertion messages.**
 
 These are 4 common naming conventions we can use. Let's continue to use Stringie, a (fictional) library to manipulate strings. Stringie has a `Remove()` method to remove a substring from the beginning or the end of an input string.
 
@@ -74,7 +74,7 @@ public class RemoveGivenASubstring
     
 This naming convention uses sentences in plain English too. In this case, class names will act as the subject of our sentences and method names as the verb and the complement. We write units of work or entry points in class names and expected results in method names.
 
-Also, we can split different scenarios in separate classes. We add the scenarios in class names with the work `Given` followed by the scenario under test.
+Also, we can split different scenarios in separate classes. We add the scenarios in class names with the keyword `Given` followed by the scenario under test.
 
 For our `Remove()` method, we can name our test class `RemoveGivenASubstring` and our test methods `RemovesOnlyASubstring` and `RemovesSubstringFromTheEnd`.
 
