@@ -13,11 +13,11 @@ While looking up what I could do to tune my queries, I found Pinal Dave from [SQ
 
 These are six tips from Pinal's blog and online presentations I've applied recently. Please, test these changes in a development or staging environment before making anything on your production servers.
 
-## 1. Enable automatic statistics update 
+## 1. Enable automatic update of statistics 
 
 **Turn on automatic update of statistics.** You should turn it off if you're updating a really long table during your work-hours.
 
-You can [enable automatic statistic update](https://blog.sqlauthority.com/2009/10/15/sql-server-enable-automatic-statistic-update-on-database/) with this query:
+This is how to enable automatic update of statistic update. [[Source]](https://blog.sqlauthority.com/2009/10/15/sql-server-enable-automatic-statistic-update-on-database/)
 
 ```sql
 USE <YourDatabase>;
@@ -41,7 +41,7 @@ GO
 
 Add size and file growth to your database. Make it your weekly file growth. Otherwise, change it to 200 or 250MB.
 
-From SQL Server Management Studio, to change the file autogrowth, go to your database properties and then to Files. Click on the three dots in the Autogrowth column. 
+From SQL Server Management Studio, to change the file autogrowth, go to your database properties and then to Files. Click on the three dots in the Autogrowth column. And, change the file growth.
 
 {% include image.html name="FileAutogrowth.png" caption="Files page from Database properties in SQL Server Management Studio" alt="Files page from Database properties in SQL Server Management Studio" width="800px" %}
 
@@ -49,7 +49,7 @@ From SQL Server Management Studio, to change the file autogrowth, go to your dat
 
 Implicit conversions happen when SQL Server needs to convert between two data types in a `WHERE` or in `JOIN`.
 
-For example, the query 
+For example, the query below with `OrderNumber` as a `VARCHAR(20)` has implicit warning when we compare it to a INT parameter.
 
 ```sql
 DECLARE @OrderNumber INT = 123;
@@ -60,11 +60,11 @@ WHERE OrderNumber = @OrderNumber;
 GO
 ```
 
-with `OrderNumber` defined as a `VARCHAR(20)` column has implicit warning when compared to an integer. SQL Server has to go through all the rows in the `Orders` table to convert the order number from `VARCHAR` to `INT`.
+To run this query, SQL Server has to go through all the rows in the `dbo.Orders` table to convert the `OrderNumber` from `VARCHAR(20)` to `INT`.
 
 To decide when implicit conversion happens, you can check [Microsoft Data Type Precedence table](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-type-precedence-transact-sql?view=sql-server-ver15). Types with lower precedence convert to types with higher precedence. For example, `VARCHAR` will be always converted to `INT` and to `NVARCHAR`.
 
-You can use this script to [indentify queries with implicit conversion](https://blog.sqlauthority.com/2018/06/11/sql-server-how-to-fix-convert_implicit-warnings/).
+Use the below script to indentify queries with implicit conversion. [[Source]](https://blog.sqlauthority.com/2018/06/11/sql-server-how-to-fix-convert_implicit-warnings/).
 
 ```sql
 SELECT TOP(50) DB_NAME(t.[dbid]) AS [Database Name], 
@@ -95,7 +95,7 @@ ORDER BY qs.total_worker_time DESC OPTION (RECOMPILE);
 
 After updating your SQL Server, make sure to update the compatibility level of your database to the highest level supported by the current version of your SQL Server.
 
-You can check SQLAuthority blog on [how to change compatibility level](https://blog.sqlauthority.com/2017/05/22/sql-server-change-database-compatibility-level/) for more details on how to change it.
+You can change your SQL Server compatibility level using SQL Server Management Studio or with  TSQL query. [[Source]](https://blog.sqlauthority.com/2017/05/22/sql-server-change-database-compatibility-level/).
 
 ```sql
 ALTER DATABASE <YourDatabase>
@@ -106,7 +106,7 @@ SET COMPATIBILITY_LEVEL = { 150 | 140 | 130 | 120 | 110 | 100 | 90 }
 
 Create your missing indexes. But, don't create them all. Create the first 10 missing indexes in your database. Stick to having around 5 indexes per table.
 
-You can use the next script to [find the missing indexes in your database](https://blog.sqlauthority.com/2011/01/03/sql-server-2008-missing-index-script-download/). But, don't blindly add new indexes. Check the indexes you already have and the estimated impact of the missing indexes. 
+You can use the next script to find the missing indexes in your database. [[Source]](https://blog.sqlauthority.com/2011/01/03/sql-server-2008-missing-index-script-download/). But, don't blindly add new indexes. Check the indexes you already have and the estimated impact of the missing indexes.
 
 ```sql
 SELECT TOP 25
@@ -159,7 +159,7 @@ Also, keep in mind if you rebuild an index for a table, SQL Server will remove a
 <iframe src="https://www.youtube-nocookie.com/embed/SqhX8OaOI6A?start=395&rel=0&fs=0" width="640" height="360" frameborder="0"></iframe>
 </div>
 
-You can [find your unused indexes](https://blog.sqlauthority.com/2011/01/04/sql-server-2008-unused-index-script-download/) with the next script. Look for indexes with zero seeks/scans and lots of updates. They're good candidates to drop.
+You can find your unused indexes with the next script. [[Source]](https://blog.sqlauthority.com/2011/01/04/sql-server-2008-unused-index-script-download/). Look for indexes with zero seeks/scans and lots of updates. They're good candidates to drop.
 
 ```sql
 SELECT TOP 25
