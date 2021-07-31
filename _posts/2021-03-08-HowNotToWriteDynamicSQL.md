@@ -30,7 +30,7 @@ GO
 
 Sometimes, we use the `ISNULL()` or `COALESCE()` functions instead of `IS NULL`. But, those are variations on the same theme.
 
-The more optional parameters our stored procedure has, the worse our query gets. SQL Server will scan more rows than what it needs.
+The more optional parameters our stored procedure has, the worse our query gets. SQL Server will scan more rows than what it really needs.
 
 <figure>
 <img src="https://images.unsplash.com/photo-1548630435-998a2cbbff67?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="How not to write Dynamic SQL" />
@@ -65,7 +65,7 @@ END
 GO
 ```
 
-We moved the exact same query to a string and ask SQL Server to execute that string. That won't make any difference between the execution plans of both versions. We only put makeup on the problem. _Arggg!_
+We moved the exact same query to a string and asked SQL Server to execute that string. That won't make any difference between the execution plans of both versions. We only put makeup on the problem. _Arggg!_
 
 ## With Dynamic SQL, the right way
 
@@ -101,7 +101,7 @@ END
 GO
 ```
 
-First, we created a `@StringToExecute` variable with the first part of the SELECT.
+First, we created a `@StringToExecute` variable with the first part of the SELECT. We added `1 = 1` on the WHERE to easily add conditions prefixed in the next steps.
 
 Then, notice the two IF statements. We added the conditions to the WHERE clause depending on the parameter passed.
 
