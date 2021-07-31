@@ -87,3 +87,7 @@ For shortcuts, add `Ctrl+Shift+w` to easily close all documents from the keyboar
 * [Moq.Autocomplete](https://github.com/Litee/moq.autocomplete) If you use [Moq to create fakes]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}), this extension is for you. Inside the `Setup()` methods, it autocompletes the parameter list of the faked method using `It.IsAny<T>()` for each parameter. A time saver! I use this extension along with these [snippets for Moq]({% post_url 2021-02-22-VisualStudioMoqSnippets %}).
 
 Voilà! That's how I use Visual Studio 2019 for C# coding. If you're wondering what's Vim and why you should learn it, check my post [Learning Vim for Fun and Profit]({% post_url 2020-09-14-LearnVimForFunAndProfit %}).
+
+For more productivity tools and tricks, check these [programs that saved me 100 hours]({% post_url 2020-04-13-ProgramThatSave100Hours %}) and how I used a Visual Studio extension and a Git feature to [get rid of two recurrent review comments]({% post_url 2020-09-02-TwoRecurringReviewComments %}).
+
+_Happy coding!_

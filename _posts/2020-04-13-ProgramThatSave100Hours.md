@@ -32,7 +32,7 @@ alias gpo='git push origin -u '
 alias gconf='git diff --name-only --diff-filter=U'
 ```
 
-Not Git related, but I have also created some aliases to use the Pomodoro technique
+Not Git related, but I have also created some aliases to use the Pomodoro technique.
 
 ```bash
 alias pomo='sleep 1500 && echo "Pomodoro" && tput bel' 
@@ -64,6 +64,6 @@ echo "$TICKET $MESSAGE" > $FILE
 
 * [MappingGenerator](https://marketplace.visualstudio.com/items?itemName=54748ff9-45fc-43c2-8ec5-cf7912bc3b84.mappinggenerator) I found this extension recently and it has been a time saver. You need to initialize an object with default values? You need to create a view model or DTO from a business object? MappingGenerator got you covered!
 
-Voilà! These are the tools that have saved me 100 hours!
+Voilà! These are the tools that have saved me 100 hours! If you want to try more Visual Studio extension, check my [Visual Studio Setup for C#]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %}). If you're new to Git, check my [Git Guide for Beginners]({% post_url 2020-05-29-HowToVersionControl %}) and my [Git guide for TFS Users]({% post_url 2019-11-11-GitGuideForTfsUsers %}).
 
 _Happy coding!_
