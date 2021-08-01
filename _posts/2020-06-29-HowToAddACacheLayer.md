@@ -81,7 +81,7 @@ You can choose between sliding and absolute expiration times:
 
 Don't forget to include a size for each cache entry, if you use `SizeLimit` when registering the in-memory cache into the dependency container. This `Size` tells how many "places" from `SizeLimit` an entry takes. 
 
-When the `SizeLimit` value is reached, the cache won't store any more entries until some of them expire. For more details, see [Use SetSize, Size, and SizeLimit to limit cache size](https://docs.microsoft.com/en-us/aspnet/core/performance/caching/memory?view=aspnetcore-3.1#use-setsize-size-and-sizelimit-to-limit-cache-size).
+When the `SizeLimit` value is reached, the cache won't store any more entries until some of them expire. For more details, see ASP.NET Core documentation on [SetSize, Size, and SizeLimit](https://docs.microsoft.com/en-us/aspnet/core/performance/caching/memory?view=aspnetcore-3.1#use-setsize-size-and-sizelimit-to-limit-cache-size).
 
 ```csharp
 public static class MemoryCacheExtensions
@@ -115,7 +115,7 @@ public static class MemoryCacheExtensions
 
 ### Register your in-memory cache
 
-To start using the new `CachedSettingsService`, you need to register it into the dependency container. _Back to the `Startup` class!_ Register the existing `SettingsService` and the new decorated service. You can use [Scrutor](https://github.com/khellang/Scrutor) to [register your decorators](https://andrewlock.net/adding-decorated-classes-to-the-asp.net-core-di-container-using-scrutor/).
+To start using the new `CachedSettingsService`, you need to register it into the dependency container. _Back to the `Startup` class!_ Register the existing `SettingsService` and the new decorated service. You can use [Scrutor](https://github.com/khellang/Scrutor) to register your decorators.
 
 ```csharp
 // Startup.cs
@@ -183,7 +183,7 @@ Now, let's move to the distribute cache.
 
 A distributed cache layer lives in a separate server. You aren't limited to the memory of the server running your API site.
 
-A distributed cache makes sense when you want to share your cache server among multiple applications. Or, when your site is running behind a load-balancer along many instances of the same server. For more advantages of distributed cache, see [Distributed caching in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/performance/caching/distributed?view=aspnetcore-3.1)
+A distributed cache makes sense when you want to share your cache server among multiple applications. Or, when your site is running behind a load-balancer along many instances of the same server. For more advantages of distributed cache, see ASP.NET Docs on [Distributed caching in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/performance/caching/distributed?view=aspnetcore-3.1)
 
 ### Redis and ASP.NET Core
 
@@ -341,6 +341,6 @@ Voilà! Now you know how to cache the results of a slow service using an in-memo
 
 If you need to cache outside of an ASP.NET Core site, you can use libraries like [CacheManager](https://github.com/MichaCo/CacheManager), [Foundatio](https://github.com/FoundatioFx/Foundatio#caching) and [Cashew](https://github.com/joakimskoog/Cashew).
 
-To learn more about configuration in ASP.NET Core, read my post on [how to read configuration values in ASP.NET Core](https://canro91.github.io/2020/08/21/HowToConfigureValues/). Also, check my post on [how to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %}).
+To learn more about configuration in ASP.NET Core, read my post on [how to read configuration values in ASP.NET Core]({% post_url 2020-08-21-HowToConfigureValues %}). To read more about fakes and unit testing, check [what are fakes in unit testing]({% post_url 2021-05-24-WhatAreFakesInTesting %}) and [how to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %}).
 
 _Happy caching time!_
