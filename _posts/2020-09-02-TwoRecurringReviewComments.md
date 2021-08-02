@@ -68,7 +68,7 @@ But, to enforce this convention with a Visual Studio extension, you rely on deve
 
 Voilà! That's how I got rid of these two recurring comments while code review. For more productive code reviews, read my [Tips and Tricks for Better Code Reviews](https://canro91.github.io/2019/12/17/BetterCodeReviews/).
 
-For more extensions to make you more productive with Visual Studio, check [my Visual Studio Setup](https://canro91.github.io/2019/06/28/MyVSSetupSharpeningTheAxe/).
+For more extensions to make you more productive with Visual Studio, check [my Visual Studio Setup]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %}).
 
 If you're new to Git, check my [Git Guide for Beginners]({% post_url 2020-05-29-HowToVersionControl %}) and my [Git guide for TFS Users]({% post_url 2019-11-11-GitGuideForTfsUsers %}).
 
