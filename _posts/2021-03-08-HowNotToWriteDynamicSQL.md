@@ -10,7 +10,7 @@ Last time, I showed you [three tips to debug your Dynamic SQL]({% post_url 2020-
 
 ## Without Dynamic SQL
 
-Let's go back to the stored procedure `dbo.usp_SearchUsers` from our previous post [on debugging Dynamic SQL queries]({% post_url 2020-12-03-DebugDynamicSQL %}). This stored procedure finds StackOverflow users by display name or location.
+Let's go back to the stored procedure `dbo.usp_SearchUsers` from our previous post [on debugging Dynamic SQL queries]({% post_url 2020-12-03-DebugDynamicSQL %}). This stored procedure finds StackOverflow users by display name or location or both.
 
 Without Dynamic SQL, we end up with funny comparisons in the WHERE clause. First, we check if the optional parameters have value. To then, with an OR, add the right comparisons. Everything in a single statement.
 
@@ -18,6 +18,7 @@ Without Dynamic SQL, we end up with funny comparisons in the WHERE clause. First
 CREATE OR ALTER PROC dbo.usp_SearchUsers
   @SearchDisplayName NVARCHAR(100) = NULL,
   @SearchLocation NVARCHAR(100) = NULL
+AS
 BEGIN
     
   SELECT TOP 100 *
@@ -28,9 +29,15 @@ END
 GO
 ```
 
+Let's run our stored procedure searching only by DisplayName and see its execution plan.
+
+{% include image.html name="NoDynamicSQL.png" caption="Search for only a single user by DisplayName" alt="Execution plan of searching users by DisplayName" width="800px" %}
+
+Notice SQL Server had to scan the `DisplayName` index and see the number of rows read.
+
 Sometimes, we use the `ISNULL()` or `COALESCE()` functions instead of `IS NULL`. But, those are variations on the same theme.
 
-The more optional parameters our stored procedure has, the worse our query gets. SQL Server will scan more rows than what it really needs.
+The more optional parameters our stored procedure has, the worse our query gets. SQL Server will scan entire tables or indexes to satify our query.
 
 <figure>
 <img src="https://images.unsplash.com/photo-1548630435-998a2cbbff67?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="How not to write Dynamic SQL" />
@@ -107,7 +114,11 @@ Then, notice the two IF statements. We added the conditions to the WHERE clause 
 
 After that, we executed the query inside the string with `sp_executesql` with the parameter declaration and the parameters themselves.
 
-With Dynamic SQL, our stored procedure will generate one execution plan for each set of parameters. This time, SQL Server could use the right indexes to run each query. That's the point of using Dynamic SQL.
+{% include image.html name="WithDynamicSQL.png" caption="Search for only a single user by DisplayName with Dynamic SQL" alt="Execution plan of searching users by DisplayName" width="800px" %}
+
+With Dynamic SQL, our stored procedure will generate one execution plan for each set of different parameters. That's the point of using Dynamic SQL.
+
+This time, SQL Server could seek on `DisplayName` instead of scanning it. That's better.
 
 Voilà! That's how NOT to write a stored procedure with optional parameters with Dynamic SQL. Notice that to make things simple, we didn't follow all the tips to [make our Dynamic SQL easier to debug]({% post_url 2020-12-03-DebugDynamicSQL %}).
 
