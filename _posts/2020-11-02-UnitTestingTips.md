@@ -8,7 +8,7 @@ cover-alt: Two issues to avoid to write good unit tests
 
 These days, I needed to update some tests. I found two types of issues on them. Please, continue to read. Maybe, you're a victim of those issues, too.
 
-To write good unit tests, avoid **complex setup scenarios** and **hidden test values** in your tests. Often tests are bloated with unneeded or complex code in the Arrange part and full of magic or hidden test values. Unit tests should be readable, even more readable than production code.
+**To write good unit tests, avoid complex setup scenarios and hidden test values. Often tests are bloated with unneeded or complex code in the Arrange part and full of magic or hidden test values. Unit tests should be even more readable than production code**.
 
 ## The tests
 
@@ -52,9 +52,11 @@ public Task AccountController_SenderEmailIsNull_ThrowsException()
 }
 ```
 
-This tests uses [Moq](https://github.com/moq/moq4), a mocking library for .NET. I already wrote about [how to create mocks with Moq]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}).
+This tests uses [Moq to create stubs and mocks]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}).
 
-Can you spot any issues in our sample test? The naming convention isn't one. Let's see the two issues to avoid in our sample test. 
+Can you spot any issues in our sample test? The naming convention isn't one, by the way.
+
+Let's see the two issues to avoid to write good unit tests.
 
 <figure>
 <img src="https://images.unsplash.com/32/6Icr9fARMmTjTHqTzK8z_DSC_0123.jpg?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop&ixid=eyJhcHBfaWQiOjF9" alt="Adjusting dials on a mixer" />
@@ -64,11 +66,11 @@ Can you spot any issues in our sample test? The naming convention isn't one. Let
 
 ## 1. Reduce the noise
 
-Our sample test only cares about one object, `IOptions<EmailConfiguration>`. All other objects are noise. They don't have anything to do with scenario under test.
+Our sample test only cares about one object, `IOptions<EmailConfiguration>`. All other objects are noise for the purpose of this test. They don't have anything to do with the scenario under test.
 
 **Use builder methods to reduce complex setup scenarios.**
 
-Let's reduce the noise from our example with a `MakeAccountController()` method. It will receive the only parameter the test needs.
+Let's reduce the noise from our test with a `MakeAccountController()` method. It will receive the only parameter the test needs.
 
 After this change, our test looked like this:
 
@@ -87,6 +89,8 @@ public void AccountController_SenderEmailIsNull_ThrowsException()
     // Notice how we reduced the noise with a builder
     Assert.ThrowsException<ArgumentNullException>(() =>
         MakeAccountController(emailConfig.Object));
+    
+    // We don't neet a return statement here
 }
 
 private AccountController MakeAccountController(IOptions<EmailConfiguration> emailConfiguration)
@@ -116,9 +120,9 @@ With this refactor, our test started to look simpler and easier to read. Now, it
 
 ## 2. Make your test values obvious
 
-In our example, the test name states the sender email is null. Anyone reading this test would expect to see a variable set to null and passed around. But, that's not the case.
+Our test states in its name that the sender email is null. Anyone reading this test would expect to see a variable set to null and passed around. But, that's not the case.
 
-**Make your scenario under test and test values extremely obvious**. Please, don't make developers to decode your tests.
+**Make scenarios under test and test values extremely obvious**. Please, don't make developers to decode your tests.
 
 To make the test scenario obvious in our example, let's add `SenderEmail = null` to the intialization of the `EmailConfiguration` object.
 
@@ -141,7 +145,13 @@ public void AccountController_SenderEmailIsNull_ThrowsException()
 }
 ```
 
-Finally, as an aside, we don't need a mock on `IOptions<EmailConfiguration>`. We can use the `Option.Create()` method instead. Let's do it.
+If we have similar scenarios, we can use a constant like `const string NoEmail = null`. Or prefer [object mothers and builders to create test data]({% post_url 2021-04-26-CreateTestValuesWithBuilders %}).
+
+Finally, as an aside, we don't need a mock on `IOptions<EmailConfiguration>`.
+
+**Don't use a mock or a stub with the IOptions interface. That would introduce extra complexity. Use Options.Create() with the value to configure.**
+
+Let's use the `Option.Create()` method instead.
 
 ```csharp
 [TestMethod]
@@ -161,6 +171,6 @@ public void AccountController_SenderEmailIsNull_ThrowsException()
 
 Voilà! That's way easier to read. Do you have noise and hidden test values in your own tests? Remember, readability is one of the pillars of unit testing. Don't make developers to decode your tests.
 
-For other tips on writing unit tests, you can check my takeaways from the book [The Art of Unit Testing]({% post_url 2020-03-06-TheArtOfUnitTestingReview %}) and my post on [how to create test values with the Builder pattern]({% post_url 2021-04-26-CreateTestValuesWithBuilders %}).
+For other tips on writing unit tests, check my follow-up on [writting failing tests first]({% post_url 2021-02-05-FailingTest %}) and my [Unit Testing Best Practices]({% post_url 2021-07-05-UnitTestingBestPractices %}). Also, check my takeaways from the book [The Art of Unit Testing]({% post_url 2020-03-06-TheArtOfUnitTestingReview %}).
 
 _Happy unit testing!_
