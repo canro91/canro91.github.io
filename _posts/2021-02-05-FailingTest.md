@@ -8,7 +8,7 @@ cover-alt: How to write good unit tests? Have a failing test
 
 A passing test isn't always the only thing to look for. Seeing your test fail is important too. I learned this lesson the hard way. Let's see why we should start writing failing tests.
 
-**To write reliable unit tests, always start writing a failing test. And, make sure it fails for the right reasons.** Follow the Red, Green, Refactor principle of Test-Driven Development (TDD). Write a failing test, make it pass and refactor the code. Don't skip the failing test part.
+**To write reliable unit tests, always start writing a failing test. And, make sure it fails for the right reasons. Follow the Red, Green, Refactor principle of Test-Driven Development (TDD). Write a failing test, make it pass and refactor the code. Don't skip the failing test part.**
 
 ## The Passing test
 
