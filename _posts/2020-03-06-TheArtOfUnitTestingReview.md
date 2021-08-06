@@ -54,7 +54,7 @@ Therefore, **separate your unit tests from your integration tests**. Put them in
 
 **Use UnitOfWork_Scenario_ExpectedBehaviour for your test names**. You can read it as follow: when calling *"UnitOfWork"* with *"Scenario"*, then it *"ExpectedBehaviour"*. 
 
-In this naming convention, a [Unit of Work](https://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html?rq=unit%20test) is any logic exposed through public methods that returns value, changes the state of the system or makes an external invocation.
+In this naming convention, a Unit of Work is any logic exposed through public methods that returns value, changes the state of the system or makes an external invocation.
 	
 With this naming convention is clear the logic under test, the inputs and the expected result. You will end up with long test names, but it's OK to have long test names for the sake of readability.
 
@@ -64,10 +64,10 @@ With this naming convention is clear the logic under test, the inputs and the ex
 
 Often, SetUp methods end up with initialization for only some tests. Tests should create their own world. **Initialize what's needed inside every test using builders**.
 
-Voilà! These are my main takeaways. Unit testing is a broad subject. [The Art of Unit Testing](https://www.manning.com/books/the-art-of-unit-testing-second-edition) cover almost all you need to know about it. The main lesson from this book is to write readable, maintainable and trustworthy tests. Remember the next person reading your tests will be you.
+Voilà! These are my main takeaways. Unit testing is a broad subject. The Art of Unit Testing cover almost all you need to know about it. The main lesson from this book is to write readable, maintainable and trustworthy tests. Remember the next person reading your tests will be you.
 
 > "Your tests are your safety net, so do not let them rot."
 
-If you're new to unit testing, start reading my [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}). You will write your first unit test in C# with MSTest.
+If you're new to unit testing, start reading my [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}). You will write your first unit test in C# with MSTest. For more naming convetions, check [how to name your unit tests]({% post_url 2021-04-12-UnitTestNamingConventions %}).
 
 _Happy testing!_
