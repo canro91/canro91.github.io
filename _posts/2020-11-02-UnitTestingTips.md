@@ -122,7 +122,9 @@ With this refactor, our test started to look simpler and easier to read. Now, it
 
 Our test states in its name that the sender email is null. Anyone reading this test would expect to see a variable set to null and passed around. But, that's not the case.
 
-**Make scenarios under test and test values extremely obvious**. Please, don't make developers to decode your tests.
+**Make scenarios under test and test values extremely obvious**.
+
+Please, don't make developers to decode your tests.
 
 To make the test scenario obvious in our example, let's add `SenderEmail = null` to the intialization of the `EmailConfiguration` object.
 
