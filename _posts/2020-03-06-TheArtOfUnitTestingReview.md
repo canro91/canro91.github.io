@@ -68,6 +68,6 @@ Voilà! These are my main takeaways. Unit testing is a broad subject. The Art of
 
 > "Your tests are your safety net, so do not let them rot."
 
-If you're new to unit testing, start reading my [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}). You will write your first unit test in C# with MSTest. For more naming convetions, check [how to name your unit tests]({% post_url 2021-04-12-UnitTestNamingConventions %}).
+If you're new to unit testing, start reading my [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}). You will write your first unit test in C# with MSTest. For more naming conventions, check [how to name your unit tests]({% post_url 2021-04-12-UnitTestNamingConventions %}).
 
 _Happy testing!_

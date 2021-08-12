@@ -144,6 +144,6 @@ public class ReliableConnection : DbConnectionWrapper
 
 Voilà! That's the difference between `Func` and `Action`. Remember that they only represent the signature of a method. You can define or pass around the body later.
 
-If you want to know more about LINQ, check my [quick guide to LINQ]({% post_url 2021-01-18-LinqGuide %}). To learn how to use Insight.Datase, check [how to create a CRUD API with ASP.NET Core and Insight.Database](% post_url 2020-05-01-InsightDatabase %).
+If you want to know more about LINQ, check my [quick guide to LINQ]({% post_url 2021-01-18-LinqGuide %}). To learn how to use Insight.Database, check [how to create a CRUD API with ASP.NET Core and Insight.Database](% post_url 2020-05-01-InsightDatabase %).
 
 _Happy Funcy time!_
