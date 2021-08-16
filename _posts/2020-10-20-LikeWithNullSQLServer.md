@@ -4,9 +4,11 @@ title: "TIL: NULL isn't LIKE anything else in SQL Server"
 tags: todayilearned sql
 ---
 
-How does `LIKE` operator handle `NULL` values? `NULL` and `LIKE` don't get along. If you're using the `LIKE` operator on a nullable column, all rows containing `NULL` values won't be included in the results. And, the same is true for `NOT LIKE`. Rows with `NULL` values won't be included with `NOT LIKE`.
+How does the LIKE operator handle NULL values of a column? Let's see what SQL Server does when using LIKE with a nullable column.
 
-Let's see an example. It uses a `Client` table with an ID, name and middleName. Only two of the four clients have a middlename.
+**When using the LIKE operator on a nullable column, SQL Server doesn't include in the results rows with NULL values in that column. The same is true, when using NOT LIKE in a WHERE clause.**
+
+Let's see an example. Let's create a `Client` table with an ID, name and middleName. Only two of the four sample clients have a middlename.
 
 ```sql
 CREATE TABLE #Clients
@@ -42,18 +44,10 @@ GO
 
 Notice the results don't include any rows with `NULL` middlenames.
 
-```
-ID          Name                 MiddleName
------------ -------------------- --------------------
-1           Alice                A
+{% include image.html name="Null&Like.png" alt="Results of querying a nullable column with LIKE" caption="Results of querying a nullable column with LIKE and NOT LIKE" %}
 
-(1 row affected)
+Voilà! That's how SQL Server handle NULL when using LIKE and NOT LIKE. Remember you don't need to check for null values.
 
-ID          Name                 MiddleName
------------ -------------------- --------------------
-3           Charlie              C
-
-(1 row affected)
-```
+If you want to read more SQL Server content, check [six performance tuning tips]({% post_url 2020-09-28-SQLServerTuningTips %}) and the lessons learned while [tuning a store procedure to search reservations]({% post_url 2020-10-14-SearchingReservations %}).
 
 _Source_: [NULL is NOT LIKE and NOT NOT LIKE](https://weblogs.sqlteam.com/markc/2009/06/08/60929/)
