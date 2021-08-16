@@ -169,7 +169,7 @@ For example, prefer `Assert.IsNull(result);` over `Assert.AreEqual(null, result)
 
 When working with strings, prefer `StringAssert` methods like `Contains()`, `StartsWith()` and `Matches()` instead of exactly comparing two strings. That would make your tests easier to maintain.
 
-Voilà! These are 5 tips to write better assertions. If you want a more complete list of best practices to write your unit tests, check my post [Unit Testing Best Practices: A Checklist]({% post_url 2021-07-05-UnitTestingBestPractices %}).
+Voilà! These are 5 tips to write better assertions. If you want a more complete list of best practices to write your unit tests, check my post [Unit Testing Best Practices: A Checklist]({% post_url 2021-07-05-UnitTestingBestPractices %}). And, don't miss [how to write custom assertions]({% post_url 2021-08-16-WriteCustomAssertions %}) to write even more readable tests.
 
 If you're new to unit testing, start reading [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}) and [4 common unit testing mistakes]({% post_url 2021-03-29-UnitTestingCommonMistakes %}). For more advanced tips, check [how to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %}) and [always write failing tests]({% post_url 2021-02-05-FailingTest %}).
 
