@@ -108,7 +108,9 @@ END
 GO
 ```
 
-First, we created a `@StringToExecute` variable with the first part of the SELECT. We added `1 = 1` on the WHERE to easily add conditions prefixed in the next steps.
+First, we created a `@StringToExecute` variable with the first part of the SELECT. We added `1 = 1` on the WHERE to easily add conditions in the next steps.
+
+Instead of, `1 = 1` we can also use a common or required condition for all other set of parameters.
 
 Then, notice the two IF statements. We added the conditions to the WHERE clause depending on the parameter passed.
 
