@@ -7,9 +7,9 @@ I'm Cesar Aguirre. I'm a [software engineer](https://github.com/canro91), lifelo
 
 ### What I do
 
-I’m a software engineer based in Colombia (_not Columbia_) with more than 6 years of experience. I work as a C# backend engineer. I specialize in building APIs and backend code with .NET technologies. Mostly, ASP.NET Core and ASP.NET Web API, these days.
+I’m a software engineer based in Colombia (_not Columbia_) with more than 8 years of experience. I work as a C# backend engineer. I specialize in building APIs and backend code with .NET technologies. Mostly, ASP.NET Core and ASP.NET Web API, these days.
 
-<div class="message"><em>I help .NET teams to grow high-quality backend software through clean code</em></div>
+<div class="message"><em>I help .NET development teams to grow high-quality backend software through clean code and unit testing</em></div>
 
 ### What I've done
 
@@ -52,7 +52,7 @@ If you don’t know where to start reading or if you want to find something to r
 
 #### Unit Testing
 
-* [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %})
+* [Unit Testing 101: Free eBook]({% post_url 2021-08-30-UnitTesting %})
 * [How to create fakes with Moq]({% post_url 2020-08-11-HowToCreateFakesWithMoq %})
 * [How to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %})
 
