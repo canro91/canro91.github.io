@@ -4,7 +4,9 @@ title: "The Clean Coder: Three Takeaways"
 tags: books
 ---
 
-The Clean Coder is the second book on the Clean Code trilogy. It should be a mandatory reading for any professional programmer. This book isn't about programming in itself. It's about the professional practice of programming. It covers from what is professionalism to testing strategies, pressure and time management.
+The Clean Coder is the second book on the Clean Code trilogy. It should be a mandatory reading for any professional programmer. These are my main takeaways.
+
+**The Clean Coder isn't about programming in itself. It's about the professional practice of programming. It covers from what is professionalism to testing strategies, pressure and time management.**
 
 ## Professionalism
 
@@ -20,7 +22,7 @@ Professionalism is all about taking responsibility.
 * **Meetings are necessary and costly**. It’s unprofessional to attend to so many meetings.
 When the meetings get boring, be polite and ask if your presence is still needed.
 
-{% include image.html name="Quote.png" alt="Your career is your responsibility, not your employer's" caption="" %}
+{% include image.html name="Quote.png" alt="Your career is your responsibility, not your employer's" caption="One of my favorite quotes from the Clean Coder" %}
 
 ## Say No/Say Yes
 
@@ -44,6 +46,9 @@ Professionals have courage to say no to their managers. Also, as professional, y
 * **Be honest about finishing your work.** The worst attitude is when you say you’re done when you actually aren’t.
 * **Ask for help.** It’s unprofessional to remain stuck when there is help available.
 
+Voilà! These are my main points from The Clean Coder. Do you see why I think it should be a mandatory reading? Oh, I missed another thing. An estimate isn't a date, but a range of dates.
+
+If you want to read other summaries, check [Clean Code: Takeaways]({% post_url 2020-01-06-CleanCodeReview %}) and [Pragmatic Thinking and Learning: Takeaways]({% post_url 2020-05-07-PragmaticThinkingAndLearning %}).
 
 
 
