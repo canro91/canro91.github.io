@@ -6,7 +6,7 @@ tags: tutorial csharp showdev
 
 A recurring task when writing unit tests is creating replacements for collaborators. If you're writing unit tests for an order delivery system, you don't want to use a real payment gateway. You don't want to charge a credit card every time you run your tests. This is how we can create fakes using Moq.
 
-**Fakes are testable replacements for real dependencies and external systems. They're often called test doubles too.** Fakes return a fixed value or throw an exception to test the logic around the real dependency they replace. You can either create fakes by hand or use a mocking library like Moq.
+**Fakes are testable replacements for real dependencies and external systems. They're often called test doubles too. Fakes return a fixed value or throw an exception to test the logic around the real dependency they replace. You can either create fakes by hand or use a mocking library like Moq.**
 
 ## Roll your fakes
 
