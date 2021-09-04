@@ -32,7 +32,7 @@ Don't worry if you haven't started to worked with ASP.NET Core yet. This is a ne
 <figcaption>Photo by <a href="https://unsplash.com/@tateisimikito?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Jukan Tateisi</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></figcaption>
 </figure>
 
-If you are adventurous, download and install the ASP.NET Core [developer (SDK)](https://dotnet.microsoft.com/download) and create a new empty web project from Visual Studio. These are the files that you get from it.
+If you are adventurous, download and install the [ASP.NET Core developer (SDK)](https://dotnet.microsoft.com/download) and create a new empty web project from Visual Studio. These are the files that you get from it.
 
 ```
 |____appsettings.Development.json
@@ -44,11 +44,15 @@ If you are adventurous, download and install the ASP.NET Core [developer (SDK)](
 |____Startup.cs
 ```
 
-ASP.NET Core has been created with other operating systems and IDEs in mind. Now, you can create a project, compile it, and run the tests from the command line. For example, to create a new empty Web project, you can use `$ dotnet new web`
+ASP.NET Core has been created with other operating systems and IDEs in mind. Now, you can create a project, compile it, and run the tests from the command line.
+
+For example, to create a new empty Web project from the command line, you can use `$ dotnet new web`
 
 ## Where is the packages.config file?
 
-If you installed a NuGet package into your brand new ASP.NET Core project, one thing you could notice is the missing `packages.config` file. If you remember, it is an xml file that holds the packages installed. But, where in the world are those packages referenced now? In the csproj file of your project. 
+If you installed a NuGet package into your brand new ASP.NET Core project, one thing you could notice is the missing `packages.config` file. If you remember, it is an xml file that holds the packages installed.
+
+But, where in the world are those packages referenced in ASP.NET Core projects? In the csproj file of your project. 
 
 Now, a csproj file looks like this:
 
@@ -76,7 +80,9 @@ Before, things started to get complicated as time went by and the number of file
 
 ## Where is the Web.config file?
 
-Another missing file is the `Web.config` file. Instead you have a Json file: the `appsettings.json` file. You can use strings, integers and booleans in your config file. There is even support for sections and subsections. Before, if you wanted to achieve that, you had to come up with a naming convention for your keys. For example, prepending the section and subsection name in every key name. 
+Another missing file is the `Web.config` file. Instead you have a Json file: the `appsettings.json` file. You can use strings, integers, booleans and arrays in your config file.
+
+There is even support for sections and subsections. Before, if you wanted to achieve that, you had to come up with a naming convention for your keys. For example, prepending the section and subsection name in every key name. 
 
 Probably, you have used `ConfigurationManager` all over the place in your code to read configuration values. Now, you can have a class with properties mapped  to a section or subsection of your config file. And you can inject it into your services.
 
@@ -111,6 +117,8 @@ public class YourService
 Additionally, you can override keys per environment. You can use the name of your environment in the file name. For example, `appsettings.Development.json` or `appsettings.QA.json`. You can specify the current environment with an environment variable or in the `launchSettings.json` file.
 	
 There's even support for sensitive settings that you don't want to version control: `secrets.json` file. You can manage this file from the command line too.
+
+<div class="message">To learn more about configuration in ASP.NET Core, check <a href="/2020/08/21/HowToConfigureValues/">How to read configuration values in ASP.NET Core</a>.</div>
 
 ## Where is the Global.asax?
 
