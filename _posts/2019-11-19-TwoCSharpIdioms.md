@@ -68,7 +68,7 @@ var fallback = new List<Func<SomeObject>>
 var someKey = fallback.FirstOrDefault(t => t != null);
 ```
 
-Also, we can take advantage of the **Null-coalescing operator** (??) if these choice functions return `null` when a value isn't found.
+You can take advantage of the **Null-coalescing operator** (??) if these choice functions return `null` when a value isn't found.
 
 The Null-coalescing operator returns the expression on the left it it isn't null. Otherwise, it evaluates the expression on the right.
 
@@ -78,6 +78,24 @@ var someKey = FindKey() ?? FindAlternateKey() ?? FindDefaultKey();
 
 Similarly, if you need to add a new alternative, either you add it in the array or nest it instead of adding the new alternative in the `if` statement.
 
+Also, this last idiom is useful when validating an object against a list of rules or conditions. Create a function for every rule, then use `All()` LINQ method to find if the input object or value satisfy all required rules.
+
+```csharp
+var toValidate = new ComplexObject();
+
+Func<ComplexObject, bool> Validation = (obj) => /* Validate something here...*/;
+Func<ComplexObject, bool> AnotherValidation = (obj) => /* Validate something else here...*/;
+
+var validations = new List<Func<ComplexObject, bool>>
+{
+    Validation,
+    AnotherValidation
+}
+var isValid = validations.All(validation => validation(toValidate));
+```
+
 Voilà! These are our first two idioms on conditionals. I have found these two idioms more readable in some scenarios. But, don't start to rewrite or refactor your code to follow any convention you find online. Make sure to follow the conventions in your own codebase, first.
+
+These two first idioms rely on `Func` and LINQ, if you need to learn more on these subjects, check [What the Func, Action!]({% post_url 2019-03-22-WhatTheFuncAction %}) and [Quick Guide to LINQ]({% post_url 2021-01-18-LinqGuide %}).
 
 _Happy coding!_
