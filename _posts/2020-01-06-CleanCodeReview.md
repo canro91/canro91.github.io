@@ -8,7 +8,7 @@ Clean Code will change the way you code. It doesn't teach how to code in a parti
 
 The Clean Code starts defining what it's clean Code by collecting quotes from book authors and other well-known people in the field. It covers the subject of Clean Code from variables to functions to architectural design. This book is based on the premise that **code should be optimized to be read**.
 
-These are the three chapters I found instructive. The whole book is instructive. But, I could only read a few chapter, I would read these ones.
+These are the three chapters I found instructive. The whole book is instructive. But, I could only read a few chapters, I would read these ones.
 
 ## Naming
 
@@ -29,6 +29,8 @@ We all have heard that commenting our code is the right thing to do. But, this c
 Have you seen this kind of comment before? `i++; // Increment i` Have you written them? I did once.
 
 **Don't use a comment when a function or variable can be used.**
+
+Don't keep the list of changes and authors in comments at the top of your files. That's what [version control systems]({% post_url 2020-05-29-HowToVersionControl %}) are for.
 
 ## Functions
 
