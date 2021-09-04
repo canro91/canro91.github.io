@@ -6,20 +6,20 @@ tags: productivity career
 
 You're new to code reviews? You don't know what to look for in a code review? You feel frustrated with your code review? It's true that code reviews can be frustrating for the reviewer and the reviewee. Let's see how to improve our code reviews.
 
-**Code review is a stage of the software development process where a piece of code is examined to find bugs, security flaws and other issues**. Often reviewers follow a coding standard and style guide while reviewing code.
-
-## Advantages
-
-Code reviews are a great tool to identify bugs before the code head to the QA team or your end users. Sometimes you need another pair of eyes to spot unnoticed things in your code.
-
-Also, code reviews ensure the quality of the code doesn't degrade as the project moves forward. They help to spread knowledge inside a team and mentor newcomers or juniors.
-
-Now that we know what code reviews are good for, let' see what to look for during code reviews and tips for each role in the review process.
+**Code review is a stage of the software development process where a piece of code is examined to find bugs, security flaws and other issues. Often reviewers follow a coding standard and style guide while reviewing code.**
 
 > TL;DR
 > 1. For the reviewer: Be nice. Remember you are reviewing the code, not the writer.
 > 2. For the reviewee: Don't take it personal. Every code review is an opportunity to learn.
 > 3. For all the dev team: Reviews take time too. Add them to your estimates.
+
+## Advantages of Code Reviews
+
+**Code reviews are a great tool to identify bugs before the code head to the QA team or your end users**. Sometimes you need another pair of eyes to spot unnoticed things in your code.
+
+Also, **code reviews ensure the quality of the code doesn't degrade as the project moves forward**. They help to spread knowledge inside a team and mentor newcomers or juniors.
+
+Now that we know what code reviews are good for, let' see what to look for during code reviews and tips for each role in the review process.
 
 ## What to look for in a code review?
 
