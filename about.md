@@ -7,7 +7,7 @@ I'm Cesar Aguirre. I'm a [software engineer](https://github.com/canro91), lifelo
 
 ### What I do
 
-I’m a software engineer based in Colombia (_not Columbia_) with more than 8 years of experience. I work as a C# backend engineer. I specialize in building APIs and backend code with .NET technologies. Mostly, ASP.NET Core and ASP.NET Web API, these days.
+I’m a software engineer based in Colombia (_not Columbia_) with more than 8 years of experience. I work as a C# backend engineer. I specialize in building APIs and backend code with .NET technologies. Mostly, ASP.NET Core, ASP.NET Web API and SQL Server, these days.
 
 <div class="message"><em>I help .NET development teams to grow high-quality backend software through clean code and unit testing</em></div>
 
