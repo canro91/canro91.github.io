@@ -1,6 +1,6 @@
 ---
 layout: post
-title: <em>#BugOfTheDay</em> The query and the index
+title: "#BugOfTheDay: The query and the index"
 tags: bugoftheday sql
 ---
 
