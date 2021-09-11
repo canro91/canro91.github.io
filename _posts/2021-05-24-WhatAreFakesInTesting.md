@@ -6,7 +6,7 @@ cover: Cover.png
 cover-alt: "What are fakes in unit testing"
 ---
 
-Do you know what are fakes? Are stubs and mocks the same thing? Do you know if you need any of them? Once I made the same questions. Let's see what are fakes in unit testing.
+Do you know what are fakes? Are stubs and mocks the same thing? Do you know if you need any of them? Once I made the exact same questions. Let's see what are fakes in unit testing.
 
 **In unit testing, fakes are classes or components that replace external dependencies. Fakes simulate successful or failed scenarios to test the logic around the real dependencies they replace. Fakes are also called test doubles**.
 

@@ -191,7 +191,7 @@ There is an implementation of the distributed cache using Redis for ASP.NET Core
 	
 Using a distributed cache is similar to the in-memory cache. This time you need to install `Microsoft.Extensions.Caching.StackExchangeRedis` NuGet package and use the `AddStackExchangeRedisCache()` method in your `ConfigureServices()` method.
 
-Also, you need a Redis connection string and an optional `InstanceName`. The `InstaceName` groups entries with a prefix. It's helpful when using a single Redis server with different sites.
+Also, you need a Redis connection string and an optional `InstanceName`. The `InstanceName` groups entries with a prefix. It's helpful when using a single Redis server with different sites.
 
 Notice, there are two similar NuGet packages to use Redis with ASP.NET Core: [Microsoft.Extensions.Caching.Redis and Microsoft.Extensions.Caching.StackExchangeRedis](https://stackoverflow.com/questions/59847571/differences-between-microsoft-extensions-cashing-redis-and-microsoft-extensions). They use different versions of the [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) client.
 
@@ -218,7 +218,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-### Redecorate
+### Redecorate your service
 
 Make sure to change the cache interface from `IMemoryCache` to `IDistributedCache`.
 

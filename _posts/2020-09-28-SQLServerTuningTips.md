@@ -102,7 +102,7 @@ ALTER DATABASE <YourDatabase>
 SET COMPATIBILITY_LEVEL = { 150 | 140 | 130 | 120 | 110 | 100 | 90 }
 ```
 
-## 5. Create missing indexes
+## 5. Find and Create missing indexes
 
 Create your missing indexes. But, don't create them all. Create the first 10 missing indexes in your database. Stick to having around 5 indexes per table.
 
@@ -151,7 +151,7 @@ GO
 
 **Delete most your indexes**. Identify your main table and check if it has more than 5 indexes. But, don't create indexes on every key of a JOIN.
 
-Also, keep in mind if you rebuild an index for a table, SQL Server will remove all plan cached related to that table.
+Also, keep in mind if you rebuild an index for a table, SQL Server will remove all plans cached related to that table.
 
 **Rebuilding your indexes is the most expensive way of updating statistics.**
 
@@ -191,7 +191,7 @@ ORDER BY (dm_ius.user_seeks + dm_ius.user_scans + dm_ius.user_lookups) ASC
 GO
 ```
 
-Voilà! These are six tips I learned from Pinal Dave to start tuning your SQL Server. Pay attention to your implicit converstions. You can get a surprise.
+Voilà! These are six tips I learned from Pinal Dave to start tuning your SQL Server. Pay attention to your implicit conversions. You can get a surprise.
 
 I gained a lot of improvement only by fixing implicit conversions. In a store procedure, we had a `NVARCHAR` parameter to compare it with a `VARCHAR` column. Yes, implicit conversions happen between `VARCHAR` and `NVARCHAR`.
 

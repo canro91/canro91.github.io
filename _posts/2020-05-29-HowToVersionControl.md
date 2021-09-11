@@ -114,9 +114,11 @@ You can use `log` to see all commits created so far.
 $ git log
 ```
 
-### What's the Staging area
+### What's the Staging area?
 
-The staging area or index is a concept that makes Git different. **The staging area is an intermediate area where you can review your files before committing them**.
+The staging area or index is a concept that makes Git different.
+
+**The staging area is an intermediate area where you can review your files before committing them**.
 
 It’s like making your files wait in a line before keeping track of them. This allows you to commit only a group of files or portions of a single file.
 
@@ -128,7 +130,7 @@ Sometimes you don’t need to version control certain files or folders. For exam
 
 If you’re starting from scratch, you need to do this only once. But if you’re starting from an existing project, chances are somebody already did it.
 
-You need to create a `.gitignore` file with the patterns of files and folders you want to ignore. You can use this file globally or per project. There is [a collection of gitignore templates](https://github.com/github/gitignore) for your language and your IDE.
+You need to create a `.gitignore` file with the patterns of files and folders you want to ignore. You can use this file globally or per project. There is [a collection of gitignore templates on GitHub](https://github.com/github/gitignore) for your language and your IDE.
 
 For example, to ignore the `node_modules` folder, the `.gitignore` file will contain  
 

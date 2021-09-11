@@ -6,7 +6,7 @@ cover: WriteUnitTests.png
 cover-alt: Two issues to avoid to write good unit tests
 ---
 
-These days, I needed to update some tests. I found two types of issues on them. Please, continue to read. Maybe, you're a victim of those issues, too.
+These days, I needed to update some unit tests. I found two types of issues on them. Please, continue to read. Maybe, you're a victim of those issues, too.
 
 **To write good unit tests, avoid complex setup scenarios and hidden test values. Often tests are bloated with unneeded or complex code in the Arrange part and full of magic or hidden test values. Unit tests should be even more readable than production code**.
 
@@ -14,7 +14,7 @@ These days, I needed to update some tests. I found two types of issues on them. 
 
 The tests I needed to update were for an ASP.NET Core API controller, `AccountController`. This controller created, updated and suspended user accounts. Also, it sent a welcome email to new users.
 
-These tests checked a configuration object for the sender, reply-to and contact-us email addresses. The welcome email contained those three emails. If the configuration files miss one of the email addresses, the controller threw an exception from its constructor.
+These tests checked a configuration object for the sender, reply-to and contact-us email addresses. The welcome email contained those three emails. If the configuration files miss one of the email addresses, the controller throws an exception from its constructor.
 
 Let's see one of the tests. This test checks for the sender email.
 
