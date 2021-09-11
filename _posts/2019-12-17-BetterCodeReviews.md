@@ -27,7 +27,7 @@ Are you new to code reviews and you don't know what it's going to be reviewed in
 
 Does the code...
 
-* Compile in somebody else’s machine? If you have a _Continuous Integration_ tool, you can spot if the code is compiling and all tests are passing.
+* Compile in somebody else’s machine? If you have a Continuous Integration/Continuous Deployment (CI/CD) tool, you can spot if the code is compiling and all tests are passing.
 * Include unit or integration tests? 
 * Introduce new bugs?
 * Follow current standards?
@@ -53,7 +53,7 @@ It's a good idea to look at the diff of the code twice. One for the general pict
 * **Take out the person when giving feedback**. Remember you are reviewing the code, not the author.
 * **Be clear**. You may be reviewing code from juniors, mid-level or seniors. Even from non-native speakers of your language. Everybody doesn’t have the same level of experience as you. Obvious things for you aren’t obvious for somebody else. 
 * **Always give at least one positive remark**. For example: _It looks good to me (LGTM)_, _good choice of names_.
-* **Use questions instead of commands or orders**. For example, _Could this be changed?_ vs _Change it_.
+* **Use questions instead of commands or orders**. For example, _Could this be changed?_ vs _Change it_. And, don't forget the magic word: _please_.
 * **Use "we" instead of "you"**. You're part of development process too. You're also responsible for the code you're reviewing.
 * **Instead of showing an ugly code, teach**. Link to resources to explain even more. Use blog posts and StackOverflow questions.
 * **Review only the code that has changed**. Don't say things like: _Now you're there, change that method over there too_.
@@ -61,11 +61,15 @@ It's a good idea to look at the diff of the code twice. One for the general pict
 
 ## For the reviewee
 
+Before asking someone to review your code, review your own code. Check if all tests are passing, classes and methods follow naming conventions, new code comply to styling guidelines.
+
+It's a good idea to wait for the CI/CD to build and run all tests before asking someone to review your changes or assign reviewers in a tool. This will save time to your reviewers and you.
+
 * **Don't take it personal**. It's the code under review, not you. Breathe!
-* **Find in every review an opportunity to learn**. Identify what comments you get often and avoid them before your next reviews.
-* **Give context**. Make sure the reviewer have enough context to review the code. For example: write a description of your what your code does and what decisions you made.
-* **Keep your work short and focused**. Don't make the reviewer go through thousand of lines of code in a single review session.
-* **Keep all the discussion online**. If you contacted the reviewer by chat or email, bring relevant comments online if you're using a reviewing tool.
+* **Find in every review an opportunity to learn**. Identify what comments you get often and avoid them on your next reviews. 
+* **Give context**. Make sure the reviewer have enough context to review the code. Write an explanatory title and a description of what your code does and what decisions you made.
+* **Keep your work short and focused**. Don't make the reviewer go through thousand of lines of code in a single review session. Don't change business logic and formatting/styling in the same set of changes.
+* **Keep all the discussion online**. If you contacted the reviewer by chat or email, bring relevant comments to the reviewing tool for other to see them.
 
 ## For team management
 
@@ -74,7 +78,7 @@ It's a good idea to look at the diff of the code twice. One for the general pict
 * Have as reviewer someone familiar with the code being reviewed.
 * **Have at least two reviewers**. For example, pick one reviewer, then he will pick another one until the two of them agree.
 
-You may feel frustrated with code reviews, either as reviewer or reviewee. Sometimes, reviews could end up being a discussion about styling issues and naming variables. _I know, I've been there..._ But, be humble and nice! Every code review is a chance to learn something new.
+Voilà! You may feel frustrated with code reviews, either as reviewer or reviewee. Sometimes, reviews could end up being a discussion about styling issues and naming variables. I know, I've been there...But, be humble and nice! Every code review is a chance to learn something new.
 
 These are some of the resources I used to compile this list of tips.
 
@@ -85,5 +89,6 @@ These are some of the resources I used to compile this list of tips.
 * [How to code review](https://rcoh.me/posts/how-to-code-review/)
 * [Bringing A Healthy Code Review Mindset To Your Team](https://www.smashingmagazine.com/2019/06/bringing-healthy-code-review-mindset/)
 * [Productive code reviews](https://spin.atomicobject.com/2019/10/31/productive-code-reviews/)
+* [A Zen Manifesto for Effective Code Reviews](https://www.freecodecamp.org/news/a-zen-manifesto-for-effective-code-reviews-e30b5c95204a/)
 
 _Happy coding!_
