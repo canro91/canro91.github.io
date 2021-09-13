@@ -9,7 +9,7 @@ cover-alt: The C# Definitive Guide
 
 Hello, if you are a beginner programmer or you just took a programming course at school, and you want to find a pathway to be _"fluent"_ in C#, this is the right place for you! This is my guide to what every beginner and intermediate C# developer should know.
 
-Every intermediate C# developer should know how to work productively with a text editor of choice. Visual Studio and Visual Studio Code are two popular choices. He should know how to use `async` and `await` keywords, most common LINQ methods and regular expressions. Also, he should find his way around large codebases and be aware of the latest C# features.
+**Every intermediate C# developer should know how to productively work with Visual Studio or Visual Studio Code, use async/await keywords, most common LINQ methods and regular expressions. Also, to get around large codebases and be aware of the latest C# features.**
 
 ## Environment
 
@@ -338,6 +338,8 @@ using System;
 
 Console.WriteLine("Hello World!");
 ```
+
+To learn about other C# features, check my [top 10 or so best C# features]({% post_url 2021-09-13-TopNewCSharpFeatures%}).
 
 ## Bonus Points
 
