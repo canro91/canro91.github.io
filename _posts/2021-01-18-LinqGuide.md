@@ -9,7 +9,7 @@ cover-alt: A quick guide to LINQ with examples
 
 Today a friend asked me about LINQ. I guess she was studying for a technical interview. So, dear Alice, this is what LINQ is and these are the most common LINQ methods with examples in C#. All you need to know in 15 minutes or less.
 
-**Language-Integrated Query (LINQ) is the declarative way of working with collections in C#. LINQ can be used with databases and xml files too.** The most common LINQ methods are: `Where`, `Select`, `Any` `GroupBy` and `FirstOrDefault`. LINQ can be found as an API syntax, extensions methods on the `IEnumerable` type, or as a language-level query syntax, a SQL-like syntax.
+**Language-Integrated Query (LINQ) is the declarative way of working with collections in C#. LINQ can be used with databases and xml files too. LINQ can be found as an API syntax, using extensions methods on the IEnumerable type, or as a language-level query syntax, using a SQL-like syntax.**
 
 ## LINQ is declarative
 
@@ -210,6 +210,17 @@ var hasBadMovies = movies.Any(movie => movie.Rating < 2);
 // false
 ```
 
+### All
+
+Unlike `Any`, **`All` check if every elements inside a collection matches a condition**. It also return either `true` of `false` instead of a new collection.
+
+Let's see if we have only watched really good movies.
+
+```
+var weHaveSeenReallyGoodMovies = movies.All(movie => movie.Rating >= 4.5);
+// false
+```
+
 ### GroupBy
 
 **`GroupBy` groups the elements of a collection based on a key.** It returns a collection of "groups"  or "buckets" organized by a key.
@@ -294,7 +305,7 @@ This time, we used the `OrderBy` to sort the movies collection by release year. 
 
 In the same spirit of `First` and `FirstOrDefault`, you have `Last` and `LastOrDefault`. But, they return the last element instead of the first one.
 
-Recently, I learned about [the DefaultIfEmpty method]({% post_url 2020-11-17-DefaultOrEmpty %}). It returns a new collection with a default value if the given collection is empty. _Good to know!_
+Recently, I learned about [the DefaultIfEmpty LINQ method]({% post_url 2020-11-17-DefaultOrEmpty %}). It returns a new collection with a default value if the given collection is empty. _Good to know!_
 
 ### Cheatsheet
 
@@ -304,7 +315,8 @@ There are more LINQ methods than the ones we've seen so far. These are some of t
 |---|---|
 | `Where` | Filter a collection |
 | `Select` | Transform every element of a collection | 
-| `Any` | Check if a collection is empty | 
+| `Any` | Check if a collection is empty |
+| `All` | Check if every element satisfies a condition | 
 | `Count` | Count all elements of a collection |
 | `Distinct` | Find the unique elements of a collection |
 | `GroupBy` | Group the elements of a collection based on a key | 
@@ -341,7 +353,7 @@ _It looks like SQL, isn't it?_ And, this is the same code using extension method
 var bestOfAll = movies.Where(movie => movie.Rating > 4.5);
 ```
 
-Which LINQ syntax should you use? **Prefer the syntax used in your current codebase.** If your code uses extensions methods on `IEnumerable`, continue to do that.
+**Which LINQ syntax should you use? Prefer the syntax used in your current codebase.** If your code uses extensions methods on `IEnumerable`, continue to do that.
 
 <figure>
 <img src="https://images.unsplash.com/photo-1523207911345-32501502db22?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800" alt="Popcorn" />
@@ -448,6 +460,6 @@ For objects, the default value would be a `null` reference. And you know what ha
 
 Voilà! That's it, Alice. That's all you need to know to start working with LINQ in your code in 15 minutes or less. There's also this project [MoreLINQ](https://github.com/morelinq/MoreLINQ) with more extension methods, like `CountBy`, `DistinctBy`, `MinBy` and `MaxBy`. With LINQ you can write more compact and expressive code. The next time you need to write logic using loops, give LINQ a try!
 
-To learn more about C#, check my [C# Definitively Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %}) for a list of subjects every intermediate C# developer should know. Also, for quick tips to write more expressive C#, read my [C# idioms]({% post_url 2019-11-19-TwoCSharpIdioms %}) series.
+To learn more about C#, check my [C# Definitively Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %}) for a list of subjects every intermediate C# developer should know. Also, for quick tips to write more expressive C#, read my [C# idioms]({% post_url 2019-11-19-TwoCSharpIdioms %}) series. To learn about other C# features, check my [top 10 or so best C# features]({% post_url 2021-09-13-TopNewCSharpFeatures%}).
 
 _Happy LINQ time!_
