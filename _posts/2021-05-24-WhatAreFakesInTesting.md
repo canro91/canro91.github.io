@@ -8,7 +8,7 @@ cover-alt: "What are fakes in unit testing"
 
 Do you know what are fakes? Are stubs and mocks the same thing? Do you know if you need any of them? Once I made the exact same questions. Let's see what are fakes in unit testing.
 
-**In unit testing, fakes are classes or components that replace external dependencies. Fakes simulate successful or failed scenarios to test the logic around the real dependencies they replace. Fakes are also called test doubles**.
+**In unit testing, fakes or test doubles are classes or components that replace external dependencies. Fakes simulate successful or failed scenarios to test the logic around the real dependencies they replace.**
 
 The best analogy to understand fakes are flight simulators. With a flight simulator, teachers create flight and environment conditions to train and test their pilot students in controlled scenarios.
 
@@ -133,13 +133,13 @@ public class AlwaysAvailableStockService : IStockService
 }
 ```
 
-As its name implies, it will always return stock for any order we pass.
+As its name implies, it will always return stock for any order we pass. It simply returns `true`.
 
 ### Fake for payment gateway
 
 Second, the `OrderService` works if it charges a credit card. But, we don't want to charge a real credit card every time we run our test.
 
-Let's use a fake to record if the payment gateway was call or not. Let's call this fake: `FakePaymentGateway`. It looks like this:
+Let's use a fake to record if the payment gateway was called or not. Let's name this fake: `FakePaymentGateway`. It looks like this:
 
 ```csharp
 public class FakePaymentGateway : IPaymentGateway
@@ -200,13 +200,13 @@ The book [xUnit Patterns](http://xunitpatterns.com/Mocks,%20Fakes,%20Stubs%20and
 
 **Mocks are testable replacements that check if they were used correctly**. We use mocks when we know in advanced the parameters the code under test will use. With mocks, we set the expected parameters to be used before calling the code under test. Then, we use a verification method in the mock itself to check if the mock was called with those exact same parameters.
 
-Don't get confused with all these terms. Let's stick to the types of fakes presented in the book [The Art of Unit Testing](https://www.manning.com/books/the-art-of-unit-testing-second-edition) ([My takeaways]({% post_url 2020-03-06-TheArtOfUnitTestingReview %})). In there, there are only two types of fakes or test doubles: stubs and mocks. Everything else is a fake. Easier!
+Don't get confused with all these terms. Let's stick to the types of fakes presented in the book [The Art of Unit Testing](https://www.manning.com/books/the-art-of-unit-testing-second-edition) ([My takeaways here]({% post_url 2020-03-06-TheArtOfUnitTestingReview %})). In there, there are only two types of fakes or test doubles: stubs and mocks. Everything else is a fake. Easier!
 
 Voilà! That's what fakes are in unit testing. Remember, stubs provide values for our tests and mocks assert that calls were made. That's the difference between them.
 
 Often, we use the terms fake, stubs and mocks interchangeably. And sometimes we use the term "mocking" to mean the replacement of external components with testable equivalents. But, we have seen there's a distinction between all these terms.
 
-You can use mocking libraries to create your fakes, either stubs or mocks. If you want to start with a mocking library, read my post on [how to write fakes with Moq]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}). Also, check these [tips to write better stubs and mocks]({% post_url 2021-06-07-TipsForBetterStubsAndMocks %}).
+If you want to start writing fakes with a mocking library, read my post on [how to write fakes with Moq]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}). Also, check these [tips to write better stubs and mocks]({% post_url 2021-06-07-TipsForBetterStubsAndMocks %}).
 
 If you're new to unit testing, read [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}), [4 common mistakes when writing your first tests]({% post_url 2021-03-29-UnitTestingCommonMistakes %}) and [4 test naming conventions]({% post_url 2021-04-12-UnitTestNamingConventions %}).
 
