@@ -6,17 +6,19 @@ tags: tutorial csharp showdev
 
 A recurring task when writing unit tests is creating replacements for collaborators. If you're writing unit tests for an order delivery system, you don't want to use a real payment gateway. You don't want to charge a credit card every time you run your tests. This is how we can create fakes using Moq.
 
-**Fakes are testable replacements for real dependencies and external systems. They're often called test doubles too. Fakes return a fixed value or throw an exception to test the logic around the real dependency they replace. You can either create fakes by hand or use a mocking library like Moq.**
+**Fakes are testable replacements for real dependencies and external systems. They're often called test doubles too. Fakes return a fixed value or throw an exception to test the logic around the real dependency they replace. Fakes can be created manually or with mocking library like Moq.**
 
-## Roll your fakes
+Think of fakes or doubles like the body or stunt doubles in movies. They substitute an actor in a dangerous scene without showing their face. In coding, fakes or doubles substitutes a real component in a test.
 
-You can create your own fakes or doubles by hand. _Yes, doubles like the body doubles in movies_.
+## How to write your own fakes
 
-If you apply the [Dependency Inversion Principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle ), the D of SOLID, your dependencies are well abstracted using interfaces. Each service receives its collaborators instead of build them.
+You can write your own fakes by hand or use a mocking library.
 
-To create a fake, create a class that inherits from an interface. Then, on Visual Studio, from "Quick Refactorings" menu, choose "Implement interface" option. _Et voilà!_ you have your own fake.
+If you apply the [Dependency Inversion Principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle ), the D of SOLID, your dependencies are well abstracted using interfaces. Each service receives its collaborators instead of build them directly.
 
-But, if you need to create lots of fake collaborators, a mocking library can make things easier. Mocking libraries are an alternative to roll your own fakes. They offer a friendly API to create fakes for an interface or a class. Let's see Moq, one of them!
+To create a fake, create a class that inherits from an interface. Then, on Visual Studio, from "Quick Refactorings" menu, choose "Implement interface" option. Et voilà! You have your own fake.
+
+But, if you need to create lots of fake collaborators, a mocking library can make things easier. Mocking libraries are an alternative to write your own fakes manually. They offer a friendly API to create fakes for an interface or a class. Let's see Moq, one of them!
 
 ## Moq, a mocking library
 
@@ -59,7 +61,7 @@ To create a unit test for this service, let's create replacements for the real p
 
 For our test name, let's follow the naming convention from [The Art of Unit Testing]({% post_url 2020-03-06-TheArtOfUnitTestingReview %}). With this naming convention, a test name shows the entry point, the scenario and the expected result separated by underscores.
 
-To learn about other naming conventions, check my post [How to name your unit tests]({% post_url 2021-04-12-UnitTestNamingConventions %}).
+<div class="message">To learn about other naming conventions, check my post <a href="/2021/04/12/UnitTestNamingConventions">How to name your unit tests</a>.</div>
 
 ```csharp
 [TestClass]
