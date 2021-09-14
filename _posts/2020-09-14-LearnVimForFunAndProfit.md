@@ -63,7 +63,7 @@ Vim has a step learning curve. Don't try to do your everyday work with Vim right
 
 If you're only used to `Control + C` and `Control + V` from other editors, you will have to learn new shortcuts for everything. Literally, everything. It can be frustrating and unproductive when you first open Vim.
 
-Start editing one of your files from the command line or from an online Vim emulator outside of your everyday work.
+**To learn Vim, learn the basic motions and commands, and start editing files from the command line or from an online Vim emulator outside of everyday work. Have a cheatsheet at hand.**
 
 If you are working in an Unix-based operating system, chances are you have Vim already installed. If not, you can install it from its official site or with a package manager, such as brew, apt-get or chocolatey, depending on your operating system.
 
