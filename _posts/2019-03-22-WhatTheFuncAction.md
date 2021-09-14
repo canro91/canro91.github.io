@@ -1,13 +1,13 @@
 ---
 layout: post
-title: What the Func, Action?
+title: What the Func, Action? Func vs Action
 description: What's the difference between Func and Action? How do I use them? This is a frequently asked question and a tricky subject. Here it is another take.
 tags: tutorial csharp
 cover: Cover.png
 cover-alt: Func vs Action
 ---
 
-What's the difference between `Func` and `Action`? This is a common C# interview question. Let's find it out!
+What's the difference between Func and Action in C#? This is a common C# interview question. Let's find it out!
 
 **The difference between Func and Action is the return type of the method they point to. Action references a method with no return type. And, Func references a method with a return type.**
 
@@ -17,9 +17,9 @@ It all starts with delegates.
 
 **A delegate is a pointer to a method with some input parameters and possibly a return type.**
 
-In other words, a delegate is a variable that can hold any method that has a given signature. Both, `Func` and `Action` are built-in delegate types.
+In other words, a delegate is a variable that references a method that has a given signature. Both, `Func` and `Action` are built-in delegate types.
 
-Delegates are helpful when working with higher-order functions. This is, functions that take functions as parameter or return another function. For example, Javascript's callbacks or Python's decorators are high-order functions.
+Delegates are helpful when working with higher-order functions. This is, functions that take functions as parameter or return another function. For example, JavaScript callbacks and Python decorators are high-order functions.
 
 Now that it's clear what delegates are, let's see some `Func` and `Action` declarations. For example,
 
@@ -27,6 +27,8 @@ Now that it's clear what delegates are, let's see some `Func` and `Action` decla
 * `Action`, a void method without any parameters.
 * `Func<Employee, string>` represents a method that receives an `Employee` and returns a `string`.
 * `Func<string>` doesn't have any parameters and returns `string`.
+
+When declaring `Func` references, the last type inside `<>` tells the return type of the method being referenced. For `Action` references, since they don't have a return type, the types inside `<>` show the input parameter types.
 
 <figure>
 <img src="https://images.unsplash.com/photo-1483821838526-8d9756a6e1ed?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop" alt="What the Func, Action?" />
@@ -38,7 +40,7 @@ Now that it's clear what delegates are, let's see some `Func` and `Action` decla
 
 You have already used `Func`, if you have used LINQ. But, in general, you use them as lambda expressions.
 
-**A lambda expression is an anonymous method. It's a shorthand notation to write a method only with the body and the parameter list.**
+**A lambda expression is a shorthand notation to write a method without a name, only with the body and the parameter list.**
 
 For example, let's find the employees who have worked for more than ten years.
 
