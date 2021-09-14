@@ -62,7 +62,49 @@ public static class FormattingExtensions
 
 Notice, I added a second parameter of type `CultureInfo`, which defaults to "en-US".
 
-Voilà! That's what I learned after reinstalling the operating system of my computer and running some unit tests.
+## Alternatively: Use a wrapper in your tests
+
+As an alternative to adding a default culture, I could run each test inside a wrapper method that changes the user culture to the one needed and revert it back when the test finishes.
+
+Something like this,
+
+```csharp
+static string RunInCulture(CultureInfo culture, Func<string> action)
+{
+    var originalCulture = Thread.CurrentThread.CurrentCulture;
+    Thread.CurrentThread.CurrentCulture = culture;
+    
+    try
+    {
+        return action();
+    }
+    finally
+    {
+        Thread.CurrentThread.CurrentCulture = originalCulture;
+    }
+}
+```
+
+Then, I could refactor the tests to use the `RunInCulture` wrapper method, like this
+
+```csharp
+private readonly CultureInfo DefaultCulture
+  = new CultureInfo("en-US");
+
+[TestMethod]
+public void ToCurrency_IntegerAmount_FormatsAmountWithTwoDecimalPlaces()
+{
+    RunInCulture(DefaultCulture, () =>
+    {
+        decimal value = 10M;
+        var result = value.ToCurrency();
+
+        Assert.AreEqual("10.00", result);
+    });
+}
+```
+
+Voilà! That's what I learned after reinstalling the operating system of my computer and running some unit tests. I learned to always use a default culture on my parsing methods. If you change your computer locale, all your tests continue to pass?
 
 If you're new to unit testing, read [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}), [4 common mistakes when writing unit tests]({% post_url 2021-03-29-UnitTestingCommonMistakes %}) and [4 test naming conventions]({% post_url 2021-04-12-UnitTestNamingConventions %}). For more advanced tips on unit testing, check [How to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %}).
 
