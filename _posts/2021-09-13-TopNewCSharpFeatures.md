@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "My Top 16 newest C# features"
+title: "My Top 16 newest C# features by version"
 tags: tutorial csharp
 cover: Cover.png
 cover-alt: "My Top 16 newest C# features"
@@ -151,14 +151,14 @@ new Movie("Titanic", null);
 
 We can inline the variable declaration next to the `out` keyword using the `var` keyword.
 
-Before,
+Before, we had to declare a variable in a separate statement,
 
 ```csharp
 int count = 0;
 int.TryParse(readFromKey, out count);
 ```
 
-After,
+After, inlining the variable declaration,
 
 ```csharp
 int.TryParse(readFromKey, out var count);
@@ -170,9 +170,11 @@ Instead of declaring a variable, we can use discards `_` to ignore the output va
 int.TryParse(readFromKey, out _);
 ```
 
+I'm not a big fan of methods with `out` references. But, with this feature I like them a bit more. I prefer tuples.
+
 ### Tuples
 
-Now we can access tuple members by name. We don't need to use `Item1` or `Item2` anymore.
+Speaking of tuples...Now we can access tuple members by name. We don't need to use `Item1` or `Item2` anymore.
 
 We can declare tuples wrapping its members inside parenthesis. For example, to declare a pair of coordinates, it would be `(int X, int Y) origin = (0, 0)`.
 
@@ -260,6 +262,29 @@ if (employee is SalaryEmployee salaryEmployee)
 
 On another hand, we can use a `when` clause inside `switch`.
 
+Before, we had to rely on `if` statements inside the same `case`, like this
+
+```csharp
+var employee = CreateEmployee();
+switch (employee)
+{
+    case SalaryEmployee salaryEmployee:
+        if (salaryEmployee.Salary > 1000)
+        {
+            DoSomething(salaryEmployee);
+        }
+        else
+        {
+            DoSomethingElse(salaryEmployee);
+        }
+        break;
+
+    // other cases...        
+}
+```
+
+Now, with pattern matching, we can have separate cases,
+
 ```csharp
 var employee = CreateEmployee();
 switch (employee)
@@ -271,9 +296,12 @@ switch (employee)
     case SalaryEmployee salaryEmployee:
         DoSomethingElse(salaryEmployee);
         break;
+
+    // other cases...
 }
 ```
 
+I found it more readable this way. Let's keep the conditional case before the one without conditions.
 
 <figure>
 <img src="https://images.unsplash.com/photo-1569783899817-a49d2d25287c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIwNjc4MTQx&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="Tools on a workbench" />
