@@ -58,7 +58,7 @@ After creating an API project in Visual Studio, you will have a file structure l
 |____WeatherForecast.cs
 ```
 
-You can delete the files `WeatherForecast.cs` and `WeatherForecastController.cs`.
+You can delete the files `WeatherForecast.cs` and `WeatherForecastController.cs`. Visual Studio created these files when we choose the API project template. We won't need them for our catalog of products.
 
 Now, let's create a `ProductController` insde the `Controllers` folder. You can choose the template with read/write actions. You will get a class like this:
 
@@ -218,9 +218,9 @@ namespace ProductCatalog.Controllers
 
 I know, I know...We will refactor this in the next steps...By the way, don't version control passwords or any sensitive information, please.
 
-#### Create GetAllProducts store procedure
+#### Create GetAllProducts stored procedure
 
-Now, you need the `GetAllProducts` store procedure.
+Now, you need the `GetAllProducts` stored procedure.
 
 Depending on your workplace, you will have to follow a naming convention. For example, `sp_Products_GetAll`.
 
@@ -342,7 +342,7 @@ BEGIN
     SELECT Id, Name, Price, Description
     FROM dbo.Products
     ORDER BY Name
-    OFFSET @PageIndex ROWS FETCH NEXT @PageSize ROWS ONLY;
+    OFFSET (@PageIndex - 1)*@PageSize ROWS FETCH NEXT @PageSize ROWS ONLY;
 END
 GO
 ```
@@ -352,6 +352,8 @@ If you add more products to the table, you will see how you retrieve a subset of
 If you want to practice more, create an endpoint to search a product by id. You should change the appropriate `Get()` method and a create a new store procedure: `GetProductById`.
 
 ### Insert a new product
+
+#### Modify POST
 
 First, inside a new `ViewModels` folder, create an `AddProduct` class. It should have with three properties: name, price and description. That's what we want to store for our products.
 
@@ -380,7 +382,9 @@ public void Post([FromBody] AddProduct request)
 }
 ```
 
-Next, create the `AddProduct` store procedure. It will have a single `INSERT` statement.
+#### Create AddProduct stored procedure
+
+Next, create the `AddProduct` stored procedure. It will have a single `INSERT` statement.
 
 ```sql
 CREATE PROCEDURE AddProduct
@@ -408,9 +412,11 @@ POST https://localhost:44343/api/Product
 }
 ```
 
+Now you're creating and reading products from your database with Insight.Database. Did you notice you didn't need any mapping code? We named the classes to match the stored procedure parameters and results. Great!
+
 ## Conclusion
 
-Voilà! You know how to use Insight.Database to retrieve results and execute actions with store procedures using `Query()` and `Execute()` methods. They have asynchronous alternatives, too. If you stick to naming conventions, you won't need any mapping code. Insight.Database helps you to keep your data access to a few lines of code. 
+Voilà! You know how to use Insight.Database to retrieve results and execute actions with store procedures using `Query()` and `Execute()` methods. They have asynchronous alternatives too. If you stick to naming conventions, you won't need any mapping code. Insight.Database helps you to keep your data access to a few lines of code. 
 
 Your mission, Jim, should you decide to accept it, is to change the `Update()` and `Delete()` methods to comple all CRUD operations. This post will self-destruct in five seconds. Good luck, Jim.
 
