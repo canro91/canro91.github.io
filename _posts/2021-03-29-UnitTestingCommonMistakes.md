@@ -204,7 +204,7 @@ Voilà! These are four common ~~misatkes~~ mistakes when writing our first unit 
 
 If you want to practice identifying and fixing these mistakes, check my [Unit Testing 101](https://github.com/canro91/Testing101) repository. You will find the tests that Stringie developers wrote and some other ~~misatkes~~ mistakes they made. _Your mission, Jim, should you choose to accept it, is to fix them._
 
-![canro91/Testing101 - GitHub](https://gh-card.dev/repos/canro91/Testing101.svg)
+[![canro91/Testing101 - GitHub](https://gh-card.dev/repos/canro91/Testing101.svg)](https://github.com/canro91/Testing101)
 
 If you're new to unit testing, read my post [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}) to write your first unit tests in C#. For more advanced tips on writing unit tests, check my post [how to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %}).
 
