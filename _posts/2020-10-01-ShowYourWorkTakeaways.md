@@ -7,11 +7,7 @@ description: Be so good they can’t ignore you. Learn how and why you should sh
 
 Show your work is a New York Times bestseller by Austin Kleon. He describes his book as _"a book for people who hate the very idea of self-promotion"_. This book tells you how and why you should show your work online. It quotes artists and well-known figures to make each chapter more memorable.
 
-> _"Be so good they can’t ignore you."_
-> 
-> -Steve Martin
-
-Good work isn't enough. This book teaches your work has to be out there. **If your work isn't online, it doesn't exist**.
+**Good work isn't enough. "Show your work" teaches that your work has to be out there. If your work isn't online, it doesn't exist**.
 
 <figure>
 <img src="https://source.unsplash.com/BNvk1zqEAjc/800x400" width="800" alt="Kid walking in a museum" />
@@ -21,13 +17,17 @@ Good work isn't enough. This book teaches your work has to be out there. **If yo
 
 **"Be so good they can't ignore you"** summarizes the purpose of the book. To not to be ignored, you have to be findable. Build a routine of sharing. Take advantage of your network. Imagine you don't need a resume because your next boss already reads your blog.
 
+> _"Be so good they can’t ignore you."_
+> 
+> -Steve Martin
+
 ## You don't have to be a genius
 
 **Creativity is about collaboration too**. Find a place where you can share your ideas and flourish your creativity. Find your creativity circle or scenius. Famous musicians and artists were surrounded by other artists to share, copy, acknowledge and sparkle their ideas.
 
 Ask yourself what you want to learn. And make a commitment of learning in front of others. Share what you love and the people who love the same thing will find you.
 
-> _"The minute you learn something, teach it"_
+{% include image.html name="Quote.png" alt="The minute you learn something, teach it" caption="" %}
 
 ## Share something small every day
 

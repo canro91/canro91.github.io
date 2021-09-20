@@ -4,11 +4,9 @@ title: Programming Time Capsule
 tags: career interview
 ---
 
-> These days I was watching YouTube and I found a Mexican YouTuber explaining what life was like in his city during the 2020 COVID-19 pandemic. So I thought it was a good idea to write something similar but for coding. These is an opinionated view of what coding is like in 2020.
+These days I was watching YouTube and I found a Mexican YouTuber explaining what life was like in his city during the 2020 COVID-19 pandemic. So I thought it was a good idea to write something similar but for coding. These is an opinionated view of what coding is like in 2020. Software developers from the future, this is how programming looks like in 2020.
 
-_Future developers, this is how programming looks like in 2020_
-
-GitHub has archived all the public repositories until July 2020. It was part of his [archive initiative](https://archiveprogram.github.com/). We have earned a batch on our GitHub profiles, if any of our repositories got into a vault in the Arctic. It will show future generations how code was in 2020. _Should we be ashamed or proud?_ But it doesn't show some of the practices around it.
+GitHub has archived all the public repositories until July 2020. It was part of his [archive initiative](https://archiveprogram.github.com/). We have earned a batch on our GitHub profiles, if any of our repositories got into a vault in the Arctic. It will show future generations how code was in 2020. Should we be ashamed or proud? I don't know. But this archive doesn't show some of the practices around it.
 
 Dear developers from the future, this is how coding and interviewing look like in 2020.
 

@@ -1,19 +1,25 @@
 ---
 layout: post
-title: What the Func, Action?
+title: What the Func, Action? Func vs Action
 description: What's the difference between Func and Action? How do I use them? This is a frequently asked question and a tricky subject. Here it is another take.
 tags: tutorial csharp
+cover: Cover.png
+cover-alt: Func vs Action
 ---
 
-What's the difference between `Func` and `Action`? This is a common C# interview question. Let's find it out!
+What's the difference between Func and Action in C#? This is a common C# interview question. Let's find it out!
 
-**The difference between `Func` and `Action` is the return type of the method they point to.** Both `Func` and `Action` are delegates. They point to a method instead of a built-in or custom type. On one hand, `Action` references a void method, a method with no return type. And, on the other hand, `Func` references a method with a return type.
+**The difference between Func and Action is the return type of the method they point to. Action references a method with no return type. And, Func references a method with a return type.**
 
 ## What are delegates?
 
-It all starts with delegates. A delegate is a pointer to a method with some input parameters and possibly a return type. In other words, a delegate is a variable that can hold any method with a given signature. `Func` and `Action` are built-in delegate types.
+It all starts with delegates.
 
-Delegates are helpful when working with higher-order functions. This is, functions that take functions as parameter or return another function. For example, Javascript's callbacks or Python's decorators are high-order functions.
+**A delegate is a pointer to a method with some input parameters and possibly a return type.**
+
+In other words, a delegate is a variable that references a method that has a given signature. Both, `Func` and `Action` are built-in delegate types.
+
+Delegates are helpful when working with higher-order functions. This is, functions that take functions as parameter or return another function. For example, JavaScript callbacks and Python decorators are high-order functions.
 
 Now that it's clear what delegates are, let's see some `Func` and `Action` declarations. For example,
 
@@ -22,15 +28,19 @@ Now that it's clear what delegates are, let's see some `Func` and `Action` decla
 * `Func<Employee, string>` represents a method that receives an `Employee` and returns a `string`.
 * `Func<string>` doesn't have any parameters and returns `string`.
 
+When declaring `Func` references, the last type inside `<>` tells the return type of the method being referenced. For `Action` references, since they don't have a return type, the types inside `<>` show the input parameter types.
+
 <figure>
 <img src="https://images.unsplash.com/photo-1483821838526-8d9756a6e1ed?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop" alt="What the Func, Action?" />
 
 <figcaption>Let's get Funcy. <span>Photo by <a href="https://unsplash.com/@greysonjoralemon?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Greyson Joralemon</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
 </figure>
 
-## How to use `Func` and `Action` in a method?
+## How to use Func and Action in a method?
 
-You have already used `Func`, if you have used LINQ. But, in general, you use them as lambda expressions. A lambda expression is an anonymous method. It's a shorthand notation to write a method only with the body and the parameter list.
+You have already used `Func`, if you have used LINQ. But, in general, you use them as lambda expressions.
+
+**A lambda expression is a shorthand notation to write a method without a name, only with the body and the parameter list.**
 
 For example, let's find the employees who have worked for more than ten years.
 
@@ -46,9 +56,9 @@ Or just simply
 allEmployees.Where(t => t.YearsWorked >= 10);
 ```
 
-## How to declare a method that receives `Func` or `Action`?
+## How to declare a method that receives Func or Action?
 
-To a declare a method that uses `Func` or `Action` as an input parameter, you have to use them like regular paramaters. Then, you have to either call `Invoke` on it or put parenthesis around the name passing the appropiate parameter values.
+To a declare a method that uses `Func` or `Action` as an input parameter, you have to use them like regular paramaters. Then, you have to either call `Invoke` on it or put parenthesis next to the name passing the appropiate parameters.
 
 Let's see an example of a method that uses `Func`.
 
@@ -135,5 +145,7 @@ public class ReliableConnection : DbConnectionWrapper
 ```
 
 Voilà! That's the difference between `Func` and `Action`. Remember that they only represent the signature of a method. You can define or pass around the body later.
+
+If you want to know more about LINQ, check my [quick guide to LINQ]({% post_url 2021-01-18-LinqGuide %}). To learn how to use Insight.Database, check [how to create a CRUD API with ASP.NET Core and Insight.Database](% post_url 2020-05-01-InsightDatabase %).
 
 _Happy Funcy time!_

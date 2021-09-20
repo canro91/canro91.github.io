@@ -1,26 +1,36 @@
 ---
 layout: post
-title: How to create fakes with Moq? And what I don't like about it?
+title: How to create fakes with Moq. And what I don't like about it
 tags: tutorial csharp showdev
 ---
 
-A recurring task when writing unit tests is creating fake implementations of collaborators. If you're writing an unit test for an order delivery system, you don't want to use a real payment gateway. You can create a payment gateway you control. So, you can make it return or throw anything you want to test the logic around it.
+A recurring task when writing unit tests is creating replacements for collaborators. If you're writing unit tests for an order delivery system, you don't want to use a real payment gateway. You don't want to charge a credit card every time you run your tests. This is how we can create fakes using Moq.
 
-You can create your own fakes. They're often called test doubles. _Yes, like the body doubles in movies_. If you apply the [Dependency Inversion Principle]( https://en.wikipedia.org/wiki/Dependency_inversion_principle ), _the D of SOLID_, your collaborators are well abstracted using interfaces. To create a fake, create a class that inherits from an interface. Then, on Visual Studio, from "Quick Refactorings", choose "Implement interface". _Et voilà!_ you have your own fake.
+**Fakes are testable replacements for real dependencies and external systems. They're often called test doubles too. Fakes return a fixed value or throw an exception to test the logic around the real dependency they replace. Fakes can be created manually or with mocking library like Moq.**
 
-But, if you need to create lots of fakes collaborators, a mocking library can make things easier. Mocking libraries are an alternative to roll your own fakes or doubles. They offer a friendly API to create fakes from an interface or a class. _Let's see Moq, one of them!_
+Think of fakes or doubles like the body or stunt doubles in movies. They substitute an actor in a dangerous scene without showing their face. In coding, fakes or doubles substitutes a real component in a test.
 
-### Moq
+## How to write your own fakes
+
+You can write your own fakes by hand or use a mocking library.
+
+If you apply the [Dependency Inversion Principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle ), the D of SOLID, your dependencies are well abstracted using interfaces. Each service receives its collaborators instead of build them directly.
+
+To create a fake, create a class that inherits from an interface. Then, on Visual Studio, from "Quick Refactorings" menu, choose "Implement interface" option. Et voilà! You have your own fake.
+
+But, if you need to create lots of fake collaborators, a mocking library can make things easier. Mocking libraries are an alternative to write your own fakes manually. They offer a friendly API to create fakes for an interface or a class. Let's see Moq, one of them!
+
+## Moq, a mocking library
 
 [Moq](https://github.com/Moq/moq4) is a mocking library that _"is designed to be a very practical, unobtrusive and straight-forward way to quickly setup dependencies for your tests"_.
 
-> _Moq, _"the most popular and friendly mocking library for .NET"_
+> Moq, _"the most popular and friendly mocking library for .NET"_
 >
 > From [moq](https://github.com/Moq/moq4#moq)
 
-#### Create fakes with Moq...Action!
+### Create fakes with Moq...Action!
 
-_Let's see Moq in action!_ Suppose you have an `OrderService` that uses a `IPaymentGateway` and  `IStockService`.  This `OrderService` checks if there is stock available to then charge a credit card when placing a new order. Something like this, 
+Let's see Moq in action! Suppose you have an `OrderService` that uses a `IPaymentGateway` and  `IStockService`.  This `OrderService` checks if there is stock available to then charge a credit card when placing a new order. Something like this, 
 
 ```csharp
 public class OrderService 
@@ -47,14 +57,18 @@ public class OrderService
 }
 ```
 
-To create an unit test for this service, let's create fakes for the payment gateway and the stock service. For our test name, let's follow the naming convention from [The Art of Unit Testing]({% post_url 2020-03-06-TheArtOfUnitTestingReview %}).
+To create a unit test for this service, let's create replacements for the real payment gateway and stock service. We want to check what the `OrderService` class does when there's stock available and when there isn't.
+
+For our test name, let's follow the naming convention from [The Art of Unit Testing]({% post_url 2020-03-06-TheArtOfUnitTestingReview %}). With this naming convention, a test name shows the entry point, the scenario and the expected result separated by underscores.
+
+<div class="message">To learn about other naming conventions, check my post <a href="/2021/04/12/UnitTestNamingConventions">How to name your unit tests</a>.</div>
 
 ```csharp
 [TestClass]
 public class OrderServiceTests
 {
   [TestMethod]
-  public void PlaceOrder_OrderInStock_CallsProcessPayment()
+  public void PlaceOrder_StockAvailable_CallsProcessPayment()
   {
     var fakePaymentGateway = new Mock<IPaymentGateway>();
 
@@ -71,18 +85,32 @@ public class OrderServiceTests
 }
 ```
 
-_What happened here?_ First, it creates a fake for `IPaymentGateway` with `new Mock<IPaymentGateway>()`. Moq can create fakes for interfaces and classes. Then, it creates a fake for `IStockService`. This fake returns `true` when the method `IsStockAvailable` is called with any order. Next, it uses the `Object` property of `Mock` to create an instance of the fake. Finally, it checks if the method `ProcessPayment` was called once with the `Verify` method. _A passing test now!_
+What happened here? First, it creates a fake for `IPaymentGateway` with `new Mock<IPaymentGateway>()`. Moq can create fakes for classes too.
 
-#### Cut!...What I don't like about Moq?
+Then, it creates another fake for `IStockService`. This fake returns `true` when the method `IsStockAvailable` is called with any order as parameter.
 
-Moq is easy to use. You can start using it in minutes! You only need to read the README and the quickstart files in the documentation. But...
+Next, it uses the `Object` property of the `Mock` class to create instances of the fakes. With these two instances, it builds the `OrderService`.
 
-For Moq, everything is a mock, `Mock<T>`. But, strictly speaking, everything isn't a mock. [XUnit Tests Patterns](http://xunitpatterns.com/Mocks,%20Fakes,%20Stubs%20and%20Dummies.html) presents a detailed category of fakes or doubles: fakes, stubs, mocks, dummies and spies. [The Art of Unit Testing]({% post_url 2020-03-06-TheArtOfUnitTestingReview %}) reduces this classification to only three types: fakes, stubs and mocks. Other libraries use `Fake` , `Substitute` or `Stub` vs `Mock` instead of `Mock`. Moq has chosen this simplification to make it easier to use. But, this could lead to misusing the term _mock_.
+Finally, using the `Verify` method, it checks if the method `ProcessPayment` was called once. _A passing test now!_
 
-For Moq, `MockRepository` is a factory of mocks. You can verify all mocks created from this factory in a single call. But, a repository is a pattern to abstract creating and accessing records in a data store. You will find `OrderRepository` or `EmployeeRepository`. Are `MockSession` or `MockGroup` better alternatives?
+### Cut!...What I don't like about Moq
+
+Moq is easy to use. You can start using it in minutes! You only need to read the README file and the quickstart files in the documentation. But...
+
+For Moq, everything is a mock, `Mock<T>`. Strictly speaking, everything isn't a mock.
+
+The [XUnit Tests Patterns](http://xunitpatterns.com/Mocks,%20Fakes,%20Stubs%20and%20Dummies.html) book presents a detailed category of fakes or doubles: fakes, stubs, mocks, dummies and spies. And, [The Art of Unit Testing]({% post_url 2020-03-06-TheArtOfUnitTestingReview %}) book reduces this classification to only three types: fakes, stubs and mocks. Other libraries use `Fake`, `Substitute` or `Stub`/`Mock` instead of only `Mock`.
+
+Moq has chosen this simplification to make it easier to use. But, this could lead to misusing the term **mock**. Notice I have deliberately used the word "fake" instead of "mock" so far.
+
+<div class="message">If you want to learn the difference between stubs and mocks, check <a href="/2021/05/24/WhatAreFakesInTesting">What are fakes in unit testing</a>.</div>
+
+For Moq, `MockRepository` is a factory of mocks. You can verify all mocks created from this factory in a single call. But, a repository is a pattern to abstract creating and accessing records in a data store. You will find `OrderRepository` or `EmployeeRepository`. Are `MockSession` or `MockGroup` better alternatives? Probably. Naming is hard anyways.
 
 ### Conclusion
 
-Moq is a great library! It keeps its promise. It's an straight-forward library to setup dependencies in your tests. You need to know a few methods to start using it: `Setup`, `Returns`, `Throws` and `Verify`. It has chosen to lower the barrier of writing tests. Give it a try! _To mock or not to mock!_
+Voilà! That's how you can create fakes and mocks with Moq. Moq is a great library! It keeps its promise. It's an straight-forward library to setup dependencies in your tests. You need to know a few methods to start using it. You only need `Setup`, `Returns`, `Throws` and `Verify`. It has chosen to lower the barrier of writing tests. Give it a try! _To mock or not to mock!_
+
+For more tips on writing unit tests, check my posts [How to write good unit tests?]({% post_url 2020-11-02-UnitTestingTips %}) and [Have a failing test]({% post_url 2021-02-05-FailingTest %}). If you use Moq often, avoid typing the same method names all the time with [these snippets I wrote for Visual Studio]({% post_url 2021-02-22-VisualStudioMoqSnippets %}).
 
 _Happy mocking time!_

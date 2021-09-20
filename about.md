@@ -7,7 +7,7 @@ I'm Cesar Aguirre. I'm a [software engineer](https://github.com/canro91), lifelo
 
 ### What I do
 
-I’m a software engineer based in Colombia (_not Columbia_) with more than 6 years of experience. I work remotely as a C# backend engineer. I specialize in building APIs and backend code with .NET technologies. Mostly, ASP.NET Core, ASP.NET Web API and SQL Server these days.
+I’m a software engineer based in Colombia (_not Columbia_) with more than 8 years of experience. I work remotely as a C# backend engineer. I specialize in building APIs and backend code with .NET technologies. Mostly, ASP.NET Core, ASP.NET Web API and SQL Server these days.
 
 <div class="message lead"><em>I help teams to grow high-quality backend software through clean code and unit testing</em></div>
 
@@ -32,6 +32,8 @@ I write about learning and programming. I want to share what I have learned in m
 
 In this blog you can find tips and advice, libraries I have used, issues I have found, lessons learned the hard way, success and failure stories.
 
+I've been featured in [Exception Not Found](https://exceptionnotfound.net/author/cesar-aguirre/) as a Guest Writer. And, I wrote about learning a new language (_not a programming language, a foreign language_) in [Fluent in 3 months](https://www.fluentin3months.com/speaking-french-in-france/).
+
 If you're interested, you can read [how I started blogging]({% post_url 2020-07-18-HowIStartedBlogging %}) and the story behind my first post.
 
 ### Start here
@@ -52,9 +54,15 @@ If you don’t know where to start reading or if you want to find something to r
 * My take on the difference between [Func and Action]({% post_url 2019-03-22-WhatTheFuncAction %})
 * My series on [C# idioms]({% post_url 2019-11-19-TwoCSharpIdioms %})
 
+#### Unit Testing
+
+* [Unit Testing 101: Free eBook]({% post_url 2021-08-30-UnitTesting %})
+* [How to create fakes with Moq]({% post_url 2020-08-11-HowToCreateFakesWithMoq %})
+* [How to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %})
+
 #### Productivity
 
-* [Just Vim It! Learning Vim For Fun and Profit]({% post_url 2020-09-14-LearnVimForFunAndProfit %}) I wrote this post as a Guest Writer for _[exceptionnotfound.net](https://exceptionnotfound.net/learning-vim-for-fun-and-profit/)_
+* [Just Vim It! Learning Vim For Fun and Profit]({% post_url 2020-09-14-LearnVimForFunAndProfit %}). I wrote this guide as a Guest Writer for _[exceptionnotfound.net](https://exceptionnotfound.net/learning-vim-for-fun-and-profit/)_
 * [Programs that saved you 100 hours]({% post_url 2020-04-13-ProgramThatSave100Hours %})
 * [Two free tools to format SQL queries]({% post_url 2020-09-30-FormatSQL %})
 * Plugins and settings for [my Visual Studio setup]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %})

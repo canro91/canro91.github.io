@@ -1,4 +1,4 @@
-{% capture imagePath %}{{ page.path | replace: '_posts/', '' | replace: '.md', '' }}/{{ include.name }}{% endcapture %}
+{% capture imagePath %}{{ page.path | replace: '_posts/', '' | replace: '.md', '' | replace: '#', '-' }}/{{ include.name }}{% endcapture %}
 {% if include.caption %}
 <figure>
     <img src="/assets/posts/{{ imagePath }}"

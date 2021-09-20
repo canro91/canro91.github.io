@@ -9,7 +9,7 @@ cover-alt: How to take smart notes? Takeaways
 
 "How to Take Smart Notes" describes the Zettelkasten method in depth. It shows how scientists and writers can produce new content from their notes. But, you don't have to be a scientist to take advantage of this method. Anyone can use it to organize his knowledge.
 
-The Zettelkasten method is the secret behind Niklas Luhman's success. He was a prominent German sociologist of the 20th century. He earned the title of Professor at Bielefeld University. To earn this title, he wrote a dissertation based on the notes he had about all the books he had read. He had a collection of over 90.000 notes. _Impressive, right?_
+The Zettelkasten method is the secret behind Niklas Luhman's success. He was a prominent German sociologist of the 20th century. He earned the title of Professor at Bielefeld University. To earn this title, he wrote a dissertation based on the notes he had about all the books he had read. He had a collection of over 90.000 notes. Impressive, right?
 
 > TL;DR
 > 
@@ -20,11 +20,11 @@ The Zettelkasten method is the secret behind Niklas Luhman's success. He was a p
 > * Put an index number on every card
 > * Create connections from one card to another
 
-## What you need to start?
+## What you need to start with Zettelkasten
 
 To start using the Zettlekasten method, **you only need pen, paper and and slip-box**. That's why this method is also called the "slip-box" method.
 
-All you have to do is have a pen and paper when you read. And, translate what you read to your own words. Don't copy and paste. _Keep reading to see how the method works!_
+All you have to do is have a pen and paper when you read. And, translate what you read to your own words. Don't copy and paste.
 
 Alternatively, you can any text editor to use it with your computer. But, don't complicate things unnecessarily. Good tools should avoid distractions from your main task: **thinking**.
 
@@ -34,7 +34,9 @@ Alternatively, you can any text editor to use it with your computer. But, don't 
 <figcaption>All you need pen and paper when your read. <span>Photo by <a href="https://unsplash.com/@craftedbygc?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Green Chameleon</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
 </figure>
 
-## How to start?
+## How to start taking smart notes
+
+### Zettelkasten type of notes
 
 The Zettlekasten method uses three types of notes: fleeting, literature and permanent notes.
 
@@ -45,6 +47,8 @@ While reading, make **literature notes**. Write down on a card what you don't wa
 To make **permanent notes**, review your literature notes and turn them into connections. The goal isn't to collect, but to generate new ideas and discussions. Ask yourself how it contradicts, expands or challenges your subject of interest.
 
 Keep a single idea per card. Use a fixed number to identify each card. You can use another card to expand on one. Each note should be self-explanatory.
+
+### Create a new note
 
 To add a note to your slip-box, follow these four steps:
  
@@ -61,7 +65,7 @@ Index cards are notes with references to other notes. They act as entry point to
 <figcaption>Don't take notes on notebooks. <span>Photo by <a href="https://unsplash.com/@dimhou?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Dimitri Houtteman</a> on <a href="https://unsplash.com/s/photos/notes?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
 </figure>
 
-## How not to take smart notes?
+## How not to take smart notes
 
 **Don't take notes on notebooks and on margins of books**. These notes end up in different places. You have to remember where you put them.
 
@@ -69,9 +73,11 @@ Index cards are notes with references to other notes. They act as entry point to
 
 **Don't store your notes on topics/subject and semester**. And, don't store your notes in chronological order either. It doesn't allow you to reorder notes.
 
-**Don't note everything on a notebook**. Your good ideas will end up entangled with other irrelevant notes. Make sure to use fleeting, literature and permanent notes
+**Don't note everything on a notebook**. Your good ideas will end up entangled with other irrelevant notes. Make sure to use fleeting, literature and permanent notes.
 
-## Why Zettlekasten method works?
+{% include image.html name="Quote.png" alt="Read, think and write. Take smart notes along the way" caption="" %}
+
+## Why Zettlekasten method works
 
 **Reading with pen and paper force you to understand**. You think you understand something until you have write it in your own words. Make sure you always write the output of your thinking.
 
@@ -81,7 +87,7 @@ Index cards are notes with references to other notes. They act as entry point to
 
 **Memory is a limited resource**. Use an external system to remember things. You don't want to put in your head what you can put on a piece of paper. To get something out of your head, write it down. Use fleeting notes.
 
-> _"Read, think and write. Take smart notes along the way"_
+_"Read, think and write. Take smart notes along the way"_
 
 _Happy note taking!_
 

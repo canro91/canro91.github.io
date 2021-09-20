@@ -5,13 +5,19 @@ tags: sql
 description: Do you need to tune your SQL Server and you don't know how to start? These are six tips from Pinal Dave to tune your SQL Server
 ---
 
-Recently, I've needed to optimize some SQL Server queries. I decided to look out there what to do to tune SQL Server and SQL queries.
+Recently, I've needed to optimize some SQL Server queries. I decided to look out there what to do to tune SQL Server and SQL queries. This is what I found.
 
-I found Pinal Dave from [SQLAuthority](https://blog.sqlauthority.com/). Chances are you have already found one of his blog posts when searching for anything related to SQL Server. He's been blogging about the subject for years. These are six tips from his blog and his online presentations I've applied recently.
+**At the database level, turn on automatic update of statistics, increase the file size autogrowth and update the compatibility level. At the table level, delete your unused indexes and create the missing ones, keeping around 5 indexes per table. And, at the query level, find and fix implicit conversions.**
 
-## Enable automatic statistics update 
+While looking up what I could do to tune my queries, I found Pinal Dave from [SQLAuthority](https://blog.sqlauthority.com/). Chances are you have already found one of his blog posts when searching for SQL Server tuning tips. He's been blogging about the subject for years.
 
-Turn on automatic update of statistics. You should turn it off if you're updating a really long table during your work-hours. You can [enable automatic statistic update](https://blog.sqlauthority.com/2009/10/15/sql-server-enable-automatic-statistic-update-on-database/) with this query:
+These are six tips from Pinal's blog and online presentations I've applied recently. Please, test these changes in a development or staging environment before making anything on your production servers.
+
+## 1. Enable automatic update of statistics 
+
+**Turn on automatic update of statistics.** You should turn it off if you're updating a really long table during your work-hours.
+
+This is how to enable automatic update of statistic update. [[Source]](https://blog.sqlauthority.com/2009/10/15/sql-server-enable-automatic-statistic-update-on-database/)
 
 ```sql
 USE <YourDatabase>;
@@ -31,17 +37,34 @@ EXEC sp_updatestats
 GO
 ```
 
-## Fix File Autogrowth
+## 2. Fix File Autogrowth
 
-Add size and file growth to your database. Make it your weekly file growth. Otherwise set it to 200 or 250MB. You can [change the file autogrowth](https://blog.sqlauthority.com/2018/12/23/how-to-track-autogrowth-of-any-database-interview-question-of-the-week-205/) from SQL Server Management Studio.
+Add size and file growth to your database. Make it your weekly file growth. Otherwise, change it to 200 or 250MB.
 
-## Find and Fix Implicit conversions
+From SQL Server Management Studio, to change the file autogrowth, go to your database properties and then to Files. Click on the three dots in the Autogrowth column. And, change the file growth.
 
-Implicit conversions happen when SQL Server needs to convert between two data types in a `WHERE` or in `JOIN`. For example, the query `SELECT * FROM dbo.Orders WHERE OrderNumber = 123` with `OrderNumber` as a `VARCHAR(20)` column has implicit warning when compared to an integer.
+{% include image.html name="FileAutogrowth.png" caption="Files page from Database properties in SQL Server Management Studio" alt="Files page from Database properties in SQL Server Management Studio" width="800px" %}
 
-To decide when implicit conversion happens, you can check [Microsoft Data Type Precedence table](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-type-precedence-transact-sql?view=sql-server-ver15). Types with lower precedence convert to types with higher precedence. For example, `VARCHAR` will be always converted to `INT`.
+## 3. Find and Fix Implicit conversions
 
-You can use this script to [indentify queries with implicit conversion](https://blog.sqlauthority.com/2018/06/11/sql-server-how-to-fix-convert_implicit-warnings/).
+Implicit conversions happen when SQL Server needs to convert between two data types in a `WHERE` or in `JOIN`.
+
+For example, the query below with `OrderNumber` as a `VARCHAR(20)` has implicit warning when we compare it to a INT parameter.
+
+```sql
+DECLARE @OrderNumber INT = 123;
+
+SELECT *
+FROM dbo.Orders
+WHERE OrderNumber = @OrderNumber;
+GO
+```
+
+To run this query, SQL Server has to go through all the rows in the `dbo.Orders` table to convert the `OrderNumber` from `VARCHAR(20)` to `INT`.
+
+To decide when implicit conversion happens, you can check [Microsoft Data Type Precedence table](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-type-precedence-transact-sql?view=sql-server-ver15). Types with lower precedence convert to types with higher precedence. For example, `VARCHAR` will be always converted to `INT` and to `NVARCHAR`.
+
+Use the below script to indentify queries with implicit conversion. [[Source]](https://blog.sqlauthority.com/2018/06/11/sql-server-how-to-fix-convert_implicit-warnings/).
 
 ```sql
 SELECT TOP(50) DB_NAME(t.[dbid]) AS [Database Name], 
@@ -64,20 +87,26 @@ WHERE CAST(query_plan AS NVARCHAR(MAX)) LIKE ('%CONVERT_IMPLICIT%')
 ORDER BY qs.total_worker_time DESC OPTION (RECOMPILE);
 ```
 
+<div class="video-container">
 <iframe src="https://www.youtube-nocookie.com/embed/ef-BmyNipU4?start=196&rel=0&fs=0" width="640" height="360" frameborder="0"></iframe>
+</div>
 
-## Change compatibility level
+## 4. Change compatibility level
 
-After updating your SQL Server, make sure to update the compatibility level of your database to the highest level supported by the current version of your SQL Server. You can check SqlAuthority blog on [how to change compatibility level](https://blog.sqlauthority.com/2017/05/22/sql-server-change-database-compatibility-level/).
+After updating your SQL Server, make sure to update the compatibility level of your database to the highest level supported by the current version of your SQL Server.
+
+You can change your SQL Server compatibility level using SQL Server Management Studio or with  TSQL query. [[Source]](https://blog.sqlauthority.com/2017/05/22/sql-server-change-database-compatibility-level/).
 
 ```sql
 ALTER DATABASE <YourDatabase>
 SET COMPATIBILITY_LEVEL = { 150 | 140 | 130 | 120 | 110 | 100 | 90 }
 ```
 
-## Create missing indexes
+## 5. Find and Create missing indexes
 
-But, don't create all missing indexes. Create the first 10 missing indexes. You should have only ~5 indexes per table. You can use the next script to [find the missing indexes in your database](https://blog.sqlauthority.com/2011/01/03/sql-server-2008-missing-index-script-download/).
+Create your missing indexes. But, don't create them all. Create the first 10 missing indexes in your database. Stick to having around 5 indexes per table.
+
+You can use the next script to find the missing indexes in your database. [[Source]](https://blog.sqlauthority.com/2011/01/03/sql-server-2008-missing-index-script-download/). But, don't blindly add new indexes. Check the indexes you already have and the estimated impact of the missing indexes.
 
 ```sql
 SELECT TOP 25
@@ -112,19 +141,25 @@ ORDER BY Avg_Estimated_Impact DESC
 GO
 ```
 
+<div class="video-container">
 <iframe src="https://www.youtube-nocookie.com/embed/fX05yEkSkpo?start=706&rel=0&fs=0" width="640" height="360" frameborder="0"></iframe>
+</div>
 
-## Delete most of your indexes
+## 6. Delete most of your indexes
 
-Indexes reduce perfomance all the time. They reduce performance of inserts, updates, deletes and selects. Even if a query isn't using an index, it reduces performance of the query.
+**Indexes reduce perfomance all the time.** They reduce performance of inserts, updates, deletes and selects. Even if a query isn't using an index, it reduces performance of the query.
 
-Delete most your indexes. Identify your main table and check if it has more than 5 indexes. Don't create indexes on every key of a join.
+**Delete most your indexes**. Identify your main table and check if it has more than 5 indexes. But, don't create indexes on every key of a JOIN.
 
-Also, keep in mind if you rebuild an index for a table, SQL Server will remove all caches related to that table. Rebuilding your indexes is the most expensive way of updating statistics.
+Also, keep in mind if you rebuild an index for a table, SQL Server will remove all plans cached related to that table.
 
+**Rebuilding your indexes is the most expensive way of updating statistics.**
+
+<div class="video-container">
 <iframe src="https://www.youtube-nocookie.com/embed/SqhX8OaOI6A?start=395&rel=0&fs=0" width="640" height="360" frameborder="0"></iframe>
+</div>
 
-You can [find your unused indexes](https://blog.sqlauthority.com/2011/01/04/sql-server-2008-unused-index-script-download/) with this script:
+You can find your unused indexes with the next script. [[Source]](https://blog.sqlauthority.com/2011/01/04/sql-server-2008-unused-index-script-download/). Look for indexes with zero seeks/scans and lots of updates. They're good candidates to drop.
 
 ```sql
 SELECT TOP 25
@@ -155,5 +190,11 @@ AND i.is_unique_constraint = 0
 ORDER BY (dm_ius.user_seeks + dm_ius.user_scans + dm_ius.user_lookups) ASC
 GO
 ```
+
+Voilà! These are six tips I learned from Pinal Dave to start tuning your SQL Server. Pay attention to your implicit conversions. You can get a surprise.
+
+I gained a lot of improvement only by fixing implicit conversions. In a store procedure, we had a `NVARCHAR` parameter to compare it with a `VARCHAR` column. Yes, implicit conversions happen between `VARCHAR` and `NVARCHAR`.
+
+For more SQL content, check my posts on [how to write dynamic SQL queries]({% post_url 2021-03-08-HowNotToWriteDynamicSQL %}) and the [differences between TRUNCATE and DELETE]({% post_url 2021-01-04-TruncateVsDelete %}).
 
 _Happy SQL time!_

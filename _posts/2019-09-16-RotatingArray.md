@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Rotating an array&colon; An interview exercise III
+title: "Rotating an array: An interview exercise III"
 tags: tutorial interview csharp
 ---
 

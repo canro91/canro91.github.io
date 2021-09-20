@@ -1,29 +1,47 @@
 ---
 layout: post
-title: Let's Go&colon; Learn Go in 30 days
+title: "Let's Go: Learn Go in 30 days"
 tags: letsX go
 cover: LetsGo.png
 ---
 
-You want to learn a new programming language? You aren't sure about what language to choose? Have you heard about Go? _Well, let's Go!_
+You want to learn a new programming language? You aren't sure about what language to choose? Have you heard about Go? Well, let's learn Go in 30 days!
 
-> _"Go is an open source programming language that makes it easy to build simple, reliable, and efficient software"_. [golang.org](https://golang.org/)
+From its [official page](https://golang.org/), Go is _"an open source programming language that makes it easy to build simple, reliable, and efficient software"_. 
 
 Go is a popular language these days. According to Stack Overflow 2020 Developer Survey, Go is in the top 5 of most loved languages. It ranks in the top 3 most wanted languages. Docker, Kubernetes, and a growing [list of projects](https://github.com/golang/go/wiki/GoUsers) use Go.
 
 ## Motivation
 
-**Go reduces the complexity of writing concurrent software**. Go uses the concept of **channels** and **goroutines**. These two constructs allow you to have a "queue" and "two threads" to write to and read from it, out of the box. Rob Pike, one of the creators of Go, explains these concepts in his talk [Concurrency is not parallelism](https://blog.golang.org/waza-talk). In other languages, you would need error-prone code to achieve similar results. _Threads, locks, semaphores, etc, ..._
+**Go reduces the complexity of writing concurrent software**. Go uses the concept of **channels** and **goroutines**. These two constructs allow you to have a "queue" and "two threads" to write to and read from it, out of the box.
 
-## Method
+In other languages, you would need error-prone code to achieve similar results. _Threads, locks, semaphores, etc, ..._
 
-**Learn something by doing**. This is one of the takeaways from the book [Pragmatic Thinking and Learning]({% post_url  2020-05-07-PragmaticThinkingAndLearning %}). Instead of watching videos or skimming books, recreate examples and build mini-projects. _"Instead of dissecting a frog, build one"_.
+Rob Pike, one of the creators of Go, explains channels and goroutines in his talk [Concurrency is not parallelism](https://blog.golang.org/waza-talk).
 
-**No Copy/Paste**. Read the sample, "cover" it and reproduce it without looking at it. If you get stuck, search online instead of going back to the sample. For exercises, read the instructions and try to solve them by yourself. Then, check your solution. _Fire up your text editor!_
+<div class="video-container">
+<iframe src="https://www.youtube-nocookie.com/embed/oV9rvDllKEg?rel=0&fs=0" width="640" height="360" frameborder="0"></iframe>
+</div>
+
+## Methodology
+
+To learn a new programming language, library or framework, stop passively reading tutorials and copy-pasting code you find online. Follow these two principles.
+
+**Learn something by doing**. This is one of the takeaways from the book [Pragmatic Thinking and Learning]({% post_url 2020-05-07-PragmaticThinkingAndLearning %}). Instead of watching videos or skimming books, recreate examples and build mini-projects.
+
+**Don't Copy and Paste**. Instead of copy-pasting, read the sample code, "cover" it and reproduce it without looking at it. If you get stuck, search online instead of going back to the sample. For exercises, read the instructions and try to solve them by yourself. Then, check your solution.
+
+> _"Instead of dissecting a frog, build one"_.
+> 
+>  ― Andy Hunt, Pragmatic Thinking and Learning
 
 ## Resources
 
-Before starting, you can have a general overview of the language with Pluralsight course [Go Big Picture](https://app.pluralsight.com/library/courses/go-big-picture/table-of-contents). To grasp the main concepts, you can follow [Learn Go with tests](https://github.com/quii/learn-go-with-tests). It teaches Go using the concept of Test-Driven Development (TDD). _Red, green, refactor_. Other helpful resources to are [Go by Example](https://gobyexample.com/) and [Go documentation](https://golang.org/doc/).
+Before starting to build something with Go, you can have a general overview of the language with the Pluralsight course [Go Big Picture](https://app.pluralsight.com/library/courses/go-big-picture/table-of-contents).
+
+To grasp the main concepts, you can follow [Learn Go with tests](https://github.com/quii/learn-go-with-tests). It teaches Go using the concept of Test-Driven Development (TDD). _Red, green and refactor_.
+
+Other helpful resources to are [Go by Example](https://gobyexample.com/) and [Go documentation](https://golang.org/doc/).
 
 > “To me, legacy code is simply code without tests.”
 > 
@@ -75,9 +93,13 @@ You can find more project ideas here: [40 project ideas for software engineers](
 * [Best Practices for Industrial Programming](https://www.youtube.com/watch?v=PTE4VJIdHPg)
 * [7 common mistakes in Go and when to avoid them](https://www.youtube.com/watch?v=29LLRKIL_TI)
 
-## Conclusions
+## Conclusion
 
-Go was design to reduce the clutter and complexity of other languages. Go syntax is like C. Go is like C on asteroids. _Goodbye, C pointers!_ Go doesn't include expected features like inheritance, exceptions or generics. _Yes, Go doesn't have exceptions_. But, Go is batteries-included. You have included, for free, a testing and benchmarking library, a formatter and a race-condition detector. Coming from C#, you can still miss assertions like the ones from NUnit or XUnit. _Aren't you curious about a language without exceptions? Happy Go time!_
+Go was designed to reduce the clutter and complexity of other languages. Go syntax is like C. Go is like C on asteroids. _Goodbye, C pointers!_ Go doesn't include common features in other languages like inheritance, exceptions or generics. _Yes, Go doesn't have exceptions_.
+
+However, Go is batteries-included. You have a testing and benchmarking library, a formatter and a race-condition detector. Coming from C#, you can still miss assertions like the ones from NUnit or XUnit.
+
+Aren't you curious about a language without exceptions? _Happy Go time!_
 
 > _You can find my own 30-day journey following the resources from this post in [LetsGo](https://github.com/canro91/LetsGo)_
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: TIL&colon; LINQ DefaultIfEmpty method in C#
+title: "TIL: LINQ DefaultIfEmpty method in C#"
 tags: todayilearned csharp
 ---
 

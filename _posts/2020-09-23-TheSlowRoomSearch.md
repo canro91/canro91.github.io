@@ -4,15 +4,15 @@ title: BugOfTheDay, The slow room search
 tags: bugoftheday csharp
 ---
 
-Another day at work! This time, the room search was running slow. For one of the big hotels, searching all available rooms in a week took about 15 seconds.
+Another day at work! This time, the room search was running slow. For one of the big hotels, searching all available rooms in a week took about 15 seconds. This is how I optimized the room search functionality.
 
 This room search was a public page to book a room into a hotel without using any external booking system. This page used an ASP.NET Core API project to combine data from different microservices. 
 
 ## Room type details
 
-At first glance, I found an _N + 1 SELECT_. This is a common anti-pattern. The code called the database per each element from an input set to find more details about each item.
+At first glance, I found an N+1 query problem. This is a common anti-pattern. The code called the database per each element from an input set to find more details about each item.
 
-This _N + 1 SELECT_ was in the code to find the details of each room type. The code looked something like this:
+This N+1 problem was in the code to find the details of each room type. The code looked something like this:
 
 ```csharp
 public async Task<IEnumerable<RoomTypeViewModel>> GetRoomTypesAsync(int hotelId, IEnumerable<int> roomTypeIds)
@@ -165,9 +165,9 @@ private RoomGallery MapToRoomGallery(int roomTypeId, int hotelId, IEnumerable<Ro
 }
 ```
 
-The `MapToRoomGallery` method was the problem. It filtered the collection of result images with every element. It was a nested loop over the same collection, an `O(nm)` operation. Also, since all the code was synchronous, there was no need for `Task.Run` and `Task.WhenAll`.
+The `MapToRoomGallery` method was the problem. It filtered the collection of result images, `roomGalleries` with every element. It was a nested loop over the same collection, an `O(nm)` operation. Also, since all the code was synchronous, there was no need for `Task.Run` and `Task.WhenAll`.
 
-To fix this problem, the code grouped the images by room type first. And then, it passed a filtered collection to the mapping method.
+To fix this problem, the code grouped the images by room type first. And then, it passed a filtered collection to the mapping method, `MapToRoomGallery`.
 
 ```csharp
 public async Task<IEnumerable<RoomGallery>> GetRoomGalleriesAsync(IEnumerable<int> roomTypeIds)
@@ -211,7 +211,7 @@ These are the times of three requests to the initial room search using Postman:
 | Before | 13.96 13.49 17.64 |
 | After  | 11.74 11.19 11.23 |
 
-When checking the log, the room search had a noticeable improvement for the `GetRoomClassGaleriesAsync` method. From ~8-11s to ~3-4s.
+When checking the log, the room search had a noticeable improvement for the `GetRoomClassGaleriesAsync` method. From ~8-11s to ~3-4s. _Just three lines of code._
 
 ```
 GetHotelTimeZoneAsync: 182ms
@@ -306,7 +306,7 @@ public async Task<IEnumerable<RateDetailViewModel>> GetRateDetailsAsync([FromBod
 }
 ```
 
-Again, the `N + 1 SELECT` anti-pattern. The initial client had ~10 rates, it means 10 separate database calls. To fix this issue, the code validated all input ids and returned early if there wasn't any valid id to call the database. Then, it made a single request to the database. Either it succeeded or failed for all the input ids.
+Again, the N+1 query anti-pattern. The initial client had ~10 rates, it means 10 separate database calls. To fix this issue, the code validated all input ids and returned early if there wasn't any valid id to call the database. Then, it made a single request to the database. Either it succeeded or failed for all the valid input ids.
 
 
 ```csharp
@@ -345,7 +345,7 @@ public async Task<IEnumerable<RateDetailViewModel>> GetRateDetailsAsync([FromBod
 }
 ```
 
-After removing this `N + 1 SELECT`, the execution time of getting details for ~10 rates went from ~1.6s to ~200-300ms. For three consecutive calls, these were the times of calling the modified rate details method from Postman
+After removing this N+1 problem, the execution time of getting details for ~10 rates went from ~1.6s to ~200-300ms. For three consecutive calls, these were the times of calling the modified rate details method from Postman
 
 | Room Rates | Time in milliseconds |
 |---|---|
@@ -377,9 +377,9 @@ It was the last low-hanging fruit issue I addressed. After the above three chang
 
 ## Conclusion
 
-From this task, I learned two things. First, don't assume a bottleneck is here or there until you measure it. And, avoid the `N + 1 SELECT` anti-pattern and nested loops on collections.
+Voilà! That's how I optimized the room search functionality. Five seconds faster don't seem too much. But, that's the difference between someone booking a room in a hotel or not. From this task, I learned two things. First, don't assume a bottleneck is here or there until you measure it. And, avoid the N+1 query anti-pattern and nested loops on large collections.
 
-I didn't mess with any store procedure or query trying to optimize it. But, I had some metrics in place and identified which the store procedures to tune.
+I didn't mess with any store procedure or SQL query trying to optimize it. But, I had some metrics in place and identified which was the store procedures to tune.
 
 The next step I tried was to cache the hotel details. You can take a look at my post on [how to add a caching layer with Redis and ASP.NET Core](https://canro91.github.io/2020/06/29/HowToAddACacheLayer/) for more details.
 

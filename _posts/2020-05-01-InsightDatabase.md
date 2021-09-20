@@ -4,11 +4,11 @@ title: How to create a CRUD API with ASP.NET Core and Insight.Database
 tags: tutorial showdev asp.net
 ---
 
-A common task when working with web applications is querying the database. You want to store and retrieve any information from your database. If you choose to use [ADO.NET](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/), you end up writing boilerplate code. But, you could use an ORM instead.
+A common task when working with web applications is querying the database. You want to store and retrieve any information from your database. If you choose to write your own database access layer, you end up writing boilerplate code. But, you could use an ORM instead. Let's use Insight.Database to create a CRUD API for a catalog of products.
 
 ## Why to use an ORM?
 
-**An ORM, Object-relational mapping, is a library that translates between your program and your database.** It converts objects to database records and vice-versa.
+**An ORM, Object-relational mapping, is a library that translates between your program and your database. It converts objects to database records and vice-versa.**
 
 ORMs vary in size and features. You can find ORMs that create and maintain your database objects and generate SQL statements. Also, you can find micro-ORMs that make you write SQL queries.
 
@@ -21,21 +21,29 @@ You can roll your own database access layer. But, an ORM helps you to:
 
 ## Insight.Database
 
-[Insight.Database](https://github.com/jonwagner/Insight.Database) is a _"fast, lightweight .NET micro-ORM"_. It allows you to query your database with almost no mapping code. It maps fields/properties to query parameters and columns to fields/properties. Also, you can make extra changes to records as they're being read. For example, [you can trim whitespace-padded string columns]({% post_url 2018-09-21-INeedSomeSpace %}) from a legacy database.
+[Insight.Database](https://github.com/jonwagner/Insight.Database) is a _"fast, lightweight .NET micro-ORM"_. It allows you to query your database with almost no mapping code.
 
 > _Insight.Database is the .NET micro-ORM that nobody knows about because it's so easy, automatic, and fast, (and well-documented) that nobody asks questions about it on StackOverflow._
 
-Insight.Database recommends you to call your database through [store procedures](https://www.essentialsql.com/what-is-a-stored-procedure/). It doesn't generate any SQL statements for you. You have to write your own SQL queries.
+Insight.Database maps properties from C# classes to parameters in queries and store procedures. Also, Insight.Database maps columns from query results back to properties in C# classes.
 
-## Roll-up your sleeves
+Another feature of Insight.Database is record post-processing. You can make extra changes to records as they're being read. For example, [you can trim whitespace-padded string columns]({% post_url 2018-09-21-INeedSomeSpace %}) from a legacy database without using the `Trim()` method in your mapping classes.
 
-Let's create a simple CRUD application for a catalog of products. You should have installed the latest version of [ASP.NET Core SDK](https://dotnet.microsoft.com/download) and one database engine. Let's use [SQL Server Express LocalDB](https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/sql?view=aspnetcore-3.1&tabs=visual-studio#sql-server-express-localdb) shipped with Visual Studio.
+Unlike other ORMs, with Insight.Database, you have to write your own SQL queries or store procedures. It doesn't generate any SQL statements for you. In fact, Insight.Database documentation recommends to call your database through store procedures.
 
-Of course, you can use another database. Insight.Database has providers to work with MySql, SQLite or PostgreSQL. For a list of all providers, see [Database providers](https://github.com/jonwagner/Insight.Database/wiki#database-providers).
+## A CRUD application with Insight.Database
+
+Let's create a simple CRUD application for a catalog of products. A CRUD application has 4 methods to create, read, update and delete entities in a business domain.
+
+Before we begin, you should have installed the latest version of the [ASP.NET Core SDK](https://dotnet.microsoft.com/download) and one database engine. Let's use [SQL Server Express LocalDB](https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/sql?view=aspnetcore-3.1&tabs=visual-studio#sql-server-express-localdb) shipped with Visual Studio.
+
+Of course, you can use another database. Insight.Database has providers to work with MySQL, SQLite or PostgreSQL. For a list of all providers, see [Database providers](https://github.com/jonwagner/Insight.Database/wiki#database-providers).
 
 ### Create the skeleton
 
-Let's create an ASP.NET Core Web application from Visual Studio for our catalog of products. Choose API as the project type. Let's call it `ProductCatalog`. You will have a file structure like this one:
+First, let's create an ASP.NET Core Web application from Visual Studio for our catalog of products. Choose API as the project type when creating the new solution. Let's call it `ProductCatalog`.
+
+After creating an API project in Visual Studio, you will have a file structure like this one:
 
 ```
 |____appsettings.Development.json
@@ -50,50 +58,59 @@ Let's create an ASP.NET Core Web application from Visual Studio for our catalog 
 |____WeatherForecast.cs
 ```
 
-> _You can delete the files `WeatherForecast.cs` and `WeatherForecastController.cs`._
+You can delete the files `WeatherForecast.cs` and `WeatherForecastController.cs`. Visual Studio created these files when we choose the API project template. We won't need them for our catalog of products.
 
 Now, let's create a `ProductController` insde the `Controllers` folder. You can choose the template with read/write actions. You will get a class like this:
 
 ```csharp
-[Route("api/[controller]")]
-[ApiController]
-public class ProductController : ControllerBase
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace ProductCatalog.Controllers
 {
-    // GET: api/Product
-    [HttpGet]
-    public IEnumerable<string> Get()
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ProductController : ControllerBase
     {
-        return new string[] { "value1", "value2" };
-    }
+        // GET: api/<ProductController>
+        [HttpGet]
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
 
-    // GET: api/Product/5
-    [HttpGet("{id}", Name = "Get")]
-    public string Get(int id)
-    {
-        return "value";
-    }
+        // GET api/<ProductController>/5
+        [HttpGet("{id}")]
+        public string Get(int id)
+        {
+            return "value";
+        }
 
-    // POST: api/Product
-    [HttpPost]
-    public void Post([FromBody] string value)
-    {
-    }
+        // POST api/<ProductController>
+        [HttpPost]
+        public void Post([FromBody] string value)
+        {
+        }
 
-    // PUT: api/Product/5
-    [HttpPut("{id}")]
-    public void Put(int id, [FromBody] string value)
-    {
-    }
+        // PUT api/<ProductController>/5
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] string value)
+        {
+        }
 
-    // DELETE: api/Product/5
-    [HttpDelete("{id}")]
-    public void Delete(int id)
-    {
+        // DELETE api/<ProductController>/5
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+        }
     }
 }
 ```
 
-Now, if you run the project and make a GET request to `https://localhost:44343/api/Product`. You will get the two result values. _The port number may be different for you._
+Now, if you run the project and make a GET request to `https://localhost:44343/api/Product`. You will get the two result values. The port number may be different for you.
 
 ```json
 [
@@ -102,16 +119,24 @@ Now, if you run the project and make a GET request to `https://localhost:44343/a
 ]
 ```
 
-_You're ready to start!_
+Now, you're ready to start!
+
+<figure>
+<img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="Trendy apparel store" />
+
+<figcaption>Let's create our catalog of products. Photo by <a href="https://unsplash.com/@mercantile?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Clark Street Mercantile</a> on <a href="https://unsplash.com/s/photos/store?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption>
+</figure>
 
 ### Get all products
 
 #### Create the database
 
-Let's create a database `ProductCatalog` and a `Products` table. Feel free to use a table designer or write the SQL statement. A product will have an id, name, price and description.
+Let's create a database `ProductCatalog` and a `Products` table. Feel free to use a table designer or write the SQL statement in [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15).
+
+A product will have an id, name, price and description.
 
 ```sql
-CREATE TABLE [dbo].[Table]
+CREATE TABLE [dbo].[Products]
 (
     [Id] INT NOT NULL PRIMARY KEY IDENTITY,
     [Name] VARCHAR(50) NOT NULL,
@@ -120,11 +145,11 @@ CREATE TABLE [dbo].[Table]
 )
 ```
 
-> _It's a good idea to version control the table definitions and the store procedures. But, let's keep it simple for now._
+It's a good idea to [version control]({% post_url 2020-05-29-HowToVersionControl %}) the table definitions and the store procedures. But, let's keep it simple for now.
 
 #### Modify GET
 
-Let's create a `Product` class inside a new folder `Models`. Modify the first Get method to return a `IEnumerable<Product>` instead of `IEnumerable<string>`. Don't forget to add `using ProductCatalog.Models;` at the top of your file.
+Let's create a `Product` class inside a new folder `Models`. Name the properties of the `Product` class after the columns of the `Products` table. Insight.Database will map the two for us.
 
 ```csharp
 public class Product
@@ -136,25 +161,68 @@ public class Product
 }
 ```
 
-Now, install Insight.Database nuget package. After that, update the body of the `Get` method to query the database with a store procedure called `GetAllProducts`. You will need the `Query` extension method from Insight.Database.
+Next, modify the first `Get` method in the `ProductController` class to return a `IEnumerable<Product>` instead of `IEnumerable<string>`.
+
+Don't forget to add `using ProductCatalog.Models;` at the top of your file. I have removed and sorted the `using` statements.
 
 ```csharp
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using ProductCatalog.Models;
-using System.Data.SqlClient;
 
-[HttpGet]
-public IEnumerable<Product> Get()
+namespace ProductCatalog.Controllers
 {
-    var connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ProductCatalog;Integrated Security=True");
-    return connection.Query("GetAllProducts");
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ProductController : ControllerBase
+    {
+        // GET: api/<ProductController>
+        [HttpGet]
+        public IEnumerable<Product> Get()
+        {
+            // We will fill in the missing code soon
+        }
+
+        // The rest of the file remains the same
+    }
 }
 ```
 
-> _I know, I know...We will refactor this in the next steps...By the way, don't version control passwords or any sensitive information, please._
+Now, install `Insight.Database` NuGet package. After that, update the body of the `Get` method to query the database with a store procedure called `GetAllProducts`. You will need the `Query()` extension method from Insight.Database. Add `using Insight.Database;` at the top of the file.
 
-#### Create GetAllProducts store procedure
+```csharp
+using Microsoft.AspNetCore.Mvc;
+using Insight.Database;
+using ProductCatalog.Models;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 
-Now, you need the `GetAllProducts` store procedure. Depending on your workplace, you will have to follow a naming convention. For example, `sp_Products_GetAll`.
+namespace ProductCatalog.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ProductController : ControllerBase
+    {
+        // GET: api/<ProductController>
+        [HttpGet]
+        public IEnumerable<Product> Get()
+        {
+            var connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ProductCatalog;Integrated Security=True");
+            return connection.Query("GetAllProducts");
+        }
+
+        // ...
+    }
+}
+```
+
+I know, I know...We will refactor this in the next steps...By the way, don't version control passwords or any sensitive information, please.
+
+#### Create GetAllProducts stored procedure
+
+Now, you need the `GetAllProducts` stored procedure.
+
+Depending on your workplace, you will have to follow a naming convention. For example, `sp_Products_GetAll`.
 
 ```sql
 CREATE PROCEDURE [dbo].[GetAllProducts]
@@ -186,9 +254,9 @@ And, if you make another GET request, you will find the new product. _Yay!_
 ]
 ```
 
-> _It's a good idea not to return model or business objects from your API methods. It's recommended to create view models or DTO's with only the properties a consumer of your API will need. But, let's keep it simple._
+It's a good idea not to return model or business objects from your API methods. It's recommended to create view models or DTO's with only the properties a consumer of your API will need. But, let's keep it simple.
 
-#### Refactor
+#### Use appsettings.json file
 
 Let's clean what we have. First, move the connection string to the `appsettings.json` file.
 
@@ -198,7 +266,7 @@ Let's clean what we have. First, move the connection string to the `appsettings.
 }
 ```
 
-Next, register a `SqlConnection` in the `ConfigureServices` method of the `Startup` class. This will create a new connection on every request.
+Next, register a `SqlConnection` in the `ConfigureServices` method of the `Startup` class. This will create a new connection on every request. Insight.Database opens and closes database connections for us.
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -208,34 +276,53 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Now, update `ProductController` to add a field and a constructor.
+Now, update `ProductController` to add a field and a constructor with a `SqlConnection` parameter.
 
 ```csharp
-private readonly SqlConnection _connection;
+using Microsoft.AspNetCore.Mvc;
+using Insight.Database;
+using ProductCatalog.Models;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 
-public ProductController(SqlConnection connection)
+namespace ProductCatalog.Controllers
 {
-    _connection = connection;
-}
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ProductController : ControllerBase
+    {
+        private readonly SqlConnection _connection;
 
-// GET: api/Product
-[HttpGet]
-public IEnumerable<Product> Get()
-{
-    return _connection.Query("GetAllProducts");
-}
+        public ProductController(SqlConnection connection)
+        {
+            _connection = connection;
+        }
+        
+        // GET: api/<ProductController>
+        [HttpGet]
+        public IEnumerable<Product> Get()
+        {
+            return _connection.Query("GetAllProducts");
+        }
 
+        // ...
+    }
+}
 ```
 
-Notice, properties in the `Product` class matches column names in `Products` table. After this refactor, this `Get` method should continue to work.
+After this refactor, this `Get` method should continue to work. _I hope so!_
 
-#### Pagination
+To know more about configuration in ASP.NET Core, read my post on [how to read configuration values]({% post_url 2020-08-21-HowToConfigureValues %}).
 
-If your table grows, you don't want to retrieve all products in a single database call. Let's query a page of results each time. For this, you will need two parameters in the `Get` method and in the `GetAllProducts` store procedure.
+#### Pagination with OFFSET-FETCH
+
+If your table grows, you don't want to retrieve all products in a single database call. That would be slow!
+
+Let's query a page of results each time. For this, you will need two parameters in the `Get()` method and in the `GetAllProducts` store procedure: `pageIndex` and `pageSize`.
 
 ```csharp
 [HttpGet]
-public IEnumerable Get(int pageIndex = 1, int pageSize = 10)
+public IEnumerable<Product> Get(int pageIndex = 1, int pageSize = 10)
 {
     var parameters = new { PageIndex = pageIndex - 1, PageSize = pageSize };
     return _connection.Query("GetAllProducts", parameters);
@@ -255,18 +342,20 @@ BEGIN
     SELECT Id, Name, Price, Description
     FROM dbo.Products
     ORDER BY Name
-    OFFSET @PageIndex ROWS FETCH NEXT @PageSize ROWS ONLY;
+    OFFSET (@PageIndex - 1)*@PageSize ROWS FETCH NEXT @PageSize ROWS ONLY;
 END
 GO
 ```
 
-If you add more products to the table, you will see how you retrieve a subset of products on GET requests.
+If you add more products to the table, you will see how you retrieve a subset of products on `GET` requests.
 
-> _If you want to practice more, create an endpoint to search a product by id. You should change the appropriate Get method and a create a new store procedure: `GetProductById`._
+If you want to practice more, create an endpoint to search a product by id. You should change the appropriate `Get()` method and a create a new store procedure: `GetProductById`.
 
 ### Insert a new product
 
-First, inside a new `ViewModels` folder, create an `AddProduct` class. It should have with three properties: name, price and description.
+#### Modify POST
+
+First, inside a new `ViewModels` folder, create an `AddProduct` class. It should have with three properties: name, price and description. That's what we want to store for our products.
 
 ```csharp
 public class AddProduct
@@ -277,7 +366,7 @@ public class AddProduct
 }
 ```
 
-Next, update the `Post` method in the `ProductController` to use as parameter `AddProduct`. This time, since you will insert a new product, you need the `Execute` method instead of `Query`.
+Next, update the `Post` method in the `ProductController` to use as parameter `AddProduct`. This time, since you will insert a new product, you need the `Execute()` method instead of `Query()`.
 
 ```csharp
 [HttpPost]
@@ -293,7 +382,9 @@ public void Post([FromBody] AddProduct request)
 }
 ```
 
-Next, create the `AddProduct` store procedure. It will have a single `INSERT` statement.
+#### Create AddProduct stored procedure
+
+Next, create the `AddProduct` stored procedure. It will have a single `INSERT` statement.
 
 ```sql
 CREATE PROCEDURE AddProduct
@@ -308,11 +399,11 @@ END
 GO
 ```
 
-> _You need to validate input data, of course. For example, name and price are required. You can use annotations and a [model validator](https://docs.microsoft.com/en-us/aspnet/core/mvc/models/validation?view=aspnetcore-3.1) or a library like [FluentValidation](https://fluentvalidation.net/)_.
+You need to validate input data, of course. For example, name and price are required. You can use annotations and a [model validator](https://docs.microsoft.com/en-us/aspnet/core/mvc/models/validation?view=aspnetcore-3.1) or a library like [FluentValidation](https://fluentvalidation.net/).
 
 Finally, to add a new product, make a POST request with a json body. It should include the name, price and description for the new product. You will see your product if you make another GET request.
 
-```json
+```
 POST https://localhost:44343/api/Product
 {
     "name": "iPhone 11 Pro",
@@ -321,12 +412,14 @@ POST https://localhost:44343/api/Product
 }
 ```
 
+Now you're creating and reading products from your database with Insight.Database. Did you notice you didn't need any mapping code? We named the classes to match the stored procedure parameters and results. Great!
+
 ## Conclusion
 
-_Voilà!_ You know how to use Insight.Database to retrieve results and execute actions with store procedures using `Query` and `Execute` methods. If you stick to naming conventions, you won't need any mapping code. Insight.Database helped you to keep your data access to a few lines of code. 
+Voilà! You know how to use Insight.Database to retrieve results and execute actions with store procedures using `Query()` and `Execute()` methods. They have asynchronous alternatives too. If you stick to naming conventions, you won't need any mapping code. Insight.Database helps you to keep your data access to a few lines of code. 
 
-> _Your mission, Jim, should you decide to accept it, is to change the `Update` and `Delete` methods to comple all CRUD operations. This post will self-destruct in five seconds. Good luck, Jim._
+Your mission, Jim, should you decide to accept it, is to change the `Update()` and `Delete()` methods to comple all CRUD operations. This post will self-destruct in five seconds. Good luck, Jim.
 
-If you're new to ASP.NET Core, check my [ASP.NET Core Guide for ASP.NET Framework Developers]({% post_url 2020-03-23-GuideToNetCore %})
+If you're coming from the old ASP.NET Framework, check my [ASP.NET Core Guide for ASP.NET Framework Developers]({% post_url 2020-03-23-GuideToNetCore %}). To learn how to update your database schema, check my post about [database migrations with Simple.Migrations]({% post_url 2020-08-15-Simple.Migrations %}).
 
 _Happy coding!_

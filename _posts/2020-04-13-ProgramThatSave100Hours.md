@@ -1,16 +1,16 @@
 ---
 layout: post
-title: Programs that saved you 100 hours?
+title: Programs that saved you 100 hours (Online tools, Git aliases and Visual Studio extensions)
 tags: productivity git visualstudio
 ---
 
-Today I saw this HN thread on [Programs that saved you 100 hours](https://news.ycombinator.com/item?id=22849208). So I want to show some of the tools that have saved me a lot of time. _Probably not 100 hours yet._
+Today I saw this Hacker News thread about [Programs that saved you 100 hours](https://news.ycombinator.com/item?id=22849208). So I want to show some of the tools that have saved me a lot of time. _Probably not 100 hours yet._
 
 ## Online
 
-* [JSON Utils](https://jsonutils.com/) It converts a json file into C# classes. You could choose the property annotations and the casing for names. Visual Studio 2019 has these feature too. But, it doesn't change the names from camelCase to PascalCase automatically.
+* [JSON Utils](https://jsonutils.com/) It converts a json file into C# classes. You could choose the property annotations and the casing for names. Visual Studio 2019 has this feature as "Paste JSON as Classes". But, it doesn't change the property names from camelCase in your JSON to PascalCase in your C# class.
 
-* [NimbleText](https://nimbletext.com/Live) It applies a replace pattern on every single item of a input dataset. Then, you don't need to type crazy key sequences. _Like playing the drums_ For example, it's useful to generate SQL statements given sample data.
+* [NimbleText](https://nimbletext.com/Live) It applies a replace pattern on every single item of a input dataset. You don't need to type crazy key sequences. _Like playing the drums_ For example, it's useful to generate SQL insert or updates statements from sample data in CSV format.
 
 * [jq play](https://jqplay.org/) An online version of [jq](https://stedolan.github.io/jq/), a JSON processor. It allows to slice, filter, map and transform JSON data.
 
@@ -32,7 +32,7 @@ alias gpo='git push origin -u '
 alias gconf='git diff --name-only --diff-filter=U'
 ```
 
-Not Git related, but I have also created some aliases to use the Pomodoro technique
+Not Git related, but I have also created some aliases to use the Pomodoro technique.
 
 ```bash
 alias pomo='sleep 1500 && echo "Pomodoro" && tput bel' 
@@ -42,7 +42,9 @@ alias lb='sleep 900 && echo "Long break" && tput bel'
 
 ### Hook
 
-I work in a project that uses a branch naming convention. You need to include the type of task and the task number in the branch name. Every commit message should include the task number too. [You can automate that with a prepare-commit-msg hook](https://medium.com/better-programming/how-to-automatically-add-the-ticket-number-in-git-commit-message-bda5426ded05). So no more mental burden to include that task number in every commit message. Specially when task numbers end up like virus names :D
+I work in a project that uses a branch naming convention. You need to include the type of task and the task number in the branch name. Every commit message should include the task number too. [You can automate that with a prepare-commit-msg hook](https://medium.com/better-programming/how-to-automatically-add-the-ticket-number-in-git-commit-message-bda5426ded05).
+
+No more mental burden to memorize every task number. Specially when task numbers end up like virus names :D
 
 ```bash
 #!/bin/bash
@@ -61,3 +63,7 @@ echo "$TICKET $MESSAGE" > $FILE
 * [CodeMaid](https://marketplace.visualstudio.com/items?itemName=SteveCadwallader.CodeMaid) It's like a janitor. It helps you to clean extra spaces and blank lines, remove and sort using statements, insert blank line between properties and much more.
 
 * [MappingGenerator](https://marketplace.visualstudio.com/items?itemName=54748ff9-45fc-43c2-8ec5-cf7912bc3b84.mappinggenerator) I found this extension recently and it has been a time saver. You need to initialize an object with default values? You need to create a view model or DTO from a business object? MappingGenerator got you covered!
+
+Voilà! These are the tools that have saved me 100 hours! If you want to try more Visual Studio extension, check my [Visual Studio Setup for C#]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %}). If you're new to Git, check my [Git Guide for Beginners]({% post_url 2020-05-29-HowToVersionControl %}) and my [Git guide for TFS Users]({% post_url 2019-11-11-GitGuideForTfsUsers %}).
+
+_Happy coding!_

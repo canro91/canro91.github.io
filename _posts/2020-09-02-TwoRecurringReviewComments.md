@@ -1,18 +1,20 @@
 ---
 layout: post
-title: How I got rid of two recurring code review comments?
+title: How to get rid of two recurring review comments (Git hook, VS extension)
 tags: productivity git visualstudio
 ---
 
-During code review, one or two of your coworkers look at your code to spot any potential issues and to check if the code follows existing conventions. Sometimes, code review ends up checking style issues. _Brackets in the same line, disorganized using statements, extra blank lines_. You can use extensions on your IDE or linters to format your code.
+During code review, one or two of your coworkers look at your code to spot any potential issues. But, often, code reviews end up checking only style issues. This is how I get rid of two recurrent comments I got getting my code reviewed.
 
-For a project I was working on, **I had to include the ticket number in every commit message and add `Async` suffix to all asynchronous C# methods**. I used a Git hook to add the ticket number in the commit messages. And, an `.editorconfig` file (and, alternatively an extension) to raise an error if the `Async` suffix was missed.
+For a project I was working on, I had to include the ticket number in every commit message and add `Async` suffix to all asynchronous C# methods. I forgot these two conventions every time I created my Pull Requests.
 
-## Ticket number in commit messages
+## How to add ticket numbers in commit messages
 
-A Git hook can format the commit message before commiting the changes. You can define Git hooks globally or per projects.
+**Add ticket numbers in Git commit messages using a prepare-commit-msg hook. This hook formats commit messages before committing the changes. Use this hook to enforce naming conventions and run custom actions before committing changes**.
 
-I was already including the ticket number in my feature branches. A bash script can read the ticket number from the branch name and prepends it to the commit message.
+I was already naming my feature branches with the ticket number. Then, with a bash script I could read the ticket number from the branch name and prepends it to the commit message.
+
+This is a prepare-commit-msg hook to prepend commits message with the ticker number from branch names.
 
 ```bash
 #!/bin/bash
@@ -26,11 +28,17 @@ fi
 echo "$TICKET $MESSAGE" > $FILE
 ```
 
-I wrote about this hook on my list of [Programs that saved you 1000 hours](https://canro91.github.io/2020/04/13/ProgramThatSave100Hours/). Also, you can find Git aliases, Visual Studio extensions and other online tools to save you some valuable time.
+If I name my feature branch `feat/ABC-123-my-awesome-branch`. Then when I commit my code, Git  will rewrite my commit messages to look like `ABC-123 My awesome commit`. 
+
+I wrote about this hook on my list of [Programs that saved you 1000 hours]({% post_url 2020-04-13-ProgramThatSave100Hours %}). Also, you can find Git aliases, Visual Studio extensions and other online tools to save you some valuable time.
 
 ## Async suffix on asynchronous C# methods
 
-I used an `.editorconfig` file to enforce naming conventions on the C# project. After Googling, a coworker came up with [this StackOverflow answer](https://stackoverflow.com/questions/53972941/how-do-i-get-a-warning-in-visual-studio-when-async-methods-dont-end-in-async) to get an error if I forgot to include the `Async` suffix on any C# methods.
+Another convention I always forgot about was adding `Async` suffix on asynchronous C# methods.
+
+After Googling a bit, a coworker came up with [this StackOverflow answer](https://stackoverflow.com/questions/53972941/how-do-i-get-a-warning-in-visual-studio-when-async-methods-dont-end-in-async) to use a `.editorconfig` file to get errors on async methods missing the `Async` suffix on any C# methods.
+
+An `.editorconfig` file to enforce the `Async` suffix looks like the one below.
 
 ```
 [*.cs]
@@ -50,10 +58,18 @@ dotnet_naming_style.end_in_async.capitalization = pascal_case
 dotnet_naming_style.end_in_async.word_separator =
 ```
 
-The `.editorconfig` forces to include the `Async` suffix even in your `Main` method and in your tests methods. It hurts readability of your tests. And `MainAsync` looks weird. It misses methods returning `Task` or `Task<T>` in interfaces.
+But, the `.editorconfig` enforces `Async` suffix even `Main` method and tests names. `MainAsync` looks weird. Also, it misses method declarations returning `Task` or `Task<T>` on interfaces.
 
-Instead, I found the [AsyncMethodNameFixer](https://github.com/priyanshu92/AsyncMethodNameFixer) extension. It makes you to include the `Async` suffix in only methods and interfaces. It doesn't catch the `Main` method and test methods. But, it relies on developers to have this extension installed to keep consistency in your project. With the `.editorconfig` your naming rules travels with the code itself.
+**To add a warning on asynchronous C# methods missing the Async suffix, use the AsyncMethodNameFixer extension on Visual Studio.**
 
-Voilà! That's how I got rid of these two recurring comments while code review. You can read [my Tips and Tricks for Better Code Reviews](https://canro91.github.io/2019/12/17/BetterCodeReviews/). For more extensions to make you more productive with Visual Studio, check [my Visual Studio Setup](https://canro91.github.io/2019/06/28/MyVSSetupSharpeningTheAxe/).
+With the [AsyncMethodNameFixer](https://github.com/priyanshu92/AsyncMethodNameFixer) extension, you get warnings to include the `Async` suffix on methods and interfaces. It doesn't catch the `Main` method and test methods.
+
+But, to enforce this convention with a Visual Studio extension, you rely on developers to have it installed. With the `.editorconfig` your naming rules travels with the code itself when you clone the repository.
+
+Voilà! That's how I got rid of these two recurring comments while code review. For more productive code reviews, read my [Tips and Tricks for Better Code Reviews](https://canro91.github.io/2019/12/17/BetterCodeReviews/).
+
+For more extensions to make you more productive with Visual Studio, check [my Visual Studio Setup]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %}).
+
+If you're new to Git, check my [Git Guide for Beginners]({% post_url 2020-05-29-HowToVersionControl %}) and my [Git guide for TFS Users]({% post_url 2019-11-11-GitGuideForTfsUsers %}).
 
 _Happy coding!_

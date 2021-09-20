@@ -1,12 +1,12 @@
 ---
 layout: post
-title: TIL&colon; Three differences between TRUNCATE and DELETE
+title: "TIL: Three differences between TRUNCATE and DELETE"
 tags: todayilearned sql
 ---
 
-These days I learned three differences between TRUNCATE and DELETE statements in SQL Server. Let me share them with you.
+Both DELETE and TRUNCATE remove records from a table. But, these days I learned three differences between TRUNCATE and DELETE statements in SQL Server. Let me share them with you.
 
-**Both DELETE and TRUNCATE remove records from a table.** But, DELETE accepts a WHERE condition to only remove some records, TRUNCATE doesn't. Also, DELETE doesn't reset identity columns to its initial value, but TRUNCATE does. And, DELETE fire triggers, TRUNCATE doesn't.
+**DELETE accepts a WHERE condition to only remove some records, TRUNCATE doesn't. DELETE doesn't reset identity columns to its initial value, but TRUNCATE does. And, DELETE fire triggers, TRUNCATE doesn't.**
 
 To see these three differences in action, let's create a sample database with a `Movies` table. It only contains an auto-incremented id, a movie title and an score.
 
@@ -34,7 +34,11 @@ GO
 
 ## WHERE clause
 
-The first difference is about the WHERE clause. **One one hand, DELETE accept a WHERE clause to only delete some records from a table. But, TRUNCATE doesn't.** It deletes all records from a table. If you try to add a WHERE clause with TRUNCATE, you get _"Incorrect syntax near the keyword 'WHERE'"_.
+The first difference is about the WHERE clause.
+
+**DELETE accepts a WHERE clause to only delete some records from a table. But, TRUNCATE doesn't. It deletes all records from a table.**
+
+If you try to add a WHERE clause with TRUNCATE, you get _"Incorrect syntax near the keyword 'WHERE'"_.
 
 ```sql
 SELECT * FROM dbo.Movies
@@ -48,7 +52,7 @@ TRUNCATE TABLE dbo.Movies WHERE Name = 'Armageddon'
 
 ## Identity columns
 
-An identity column is a column with automatic incremented values. It's used to create key values in tables.
+**An identity column is a column with automatic incremented values.** It's used to create key values in tables.
 
 Values for identity columns start from a "seed" value and increase by an "increment" value. You can use any number as seed and any positive or negative number as increment. By default, if you don't use any seed or increment, it starts from 1 and increments by 1. `IDENTITY = IDENTITY(1, 1)`
 
@@ -94,9 +98,11 @@ Notice the Id of 'Platoon'. It's 1 again. When we created our `Movies` table, we
 
 ## Triggers
 
-A triggers is an special type of store procedure that runs when a given action has happened at the database or table level. For example, you can run a custom action inside a trigger after INSERT, DELETE or UPDATE to a table.
+**A trigger is an special type of store procedure that runs when a given action has happened at the database or table level**.
 
-When you work with triggers, you have two virtual tables: `INSERTED`, `DELETED`. These tables hold the values inserted or deleted in the statement that started the trigger in the first place.
+For example, you can run a custom action inside a trigger after INSERT, DELETE or UPDATE to a table.
+
+When you work with triggers, you have two virtual tables: `INSERTED` and `DELETED`. These tables hold the values inserted or deleted in the statement that fired the trigger in the first place.
 
 Now, back to the differences between TRUNCATE and DELETE. **DELETE fires triggers, TRUNCATE doesn't.**
 
@@ -173,3 +179,5 @@ GO
 Notice, the two results. The one inside the transaction, before the rollback, is empty. And the last one, after the rollback, with our three movies.
 
 Voilà! Those are three differences between DELETE and TRUNCATE.
+
+For more content about SQL Server, check [how to write Dynamic SQL]({% post_url 2021-03-08-HowNotToWriteDynamicSQL %}) and [Two free tools to format your SQL queries]({% post_url 2020-09-30-FormatSQL %}).

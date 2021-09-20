@@ -6,13 +6,11 @@ cover: LearnReact.png
 cover-alt: Resources to learn React in 30 days
 ---
 
-Do you want to learn React and you don't where to start? Don't look for any other curated list of resources. _Let's React._
+Do you want to learn React and you don't where to start? Don't look for any other curated list of resources. Let's learn React in 30 days.
 
-React is an user-interface library. It doesn't do a lot of things. It renders elements. Period. React isn't a Swiss-army knife framework full of functionalities. From [2020 StackOverflow developer Survey](https://insights.stackoverflow.com/survey/2020#technology-web-frameworks), React is the second most popular Web Framework. 
+React is a JavaScript library to build user interfaces. It doesn't do a lot of things. It renders elements on the screen. Period. React isn't a Swiss-army knife framework full of functionalities.
 
-> _"React is a JavaScript library for building user interfaces"_ [reactjs.org](https://reactjs.org/)
-
-One of my takeaways from the [Ultralearning book](https://canro91.github.io/2020/07/14/UltralearningTakeaways/) is you should learn a new skill in the context where that skill will be applied. So, it's better to learn by doing, instead of reading a book from cover to cover or passively watching videos. _No copy and paste!_
+**To learn React in 30 days, start learning to create components and understand the difference between props and state. Next, learn about hooks and how to style components. After that, learn about managing state with hooks. But, don't rush to use Redux from the beginning.**
 
 <figure>
 <img src="https://images.unsplash.com/photo-1485783522162-1dbb8ffcbe5b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop&ixid=eyJhcHBfaWQiOjF9" alt="Building a rocket ship" width="800">
@@ -20,9 +18,13 @@ One of my takeaways from the [Ultralearning book](https://canro91.github.io/2020
 </figcaption>
 </figure>
 
+Instead of reading books from cover to cover or passively watching YouTube videos, let's learn React by doing. Let's recreate examples, build mini-projects and stop copy-pasting. If you're instered in learning strategies, check my takeaways from the [Ultralearning book]({% post_url 2020-07-14-UltralearningTakeaways %}).
+
 These are some resources to learn React, its prerequisites and related subjects.
 
 ## Prerequisites
+
+Before starting to work with React, make sure to know about flexbox in CSS and ES6 JavaScript features. 
 
 ### CSS
 
@@ -46,7 +48,7 @@ Some of these projects include the backend side using Node.js. You can find more
 
 Don't mess your environment with different versions of Node. Follow [Don't Install Node Until You've Read This](https://youknowfordevs.com/2018/07/01/dont-install-node-until-youve-read-this.html) and [Your Development Workflow Just Got Better, With Docker Compose](https://youknowfordevs.com/2018/07/02/your-development-workflow-just-got-better-with-docker-compose.html).
 
-## React and Stuff
+## React
 
 ### Study Plans
 
@@ -107,13 +109,15 @@ Don't mess your environment with different versions of Node. Follow [Don't Insta
 * [Reservation app](https://www.youtube.com/watch?v=LXJOvkVYQqA)
 * [Netflix clone](https://www.youtube.com/watch?v=x_EEwGe-a9o)
 
-### React & Redux
+## React and Redux
 
-Redux could be the most challenging subject. _store, actions, reducers, thunks, sagas, dispatching_. Start by learning how to use `useState` hook, then `useReducer`, then `useContext`, and last Redux. It feels more natural this way.
+Redux could be the most challenging subject. You have to learn new concepts like: store, actions, reducers, thunks, sagas, dispatching.
 
-Make sure to understand what to put into Redux store and where you should call your API calls. Be aware [you might not need Redux](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)
+Before getting into Redux, start by learning how to use `useState` hook, then `useReducer`, then `useContext`, and last Redux. It feels more natural this way.
 
-#### Tutorials
+Make sure to understand what to put into a Redux store and where you should make your API calls. Be aware [you might not need Redux](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367) at all.
+
+### Tutorials
 
 * [8 things to learn in React before using Redux](https://www.robinwieruch.de/learn-react-before-using-redux)
 * [What Does Redux Do?](https://daveceddia.com/what-does-redux-do/), [A Complete React Redux Tutorial for Beginners](https://daveceddia.com/redux-tutorial/) and [Immutability in React and Redux: The Complete Guide](https://daveceddia.com/react-redux-immutability-guide/)
@@ -122,22 +126,22 @@ Make sure to understand what to put into Redux store and where you should call y
 * [Leveling Up with React: Redux](https://css-tricks.com/learning-react-redux/)
 * [Redux Tutorial - Learn Redux from Scratch](https://www.youtube.com/watch?v=poQXNp9ItL4)
 
-#### Walk-throughs
+### Walk-throughs
 
 * [Simple Notes app](https://www.youtube.com/watch?v=WpvIihorarA)
-* [Shopping Cart Checkout Summary](https://www.youtube.com/watch?v=KLCnTjB0w_o) An interview process exercise. Try to add Redux on your own
+* [Shopping Cart Checkout Summary](https://www.youtube.com/watch?v=KLCnTjB0w_o) An interview exercise. Try to add Redux on your own
 * [Movie app with Redux](https://www.youtube.com/watch?v=Ia0WWc5dyLE&list=PLG3RxIUKLJlbDDGeeoUCkinS2DUybp_1o) Again try to add Redux on your own. 
 * [Developing Games with React, Redux, and SVG](https://auth0.com/blog/developing-games-with-react-redux-and-svg-part-1/)
 
-### Courses
+## Courses
 
-#### Paid
+### Paid
 
 * [Pluralsight React.js Getting Started](https://www.pluralsight.com/courses/react-js-getting-started)
 * [Coursera Full Stack React](https://www.coursera.org/specializations/full-stack-react)
 * [Udemy Instagram clone](https://www.udemy.com/course/mern-stack-master-course-building-your-own-instagram/?couponCode=FREEFREEFREE)
 
-#### Free
+### Free
 
 * [The Beginner's Guide to React](https://egghead.io/courses/the-beginner-s-guide-to-react)
 * [The Free React Bootcamp](https://ui.dev/free-react-bootcamp/)
@@ -145,7 +149,7 @@ Make sure to understand what to put into Redux store and where you should call y
 * [30 days of React](https://www.newline.co/fullstack-react/30-days-of-react/)
 * [Learn Building Applications with React and Redux](https://www.youtube.com/watch?v=4lF7IiIHliU)
 
-### Practice & Project Ideas
+## Practice and Project Ideas
 
 * [Cheat to Win: Learn React with Copywork](https://daveceddia.com/learn-react-with-copywork/). Two projects to copy: [React Snake](https://github.com/taming-the-state-in-react/react-snake), [GitHub issue viewer](https://github.com/dceddia/github-issues-viewer)
 * [Hands-on projects to learn the basics of React](https://hackernoon.com/hands-on-projects-to-learn-the-basics-of-react-3a06726514a8)
@@ -153,7 +157,7 @@ Make sure to understand what to put into Redux store and where you should call y
 * [5 React Projects You Need In Your Portfolio](https://codeartistry.io/5-react-projects-you-need/)
 * [10 React Starter Project Ideas to Get You Coding](https://medium.com/@dtkatz/10-react-starter-project-ideas-to-get-you-coding-5b35782e1831)
 
-## Misc
+## Other resources
 
 * [How to Structure Your React Project](https://daveceddia.com/react-project-structure/) or [React directory structure](https://marmelab.com/blog/2015/12/17/react-directory-structure.html)
 * [How to build Chrome extensions with React + Parcel](https://www.freecodecamp.org/news/building-chrome-extensions-in-react-parcel-79d0240dd58f/)
@@ -161,12 +165,10 @@ Make sure to understand what to put into Redux store and where you should call y
 * [Build Yourself a Redux](https://zapier.com/engineering/how-to-build-redux/)
 * [Frontend Framework Showdown](https://www.youtube.com/watch?v=1GNPzfcElyo)
 
-> _You can find my own 30-day journey following the resources from this post in [LetsReact](https://github.com/canro91/LetsReact)._
-> 
-> _You can read about my progress and takeaways on [Let's React. Day 18 of 30](https://canro91.github.io/2020/10/03/LetsReactDay18/) and [Let's React. Day 27 of 30](https://canro91.github.io/2020/10/19/LetsReactDay27/)_
+Voilà! Those are the resources and project ideas to learn React in 30 days. Start small creating components and understanding the difference between props and states. You can find my own 30-day journey following the resources from this post in my GitHub [LetsReact](https://github.com/canro91/LetsReact) repository.
 
 [![canro91/LetsReact - GitHub](https://gh-card.dev/repos/canro91/LetsReact.svg)](https://github.com/canro91/LetsReact)
 
-_Happy React/Redux time!_
+You can read about my progress and takeaways on [Let's React. Day 18 of 30]({% post_url 2020-10-03-LetsReactDay18 %}) and [Let's React. Day 27 of 30]({% post_url 2020-10-19-LetsReactDay27 %}).
 
-<img src="https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.svg" width="50px" height="50px" />
+_Happy coding!_
