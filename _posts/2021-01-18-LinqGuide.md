@@ -216,7 +216,7 @@ Unlike `Any`, **`All` check if every elements inside a collection matches a cond
 
 Let's see if we have only watched really good movies.
 
-```
+```csharp
 var weHaveSeenReallyGoodMovies = movies.All(movie => movie.Rating >= 4.5);
 // false
 ```
