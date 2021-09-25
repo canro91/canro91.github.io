@@ -24,7 +24,7 @@ After that, I started to write about the bugs that literally gave me  headaches,
 
 You don't need to wait to be a well-known figure in the tech field to have a blog.
 
-A blog is a mean to share your learning. To learn in  public. To share your insights. That will make your blog unique.
+A blog is a mean to share your learning. To learn in  public. To share your insights. To [show your work]({% post_url 2020-10-01-ShowYourWorkTakeaways %}). That will make your blog unique.
 
 I don't have anything to write about?-you said. Have you learned something new? Share that. Share the resources you used to learned it.
 

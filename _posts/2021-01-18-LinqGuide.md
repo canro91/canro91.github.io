@@ -460,6 +460,6 @@ For objects, the default value would be a `null` reference. And you know what ha
 
 Voilà! That's it, Alice. That's all you need to know to start working with LINQ in your code in 15 minutes or less. There's also this project [MoreLINQ](https://github.com/morelinq/MoreLINQ) with more extension methods, like `CountBy`, `DistinctBy`, `MinBy` and `MaxBy`. With LINQ you can write more compact and expressive code. The next time you need to write logic using loops, give LINQ a try!
 
-To learn more about C#, check my [C# Definitively Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %}) for a list of subjects every intermediate C# developer should know. Also, for quick tips to write more expressive C#, read my [C# idioms]({% post_url 2019-11-19-TwoCSharpIdioms %}) series. To learn about other C# features, check my [top 10 or so best C# features]({% post_url 2021-09-13-TopNewCSharpFeatures%}).
+Learn how to use LINQ to refactor conditionals on [C# idioms]({% post_url 2019-11-19-TwoCSharpIdioms %}). For more C# content, check [C# Definitively Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %}) for a list of subjects every intermediate C# developer should know. And, my [top 10 or so best C# features]({% post_url 2021-09-13-TopNewCSharpFeatures%}) for other cool C# features.
 
 _Happy LINQ time!_
