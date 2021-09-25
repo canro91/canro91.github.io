@@ -6,7 +6,7 @@ tags: career writing
 
 ### _Once upon a time, a junior engineer at his first job_
 
-Everything started on my first professional job. I was a junior software engineer, the least experienced on the team. I had just finished reading “The Clean Code”. I wanted to rewrite all the code I had worked with.
+Everything started on my first professional job. I was a junior software engineer, the least experienced on the team. I had just finished reading [The Clean Code]({% post_url 2020-01-06-CleanCodeReview %}). I wanted to rewrite all the code I had worked with.
 
 I had a lot to share with my colleagues about coding. But I was  the new guy. So I came up with “Daily Tips”. It was a weekly email with a single tip about how to write better code. Those tips came from what I had seen on the book and on the code I worked with. For example, use boolean  variables instead of integers for flags. I started to accumulate some of  these tips on my computer. These tips ended up on my presentations for  newcomers at my next job.
 
