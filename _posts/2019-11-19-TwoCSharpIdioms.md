@@ -78,6 +78,8 @@ var someKey = FindKey() ?? FindAlternateKey() ?? FindDefaultKey();
 
 Similarly, if you need to add a new alternative, either you add it in the array or nest it instead of adding the new alternative in the `if` statement.
 
+### Validate a complex object with an array of Func
+
 Also, this last idiom is useful when validating an object against a list of rules or conditions. Create a function for every rule, then use `All()` LINQ method to find if the input object or value satisfy all required rules.
 
 ```csharp
