@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-I'm Cesar Aguirre. I'm a [software engineer](https://github.com/canro91), lifelong learner, language enthusiast and vivid reader.
+I'm Cesar Aguirre. I'm a [software engineer](https://github.com/canro91), lifelong learner, [language enthusiast]({% post_url 2020-10-23-ThreeLanguageLessons %}) and vivid reader.
 
 ### What I do
 
