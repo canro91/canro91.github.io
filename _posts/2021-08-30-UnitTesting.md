@@ -16,7 +16,7 @@ If you’re a beginner or if you’re a seasoned developer new to unit testing, 
 
 Identify and fix these [4 common mistakes]({% post_url 2021-03-29-UnitTestingCommonMistakes %}) when writing your first unit tests. Learn one of these [4 naming conventions]({% post_url 2021-04-12-UnitTestNamingConventions %}) and stick to it.
 
-To find these first three posts plus a summary of "The Art of Unit Testing" and my best tips and advice on the subject, grab a copy of my free ebook “Unit Testing 101”. Click on the image below to download.
+<div class="message">Find these first three posts plus a summary of "The Art of Unit Testing" and my best tips from this series on my free ebook “Unit Testing 101”. Click on the image below to download your copy.</div>
 
 <figure>
 <a href="/assets/posts/2021-08-30-UnitTesting/UnitTesting101.pdf" target="_blank" data-goatcounter-click="UnitTesting101eBook-Image" data-goatcounter-title="UnitTesting101: eBook"><img src="/assets/posts/2021-08-30-UnitTesting/GrabYourOwnCopy.png" alt="Grab your own copy of Unit Testing 101" /></a>
@@ -37,6 +37,8 @@ Learn [what fakes are in unit testing]({% post_url 2021-05-24-WhatAreFakesInTest
 Read [how to create fakes with Moq]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}), an easy to use mocking library.
 
 If you find yourself using lots of fakes, take advantage of [automocking with TypeBuilder and AutoFixture]({% post_url 2021-06-21-WriteSimplerTestsTypeBuilderAndAutoFixture %}) to write simpler tests.
+
+## Master it
 
 Last but not least, read all tips of this series on [Unit Testing Best Practices]({% post_url 2021-07-05-UnitTestingBestPractices %}). As an example, see how to [refactor a real-world test]({% post_url 2021-08-02-LetsRefactorATest %}) to follow some of those best practices. Deep into assertions, check [how to write better assertions]({% post_url 2021-07-19-WriteBetterAssertions %}) and [how to write custom assertions]({% post_url 2021-08-16-WriteCustomAssertions %}).
 
