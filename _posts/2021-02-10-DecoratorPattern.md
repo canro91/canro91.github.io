@@ -131,7 +131,7 @@ Later, we can replace this helper method with a more robust implementation using
 
 But, using this helper method implies wrapping the methods to retry inside our helper method all over our codebase. Hopefully, if we have a singe place to take payments, that wouldn't be a problem. Also, our `PaymentService` mixes business logic with retry logic. That's smelly. We should keep responsabilities separated.
 
-## Let's Decorate
+## Retry logic with Decorator pattern: Let's Decorate
 
 For a more clean solution, let's use the Decorator pattern.
 
@@ -180,13 +180,15 @@ public class RetryablePaymentIntentService : PaymentIntentService
         _decorated = decorated;
     }
 
-    public override Task<PaymentIntent> CreateAsync(PaymentIntentCreateOptions options, RequestOptions requestOptions = null, CancellationToken cancellationToken = default)
+    public Task<PaymentIntent> CreateAsync(PaymentIntentCreateOptions options, RequestOptions requestOptions = null, CancellationToken cancellationToken = default)
     {
         return RetryAsync(async () =>
         {
             return await _decorated.CreateAsync(paymentIntentOptions, requestOptions, cancellationToken);
         });
     }
+    
+    // Same RetryAsync method as before...
 }
 ```
 
@@ -198,7 +200,9 @@ We can create our decorator like this,
 new RetryablePaymentIntentService(new PaymentIntentService(/* Other dependencies */));
 ```
 
-## Let's register our decorator
+## Inject Decorators into ASP.NET Core container
+
+### Let's register our decorator
 
 But, if you're using an ASP.NET Core API project, we can use the dependency container to build the decorator. 
 
@@ -222,6 +226,8 @@ public static class ServiceCollectionExtensions
 
 This time, we registered the original `PaymentIntentService` without specifying an interface. We only used the `IPaymentIntentService` to register the decorator. When resolved, the `PaymentService` will receive the decorator instead of the original service without retry logic.
 
+### Let's use Scrutor to register our decorator
+
 Optionally, we can use [Scrutor](https://github.com/khellang/Scrutor) to register the decorated version of the `IPaymentIntentService`. Scrutor is a library that adds more features to the built-in dependencies container. Don't forget to install the Scrutor NuGet package into your project, if you choose this route.
 
 In that case, our `AddPaymentServices()` will look like this,
@@ -243,6 +249,6 @@ Notice, this time we have explicitly register two entries for the `IPaymentInten
 
 Voilà! That's how we can implement the Decorator pattern to retry API calls. We can also use the decorator pattern to bring logging or caching to our services. Check how you can use the Decorator pattern to [add a Redis caching layer with ASP.NET Core]({% post_url 2020-06-29-HowToAddACacheLayer %}).
 
-For more real-world examples, check my post on [Primitive Obsession]({% post_url 2020-12-10-PrimitiveObsession %}). That's about Stripe too. If you want my take on another pattern, check my post about the [Pipeline pattern]({% post_url 2020-02-14-PipelinePattern %}).
+For more real-world examples, check my post on [Primitive Obsession]({% post_url 2020-12-10-PrimitiveObsession %}). That's about handling Stripe currency units. If you want my take on another pattern, check my post about the [Pipeline pattern]({% post_url 2020-02-14-PipelinePattern %}).
 
 _Happy coding!_
