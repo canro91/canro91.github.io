@@ -6,9 +6,11 @@ tags: books
 
 Clean Code will change the way you code. It doesn't teach how to code in a particular language. But, it teaches how to produce code easy to read, grasp and maintain. Although code samples are in Java, all concepts can be translated to other languages.
 
-The Clean Code starts defining what it's clean Code by collecting quotes from book authors and other well-known people in the field. It covers the subject of Clean Code from variables to functions to architectural design. This book is based on the premise that **code should be optimized to be read**.
+**The Clean Code starts defining what it's clean code by collecting quotes from book authors and other well-known people in the field. It covers the subject of Clean Code from variables to functions to architectural design.**
 
-These are the three chapters I found instructive. The whole book is instructive. But, I could only read a few chapters, I would read these ones.
+The whole concept of Clean Code is based on the premise that code should be optimized to be read. It's true we, as programmers, spend way more time reading code than actually writing it.
+
+These are the three chapters I found instructive. The whole book is instructive. But, if I could only read a few chapters, I would read the next ones.
 
 ## Naming
 
