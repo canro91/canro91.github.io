@@ -6,19 +6,19 @@ tags: interview tutorial csharp
 
 You nailed it at [evaluating postfix expressions]({% post_url 2019-08-02-PostfixNotationAnInterviewExercise %}). You impressed the interviewer with your solution. Now, you're asked about the time complexity of finding the sum of two elements in two arrays.
 
-**Time complexity is a mechanism to compare the performance of two algorithms as the input size grows. Time complexity measures the number of operations instead of execution time. An algorithm with smaller number of operations has better time complexity than another one with a larger amount of operations.**
+**Time complexity is a mechanism to compare the performance of two algorithms as the input size grows. Time complexity measures the number of operations instead of execution time.**
 
 ## Time complexity and Big-O Notation
 
 Well-known algorithms and common patterns of code have already a time complexity associated to it.
 
-For example, performing an assignment or checking if a dictionary contains a key have **constant time**. It means, it will always take the same amount of operations to check if a dictionary contains a key.
+For example, performing an assignment or checking if a dictionary contains a key have **constant time**. It means, it will always take the same amount of operations to check if a dictionary contains a key, not matter the size of the dictionary.
 
-Looping through the elements of an array has **linear time**. Dealing with matrices using two nested loops has **quadratic time**. Dividing an array into halves each time has **logarithmic time**. _Do you remember binary search?_
+Looping through the elements of an array has **linear time**. Dealing with matrices using two nested loops has **quadratic time**. Dividing an array into halves each time has **logarithmic time**. Do you remember binary search? It has logarithmic time.
 
 Time complexity uses a mathematical notation to describe the complexity of an algorithm, called **Big-O notation**.
 
-Big-O notation assigns a function (_you remember functions from Math class, right?_) to the complexity of an algorithm. So, constant time is `O(1)`, linear time is `O(n)`, quadratic time is `O(n^2)` and logarithmic time is `O(logn)`.
+Big-O notation assigns a function to the complexity of an algorithm. Do you remember functions from Math class, right? So, constant time is `O(1)`, linear time is `O(n)`, quadratic time is `O(n^2)` and logarithmic time is `O(logn)`.
 
 You could use [this Big-O cheatsheet](https://www.bigocheatsheet.com/) to find the complexity and BigO notation of well-know algorithms.
 
@@ -28,15 +28,15 @@ You could use [this Big-O cheatsheet](https://www.bigocheatsheet.com/) to find t
 <figcaption><span>Photo by <a href="https://unsplash.com/@aronvisuals?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Aron Visuals</a> on <a href="https://unsplash.com/s/photos/time?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
 </figure>
 
-## Two number sum problem
+Remember time complexity measures number of operations, not execution time. An algorithm with smaller number of operations has better time complexity than another one with a larger amount of operations.
+
+## Two-number sum problem
 
 The interview goes like this. The interviewer asks you to introduce yourself. You answer using the elevator pitch you prepared. Then, he suggests to start a whiteboard exercise. You open Notepad++, Visual Studio Code or your favorite editor. And, there you go.
 
 > _Given two array of integers, find a pair of elements, one from each array, that adds up to zero. The size and the order of the elements aren't specified. They may be sorted or not_
 
-## Solution
-
-### First approach
+## First approach: Nested loops
 
 Your first and obvious approach is to roll two loops and check every pair of elements in the two arrays. If the two arrays contain lots of elements, it would be slow. But it will get the task done.
 
@@ -55,7 +55,7 @@ for (int i = 0; i < a.Length; i++)
 
 The interviewer asks you about the time complexity of this solution. Since, you have to traverse the second array per every element in the first array, you will end up with `n x m` operations. With `n` and `m` the lengths of each array. So, you answer your solution has quadratic time or `O(n^2)`. _Right!_
 
-### Better
+## Better approach: Dictionary or set
 
 Then, he asks you to do better. He asks for a linear solution.
 
@@ -75,5 +75,7 @@ for (int i = 0; i < a.Length; i++)
 ```
 
 Voilà! That's how we can find the sum of two elements in linear time. Another happy interview! This time, you have in your toolbox time complexity. Not only for next interviews, but for everyday programming.
+
+If you're getting ready for your next interview, check [Remote interview. Here I go]({% post_url 2019-09-29-RemoteInterviewTips %})
 
 _Happy coding!_

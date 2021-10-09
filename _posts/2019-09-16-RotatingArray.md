@@ -4,17 +4,21 @@ title: "Rotating an array: An interview exercise III"
 tags: tutorial interview csharp
 ---
 
-There you are. You start to feel confident in your interview. You have already gone through [some]({% post_url 2019-08-02-PostfixNotationAnInterviewExercise %}) [exercises]({% post_url 2019-08-29-TimeComplexity %}). Now, the interviewer challenges you with a new exercise. So, you open a new tab or create a new file in your editor. And, start!
+Here you are in another interview. You start to feel confident from your last interview. You have already evaluated [postfix expressions]({% post_url 2019-08-02-PostfixNotationAnInterviewExercise %}) and solved the [two-number sum problem]({% post_url 2019-08-29-TimeComplexity %}). Now, the interviewer challenges you with a new exercise. Open a new tab or create a new file in your editor. And, start!
 
-## Problem
+## Shift elements of an array
 
-> _Given an array of integers and an integer k, rotate all elements k positions to the right. For example: After rotating [1,2,3,4,5,6] two positions is [5,6,1,2,3,4]_
+Your interviewer asks you to shift all elements of an array to the right. Here it goes,
 
-## Solution
+> _Given an array of integers and an integer k, rotate all elements k positions to the right. For example: After rotating [1,2,3,4,5,6] two positions to the right is [5,6,1,2,3,4]_
 
-### Obivous one
+## Obivous solution: loop and bound checking
 
-Your first approach is to roll a loop through the array and put in another array each element shifted to the right. You have to take care of elements near the end of the array. Otherwise, you will get outside of the array and an exception will be thrown. So, you add an `if` to check you keep it inside the bounds. Something like this:
+Your first approach is to roll a loop through the array and put in a second array each element shifted to the right.
+
+You have to take care of elements near the end of the array. Otherwise, you will get outside of the array and an exception will be thrown. So, you add an `if` to check you keep it inside the bounds.
+
+Something like this:
 
 ```csharp
 static int[] Shift(int[] array, int k)
@@ -31,9 +35,15 @@ static int[] Shift(int[] array, int k)
 }
 ```
 
-### Modulus operator
+## Modulus operator without bound checking
 
-_You can do better. Can you remove the bound checking?_ –the interviewer says. Now, you start to use an example. If `array=[1,2,3,4,5,6]`, `k=1` and `i=5`, the last element must be the first one and so on and so forth. It reminds you the modulus operator (%). Instead of dividing two numbers, it calculates the remainder of dividing those two numbers. Since the remainder is less than the divisor, you will always be inside the size of the array if you apply the modulus with the array length. So, you modify your previous solution.
+You can do better. Can you remove the bound checking?–the interviewer says.
+
+Now, you start to use an example. If `array=[1,2,3,4,5,6]`, `k=1` and `i=5`, the last element must be the first one and so on and so forth. It reminds you the modulus operator (%). 
+
+The modulus operator, instead of dividing two numbers, calculates the remainder of dividing those two numbers.
+
+Since the remainder is less than the divisor, you will always be inside the size of the array, if you use the modulus with the array length. So, you modify your previous solution.
 
 ```csharp
 static int[] Shift(int[] array, int k)
@@ -47,11 +57,19 @@ static int[] Shift(int[] array, int k)
 }
 ```
 
-### Space complexity
+## Shift an array and Space complexity
 
-_What is the space complexity of this solution?_ –the interviewer asks. Space complexity is a metric to compare the amount of memory required to run an algorithm in relation to the input size. If the input gets bigger, how much storage the algorithm requires? Since you are using a temporay array, the storage will be proportional to the size of the array. So, it's linear!
+What is the space complexity of this solution?–the interviewer asks.
 
-_Right!_ –the interviewer replies. _Can you come up with a constant solution?_ –he suggests. So, you have to get rid of the temporary array! What if you shift one element at a time and the repeat the process as many times as needed? This solution isn't the most performant, but it uses constant space. But, this time you have to do it backwards to only temporary keep one element of the array.
+**Space complexity is a metric to compare the amount of memory required to run an algorithm in relation to its input size. If the input gets bigger, how much storage the algorithm requires?**
+
+Since you are using a temporay array, the storage will be proportional to the size of the array. So, it's linear!
+
+Right!–the interviewer replies. Can you come up with a constant solution?–he suggests.
+
+You have to get rid of the temporary array! What if you shift one element at a time and the repeat the process as many times as needed? This solution isn't the most performant, but it uses constant space.
+
+This time you have to shift the array backwards to only keep one element of the array in a temporary variable.
 
 ```csharp
 static int[] Shift(int[] array, int k)
@@ -70,9 +88,7 @@ static int[] Shift(int[] array, int k)
 }
 ```
 
-Another happy interview!
-
-_**Bonus**_ What about a one-line declarative LINQ solution? The interview could go in a different direction?
+What about if you would've started with a one-line declarative LINQ solution? The interview could go in a different direction?
 
 ```csharp
 static int[] Shift(int[] array, int k)
@@ -80,4 +96,12 @@ static int[] Shift(int[] array, int k)
         .Concat(array.Take(array.Length - k))
         .ToArray();
 ```
+
+Voilà! Another happy interview! Now you know how to shift the elements of an array and what space complexity is. Learn about interview types on [Remote interview. Here I go]({% post_url 2019-09-29-RemoteInterviewTips %}).
+
+_Happy coding!_
+
+
+
+
 
