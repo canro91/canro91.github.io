@@ -206,6 +206,6 @@ If you want to practice identifying and fixing these mistakes, check my [Unit Te
 
 [![canro91/Testing101 - GitHub](https://gh-card.dev/repos/canro91/Testing101.svg)](https://github.com/canro91/Testing101)
 
-If you're new to unit testing, read my post [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}) to write your first unit tests in C#. For more advanced tips on writing unit tests, check my post [how to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %}).
+If you're new to unit testing, read my post [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}) to write your first unit tests in C#. Take a closer look at that last mistake on my post [Don't duplicate logic in your Asserts]({% post_url 2021-10-11-DontRepeatLogicInAssertions %}). For more advanced tips on writing unit tests, check my post [how to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %}).
 
 _Happy testing!_
