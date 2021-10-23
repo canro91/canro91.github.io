@@ -19,11 +19,13 @@ Before, if we added an item that already exists on the dictionary, we got an `Ar
 var myDictionary = new Dictionary<string, string>();
 myDictionary.Add("foo", "bar");
 
-// System.ArgumentException: An item with the same key has already been added. Key: foo
 myDictionary.Add("foo", "baz");
+// ^^^
+// System.ArgumentException:
+//     An item with the same key has already been added. Key: foo
 ```
 
-After, we check first if the dictionary contains the item.
+After, we checked first if the dictionary contains the item.
 
 ```csharp
 var myDictionary = new Dictionary<string, string>();
@@ -52,20 +54,22 @@ myDictionary.TryAdd("foo", "bar"); // false
 
 At least now, the `KeyNotFoundException` message contains the name of the not-found key. The old days chasing the not-found key are over.
 
-On one hand, `TryGetValue` uses an output parameter with the found value. It outputs a default value when the dictionary doesn't contain the item. `TryGetValue` dates back to the days without tuples.
+On one hand, `TryGetValue()` uses an output parameter with the found value. It outputs a default value when the dictionary doesn't contain the item. `TryGetValue()` dates back to the days without tuples.
 
-On another hand, `GetValueOrDefault` returns a default value or one you provide if the key wasn't found.
+On another hand, `GetValueOrDefault()` returns a default value or one you provide if the key wasn't found.
 
-Before, if we try to retrieve a key that doesn't exist on a dictionary, we get a `KeyNotFoundException`.
+Before, if we tried to retrieve a key that didn't exist on a dictionary, we got a `KeyNotFoundException`.
 
 ```csharp
 var dict = new Dictionary<string, string>();
 
-// System.Collections.Generic.KeyNotFoundException: The given key 'foo' was not present in the dictionary.
 dict["foo"];
+// ^^^
+// System.Collections.Generic.KeyNotFoundException:
+//     The given key 'foo' was not present in the dictionary.
 ```
 
-After, we use `TryGetValue()`.
+After, we used `TryGetValue()`.
 
 ```csharp
 var dict = new Dictionary<string, string>();
@@ -87,5 +91,9 @@ dict.GetValueOrDefault("foo", "withoutFoo"); // "withoutFoo"
 dict.Add("foo", "bar");
 dict.GetValueOrDefault("foo", "withoutFoo"); // "bar"
 ```
+
+Voilà! That's how to get rid of exception when working with dictionaries. Use `TryAdd()` and `GetValueOrDefault()`. Or, if you prefer output parameters, `TryGetValue()`.
+
+Don’t miss the [previous C# idioms]({% post_url 2020-07-28-AnotherTwoCSharpIdioms %}) to separate view models into versions and the [next two C# idioms]({% post_url 2021-09-27-TwoCSharpIdiomsPart4 %}) to better work with defaults and switches.
 
 _Happy coding!_
