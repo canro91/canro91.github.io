@@ -29,7 +29,7 @@ Sometimes you have to explain your problem to somebody else. And, the answer see
 
 Chances are somebody else has already faced and solved the same problem or a similar one. If you look out there, you might find an StackOverflow answer or a GitHub issue. Don't blindly copy and paste any code without understanding it first. And, always prefer battle-tested solutions.
 
-Voilà! These are three tips I have learned to use when facing an issue or figuring out how to solve a bug. One final tips: step away from your keyboard. That would make the diffuse mode of your brain to work.
+Voilà! These are three tips I have learned to use when facing an issue or figuring out how to solve a bug. One final tip: step away from your keyboard. That would make the diffuse mode of your brain to work.
 
 Are you curious about problem solving and learning in general? Check my takeaways from the book [Pragmatic Thinking and Learning]({% post_url 2020-05-07-PragmaticThinkingAndLearning %}) and the book [Ultralearning]({% post_url 2020-07-14-UltralearningTakeaways %}).
 
