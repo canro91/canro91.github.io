@@ -6,7 +6,7 @@ tags: tutorial csharp
 
 These days I was working with Stripe API to take payments. And I found a case of primitive obsession. Keep reading to learn how to get rid of it.
 
-**Primitive obsession is when developers choose primitive types (strings, integers, decimals) to represent entities of the business domain. For example, plain strings for usernames or decimals for currencies. To solve this code smell, create classes to model the business entities. And, use those classes to enforce the appropriate business rules.**
+**Primitive obsession is when developers choose primitive types (strings, integers, decimals) to represent entities of the business domain. To solve this code smell, create classes to model the business entities and to enforce the appropriate business.**
 
 ## Using Stripe API
 
@@ -24,7 +24,7 @@ But, besides variable names, there wasn't anything preventing to use a `decimal`
 
 ## Getting rid of primitive obsession
 
-### An alias
+### Create a type alias
 
 As an alternative to encode units of measure on variable names, we can use a type alias.
 
@@ -70,9 +70,13 @@ namespace GettingRidOfPrimitiveObsession
 }
 ```
 
-Using a type alias is more expressive than encoding the unit of measure in variable names and parameters. But, it doesn't force us to use one type instead of the other. Let's try a better alternative.
+Using a type alias is more expressive than encoding the unit of measure in variable names and parameters. But, it doesn't force us to use one type instead of the other.
 
-### A class
+With the `Unit` type alias, we can still, by mistake, pass regular decimals when we meant units.
+
+Let's try a better alternative!
+
+### Create a new type
 
 Now, let's create a `Unit` class and pass it around instead of `decimal`.
 
@@ -119,7 +123,7 @@ public void UseAType()
     // ^^^^ cannot convert from 'decimal' to 'GettingRidOfPrimitiveObsession.Unit'
 }
 ```
-If needed, we can overload the `+` and `-` operators to make sure we're not adding oranges and apples.
+If needed, we can overload the `+` and `-` operators to make sure we're not adding oranges and apples. Decimals and units, I mean.
 
 Voilà! That's how we can get rid of primitive obsession. A type alias was more expressive than encoding units of measure on names. But, a class was a better alternative. By the way, F# supports [unit of measures](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/units-of-measure) to variables. And, the compiler will warn you if you forget to use the right unit of measure.
 
