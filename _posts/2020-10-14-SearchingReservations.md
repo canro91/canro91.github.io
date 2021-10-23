@@ -99,11 +99,11 @@ ALTER TABLE dbo.accounts
     AS ISNULL(accountNumber, '') + ISNULL(accountNumberAlpha, '');
 ```
 
-To take things even further, an index on that computed columns could make things even faster.
+To take things even further, an index leading on the `ClientId` followed by that computed column could make things even faster.
 
 ```sql
-CREATE INDEX AccountNumberComplete
-    ON dbo.accounts(AccountNumberComplete)
+CREATE INDEX ClientID_AccountNumberComplete
+    ON dbo.accounts(ClientID, AccountNumberComplete);
 ```
 
 Voilà! That's how I tuned this query. The lesson to take home is to reduce the number of joining tables and stay away from functions in your WHERE's. Often, a computed column can help SQL Server to run queries  with functions in the WHERE clause. Even, without rewriting the query to use the new computed column.
