@@ -344,7 +344,7 @@ To learn about other C# features, check my [top 10 or so best C# features]({% po
 ## Bonus Points
 
 * Learn how to type with all your fingers. _At least you will impress people_.
-* Learn some Vim. Read my post on [Learning Vim For Fun and Profit](2020/09/14/LearnVimForFunAndProfit/). If you want to master every detail, take a look at the book "Practical Vim".
+* Learn some Vim. Read my post on [Learning Vim For Fun and Profit]({% post_url 2020-09-14-LearnVimForFunAndProfit %}). If you want to master every detail, take a look at the book "Practical Vim".
 * Learn about C# [extensions methods](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods). You will find them often.
 * Read books on Clean Code. Two good choices are "The Art of Readable Code" and "Clean Code". You can read [my review and takeaways]({% post_url 2020-01-06-CleanCodeReview %}).
 

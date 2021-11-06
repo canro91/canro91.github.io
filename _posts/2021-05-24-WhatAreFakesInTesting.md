@@ -184,7 +184,7 @@ Again, stubs provides values and mocks are used to assert.
 
 Notice, we used the `UnitOfWork_Scenario_ExpectedResult` naming convention in our test. For the expect result part, we used the keyword "Calls". It shows we expect the `OrderService` to call a payment gateway to charge credit cards.
 
-<div class="message">For more naming conventions, check <a href="2021/04/12/UnitTestNamingConventions/">4 test naming conventions</a></div>
+<div class="message">For more naming conventions, check <a href="/2021/04/12/UnitTestNamingConventions/">4 test naming conventions</a></div>
 
 ## Other types of fakes: dummies, stubs, spies and mocks
 
