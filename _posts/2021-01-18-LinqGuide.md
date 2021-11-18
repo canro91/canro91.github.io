@@ -7,7 +7,7 @@ cover: LinqGuide.png
 cover-alt: A quick guide to LINQ with examples
 ---
 
-Today a friend asked me about LINQ. I guess she was studying for a technical interview. So, dear Alice, this is what LINQ is and these are the most common LINQ methods with examples in C#. All you need to know in 15 minutes or less.
+Today a friend asked me about LINQ. I guess she was studying for a technical interview. So, dear Alice, this is what LINQ is and these are the most common LINQ methods with examples. All you need to know in 15 minutes or less.
 
 **Language-Integrated Query (LINQ) is the declarative way of working with collections in C#. LINQ can be used with databases and xml files too. LINQ can be found as an API syntax, using extensions methods on the IEnumerable type, or as a language-level query syntax, using a SQL-like syntax.**
 
@@ -94,7 +94,7 @@ Avatar: [5]
 My Neighbor Totoro: [5]
 ```
 
-Change the example to use your own movies and see which ones are your favorites!
+Change the example to use your own movies and see which ones are your favorite movies!
 
 ### Our first LINQ method: Where
 
