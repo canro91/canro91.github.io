@@ -6,11 +6,11 @@ cover: Cover.png
 cover-alt: "Don't duplicate logic in Asserts"
 ---
 
-We have covered some [common mistakes when writing unit tets]({% post_url 2021-03-29-UnitTestingCommonMistakes %}). Some of them may seem obvious. But, we all have made this one mistake when we started to write unit tests. This is the most common mistake when writing unit tests and how to fix it.
+We have covered some [common mistakes when writing unit tests]({% post_url 2021-03-29-UnitTestingCommonMistakes %}). Some of them may seem obvious. But, we all have made this one mistake when we started to write unit tests. This is the most common mistake when writing unit tests and how to fix it.
 
-**Don't repeat the logic under test when verifying the expected result of a test. Instead, use known, hard-coded, pre-calculated values.**
+**Don't repeat the logic under test when verifying the expected result of tests. Instead, use known, hard-coded, pre-calculated values.**
 
-Let's write some tests for [Stringie](https://github.com/canro91/Testing101), a (fictional) library to manipulate strings with  a fluent interface. Stringie has a `Remove()` method to remove substrings from the end of a string.
+Let's write some tests for [Stringie](https://github.com/canro91/Testing101), a (fictional) library to manipulate strings with a fluent interface. Stringie has a `Remove()` method to remove substrings from the end of a string.
 
 We can use Stringie `Remove()` method like this,
 
@@ -25,7 +25,7 @@ string removed = hello.Remove("world!").From(The.End);
 
 **When writing unit tests, don't copy the tested logic and paste it into private methods to use them inside assertions.**
 
-If we bring the tested logic to private methods in our tests, we will have code, and bugs, in two places. Duplication is the root of all evil. Even, inside our tests.
+If we bring the tested logic to private methods in our tests, we will have code and bugs in two places. Duplication is the root of all evil. Even, inside our tests.
 
 Please, don't write assertions like the one in this test.
 
@@ -55,9 +55,9 @@ private string RemoveFromEnd(string str, string substring)
 
 ## Don't make internals public
 
-Also, by mistake, we expose internals of the tested logic to use them in assertions. We make private methods public and static. Even to test those private methods directly.
+Also, by mistake, we expose the internals of the tested logic to use them in assertions. We make private methods public and static. Even to test those private methods directly.
 
-From our [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}), we learned to write unit tests through public methods. We should test the observable behavior of our tested code. A returned value, a thrown exception or an external invocation made.
+From our [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}), we learned to write unit tests through public methods. We should test the observable behavior of our tested code. A returned value, a thrown exception, or an external invocation made.
 
 Again, don't write assertions like the one in this test.
 
@@ -94,7 +94,7 @@ public void Remove_ASubstring_RemovesThatSubstringFromTheEnd()
 }
 ```
 
-Voilà! That's the most common mistake when writing unit tests. It seems silly! But, often we duplicate Math operations and string concatenations and it passes unnoticed. Remember, don't put too much logic in your tests. Tests should be only assignments and method calls.
+Voilà! That's the most common mistake when writing unit tests. It seems silly! But often, we duplicate Math operations and string concatenations and it passes unnoticed. Remember, don't put too much logic in your tests. Tests should be only assignments and method calls.
 
 If you're new to unit testing, read my post on [how to write your first unit tests in C# with MSTest]({% post_url 2021-03-15-UnitTesting101 %}) and check the [4 common mistakes when writing your first tests]({% post_url 2021-03-29-UnitTestingCommonMistakes %}). Also, don't miss my [Unit Testing Best Practices]({% post_url 2021-07-05-UnitTestingBestPractices %}). You can have them in a pdf file for free.
 
