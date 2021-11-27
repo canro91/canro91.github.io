@@ -6,9 +6,9 @@ cover: Cover.png
 cover-alt: "There are pending requests working on this transaction"
 --- 
 
-These days I got this exception message: "The transaction operation cannot be performed because there are pending requests working on this transaction". This is how I fixed it after almost a whole day of Googling and debugging.
+These days I got this exception message: "The transaction operation cannot be performed because there are pending requests working on this transaction." This is how I fixed it after almost a whole day of Googling and debugging.
 
-**To fix the pending requests exception, make sure to properly await all asynchronous methods wrapped inside any database transaction.**
+**To fix the "pending requests" exception, make sure to properly await all asynchronous methods wrapped inside any database transaction.**
 
 ## Pipeline pattern and reverting reservations
 
@@ -16,11 +16,11 @@ I was working with [the pipeline pattern]({% post_url 2020-02-14-PipelinePattern
 
 The reservation process used two types of steps inside a pipeline: foreground and background steps.
 
-The foreground steps ran to separate enough rooms for the reservation. And the background steps did everything else to fullfil the reservation, but in background jobs.
+The foreground steps ran to separate enough rooms for the reservation. And the background steps did everything else to fulfill the reservation but in background jobs.
 
-If anything wrong happened executing the foreground steps, the whole operation rollbacked. And there was no rooms set aside for the incoming reservation. To achieve this, every foreground step had a method to revert its own operation.
+If anything wrong happened while executing the foreground steps, the whole operation rollbacked. And there were no rooms set aside for the incoming reservation. To achieve this, every foreground step had a method to revert its own operation.
 
-The code to revert the whole pipeline was wrapped inside a trasanction. It looked something like this,
+The code to revert the whole pipeline was wrapped inside a transaction. It looked something like this,
 
 ```csharp
 using (var transactionScope = _transactionManager.Create(IsolationLevel.Serializable))
@@ -42,7 +42,7 @@ using (var transactionScope = _transactionManager.Create(IsolationLevel.Serializ
 }
 ```
 
-The `Commit()` method broke with the exception mention earlier. Arrrggg!
+The `Commit()` method broke with the exception mentioned earlier. Arrrggg!
 
 <figure>
 <img src="https://images.unsplash.com/photo-1473158912295-779ef17fc94b?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjI0MTY1NTUw&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="Broken display glass" />
@@ -76,7 +76,7 @@ private async Task<User> GetSystemUserAsync()
 }
 ```
 
-Did you notice any asynchronous method not being awaited? No? I didn't for a while. Neither did my reviewers.
+Did you notice any asynchronous methods not being awaited? No? I didn't for a while. Neither did my reviewers.
 
 But, there it was. Unnoticed for the code analyzer too. And, for all the passing tests.
 

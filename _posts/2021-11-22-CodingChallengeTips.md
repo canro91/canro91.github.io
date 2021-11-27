@@ -21,13 +21,13 @@ Follow good practices and stick to coding standards. Write clean code.
 
 **Write descriptive names**. Don't use `Information` or `Info` as name suffixes. Like, `AccountInfo`. And keep names consistent. If you used `AddAccount` in one place, don't use `AccountAdd` anywhere else. 
 
-**Use one single "spoken" language**. Write variables, functions, classes and all other names in the same language. Don't mix English and your native language. If your native language isn't English. Always prefer the language you will be using at the new place.
+**Use one single "spoken" language**. Write variables, functions, classes, and all other names in the same language. Don't mix English and your native language. If your native language isn't English. Always prefer the language you will be using at the new place.
 
 **Don't keep commented out code**. And, don't have extra blank lines. Use linters and extensions for this.
 
 **Use third-party libraries to solve common problems**. But, don't keep unused libraries or NuGet packages.
 
-**Have clearly separated responsibilities**. Use separate classes, maybe Services and Repositories. But, stay away from Helper and Utility classes full of static methods. Often, they mean you have wrong abstractions.
+**Have clearly separated responsibilities**. Use separate classes, maybe Services, and Repositories. But, stay away from Helper and Utility classes full of static methods. Often, they mean you have wrong abstractions.
 
 **Add unit or integration tests**. At least for the main parts of your solution.
 
@@ -53,13 +53,13 @@ Keep your solution under version control. Use Git.
 
 Write a good README file for your solution. Don't miss this one!
 
-**Add installation instructions**. Make as easy as possible for the one reviewing your work to install and run your solution. For example, deploy your solution to a hosting provider or use Docker.
+**Add installation instructions**. Make it as easy as possible for the one reviewing your work to install and run your solution. For example, deploy your solution to a hosting provider or use Docker.
 
 **Add how to test your solution**. Maybe, some step-by-step instructions with screenshots, a Postman collection with the endpoints to hit. You get the idea!
 
-**Tell what third-party tools you used**. Include what libraries, NuGet packages or third-party APIs you used.
+**Tell what third-party tools you used**. Include what libraries, NuGet packages, or third-party APIs you used.
 
-**Document any major design choices**. Did you choose any architectural pattern? Any storage layer? Tell why.
+**Document any major design choices**. Did you choose any architectural patterns? Any storage layer? Tell why.
 
 Voilà! These are my best tips to rock in your next coding challenge. Remember, it's your time to shine. Write as clean code as possible. And keep things consistent. Good luck!
 
