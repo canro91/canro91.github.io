@@ -21,6 +21,7 @@ Visual Studio is the de-facto Integrated Development Environment (IDE) for C#. A
 	* `Ctrl + ,`: Navigate to any method in your solution
 	* `Ctrl + .`: Apply a refactor or any action in the current code block
 	* `Ctrl + q`: Search and execute settings or menus of Visual Studio
+	* `Ctrl + Shift + F12`: Go to the next error
 * Install some plugins to make your life easier. You can take a look at [my Visual Studio setup]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %}) for more settings and extensions.
 	* [Productivity Power Tools](https://marketplace.visualstudio.com/items?itemName=VisualStudioPlatformTeam.ProductivityPowerTools)
 	* [Auto Save](https://github.com/anaisbetts/SaveAllTheTime/issues), no more `Ctrl + S`
