@@ -3,11 +3,11 @@ layout: page
 title: Projects
 ---
 
-This is some of the code I have written. Feel free to take a look, report any bug, ask for a new feature or send a pull-request.
+This is some of the code I have written. Feel free to take a look, report any bug, ask for a new feature or send a pull request.
 
 ### Parsinator
 
-I wrote [Parsinator](https://github.com/canro91/Parsinator), a library to extract relevant data from text-based pdfs and plain text files. I used Parsinator to connect 4 legacy client softwares to a document API by parsing pdfs and plain text files into input XML files. You could read the motivation behind Parsinator on my post [Parsinator, a tale of a pdf parser]({% post_url 2019-03-08-ATaleOfAPdfParser %}).
+I wrote [Parsinator](https://github.com/canro91/Parsinator), a library to extract relevant data from text-based PDFs and plain text files. I used Parsinator to connect 4 legacy client softwares to a documents API by parsing PDFs and plain text files into input XML files. You could read the motivation behind Parsinator in my post: [Parsinator, a tale of a pdf parser]({% post_url 2019-03-08-ATaleOfAPdfParser %}).
 
 [![canro91/parsinator - GitHub](https://gh-card.dev/repos/canro91/parsinator.svg)](https://github.com/canro91/parsinator)
 
