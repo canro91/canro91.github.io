@@ -55,11 +55,13 @@ These two tests rely on the current date and time. Every time you run tests that
 
 We want our tests to be deterministic. We learned that from [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}). Using `DateTime.Now` in our tests isn't a good idea.
 
+## What are seams?
+
 To replace the `DateTime.Now` in our tests, we need seams.
 
 **A seam is a place to introduce testable behavior in our code under test**.
 
-Let's see two techniques from the books [The Art of Unit Testing](https://www.manning.com/books/the-art-of-unit-testing-second-edition) ([My takeaways here]({% post_url 2020-03-06-TheArtOfUnitTestingReview %})) and [97 things every programmer should know](https://www.oreilly.com/library/view/97-things-every/9780596809515/) to introduce seams in our code to replace `DateTime.Now`.
+Let's see two techniques from [The Art of Unit Testing](https://www.manning.com/books/the-art-of-unit-testing-second-edition) ([My takeaways here]({% post_url 2020-03-06-TheArtOfUnitTestingReview %})) and [97 things every programmer should know](https://www.oreilly.com/library/view/97-things-every/9780596809515/) to introduce seams in our code.
 
 **Two techniques to introduce seams in code are using interfaces to declare dependencies in the constructor of a class and an optional setter methods to plug in testable values.**
 
@@ -69,7 +71,7 @@ Let's see two techniques from the books [The Art of Unit Testing](https://www.ma
 <figcaption>Photo by <a href="https://unsplash.com/@sonjalangford?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sonja Langford</a> on <a href="https://unsplash.com/s/photos/time?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption>
 </figure>
 
-## Use a fake or test double
+## Use a fake or test double to replace DateTime.Now
 
 To make our tests more reliable, we can create an abstraction for the current time and make our validator depend on it. Later, we can pass a [fake or test double]({% post_url 2021-05-24-WhatAreFakesInTesting %}) with a hardcoded date in our tests.
 
@@ -161,7 +163,7 @@ public class CreditCardValidationTests
 
 With a testable clock in our tests, we replaced all the references to `DateTime.Now` with a fixed date in the past.
 
-### Create constants for test values
+### Create constants for common test values
 
 To make things cleaner, let's refactor our tests. Let's use a builder method and read-only fields for the fixed dates.
 
@@ -276,7 +278,11 @@ public class CreditCardValidationTests
 }
 ```
 
-Yeap! As simple as that. Another variation on this theme is to create a setter inside the `CreditCardValidator` to pass an optional date. Inside the validator, we should check if the optional date is present to use `DateTime.Now` or not. Something like this.
+Yeap! As simple as that.
+
+### Write an optional setter
+
+Another variation on this theme is to create a setter inside the `CreditCardValidator` to pass an optional date. Inside the validator, we should check if the optional date is present to use `DateTime.Now` or not. Something like this.
 
 ```csharp
 [TestMethod]
