@@ -6,7 +6,7 @@ cover: Cover.png
 cover-alt: "5 tips for better stubs and mocks in C#"
 ---
 
-Last time, we covered [what fakes are in unit testing]({% post_url 2021-05-24-WhatAreFakesInTesting %}) and the types of fakes. We wrote two tests for a `OrderService` to show the difference between stubs and mocks.
+Last time, we covered [what fakes are in unit testing]({% post_url 2021-05-24-WhatAreFakesInTesting %}) and the types of fakes. We wrote two tests for an `OrderService` to show the difference between stubs and mocks.
 
 In case you missed it, fakes are like test "simulators". They replace external dependencies with testable components. Stubs and mocks are two type of fakes. Stubs are "simulators" that provide values or exceptions. And, mocks are "simulators" that record method calls.
 
@@ -118,7 +118,7 @@ public class OrderServiceTests
 }
 ```
 
-**Don't use multiple mocks per test.** Write separate tests, instead.
+**Don't use multiple mocks per test. Write separate tests, instead.**
 
 <figure>
 <img src="https://images.unsplash.com/flagged/photo-1579750481098-8b3a62c9b85d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjE5NzExMzk1&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="Cockpit of Airbus A330-200" />
@@ -129,7 +129,9 @@ public class OrderServiceTests
 
 ## 3. Avoid logic inside your fakes
 
-**Write dumb fakes.** Avoid complex logic inside your fakes. For example, don't add flags to your stubs to return one value or another. Write separate fakes, instead.
+**Write dumb fakes. Avoid complex logic inside fakes.**
+
+For example, don't add flags to your stubs to return one value or another. Write separate fakes, instead.
 
 Let's test the `OrderService` with and without stock. Don't write the two tests with a single `FakeStockService` that uses a flag to signal the two scenarios.
 
@@ -182,6 +184,7 @@ public class OrderServiceTests
     public void PlaceOrder_ItemInStock_CallsPaymentGateway()
     {
         var paymentGateway = new FakePaymentGateway();
+        // One fake for the "in stock" scenario
         var stockService = new ItemInStockStockService();
         var service = new OrderService(paymentGateway, stockService);
 
@@ -195,6 +198,7 @@ public class OrderServiceTests
     public void PlaceOrder_ItemOutOfStock_ThrowsException()
     {
         var paymentGateway = new FakePaymentGateway();
+        // Another fake for the "ouf of stock" scenario
         var stockService = new ItemOutOfStockStockService();
         var service = new OrderService(paymentGateway, stockService);
 
@@ -208,7 +212,7 @@ Don't worry about creating lots of fakes. Fakes are cheap. Any decent IDE can ad
 
 ## 4. Make tests set their own values for fakes
 
-**Avoid magic values in your stubs.** Make the test pass their own values instead of having hard-coded values in your tests.
+**Avoid magic values in your stubs. Make the test pass their own values instead of having hard-coded values in your tests.**
 
 Let's say that `StockService` returns the units available instead of a simple `true` or `false`. Check this test,
 
@@ -269,7 +273,7 @@ Again for our last tip, let's talk about names. Naming is hard.
 
 **Name your stubs to indicate the value they return or the exception they throw.**
 
-We named our fake stock provider `AlwaysAvailableStockService` to show it always return stock available. It obvious from its name what it's the return value.
+We named our fake stock provider `AlwaysAvailableStockService` to show it always return stock available. It obvious from its name what is the return value.
 
 When we needed two stock providers to test the `OrderService` without stock, we named our fakes: `ItemInStockStockService` and `ItemOutOfStockStockService`.
 
