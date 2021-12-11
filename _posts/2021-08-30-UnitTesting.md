@@ -22,6 +22,8 @@ Identify and fix these [4 common mistakes]({% post_url 2021-03-29-UnitTestingCom
 <a href="/assets/posts/2021-08-30-UnitTesting/UnitTesting101.pdf" target="_blank" data-goatcounter-click="UnitTesting101eBook-Image" data-goatcounter-title="UnitTesting101: eBook"><img src="/assets/posts/2021-08-30-UnitTesting/GrabYourOwnCopy.png" alt="Grab your own copy of Unit Testing 101" /></a>
 </figure>
 
+When writing your unit tests, make sure you [don't duplicate logic in Asserts]({% post_url 2021-10-11-DontRepeatLogicInAssertions %}). That's THE most common mistake on unit testing.
+
 ## Improve it
 
 [How to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %}) shows two common issues when writing unit tests: complex setup scenarios and hidden test values.
