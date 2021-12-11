@@ -8,7 +8,9 @@ cover-alt: Livable Code. Living with your mess
 
 These days, I watched a conference online by Sarah Mei ([@sarahmei](https://twitter.com/sarahmei)) titled: Livable Code. This is what livable code is.
 
-**Livable Code is the analogy that building software is like living an space inside a building.** Building software isn't like building anything else. It isn't like planning, constructing and maintaining a tower of apartments. It's living an space where each decision counts towards having a mess or a enjoyable place to live.
+**Livable Code is the analogy that building software is like living an space inside a building instead of constructing a house or a building.**
+
+Building software isn't like building anything else. It isn't like planning, constructing and maintaining a tower of apartments. It's living an space where each decision counts towards having a mess or a enjoyable place to live.
 
 ## Code hoarders
 
@@ -19,6 +21,8 @@ These days, I watched a conference online by Sarah Mei ([@sarahmei](https://twit
 
 <figcaption>Messy code comes after small decisions made every day. <span>Photo by <a href="https://unsplash.com/@lg17?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Lance Grandahl</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
 </figure>
+
+## Everyday Decisions and Perfect Clean Code
 
 **We have to live with every decision we have made inside our code.** Instead of, building something and moving on, we live with software. We don't have "done" projects anymore. We don't ship software into burned CD's and hand the maintenance to somebody else. We have to get to live with our code and make it livable for the ones around us.
 
