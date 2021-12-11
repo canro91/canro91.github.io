@@ -129,7 +129,7 @@ This time, to avoid repetition, we put the test values in an array and looped th
 
 If we want to test the same scenario with different test values, let's use parameterized tests.
 
-### Parameterized tests with MSTest
+### How to write Parameterized tests with MSTest
 
 To write a parameterized test with MSTest, we can follow these steps:
 
