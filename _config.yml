@@ -8,6 +8,8 @@ description:      "I'm Cesar Aguirre. Software engineer. Lifelong learner"
 url:              https://canro91.github.io
 baseurl:          /
 
+future:           false
+
 author:
   name:           'Cesar Aguirre'
   url:
