@@ -1,0 +1,13 @@
+name: Build every Monday at 8AM
+
+on:
+  schedule:
+   - cron: '0 8 * * 1'
+jobs:
+  curl:
+    runs-on: ubuntu-latest
+    steps:
+    - name: curl
+      uses: wei/curl@master
+      with:
+        args: "-X POST -H 'Authorization: token ${{ secrets.BUILD_PAGES_SECRET }}' -H 'Accept: application/vnd.github.ant-man-preview+json' https://api.github.com/repos/canro91/canro91.github.io/pages/builds"
