@@ -105,4 +105,4 @@ Aren't you curious about a language without exceptions? _Happy Go time!_
 
 [![canro91/LetsGo - GitHub](https://gh-card.dev/repos/canro91/LetsGo.svg)](https://github.com/canro91/LetsGo)
 
-<img src="https://golang.org/lib/godoc/images/footer-gopher.jpg" width="80" height="50" />
+<img src="https://go.dev/images/gophers/pilot-bust.svg" width="80" height="50" />
