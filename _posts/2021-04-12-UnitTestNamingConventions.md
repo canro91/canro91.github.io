@@ -30,6 +30,10 @@ We find this naming convention in the book [The Art of Unit Testing](https://www
 
 With this convention, we can read our test names out loud like this: "When calling Remove with no parameters, then it returns empty".
 
+<div class="message">
+Grab a free copy of my <a href="/UnitTesting" target="_blank">Unit Testing 101 ebook</a> where I include these four naming conventions and three more chapters to start writing unit tests with C# and MSTest. 
+</div>
+
 ## 2. Plain English sentence
 
 ```csharp

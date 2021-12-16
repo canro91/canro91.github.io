@@ -92,7 +92,7 @@ This time, I'm bringing some of the tips and best practices from my previous pos
 
 Voilà! Those are my best practices to write ~~better~~ great unit tests. Don't forget to always start writing failing tests. And, make sure they fail for the right reasons. If you don't follow Test-Driven Development, comment some of your code under test or change the assertions on purpose to see your tests failing.
 
-If you want to have these best practices next to you, grab your own free copy of "Unit Testing 101". Feel free to share it.
+If you want to have these best practices next to you, grab your free copy of my [Unit Testing 101 ebook]({ post_url 2021-08-30-UnitTesting }). Feel free to share it.
 
 <figure>
 <a href="/UnitTesting"><img src="/assets/posts/2021-07-05-UnitTestingBestPractices/UnitTesting101.png" alt="Grab your own copy of Unit Testing 101" /></a>
