@@ -104,6 +104,8 @@ In case you missed it...You can add methods to a type without modifying it with 
 
 To work with LINQ, you need to be comfortable with delegates and lambda functions. A lambda function is a method with only the parameters and the body. To learn more about delegates and lambda functions, check my post on [the difference between Func and Action]({% post_url 2019-03-22-WhatTheFuncAction %}).
 
+### How to filter a collection with Where
+
 Now, to the actual example. To start using LINQ methods, let's add the statement `using System.Linq`.
 
 Next, we want to filter our list of movies to keep only the ones with a rating greater than 4.5. The LINQ method to filter collections is `Where`.
@@ -210,7 +212,7 @@ For more readability, we often align the nested LINQ methods vertically by the (
 
 ### Any
 
-**The Any method check if a collection is empty.** Also, it checks if a collection has at least one element matching a condition. It returns either `true` or `false`. It doesn't return a new collection.
+**The Any method check if a collection is empty. Also, it checks if a collection has at least one element matching a condition.** It returns either `true` or `false`. It doesn't return a new collection.
 
 Let's see if we have watched movies with a low rating.
 
@@ -347,7 +349,7 @@ There are more LINQ methods than the ones we've seen so far. These are some of t
 | `Min`, `Max` | Find the smallest and largest element of a collection |
 | `ToDictionary` | Convert a collection into a dictionary |
 
-## Query syntax: A matter of taste
+## LINQ Query syntax: A matter of taste
 
 Up to this point, we have seen LINQ as extension methods. But, you can find LINQ as language-level query syntax too.
 
@@ -415,7 +417,7 @@ From the above example, the file size is in bytes. Then, notice how we declared 
 let sizeInMb = file.Length * 1024 * 1024
 ```
 
-## Common mistakes
+## Three common LINQ mistakes
 
 Now that we know what LINQ is and the most common LINQ methods, let's go through three common mistakes we make when using LINQ methods in our code.
 
