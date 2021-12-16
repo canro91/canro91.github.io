@@ -27,7 +27,7 @@ Show your work is a New York Times bestseller by Austin Kleon. He describes his 
 
 Ask yourself what you want to learn. And make a commitment of learning in front of others. Share what you love and the people who love the same thing will find you.
 
-{% include image.html name="Quote.png" alt="The minute you learn something, teach it" caption="" %}
+{% include image.html name="Quote.png" alt="The minute you learn something, teach it" caption="My favorite quote from Show Your Work" %}
 
 ## Share something small every day
 
@@ -44,5 +44,9 @@ Don't be afraid of sharing your work. 90% of everything is crap. But, don't turn
 **Have a cabinet of curiosities**. Before museums, people had a place to put what they loved, usually rare and weird things. Think you're a collector.
 
 Before you can share your work, you can share your taste. You can share what you read, who you follow, what inspires you. Credit your sources. Don't share things you can't credit.
+
+Voilà! These are my takeaways from Show Your Work. This isn't a book about programming, but it has inspired me to continue writing, even when I think nobody is reading.
+
+If you want to read other takeaways, check [Clean Coder]({% post_url 2020-06-15-CleanCoder %}) and [Pragmatic Thinking and Learning]({% post_url 2020-05-07-PragmaticThinkingAndLearning %}).
 
 _#showyourwork_
