@@ -76,7 +76,7 @@ Let's write a custom assertion for that.
 
 We can either create custom assertions on top of MSTest `Assert` class. And, our own `Verify` methods on Moq mocks. 
 
-### Custom MSTest Assert methods
+### How to write custom MSTest Assert methods
 
 **To write custom assertions with MSTest, write an extension method on top of the Assert class. Then, compare the expected and actual parameters and throw an AssertFailedException if the comparison fails.**
 
@@ -124,7 +124,7 @@ namespace Stringie.UnitTests
 }
 ```
 
-### Custom Verify method
+### How to write custom Verify method
 
 If we're using a mocking library, we can create our custom `Verify()` methods.
 
