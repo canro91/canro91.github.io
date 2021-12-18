@@ -77,7 +77,13 @@ public void Remove_ASubstring_RemovesThatSubstringFromTheEnd()
 
 **Instead of duplicating the tested logic, by exposing internals or copy-pasting code into assertions, use a known expected value.**
 
-If we end up using the same expected values, we can create constants for them. Like `const string Hello = "Hello";` or `const string HelloAndComma = "Hello,";` for our example.
+If we end up using the same expected values, we can create constants for them. Like,
+
+```csharp
+const string Hello = "Hello";
+// or
+const string HelloAndComma = "Hello,";
+```
 
 For our sample test, simply use the expected substring `"Hello,"`. Like this,
 
