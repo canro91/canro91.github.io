@@ -6,11 +6,11 @@ cover: Cover.png
 cover-alt: How to create test values with the Builder pattern
 ---
 
-Last time, we learned [how to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %}) by reducing noise inside our tests. One way to reduce noise is to use builder methods. In that post, we used a builder method to simplify the complex setup scenarios of our tests. Let's use the Builder pattern to create test data for our unit tests.
+Last time, we learned [how to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %}) by reducing noise inside our tests. We used a factory method to simplify complex setup scenarios in our tests. Let's use the Builder pattern to create test data for our unit tests.
 
 **With the Builder pattern, an object creates another object. A builder has methods to change some properties of an object and a method to return an object ready to use. The Builder pattern is useful to create input data inside unit tests**.
 
-## Without Builders
+## Tests without Builders
 
 To see the Builder pattern in action, let's validate credit cards. We will use the [FluentValidation](https://fluentvalidation.net/) library to create a validator class. We want to check if a credit card is expired or not. We can write these tests.
 
@@ -65,9 +65,9 @@ In these tests, we used the `TestValidate()` and `ShouldHaveAnyValidationError()
 
 In each test, we created a `CreditCard` object and modified one single property for the given scenario. We had duplication and magic values when initializing the `CreditCard` object.
 
-From [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}), we learned our test should be deterministic. We shouldn't rely on `DateTime.Now` on our tests, but let's keep it for now.
+From [how to write your first unit tests with MSTest]({% post_url 2021-03-15-UnitTesting101 %}), we learned our test should be deterministic. We shouldn't rely on `DateTime.Now` on our tests, but let's keep it for now.
 
-## Object mothers
+## What are Object mothers?
 
 In our tests, we should give enough details to our readers, but not too many details to make our tests noisy. We should keep the details at the right level.
 
@@ -75,11 +75,11 @@ In our previous tests, we only cared for the expiration year and month in each t
 
 One alternative to abstract the creation of `CreditCard` objects is to use an object mother.
 
-**An object mother is a factory method or property holding a ready-to-use input object. Each test changes this object to match the scenario under test**. 
+**An object mother is a factory method or property holding a ready-to-use input object. Each test changes properties of an object mother to match the scenario under test**. 
 
 For our example, we can create a `CreditCard` property with valid defaults and tweak it inside each test.
 
-Our tests with an object mother for credit cards will look like this. Notice the `CreditCard` property in our test class and how we update its values from test to test.
+Our tests with an object mother for credit cards will look like this,
 
 ```csharp
 [TestClass]
@@ -123,13 +123,15 @@ public class CreditCardValidationTests
 }
 ```
 
+Notice the `CreditCard` property in our test class and how we updated its values from test to test.
+
 <figure>
 <img src="https://images.unsplash.com/photo-1519645261061-3cee4d216668?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjE3MDYwMTA3&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="Lego technic toy truck" />
 
 <figcaption>Let's use the Builder pattern. Photo by <a href="https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Spiske</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption>
 </figure>
 
-## Builders
+## What are test Builders?
 
 Object mothers are fine if you don't have lots of variations of the object being constructed. But, since this is a post on Builder pattern, let's create a Builder for credit cards.
 
@@ -182,7 +184,7 @@ public class CreditCardBuilder
 
 In our builder, we have one field for each property of the `CreditCard` class. We can create as many `WithX()` methods as properties we need to use in our tests.
 
-### Initialize values inside Builders
+### How to initialize values inside Builders
 
 To initialize the properties without corresponding `WithX()` methods, we can create a special `WithTestValues()` method to use valid defaults. Another option is to initialize all the fields on the builder directly.
 
@@ -247,7 +249,7 @@ public class CreditCardValidationTests
 }
 ```
 
-### Composing Builders
+### How to compose Builders?
 
 With the Builder pattern, we can compose many builders to make our tests easier to read.
 
