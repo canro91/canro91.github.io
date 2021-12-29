@@ -117,6 +117,7 @@ Let's replace the first `foreach` statement from our example with the `Where` me
 ```csharp
 using System;
 using System.Collections.Generic;
+// This is the new using statement
 using System.Linq;
 
 namespace QuickLinqGuide
@@ -158,9 +159,9 @@ var favorites = movies.Where(movie => movie.Rating > 4.5);
 
 More compact, isn't it? Also, we turned the condition inside the `if` statement into a lambda function.
 
-### Methods instead of lambda functions
+### Separate methods and lambda functions
 
-**Instead of lambda functions, you can use private methods with LINQ**. For our example, let's create a method that receives `Movie` as a parameter and returns `bool`. For example,
+**Instead of lambda functions, we can use private methods with LINQ too**. For our example, let's create a `IsFavorite()` method that receives `Movie` as a parameter and returns `bool`. For example,
 
 ```csharp
 private bool IsFavorite(Movie movie)
@@ -173,6 +174,12 @@ Then, we can use `IsFavorite` inside the `Where` method to filter our movies. Li
 
 ```csharp
 var favorites = movies.Where(movie => IsFavorite(movie));
+```
+
+We can simplify things ever further. Since the `IsFavorite` method only has one parameter, we can remove the intermediate variable, like this,
+
+```csharp
+var favorites = movies.Where(IsFavorite);
 ```
 
 ### LINQ and immutability
@@ -315,11 +322,9 @@ var oldest = movies.OrderBy(movie => movie.ReleaseYear)
 // Platoon
 ```
 
-This time, we used the `OrderBy` to sort the movies collection by release year. _Two examples for the price of one!_
+This time, we used the `OrderBy` to sort the movies collection by release year. Two examples for the price of one!
 
-In the same spirit of `First` and `FirstOrDefault`, you have `Last` and `LastOrDefault`. But, they return the last element instead of the first one.
-
-Recently, I learned about [the DefaultIfEmpty LINQ method]({% post_url 2020-11-17-DefaultOrEmpty %}). It returns a new collection with a default value if the given collection is empty. Good to know!
+In the same spirit of `First` and `FirstOrDefault`, we have `Last` and `LastOrDefault`. But, they return the last element instead of the first one.
 
 ## Cheatsheet
 
@@ -351,7 +356,7 @@ There are more LINQ methods than the ones we've seen so far. These are some of t
 
 ## LINQ Query syntax: A matter of taste
 
-Up to this point, we have seen LINQ as extension methods. But, you can find LINQ as language-level query syntax too.
+Up to this point, we have seen LINQ as extension methods. But, we can find LINQ as language-level query syntax too.
 
 This is the same example to find our favorite movies using language-level query syntax.
 
@@ -396,6 +401,7 @@ namespace QuickLinqGuide
             var desktop = new DirectoryInfo(desktopPath);
 
             var largeFiles = from file in desktop.GetFiles()
+                             // We can create intermediate variables with 'let'            
                              let sizeInMb = file.Length * 1024 * 1024
                              where sizeInMb > 10
                              select file.Name;
@@ -421,13 +427,13 @@ let sizeInMb = file.Length * 1024 * 1024
 
 Now that we know what LINQ is and the most common LINQ methods, let's go through three common mistakes we make when using LINQ methods in our code.
 
-### Count vs Any
+### Write Count instead of Any
 
 Always prefer `Any` over `Count` to check if a collection has elements or an element that meets a condition.
 
 Do `movies.Any()` instead of `movies.Count() > 0`.
 
-### Where followed by Any
+### Write Where followed by Any
 
 You can use a condition with `Any` instead of filtering first with `Where` to later use `Any`.
 
@@ -445,7 +451,7 @@ movies.Where(movie => movie.Rating == 5).Any()
 
 The same applies to the `Where` method followed by `FirstOrDefault`, `Count`, or any other method that receives a filter condition. 
 
-### FirstOrDefault, LastOrDefault and SingleOrDefault
+### Use FirstOrDefault without null checking
 
 Make sure to always check if you have a result when working with `FirstOrDefault`, `LastOrDefault`, and `SingleOrDefault`. If there isn't one, you will get the default value of the collection type.
 
@@ -475,6 +481,14 @@ private static void Main(string[] args)
 ```
 
 For objects, the default value would be a `null` reference. And you know what happens when you try to access a property or method on a `null` reference?... Yes, It throws `NullReferenceException`.
+
+To make sure we always have a non-nullable result when working with `FirstOrDefault`, we can use the [the DefaultIfEmpty method]({% post_url 2020-11-17-DefaultOrEmpty %}). It returns a new collection with a default value if the input collection is empty.
+
+```csharp
+var worst = movies.Where(movie => movie.Rating < 2)
+                  .DefaultIfEmpty(new Movie("Catwoman", 2004, 3))
+                  .First();
+```
 
 ## Conclusion
 
