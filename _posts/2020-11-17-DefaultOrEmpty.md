@@ -4,16 +4,18 @@ title: "TIL: LINQ DefaultIfEmpty method in C#"
 tags: todayilearned csharp
 ---
 
-LINQ `DefaultIfEmpty` extension method returns a collection containing a single element if the given collection is empty. Otherwise, it returns the same collection.
+Today while I was reading the AutoFixture source code I found a LINQ method I didn't know about: DefaultIfEmpty. This is what the LINQ DefaultIfEmpty method does.
 
-Example: Find all the movies with score greater than 9. Otherwise, return your all-time favorite movie.
+**LINQ DefaultIfEmpty method returns a collection containing a single element if the source collection is empty. Otherwise, it returns the same collection.**
+
+For example, let's find all the movies with a rating greater than 9. Otherwise, return our all-time favorite movie.
 
 ```csharp
 var movies = new List<Movie>
 {
-    new Movie("Titanic”, 5),
-    new Movie("Back to the Future”, 7),
-    new Movie("Black Hawk Down”, 6)
+    new Movie("Titanic", 5),
+    new Movie("Back to the Future", 7),
+    new Movie("Black Hawk Down", 6)
 };
 
 var movieToWatch = movies.Where(movie => movie.Score >= 9)
@@ -23,11 +25,15 @@ var movieToWatch = movies.Where(movie => movie.Score >= 9)
 // Movie { Name="Fifth Element", Score=10 }
 ```
 
-If I had to implement it on my own, it would be like this:
+If I had to implement it on my own, it would be like this,
 
 ```csharp
 public static IEnumerable<T> DefaultIfEmpty<T>(this Enumerable<T> source, T @default)
     => source.Any() ? source : new[]{ @default };
 ```
+
+Voilà! DefaultIfEmpty is helpful to make sure we always have a defualt value when filtering a collection. It's a good alternative to FirstOrDefault followed by checking for null value.
+
+To learn more about LINQ, check my [Quick Guide to LINQ]({% post_url 2021-01-18-LinqGuide %}). Don't miss my [C# Definitive Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %}) for a list of subjects every intermediate C# developer should know.
 
 _Source_: [Enumerable.DefaultIfEmpty Method](https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.defaultifempty?view=net-5.0)
