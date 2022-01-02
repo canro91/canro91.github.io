@@ -8,22 +8,24 @@ cover-alt: Parsinator, a tale of a pdf parser
 
 One day your boss asks you to read a pdf file to extract relevant information to later process it in your main software. That happened to me. My first thought was: "_how in the world am I going to read the text on the pdf file?"_ This is how I built Parsinator.
 
-[Parsinator](https://github.com/canro91/Parsinator) is a library to turn structured and unstructured text into a header-detail representation. With Parsinator, you can create an xml file from a pdf file or an object from a printer spool file. I wrote Parsinator to parse invoices into xml files to feed a document API on an invoicing system.
+Parsinator is a library to turn structured and unstructured text into a header-detail representation. With Parsinator, you can create an XML file from a pdf file or an object from a printer spool file. I wrote Parsinator to parse invoices into XML files to feed a documents    API on an invoicing system.
 
 ## Requirements
 
-There I was, a normal day at the office with a new challenge. One of our clients couldn't connect to our invoicing software. The only input he could provide was a text-based pdf file. This was the challenge: **parse a text-based pdf file into an xml**. These were the requirements:
+There I was, a normal day at the office with a new challenge. One of our clients couldn't connect to our invoicing software. The only input he could provide was a text-based pdf file. This was the challenge: **parse a text-based pdf file into an XML file**.
+
+These were the requirements:
 
 * You can receive pdf files with any structure. Two clients won't have the same file structure.
-* You will receive not only pdf files, but any plain-text file.
+* You will receive not only pdf files but any plain-text file.
 * You will have to build something easy to grasp for your coworkers or your future self to maintain.
-* You will have to ship it by the end of the week. _Sounds familiar?_
+* You will have to ship it by the end of the week. Sounds familiar?
 
 ## Actual implementation
 
-To support files with any format, checking every line with regular expressions wasn't a good solution. A file with a different format would imply to code the whole thing again. _There must be a better way!_
+To support files with any format, checking every line with regular expressions wasn't a good solution. A file with a different format would imply coding the whole thing again. Arggg!
 
-One of my concerns was how to read the text from the  pdf file. But, after Googling a bit, I found the [iTextSharp pdf library](https://github.com/itext/itextsharp) and a StackOverflow answer to [read a text-based pdf file](https://stackoverflow.com/a/5003230). _No big deal after all!_
+One of my concerns was how to read the text from the pdf file. But, after Googling a bit, I found the [iTextSharp pdf library](https://github.com/itext/itextsharp) and a StackOverflow answer to [read a text-based pdf file](https://stackoverflow.com/a/5003230). No big deal after all!
 
 After using iTextSharp, a pdf file was a list of lists of strings, `List<List<string>>`. One list per page and one string per line. I abstracted this step to support any text, not only pdf files.
 
@@ -31,11 +33,11 @@ My next concern was how to do the actual parsing. I borrowed [Parser combinators
 
 ### Skippers
 
-First, I assumed that a file has some content that spawns from one page to another. Imagine an invoice with lots of purchased items that requires a couple of pages to print it. Also, I assumed that a file has some content at a given page and line. For example, the invoice number at the top-right corner of the first page.
+First, I assumed that a file has some content that spawns from one page to another. Imagine an invoice with lots of purchased items that requires a couple of pages to print. Also, I assumed that a file has some content on a given page and line. For example, the invoice number at the top-right corner of the first page.
 
-Second, there were some lines I could ignore. For example, the legal notice at the bottom of the last page of an invoice. So, I needed to _"skip"_ the first or last lines in a page, all blank lines, everything between two line numbers or two regular expressions. To ignore text, I wrote **skippers**.
+Second, there were some lines I could ignore. For example, the legal notice at the bottom of the last page of an invoice. So, I needed to _"skip"_ the first or last lines in a page, all blank lines, everything between two line numbers or two regular expressions. To ignore some text, I wrote **skippers**.
 
-An skipper to ignore the first lines of every page looks like this:
+A skipper to ignore the first lines of every page looks like this:
 
 ```csharp
 public class SkipLineCountFromStart : ISkip
@@ -66,7 +68,7 @@ public class SkipLineCountFromStart : ISkip
 
 ### Parsers
 
-After ignoring unnecessary text, I needed to create small functions to extract text. For example, a function to extract the lines between two  line numbers or regular expressions. I called these functions: **parsers**. With parsers, I could read text in a line of a page or use a default value.
+After ignoring unnecessary text, I needed to create small functions to extract text. For example, a function to extract the lines between two  line numbers or regular expressions. I called these functions: **parsers**. With parsers, I could read the text in a line of a page or use a default value.
 
 A parser to read a line at a given number if it matches a regular expression looks like this:
 
@@ -105,9 +107,9 @@ public class ParseFromLineNumberWithRegex : IParse
 
 ### Transformations
 
-But, what about the text spawning many pages? I came up with **transformations**. They flatten all lines spawning many pages into a single stream of lines.
+But what about the text spawning many pages? I came up with **transformations**. They flatten all lines spawning many pages into a single stream of lines.
 
-In the invoice example, imagine it has a table with all purchased items spawning into two or more pages. The items table starts with a header and ends with a subtotal. You can use again some skippers to extract these items. And then, apply the same set of parsers in every line to find the item name, quantity and price.
+In the invoice example, imagine it has a table with all purchased items spawning into two or more pages. The items table starts with a header and ends with a subtotal. You can use again some skippers to extract these items. And then, apply the same set of parsers in every line to find the item name, quantity, and price.
 
 The next snippet shows a transformation. It applies some skippers, one by one, to generate a single stream of text.
 
@@ -148,7 +150,7 @@ The previous snippet uses two skippers. One to ignore everything before and afte
 
 ### All the pieces
 
-Then, I created a method put everything in place. It applied all **skippers** in every page to keep only the relevant information. After that, it run all **parsers** in the appropriate pages and lines from the output of **skippers**.
+Then, I created a method to put everything in place. It applied all **skippers** on every page to keep only the relevant information. After that, it runs all **parsers** in the appropriate pages and lines from the output of **skippers**.
 
 ```csharp
 public Dictionary<string, Dictionary<string, string>> Parse(List<List<String>> lines)
@@ -177,9 +179,9 @@ public Dictionary<string, Dictionary<string, string>> Parse(List<List<String>> l
 
 ## Conclusion
 
-Voilà! That's how I came up with Parsinator. With this approach, you can parse new files without coding the whole thing every time you need to support a new one. You need to reuse the right skippers and parsers based on the structure of the new file.
+Voilà! That's how I came up with Parsinator. With this approach, I could parse new files without coding the whole thing every time I needed to support a new type of file. I only needed to reuse the right skippers and parsers based on the structure of the new file.
 
-I used Parsinator to connect 4 legacy client softwares to a document API on an invoicing software by parsing pdfs and plain text files to input xml files. In the [Sample project](https://github.com/canro91/Parsinator/tree/master/Parsinator.Sample) you can see how to parse a plain-text invoice and a GPS frame. Feel free to take a look at it.
+I used Parsinator to connect 4 legacy client software to a documents API on an invoicing software by parsing pdf and plain text files to input XML files. In the [Sample project](https://github.com/canro91/Parsinator/tree/master/Parsinator.Sample) you can see how to parse a plain-text invoice and a GPS frame. Feel free to take a look at it.
 
 All ideas and contributions are more than welcome!
 
