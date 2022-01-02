@@ -4,7 +4,7 @@ title: A beginner's Guide to Git. A guide to time travel
 tags: tutorial git
 ---
 
-Have you ever tried to version control your projects by appending dates on folder names? Are you doing it now? I did it back in school with my class projects. If you're doing it this way, there's a better way. Let's use Git and GitHub to version control our projects. Read on!
+Do you store your code on folders named after the date of your changes? I did it back in school with my class projects. There's a better way. Let's use Git and GitHub to version control our projects.
 
 ```bash
 $ ls
@@ -19,17 +19,17 @@ Project-ThisIsTheTrueFinal/
 
 ## What is a Version Control System?
 
-First, what is a version control system? A [version control system](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control), VCS, is a piece of code that keep track of changes of a file or set of files. So you can later access an specific change.
+First, what is a version control system? A [version control system](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control), VCS, is a piece of code that keeps track of changes of a file or set of files.
 
-A version control system, among other things, allows to
+A version control system, among other things, allows us to:
 
 * Revert a file or the entire project to a previous state
 * Follow all changes of a file through its lifetime
 * See who has modified a file
 
-To better understand this concept, let’s use an analogy.
+To better understand this concept, let's use an analogy.
 
-**A version control system is a time machine**. With it you can go backwards in time, create timelines and merge two separate timelines. You don’t travel to historical events in time, but to checkpoints in your project.
+**A version control system is like a time machine**. With it, we can go backward in time, create timelines and merge two separate timelines. We don't travel to historical events in time, but to checkpoints in our project.
 
 <figure>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/TeamTimeCar.com-BTTF_DeLorean_Time_Machine-OtoGodfrey.com-JMortonPhoto.com-04.jpg/640px-TeamTimeCar.com-BTTF_DeLorean_Time_Machine-OtoGodfrey.com-JMortonPhoto.com-04.jpg" alt="DeLorean time machine" width="800" />
@@ -39,23 +39,23 @@ To better understand this concept, let’s use an analogy.
 
 ## Centralized vs Distributed
 
-There is a distinction between version control systems. It makes them different. Centralized vs distributed.
+There is a distinction between version control systems that make them different. Centralized vs distributed.
 
-**A centralized VCS requires a server to perform any operation on your project**. You need to connect to this server to download all your files to start to work. If this serves goes down, users can’t work. _Bye, bye, productivity!_ Team Foundation Server (TFS) from Microsoft is a centralized VCS.
+**A centralized VCS requires a server to perform any operation on your project**. We need to connect to a server to download all our files to start to work. If this server goes down, we can’t work. _Bye, bye, productivity!_ Team Foundation Server (TFS) from Microsoft is a centralized VCS.
 
-But, **a distributed VCS doesn’t need a centralized server in the same sense**. Each user has a complete copy of the entire project. Most of operations are performed against this local copy. So you can work offline. _A two-hour flight without internet, no problem_. For example, Git is a distributed VCS.
+But, **a distributed VCS doesn’t need a centralized server in the same sense**. Each user has a complete copy of the entire project. Most operations are performed against this local copy. We can work offline. _A two-hour flight without internet, no problem_. For example, Git is a distributed VCS.
 
 If you’re coming from TFS, I’ve written a [Git Guide for TFS Users]({% post_url 2019-11-11-GitGuideForTfsUsers %}).
 
 ## What's Git anyways?
 
-Up to this point, Git doesn’t need any further introduction. From its [official page](https://git-scm.com/), "_Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency._"
+Up to this point, Git doesn't need any further introduction. From its [official page](https://git-scm.com/), "_Git is a free and open-source distributed version control system designed to handle everything from small to very large projects with speed and efficiency._"
 
 ### How to Install and Setup Git
 
-You can install Git from it’s official page. There you can find instructions to install it using package managers for all major OS's. 
+We can install Git from its official page. There we can find instructions to install Git using package managers for all major OS's. 
 
-Before starting to work, you need some one-time setups. You need to configure a name and an email. This name and email will appear in the file history of any file you create or modify.
+Before starting to work, we need some one-time setups. We need to configure a name and an email. This name and email will appear in the file history of any file we create or modify.
 
 Let's go to the command line. From the next two commands, replace "John Doe" and "johndoe@example.com" with your own name and email.
 
@@ -64,21 +64,21 @@ $ git config --global user.name "John Doe"
 $ git config --global user.email johndoe@example.com
 ```
 
-You can change this name and email between projects. If you want to use different names and emails for work, you’re covered. [You can manage different accounts](https://dev.to/balaaagi/managing-multiple-git-account-1ddd) between folders.
+We can change this name and email between projects. If we want to use different names and emails for work and personal projects, we're covered. [We can manage different accounts](https://dev.to/balaaagi/managing-multiple-git-account-1ddd) between folders.
 
 ### How to Create a Git repository
 
 There are two ways to start working with Git. From scratch or from an existing project.
 
-If you are starting from scratch, inside the folder you want to version control, use `init`. Like this,
+If we are starting from scratch, inside the folder we want to version control, let's use `init`. Like this,
 
 ```bash
 $ git init
 ```
 
-After running `git init`, Git creates a hidden folder called `.git` inside your project folder. Git keeps everything under the hood on this folder. 
+After running `git init`, Git creates a hidden folder called `.git` inside our project folder. Git keeps everything under the hood on this folder. 
 
-If you have an existing project, use `clone`, instead.
+If we have an existing project, we need to use `clone`, instead.
 
 ```bash
 # Replace <url> with the actual url of the project
@@ -86,13 +86,13 @@ If you have an existing project, use `clone`, instead.
 $ git clone <url>
 ```
 
-Did you notice it? The command name is `clone`. Since you are getting a copy of everything a server has about a project.
+Did you notice it? The command name is `clone`. Since we are getting a copy of everything a server has about a project.
 
 ### How to Add new files
 
-Let’s start working! Create new files or change existing ones in your project. Next, you want Git to keep track of these files. You need three commands: `status`, `add` and `commit`.
+Let's start working! Let's create new files or change existing ones in our project. Next, we want Git to keep track of these files. We need three commands: `status`, `add` and `commit`.
 
-First, `status` shows the pending changes in your files. `add` includes some files into the staging area. And, `commit` creates an event in the history of your project.
+First, `status` shows the pending changes in our files. `add` includes some files in the staging area. And, `commit` creates an event in the history of our project.
 
 ```bash
 # git status will show pending changes in files
@@ -105,9 +105,9 @@ $ git add README
 $ git commit -m 'Add README file'
 ```
 
-Now Git knows about a file called `README`. You have a commit (a checkpoint) in your project you can go back to. Git has stored your changes. This commit has an unique code (a SHA-1) and an author.
+After using the `commit` command, Git knows about a file called `README`. We have a commit (a checkpoint) in our project we can go back to. Git has stored our changes. This commit has a unique code (a SHA-1) and an author.
 
-You can use `log` to see all commits created so far.
+We can use `log` to see all commits created so far.
 
 ```bash
 # You will see your previous commit here
@@ -118,19 +118,21 @@ $ git log
 
 The staging area or index is a concept that makes Git different.
 
-**The staging area is an intermediate area where you can review your files before committing them**.
+**The staging area is an intermediate area to review files before committing them**.
 
-It’s like making your files wait in a line before keeping track of them. This allows you to commit only a group of files or portions of a single file.
+It's like making our files wait in a line before keeping track of them. This allows us to commit only a group of files or portions of a single file.
 
 If you’re coming from TFS, notice you need two steps to store your changes. These are: `add` to include files into the staging area and `commit` to create a checkpoint from them. With TFS, you only "check-in" your files.
 
 ### How to Ignore Files
 
-Sometimes you don’t need to version control certain files or folders. For example, log files, third-party libraries, files and folders generated by compilation or by your IDE.
+Sometimes we don't need to version control certain files or folders. For example, log files, third-party libraries, files, and folders generated by compilation or by our IDE.
 
-If you’re starting from scratch, you need to do this only once. But if you’re starting from an existing project, chances are somebody already did it.
+If we're starting from scratch, we need to do this only once. But if we're starting from an existing project, chances are somebody already did it.
 
-You need to create a `.gitignore` file with the patterns of files and folders you want to ignore. You can use this file globally or per project. There is [a collection of gitignore templates on GitHub](https://github.com/github/gitignore) for your language and your IDE.
+We need to create a `.gitignore` file with the patterns of files and folders we want to ignore. We can use this file globally or per project.
+
+There is [a collection of gitignore templates on GitHub](https://github.com/github/gitignore) per language and IDE's.
 
 For example, to ignore the `node_modules` folder, the `.gitignore` file will contain  
 
@@ -138,15 +140,15 @@ For example, to ignore the `node_modules` folder, the `.gitignore` file will con
 node_modules/
 ```
 
-Git won’t notice any files from the patterns included in the `.gitignore` file. Run `git status` to notice it.
+Git won't notice any files from the patterns included in the `.gitignore` file. Run `git status` to notice it.
 
 ### How to write Good Commit Messages
 
 A [good commit message](https://thoughtbot.com/blog/5-useful-tips-for-a-better-commit-message) should tell why the change is needed, what problem it fixes and any side effect it might have.
 
-Please, please don’t use "uploading changes" or any variations on your commit messages.
+Please, please don't use "uploading changes" or anything like that on your commit messages.
 
-Depending on your workplace or project, you have to follow a naming convention for your commit messages. For example, you have to include the type of change (feature, test, bug or refactor) followed by a task number from your bug tracking software. If you need to follow a convention like this one, [Git can format the commit messages]({% post_url 2020-09-02-TwoRecurringReviewComments %}) for you.
+Depending on our workplace or project, we have to follow a naming convention for our commit messages. For example, we have to include the type of change (feature, test, bug, or refactor) followed by a task number from a bug tracking software. If we need to follow a convention like this one, [Git can format the commit messages]({% post_url 2020-09-02-TwoRecurringReviewComments %}) for us.
 
 Keep your commits small and focused. Work with incremental commits. And, don't commit changes that break your project.
 
@@ -156,7 +158,7 @@ Keep your commits small and focused. Work with incremental commits. And, don't c
 
 Using the time machine analogy, **a branch is a separate timeline**. Changes in a timeline don’t interfere with changes in other timelines.
 
-Branching is one the most awesome Git features. Git branches are lightweight and fast when compared to other VCS.
+Branching is one of the most awesome Git features. Git branches are lightweight and fast when compared to other VCS.
 
 When starting a Git repository, Git creates a default branch called `master`. Let's create a new branch called "testing". For this, we will need the command `branch` follow by the branch name.
 
@@ -175,10 +177,10 @@ $ git add README
 $ git commit -m 'Add example to README'
 ```
 
-Now, let's switch back to the master branch and see what happened to our files there. To switch between branches, use `checkout`.
+Now, let's switch back to the master branch and see what happened to our files there. To switch between branches, we need the `checkout` command.
 
 ```bash
-# Now move back to the master brach
+# Now move back to the master branch
 $ git checkout master
 # See how README hasn't changed
 # Modify the README file again
@@ -198,13 +200,13 @@ We have created two branches, let's see how we can combine what we have in the t
 <figcaption>Grays Sports Almanac. Photo by <a href="https://commons.wikimedia.org/wiki/File:Grays_Sports_Almanac_Back_to_the_Future.jpg">Mike Mozart</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons</figcaption>
 </figure>
 
-### How to Merge Two Branches?
+### How to Merge Two Branches
 
 Merging two branches is like combining two separate timelines. 
 
 Continuing with the time travel analogy, merging is like when Marty goes to the past to get back the almanac and he is about to run into himself. Or when captain America goes back to New York in 2012 and he ends up fighting the other captain America. You got the idea!
 
-Let's create a new branch and merge it to `master`. We need the command `merge`.
+Let's create a new branch and merge it to `master`. We need the `merge` command.
 
 ```bash
 # Move to master
@@ -221,11 +223,11 @@ $ git commit -m 'Add another example to README'
 $ git checkout master
 $ git merge hotfix
 # See how changes from hotfix are now in master
-# Since hotfix is merged, get rid of if
+# Since hotfix is merged, get rid of it
 $ git branch -d hotfix
 ```
 
-Here we have created a branch called `hotfix` and merged it to `master`. But we still have some chances on our branch `testing`. Let’s merge this branch to see what will happen.
+Here we have created a branch called `hotfix` and merged it to `master`. But we still have some chances on our branch `testing`. Let's merge this branch to see what will happen.
 
 ```bash
 $ git checkout master
@@ -254,9 +256,9 @@ $ git branch -d testing
 
 If you're coming from TFS, you noticed you need to move first to the branch you want to merge into. You merge from the destination branch, not from the source branch.
 
-### How to Move to the Previous Branch?
+### How to Move to the Previous Branch
 
-In the same spirit of `cd -`, we can go to the previous visited branch using `git checkout -`. This last command is an alias for `git checkout @{-1}`. And, `@{-1}` refers to the last branch you were on. 
+In the same spirit of `cd -`, we can go to the previously visited branch using `git checkout -`. This last command is an alias for `git checkout @{-1}`. And, `@{-1}` refers to the last branch you were on. 
 
 ```bash
 # Starting from master
@@ -270,32 +272,34 @@ $ git checkout -
 
 ### Git master convention
 
-By convention, the main timeline is called **master**. But starting from [Git 2.28](https://github.blog/2020-07-27-highlights-from-git-2-28/#introducing-init-defaultbranch), when you run `git init`, Git will look for the configuration value `init.defaultBranch` to replace the "master" name. Other alternatives for master are: main, primary or default.
+By convention, the main timeline is called **master**. But starting from [Git 2.28](https://github.blog/2020-07-27-highlights-from-git-2-28/#introducing-init-defaultbranch), when we run `git init`, Git looks for the configuration value `init.defaultBranch` to replace the "master" name. Other alternatives for "master" are main, primary, or default.
 
-For existing repositories, you can follow [this Scott Hanselman post](https://www.hanselman.com/blog/EasilyRenameYourGitDefaultBranchFromMasterToMain.aspx) to rename your master branch.
+For existing repositories, we can follow [this Scott Hanselman post](https://www.hanselman.com/blog/EasilyRenameYourGitDefaultBranchFromMasterToMain.aspx) to rename our master branch.
 
-### Branching model
+### GitFlow Branching Model
 
-Git encourages working with branches. Git branches are cheap and light-weight. You can start to create branches per task or features.
+Git encourages working with branches. Git branches are cheap and lightweight. We can create branches per task or feature.
 
-There is a convention for branch creation, [GitFlow](https://nvie.com/posts/a-successful-git-branching-model/). It suggests feature, release and hotfix branches.
+There is a convention for branch creation, [GitFlow](https://nvie.com/posts/a-successful-git-branching-model/). It suggests feature, release, and hotfix branches.
 
-With Gitflow, you should have a _develop_ branch where everyday work happens. Every new task starts in a separate feature branch taken from _develop_. Once you're done with your task, you merge your feature branch back to _develop_.
+With Gitflow, we should have a _develop_ branch where everyday work happens. Every new task starts in a separate feature branch taken from _develop_. Once we're done with our task, we merge our feature branch back to _develop_.
 
 ## GitHub: Getting our code to the cloud
 
-Up until now, all your work lives in your own computer. But, what if you want your project to live outside? You need a hosting solution. Among the most popular hosting solutions for Git, you can find [GitHub](https://github.com/), [GitLab](https://gitlab.com/) and [Bitbucket](https://bitbucket.org/).
+Up until now, all our work lives on our computers. But, what if we want our project to live outside? We need a hosting solution. Among the most popular hosting solutions for Git, we can find [GitHub](https://github.com/), [GitLab](https://gitlab.com/) and [Bitbucket](https://bitbucket.org/).
 
-It's important to distinguish between Git and Github. `Git != GitHub`. Git is the version control system and GitHub is the hosting solution for Git projects.
+It's important to distinguish between Git and GitHub. `Git != GitHub`. Git is the version control system and GitHub is the hosting solution for Git projects.
 
-No matter what hosting you choose, your code isn't sync automatically with your server. You have to do it yourself. Let's see how.
+No matter what hosting we choose, our code isn't synced automatically with our server. We have to do it ourselves. Let's see how.
 
-You can [create a repo](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-new-repository) from your GitHub account. Go to `Your Repositories`. You need to use a name and a description. The wizard will give you some instructions to start from scratch or from an existing project.
+### How to create a repository from GitHub
 
-Then, associate the GitHub endpoint to your local project. Endpoints are called remotes. Now you can upload or push your local changes to the cloud.
+To create a repository from a GitHub account, go to "Your Repositories: and click on "New". We need a name and a description. We can create either public or private repositories with GitHub.
+
+Then, we need to associate the GitHub endpoint with our local project. Endpoints are called remotes. Now we can upload or push your local changes to the cloud.
 
 ```bash
-# Replace this url with you own
+# Replace this url with your own
 $ git remote add origin https://github.com/canro91/GitDemo.git
 # push uploads the local master to a branch called master in the remote too
 $ git push -u origin master
@@ -304,7 +308,7 @@ $ git push -u origin master
 
 ## Cheatsheet
 
-Here you have all the command we have used so far.
+Here you have all the commands we have used so far.
 
 | Command | Function |
 |---|---|
@@ -327,7 +331,7 @@ Here you have all the command we have used so far.
 
 ## Conclusion
 
-Voilà! You have learned the most frequent commands for everyday use. You know how to use Git from the command line. But, most IDE's offer Git integration through plugins or extensions. Now try to use Git from your favorite IDE.
+Voilà! We have learned the most frequent Git commands for everyday use. We used Git from the command line. But, most IDE's offer Git integration through plugins or extensions. Now try to use Git from your favorite IDE.
 
 If you want to continue to practice these concepts, follow [First Contributions](https://github.com/firstcontributions/first-contributions) to open your first Pull Request. You can use my [Git Demo repository](https://github.com/canro91/GitDemo) too.
 
