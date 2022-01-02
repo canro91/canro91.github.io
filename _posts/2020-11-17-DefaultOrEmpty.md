@@ -6,7 +6,7 @@ tags: todayilearned csharp
 
 Today while I was reading the AutoFixture source code I found a LINQ method I didn't know about: DefaultIfEmpty. This is what the LINQ DefaultIfEmpty method does.
 
-**LINQ DefaultIfEmpty method returns a collection containing a single element if the source collection is empty. Otherwise, it returns the same collection.**
+**LINQ DefaultIfEmpty method returns a collection containing a single default element if the source collection is empty. Otherwise, it returns the same source collection.**
 
 For example, let's find all the movies with a rating greater than 9. Otherwise, return our all-time favorite movie.
 
