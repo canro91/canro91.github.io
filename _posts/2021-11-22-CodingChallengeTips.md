@@ -63,6 +63,6 @@ Write a good README file for your solution. Don't miss this one!
 
 Voilà! These are my best tips to rock in your next coding challenge. Remember, it's your time to shine. Write as clean code as possible. And keep things consistent. Good luck!
 
-Get ready for your next interview with these [tips for remote interviews]({% post_url 2019-09-29-RemoteInterviewTips %}). And, to prepare for your technical interviews, check [how to evaluate a postfix expression]({% post_url 2019-08-02-PostfixNotationAnInterviewExercise %}), [what is time complexity]({% post_url 2019-08-29-TimeComplexity %}) and [how to rotate an array]({% post_url 2019-09-16-RotatingArray %}). These are real questions I got on previous interviews.
+Get ready for your next interview with these [tips for remote interviews]({% post_url 2019-09-29-RemoteInterviewTips %}). And, to prepare for your technical interviews, check [how to evaluate a postfix expression]({% post_url 2019-08-02-PostfixNotationAnInterviewExercise %}), [how to solve the two-sum problem]({% post_url 2019-08-29-TimeComplexity %}) and [how to shift array elements]({% post_url 2019-09-16-RotatingArray %}). These are real questions I got on previous interviews.
 
 _Happy coding!_

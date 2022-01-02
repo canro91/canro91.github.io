@@ -6,8 +6,6 @@ tags: interview career
 
 Are you applying for a remote position? For a on-site position but the interviewer is on another branch outside your city? Are preparing yourself for future interviews? Let's see 4 types of interview and tips to prepare for them.
 
-## Interview types
-
 There are four types of interviews you can find while applying for a new job.
 
 ### 1. Conversation
@@ -45,7 +43,7 @@ Be ready to answer questions of the type:
 In exercise-type interviews, the interviewer will ask you to open a text editor to solve one or two exercises to test algorithms and data structures. Have a development environment ready!
 
 In the past, I've been asked to 
-[evaluate postfix expressions]({% post_url 2019-08-02-PostfixNotationAnInterviewExercise %}), [solve two-sum problem]({% post_url 2019-08-29-TimeComplexity %}) and [shift an array to the right]({% post_url 2019-09-16-RotatingArray %}).
+[evaluate postfix expressions]({% post_url 2019-08-02-PostfixNotationAnInterviewExercise %}), [solve two-sum problem]({% post_url 2019-08-29-TimeComplexity %}) and [shift an array elements to the right]({% post_url 2019-09-16-RotatingArray %}).
  
 ### 4. Homework
 

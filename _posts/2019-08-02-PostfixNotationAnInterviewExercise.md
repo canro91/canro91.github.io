@@ -106,6 +106,6 @@ private static string EvaluateSingleExpression(string value1, string value2, str
 }
 ```
 
-Voila! That's how we can evaluate postfix expressions in C#. For more tips to prepare yourself for your next interview, check [my interview tips]({% post_url 2019-09-29-RemoteInterviewTips %}). Also, check my post on [the difference between Func and Action in C#]({% post_url 2019-03-22-WhatTheFuncAction %}) and [time complexity]({% post_url 2019-08-29-TimeComplexity %}). Those are another two common interview questions.
+Voila! That's how we can evaluate postfix expressions in C#. For more tips to prepare yourself for your next interview, check [my interview tips]({% post_url 2019-09-29-RemoteInterviewTips %}). Also, check my post on [the difference between Func and Action in C#]({% post_url 2019-03-22-WhatTheFuncAction %}) and [how to solve the two-sum problem]({% post_url 2019-08-29-TimeComplexity %}). Those are another two common interview questions.
 
 _Happy coding!_

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Time complexity: An interview exercise II"
+title: "How to Solve The Two-Sum Problem in C#? Time Complexity"
 tags: interview tutorial csharp
 ---
 
@@ -30,7 +30,7 @@ You could use [this Big-O cheatsheet](https://www.bigocheatsheet.com/) to find t
 
 Remember time complexity measures number of operations, not execution time. An algorithm with smaller number of operations has better time complexity than another one with a larger amount of operations.
 
-## Two-number sum problem
+## Two Sum Problem in C#
 
 The interview goes like this. The interviewer asks you to introduce yourself. You answer using the elevator pitch you prepared. Then, he suggests to start a whiteboard exercise. You open Notepad++, Visual Studio Code or your favorite editor. And, there you go.
 
@@ -76,6 +76,6 @@ for (int i = 0; i < a.Length; i++)
 
 Voilà! That's how we can find the sum of two elements in linear time. Another happy interview! This time, you have in your toolbox time complexity. Not only for next interviews, but for everyday programming.
 
-If you're getting ready for your next interview, check [Remote interview. Here I go]({% post_url 2019-09-29-RemoteInterviewTips %})
+If you're getting ready for your next interview, check these [remote interviews types and tips]({% post_url 2019-09-29-RemoteInterviewTips %}) and follow these [ten tips to solve your next interview coding challenge]({% post_url 2021-11-22-CodingChallengeTips %}).
 
 _Happy coding!_

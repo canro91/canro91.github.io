@@ -1,16 +1,12 @@
 ---
 layout: post
-title: "Rotating an array: An interview exercise III"
+title: "How to Shift Array Elements in C#? Space Complexity"
 tags: tutorial interview csharp
 ---
 
-Here you are in another interview. You start to feel confident from your last interview. You have already evaluated [postfix expressions]({% post_url 2019-08-02-PostfixNotationAnInterviewExercise %}) and solved the [two-number sum problem]({% post_url 2019-08-29-TimeComplexity %}). Now, the interviewer challenges you with a new exercise. Open a new tab or create a new file in your editor. And, start!
+Here you are in another interview. You start to feel confident from your last interview. You have already evaluated [postfix expressions]({% post_url 2019-08-02-PostfixNotationAnInterviewExercise %}) and solved the [two-number sum problem]({% post_url 2019-08-29-TimeComplexity %}). Now, the interviewer challenges you with a new exercise: How to shift arrays elements to the right. Let's solve it.
 
-## Shift elements of an array
-
-Your interviewer asks you to shift all elements of an array to the right. Here it goes,
-
-> _Given an array of integers and an integer k, rotate all elements k positions to the right. For example: After rotating [1,2,3,4,5,6] two positions to the right is [5,6,1,2,3,4]_
+Given an array of integers and an integer k, rotate all elements k positions to the right. For example: After rotating [1,2,3,4,5,6] two positions to the right is [5,6,1,2,3,4]
 
 ## Obivous solution: loop and bound checking
 
@@ -57,7 +53,7 @@ static int[] Shift(int[] array, int k)
 }
 ```
 
-## Shift an array and Space complexity
+## What is Space complexity?
 
 What is the space complexity of this solution?–the interviewer asks.
 
@@ -97,7 +93,7 @@ static int[] Shift(int[] array, int k)
         .ToArray();
 ```
 
-Voilà! Another happy interview! Now you know how to shift the elements of an array and what space complexity is. Learn about interview types on [Remote interview. Here I go]({% post_url 2019-09-29-RemoteInterviewTips %}).
+Voilà! Another happy interview! That's how to shift the elements of an array and what space complexity is. For more interview preparation posts, check [interview types and tips for your next interview]({% post_url 2019-09-29-RemoteInterviewTips %}) and [ten tips to solve your next interview coding challenge]({% post_url 2021-11-22-CodingChallengeTips %}).
 
 _Happy coding!_
 
