@@ -27,7 +27,7 @@ You can roll your own database access layer. But, an ORM helps you to:
 
 Insight.Database maps properties from C# classes to parameters in queries and store procedures. Also, Insight.Database maps columns from query results back to properties in C# classes.
 
-Another feature of Insight.Database is record post-processing. You can make extra changes to records as they're being read. For example, [you can trim whitespace-padded string columns]({% post_url 2018-09-21-INeedSomeSpace %}) from a legacy database without using the `Trim()` method in your mapping classes.
+Another feature of Insight.Database is record post-processing. We can make extra changes to records as they're being read. For example, once I used this feature to trim whitespace-padded strings from a legacy database without using the `Trim()` method in every mapping class.
 
 Unlike other ORMs, with Insight.Database, you have to write your own SQL queries or store procedures. It doesn't generate any SQL statements for you. In fact, Insight.Database documentation recommends to call your database through store procedures.
 
