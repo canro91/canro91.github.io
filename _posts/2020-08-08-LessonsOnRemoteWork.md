@@ -6,9 +6,9 @@ tags: career
 
 It's been a year since I started to work remotely. These are the lessons I learned.
 
-### For employers, leaders or managers
+## For employers, leaders or managers
 
-**Give clear instructions**. State what you expect and when you expect it. Make sure to say the day, time and timezone, if needed. _"Tomorrow morning"_ is at a different time in different parts of the world. Have in mind that probably everyone in your team isn’t a native speaker of your language. 
+**Give clear instructions**. State what you expect and when you expect it. Make sure to say the day, time and timezone, if needed. _"Tomorrow morning"_ is at a different time in different parts of the world. Have in mind that probably not everyone in your team is a native speaker of your language. 
 
 **Don’t expect new team members to follow unclear code conventions**. A new developer will pick conventions from existing code instead of an old document.
 
@@ -22,20 +22,22 @@ It's been a year since I started to work remotely. These are the lessons I learn
 </figcaption>
 </figure>
 
-### For employees or workers
+## For employees or workers
 
 **Control noise and light in your environment** Have a high-quality headset. Reduce the background noise as much as you can. Make sure to mute and unmute your microphone when appropriate. _You're muted, John!_ Position yourself in a way people won't appear walking in the back. Light up your environment to clear your face.
 
-**Strive to have the best level you can in the language spoken at work**. Have a good pronunciation. This would make things easier for everyone. You don't want to be the guy nobody wants to work with because of his speaking skills.
+**Strive to have the best level you can in the language spoken at work**. Have a good pronunciation. This would make things easier for everyone. You don't want to be the guy nobody wants to work with because of his poor speaking skills.
 
 **Separate work and personal spaces**. At the end of your day, do something that signals the end of the day. Sit in the couch, meditate, go for a walk or change your clothes.
 
-**Schedule regular pauses**. When working in a office, you can grab a coffee or tap into a colleague shoulder. But, while at home, you could be sitting for hours without even realizing it. Set an alarm, stand and walk!
+**Schedule regular pauses**. When working in a office, you can grab a coffee or tap into a colleague shoulder. But, while at home, you could be sitting for hours without even realizing it. Set an alarm, stand and walk! Your body will thank you later.
 
-**Connect with others.** You could be working from home for weeks without getting outside. Don't be home alone! Interact with others! Call your friends, go out with your family, work from a coworking space. _At the time of writing, we are at home due to COVID-19 disease. But, this advice is still applicable, staying at home and keeping social distancing_
+**Connect with others.** You could be working from home for weeks without getting outside. Don't be home alone! Interact with others! Call your friends, go out with your family, work from a coworking space.
 
-**Before presentations, turn off auto updates and notifications**. You don’t want your computer to restart updating the operating system in the middle of a presentation or an important meeting. _This is a true story happened to a friend of a friend of mine._
+> _At the time of writing, we are at home due to COVID-19. But, this last piece of advice is still applicable, staying at home and keeping social distancing._
 
-For more career lessons, check the five lessons I learned after [five years as a software engineer]({% post_url 2019-08-19-FiveLessonsAfterFiveYears %}).
+**Before presentations, turn off auto updates and notifications**. You don’t want your computer to restart updating the operating system in the middle of a presentation or an important meeting. This is a true story happened to a friend of a friend of mine.
+
+Voilà! Ten lessons I learned after my first year of remote work. For more career lessons, check the five lessons I learned after [five years as a software engineer]({% post_url 2019-08-19-FiveLessonsAfterFiveYears %}).
 
 _Happy remote work!_
