@@ -4,7 +4,7 @@ permalink:        pretty
 # Setup
 title:            Just Some Code
 tagline:
-description:      "I'm Cesar Aguirre. Software engineer. Lifelong learner"
+description:      "I'm Cesar Aguirre. Software engineer"
 url:              https://canro91.github.io
 baseurl:          /
 
@@ -15,16 +15,17 @@ author:
   url:
 
 paginate:         5
+paginate_path:    "/blog/page:num/"
 
 # Custom vars
 version:
 
-github:
-  repo:           https://github.com/canro91
-
+github:           https://github.com/canro91
 devto:            https://dev.to/canro91
 linkedin:         https://linkedin.com/in/iamcesaraguirre
 
 plugins:
   - jekyll-paginate
   - jekyll-gist
+
+sidebar_blog_link:  '/blog'

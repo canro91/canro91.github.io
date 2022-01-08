@@ -1,49 +1,38 @@
 ---
 layout: default
-title: Home
+title: Hola, I'm Cesar Aguirre
 ---
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    {% if post.cover %}
-    {% capture imagePath %}{{ post.path | replace: '_posts/', '' | replace: '.md', '' | replace: '#', '-' }}/{{ post.cover }}{% endcapture %}
-    <div class="post-cover">
-    <img src="/assets/posts/{{ imagePath }}"
-        {% if include.alt %} alt="{{ include.alt }}" {% endif %}
-    />
-    </div>
-    {% endif  %}
-    <h1 class="post-title">
-      <a href="{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
+<img src="/assets/800x300.png" alt="Hola, I'm Cesar">
 
-    {% include tags_for_page.html %}
+<h1>Hola, I’m Cesar</h1>
 
-    <span class="post-date">{{ post.date | date_to_string }} {{ tags_content }}</span>
+<p class="lead">I help teams grow high-quality backend software through clean code and unit testing.</p>
 
-    {% include posts_in_series.html %}
+<p>I’m a software engineer, lifelong learner, language enthusiast, and vivid reader. I work remotely from Colombia <em>(not Columbia)</em> as a C# backend engineer. I have worked in public services, electronic invoicing, and reservation management.</p>
 
-    {% if post.layout == 'presentation' and post.description %}
-        {{ post.description }}
-    {% else %}
-        {{ post.content }}
-    {% endif %}
-  </div>
-  {% endfor %}
-</div>
+<p>These are some of the projects I have done:</p>
 
-<div class="pagination">
-  {% if paginator.next_page %}
-      <a class="pagination-item older" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    <a class="pagination-item newer" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' | replace: 'index.html', '' }}">Newer</a>
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div>
+<ul>
+<li>I wrote a library to connect 4 legacy client softwares to an invoicing platform by parsing pdf and plain text files into input XML files.</li>
+<li>I improved the response time of the room search functionality of a booking page by a factor of ~1.5X, removing bad practices and adding a caching layer.</li>
+</ul>
+
+<figure><a href="/UnitTesting"><img src="/assets/UnitTesting101HomePage.png" alt="Download UnitTesting101 for free"/></a></figure>
+
+<p>I blog to share my journey as a software engineer. I write about <a href="/tags/books/">books I read</a>, <a href="/tags/showdev/">libraries I use</a>, <a href="/tags/bugoftheday/">bugs I find</a>, and <a href="/tags/todayilearned/">things I learn</a>.</p>
+
+<p>These are some of my favorite posts:</p>
+
+<ul>
+  <li><a href="/2020/03/23/GuideToNetCore/">ASP.NET Core Guide for ASP.NET Framework Users</a></li>
+  <li><a href="/2020/06/29/HowToAddACacheLayer/">How to add a caching layer with ASP.NET Core 3</a></li>
+  <li><a href="/2019/03/08/ATaleOfAPdfParser/">Parsinator, a tale of a pdf parser</a></li>
+  <li><a href="/2019/03/22/WhatTheFuncAction/">What the Func, Action?</a></li>
+  <li><a href="/2018/11/17/TheC-DefinitiveGuide/">The C# Definitive Guide</a></li>
+  <li><a href="/2019/11/19/TwoCSharpIdioms/">Two C# idioms</a></li>
+</ul>
+
+<p>Read <a href="/blog">my blog</a>, learn <a href="/about">about me</a>, and check <a href="/projects">my projects</a>.</p>
+
+<p><em>Happy coding!</em></p>

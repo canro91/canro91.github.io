@@ -10,14 +10,14 @@
     </div>
 
     <nav class="sidebar-nav">
-        <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="/">Home</a>
+        <a class="sidebar-nav-item{% if page.url contains site.sidebar_blog_link' %} active{% endif %}" href="/blog/">Blog</a>
 
       {% comment %}
         The code below dynamically generates a sidebar nav of pages with
         `layout: page` in the front-matter. See readme for usage.
       {% endcomment %}
 
-      {% assign pages_list = site.pages %}
+      {% assign pages_list = site.pages|sort:"sidebar_sort_order" %}
       {% for node in pages_list %}
         {% if node.title != null %}
           {% if node.layout == "page" %}
@@ -26,7 +26,7 @@
         {% endif %}
       {% endfor %}
 
-      <a class="sidebar-nav-item icon" href="{{ site.github.repo }}"><i class="fab fa-github"></i></a>
+      <a class="sidebar-nav-item icon" href="{{ site.github }}"><i class="fab fa-github"></i></a>
       <a class="sidebar-nav-item icon" href="{{ site.devto }}"><i class="fab fa-dev"></i></a>
       <a class="sidebar-nav-item icon" href="{{ site.linkedin }}"><i class="fab fa-linkedin"></i></a>
     </nav>
