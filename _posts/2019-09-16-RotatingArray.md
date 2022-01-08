@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to Shift Array Elements in C#? Space Complexity"
+title: "How to Shift Array Elements in C# (Space Complexity)"
 tags: tutorial interview csharp
 ---
 

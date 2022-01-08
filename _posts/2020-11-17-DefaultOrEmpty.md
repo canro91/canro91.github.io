@@ -32,7 +32,7 @@ public static IEnumerable<T> DefaultIfEmpty<T>(this Enumerable<T> source, T @def
     => source.Any() ? source : new[]{ @default };
 ```
 
-Voilà! DefaultIfEmpty is helpful to make sure we always have a defualt value when filtering a collection. It's a good alternative to FirstOrDefault followed by checking for null value.
+Voilà! DefaultIfEmpty is helpful to make sure we always have a default value when filtering a collection. It's a good alternative to FirstOrDefault followed by checking for null values.
 
 To learn more about LINQ, check my [Quick Guide to LINQ]({% post_url 2021-01-18-LinqGuide %}). Don't miss my [C# Definitive Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %}) for a list of subjects every intermediate C# developer should know.
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to Solve The Two-Sum Problem in C#? Time Complexity"
+title: "How to Solve The Two-Sum Problem in C# (Time Complexity)"
 tags: interview tutorial csharp
 ---
 
