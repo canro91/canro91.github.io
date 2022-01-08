@@ -33,4 +33,4 @@ For all the findings and lessons I learned, you could read [The Slow Room Search
 
 From time to time, I contribute to OSS by opening issues and sending pull requests to the libraries and projects I use. I have contributed to [DateTimeExtensions](https://github.com/joaomatossilva/DateTimeExtensions) adding holidays for my country, for example.
 
-To see other projects, you can take a look at [my GitHub profile](https://github.com/canro91).
+To see other coding and learning projects, you can take a look at <a href="{{ site.github }}" target="_blank" rel="noopener noreferrer">my GitHub profile</a>.

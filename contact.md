@@ -8,7 +8,7 @@ sidebar_sort_order: 1
 
 You want to know where else to find me or get in touch? Have any questions or want to say Hi?
 
-You can follow me on [dev.to]({{ site.devto }}), [GitHub]({{ site.github }}) and [LinkedIn]({{ site.linkedin }}).
+You can follow me on <a href="{{ site.devto }}" target="_blank" rel="noopener noreferrer">dev.to</a>, <a href="{{ site.github }}" target="_blank" rel="noopener noreferrer">GitHub</a> and <a href="{{ site.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
 
 Send me a message using the form below and I’ll be in touch!
 
