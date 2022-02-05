@@ -161,7 +161,7 @@ More compact, isn't it? Also, we turned the condition inside the `if` statement 
 
 ### Separate methods and lambda functions
 
-**Instead of lambda functions, we can use private methods with LINQ too**. For our example, let's create a `IsFavorite()` method that receives `Movie` as a parameter and returns `bool`. For example,
+**Instead of lambda functions, we can use private methods with LINQ too**. For our example, let's create an `IsFavorite()` method that receives `Movie` as a parameter and returns `bool`. For example,
 
 ```csharp
 private bool IsFavorite(Movie movie)
@@ -215,7 +215,7 @@ foreach (var name in favorites)
 
 Notice how this time we have nested two LINQ methods. The result from `Where` will be the input of `Select`.
 
-For more readability, we often align the nested LINQ methods vertically by the (.) dot.
+For more readability, we often align the nested LINQ methods vertically by the (`.`) dot.
 
 ### Any
 
@@ -402,7 +402,7 @@ namespace QuickLinqGuide
 
             var largeFiles = from file in desktop.GetFiles()
                              // We can create intermediate variables with 'let'            
-                             let sizeInMb = file.Length * 1024 * 1024
+                             let sizeInMb = file.Length / 1024 / 1024
                              where sizeInMb > 10
                              select file.Name;
 
@@ -420,7 +420,7 @@ namespace QuickLinqGuide
 From the above example, the file size is in bytes. Then, notice how we declared an intermediate variable. Like this,
 
 ```csharp
-let sizeInMb = file.Length * 1024 * 1024
+let sizeInMb = file.Length / 1024 / 1024
 ```
 
 ## Three common LINQ mistakes
@@ -437,13 +437,13 @@ Do `movies.Any()` instead of `movies.Count() > 0`.
 
 You can use a condition with `Any` instead of filtering first with `Where` to later use `Any`.
 
-Do
+Do,
 
 ```csharp
 movies.Any(movie => movie.Rating == 5)
 ```
 
-Instead of
+Instead of,
 
 ```csharp
 movies.Where(movie => movie.Rating == 5).Any()
