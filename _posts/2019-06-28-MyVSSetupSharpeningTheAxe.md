@@ -14,8 +14,9 @@ These are the theme, settings and extensions I use to be more productive with Vi
 ## Theme and Layout
 
 * Color theme: Dark
-* Text Editor theme: [Solarized](https://ethanschoonover.com/solarized/) Dark
+* Text Editor theme: [Solarized Dark](https://ethanschoonover.com/solarized/)
 * Font: [FiraCode](https://github.com/tonsky/FiraCode) 14pt
+* Zoom: 110%
 * Windows:
 	* Left
 		* Test Explorer
@@ -67,7 +68,7 @@ For shortcuts, add `Ctrl+Shift+w` to easily close all documents from the keyboar
 ## Extensions
 
 * [VSVim](https://github.com/jaredpar/VsVim) It enables Vim keybindings in the text editor
-* [Productivity Power Tools](https://marketplace.visualstudio.com/items?itemName=VisualStudioProductTeam.ProductivityPowerTools)
+* [Productivity Power Tools](https://marketplace.visualstudio.com/items?itemName=VisualStudioPlatformTeam.ProductivityPowerPack2017)
 	* Editor Guidelines: **Add a Solarized Magenta guideline at column 120**
 	* Fixed Mixed Tabs
 	* Custom Document Well
@@ -80,7 +81,7 @@ For shortcuts, add `Ctrl+Shift+w` to easily close all documents from the keyboar
 * [SemanticColorizer](https://github.com/hicknhack-software/semantic-colorizer) It colors fields, classes, methods and more. **Make extension methods italics, only**
 * [NUnit 3 Test Adapter](https://marketplace.visualstudio.com/items?itemName=NUnitDevelopers.NUnit3TestAdapter). A must-have
 * [MappingGenerator](https://marketplace.visualstudio.com/items?itemName=54748ff9-45fc-43c2-8ec5-cf7912bc3b84.mappinggenerator) It creates mappings from one object to another and from a list of parameters to an object. You need to initialize an object with sample values? In your tests for example? MappingGenerator does it for you!
-* [CodeMaid](https://marketplace.visualstudio.com/items?itemName=SteveCadwallader.CodeMaid) It cleans and formats your files. It remove extra blank lines. It removes and sorts your using statements. It removes extra spaces before and after parenthesis. _You got the idea_.
+* [CodeMaid](https://marketplace.visualstudio.com/items?itemName=SteveCadwallader.CodeMaid) It cleans and formats your files. It remove extra blank lines. It removes and sorts your using statements. It removes extra spaces before and after parenthesis. You got the idea!.
 * [AsyncMethodNameFixer](https://github.com/priyanshu92/AsyncMethodNameFixer) To not to forget to add the `Async` suffix on async method names.
 * [Multiline Search and Replace](https://marketplace.visualstudio.com/items?itemName=PeterMacej.MultilineSearchandReplace) No need to copy and paste your code into Notepad++ to replace multiple lines at once.
 * [Line Endings Unifier](https://marketplace.visualstudio.com/items?itemName=JakubBielawa.LineEndingsUnifier) Yes, it unifies the line endings of your files. You can choose the line ending you want to use in your files. Depending on the number of files in your solution, it could take a couple of seconds. But it does its job!
