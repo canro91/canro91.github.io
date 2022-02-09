@@ -131,7 +131,7 @@ Notice the `CreditCard` property in our test class and how we updated its values
 <figcaption>Let's use the Builder pattern. Photo by <a href="https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Spiske</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption>
 </figure>
 
-## What are test Builders?
+## What are Test Builders?
 
 Object mothers are fine if you don't have lots of variations of the object being constructed. But, since this is a post on Builder pattern, let's create a Builder for credit cards.
 
@@ -184,7 +184,7 @@ public class CreditCardBuilder
 
 In our builder, we have one field for each property of the `CreditCard` class. We can create as many `WithX()` methods as properties we need to use in our tests.
 
-### How to initialize values inside Builders
+### How to initialize values inside Builders?
 
 To initialize the properties without corresponding `WithX()` methods, we can create a special `WithTestValues()` method to use valid defaults. Another option is to initialize all the fields on the builder directly.
 

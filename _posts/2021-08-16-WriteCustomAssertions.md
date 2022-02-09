@@ -124,7 +124,7 @@ namespace Stringie.UnitTests
 }
 ```
 
-### How to write custom Verify method
+### How to write custom Moq Verify method
 
 If we're using a mocking library, we can create our custom `Verify()` methods.
 

@@ -61,7 +61,7 @@ This test uses [automocking with TypeBuilder]({% post_url 2021-06-21-WriteSimple
 
 Also, this test uses the [Builder pattern]({% post_url 2021-04-26-CreateTestValuesWithBuilders %}) to create fakes with some test values before building a new instance. This test relies in object mothers to create input values for the stubs.
 
-## Separate the Arrange/Act/Assert parts
+## 1. Separate the Arrange/Act/Assert parts
 
 Let's start by grouping related code to follow the Arrange/Act/Assert (AAA) principle.
 
@@ -108,7 +108,7 @@ Notice we inlined all input variables and move the `request` variable closer to 
 
 Remember, **declare variables near its first use**.
 
-## Show the scenario under test and the expected result
+## 2. Show the scenario under test and the expected result
 
 Now, let's look at the test name.
 
@@ -140,7 +140,7 @@ public async Task GetPayoutDetailsAsync_NoTimeZone_ReturnsDetails()
 
 After this refactor, it's a good idea to add another test passing a timezone and checking that the found transactions are in the same timezone.
 
-## Make test value obvious
+## 3. Make test value obvious
 
 In the previous refactor, we renamed our test to show it works without a timezone.
 
@@ -185,7 +185,7 @@ public async Task GetPayoutDetailsAsync_NoTimeZone_ReturnsDetails()
 
 If we have more than one test without timezone, we can use a constant `NoTimeZome` or an object mother for the `PayoutRequest`, something like `NoTimeZonePayoutRequest`.
 
-## Remove over-specification
+## 4. Remove over-specification
 
 For our last refactor, let's remove those `Verify()` calls. We don't need them. [We don't need to assert on stubs]({% post_url 2021-06-07-TipsForBetterStubsAndMocks %}).
 

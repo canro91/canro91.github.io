@@ -75,7 +75,7 @@ Well, that `FixedDateClock` is a fake. It replaces the `SystemClock` holding the
 
 To be more precise, the `FixedDateClock` is a stub. But, let's find out about stubs and mocks.
 
-## What's the difference between Mocks and Stubs
+## What's the difference between Mocks and Stubs?
 
 Now that we know what fakes are, let's see two types of fakes: mocks and stubs. This is the difference between them.
 
