@@ -44,7 +44,7 @@ Notice we have used as a parameter an NVARCHAR variable. We have a type mismatch
 
 Let's see the execution plan.
 
-{% include image.html name="IndexScanOnLocation.PNG" alt="Execution plan of finding all users StackOverflow users from Colombia" caption="StackOverflow users from Colombia" width="600px" %}
+{% include image.html name="IndexScanOnLocation.png" alt="Execution plan of finding all users StackOverflow users from Colombia" caption="StackOverflow users from Colombia" width="600px" %}
 
 SQL Server had to scan the index on Location. But, why?
 
