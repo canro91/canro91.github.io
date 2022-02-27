@@ -45,19 +45,22 @@ It's a good idea to have a checklist next to you while reviewing code. You could
 
 ## For the reviewer
 
-Before you start any review, make sure to understand the requirements. Start by looking at the tests, they should be like documentation.
+Before you start any review, make sure to understand the requirements. Start by looking at the [unit tests]({% post_url 2021-03-15-UnitTesting101 %}), they should be like documentation.
 
 It's a good idea to look at the diff of the code twice. One for the general picture and another one for the details.
 
 * **Be humble**. We all have something to learn.
 * **Take out the person when giving feedback**. Remember you are reviewing the code, not the author.
 * **Be clear**. You may be reviewing code from juniors, mid-level or seniors. Even from non-native speakers of your language. Everybody doesn’t have the same level of experience as you. Obvious things for you aren’t obvious for somebody else. 
+* **Give actionable comments**. Don't use tricky questions to make the author change something. Give clear and actionable comments, instead. For example, _what do you thing about this method name?_ vs _I think X would be a better name for this method. Could we change it?_
 * **Always give at least one positive remark**. For example: _It looks good to me (LGTM)_, _good choice of names_.
 * **Use questions instead of commands or orders**. For example, _Could this be changed?_ vs _Change it_. And, don't forget the magic word: _please_.
 * **Use "we" instead of "you"**. You're part of development process too. You're also responsible for the code you're reviewing.
 * **Instead of showing an ugly code, teach**. Link to resources to explain even more. Use blog posts and StackOverflow questions.
 * **Review only the code that has changed**. Don't say things like: _Now you're there, change that method over there too_.
 * **Find bugs, instead of style issues**. Rely on linters, compiler warnings and IDE extensions to find sytling issues.
+
+Recently, I found out about [conventional comments](https://conventionalcomments.org/). The basic idea of this convention is to prefix comments with labels to show the type of comments (suggestion, nitpick, question) and the nature of them (blocking, non-blocking, if-minor).
 
 ## For the reviewee
 
@@ -66,7 +69,7 @@ Before asking someone to review your code, review your own code. Check if all te
 It's a good idea to wait for the CI/CD to build and run all tests before asking someone to review your changes or assign reviewers in a tool. This will save time to your reviewers and you.
 
 * **Don't take it personal**. It's the code under review, not you. Breathe!
-* **Find in every review an opportunity to learn**. Identify what comments you get often and avoid them on your next reviews. 
+* **Find in every review an opportunity to learn**. Identify what comments you get often and [avoid them on your next reviews]({% post_url 2020-09-02-TwoRecurringReviewComments %}). 
 * **Give context**. Make sure the reviewer have enough context to review the code. Write an explanatory title and a description of what your code does and what decisions you made.
 * **Keep your work short and focused**. Don't make the reviewer go through thousand of lines of code in a single review session. Don't change business logic and formatting/styling in the same set of changes.
 * **Keep all the discussion online**. If you contacted the reviewer by chat or email, bring relevant comments to the reviewing tool for other to see them.

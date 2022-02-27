@@ -8,7 +8,7 @@ During code review, one or two of your coworkers look at your code to spot any p
 
 For a project I was working on, I had to include the ticket number in every commit message and add `Async` suffix to all asynchronous C# methods. I forgot these two conventions every time I created my Pull Requests.
 
-## How to add ticket numbers in commit messages
+## 1. How to add ticket numbers in commit messages
 
 **Add ticket numbers in Git commit messages using a prepare-commit-msg hook. This hook formats commit messages before committing the changes. Use this hook to enforce naming conventions and run custom actions before committing changes**.
 
@@ -32,9 +32,11 @@ If I name my feature branch `feat/ABC-123-my-awesome-branch`. Then when I commit
 
 I wrote about this hook on my list of [Programs that saved you 1000 hours]({% post_url 2020-04-13-ProgramThatSave100Hours %}). Also, you can find Git aliases, Visual Studio extensions and other online tools to save you some valuable time.
 
-## Async suffix on asynchronous C# methods
+## 2. Don't miss Async suffix on asynchronous C# methods
 
 Another convention I always forgot about was adding `Async` suffix on asynchronous C# methods.
+
+### Use a .editorconfig file
 
 After Googling a bit, a coworker came up with [this StackOverflow answer](https://stackoverflow.com/questions/53972941/how-do-i-get-a-warning-in-visual-studio-when-async-methods-dont-end-in-async) to use a `.editorconfig` file to get errors on async methods missing the `Async` suffix on any C# methods.
 
@@ -59,6 +61,8 @@ dotnet_naming_style.end_in_async.word_separator =
 ```
 
 But, the `.editorconfig` enforces `Async` suffix even `Main` method and tests names. `MainAsync` looks weird. Also, it misses method declarations returning `Task` or `Task<T>` on interfaces.
+
+### AsyncMethodNameFixer Visual Studio extension
 
 **To add a warning on asynchronous C# methods missing the Async suffix, use the AsyncMethodNameFixer extension on Visual Studio.**
 
