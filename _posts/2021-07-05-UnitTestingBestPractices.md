@@ -10,7 +10,7 @@ In the last couple of months, we've covered the subject of Unit Testing quite a 
 
 This time, I'm bringing some of the tips and best practices from my previous posts in one place. 
 
-## On Naming
+## 1. On Naming
 
 ### Choose a naming convention and stick to it.
 
@@ -24,7 +24,7 @@ This time, I'm bringing some of the tips and best practices from my previous pos
 
 <div class="message">If you want to learn more about naming your tests, check <a href="/2021/04/12/UnitTestNamingConventions">How to name your test: 4 naming conventions</a> where we write test names for the same methods using 4 different naming conventions.</div>
 
-## On Organization
+## 2. On Organization
 
 ### Make your tests easy to find.
 
@@ -38,7 +38,7 @@ This time, I'm bringing some of the tips and best practices from my previous pos
 <figcaption>Keep your tests organized and easy to find. Photo by <a href="https://unsplash.com/@barnimages?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Barn Images</a> on <a href="https://unsplash.com/s/photos/organization?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption>
 </figure>
 
-## On Assertions
+## 3. On Assertions
 
 ### Follow the Arrange/Act/Assert (AAA) principle.
 
@@ -56,7 +56,7 @@ This time, I'm bringing some of the tips and best practices from my previous pos
 
 <div class="message">If you want to learn more about writing better assertions, check <a href="/2021/03/29/UnitTestingCommonMistakes/">4 common unit testing mistakes</a> where we learn not to duplicate logic in your assertions.</div>
 
-## On Test Data
+## 4. On Test Data
 
 ### Keep the amount of details at the right level
 
@@ -72,7 +72,7 @@ This time, I'm bringing some of the tips and best practices from my previous pos
 
 <div class="message">Do you want to see examples of Object Mothers and Builders? Check <a href="/2021/04/26/CreateTestValuesWithBuilders/">How to create test data with the Builder pattern </a> where we test a credit card validator.</div>
 
-## On Stubs and Mocks
+## 5. On Stubs and Mocks
 
 ### Write dumb fakes
 
@@ -92,7 +92,7 @@ This time, I'm bringing some of the tips and best practices from my previous pos
 
 Voilà! Those are my best practices to write ~~better~~ great unit tests. Don't forget to always start writing failing tests. And, make sure they fail for the right reasons. If you don't follow Test-Driven Development, comment some of your code under test or change the assertions on purpose to see your tests failing.
 
-If you want to have these best practices next to you, grab your free copy of my [Unit Testing 101 ebook]({ post_url 2021-08-30-UnitTesting }). Feel free to share it.
+If you want to have these best practices next to you, grab your free copy of my [Unit Testing 101 ebook]({% post_url 2021-08-30-UnitTesting %}). Feel free to share it.
 
 <figure>
 <a href="/UnitTesting"><img src="/assets/posts/2021-07-05-UnitTestingBestPractices/UnitTesting101.png" alt="Grab your own copy of Unit Testing 101" /></a>
