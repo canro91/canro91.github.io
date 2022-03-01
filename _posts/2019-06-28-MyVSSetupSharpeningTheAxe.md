@@ -87,6 +87,24 @@ For shortcuts, add `Ctrl+Shift+w` to easily close all documents from the keyboar
 * [Line Endings Unifier](https://marketplace.visualstudio.com/items?itemName=JakubBielawa.LineEndingsUnifier) Yes, it unifies the line endings of your files. You can choose the line ending you want to use in your files. Depending on the number of files in your solution, it could take a couple of seconds. But it does its job!
 * [Moq.Autocomplete](https://github.com/Litee/moq.autocomplete) If you use [Moq to create fakes]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}), this extension is for you. Inside the `Setup()` methods, it autocompletes the parameter list of the faked method using `It.IsAny<T>()` for each parameter. A time saver! I use this extension along with these [snippets for Moq]({% post_url 2021-02-22-VisualStudioMoqSnippets %}).
 
+## Presentation mode
+
+Fire a new instance from Visual Studio Developers Tools command prompt, using
+
+```bash
+devenv /RootSuffix Demo
+```
+
+It will open a separate and clean instance with no configurations or extensions. Any changes made to this instance won't affect the "normal" instance next time you open Visual Studio.
+
+{% include image.html name="VSPresentationMode.png" caption="My Visual Studio in Presentation mode opened with a sample Console project" alt="My Visual Studio 2019 setup in Presentation Mode" width="500px" %}
+
+To make Visual Studio work in Presentation mode:
+
+* Remove Navigation Outline, Server Explorer, Toolbox, Git changes, and Properties. Only keep Solution Explorer.
+* Use Cascadia Mono, 14pt.
+* Optionally install the [MarkdownEditor extension](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.MarkdownEditor) to present using markdown files.
+
 Voilà! That's how I use Visual Studio 2019 for C# coding. If you're wondering what's Vim and why you should learn it, check my post [Learning Vim for Fun and Profit]({% post_url 2020-09-14-LearnVimForFunAndProfit %}).
 
 For more productivity tools and tricks, check these [programs that saved me 100 hours]({% post_url 2020-04-13-ProgramThatSave100Hours %}) and how I used a Visual Studio extension and a Git feature to [get rid of two recurrent review comments]({% post_url 2020-09-02-TwoRecurringReviewComments %}).
