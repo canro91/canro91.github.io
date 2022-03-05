@@ -24,7 +24,7 @@ But, besides variable names, there wasn't anything preventing to use a `decimal`
 
 ## Getting rid of primitive obsession
 
-### Create a type alias
+### 1. Create a type alias
 
 As an alternative to encode units of measure on variable names, we can use a type alias.
 
@@ -76,7 +76,7 @@ With the `Unit` type alias, we can still, by mistake, pass regular decimals when
 
 Let's try a better alternative!
 
-### Create a new type
+### 2. Create a new type
 
 Now, let's create a `Unit` class and pass it around instead of `decimal`.
 
@@ -123,7 +123,10 @@ public void UseAType()
     // ^^^^ cannot convert from 'decimal' to 'GettingRidOfPrimitiveObsession.Unit'
 }
 ```
+
 If needed, we can overload the `+` and `-` operators to make sure we're not adding oranges and apples. Decimals and units, I mean.
+
+[Records from C# 9.0]({% post_url 2021-09-13-TopNewCSharpFeatures %}) offer a shorter notation for classes that replace primitive values.
 
 Voilà! That's how we can get rid of primitive obsession. A type alias was more expressive than encoding units of measure on names. But, a class was a better alternative. By the way, F# supports [unit of measures](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/units-of-measure) to variables. And, the compiler will warn you if you forget to use the right unit of measure.
 
