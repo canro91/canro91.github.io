@@ -94,7 +94,7 @@ To represent validated emails, don't create a `CustomerEmail` with an `IsVerifie
 
 With types, we don't need unit tests for invalid situations, we have compile-time unit tests. Also, types better document the business domain.
 
-## Transformation oriented programming
+## Transformation-oriented programming
 
 Write actions in your system as workflows or chains of transformations.
 
@@ -117,7 +117,7 @@ type PlaceOrderWorflow = PlaceOrderCommand -> Result<PlaceOrderEvent list, Place
 
 After reading this book, there are two things I want to change in the codebases around me.
 
-### Replace Constants class with enums
+### 1. Replace Constants class with enums
 
 First, don't use a `Constants` class for an exhaustive list of known values or options. Use enums instead.
 
@@ -151,7 +151,7 @@ public PaymentResponse PeformOperation(OperationType operation, PaymentRequest r
 }
 ```
 
-### Separate states, separate classes
+### 2. Separate states, separate classes
 
 Last challenge, don't use a single class with a boolean property to represent two states. Use two types instead.
 
