@@ -104,7 +104,7 @@ In case you missed it...You can add methods to a type without modifying it with 
 
 To work with LINQ, you need to be comfortable with delegates and lambda functions. A lambda function is a method with only the parameters and the body. To learn more about delegates and lambda functions, check my post on [the difference between Func and Action]({% post_url 2019-03-22-WhatTheFuncAction %}).
 
-### How to filter a collection with Where
+### How to filter a collection with Where?
 
 Now, to the actual example. To start using LINQ methods, let's add the statement `using System.Linq`.
 
@@ -427,13 +427,13 @@ let sizeInMb = file.Length / 1024 / 1024
 
 Now that we know what LINQ is and the most common LINQ methods, let's go through three common mistakes we make when using LINQ methods in our code.
 
-### Write Count instead of Any
+### 1. Write Count instead of Any
 
 Always prefer `Any` over `Count` to check if a collection has elements or an element that meets a condition.
 
 Do `movies.Any()` instead of `movies.Count() > 0`.
 
-### Write Where followed by Any
+### 2. Write Where followed by Any
 
 You can use a condition with `Any` instead of filtering first with `Where` to later use `Any`.
 
@@ -451,7 +451,7 @@ movies.Where(movie => movie.Rating == 5).Any()
 
 The same applies to the `Where` method followed by `FirstOrDefault`, `Count`, or any other method that receives a filter condition. 
 
-### Use FirstOrDefault without null checking
+### 3. Use FirstOrDefault without null checking
 
 Make sure to always check if you have a result when working with `FirstOrDefault`, `LastOrDefault`, and `SingleOrDefault`. If there isn't one, you will get the default value of the collection type.
 
