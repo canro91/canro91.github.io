@@ -6,15 +6,23 @@ tags: career
 
 It's been a year since I started to work remotely. These are the lessons I learned.
 
-## For employers, leaders or managers
+## For employers, leaders, or managers
 
-**Give clear instructions**. State what you expect and when you expect it. Make sure to say the day, time and timezone, if needed. _"Tomorrow morning"_ is at a different time in different parts of the world. Have in mind that probably not everyone in your team is a native speaker of your language. 
+### 1. Give clear instructions
 
-**Don’t expect new team members to follow unclear code conventions**. A new developer will pick conventions from existing code instead of an old document.
+State what you expect and when you expect it. Make sure to say the day, time, and timezone, if needed. _"Tomorrow morning"_ is at a different time in different parts of the world. Have in mind that probably not everyone in your team is a native speaker of your language. 
 
-**Make new developers pair with another team members**. On the onboarding process, a new member will feel more comfortable talking to another developer. Make new developers free to ask any questions about the new team, company product or anything else.
+### 2. Don’t expect new team members to follow unclear coding conventions
 
-**Have your developers up and running as quickly as possible**. You don’t want them to scratch their heads trying to install the right version of your tools and projects. Create README files, install scripts or anything else that helps to setup the working environment. Anyone should start using your projects by pressing a button or running a single script.
+A new developer will pick coding conventions from existing code instead of an old document. Have a perfectly formatted and crafted sample code.
+
+### 3. Make new developers pair with another team member
+
+On the onboarding process, a new member will feel more comfortable talking to another developer. Assign an onboarding buddy. Make new developers free to ask questions about the new team, company product, or anything else.
+
+### 4. Have your developers up and running as quickly as possible
+
+You don’t want your developers to scratch their heads trying to install the right version of your tools and projects. Create README files, installation scripts, or anything else that helps to set up the working environment. Anyone should start using your projects by pressing a button or running a single script.
 
 <figure>
 <img src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop&ixid=eyJhcHBfaWQiOjF9" alt="Zoom call with coffee" width="800">
@@ -24,20 +32,32 @@ It's been a year since I started to work remotely. These are the lessons I learn
 
 ## For employees or workers
 
-**Control noise and light in your environment** Have a high-quality headset. Reduce the background noise as much as you can. Make sure to mute and unmute your microphone when appropriate. _You're muted, John!_ Position yourself in a way people won't appear walking in the back. Light up your environment to clear your face.
+### 5. Control noise and light in your environment
 
-**Strive to have the best level you can in the language spoken at work**. Have a good pronunciation. This would make things easier for everyone. You don't want to be the guy nobody wants to work with because of his poor speaking skills.
+Have a high-quality headset. Reduce the background noise as much as you can. Make sure to mute and unmute your microphone when appropriate. _You're muted, John!_ Position yourself in a way people don't appear walking in the back. Light up your environment to clear your face.
 
-**Separate work and personal spaces**. At the end of your day, do something that signals the end of the day. Sit in the couch, meditate, go for a walk or change your clothes.
+### 6. Strive to have the best level you can in the language spoken at work
 
-**Schedule regular pauses**. When working in a office, you can grab a coffee or tap into a colleague shoulder. But, while at home, you could be sitting for hours without even realizing it. Set an alarm, stand and walk! Your body will thank you later.
+Have good pronunciation. This would make things easier for everyone. You don't want to be the guy nobody wants to work with because of his poor speaking skills.
 
-**Connect with others.** You could be working from home for weeks without getting outside. Don't be home alone! Interact with others! Call your friends, go out with your family, work from a coworking space.
+### 7. Separate work and personal spaces
+
+At the end of your day, do something that signals the end of the day. Sit on the couch, meditate, go for a walk or change your clothes.
+
+### 8. Schedule regular pauses
+
+When working in an office, you can grab a coffee or tap into a colleague's shoulder. But, while at home, you could be sitting for hours without even realizing it. Set an alarm, stand, and walk! Your body will thank you later.
+
+### 9. Connect with others
+
+You could be working from home for weeks without getting outside. Don't be home alone! Interact with others! Call your friends, go out with your family, work from a coworking space.
 
 > _At the time of writing, we are at home due to COVID-19. But, this last piece of advice is still applicable, staying at home and keeping social distancing._
 
-**Before presentations, turn off auto updates and notifications**. You don’t want your computer to restart updating the operating system in the middle of a presentation or an important meeting. This is a true story happened to a friend of a friend of mine.
+### 10. Before presentations, turn off auto-updates and notifications
 
-Voilà! Ten lessons I learned after my first year of remote work. For more career lessons, check the five lessons I learned after [five years as a software engineer]({% post_url 2019-08-19-FiveLessonsAfterFiveYears %}).
+You don’t want your computer to restart updating the operating system in the middle of a presentation or an important meeting. This is a true story that happened to a friend of a friend of mine.
+
+Voilà! Ten lessons I learned after my first year of remote work. For more career lessons, check the five lessons I learned after [five years as a software engineer]({% post_url 2019-08-19-FiveLessonsAfterFiveYears %}) and my [takeaways from The Clean Coder]({% post_url 2020-06-15-CleanCoder %}).
 
 _Happy remote work!_
