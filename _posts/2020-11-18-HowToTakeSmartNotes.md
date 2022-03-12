@@ -89,6 +89,10 @@ Index cards are notes with references to other notes. They act as entry point to
 
 _"Read, think and write. Take smart notes along the way"_
 
+Voilà! That's How to Take Smart Notes. Remember, don't use notebooks or write on book margins. Instead, use indexed cards to take notes and connect them with other cards.
+
+For more content, read [how I use plain text to write notes]({% post_url 2020-08-29-HowITakeNotes %}) and my takeaways from [Ultralearning]({% post_url 2020-07-14-UltralearningTakeaways %}) and [Pragmatic Thinking and Learning]({% post_url 2020-05-07-PragmaticThinkingAndLearning %}).
+
 _Happy note taking!_
 
 
