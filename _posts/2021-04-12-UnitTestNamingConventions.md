@@ -121,6 +121,6 @@ If you want to practice naming unit tests, check my [Unit Testing 101](https://g
 
 [![canro91/Testing101 - GitHub](https://gh-card.dev/repos/canro91/Testing101.svg)](https://github.com/canro91/Testing101)
 
-If you're new to unit testing, read my post on [how to write your first unit tests in C#]({% post_url 2021-03-15-UnitTesting101 %}) and check the [4 common mistakes when writing your first tests]({% post_url 2021-03-29-UnitTestingCommonMistakes %}).
+If you're new to unit testing, read my post on [how to write your first unit tests in C#]({% post_url 2021-03-15-UnitTesting101 %}) and check the [4 common mistakes when writing your first tests]({% post_url 2021-03-29-UnitTestingCommonMistakes %}). Don't miss the rest of my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}) where I also cover mocking, assertions and other best practices.
 
 _Happy testing!_
