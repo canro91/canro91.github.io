@@ -49,7 +49,7 @@ From SQL Server Management Studio, to change the file autogrowth, go to your dat
 
 Implicit conversions happen when SQL Server needs to convert between two data types in a `WHERE` or in `JOIN`.
 
-For example, the query below with `OrderNumber` as a `VARCHAR(20)` has implicit warning when we compare it to a INT parameter.
+For example, the query below with `OrderNumber` as a `VARCHAR(20)` has an implicit warning when we compare it to a `INT` parameter.
 
 ```sql
 DECLARE @OrderNumber INT = 123;
@@ -62,9 +62,9 @@ GO
 
 To run this query, SQL Server has to go through all the rows in the `dbo.Orders` table to convert the `OrderNumber` from `VARCHAR(20)` to `INT`.
 
-To decide when implicit conversion happens, you can check [Microsoft Data Type Precedence table](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-type-precedence-transact-sql?view=sql-server-ver15). Types with lower precedence convert to types with higher precedence. For example, `VARCHAR` will be always converted to `INT` and to `NVARCHAR`.
+To decide when implicit conversions happen, SQL Server follows a [Data Type Precedence table](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-type-precedence-transact-sql?view=sql-server-ver15). Types with lower precedence convert to types with higher precedence. For example, `VARCHAR` will be always converted to `INT` and `NVARCHAR` types. 
 
-Use the below script to indentify queries with implicit conversion. [[Source]](https://blog.sqlauthority.com/2018/06/11/sql-server-how-to-fix-convert_implicit-warnings/).
+Use the below script to indentify queries with implicit conversions. [[Source]](https://blog.sqlauthority.com/2018/06/11/sql-server-how-to-fix-convert_implicit-warnings/).
 
 ```sql
 SELECT TOP(50) DB_NAME(t.[dbid]) AS [Database Name], 
@@ -87,6 +87,8 @@ WHERE CAST(query_plan AS NVARCHAR(MAX)) LIKE ('%CONVERT_IMPLICIT%')
 ORDER BY qs.total_worker_time DESC OPTION (RECOMPILE);
 ```
 
+Be aware, not all implicit convesions are bad. Often implicit conversions lead to scans or seeks. That's why [we should care about implicit conversions]({% post_url 2022-02-07-WhatAreImplicitConversions %}).
+
 <div class="video-container">
 <iframe src="https://www.youtube-nocookie.com/embed/ef-BmyNipU4?start=196&rel=0&fs=0" width="640" height="360" frameborder="0"></iframe>
 </div>
@@ -106,7 +108,7 @@ SET COMPATIBILITY_LEVEL = { 150 | 140 | 130 | 120 | 110 | 100 | 90 }
 
 Create your missing indexes. But, don't create them all. Create the first 10 missing indexes in your database. Stick to having around 5 indexes per table.
 
-You can use the next script to find the missing indexes in your database. [[Source]](https://blog.sqlauthority.com/2011/01/03/sql-server-2008-missing-index-script-download/). But, don't blindly add new indexes. Check the indexes you already have and the estimated impact of the missing indexes.
+You can use the next script to find the missing indexes in your database. [[Source]](https://blog.sqlauthority.com/2011/01/03/sql-server-2008-missing-index-script-download/). Check the indexes you already have and the estimated impact of the missing indexes. [Don't blindly follow index recommendations, just listen to them]({% post_url 2022-03-21-SQLServerIndexRecommendations %}).
 
 ```sql
 SELECT TOP 25
