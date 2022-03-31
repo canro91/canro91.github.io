@@ -71,6 +71,7 @@ Other helpful resources to are [Go by Example](https://gobyexample.com/) and [Go
     * [Ping-pong](https://gist.github.com/kenshinx/5796276)
     * [Chat with Sockets](https://www.thepolyglotdeveloper.com/2017/05/network-sockets-with-the-go-programming-language/)
 * [Write a SQL database](http://notes.eatonphil.com/database-basics.html)
+* [Writing a document database from scratch in Go](https://notes.eatonphil.com/documentdb.html)
 * [Let's Create a Simple Load Balancer With Go](https://kasvith.github.io/posts/lets-create-a-simple-lb-go/)
 * [Building a BitTorrent client from the ground up in Go](https://blog.jse.li/posts/torrent/)
 
