@@ -6,15 +6,15 @@ tags: tutorial csharp
 
 These days I was working with Stripe API to take payments. And I found a case of primitive obsession. Keep reading to learn how to get rid of it.
 
-**Primitive obsession is when developers choose primitive types (strings, integers, decimals) to represent entities of the business domain. To solve this code smell, create classes to model the business entities and to enforce the appropriate business.**
+**Primitive obsession is when developers choose primitive types (strings, integers, decimals) to represent entities of the business domain. To solve this code smell, create classes to model the business entities and to enforce the appropriate business rules.**
 
 ## Using Stripe API
 
-Stripe API uses units to represent amounts. All amounts are multiplied by 100. This is 1USD = 100 units. Also, you can only use amounts between $0.50 USD and $999,999.99 USD. This isn't the case for all currencies, but let's keep it simple. For more information, check [Stripe documentation for currencies](https://stripe.com/docs/currencies#zero-decimal).
+Stripe API uses units to represent amounts. All amounts are multiplied by 100. This is 1USD = 100 units. Also, we can only use amounts between $0.50 USD and $999,999.99 USD. This isn't the case for all currencies, but let's keep it simple. For more information, check [Stripe documentation for currencies](https://stripe.com/docs/currencies#zero-decimal).
 
-The codebase I was working with used two extension methods on the `decimal` type to convert between amounts and units. Those two methods were something like `ToUnits` and `ToAmount`.
+The codebase I was working with used two extension methods on the `decimal` type to convert between amounts and units. Those two methods were something like `ToUnits()` and `ToAmount()`.
 
-But, besides variable names, there wasn't anything preventing to use a `decimal` instead of Stripe units. It was the same `decimal` type for both concepts. Anyone could forget to convert things and charge someone's credit card more than expected. _Arggg!_
+But, besides variable names, there wasn't anything preventing me to use a `decimal` instead of Stripe units. It was the same `decimal` type for both concepts. Anyone could forget to convert things and charge someone's credit card more than expected. Arggg!
 
 <figure>
 <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop" alt="A case of primitive obsession" />
@@ -28,7 +28,7 @@ But, besides variable names, there wasn't anything preventing to use a `decimal`
 
 As an alternative to encode units of measure on variable names, we can use a type alias.
 
-Let's declare `using Unit = System.Decimal` and change the correct parameters to use `Unit`. But, the compiler won't warn if we pass `decimal` instead of `Unit`. See the snippet below.
+Let's declare a new type alias with `using Unit = System.Decimal` and change the correct parameters to use `Unit`. But, the compiler won't warn us if we pass `decimal` instead of `Unit`. See the snippet below.
 
 ```csharp
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -80,7 +80,7 @@ Let's try a better alternative!
 
 Now, let's create a `Unit` class and pass it around instead of `decimal`.
 
-In the constructor of the new `Unit` class, we can check if the input amount is inside the bounds. Also, let's use a method to convert units back to normal amounts.
+In the constructor of the new `Unit` class, let's check if the input amount is inside Stripe bounds. Also, let's use a method to convert units back to normal amounts.
 
 ```csharp
 public class Unit
@@ -126,7 +126,9 @@ public void UseAType()
 
 If needed, we can overload the `+` and `-` operators to make sure we're not adding oranges and apples. Decimals and units, I mean.
 
-[Records from C# 9.0]({% post_url 2021-09-13-TopNewCSharpFeatures %}) offer a shorter notation for classes that replace primitive values.
+[Records from C# 9.0]({% post_url 2021-09-13-TopNewCSharpFeatures %}) offer a shorter notation for classes to replace primitive values. Records have built-in memberwise comparison, `ToString()` methods and copy constructors, among other features.
+
+We can use custom classes, like the `Unit` class we wrote, to encode restrictions, constraints, and business rules in our business domain. That's the main takeaway from [Domain Modeling Made Functional]({% post_url 2021-12-13-DomainModelingMadeFunctional %}).
 
 Voilà! That's how we can get rid of primitive obsession. A type alias was more expressive than encoding units of measure on names. But, a class was a better alternative. By the way, F# supports [unit of measures](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/units-of-measure) to variables. And, the compiler will warn you if you forget to use the right unit of measure.
 
