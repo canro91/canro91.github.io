@@ -81,7 +81,7 @@ This is the execution plan.
 
 Do you remember the estimated number of users from our example with variables? Now, we have a more accurate estimated number. SQL Server isn't using an average value. It has better estimates this time.
 
-We even have an index recommendation in our execution plan. By the way, [don't blindly follow index recommendations]({% post_url 2022-03-21-SQLServerIndexRecommendations %}), just listening to them. 
+We even have an index recommendation in our execution plan. By the way, [don't blindly follow index recommendations]({% post_url 2022-03-21-SQLServerIndexRecommendations %}), just listening to them. They're only a list of columns to consider indexing.
 
 ## Create a view for constants
 

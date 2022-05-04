@@ -75,7 +75,7 @@ public static CardType MapToCardType(string cardBrand)
 
 ### C# 8.0 and Dictionaries
 
-Also, we can use the newer `switch` syntaxt from C# version 8.0 to write more compact `switch`. 
+Also, we can use the newer `switch` syntaxt from [C# version 8.0]({% post_url 2021-09-13-TopNewCSharpFeatures %}) to write more compact `switch`. 
 
 Starting from C# version 8.0, `switch` are expressions. It means we can assign `switch` to variables and use `switch` as returned values.
 

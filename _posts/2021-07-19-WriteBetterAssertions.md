@@ -109,7 +109,7 @@ Not that bad. The larger the tests, the harder it gets.
 
 **Have the three AAA parts separated to make your tests easier to read.**
 
-In case you're wondering about those weird method names, check my post on [4 test naming conventions]({% post_url 2021-04-12-UnitTestNamingConventions %}).
+In case you're wondering about those weird method names, they follow one of the most common [test naming conventions]({% post_url 2021-04-12-UnitTestNamingConventions %}).
 
 <figure>
 <img src="https://images.unsplash.com/photo-1613083093144-bfa5c3eb8337?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIzNjkzMzU2&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="Three paths on the snow" />
@@ -119,7 +119,7 @@ In case you're wondering about those weird method names, check my post on [4 tes
 
 ## 3. Don't put logic in your assertions
 
-**Don't repeat the logic under test in your assertions.** And, please, don't copy the tested logic and paste it into private methods in your test files to use it in your assertions.
+**Don't repeat the logic under test in your assertions.** And, please, don't copy the tested logic and paste it into private methods in your test files to use it in your assertions. That's [the most common mistake when writing tests]({% post_url 2021-10-11-DontRepeatLogicInAssertions %}).
 
 Use known, pre-calculated values. Declare constants for common expected values.
 

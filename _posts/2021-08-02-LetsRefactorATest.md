@@ -63,7 +63,7 @@ Also, this test uses the [Builder pattern]({% post_url 2021-04-26-CreateTestValu
 
 ## 1. Separate the Arrange/Act/Assert parts
 
-Let's start by grouping related code to follow the Arrange/Act/Assert (AAA) principle.
+Let's start by grouping related code to follow [the Arrange/Act/Assert (AAA) principle]({% post_url 2021-07-19-WriteBetterAssertions %}).
 
 To achieve this, let's declare variables near its first use and inline the ones used in a single place.
 
