@@ -117,4 +117,6 @@ Voilà! These are five LINQ methods I use often: Where, Select, Any, Group, and 
 
 To learn about LINQ and other methods, check my [quick guide to LINQ]({% post_url 2021-01-18-LinqGuide %}). All you need to know to start working with LINQ, in 15 minutes or less. For more C# content, check [C# Definitive Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %}) for a list of subjects every intermediate C# developer should know. And, my [top 10 best C# features]({% post_url 2021-09-13-TopNewCSharpFeatures%}) for other cool C# features.
 
+{%include linq_course.html %}
+
 _Happy LINQ time!_
