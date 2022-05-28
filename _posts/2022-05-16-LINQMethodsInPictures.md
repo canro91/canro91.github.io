@@ -6,7 +6,7 @@ cover: Cover.png
 cover-alt: "Cover" 
 ---
 
-One of the best C# features is LINQ. I would say it's the most distinctive [C# feature]({% post_url 2021-09-13-TopNewCSharpFeatures %}). These are five of the most common LINQ method in pictures.
+One of the best C# features is LINQ. I would say it's the most distinctive of all [C# features]({% post_url 2021-09-13-TopNewCSharpFeatures %}). These are five of the most common LINQ method in pictures.
 
 **LINQ is the declarative, immutable, and lazy-evaluated way of working with collections in C#. Some frequently used LINQ methods are Where, Select, Any, GroupBy, and FirstOrDefault.**
 
