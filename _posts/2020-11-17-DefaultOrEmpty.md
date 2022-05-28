@@ -36,4 +36,6 @@ Voilà! DefaultIfEmpty is helpful to make sure we always have a default value wh
 
 To learn more about LINQ, check my [Quick Guide to LINQ]({% post_url 2021-01-18-LinqGuide %}). Don't miss my [C# Definitive Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %}) for a list of subjects every intermediate C# developer should know.
 
+{%include linq_course.html %}
+
 _Source_: [Enumerable.DefaultIfEmpty Method](https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.defaultifempty?view=net-5.0)
