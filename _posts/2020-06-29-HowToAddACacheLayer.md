@@ -103,10 +103,10 @@ public static class MemoryCacheExtensions
             return value as TObject;
         }
 
-        result = await factory();
+        var result = await factory();
 
         options ??= DefaultMemoryCacheEntryOptions;
-        cache.Set(key, value, options);
+        cache.Set(key, result, options);
 
         return result;
     }
@@ -293,7 +293,7 @@ public static class DistributedCacheExtensions
     {
         var data = JsonConvert.SerializeObject(value);
 
-        await cache.SetStringAsync(key, data, options ?? DefaultDistributedCacheEntryOptions, token);
+        await cache.SetStringAsync(key, data, options ?? DefaultDistributedCacheEntryOptions);
     }
 }
 ```
