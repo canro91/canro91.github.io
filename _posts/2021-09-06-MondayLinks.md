@@ -31,7 +31,7 @@ It explains how not to explain things. I felt guilty of doing some of these anti
 
 ## What Programmers Can Learn From Sherlock Holmes
 
-What Sherlock Home stories and programming have in common. Not all facts are obvious to everyone. We all have one Lestrade in our programmer's life. I liked those two things. [Read full article](https://codingtofreedom.com/what-programmers-can-learn-from-sherlock-holmes/)
+What Sherlock Home stories and programming have in common. Not all facts are obvious to everyone. We all have one Lestrade in our programmer's life. I liked those two things. [Read full article](https://web.archive.org/web/20210925125821/https://codingtofreedom.com/what-programmers-can-learn-from-sherlock-holmes/)
 
 Voilà! These were my most favorites reads from the last couple of months. See you in a month or two in the next Monday Links! In the mean time, stay tune to my [Unit Testing 101]({% post_url 2021-08-30-UnitTesting %}) series to learn from [how to write your first unit tests with MSTest]({% post_url 2021-03-15-UnitTesting101 %}) to [how to write custom assertions]({% post_url 2021-08-16-WriteCustomAssertions %}).
 
