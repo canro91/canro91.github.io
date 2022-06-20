@@ -6,9 +6,9 @@ cover: FailingTest.png
 cover-alt: How to write good unit tests? Have a failing test
 ---
 
-A passing test isn't always the only thing to look for. Seeing your test fail is important too. I learned this lesson the hard way. Let's see why we should start writing failing tests.
+A passing test isn't always the only thing to look for. It's important to see our test failing. I learned this lesson the hard way. Let's see why we should start writing failing tests.
 
-**To write reliable unit tests, always start writing a failing test. And, make sure it fails for the right reasons. Follow the Red, Green, Refactor principle of Test-Driven Development (TDD). Write a failing test, make it pass and refactor the code. Don't skip the failing test part.**
+**To write reliable unit tests, always start writing a failing test. And make sure it fails for the right reasons. Follow the Red, Green, Refactor principle of Test-Driven Development (TDD). Write a failing test, make it pass, and refactor the code. Don't skip the failing test part.**
 
 ## The Passing test
 
@@ -89,7 +89,7 @@ private AccountController MakeAccountController(IOptions<EmailConfiguration> ema
 }
 ```
 
-And, the constructor looked like this:
+And the constructor looked like this:
 
 ```csharp
 public class AccountController : Controller
@@ -123,7 +123,7 @@ public class AccountController : Controller
 
 I ran the test and it passed. Move on! But...Wait! There's something wrong with that test! Did you spot the issue?
 
-## Make your tests fail
+## Make your tests fail for the right reasons
 
 Of course, that test is passing. The code throws an `ArgumentNullException`. But, that exception is coming from the wrong place. It comes from the validation for the email configuration, not from our new validation.
 
@@ -138,9 +138,9 @@ private AccountController MakeAccountController(IOptions<SomeNewConfig> someNewC
 }
 ```
 
-**Make sure to always start writing a failing test. And, this test should fail for the right reasons.**
+**Make sure to start always by writing a failing test. And, this test should fail for the right reasons.**
 
-If you write your tests after writing your production code, comment some parts of your production code to see your tests failing. Or change the assertions on purpose.
+If you write your tests after writing your production code, comment some parts of your production code to see your tests fail. Or change the assertions on purpose.
 
 When you make a failed test pass, you're testing the test. You're making sure it fails and passes when it should. You know you aren't writing buggy tests or introducing false positives into your test suite.
 
@@ -158,7 +158,7 @@ public void AccountController_NoSomeNewConfig_ThrowsException()
 }
 ```
 
-Voilà! This task reminded me to always see my tests failing for the right reasons. Do you have passing tests? Do they pass and fail when they should? I hope they do after reading this post.
+Voilà! This task reminded me to see my tests fail for the right reasons. Do you have passing tests? Do they pass and fail when they should? I hope they do after reading this post.
 
 For more tips on unit testing, check my takeaways from the book [The Art of Unit Testing]({% post_url 2020-03-06-TheArtOfUnitTestingReview %}) and my post on [how to write fakes with Moq]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}).
 

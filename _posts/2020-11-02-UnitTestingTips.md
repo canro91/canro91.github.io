@@ -6,17 +6,17 @@ cover: WriteUnitTests.png
 cover-alt: Two issues to avoid to write good unit tests
 ---
 
-These days, I needed to update some unit tests. I found two types of issues on them. Please, continue to read. Maybe, you're a victim of those issues, too.
+These days, I needed to update some unit tests. I found two types of issues with them. Please, continue to read. Maybe, you're a victim of those issues, too. Let's learn how to write good unit tests.
 
 **To write good unit tests, avoid complex setup scenarios and hidden test values. Often tests are bloated with unneeded or complex code in the Arrange part and full of magic or hidden test values. Unit tests should be even more readable than production code**.
 
 ## The tests
 
-The tests I needed to update were for an ASP.NET Core API controller, `AccountController`. This controller created, updated and suspended user accounts. Also, it sent a welcome email to new users.
+The tests I needed to update were for an ASP.NET Core API controller, `AccountController`. This controller created, updated, and suspended user accounts. Also, it sent a welcome email to new users.
 
-These tests checked a configuration object for the sender, reply-to and contact-us email addresses. The welcome email contained those three emails. If the configuration files miss one of the email addresses, the controller throws an exception from its constructor.
+These tests checked a configuration object for the sender, reply-to, and contact-us email addresses. The welcome email contained those three emails. If the configuration files miss one of the email addresses, the controller throws an exception from its constructor.
 
-Let's see one of the tests. This test checks for the sender email.
+Let's see one of the tests. This test checks for the sender's email.
 
 ```csharp
 [TestMethod]
@@ -52,7 +52,7 @@ public Task AccountController_SenderEmailIsNull_ThrowsException()
 }
 ```
 
-This tests uses [Moq to create stubs and mocks]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}).
+This test uses [Moq to create stubs and mocks]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}).
 
 Can you spot any issues in our sample test? The naming convention isn't one, by the way.
 
@@ -66,7 +66,7 @@ Let's see the two issues to avoid to write good unit tests.
 
 ## 1. Reduce the noise
 
-Our sample test only cares about one object, `IOptions<EmailConfiguration>`. All other objects are noise for the purpose of this test. They don't have anything to do with the scenario under test.
+Our sample test only cares about one object: `IOptions<EmailConfiguration>`. All other objects are noise for our test. They don't have anything to do with the scenario under test.
 
 **Use builder methods to reduce complex setup scenarios.**
 
@@ -76,6 +76,7 @@ After this change, our test looked like this:
 
 ```csharp
 [TestMethod]
+// We can make this test a void method
 public void AccountController_SenderEmailIsNull_ThrowsException()
 {
     var emailConfig = new Mock<IOptions<EmailConfiguration>>();
@@ -90,7 +91,7 @@ public void AccountController_SenderEmailIsNull_ThrowsException()
     Assert.ThrowsException<ArgumentNullException>(() =>
         MakeAccountController(emailConfig.Object));
     
-    // We don't neet a return statement here
+    // We don't need a return statement here
 }
 
 private AccountController MakeAccountController(IOptions<EmailConfiguration> emailConfiguration)
@@ -114,19 +115,19 @@ private AccountController MakeAccountController(IOptions<EmailConfiguration> ema
 }
 ```
 
-Also, since our test doesn't have any asynchronous code, we could remove the `return` statement and turned our test into a `void` method.
+Also, since our test doesn't have any asynchronous code, we could remove the `return` statement and turn our test into a `void` method.
 
 With this refactor, our test started to look simpler and easier to read. Now, it's clear this test only cares about the `EmailConfiguration` class.
 
 ## 2. Make your test values obvious
 
-Our test states in its name that the sender email is null. Anyone reading this test would expect to see a variable set to null and passed around. But, that's not the case.
+Our test states in its name that the sender's email is null. Anyone reading this test would expect to see a variable set to null and passed around. But, that's not the case.
 
 **Make scenarios under test and test values extremely obvious**.
 
-Please, don't make developers to decode your tests.
+Please, don't make developers decode your tests.
 
-To make the test scenario obvious in our example, let's add `SenderEmail = null` to the intialization of the `EmailConfiguration` object.
+To make the test scenario obvious in our example, let's add `SenderEmail = null` to the initialization of the `EmailConfiguration` object.
 
 ```csharp
 [TestMethod]
@@ -173,7 +174,7 @@ public void AccountController_SenderEmailIsNull_ThrowsException()
 }
 ```
 
-Voilà! That's way easier to read. Do you have noise and hidden test values in your own tests? Remember, readability is one of the pillars of unit testing. Don't make developers to decode your tests.
+Voilà! That's way easier to read. Do you have noise and hidden test values in your tests? Remember, readability is one of the pillars of unit testing. Don't make developers decode your tests.
 
 For other tips on writing unit tests, check my follow-up on [writting failing tests first]({% post_url 2021-02-05-FailingTest %}) and my [Unit Testing Best Practices]({% post_url 2021-07-05-UnitTestingBestPractices %}). Also, check my takeaways from the book [The Art of Unit Testing]({% post_url 2020-03-06-TheArtOfUnitTestingReview %}).
 

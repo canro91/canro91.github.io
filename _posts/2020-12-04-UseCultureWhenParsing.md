@@ -4,9 +4,9 @@ title: "TIL: Always Use a Culture When Parsing Numeric Strings in C#"
 tags: todayilearned csharp
 ---
 
-This week, I reinstalled the operating system of my computer. The new version uses Spanish, instead of English. After that, lots of unit tests started to break in one of my projects. The broken tests verified the formatting of currencies. This is what I learned about parsing numeric strings and unit testing.
+This week, I reinstalled the operating system of my computer. The new version uses Spanish instead of English. After that, some unit tests started to break in one of my projects. The broken tests verified the formatting of currencies. This is what I learned about parsing numeric strings and unit testing.
 
-**To have a set of always-passing unit tests, use a default culture when parsing numeric strings. Add a default culture to the Parse() and ToString() methods on decimals. As an alternative, wrap each test in a helper method to change the current culture during the execution of the test**.
+**To have a set of always-passing unit tests, use a default culture when parsing numeric strings. Add a default culture to the Parse() and ToString() methods on decimals. As an alternative, wrap each test in a method to change the current culture during its execution**.
 
 ## Failing to parse numeric strings
 
@@ -23,7 +23,7 @@ public void ToCurrency_IntegerAmount_FormatsAmountWithTwoDecimalPlaces()
 }
 ```
 
-And, this was the `ToCurrency()` method.
+And this was the `ToCurrency()` method.
 
 ```csharp
 public static string ToCurrency(this decimal amount)
@@ -32,13 +32,13 @@ public static string ToCurrency(this decimal amount)
 }
 ```
 
-The `ToCurrency()` method didn't specify any culture. It used the user's current culture. And, the tests expected `.` as the separator for decimal places. It wasn't the case for the culture I was using after resintalling my operating system. The separator for my locale was `,`. That's why those tests failed.
+The `ToCurrency()` method didn't specify any culture. Therefore, it used the user's current culture. And, the tests expected `.` as the separator for decimal places. That wasn't the case for the culture I started to use after reinstalling my operating system. It was `,`. That's why those tests failed.
 
 ## Use a default culture when parsing
 
-To make sure my failing tests always passed, no matter the culture being used, I added a default culture when parsing numeric strings.
+To make my failing tests always pass, no matter the culture, I added a default culture when parsing numeric strings.
 
-**Always add a default cutlure when parsing numeric strings.**
+**Always add a default culture when parsing numeric strings.**
 
 For example, you can create `ToCurrency()` and `FromCurrency()` methods like this:
     
@@ -60,11 +60,11 @@ public static class FormattingExtensions
 }
 ```
 
-Notice, I added a second parameter of type `CultureInfo`, which defaults to "en-US".
+Notice that I added a second parameter of type `CultureInfo`, which defaults to "en-US."
 
 ## Alternatively: Use a wrapper in your tests
 
-As an alternative to adding a default culture, I could run each test inside a wrapper method that changes the user culture to the one needed and revert it back when the test finishes.
+As an alternative to adding a default culture, I could run each test inside a wrapper that changes the user culture to the one needed and revert it when the test finishes.
 
 Something like this,
 
@@ -85,7 +85,7 @@ static string RunInCulture(CultureInfo culture, Func<string> action)
 }
 ```
 
-Then, I could refactor the tests to use the `RunInCulture` wrapper method, like this
+Then, I could refactor the tests to use the `RunInCulture` wrapper method, like this,
 
 ```csharp
 private readonly CultureInfo DefaultCulture
@@ -104,7 +104,7 @@ public void ToCurrency_IntegerAmount_FormatsAmountWithTwoDecimalPlaces()
 }
 ```
 
-Voilà! That's what I learned after reinstalling the operating system of my computer and running some unit tests. I learned to always use a default culture on my parsing methods. If you change your computer locale, all your tests continue to pass?
+Voilà! That's what I learned after reinstalling my computer's operating system and running some unit tests. I learned to use a default culture in all of my parsing methods. If you change your computer locale, all your tests continue to pass?
 
 If you're new to unit testing, read [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}), [4 common mistakes when writing unit tests]({% post_url 2021-03-29-UnitTestingCommonMistakes %}) and [4 test naming conventions]({% post_url 2021-04-12-UnitTestNamingConventions %}). For more advanced tips on unit testing, check [How to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %}).
 
