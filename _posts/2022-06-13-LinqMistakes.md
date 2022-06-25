@@ -6,7 +6,7 @@ cover: Cover.png
 cover-alt: "Coffee cup spilled on a book" 
 ---
 
-It's not that complicated to start working with LINQ to replace `for`, `foreach`, and other loops. With [a handful of LINQ methods]({% post_url 2022-05-16-LINQMethodsInPictures %}), we have our backs covered. But, often we make some common mistakes when working with LINQ. Let's learn five common mistakes we make when working with LINQ for the first time and how to fix them.
+It's not that complicated to start working with LINQ to replace `for`, `foreach`, and other loops. With [a handful of LINQ methods]({% post_url 2022-05-16-LINQMethodsInPictures %}), we have our backs covered. But, often, we make some common mistakes when working with LINQ. Let's learn five common mistakes we make when working with LINQ for the first time and how to fix them.
 
 ## Mistake 1: Use Count instead of Any
 
@@ -24,7 +24,7 @@ Instead of,
 movies.Count() > 0
 ```
 
-The `Any` method returns when it finds at least one element. The `Count` method could use the size of the underlying collection. But, it could evaluate the entire LINQ query for other collection types. And, this could be a performance hit for large collections.
+The `Any` method returns when it finds at least one element. The `Count` method could use the size of the underlying collection. But, it could evaluate the entire LINQ query for other collection types. And this could be a performance hit for large collections.
 
 ## Mistake 2: Use Where followed by Any
 
@@ -104,7 +104,7 @@ record Movie(string Name, int ReleaseYear, float Rating);
 
 The `SigleOrDefault` method throws an exception when it finds more than one element matching a condition. But, with multiple matching elements, the `FirstOrDefault` method returns the first of them without signaling any problem.
 
-Let's pick between `FirstOrDefault` and `SingleOrDefault` to show the query intent. Let's prefer `SingleOrDefault` to retrieve a unique matching element from a collection.
+Let's pick between `FirstOrDefault` and `SingleOrDefault` to show the query's intent. Let's prefer `SingleOrDefault` to retrieve a unique matching element from a collection.
 
 ## Mistake 4: Use FirstOrDefault without null checking
 
@@ -141,13 +141,13 @@ Console.ReadKey();
 record Movie(string Name, int ReleaseYear, float Rating);
 ```
 
-Notice we wrote a LINQ query with `FirstOrDefault` looking for the first movie with a rating lower than 2. But, we don't have any movie that matches that condition. The `FirstOrDefault` method returned `null` and we forgot to check if the `worst` variable was different from `null` before using it.
+Notice we wrote a LINQ query with `FirstOrDefault` looking for the first movie with a rating lower than 2. But, we don't have any movie that matches that condition. The `FirstOrDefault` method returned `null`, and we forgot to check if the `worst` variable was different from `null` before using it.
 
-There are other altervatives to get rid of the `NullReferenceException` like [nullable reference types from C# 8.0]({% post_url 2021-09-13-TopNewCSharpFeatures %}), [the DefaultIfEmpty method]({% post_url 2020-11-17-DefaultOrEmpty %}) or .NET6 FirstOrDefault with an default value.
+There are other alternatives to get rid of the `NullReferenceException` like [nullable reference types from C# 8.0]({% post_url 2021-09-13-TopNewCSharpFeatures %}), [the DefaultIfEmpty method]({% post_url 2020-11-17-DefaultOrEmpty %}) or .NET6 FirstOrDefault with an default value.
 
 ## Mistake 5: Expect LINQ queries to be cached
 
-LINQ queries are lazy-evaluated. It means the actual result of a LINQ query is evaluated when we loop through the result, not when we declare the query. And, the query is evaluated every time we loop through it.
+LINQ queries are lazy-evaluated. It means the actual result of a LINQ query is evaluated when we loop through the result, not when we declare the query. And it's evaluated every time we loop through it.
 
 Let's avoid looping through the result of a LINQ query multiple times expecting it to be cached the first time we run it.
 
@@ -194,9 +194,9 @@ record Movie(string Name, int ReleaseYear, float Rating);
 // Doing something else with My Neighbor Totoro
 ```
 
-Notice we wrote a debugging statement inside the `Where` method and we looped through the result twice. The output shows the debugging statements twice. One for every time we looped through the result. There was no caching whatsoever. The LINQ query was evaluated every time.
+Notice we wrote a debugging statement inside the `Where` method, and we looped through the result twice. The output shows the debugging statements twice. One for every time we looped through the result. There was no caching whatsoever. The LINQ query was evaluated every time.
 
-Instead of expecting a LINQ query to be cached, we could use the `ToList` or `ToArray` methods to break the lazy evaluation and force the LINQ query to be evaluated only once.
+Instead of expecting a LINQ query to be cached, we could use the `ToList` or `ToArray` methods to break the lazy evaluation. This way, we force the LINQ query to be evaluated only once.
 
 ```csharp
 var movies = new List<Movie>
@@ -242,7 +242,7 @@ record Movie(string Name, int ReleaseYear, float Rating);
 
 Notice the output only shows the debugging messages once, even though we looped through the collection twice. We forced the query to be evaluated only once with the `ToList` method.
 
-Voilà! Those are the five most common LINQ mistakes. I know they seem silly, but we often overlook them. Especially we often forgot about the lazy evaluation of LINQ queries. If you want to take a deeper look at LINQ and all of its features, check my [Quick Guide to LINQ]({% post_url 2021-01-18-LinqGuide %}), these [five common LINQ methods in Pictures]({% post_url 2022-05-16-LINQMethodsInPictures %}) and [how to use LINQ GroupBy method]({% post_url 2022-05-30-HowToUseLinqGroupBy %}).
+Voilà! Those are the five most common LINQ mistakes. I know they seem silly, but we often overlook them. Especially we often forget about the lazy evaluation of LINQ queries. If you want to take a deeper look at LINQ and all of its features, check my [Quick Guide to LINQ]({% post_url 2021-01-18-LinqGuide %}), these [five common LINQ methods in Pictures]({% post_url 2022-05-16-LINQMethodsInPictures %}) and [how to use LINQ GroupBy method]({% post_url 2022-05-30-HowToUseLinqGroupBy %}).
 
 {%include linq_course.html %}
 
