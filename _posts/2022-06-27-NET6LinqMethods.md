@@ -17,12 +17,8 @@ LINQ isn't a new feature in the C# language. It was released back in C# version 
 For example, let's say we want to watch all movies we have in our catalog. But, we can only watch three films on a single weekend. Let's use the `Chunk` method for that.
 
 ```csharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 // This is a Console app without the Main class declaration
-
+// and with global using statements
 var movies = new List<Movie>
 {
     new Movie("Titanic", 1998, 4.5f),
@@ -164,9 +160,20 @@ Console.WriteLine(favorite.Name);
 
 Notice the second parameter we passed to the `FirstOrDefault` method.
 
-To use these new methods and overloads, install on your machine the latest version of the .NET 6 SDK from the [.NET official page](https://dotnet.microsoft.com/en-us/download) and use as target framework `.net6` in your csproj files.
+To use these new methods and overloads, install on your machine the latest version of the .NET 6 SDK from the [.NET official page](https://dotnet.microsoft.com/en-us/download) and use as target framework `.net6` in your csproj files. For example, this is a sample csproj file for a Console app using `.net6`,
 
-Voilà! These are four new LINQ methods released in the .NET 6 updated. I really like the FirstOrDefault with a safe default. That's one of the [common LINQ mistakes]({% post_url 2022-06-13-LinqMistakes %}), using `XOrDefault` methods without null checking.
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+</Project>
+```
+
+Voilà! These are four new LINQ methods released in the .NET 6 updated. I really like the FirstOrDefault with a safe default. That help us to prevent one of the [common LINQ mistakes]({% post_url 2022-06-13-LinqMistakes %}): using the `XOrDefault` methods without null checking afterwards.
 
 To learn about LINQ and other methods, check my [quick guide to LINQ]({% post_url 2021-01-18-LinqGuide %}), these [five common LINQ methods in Pictures]({% post_url 2022-05-16-LINQMethodsInPictures %}) and [how to use LINQ GroupBy method]({% post_url 2022-05-30-HowToUseLinqGroupBy %}). For more C# content, check [C# Definitive Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %}) for a list of subjects every intermediate C# developer should know.
 

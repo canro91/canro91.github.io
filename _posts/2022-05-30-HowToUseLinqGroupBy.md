@@ -13,12 +13,8 @@ Last time, I showed [five of the most common LINQ methods with pictures]({% post
 Let's continue to work with our catalog of movies and group our movies by rating.
 
 ```csharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 // This is a Console app without the Main class declaration
-
+// and with Global using statements
 var movies = new List<Movie>
 {
     new Movie("Titanic", 1998, 4.5f),
@@ -31,6 +27,7 @@ var movies = new List<Movie>
 
 // Group our catalog of movies based on their rating
 var groupedByRating = movies.GroupBy(movie => movie.Rating);
+//                           ^^^^^^^
 
 foreach (var group in groupedByRating)
 {
@@ -64,7 +61,7 @@ foreach (var group in groupedByRating)
 record Movie(string Name, int ReleaseYear, float Rating);
 ```
 
-Notice, we used two [recent C# features]({% post_url 2021-09-13-TopNewCSharpFeatures %}): the Top-level statements and records from C# 9.0. Now we can write Console applications without the Main declaration. All boilerplate code is gone!
+Notice, we used three [recent C# features]({% post_url 2021-09-13-TopNewCSharpFeatures %}): the Top-level statements, records, and global using statements. Now we can write Console applications without the Main declaration. All boilerplate code is gone!
 
 The `GroupBy` method [receives as a parameter a delegate]({% post_url 2019-03-22-WhatTheFuncAction %}) with the property to use as a key when grouping elements. In our previous example, we used the `Rating` property and wrote `movie => movie.Rating`;
 
@@ -91,12 +88,8 @@ Also, the `GroupBy` method transforms each group or bucket.
 Let's count the movies with the same rating this time.
 
 ```csharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 // This is a Console app without the Main class declaration
-
+// and with Global using statements
 var movies = new List<Movie>
 {
     new Movie("Titanic", 1998, 4.5f),
@@ -109,11 +102,8 @@ var movies = new List<Movie>
 
 // Transform every group into a RatingCount type
 var countByRating = movies.GroupBy(movie => movie.Rating,
-                                    (rating, groupedMovies) => new RatingCount
-                                    {
-                                        Rating = rating,
-                                        Count = groupedMovies.Count()
-                                    });
+//                                  vvvvvvv
+                                    (rating, groupedMovies) => new RatingCount(rating, groupedMovies.Count());
 
 foreach (var group in countByRating)
 {
@@ -129,12 +119,7 @@ foreach (var group in countByRating)
 
 record Movie(string Name, int ReleaseYear, float Rating);
 
-record RatingCount
-{
-    public float Rating { get; set; }
-
-    public int Count { get; set; }
-}
+record RatingCount(float Rating, int Count);
 ```
 
 Notice we passed a second parameter to the `GroupBy` method. The first parameter was still the grouping key. But, the second one was a delegate that received the grouping key and the elements of each group,`Func<TKey, IEnumerable<TSource>, TResult>`. We named the two parameters: `rating` and `groupedMovies`.
@@ -154,12 +139,6 @@ In the two previous examples, we used the `Rating` property as the grouping key.
 Let's group our movies by release year and rating.
 
 ```csharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-// This is a Console app without the Main class declaration
-
 var movies = new List<Movie>
 {
     new Movie("Titanic", 1998, 4.5f),
@@ -176,6 +155,7 @@ var movies = new List<Movie>
 
 // Group by our catalog of moves by release year and rating
 var groupByReleasedYearAndRating = movies.GroupBy(movie => new { movie.ReleaseYear, movie.Rating });
+//                                        ^^^^^^^
 
 foreach (var group in groupByReleasedYearAndRating)
 {
