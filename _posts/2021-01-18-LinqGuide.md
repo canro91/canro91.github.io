@@ -9,15 +9,15 @@ cover-alt: A quick guide to LINQ with examples
 
 Today a friend asked me about LINQ. I guess she was studying for a technical interview. So, dear Alice, this is what LINQ is, and these are the most common LINQ methods with examples. All you need to know in 15 minutes or less.
 
-**Language-Integrated Query (LINQ) is the declarative way of working with collections in C#. LINQ can be used with databases and XML files too. LINQ can be found as an API syntax, using extensions methods on the IEnumerable type, or as language-level query syntax, using a SQL-like syntax.**
+**Language-Integrated Query (LINQ) is the declarative way of working with collections in C#. LINQ works with databases and XML files too. But, LINQ has an API syntax, using extensions methods on the IEnumerable type, and a query syntax, using a SQL-like syntax.**
 
 ## LINQ is declarative
 
-**LINQ is declarative.** It means you write your code stating the results you want instead of doing every step to get those results.
+**LINQ is declarative.** It means we write our code stating the results we want instead of doing every step to get those results.
 
-With LINQ, you write code to _"filter a collection based on a condition"_. Instead of writing code to _"grab an element, check if it satisfies a condition, then move to the next element, check again..."_, etc.
+With LINQ, we write code to _"filter a collection based on a condition."_ Instead of writing code to _"grab an element, check if it satisfies a condition, then move to the next element, check again..."_, etc.
 
-LINQ is a better alternative to query collections using `for`, `foreach`, or any other loop. Because with LINQ, you can write more expressive and compact code.
+LINQ is a better alternative to query collections using `for`, `foreach`, or any other loop. Because with LINQ, we can write more expressive and compact code.
 
 ## Our first example: Movies
 
@@ -98,17 +98,17 @@ Change the example to use your own movies and see which ones are your favorite m
 
 ## Our first LINQ method: Where
 
-LINQ methods are extension methods on the `IEnumerable` type. This type represents objects we can loop through. Like, arrays, lists, dictionaries, among others.
+LINQ methods are extension methods on the `IEnumerable` type. This type represents objects we can loop through. Like, arrays, lists, and dictionaries, among others.
 
-In case you missed it...You can add methods to a type without modifying it with extension methods. They are static methods defined outside the declaration of a type. But, they look like regular methods when you use them.
+In case you missed it...We can add methods to a type without modifying it with extension methods. They are static methods defined outside the declaration of a type. But, they look like regular methods when we use them.
 
-To work with LINQ, you need to be comfortable with delegates and lambda functions. A lambda function is a method with only the parameters and the body. To learn more about delegates and lambda functions, check my post on [the difference between Func and Action]({% post_url 2019-03-22-WhatTheFuncAction %}).
+To work with LINQ, we need to be comfortable with delegates and lambda functions. C# has two built-in delegates: [Func and Action]({% post_url 2019-03-22-WhatTheFuncAction %}). A delegate is a pointer to a method. And a lambda function is a method with only the parameters and the body.
 
 ### How to filter a collection with Where?
 
 Now, to the actual example. To start using LINQ methods, let's add the statement `using System.Linq`.
 
-Next, we want to filter our list of movies to keep only the ones with a rating greater than 4.5. The LINQ method to filter collections is `Where`.
+Next, we want to filter our list of movies to keep only those with a rating greater than 4.5. The LINQ method to filter collections is `Where`.
 
 **The Where method returns a new collection with all the elements that meet a condition.**
 
@@ -161,7 +161,9 @@ More compact, isn't it? Also, we turned the condition inside the `if` statement 
 
 ### Separate methods and lambda functions
 
-**Instead of lambda functions, we can use private methods with LINQ too**. For our example, let's create an `IsFavorite()` method that receives `Movie` as a parameter and returns `bool`. For example,
+**Instead of lambda functions, LINQ works with private methods, too**.
+
+For our previous example, let's create an `IsFavorite()` method that receives `Movie` as a parameter and returns `bool`. For example,
 
 ```csharp
 private bool IsFavorite(Movie movie)
@@ -176,7 +178,7 @@ Then, we can use `IsFavorite` inside the `Where` method to filter our movies. Li
 var favorites = movies.Where(movie => IsFavorite(movie));
 ```
 
-We can simplify things ever further. Since the `IsFavorite` method only has one parameter, we can remove the intermediate variable, like this,
+We can simplify things even further. Since the `IsFavorite` method only has one parameter, we can remove the intermediate variable. Like this,
 
 ```csharp
 var favorites = movies.Where(IsFavorite);
@@ -184,7 +186,7 @@ var favorites = movies.Where(IsFavorite);
 
 ### LINQ and immutability
 
-**LINQ methods don't change the original collection. They return a result without modifying the original collection.**
+**LINQ methods don't change the original collection. They return a result without modifying the original one.**
 
 From our example, when we used the `Where` method, it returned a new collection. It didn't remove any elements from the original `movies` list.
 
@@ -192,9 +194,9 @@ From our example, when we used the `Where` method, it returned a new collection.
 
 So far, we have seen only one LINQ method, `Where`. Let's see other frequently-used methods.
 
-### Select
+### 1. Select
 
-**Select transforms every element of a collection.** It applies a function to every element.
+**Select transforms a collection by applying a mapping function to every element.**
 
 Let's find only the names of our favorite movies.
 
@@ -213,13 +215,13 @@ foreach (var name in favorites)
 // My Neighbor Totoro
 ```
 
-Notice how this time we have nested two LINQ methods. The result from `Where` will be the input of `Select`.
+Notice we wrote two LINQ methods nested. The result from `Where` will be the input of `Select`.
 
 For more readability, we often align the nested LINQ methods vertically by the (`.`) dot.
 
-### Any
+### 2. Any
 
-**The Any method check if a collection is empty. Also, it checks if a collection has at least one element matching a condition.** It returns either `true` or `false`. It doesn't return a new collection.
+**The Any method checks if a collection is empty. Also, it checks if it has at least one element matching a condition. It doesn't return a new collection. It returns either `true` or `false`.**
 
 Let's see if we have watched movies with a low rating.
 
@@ -231,9 +233,9 @@ var hasBadMovies = movies.Any(movie => movie.Rating < 2);
 // false
 ```
 
-### All
+### 3. All
 
-**Unlike Any, All check if every element inside a collection matches a condition**. It also returns either `true` or `false` instead of a new collection.
+**Unlike Any, All check if every element inside a collection matches a condition. It also returns either `true` or `false` instead of a new collection.**
 
 Let's see if we have only watched really-good movies.
 
@@ -242,9 +244,9 @@ var weHaveSeenReallyGoodMovies = movies.All(movie => movie.Rating >= 4.5);
 // false
 ```
 
-### GroupBy
+### 4. GroupBy
 
-**GroupBy groups the elements of a collection based on a key.** It returns a collection of "groups"  or "buckets" organized by a key.
+**GroupBy groups the elements of a collection based on a key. It returns a collection of "groups"  or "buckets" organized by a key.**
 
 Let's group our movies by rating.
 
@@ -283,7 +285,9 @@ Rating: 4
 Platoon
 ```
 
-Also, **GroupBy could transforms each group.** This time, let's count the movies with the same rating.
+Notice we grouped our list of movies by rating. But, [GroupBy could group by more than one property]({% post_url 2022-05-30-HowToUseLinqGroupBy %}) using an object as the grouping key.
+
+Also, **GroupBy could transform each resulting group.** This time, let's count the movies with the same rating.
 
 ```csharp
 var groupedByRating = movies.GroupBy(movie => movie.Rating,
@@ -307,7 +311,7 @@ And this is the output of counting movies by rating.
 4: [1]
 ```
 
-### First and FirstOrDefault
+### 5. First and FirstOrDefault
 
 **First and FirstOrDefault return the first element in a collection.** `First` throws an exception if the collection is empty. Unlike `First`, `FirstOrDefault` returns a default value if the collection is empty.
 
@@ -322,9 +326,11 @@ var oldest = movies.OrderBy(movie => movie.ReleaseYear)
 // Platoon
 ```
 
-This time, we used the `OrderBy` to sort the movies collection by release year. Two examples for the price of one!
+Notice we used the `OrderBy` to sort the movie collection by release year. Two examples for the price of one!
 
 In the same spirit of `First` and `FirstOrDefault`, we have `Last` and `LastOrDefault`. But, they return the last element instead of the first one.
+
+[.NET6 introduced new LINQ methods and oveloads]({% post_url 2022-06-27-NET6LinqMethods %}). `FirstOrDefault` and similar `XOrDefault` methods have a new overload to pass an optional default value.
 
 ## Cheatsheet
 
@@ -354,11 +360,11 @@ There are more LINQ methods than the ones we've seen so far. These are some of t
 | `Min`, `Max` | Find the smallest and largest element of a collection |
 | `ToDictionary` | Convert a collection into a dictionary |
 
-## LINQ Query syntax: A matter of taste
+## LINQ Method syntax vs Query syntax: A matter of taste
 
-Up to this point, we have seen LINQ as extension methods. But, we can find LINQ as language-level query syntax too.
+Up to this point, we have seen LINQ as extension methods. But, LINQ has a language-level query syntax too.
 
-This is the same example to find our favorite movies using language-level query syntax.
+Let's find our favorite movies using language-level query syntax.
 
 ```csharp
 var bestOfAll = from movie in movies
@@ -366,13 +372,13 @@ var bestOfAll = from movie in movies
                 select movie;
 ```
 
-It looks like SQL, isn't it? And, this is the same code using extension methods. We've seen this before.
+It looks like SQL, isn't it? And this is the same code using extension methods. We've seen this before.
 
 ```csharp
 var bestOfAll = movies.Where(movie => movie.Rating > 4.5);
 ```
 
-**Which LINQ syntax should you use? Prefer the syntax used in your current codebase.** If your code uses extensions methods on `IEnumerable`, continue to do that.
+**Which LINQ syntax should you use? Prefer the syntax used in your current codebase.** If your code uses extension methods on `IEnumerable`, continue to do that.
 
 <figure>
 <img src="https://images.unsplash.com/photo-1523207911345-32501502db22?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800" alt="Popcorn" />
@@ -380,9 +386,9 @@ var bestOfAll = movies.Where(movie => movie.Rating > 4.5);
 <figcaption>Speaking of taste. <span>Photo by <a href="https://unsplash.com/@christianw?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Christian Wiediger</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
 </figure>
 
-But, there is one advantage of using query syntax over extension methods. You can create intermediate variables with the `let` keyword.
+But, there is one advantage of using query syntax over extension methods. We can create intermediate variables with the `let` keyword.
 
-### Find largest files on the Desktop folder
+### Find large files on the Desktop folder
 
 Let's find all files inside our Desktop folder larger than 10MB. And, let's use `let` to create a variable.
 
@@ -431,11 +437,21 @@ Now that we know what LINQ is and the most common LINQ methods, let's go through
 
 Always prefer `Any` over `Count` to check if a collection has elements or an element that meets a condition.
 
-Do `movies.Any()` instead of `movies.Count() > 0`.
+Do,
+
+```csharp
+movies.Any()
+```
+
+Instead of,
+
+```csharp
+movies.Count() > 0
+```
 
 ### 2. Write Where followed by Any
 
-You can use a condition with `Any` instead of filtering first with `Where` to later use `Any`.
+Use a condition with `Any` instead of filtering first with `Where` to later use `Any`.
 
 Do,
 
@@ -453,7 +469,7 @@ The same applies to the `Where` method followed by `FirstOrDefault`, `Count`, or
 
 ### 3. Use FirstOrDefault without null checking
 
-Make sure to always check if you have a result when working with `FirstOrDefault`, `LastOrDefault`, and `SingleOrDefault`. If there isn't one, you will get the default value of the collection type.
+Always check the result when working with `FirstOrDefault`, `LastOrDefault`, and `SingleOrDefault`. If there isn't one, they will return the default value of the collection type.
 
 ```csharp
 private static void Main(string[] args)
@@ -480,7 +496,7 @@ private static void Main(string[] args)
 }
 ```
 
-For objects, the default value would be a `null` reference. And you know what happens when you try to access a property or method on a `null` reference?... Yes, It throws `NullReferenceException`.
+For objects, the default value would be a `null` reference. And we know what happens when we try to access a property or method on a `null` reference?... Yes, It throws `NullReferenceException`.
 
 To make sure we always have a non-nullable result when working with `FirstOrDefault`, we can use the [the DefaultIfEmpty method]({% post_url 2020-11-17-DefaultOrEmpty %}). It returns a new collection with a default value if the input collection is empty.
 
@@ -490,10 +506,16 @@ var worst = movies.Where(movie => movie.Rating < 2)
                   .First();
 ```
 
+Also, by mistake, we forget about [the difference between Single and First and LINQ lazy evaluation]({% post_url 2022-06-13-LinqMistakes %}) expecting LINQ queries to be cached.
+
 ## Conclusion
 
-Voilà! That's it, Alice. That's all you need to know to start working with LINQ in your code in 15 minutes or less. There's also this project [MoreLINQ](https://github.com/morelinq/MoreLINQ) with more extension methods, like `CountBy`, `DistinctBy`, `MinBy` and `MaxBy`. With LINQ, you can write more compact and expressive code. The next time you need to write logic using loops, give LINQ a try!
+Voilà! That's it, Alice. That's all you need to know to start working with LINQ in your code in 15 minutes or less. I know! There are lots of methods. But you will get your back covered with [five of the most common LINQ methods]({% post_url 2022-05-16-LINQMethodsInPictures %}).
+
+With LINQ, you can write more compact and expressive code. The next time you need to write logic using loops, give LINQ a try!
 
 Learn how to use LINQ to refactor conditionals on [C# idioms]({% post_url 2019-11-19-TwoCSharpIdioms %}). For more C# content, check [C# Definitively Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %}) for a list of subjects every intermediate C# developer should know. And, my [top 10 or so best C# features]({% post_url 2021-09-13-TopNewCSharpFeatures%}) for other cool C# features.
+
+{%include linq_course.html %}
 
 _Happy LINQ time!_
