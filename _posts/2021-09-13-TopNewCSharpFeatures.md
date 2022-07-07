@@ -492,29 +492,21 @@ if (canBeNullName != null)
 
 ## C# 9.0
 
-These are two features from C# 9.0 I haven't adopted yet, but I found interesting.
-
 ### Records
 
-A record is an immutable reference type with built-in equality methods. When we create a record, the compiler creates a `ToString` method, a value-based equality methods and other methods for us. 
+A record is an immutable reference type with built-in equality methods. When we create a record, the compiler creates `ToString`, `GetHashCode`, value-based equality methods, a copy constructor and a deconstructor.
 
 Records are helpful to replace value-objects in our code.
 
 ```csharp
-public record Movie
-{
-    public string Title { get; }
-    public int ReleaseYear { get; }
-    
-    public Movie(string title, int releaseYear) => (Title, ReleaseYear) = (title, releaseYear);
-}
+public record Movie(string Title, int ReleaseYear);
 ```
 
 ### Top-level statements
 
 All the boilerplate code is now gone from `Main` methods. It gets closer to scripting languages like Python and Ruby.
 
-Before, to write the "Hello, world!" program in C#, we needed to bring namespaces, classes, methods and arrays just to print a message out to the console.
+Before, to write the "Hello, world!" program in C#, we needed to bring namespaces, classes, methods and arrays only to print a message out to the console.
 
 ```csharp
 using System;
@@ -531,12 +523,83 @@ namespace HelloWorld
 }
 ```
 
-After, it boils down to just two lines.
+After, it boils down to only two lines.
 
 ```csharp
 using System;
 
 Console.WriteLine("Hello World!");
+```
+
+## C# 10.0
+
+## File-scoped namespace declaration
+
+With C# 10.0, we can simplify namespace declaration inside our classes.
+
+Before,
+
+```csharp
+namespace Movies
+{
+    public class Movie
+    {
+        // ...
+    }
+}
+```
+
+After, we can reduce the level of indentations by using a semicolon on the namespace declaration,
+
+```csharp
+namespace Movies;
+
+public class Movie
+{
+    // ...
+}
+```
+
+## Global using statements
+
+C# 10.0 reduces the boilerplate from our classes even further by hiding common using declarations.
+
+Before, a "Hello, world" program looked like this,
+
+```csharp
+using System;
+
+namespace HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+    }
+}
+```
+
+Now, with Top-level statements and global using statements, it's a single line of code,
+
+```csharp
+Console.WriteLine("Hello World!");
+```
+
+This is a feature is enabled by default, but we can turn it off in our csproj files. For example, this is the csproj file of a Console app with global using statements and nullable references.
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
 ```
 
 Voilà! These are the C# features I like the most. Which ones didn't you know about? Which ones you use most often? What features would you like to see in future versions?
