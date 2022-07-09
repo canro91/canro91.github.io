@@ -50,7 +50,7 @@ static void PrintMovies(IEnumerable<Movie> movies)
 record Movie(string Name, int ReleaseYear, float Rating);
 ```
 
-Notice, we used two [recent C# features]({% post_url 2021-09-13-TopNewCSharpFeatures %}): the Top-level statements and records from C# 9.0. We don't need all the boilerplate code to write a Console application and simple objects anymore.
+Notice, we used three [recent C# features]({% post_url 2021-09-13-TopNewCSharpFeatures %}): the Top-level statements, records from C# 9.0, and global using statements from C# 10.0. We don't need all the boilerplate code to write a Console application and simple objects anymore.
 
 The Chunk method returns chunks with at most the given size. It returns fewer elements in the last bucket when there aren't enough elements in the source collection.
 
