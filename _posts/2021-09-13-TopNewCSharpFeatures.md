@@ -533,7 +533,7 @@ Console.WriteLine("Hello World!");
 
 ## C# 10.0
 
-## File-scoped namespace declaration
+### File-scoped namespace declaration
 
 With C# 10.0, we can simplify namespace declaration inside our classes.
 
@@ -560,7 +560,7 @@ public class Movie
 }
 ```
 
-## Global using statements
+### Global using statements
 
 C# 10.0 reduces the boilerplate from our classes even further by hiding common using declarations.
 
