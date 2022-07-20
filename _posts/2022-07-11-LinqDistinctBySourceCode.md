@@ -62,6 +62,8 @@ This is the source code for the DistinctBy method. [Source](https://github.com/d
 
 Well, it doesn't look that complicated. Let's go through it.
 
+### 1. Iterating over the input collection
+
 First, `DistinctBy()` starts by checking its parameters and calling `DistinctByIterator()`. This is a common pattern in other LINQ methods. Check parameters in one method and then call a child iterator method to do the actual logic. (See 1. in the image above)
 
 Then, the `DistinctByIterator()` initializes the underling enumerator of the input collection with a `using` declaration. The `IEnumerable` type has a `GetEnumerator()` method. (See 2.)
@@ -71,6 +73,8 @@ The `IEnumerator` type has a `MoveNext()` method to advance the enumerator to th
 If a collection is empty or if the iterator reaches the end of the collection, `MoveNext()` returns `false`. And, when `MoveNext()` returns `true`, `Current` gets updated with the element at that position. [Source](https://docs.microsoft.com/en-us/dotnet/api/system.collections.ienumerator?view=net-6.0)
 
 Then, to start reading the input collection, the iterator is placed at the initial position of the collection calling `MoveNext()`. (See 3.) This first `if` avoids allocating memory by creating a set in the next step if the collection is empty.
+
+### 2. Keeping only unique values
 
 After that, `DistinctByIterator()` creates a set with a default capacity and an optional comparer. This set keeps track of the unique keys already found. (See 4.)
 
