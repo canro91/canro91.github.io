@@ -107,7 +107,7 @@ public class ParseFromLineNumberWithRegex : IParse
 
 ### Transformations
 
-But what about the text spawning many pages? I came up with **transformations**. They flatten all lines spawning many pages into a single stream of lines.
+But what about the text spawning many pages? I came up with **transformations**. Well, I almost named them transformers, but I didn't want them to be confused with alien giant robots from the movies... Transformations flatten all lines spawning many pages into a single stream of lines.
 
 In the invoice example, imagine it has a table with all purchased items spawning into two or more pages. The items table starts with a header and ends with a subtotal. You can use again some skippers to extract these items. And then, apply the same set of parsers in every line to find the item name, quantity, and price.
 
