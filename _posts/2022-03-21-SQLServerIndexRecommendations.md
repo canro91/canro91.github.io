@@ -12,9 +12,9 @@ I guess you have seen SQL Server index recommendations on actual execution plans
 
 ## What's a nonclustered index anyways?
 
-If you're wondering... **An nonclustered index is a redundant, sorted, and smaller copy of one table to make queries go faster.**
+If you're wondering... **A nonclustered index is a redundant, sorted, and smaller copy of one table to make queries go faster.**
 
-Imagine you want to find a particular book in a library. Would you go shelve by shelve, book by book until you find it? Or would you use the library catalog to go directly to the one you want? Well, these days, I guess libraries have software for that. But that's the same idea. That library catalog or reference software works as an index.
+Imagine you want to find a particular book in a library. Would you go shelve by shelve, book by book until you find it? Or would you use the library catalog to go directly to the one you want? Well, these days, I guess libraries have software for that. But that's the same idea. That library catalog or reference software works like an index.
 
 After that aside...
 
@@ -147,7 +147,7 @@ Let's check the recommended index on the execution plan.
 
 The recommended index contains the `Location` column first, then the `Reputation` column. But, in the query, the filter on `Reputation` was first. What happened here?
 
-SQL Server builds recommended indexes on equality comparisons followed by inequality comparisons. That's why an apparent mismatch in the order of keys on the index and filters on the query.
+**SQL Server builds recommended indexes on equality comparisons followed by inequality comparisons.** That's why an apparent mismatch in the order of keys on the index and filters on the query.
 
 ## Don't blindly create recommended indexes
 
@@ -165,6 +165,6 @@ Voilà! These are some of the things I learned about SQL Server index recommenda
 
 Next time you see index recommendations on your execution plans, check if you already have a similar index and modify it. If you don't, please remember to at least change its name. And not to include all the columns of your table.
 
-I learned these things following Brent Ozar's [Master Index Tuning](https://training.brentozar.com/p/mastering-index-tuning) class. Great class!
+I learned these things following [Brent Ozar's Master Index Tuning]({% post_url 2022-05-02-BrentOzarMasteringCoursesReview %}) class. Great class!
 
 For more content on SQL Server, check [how to do case sensitive searches]({% post_url 2022-02-21-CaseSensitiveSearchSQLServer %}), [how to optimize GROUP BY queries]({% post_url 2022-03-07-OptimizeGroupBySQLServer %}) and [what implicit conversions are]({% post_url 2022-02-07-WhatAreImplicitConversions %}).

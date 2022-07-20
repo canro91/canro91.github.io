@@ -89,7 +89,7 @@ Now, imagine if that store procedure runs not only 5 times, but multiple times p
 
 Voilà! That's how we can improve queries with GROUP BY. Remember, group and sort inside CTE's to take advantage of existing indexes and avoid expensive sorting operations. Use this technique with OFFSET/FETCH, SUM, AVG, and other group functions.
 
-I learned this technique following Brent Ozar's [Mastering Query Tuning](https://training.brentozar.com/p/mastering-query-tuning) class.
+I learned this technique following [Brent Ozar's Mastering Query Tuning]({% post_url 2022-05-02-BrentOzarMasteringCoursesReview %}) class.
 
 For more SQL Server content, check [don't write functions around columns in WHERE]({% post_url 2022-01-24-DontPutFunctionsInYourWheres %}), [what are implicit conversions?]({% post_url 2022-02-07-WhatAreImplicitConversions %}), and [How to do a case-sensitive search in SQL Server]({% post_url 2022-02-21-CaseSensitiveSearchSQLServer %}).
 

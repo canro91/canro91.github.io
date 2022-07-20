@@ -45,7 +45,7 @@ SELECT * FROM dbo.Users
    AND CreationDate < DATEADD(day, 1, CAST(GETDATE() AS DATE));
 ```
 
-Voilà! That's how to compare dates on the WHERE clauses. Don't use `DATEDIFF()` or `CAST()` on both sides of the comparison.
+Voilà! That's how to compare dates on the WHERE clauses. Don't use `DATEDIFF()` or `CAST()` on both sides of the comparison. In general, [don't put functions around columns]({% post_url 2022-01-24-DontPutFunctionsInYourWheres %}) in the WHERE clause.
 
 For more content about SQL Server, check the [difference between EXISTS SELECT 1 and EXISTS SELECT *]({% post_url 2020-10-08-ExistsSelectSQLServer %}) and [how LIKE handle NULL values]({% post_url 2020-10-20-LikeWithNullSQLServer %}).
 
