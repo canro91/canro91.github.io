@@ -49,8 +49,8 @@ We're using arrows to display our LINQ queries. But, the output of a LINQ query 
 Let's find only the names of our favorite movies.
 
 ```csharp
-var favorites = movies.Where(movie => movie.Rating >= 4.5)
-                      .Select(movie => movie.Name);
+var namesOfFavorites = movies.Where(movie => movie.Rating >= 4.5)
+                             .Select(movie => movie.Name);
 ```
 
 This query would be,
@@ -85,10 +85,10 @@ Let's count the films with the same rating.
 
 ```csharp
 var groupedByRating = movies.GroupBy(movie => movie.Rating,
-                                    (rating, movies) => new
+                                    (rating, moviesWithSameRating) => new
                                     {
                                         Rating = rating,
-                                        Count = movies.Count()
+                                        Count = moviesWithSameRating.Count()
                                     });
 ```
 

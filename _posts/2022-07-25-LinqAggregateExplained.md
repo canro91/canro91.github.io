@@ -27,7 +27,7 @@ var movies = new List<Movie>
     new Movie("My Neighbor Totoro", 1988, 5)
 };
 
-var maxRating = movies.Aggregate(0f, (acc, movie) => GreaterBetween(acc, movie.Rating));
+var maxRating = movies.Aggregate(0f, (maxSoFar, movie) => MaxBetween(maxSoFar, movie.Rating));
 //                     ^^^^^^^^^
 Console.WriteLine($"Maximum rating on our catalog: {maxRating}");
 
@@ -42,32 +42,32 @@ Console.WriteLine($"Maximum rating on our catalog: {maxRating}");
 
 Console.ReadKey();
 
-float GreaterBetween(float accumulator, float rating)
+float MaxBetween(float maxSoFar, float rating)
 {
-    Console.WriteLine($"Comparing {accumulator} and {rating}");
-    return rating > accumulator ? rating : accumulator;
+    Console.WriteLine($"Comparing {maxSoFar} and {rating}");
+    return rating > maxSoFar ? rating : maxSoFar;
 }
 
 record Movie(string Name, int ReleaseYear, float Rating);
 ```
 
-Notice we used `Aggregate()` with two parameters: `0f` as the seed and the delegate `(acc, movie) => MaxBetween(acc, movie.Rating)` as the aggregating function. For `MaxBetween()`, `acc` is the accumulated value from previous iterations, and `movie` is the current movie while `Aggregate` iterates over our list. The `MaxBetween` method returns the maximum between two numbers.
+Notice we used `Aggregate()` with two parameters: `0f` as the seed and the delegate `(maxSoFar, movie) => MaxBetween(maxSoFar, movie.Rating)` as the aggregating function. `maxSoFar` is the accumulated value from previous iterations, and `movie` is the current movie while `Aggregate` iterates over our list. The `MaxBetween()` method returns the maximum between two numbers.
 
-Notice the order of the debugging messages we printed every time we compare two ratings in the `GreaterBetween` method.
+Notice the order of the debugging messages we printed every time we compare two ratings in the `MaxBetween()` method.
 
-On the first iteration, the `Aggregate` method executes the `MaxBetween` aggregating function using the seed (`0f`) and the first element ("Titanic" with 4.5) as parameters.
+On the first iteration, the `Aggregate()` method executes the `MaxBetween()` aggregating function using the seed (`0f`) and the first element ("Titanic" with 4.5) as parameters.
 
 {% include image.html name="Iteration1.png" caption="Aggregate first iteration" alt="Aggregate first iteration on a list of movies" %}
 
-Next, it calls `MaxBetween` with the previous result (4.5) as an accumulator and the next element of the collection ("The Fifth Element" with 4.6f). 
+Next, it calls `MaxBetween()` with the previous result (4.5) as the `maxSoFar` and the next element of the collection ("The Fifth Element" with 4.6f).
 
 {% include image.html name="Iteration2.png" caption="Aggregate second iteration" alt="Aggregate second iteration on a list of movies" %}
 
-In the last iteration, the `Aggregate` method finds the maximum between all previous iterations and the last element ("My Neighbor Totoro" with 5). And it returns the last value of the accumulator as a result.
+In the last iteration, `Aggregate()` finds the `maxSoFar` from all previous iterations and the last element ("My Neighbor Totoro" with 5). And it returns the last value of `maxSoFar` as a result.
 
 {% include image.html name="LastIteration.png" caption="Aggregate last iteration" alt="Aggregate last iteration on a list of movies" %}
 
-In our example, we used `Aggregate` with a seed. But, `Aggregate` has an overload without it, then it uses the first element of the collection as the seed. Also, `Aggregate` has another parameter to transform the result before returning it.
+In our example, we used `Aggregate()` with a seed. But, `Aggregate()` has an overload without it, then it uses the first element of the collection as the seed. Also, `Aggregate()` has another parameter to transform the result before returning it.
 
 Voilà! That's how the `Aggregate` method works. Remember, it returns an aggregated value from a collection instead of another collection. This is one of those methods we don't use often. I've used it only a couple of times. One of them was in my parsing library, [Parsinator]({% post_url 2019-03-08-ATaleOfAPdfParser %}), to apply a list of modification functions on the same input object [here](https://github.com/canro91/Parsinator/blob/master/Parsinator/Extensions/ISkipExtensions.cs#L8).
 
