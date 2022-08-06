@@ -38,6 +38,7 @@ namespace LowerCaseDictionaryKeys
                         // This is what I mean
                          options.SerializerSettings.ContractResolver
                             = new CamelCasePropertyNamesContractResolver();
+                            //    ^^^^^                            
                     });
         }
 
@@ -99,6 +100,7 @@ services.AddControllers()
                     {
                         // Do not change dictionary keys casing
                         ProcessDictionaryKeys = false
+                        // ^^^^^
                     }
               };
         });
@@ -121,6 +123,7 @@ services.AddControllers()
         .AddJsonOptions(options =>
         {
             options.JsonSerializerOptions.DictionaryKeyPolicy = JsonNamingPolicy.CamelCase;
+            //                            ^^^^^
         });
 ```
 
@@ -142,6 +145,7 @@ public class MyViewModel
     public MyViewModel()
     {
         Dict = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        //                                    ^^^^^
     }
 
     public Dictionary<string, string> Dict { get; set; }
