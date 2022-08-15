@@ -32,7 +32,7 @@ Before indexing and searching anything, first, we need to create a Distributed L
 
 Let's select "Distributed Lucene" in the Store Type and give it a name. Then, let's add our own machine and a second node. For write operations, we need at least two nodes. We can stick to the defaults for the other options.
 
-By default, NCache stores Lucene indexes in `C:\ProgramData\ncache\lucene-index`.
+By default, in Windows machines, NCache stores Lucene indexes in `C:\ProgramData\ncache\lucene-index`.
 
 {% include image.html name="1-StoreType.png" alt="NCache Store Type as Distributed Lucene" caption="NCache Store Type as Distributed Lucene" %}
 
@@ -120,10 +120,12 @@ public class SearchService
         {
             var doc = movie.MapToLuceneDocument();
             writer.AddDocument(doc);
+            //     ^^^^^^^^^^^
             // 3. Adding a document
         }
 
         writer.Commit();
+        //     ^^^^^^
         // 4. Writing documents
     }
 }
@@ -200,6 +202,7 @@ public class SearchService
         // 2. Parsing a Lucene query 
 
         var documents = searcher.Search(query, 10);
+        //              ^^^^^^^^
         // 3. Searching documents
 
         var result = new List<MovieResponse>();
@@ -207,6 +210,7 @@ public class SearchService
         {
             var document = searcher.Doc(documents.ScoreDocs[i].Doc);
             result.Add(document.MapToMovieResponse());
+            //     ^^^
             // 4. Populating a result object
         }
 
@@ -232,7 +236,7 @@ For example, let's find all movies whose director's name contains "ca", with the
 
 {% include image.html name="2-DirectorsWithca.png" alt="Movies with director name contains 'ca'" caption="Movies with director name contains 'ca'" %}
 
-Of course, there are more keywords in [Lucene Query Syntaxt](https://www.lucenetutorial.com/lucene-query-syntax.html).
+Of course, there are more keywords in [Lucene Query Syntaxt](https://www.lucenetutorial.com/lucene-query-syntax.html) than the ones we used here.
 
 Voilà! That's how to use Distributed Lucene with NCache. If we already have an implementation with Lucene.NET, we would need few code changes to migrate it to Lucene with NCache. Also, notice that [NCache doesn't implement all Lucene methods](https://www.alachisoft.com/resources/docs/ncache/prog-guide/lucene-ncache.html#not-supported-lucene-api).
 

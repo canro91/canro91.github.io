@@ -64,7 +64,7 @@ Now, we're ready to start using our NCache server from a .NET app. In Visual Stu
 
 ### Connecting to an NCache cache
 
-Before connecting to our NCache server, we need to first install the client NuGet package: `Alachisoft.NCache.SDK`. Let's use the latest version: `5.2.1`.
+Before connecting to our NCache server, we need to first install the client NuGet package: `Alachisoft.NCache.SDK`. Let's use the version: `5.2.1`.
 
 To start a connection, we need the `GetCache()` method with a cache name. For our sample app, let's use the default cache: `demoCache`.
 
@@ -391,35 +391,34 @@ Back in the `SettingsService`, we can use the `IDistributedCache` interface inje
 using DistributedCacheWithNCache.Responses;
 using Microsoft.Extensions.Caching.Distributed;
 
-namespace DistributedCacheWithNCache.Services
+namespace DistributedCacheWithNCache.Services;
+
+public class SettingsService
 {
-    public class SettingsService
+    private readonly IDistributedCache _cache;
+
+    public SettingsService(IDistributedCache cache)
     {
-        private readonly IDistributedCache _cache;
+        _cache = cache;
+    }
 
-        public SettingsService(IDistributedCache cache)
+    public async Task<SettingsResponse> GetAsync(int propertyId)
+    {
+        var key = $"{nameof(propertyId)}:{propertyId}";
+        // Here we wrap the GetSettingsAsync method around the cache logic
+        return await _cache.GetOrSetValueAsync(key, async () => await GetSettingsAsync(propertyId));
+    }
+
+    private static async Task<SettingsResponse> GetSettingsAsync(int propertyId)
+    {
+        // Beep, boop...Aligning satellites...
+        await Task.Delay(3 * 1000);
+
+        return new SettingsResponse
         {
-            _cache = cache;
-        }
-
-        public async Task<SettingsResponse> GetAsync(int propertyId)
-        {
-            var key = $"{nameof(propertyId)}:{propertyId}";
-            // Here we wrap the GetSettingsAsync method around the cache logic
-            return await _cache.GetOrSetValueAsync(key, async () => await GetSettingsAsync(propertyId));
-        }
-
-        private static async Task<SettingsResponse> GetSettingsAsync(int propertyId)
-        {
-            // Beep, boop...Aligning satellites...
-            await Task.Delay(3 * 1000);
-
-            return new SettingsResponse
-            {
-                PropertyId = propertyId,
-                Value = "Anything"
-            };
-        }
+            PropertyId = propertyId,
+            Value = "Anything"
+        };
     }
 }
 ```
@@ -442,7 +441,7 @@ To follow along with the code we wrote in this post, check my [Ncache Demo](http
 
 [![canro91/NCacheDemo - GitHub](https://gh-card.dev/repos/canro91/NCacheDemo.svg)](https://github.com/canro91/NCacheDemo)
 
-To read more content, check my [Unit Testing 101]({% post_url 2021-08-30-UnitTesting %}) series to learn from how to write your first unit tests to mocks.
+To read more content, check my [Unit Testing 101]({% post_url 2021-08-30-UnitTesting %}) series to learn from how to write your first unit tests to mocks. Also, check [how to implement full-text searching with Lucene and NCache]({% post_url 2022-08-08-FullTextSearchWithNCache %})
 
 _I wrote this post in collaboration with [Alachisoft](https://www.alachisoft.com/), NCache creators._
 
