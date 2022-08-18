@@ -56,7 +56,7 @@ The Chunk method returns chunks with at most the given size. It returns fewer el
 
 ## 2. DistinctBy
 
-**Unlike Distinct, DistinctBy receives a delegate to select the property to use as the comparison key and return the objects containing the distinct values, not only the distinct values themselves.**
+**Unlike Distinct, DistinctBy receives a delegate to select the property to use as the comparison key and returns the objects containing the distinct values, not only the distinct values themselves.**
 
 Let's find the movies containing unique ratings, not just the ratings.
 
@@ -111,6 +111,28 @@ PrintMovies(rangeOfMovies);
 ```
 
 Notice `Take(^5..3)` selects elements starting from the fifth position from the end (`^5`) up to the third position from the start (`3`). We didn't need to use the `Skip` method for that.
+
+Now that we have Take with Ranges is easier to find the last "n" elements of a collection. We would need `Take(^n...)`. For example, let's find the last three movies on our catalog.
+
+```csharp
+var movies = new List<Movie>
+{
+    new Movie("Titanic", 1998, 4.5f),
+    new Movie("The Fifth Element", 1997, 4.6f),
+    new Movie("Terminator 2", 1991, 4.7f),
+    new Movie("Avatar", 2009, 5),
+    new Movie("Platoon", 1986, 4),
+    new Movie("My Neighbor Totoro", 1988, 5)
+};
+
+var lastThreeMovies = movies.Take(^3..);
+PrintMovies(lastThreeMovies);
+
+// Output
+// Avatar,Platoon,My Neighbor Totoro
+```
+
+Notice `Take()` did all the trick. Before this .NET update, we had to use `Skip(movies.Count - 3).Take(3)`. More compact.
 
 ## 4. XOrDefault methods with an optional default value
 
