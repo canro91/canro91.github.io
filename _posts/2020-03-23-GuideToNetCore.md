@@ -70,13 +70,13 @@ Now, a csproj file looks like this:
 </Project>
 ```
 
-NuGet packages are referenced under `ItemGroup` in a `PackageReference` node. There you are [Newtonsoft.Json](https://www.newtonsoft.com/json)! _Goodbye, `packages.config`!_
+NuGet packages are referenced under `ItemGroup` in a `PackageReference` node. There you are [Newtonsoft.Json](https://www.newtonsoft.com/json)! Goodbye, `packages.config` file!
 
-## Wait! What happened to the csproj file?
+## Wait! What happened to csproj files?
 
-Csproj files have been simplified. Before a csproj file listed every single file in the project. All your files with `.cs` extension were in it. Now, every `.cs` file within the folder structure of the project is part of it. 
+Csproj files have been simplified too. Before a csproj file listed every single file in the project. All your files with `.cs` extension were in it. Now, every `.cs` file within the folder structure of the project is part of it. 
 
-Before, things started to get complicated as time went by and the number of files increased. Sometimes, merge conflicts were a nightmare. There were files under version control not included in the csproj file. Were they meant to be excluded because they didn't apply anymore? Or somebody tried to solve a merge conflict and forgot to include them? _This problem is no more!_
+Before, things started to get complicated as time went by and the number of files increased. Sometimes, merge conflicts were a nightmare. There were files under version control not included in the csproj file. Were they meant to be excluded because they didn't apply anymore? Or somebody tried to solve a merge conflict and forgot to include them? This problem is no more!
 
 ## Where is the Web.config file?
 
@@ -120,7 +120,7 @@ There's even support for sensitive settings that you don't want to version contr
 
 <div class="message">To learn more about configuration in ASP.NET Core, check <a href="/2020/08/21/HowToConfigureValues/">How to read configuration values in ASP.NET Core</a>.</div>
 
-## Where is the Global.asax?
+## Where is the Global.asax file?
 
 Yet another missing file: [`Global.asax`](https://stackoverflow.com/questions/2340572/what-is-the-purpose-of-global-asax-in-asp-net). You used it to perform actions on application or session events. For example, when application started or ended. It was the place to do one-time setups, register filters or define routes.
 
@@ -146,7 +146,11 @@ public class Startup
 }
 ```
 
-It has [two methods](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/startup?view=aspnetcore-3.1#the-startup-class): `ConfigureServices` and `Configure`. The `Configure` method replaces the `Global.asax` file. It creates the app's request processing pipeline. This is the place to register a filter or a default route for your controllers. And the `ConfigureServices` is to configure the services to be injected into the dependency container..._Wait, what?_
+It has [two methods](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/startup?view=aspnetcore-3.1#the-startup-class): `ConfigureServices` and `Configure`.
+
+The `Configure()` method replaces the `Global.asax` file. It creates the app's request processing pipeline. This is the place to register a filter or a default route for your controllers.
+
+And the `ConfigureServices()` is to configure the services to be injected into the dependency container...Wait, what?
 
 ## A brand new dependency container
 
@@ -161,6 +165,8 @@ More specifically, a transient service is created every time a new instance is r
 To register your services, you have to do it inside of the `ConfigureServices` method of the `Startup` class. Also, you bind your classes to a section or subsection of the config file here.
 
 ```csharp
+// In the Startup.cs file
+
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddTransient<IMyService, MyService>();
