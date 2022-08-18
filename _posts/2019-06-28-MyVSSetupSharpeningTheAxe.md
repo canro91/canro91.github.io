@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Visual Studio 2019 setup for C# (theme, settings, extensions)
+title: "Visual Studio 2019/2022 setup for C# (theme, settings, extensions)"
 description: Visual Studio 2019 is out. These are my settings, layout and extensions
 tags: productivity visualstudio
 ---
@@ -11,7 +11,7 @@ My Visual Studio setup is heavily inspired by [De-Cruft Visual Studio](https://j
 
 These are the theme, settings and extensions I use to be more productive with Visual Studio.
 
-## Theme and Layout
+## 1. Theme and Layout
 
 * Color theme: Dark
 * Text Editor theme: [Solarized Dark](https://ethanschoonover.com/solarized/)
@@ -33,7 +33,7 @@ These are the theme, settings and extensions I use to be more productive with Vi
 
 {% include image.html name="VSSetup.PNG" caption="My Visual Studio opened with a sample Console project" alt="My Visual Studio 2019 setup" width="500px" %}
 
-## Settings
+## 2. Settings
 
 To change your Visual Studio settings, go to "Tools" menu and then to "Options".
 
@@ -65,7 +65,7 @@ Speaking of extensions, after installing "VSVim" extension, use **Handle all wit
 
 For shortcuts, add `Ctrl+Shift+w` to easily close all documents from the keyboard.
 
-## Extensions
+## 3. Extensions
 
 * [VSVim](https://github.com/jaredpar/VsVim) It enables Vim keybindings in the text editor
 * [Productivity Power Tools](https://marketplace.visualstudio.com/items?itemName=VisualStudioPlatformTeam.ProductivityPowerPack2017)
@@ -87,7 +87,7 @@ For shortcuts, add `Ctrl+Shift+w` to easily close all documents from the keyboar
 * [Line Endings Unifier](https://marketplace.visualstudio.com/items?itemName=JakubBielawa.LineEndingsUnifier) Yes, it unifies the line endings of your files. You can choose the line ending you want to use in your files. Depending on the number of files in your solution, it could take a couple of seconds. But it does its job!
 * [Moq.Autocomplete](https://github.com/Litee/moq.autocomplete) If you use [Moq to create fakes]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}), this extension is for you. Inside the `Setup()` methods, it autocompletes the parameter list of the faked method using `It.IsAny<T>()` for each parameter. A time saver! I use this extension along with these [snippets for Moq]({% post_url 2021-02-22-VisualStudioMoqSnippets %}).
 
-## Presentation mode
+## 4. Presentation mode
 
 Fire a new instance from Visual Studio Developers Tools command prompt, using
 
