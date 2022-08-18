@@ -22,7 +22,7 @@ In electronic invoicing, I updated a platform to comply with the latest regulati
 
 ## Fun facts
 
-I’m a cat owner, [vim user]({% post_url 2020-09-14-LearnVimForFunAndProfit %}), [plain-text lover]({% post_url 2020-08-29-HowITakeNotes %}), and [Zettelkasten practitioner]({% post_url 2020-11-18-HowToTakeSmartNotes %}).
+I’m a ~~cat owner,~~ [vim user]({% post_url 2020-09-14-LearnVimForFunAndProfit %}), [plain-text lover]({% post_url 2020-08-29-HowITakeNotes %}), and [Zettelkasten practitioner]({% post_url 2020-11-18-HowToTakeSmartNotes %}).
 
 In my free time, I like to read books _(on paper)_ and learn _(foreign)_ languages. Currenlty, I'm learning Brazilian Portuguese. _(Oi, gente!)_
 
