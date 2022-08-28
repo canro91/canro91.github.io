@@ -63,7 +63,11 @@ To find the movies we both have seen (the intersection between our two catalogs)
 
 If we pay close attention, we both have watched "Terminator 2," but we gave it different ratings. Since we're using [records from C# 9.0]({% post_url 2021-09-13-TopNewCSharpFeatures %}), records have member-wise comparison. Therefore, our two "Terminator 2" instances aren't exactly the same, even though they have the same name. That's why `Intersect()` doesn't return it.
 
-To find the common movies using only the movie name, we can pass a custom comparer to `Intersect()`, override the default `Equals` and `GetHashCode` methods of the `Movie` record or use the new `IntersectBy()` method [introduced in .NET6]({% post_url 2022-06-27-NET6LinqMethods %}).
+To find the common movies using only the movie name, we can try any of these alternatives:
+
+* pass a custom comparer to `Intersect()`,
+* override the default `Equals` and `GetHashCode` methods of the `Movie` record, or,
+* use the new `IntersectBy()` method [introduced in .NET6]({% post_url 2022-06-27-NET6LinqMethods %}).
 
 Let's use the `IntersectBy()` method. Like this,
 
@@ -105,13 +109,13 @@ var mine = new List<Movie>
     //        ^^^^^^^^^^^^^^
     new Movie("Titanic", 1998, 4.5f),
     new Movie("The Fifth Element", 1997, 4.6f),
-    new Movie("My Neighbor Totoro", 1988, 5)
+    new Movie("My Neighbor Totoro", 1988, 5f)
     //        ^^^^^^^^^^^^^^^^^^^^
 };
 
 var yours = new List<Movie>
 {
-    new Movie("My Neighbor Totoro", 1988, 5),
+    new Movie("My Neighbor Totoro", 1988, 5f),
     //        ^^^^^^^^^^^^^^^^^^^^
     new Movie("Pulp Fiction", 1994, 4.3f),
     new Movie("Forrest Gump", 1994, 4.3f),
@@ -157,12 +161,12 @@ var mine = new List<Movie>
     //         ^^^^^^^
     new Movie("The Fifth Element", 1997, 4.6f),
     //         ^^^^^^^^^^^^^^^^^
-    new Movie("My Neighbor Totoro", 1988, 5)
+    new Movie("My Neighbor Totoro", 1988, 5f)
 };
 
 var yours = new List<Movie>
 {
-    new Movie("My Neighbor Totoro", 1988, 5),
+    new Movie("My Neighbor Totoro", 1988, 5f),
     new Movie("Pulp Fiction", 1994, 4.3f),
     new Movie("Forrest Gump", 1994, 4.3f),
     new Movie("Terminator 2", 1991, 5f)

@@ -6,7 +6,7 @@ cover: Cover.png
 cover-alt: "Pile of stones" 
 ---
 
-This is not one of the most used LINQ methods. We won't use it every day. But, it's handy for some scenarios. Let's learn how to use the `Aggregate` method.
+This is not [one of the most used LINQ methods]({% post_url 2022-05-16-LINQMethodsInPictures %}). We won't use it every day. But, it's handy for some scenarios. Let's learn how to use the `Aggregate` method.
 
 **The Aggregate method applies a function on a collection carrying the result to the next element. It "aggregates" the result of a function over a collection.**
 

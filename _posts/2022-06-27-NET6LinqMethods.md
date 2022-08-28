@@ -78,7 +78,7 @@ PrintMovies(distinctRatings);
 // Titanic,The Fifth Element,Terminator 2,Avatar,Platoon
 ```
 
-Also, there are similar alternatives to existing methods such as MinBy, MaxBy, ExceptBy, IntersectBy, and UnionBy. They work with a delegate to select a property to use as the comparison key and return the "containing" objects, not only the result.
+Also, there are similar alternatives to existing methods such as MinBy, MaxBy, [ExceptBy, IntersectBy, and UnionBy]({% post_url 2022-08-22-IntersectUnionAndExcept %}). They work with a delegate to select a property to use as the comparison key and return the "containing" objects, not only the result.
 
 <figure>
 <img src="https://images.unsplash.com/photo-1526007413281-c202e21eedf3?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0MDc5ODA3MQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="Vintage movie camera" />
