@@ -66,7 +66,7 @@ Let's see the two issues to avoid to write good unit tests.
 
 ## 1. Reduce the noise
 
-Our sample test only cares about one object: `IOptions<EmailConfiguration>`. All other objects are noise for our test. They don't have anything to do with the scenario under test.
+Our sample test only cares about one object: `IOptions<EmailConfiguration>`. All other objects are noise for our test. They don't have anything to do with the scenario under test. We have to use them to make our test compile.
 
 **Use builder methods to reduce complex setup scenarios.**
 
@@ -90,6 +90,7 @@ public void AccountController_SenderEmailIsNull_ThrowsException()
     // Notice how we reduced the noise with a builder
     Assert.ThrowsException<ArgumentNullException>(() =>
         MakeAccountController(emailConfig.Object));
+        // ^^^^^
     
     // We don't need a return statement here
 }
@@ -115,7 +116,7 @@ private AccountController MakeAccountController(IOptions<EmailConfiguration> ema
 }
 ```
 
-Also, since our test doesn't have any asynchronous code, we could remove the `return` statement and turn our test into a `void` method.
+Also, since our test doesn't have any asynchronous code, we could declare our test as a `void` method and remove the `return` statement. That looked weird in a unit test, in the first place.
 
 With this refactor, our test started to look simpler and easier to read. Now, it's clear this test only cares about the `EmailConfiguration` class.
 
@@ -139,6 +140,7 @@ public void AccountController_SenderEmailIsNull_ThrowsException()
         {
             // The test value is obvious now
             SenderEmail = null,
+            //            ^^^^^
             ReplyToEmail = "email@email.com",
             SupportEmail = "email@email.com"
         });
@@ -163,6 +165,7 @@ Let's use the `Option.Create()` method instead.
 public void AccountController_SenderEmailIsNull_ThrowsException()
 {
     var emailConfig = Options.Create(new EmailConfiguration
+    //                ^^^^^
     {
         SenderEmail = null,
         ReplyToEmail = "email@email.com",

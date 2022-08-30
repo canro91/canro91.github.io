@@ -106,6 +106,6 @@ public void ToCurrency_IntegerAmount_FormatsAmountWithTwoDecimalPlaces()
 
 Voilà! That's what I learned after reinstalling my computer's operating system and running some unit tests. I learned to use a default culture in all of my parsing methods. If you change your computer locale, all your tests continue to pass?
 
-If you're new to unit testing, read [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}), [4 common mistakes when writing unit tests]({% post_url 2021-03-29-UnitTestingCommonMistakes %}) and [4 test naming conventions]({% post_url 2021-04-12-UnitTestNamingConventions %}). For more advanced tips on unit testing, check [How to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %}).
+If you're new to unit testing, read [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}), [4 common mistakes when writing unit tests]({% post_url 2021-03-29-UnitTestingCommonMistakes %}) and [4 test naming conventions]({% post_url 2021-04-12-UnitTestNamingConventions %}). Don't miss the rest of my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}) where I also cover mocking, assertions, and best practices.
 
 _All tests turned green!_

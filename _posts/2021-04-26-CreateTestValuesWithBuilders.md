@@ -8,11 +8,11 @@ cover-alt: How to create test values with the Builder pattern
 
 Last time, we learned [how to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %}) by reducing noise inside our tests. We used a factory method to simplify complex setup scenarios in our tests. Let's use the Builder pattern to create test data for our unit tests.
 
-**With the Builder pattern, an object creates another object. A builder has methods to change some properties of an object and a method to return an object ready to use. The Builder pattern is useful to create input data inside unit tests**.
+**With the Builder pattern, an object creates another object. A builder has methods to change the state of an object and a Build() method to return that object ready to use. The Builder pattern is used to create input data inside unit tests**.
 
 ## Tests without Builders
 
-To see the Builder pattern in action, let's validate credit cards. We will use the [FluentValidation](https://fluentvalidation.net/) library to create a validator class. We want to check if a credit card is expired or not. We can write these tests.
+To see the Builder pattern in action, let's validate credit cards. We will use the [FluentValidation library](https://fluentvalidation.net/) to create a validator class. We want to check if a credit card is expired or not. We can write these tests.
 
 ```csharp
 using FluentValidation.TestHelper;
@@ -61,7 +61,7 @@ namespace UsingBuilders
 }
 ```
 
-In these tests, we used the `TestValidate()` and `ShouldHaveAnyValidationError()` methods from FluentValidation to write better assertions.
+In these tests, we used the `TestValidate()` and `ShouldHaveAnyValidationError()` helper methods from FluentValidation to write more readable assertions.
 
 In each test, we created a `CreditCard` object and modified one single property for the given scenario. We had duplication and magic values when initializing the `CreditCard` object.
 
@@ -71,11 +71,11 @@ From [how to write your first unit tests with MSTest]({% post_url 2021-03-15-Uni
 
 In our tests, we should give enough details to our readers, but not too many details to make our tests noisy. We should keep the details at the right level.
 
-In our previous tests, we only cared for the expiration year and month in each test. We can abstract the creation of the `CreditCard` objects to avoid repetition.
+In our previous tests, we only cared about a credit card expiration year and month. We can abstract the creation of the `CreditCard` objects to avoid repetition.
 
 One alternative to abstract the creation of `CreditCard` objects is to use an object mother.
 
-**An object mother is a factory method or property holding a ready-to-use input object. Each test changes properties of an object mother to match the scenario under test**. 
+**An object mother is a factory method or property holding a ready-to-use input object. Each test changes the properties of an object mother to match the scenario under test**. 
 
 For our example, we can create a `CreditCard` property with valid defaults and tweak it inside each test.
 
@@ -93,6 +93,7 @@ public class CreditCardValidationTests
         // Instead of creating a new card object each time,
         // we rely on this new CreditCard property
         var request = CreditCard;
+        //            ^^^^^
         request.ExpirationYear = DateTime.Now.AddYears(-1).Year;
         var result = validator.TestValidate(request);
 
@@ -105,6 +106,7 @@ public class CreditCardValidationTests
         var validator = new CreditCardValidator();
 
         var request = CreditCard;
+        //            ^^^^^
         request.ExpirationMonth = DateTime.Now.AddMonths(-1).Month;
         var result = validator.TestValidate(request);
 
@@ -113,6 +115,7 @@ public class CreditCardValidationTests
 
     // We have this new property to hold a valid credit card
     private CreditCard CreditCard
+    //                 ^^^^^
         => new CreditCard
         {
             CardNumber = "4242424242424242",
@@ -135,13 +138,13 @@ Notice the `CreditCard` property in our test class and how we updated its values
 
 Object mothers are fine if you don't have lots of variations of the object being constructed. But, since this is a post on Builder pattern, let's create a Builder for credit cards.
 
-**A Builder is a regular class with two types of methods: a `Build()` method and one or more `WithX()` methods.**
+**A Builder is a regular class with two types of methods: a Build() method and one or more chainable WithX() methods.**
 
 The `Build()` method returns the object the builder builds.
 
 The `WithX()` methods update one or more properties of the object being built. In this name, the `X` refers to the property the method changes.
 
-These `WithX()` methods return a reference to the builder itself. This way, we can chain many `WithX()` methods one after the other. One for each parameter we want to change.
+These `WithX()` methods return a reference to the builder itself. This way, we can chain many `WithX()` methods one after the other. One for each property we want to change.
 
 For our example, let's create a `CreditCardBuilder` with three methods: `WithExpirationYear()`, `WithExpirationMonth()` and `Build()`.
 
@@ -167,7 +170,7 @@ public class CreditCardBuilder
         return this;
     }
 
-    // Other WithX methods
+    // Other WithX() methods...
 
     public CreditCard Build()
     {
@@ -186,7 +189,7 @@ In our builder, we have one field for each property of the `CreditCard` class. W
 
 ### How to initialize values inside Builders?
 
-To initialize the properties without corresponding `WithX()` methods, we can create a special `WithTestValues()` method to use valid defaults. Another option is to initialize all the fields on the builder directly.
+To initialize the properties of the object being built, we can create a `WithTestValues()` method to pass safe defaults or initialize all the fields on the builder directly.
 
 Let's stick to the safe defaults out-the-box for our example.
 
@@ -194,11 +197,15 @@ Let's stick to the safe defaults out-the-box for our example.
 public class CreditCardBuilder
 {
     private string _cardNumber = "4242424242424242";
+    //                            ^^^^^
     private int _expirationYear = DateTime.Now.Year;
+    //                            ^^^^^
     private int _expirationMonth = DateTime.Now.Month;
+    //                             ^^^^^
     private int _cvv = 123;
+    //                 ^^^
 
-    // All WithX() methods
+    // All WithX() methods...
 
     public CreditCard Build()
     {
@@ -213,7 +220,7 @@ public class CreditCardBuilder
 }
 ```
 
-Now that we have a `CreditCardBuilder`, let's update our two sample tests to use it. Notice, when we use the Builder pattern, the last method in the chain of calls is always the `Build()` method.
+Now that we have a `CreditCardBuilder`, let's update our two sample tests to use it. Notice that when we use the Builder pattern, the last method in the chain of calls is always the `Build()` method.
 
 ```csharp
 [TestClass]
@@ -224,8 +231,9 @@ public class CreditCardValidationTests
     {
         var validator = new CreditCardValidator();
 
-        // Now, instead of creating cards with the new keyword and using an object mother,
-        // we use a builder for credit cards
+        // Now, instead of creating cards with the new keyword
+        // or using object mothers, we use a builder
+        //                   vvvvv
         var creditCard = new CreditCardBuilder()
                         .WithExpirationYear(DateTime.Now.AddYears(-1).Year)
                         .Build();
@@ -239,6 +247,7 @@ public class CreditCardValidationTests
     {
         var validator = new CreditCardValidator();
 
+        //                   vvvvv
         var creditCard = new CreditCardBuilder()
                         .WithExpirationMonth(DateTime.Now.AddMonths(-1).Month)
                         .Build();
@@ -266,6 +275,7 @@ public class BookRoomTests
 
         var request = new BookingRequestBuilder()
                         .WithGuest("John Doe")
+                        //              vvvvv
                         .WithCreditCard(new CreditCardBuilder()
                                             .ExpiredCreditCard()
                                             .Build())
@@ -276,9 +286,9 @@ public class BookRoomTests
 }
 ```
 
-Notice this time, we have a `BookingRequestBuilder` to create booking requests. This builder has two methods: `WithGuest()` and `WithCreditCard()`. Instead of creating credit cards directly, we used the `CreditCardBuilder` again. We created a new method `ExpiredCreditCard()` to build expired credit cards.
+Notice this time, we have a `BookingRequestBuilder` to create booking requests. This builder has two methods: `WithGuest()` and `WithCreditCard()`. Instead of creating credit cards directly, we used the `CreditCardBuilder` again. We created a new `ExpiredCreditCard()` method to build expired credit cards.
 
-We can simplify even further our `WithCreditCard()` method to receive a credit card builder, not a credit card object. Like this.
+We can simplify our `WithCreditCard()` method even further to receive a credit card builder, not a credit card object. Like this.
 
 ```csharp
 [TestClass]
@@ -294,14 +304,16 @@ public class BookRoomTests
                         .WithGuest("John Doe")
                         .WithCreditCard(new CreditCardBuilder()
                                             .ExpiredCreditCard())
+                                            // ^^^^^
                         .Build();
 
-        Assert.ThrowsException<InvalidCreditCardException>(() => service.BookRoom(request));
+        Assert.ThrowsException<InvalidCreditCardException>(()
+            => service.BookRoom(request));
     }
 }
 ```
 
-Voilà! That's how we can use the Builder pattern to create test data for our unit tests. I hope you have more readable tests using the Builder pattern after reading this post. Remember, in your tests you should give enough details to your readers, but not too many to make your tests noisy.
+Voilà! That's how we can use the Builder pattern to create test data for our unit tests. I hope you have more readable tests using the Builder pattern after reading this post. Remember, in your tests, you should give enough details to your readers, but not too many to make your tests noisy.
 
 We used `DateTime.Now` in our tests, let's see [how to write tests that use DateTime.Now]({% post_url 2021-05-10-WriteTestsThatUseDateTimeNow %}) in a future post.
 

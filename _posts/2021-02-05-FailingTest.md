@@ -140,7 +140,7 @@ private AccountController MakeAccountController(IOptions<SomeNewConfig> someNewC
 
 **Make sure to start always by writing a failing test. And, this test should fail for the right reasons.**
 
-If you write your tests after writing your production code, comment some parts of your production code to see your tests fail. Or change the assertions on purpose.
+If you write your tests after writing your production code, comment some parts of your production code to see if your tests fail. Or change the assertions on purpose.
 
 When you make a failed test pass, you're testing the test. You're making sure it fails and passes when it should. You know you aren't writing buggy tests or introducing false positives into your test suite.
 
@@ -160,6 +160,6 @@ public void AccountController_NoSomeNewConfig_ThrowsException()
 
 Voilà! This task reminded me to see my tests fail for the right reasons. Do you have passing tests? Do they pass and fail when they should? I hope they do after reading this post.
 
-For more tips on unit testing, check my takeaways from the book [The Art of Unit Testing]({% post_url 2020-03-06-TheArtOfUnitTestingReview %}) and my post on [how to write fakes with Moq]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}).
+For more tips on unit testing, check my takeaways from the book [The Art of Unit Testing]({% post_url 2020-03-06-TheArtOfUnitTestingReview %}) and my post on [how to write fakes with Moq]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}). Don't miss the rest of my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}) where I also cover mocking, assertions, and best practices.
 
 _Happy unit testing!_

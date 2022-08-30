@@ -6,7 +6,7 @@ cover: Cover.png
 cover-alt: "Don't duplicate logic in Asserts"
 ---
 
-We have covered some [common mistakes when writing unit tests]({% post_url 2021-03-29-UnitTestingCommonMistakes %}). Some of them may seem obvious. But, we all have made this one mistake when we started to write unit tests. This is the most common mistake when writing unit tests and how to fix it.
+We have covered some [common mistakes when writing unit tests]({% post_url 2021-03-29-UnitTestingCommonMistakes %}). Some of them may seem obvious. But, we all have made this mistake when we started to write unit tests. This is the most common mistake when writing unit tests and how to fix it.
 
 **Don't repeat the logic under test when verifying the expected result of tests. Instead, use known, hard-coded, pre-calculated values.**
 
@@ -38,6 +38,8 @@ public void Remove_ASubstring_RemovesThatSubstringFromTheEnd()
     string transformed = str.Remove("world!").From(The.End);
 
     Assert.AreEqual(RemoveFromEnd(str, "world!"), transformed);
+    //              ^^^^^
+    // We duplicate the Remove logic in another method
 }
 
 private string RemoveFromEnd(string str, string substring)
@@ -57,7 +59,7 @@ private string RemoveFromEnd(string str, string substring)
 
 Also, by mistake, we expose the internals of the tested logic to use them in assertions. We make private methods public and static. Even to test those private methods directly.
 
-From our [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}), we learned to write unit tests through public methods. We should test the observable behavior of our tested code. A returned value, a thrown exception, or an external invocation made.
+From our [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}), we learned to write unit tests through public methods. We should test the observable behavior of our tested code. A returned value, a thrown exception, or an external invocation.
 
 Again, don't write assertions like the one in this test.
 
@@ -70,6 +72,8 @@ public void Remove_ASubstring_RemovesThatSubstringFromTheEnd()
     string transformed = str.Remove("world!").From(The.End);
 
     Assert.AreEqual(Stringie.PrivateMethodMadePublicAndStatic(str), transformed);
+    //              ^^^^^
+    // An "internal" method exposed to our tests 
 }
 ```
 
@@ -77,15 +81,7 @@ public void Remove_ASubstring_RemovesThatSubstringFromTheEnd()
 
 **Instead of duplicating the tested logic, by exposing internals or copy-pasting code into assertions, use a known expected value.**
 
-If we end up using the same expected values, we can create constants for them. Like,
-
-```csharp
-const string Hello = "Hello";
-// or
-const string HelloAndComma = "Hello,";
-```
-
-For our sample test, simply use the expected substring `"Hello,"`. Like this,
+For our sample test, let's simply use the expected substring `"Hello,"`. Like this,
 
 ```csharp
 [TestMethod]
@@ -95,9 +91,18 @@ public void Remove_ASubstring_RemovesThatSubstringFromTheEnd()
 
     string transformed = str.Remove("world!").From(The.End);
 
-    // Let's use a known value in our assertions
     Assert.AreEqual("Hello,", transformed);
+    //              ^^^^^^^^
+    // Let's use a known value in our assertions
 }
+```
+
+If we end up using the same expected values, we can create constants for them. Like,
+
+```csharp
+const string Hello = "Hello";
+// or
+const string HelloAndComma = "Hello,";
 ```
 
 Voilà! That's the most common mistake when writing unit tests. It seems silly! But often, we duplicate Math operations and string concatenations and it passes unnoticed. Remember, don't put too much logic in your tests. Tests should be only assignments and method calls.

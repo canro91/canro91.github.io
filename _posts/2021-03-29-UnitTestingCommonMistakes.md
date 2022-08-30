@@ -14,7 +14,7 @@ Last time, we covered how to [write our first unit tests]({% post_url 2021-03-15
 > 3. Do not have a single assertion per test
 > 4. Repeat logic in your assertions
 
-## 1. Do not follow a naming convention
+## Mistake 1: Do not follow a naming convention
 
 First, keep your tests in the right place. Have one test project per project, one test class per class. Add the suffix "Tests" in the name of your test projects and classes.
 
@@ -36,9 +36,9 @@ public class RemoveTests
 }
 ```
 
-Every test should tell the scenario under test and the expected result. We shouldn't worry about long test names. But, let's stop naming our tests: `Test1`, `Test2` and so on.
+Every test should tell the scenario under test and the expected result. We shouldn't worry about long test names. But, let's stop naming our tests: `Test1`, `Test2`, and so on.
 
-**Don't prefix our test names with "Test"**. If we're using a testing framework that doesn't need keywords in our test names, let's stop doing that. With MSTest, we have attributes like `[TestClass]` and `[TestMethod]` to mark our methods as tests.
+**Don't prefix our test names with "Test."** If we're using a testing framework that doesn't need keywords in our test names, let's stop doing that. With MSTest, we have attributes like `[TestClass]` and `[TestMethod]` to mark our methods as tests.
 
 Also, **don't use filler words like "Success" or "IsCorrect" in our test names**. Instead, let's tell what "success" and "correct" means for that test. Is it a successful test because it doesn't throw exceptions? Is it successful because it returns a value? Make your test names easy to understand.
 
@@ -46,13 +46,13 @@ Also, **don't use filler words like "Success" or "IsCorrect" in our test names**
 If you want to learn how to name your tests, check these <a href="/2021/04/12/UnitTestNamingConventions">4 test naming conventions</a>.
 </div>
 
-## 2. Do not use the right assertion methods
+## Mistake 2: Do not use the right assertion methods
 
-Follow the Arrange/Act/Assert principle. Separate the body of your tests to differentiate these three parts.
+Follow the [Arrange/Act/Assert principle]({% post_url 2021-07-19-WriteBetterAssertions %}). Separate the body of your tests to differentiate these three parts.
 
-For the Assert part of your tests, make sure to use an assertion library. MSTest, NUnit and XUnit are the three most popular ones for C#.
+For the Assert part of your tests, make sure to use an assertion library. MSTest, NUnit, and XUnit are the three most popular ones for C#.
 
-**Use the right assertion methods of your library.** For example, MSTest has assertion methods for strings, collections and other objects. For a list of the most common MSTest assertions methods, check the MSTest Cheatsheet in [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}).
+**Use the right assertion methods of your library.** For example, MSTest has assertion methods for strings, collections, and other objects. For a list of the most common MSTest assertions methods, check the MSTest Cheatsheet in [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}).
 
 Please, don't do.
 
@@ -77,7 +77,7 @@ Assert.IsTrue(anotherResult);
   </figcaption>
 </figure>
 
-## 3. Do not have a single assertion per test
+## Mistake 3: Do not have a single assertion per test
 
 **Have only one Act and Assert part in your tests.** Don't repeat the same Act part with different test values in a single test.
 
@@ -127,18 +127,18 @@ public void Remove_SubstringWithDifferentCase_RemovesSubstring()
 
 This time, to avoid repetition, we put the test values in an array and looped through them to test each value.
 
-If we want to test the same scenario with different test values, let's use parameterized tests.
+If we want to test the same scenario with different test values, let's use parameterized tests instead.
 
 ### How to write Parameterized tests with MSTest
 
 To write a parameterized test with MSTest, we can follow these steps:
 
-* Replace the `[TestMethod]` attribute with the `[DataTestMethod]` attribute in your test.
-* Add `[DataRow]` attributes for each set of test values.
-* Add parameters for each test value inside the `[DataRow]` attributes.
-* Use the input parameters in your test to arrange, act or assert.
+1. Replace the `[TestMethod]` attribute with the `[DataTestMethod]` attribute in your test.
+2. Add `[DataRow]` attributes for each set of test values.
+3. Add parameters for each test value inside the `[DataRow]` attributes.
+4. Use the input parameters in your test to arrange, act or assert.
 
-Let's convert the previous test with many test values into a parameterized test.
+Let's convert the previous test with repeated test values into a parameterized test.
 
 ```csharp
 [DataTestMethod]
@@ -159,15 +159,15 @@ With parameterized tests, we have separate tests. Inside Visual Studio, in the "
 
 {% include image.html name="TestExplorerDetailSummary.png" caption="Visual Studio 'Test Explorer' showing the result outcomes for our parameterized test" alt="Visual Studio 'Test Explorer' showing the result outcomes for our parameterized test" %}
 	
-Parameterized tests make troubleshooting easier when we have a test that fails for a single test value.
+It's easier to troubleshoot parameterized tests when our tests fail for a single test value.
 
-## 4. Repeat logic in your assertions
+## Mistake 4: Repeat logic in your assertions
 
 I can't stress this enough.
 
-**Don't repeat the logic under test in your assertions. Use known, hard-coded, pre-calculated values, instead.**
+**Don't repeat the logic under test in your assertions. Use known, hard-coded, pre-calculated values instead.**
 
-We shouldn't copy the tested logic and paste it in a private method in our tests to use it in our assertions. We will have code, and bugs, in two places.
+We shouldn't copy the tested logic and paste it into a private method in our tests to use it in our assertions. We will have code and bugs in two places.
 
 Please, don't write assertions like the one in this test.
 
@@ -200,7 +200,7 @@ public void Remove_ASubstring_RemovesThatSubstringFromTheEnd()
 }
 ```
 
-Voilà! These are four common ~~misatkes~~ mistakes when writing our first unit tests. Remember to put your test in the right places following a naming convention. Also, keep one assertion per test and don't repeat logic in your assertions. You will have better tests avoiding these mistakes.
+Voilà! These are four common mistakes when writing our first unit tests. Remember to put your test in the right places following a naming convention. Also, keep one assertion per test, and don't repeat logic in your assertions. You will have better tests by avoiding these mistakes.
 
 If you want to practice identifying and fixing these mistakes, check my [Unit Testing 101](https://github.com/canro91/Testing101) repository. You will find the tests that Stringie developers wrote and some other ~~misatkes~~ mistakes they made. _Your mission, Jim, should you choose to accept it, is to fix them._
 

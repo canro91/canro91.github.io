@@ -14,7 +14,7 @@ This time, I'm bringing some of the tips and best practices from my previous pos
 
 ### Choose a naming convention and stick to it.
 
-**Every test name should tell the scenario under test and the expected result**. Don't worry about long test names. But, don't name your tests: `Test1`, `Test2` and so on.
+**Every test name should tell the scenario under test and the expected result**. Don't worry about long test names. But, don't name your tests: `Test1`, `Test2`, and so on.
 
 **Describe in your test names what you're testing in a language easy to understand even for non-programmers.**
 
@@ -64,7 +64,7 @@ This time, I'm bringing some of the tips and best practices from my previous pos
 
 **Use factory methods** to reduce complex Arrange scenarios.
 
-**Make your scenario under test and test values extremely obvious.** Don't make developers to decode your tests. Create constants for common test data and expected values.
+**Make your scenario under test and test values extremely obvious.** Don't make developers decode your tests. Create constants for common test data and expected values.
 
 **Use object mothers to create input test values.** Have a factory method or property holding a ready-to-use input object. Then, change what you need to match the scenario under test.
 
@@ -92,12 +92,7 @@ This time, I'm bringing some of the tips and best practices from my previous pos
 
 Voilà! Those are my best practices to write ~~better~~ great unit tests. Don't forget to always start writing failing tests. And, make sure they fail for the right reasons. If you don't follow Test-Driven Development, comment some of your code under test or change the assertions on purpose to see your tests failing.
 
-If you want to have these best practices next to you, grab your free copy of my [Unit Testing 101 ebook]({% post_url 2021-08-30-UnitTesting %}). Feel free to share it.
-
-<figure>
-<a href="/UnitTesting"><img src="/assets/posts/2021-07-05-UnitTestingBestPractices/UnitTesting101.png" alt="Grab your own copy of Unit Testing 101" /></a>
-<figcaption>For free. No email asked!</figcaption>
-</figure>
+If you want to have these best practices next to you, grab your [free copy of my Unit Testing 101 ebook]({% post_url 2021-08-30-UnitTesting %}). Feel free to share it.
 
 Remember, not because you don't ship your tests to your end users, it doesn't mean you shouldn't care about the quality of them. Unit tests got your back when changing your code. They're your safety net.
 

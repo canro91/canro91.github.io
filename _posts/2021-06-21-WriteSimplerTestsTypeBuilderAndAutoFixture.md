@@ -8,11 +8,11 @@ cover-alt: "Write simpler tests with Type Builders and AutoFixture"
 
 Writing tests for services with lots of collaborators can be tedious. I know. You will end up with complex Arrange parts and lots of fakes. Let's see three alternatives to write simpler tests with builder methods, Type Builders and AutoFixture.
 
-**To write simpler tests for services with lots of collaborators, use builder methods to create only the fakes needed in every test. As alternative, use auto-mocking with custom classes or libraries like AutoFixture to create a service with its collaborators replaced by fakes or test doubles using a mocking library.**
+**To write simpler tests for services with lots of collaborators, use builder methods to create only the fakes needed in every test. As an alternative, use auto-mocking with a type builder or libraries like AutoFixture to create a service with its collaborators replaced by test doubles using a mocking library.**
 
 To show these three alternatives, let's bring back our `OrderService` class. We used it to show the [difference between stubs and mocks]({% post_url 2021-05-24-WhatAreFakesInTesting %}). Again, the `OrderService` checks if an item has stock available to then charge a credit card.
 
-This time, let's add a `IDeliveryService` to create a shipment order and a `IOrderRepository` to keep track of an order status. With these two changes, our `OrderService` will look like this:
+This time, let's add an `IDeliveryService` to create a shipment order and an `IOrderRepository` to keep track of order status. With these two changes, our `OrderService` will look like this:
 
 ```csharp
 public class OrderService
@@ -40,7 +40,7 @@ public class OrderService
             throw new OutOfStockException();
         }
 
-        // Process payment, ship items and store order status
+        // Process payment, ship items, and store order status...
 
         return new PlaceOrderResult(order);
     }
@@ -83,13 +83,13 @@ namespace WithoutAnyBuilders
 
 Sometimes, we need to create fakes for our collaborators even when the tested behavior doesn't need them.
 
-## Builder methods
+## 1. Builder methods
 
-One easy alternative to write simpler test is to use builder methods.
+One easy alternative to writing simpler tests is to use builder methods.
 
 With a builder method, we only create the fakes we need inside our tests. And, inside the builder method, we create "empty" fakes for the collaborators we don't need for the tested scenario.
 
-We've used this idea of builder methods to [make our tests less noisy]({% post_url 2020-11-02-UnitTestingTips %}).
+We've used this idea of builder methods to [make our tests less noisy]({% post_url 2020-11-02-UnitTestingTips %}) and more readable.
 
 Our test with a builder method looks like this:
 
@@ -111,6 +111,7 @@ namespace WithBuilderMethod
             var paymentGateway = new Mock<IPaymentGateway>();
             // We add a new MakeOrderService method
             var orderService = MakeOrderService(stockService.Object, paymentGateway.Object);
+            //                 ^^^^^
 
             var order = new Order();
             orderService.PlaceOrder(order);
@@ -120,6 +121,7 @@ namespace WithBuilderMethod
 
         // Notice we only pass the fakes we need
         private OrderService MakeOrderService(IStockService stockService, IPaymentGateway paymentGateway)
+        //                   ^^^^^
         {
             var deliveryService = new Mock<IDeliveryService>();
             var orderRepository = new Mock<IOrderRepository>();
@@ -134,7 +136,7 @@ namespace WithBuilderMethod
 }
 ```
 
-With the `MakeOrderService()` method, we only deal with the mocks we care about in every test.
+With the `MakeOrderService()` method, we only deal with the mocks we care about in every test. The ones for `IStockService` and `IPaymentService`.
 
 <figure>
 <img src="https://images.unsplash.com/photo-1512207736890-6ffed8a84e8d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIzNjkyODcw&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="Men at work" />
@@ -143,11 +145,11 @@ With the `MakeOrderService()` method, we only deal with the mocks we care about 
   </figcaption>
 </figure>
 
-## Auto-mocking with TypeBuilder
+## 2. Auto-mocking with TypeBuilder
 
-Builder methods are fine. But, we can use an special builder to create testable services with all its collaborators replaced by fakes or test doubles. This way, we don't need to create builder methods for every combination of services we need inside our tests.
+Builder methods are fine. But, we can use a special builder to create testable services with all its collaborators replaced by fakes or test doubles. This way, we don't need to create builder methods for every combination of services we need inside our tests.
 
-Let me introduce you, `TypeBuilder`. This is a helper class I've been using in one of my client's projects to create services inside our unit tests.
+Let me introduce you to `TypeBuilder`. This is a helper class I've been using in one of my client's projects to create services inside our unit tests.
 
 This `TypeBuilder` class uses reflection to find all the parameters in the constructor of the service to build. And, it uses [Moq to build fakes]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}) for each parameter.
 
@@ -260,9 +262,9 @@ namespace WithTypeBuilder
             typeBuilder.WithMock<IStockService>(mock =>
             {
               mock.Setup(t => t.IsStockAvailable(It.IsAny<Order>()))
-                .Returns(true);
+                  .Returns(true);
             });
-            // 3. Build a OrderService instance
+            // 3. Build an OrderService instance
             var service = typeBuilder.Build();
 
             var order = new Order();
@@ -299,11 +301,11 @@ typeBuilder.Mock<IPaymentGateway>()
             .Verify(t => t.ProcessPayment(It.IsAny<Order>()));
 ```
 
-This `TypeBuilder` class comes handy to avoid creating builders manually for every service in our unit tests.
+This `TypeBuilder` class comes in handy to avoid creating builders manually for every service in our unit tests.
 
 Did you notice in our example that we didn't have to write fakes for all collaborators? We only did it for the `IStockService`. The `TypeBuilder` took care of the other fakes.
 
-## Auto-mocking with AutoFixture
+## 3. Auto-mocking with AutoFixture
 
 If you prefer a more battle-tested solution, let's replace our `TypeBuilder` with AutoFixture.
 
@@ -326,7 +328,7 @@ AutoFixture will initialize all properties of an object to random values. Option
 
 ### AutoMoq
 
-AutoFixture has integrations with mocking libraries like Moq to create services with all its parameters replaced by fakes. To use this integrations, let's install the NuGet package `AutoFixture.AutoMoq`.
+AutoFixture has integrations with mocking libraries like Moq to create services with all its parameters replaced by fakes. To use these integrations, let's install the NuGet package `AutoFixture.AutoMoq`.
 
 Let's rewrite our sample test, this time to use AutoFixture with AutoMoq. It will look like this: 
 
@@ -348,12 +350,15 @@ namespace WithAutoFixture
         [TestMethod]
         public void PlaceOrder_ItemInStock_CallsPaymentGateway()
         {
-            // 2. Use Freeze to create a custom fake
             var stockedService = Fixture.Freeze<Mock<IStockService>>();
+            //                   ^^^^^
+            // 2. Use Freeze to create a custom fake
             stockedService.Setup(t => t.IsStockAvailable(It.IsAny<Order>()))
                           .Returns(true);
             var paymentGateway = Fixture.Freeze<Mock<IPaymentGateway>>();
             var service = Fixture.Create<OrderService>();
+            //            ^^^^^
+            // 3. Use Create to grab an auto-mocked instance
 
             var order = new Order();
             service.PlaceOrder(order);

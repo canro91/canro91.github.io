@@ -27,7 +27,7 @@ In the Arrange part, we create classes and input values needed to call the entry
 
 In the Act part, we call the method to trigger the logic being tested.
 
-In the Assert part, we verify the code under test did what we expected. We check if it returned the right value, threw an exception or called another component.
+In the Assert part, we verify the code under test did what we expected. We check if it returned the right value, threw an exception, or called another component.
 
 For example, let's bring back one test for [Stringie](https://github.com/canro91/Testing101), a (fictional) library to manipulate strings, to show the AAA pattern. Notice how each test has these 3 parts.
 
