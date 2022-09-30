@@ -28,7 +28,7 @@ But, if we forgot to add one parameter,
 
 ```csharp
 string.Format("Hello, {0} {1}", title/*, I forgot to add the name parameter*/);
-// ^^^
+// ^^^^^
 // System.FormatException:
 //    Index (zero based) must be greater than or equal to zero and less than the size of the argument list.
 ```
@@ -113,6 +113,7 @@ public void SomeMethod(string param1)
 {
     if (string.IsNullOrEmpty(param1))
         throw new ArgumentNullException(nameof(param1));
+        //                              ^^^^^
 }
 ```
 
@@ -134,6 +135,7 @@ public class Movie
     {
         _title = title;
         _director = director ?? throw new ArgumentNullException(nameof(director));
+        //                      ^^^^^
     }
 }
 ```
@@ -142,7 +144,7 @@ Notice, how the `??` operator evaluates the expression on the right, which is a 
 
 ```csharp
 new Movie("Titanic", null);
-// ^^^
+//  ^^^^^
 // System.ArgumentNullException: Value cannot be null.
 // Parameter name: director
 ```
@@ -162,6 +164,7 @@ After, inlining the variable declaration,
 
 ```csharp
 int.TryParse(readFromKey, out var count);
+//                            ^^^ 
 ```
 
 Instead of declaring a variable, we can use discards `_` to ignore the output value. For example,
@@ -183,7 +186,10 @@ We can use named members when declaring methods and deconstructing returned valu
 Before,
 
 ```csharp
-Tuple<string, string> Greet() { }
+Tuple<string, string> Greet()
+{
+    return Tuple.Create("Hello", "world");
+}
 
 var greeting = Greet();
 var name = greeting.Item1;
@@ -192,7 +198,10 @@ var name = greeting.Item1;
 After,
 
 ```csharp
-(string Salutation, string Name) Greet() { }
+(string Salutation, string Name) Greet()
+{
+    return ("Hello", "world");
+}
 
 var greeting = Greet();
 var name = greeting.Name;
@@ -201,7 +210,10 @@ var name = greeting.Name;
 Even better,
 
 ```csharp
-(string Salutation, string Name) Greet() { }
+(string Salutation, string Name) Greet()
+{
+    return ("Hello", "world");
+}
 
 var (Salutation, Name) = Greet();
 ```
@@ -255,6 +267,7 @@ After, with pattern matching, we can declare a variable in the condition,
 
 ```csharp
 if (employee is SalaryEmployee salaryEmployee)
+//                             ^^^^^
 {
     DoSomething(salaryEmployee);
 }
@@ -289,7 +302,9 @@ Now, with pattern matching, we can have separate cases,
 var employee = CreateEmployee();
 switch (employee)
 {
-    case SalaryEmployee salaryEmployee when salaryEmployee.Salary > 1000:
+    case SalaryEmployee salaryEmployee
+            when salaryEmployee.Salary > 1000:
+    //      ^^^^
         DoSomething(salaryEmployee);
         break;
 
@@ -449,6 +464,7 @@ For a console application, the csproj file with this feature turned on look like
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <Nullable>enable</Nullable>
+    <!--      ^^^^^^    -->
   </PropertyGroup>
 
 </Project>
@@ -596,6 +612,7 @@ This is a feature is enabled by default, but we can turn it off in our csproj fi
     <OutputType>Exe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
+    <!--            ^^^^^^    -->
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
