@@ -80,6 +80,8 @@ PrintMovies(distinctRatings);
 
 Also, there are similar alternatives to existing methods such as MinBy, MaxBy, [ExceptBy, IntersectBy, and UnionBy]({% post_url 2022-08-22-IntersectUnionAndExcept %}). They work with a delegate to select a property to use as the comparison key and return the "containing" objects, not only the result.
 
+We can [take a look at DistinctBy source code]({% post_url 2022-07-11-LinqDistinctBySourceCode %}) to see what's inside a LINQ method. It’s not that intimidating after all.
+
 <figure>
 <img src="https://images.unsplash.com/photo-1526007413281-c202e21eedf3?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0MDc5ODA3MQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="Vintage movie camera" />
 
@@ -148,11 +150,13 @@ var allTimesFavorite = new Movie("Back to the Future", 1985, 5);
 // Using the Null-coalescing assignment ??= operator
 var favorite = movies.FirstOrDefault(movie => movie.Rating == 10);
 favorite ??= allTimesFavorite;
+//       ^^^
 
 // Or
 // Using the DefaultIfEmpty method
 var favorite = movies.Where(movie => movie.Rating == 10)
                      .DefaultIfEmpty(allTimesFavorite)
+                     // ^^^^^
                      .First();
 ```
 
@@ -190,6 +194,7 @@ To use these new methods and overloads, install on your machine the latest versi
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
+    <!--             ^^^^^  -->
   </PropertyGroup>
 
 </Project>

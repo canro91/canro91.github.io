@@ -63,14 +63,16 @@ var movies = new List<Movie>
     new Movie("The Fifth Element", 1995, 4.6f),
     new Movie("Terminator 2", 1999, 4.7f),
     new Movie("Avatar", 2010, 5),
+    //        ^^^^^
     new Movie("Platoon", 1986, 4),
-    // We have a tie here...        
     new Movie("My Neighbor Totoro", 1988, 5)
+    //        ^^^^^
+    // We have a tie here...
 };
 
 // SigleOrDefault expects only one element...but there are two of them
 var theBest = movies.SingleOrDefault(movie => movie.Rating == 5);
-//            ^^^^^^
+//                   ^^^^^^
 // System.InvalidOperationException: 'Sequence contains more than one matching element'
 //
 Console.WriteLine($"{theBest.Name}: [{theBest.Rating}]");
@@ -88,13 +90,16 @@ var movies = new List<Movie>
     new Movie("The Fifth Element", 1995, 4.6f),
     new Movie("Terminator 2", 1999, 4.7f),
     new Movie("Avatar", 2010, 5),
+    //        ^^^^^
     new Movie("Platoon", 1986, 4),
-    // We have a tie here...        
     new Movie("My Neighbor Totoro", 1988, 5)
+    //        ^^^^^
+    // We have a tie here...
 };
 
 // FirstOrDefault remains quiet if there's more than one matching element...
 var theBest = movies.FirstOrDefault(movie => movie.Rating == 5);
+//                   ^^^^^
 
 Console.WriteLine($"{theBest.Name}: [{theBest.Rating}]");
 Console.ReadKey();
@@ -105,6 +110,8 @@ record Movie(string Name, int ReleaseYear, float Rating);
 The `SigleOrDefault` method throws an exception when it finds more than one element matching a condition. But, with multiple matching elements, the `FirstOrDefault` method returns the first of them without signaling any problem.
 
 Let's pick between `FirstOrDefault` and `SingleOrDefault` to show the query's intent. Let's prefer `SingleOrDefault` to retrieve a unique matching element from a collection.
+
+To guarantee that there is a single element in a collection, `Single` and `SingleOrDefault` have to evaluate the LINQ query over the entire collection. And, again, this could be a performance hit for large collections.
 
 ## Mistake 4: Use FirstOrDefault without null checking
 

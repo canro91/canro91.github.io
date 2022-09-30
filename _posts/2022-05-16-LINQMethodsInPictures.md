@@ -85,18 +85,20 @@ Let's count the films with the same rating.
 
 ```csharp
 var groupedByRating = movies.GroupBy(movie => movie.Rating,
-                                    (rating, moviesWithSameRating) => new
-                                    {
-                                        Rating = rating,
-                                        Count = moviesWithSameRating.Count()
-                                    });
+                            (rating, moviesWithSameRating) => new
+                            {
+                                Rating = rating,
+                                Count = moviesWithSameRating.Count()
+                            });
 ```
 
-The second parameter of the `GroupBy` is a `Func` with the grouping key and the elements of each group as parameters.
+The second parameter of the `GroupBy` is a `Func` with the grouping key and the elements of each group as parameters. This `Func` works like a mapping function to transform each group or bucket found.
 
 This query would be,
 
 {% include image.html name="GroupByGroups.png" caption="Let's count the films with the same rating" alt="Count of films grouped by rating" %}
+
+[GroupBy has other use-cases]({% post_url 2022-05-30-HowToUseLinqGroupBy %}), like grouping by more than one property.
 
 ## 5. First & FirstOrDefault
 

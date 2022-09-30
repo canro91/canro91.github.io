@@ -11,6 +11,7 @@ Today while I was reading the AutoFixture source code I found a LINQ method I di
 For example, let's find all the movies with a rating greater than 9. Otherwise, return our all-time favorite movie.
 
 ```csharp
+// We don't have movies with rating greater than 9
 var movies = new List<Movie>
 {
     new Movie("Titanic", 5),
@@ -18,8 +19,10 @@ var movies = new List<Movie>
     new Movie("Black Hawk Down", 6)
 };
 
+var allTimesFavorite = new Movie("Fifth Element", 10);
 var movieToWatch = movies.Where(movie => movie.Score >= 9)
-                    .DefaultIfEmpty(new Movie("Fifth Element", 10))
+                    .DefaultIfEmpty(allTimesFavorite)
+                    // ^^^^^
                     .First();
 
 // Movie { Name="Fifth Element", Score=10 }
@@ -38,4 +41,4 @@ To learn more about LINQ, check my [Quick Guide to LINQ]({% post_url 2021-01-18-
 
 {%include linq_course.html %}
 
-_Source_: [Enumerable.DefaultIfEmpty Method](https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.defaultifempty?view=net-5.0)
+_Happy coding!_
