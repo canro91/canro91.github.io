@@ -24,13 +24,13 @@ var mine = new List<Movie>
     //        ^^^^^^^^^^^^^^
     new Movie("Titanic", 1998, 4.5f),
     new Movie("The Fifth Element", 1997, 4.6f),
-    new Movie("My Neighbor Totoro", 1988, 5)
+    new Movie("My Neighbor Totoro", 1988, 5f)
     //        ^^^^^^^^^^^^^^^^^^^^
 };
 
 var yours = new List<Movie>
 {
-    new Movie("My Neighbor Totoro", 1988, 5),
+    new Movie("My Neighbor Totoro", 1988, 5f),
     //        ^^^^^^^^^^^^^^^^^^^^
     new Movie("Pulp Fiction", 1994, 4.3f),
     new Movie("Forrest Gump", 1994, 4.3f),
@@ -51,7 +51,7 @@ Console.ReadKey();
 
 static void PrintMovies(IEnumerable<Movie> movies)
 {
-	  Console.WriteLine(string.Join(",", movies.Select(movie => movie.Name)));
+    Console.WriteLine(string.Join(",", movies.Select(movie => movie.Name)));
 }
 
 record Movie(string Name, int ReleaseYear, float Rating);
