@@ -17,7 +17,7 @@ Learn to [write your first unit tests with MSTest]({% post_url 2021-03-15-UnitTe
 
 Identify and fix these [4 common mistakes]({% post_url 2021-03-29-UnitTestingCommonMistakes %}) when writing your first unit tests. Learn one of these [4 naming conventions]({% post_url 2021-04-12-UnitTestNamingConventions %}) and stick to it. Don't worry about long test names.
 
-<div class="message">Find these first three posts plus a summary of "The Art of Unit Testing" and my best tips from this series on my free ebook “Unit Testing 101”. <a href="/assets/posts/2021-08-30-UnitTesting/UnitTesting101.pdf" target="_blank" data-goatcounter-click="UnitTesting101eBook-Link">Download your free copy here</a> or click on the image below.</div>
+<div class="message">Find these first three posts plus a summary of "The Art of Unit Testing" and my best tips from this series on my free ebook “Unit Testing 101”. <a href="https://imcsarag.gumroad.com/l/unittesting101" target="_blank" rel="noopener noreferrer" data-goatcounter-click="UnitTesting101eBook-Link">Download your free copy on my Gumroad page</a> or click on the image below.</div>
 
 <figure>
 <a href="/assets/posts/2021-08-30-UnitTesting/UnitTesting101.pdf" target="_blank" data-goatcounter-click="UnitTesting101eBook-Image" data-goatcounter-title="UnitTesting101: eBook"><img src="/assets/posts/2021-08-30-UnitTesting/GrabYourOwnCopy.png" alt="Grab your own copy of Unit Testing 101" /></a>
