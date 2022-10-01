@@ -81,6 +81,6 @@ If you don’t know where to start reading or if you want to find something to r
 
 Follow me on <a href="{{ site.devto }}" target="_blank" rel="noopener noreferrer">dev.to</a>, <a href="{{ site.github }}" target="_blank" rel="noopener noreferrer">GitHub</a> and <a href="{{ site.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
 
-To support my work, check my <a href="https://www.educative.io/courses/getting-started-linq-c-sharp" target="_blank" rel="noopener noreferrer">Getting Started with LINQ course</a> and download <a href="https://imcsarag.gumroad.com/" target="_blank" rel="noopener noreferrer">my ebooks</a>.
+To support my work, check my <a href="https://www.educative.io/courses/getting-started-linq-c-sharp" target="_blank" rel="noopener noreferrer" data-goatcounter-click="LinqCourse-About">Getting Started with LINQ course</a> and download <a href="https://imcsarag.gumroad.com/" target="_blank" rel="noopener noreferrer" data-goatcounter-click="Gumroad-About">my ebooks</a>.
 
 _Thanks for reading!_
