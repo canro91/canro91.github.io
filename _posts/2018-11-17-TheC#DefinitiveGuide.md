@@ -11,25 +11,25 @@ Are you looking for a learning path to be "fluent" in C#? This is the right plac
 
 **Every intermediate C# developer should know how to productively work with Visual Studio or Visual Studio Code, use async/await keywords, most common LINQ methods and regular expressions. Also, to get around large codebases and be aware of the latest C# features.**
 
-## Environment
+## 1. Environment
 
 Visual Studio is the de-facto Integrated Development Environment (IDE) for C#. Since we will spend most of our workdays with Visual Studio, we should setup Visual Studio to make use more productive.
 
-* Find a colorscheme you like. For example, I prefer [Solarized](https://ethanschoonover.com/solarized/)
+* Find a colorscheme. For example, I prefer [the Solarized theme](https://ethanschoonover.com/solarized/)
 * Learn the basic shortcuts:
-	* `Ctrl + Shift + b`: Build your solution
-	* `Ctrl + ,`: Navigate to any method in your solution
+	* `Ctrl + Shift + b`: Build our solution
+	* `Ctrl + ,`: Navigate to any method in our solution
 	* `Ctrl + .`: Apply a refactor or any action in the current code block
 	* `Ctrl + q`: Search and execute settings or menus of Visual Studio
 	* `Ctrl + Shift + F12`: Go to the next error
-* Install some plugins to make your life easier.
-	* [Productivity Power Tools](https://marketplace.visualstudio.com/items?itemName=VisualStudioPlatformTeam.ProductivityPowerTools)
-	* [Auto Save](https://github.com/anaisbetts/SaveAllTheTime), no more `Ctrl + S`
-	* [AddNewFile](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.AddNewFile), `Alt + F2` to add a bunch of files in with a single shortcut
-	* [VsVim](https://marketplace.visualstudio.com/items?itemName=JaredParMSFT.VsVim), if you are fan of Vim. You don't know Vim? C'mmon!
-	* [Wumpf Solution Color](https://marketplace.visualstudio.com/items?itemName=Wumpf.SolutionColor) changes the Visual Studio menu bar color based on a folder solution. Don't mess with the wrong environment code.
-	* [VS Color Output](https://marketplace.visualstudio.com/items?itemName=MikeWard-AnnArbor.VSColorOutput) makes the Output tab colorful.
-* C# Interactive. You don't have to create a dummy Console project just to try things out. With C# interactive, you have a C# REPL at your disposition. You can load a NuGet package or your own dll's, load a C# script (.csx file) or simply try a few lines of C# code. From Visual Studio, head to View Menu, Other Windows and click C# Interactive.
+* Install some plugins to make our life easier. Like,
+	* [Productivity Power Tools](https://marketplace.visualstudio.com/items?itemName=VisualStudioPlatformTeam.ProductivityPowerPack2017)
+	* [Auto Save](https://github.com/pragmatrix/SaveAllTheTime): No more `Ctrl + S` to save our files
+	* [AddNewFile](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.AddNewFile): We can use `Alt + F2` to add one or more files with a single shortcut
+	* [VsVim](https://marketplace.visualstudio.com/items?itemName=JaredParMSFT.VsVim): To bring Vim to Visual Studio. You don't know Vim? C'mmon!
+	* [Wumpf Solution Color](https://marketplace.visualstudio.com/items?itemName=Wumpf.SolutionColor): To color the Visual Studio menu bar based on a folder. Don't mess with the wrong environment code.
+	* [VS Color Output](https://marketplace.visualstudio.com/items?itemName=MikeWard-AnnArbor.VSColorOutput): To make the Output tab colorful.
+* Use C# Interactive. We don't have to create a dummy Console project to try things out. With C# interactive, we have a C# REPL at our disposition. We can load a NuGet package, a dll, or a C# script (.csx file). From Visual Studio, head to View Menu, Other Windows and click C# Interactive.
 
 For more settings and extensions, check [my Visual Studio setup for C#]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %}).
 
@@ -39,39 +39,38 @@ For more settings and extensions, check [my Visual Studio setup for C#]({% post_
 <figcaption>Have everything ready to level up your C#. <span>Photo by <a href="https://unsplash.com/@andrewtneel?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Andrew Neel</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
 </figure>
 
-## Git and Github
+## 2. Git and Github
 
 ### Git
 
-Git is a version control system. A time machine to go back in time, create alternate stories from a point in time and make alternate stories join your present. You got the analogy?
+Git is a version control system. A time machine to go back in time, create alternate stories from a point in time and make alternate stories join our present. You got the analogy?
 
-If you are creating a zip file with your code and naming it after the date of your latest change, Git is a better way.
+If we are creating a zip file with our code and naming it after the date of our latest change, Git is a better way.
 
 * Install Git locally
 * Learn the basic commands: `init`, `add`, `status`, `commit`, `push`
 * Learn to use Git inside Visual Studio
-* Check [Udacity Git course](https://www.udacity.com/course/version-control-with-git--ud123)
 * Read my [beginner's guide to Git and GitHub]({% post_url 2020-05-29-HowToVersionControl %})
 
 ### GitHub
 
 Programming is about collaboration. GitHub is the social network for programmers.
 
-With GitHub, you can show your own code, ask for new features in a library, report bugs in the software you use, read and make questions about someone else's code.
+With GitHub, we can show our own code, ask for new features in a library, and report bugs in the software we use.
 
 Microsoft, Facebook, Google have some of their own code available on GitHub.
 
-* Check [Udacity Github course](https://www.udacity.com/course/how-to-use-git-and-github--ud775)
+* Check [Udacity GitHub course](https://www.udacity.com/course/how-to-use-git-and-github--ud775)
 
-## Design Patterns and Object-Oriented Design Principles
+## 3. Design Patterns and Object-Oriented Design Principles
 
-Desing patterns are recipes to solve common problems in code. This is, given a certain problem, there is a blueprint or an outline that will help you to solve that problem.
+Desing patterns are recipes to solve common problems in code. This is, given a certain problem, there is a blueprint or an outline that will help us to solve that problem.
 
 * Recognize some of the most common patterns and learn to use them. For example: Factory, Builder, Composite, Command, Template, Strategy, Null Object, Adapter.
 * Check my take on the [Decorator]({% post_url 2021-02-10-DecoratorPattern %}) and [Pipeline]({% post_url 2020-02-14-PipelinePattern %}) patterns.
 * Learn Uncle Bob's SOLID principles.
 
-## Dealing with large codebases
+## 4. Dealing with large codebases
 
 Programming is also about reading code. Get used to navigate throught large codebases.
 
@@ -82,42 +81,32 @@ Programming is also about reading code. Get used to navigate throught large code
 * Debug a test case scenario for a feature you would like to know about
 * Find out how a feature was implemented
 
-For more guidelines about reading code, check [Changelog One sure-fire way to improve your coding](https://changelog.com/posts/one-sure-fire-way-to-improve-your-coding).
+For more guidelines about reading code, check [Changelog's One sure-fire way to improve your coding](https://changelog.com/posts/one-sure-fire-way-to-improve-your-coding).
 
-## Unit tests
+## 5. Unit tests
 
-A unit test is a "safety net" to make sure you don't break things when you add new features or modify your codebase. A unit test is a piece of code that uses your code base from a "user" point of view and verifies a given behavior.
+A unit test is a "safety net" to make sure we don't break things when we add new features or modify our codebase. A unit test is a piece of code that uses our code base from a "user" point of view and verifies a given behavior.
 
 * Read my [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}) to get started writing unit tests with C# and MSTest
-* Learn what unit test really means. Read [Roy Osherove Unit Test Definition](http://artofunittesting.com/definition-of-a-unit-test/)
-* Learn a test naming convention. I compiled a post with [four test naming conventions]({% post_url 2021-04-12-UnitTestNamingConventions %})
-* Watch [Understand Test Driven Development](https://www.youtube.com/watch?v=q5Xd1tmIgec)
+* Learn what unit test really means. Read [Roy Osherove's Unit Test Definition](http://artofunittesting.com/definition-of-a-unit-test/)
+* Learn a test naming convention. I compiled these [four test naming conventions]({% post_url 2021-04-12-UnitTestNamingConventions %})
+* Watch [Roy Osherove's Understand Test Driven Development](https://www.youtube.com/watch?v=q5Xd1tmIgec)
 * Write some unit tests for some parts of your codebase or practice writing unit tests for a library you know
 * Read my takeaways from [The Art of Unit Testing]({% post_url 2020-03-06-TheArtOfUnitTestingReview %})
 
-## LINQ
+## 6. LINQ
 
-Language-Integrated Query, LINQ, is the declarative way to work with collections in C# or anything that looks like one. Instead of writing the looping and the business logic with `foreach`, `for` or `while`, you should try to do it with LINQ.
-
-For example, given a string of emails separated by commas, the next lines show how to create an array with the trimmed emails using LINQ.
-
-```csharp
-string emails = "email1@yourdomain.com,    email2@yourdomain.com,email2@yourdomain.com";
-string[] trimmed = emails.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
-                         .Select(t => t.Trim())
-                         .ToArray();
-
-```
+Language-Integrated Query, LINQ, is the declarative way to work with collections in C# or anything that looks like one. Instead of writing `foreach`, `for` or `while` loops to work with collections, let's give LINQ a try.
 
 * Learn about lambda expressions. Read my take on the [difference between Func and Action]({% post_url 2019-03-22-WhatTheFuncAction %})
 * Check my [quick guide to LINQ with examples]({% post_url 2021-01-18-LinqGuide %})
-* Learn the most frequently used methods: `Where`, `Select`, `FirstOrDefault`, `Any`, and `GroupBy`.
+* Learn the [most frequently used LINQ methods]({% post_url 2022-05-16-LINQMethodsInPictures %}): `Where`, `Select`, `FirstOrDefault`, `Any`, and `GroupBy`.
 
-## Regular Expressions
+## 7. Regular Expressions
 
-Have you ever used `*.txt` in the file explorer to find all text files in a folder? If so, you have already used a regular expression. But, `*.txt` is just the tip of the iceberg.
+Have you ever used `*.txt` in the file explorer to find all text files in a folder? If so, we have already used regular expressions. But, `*.txt` is just the tip of the iceberg.
 
-Regular expressions give you a search syntax to find patterns of text in a string. For example, find all phone numbers like this one `(+57) 3XX XXX-XXX`, you could use `(\(\+\d{2}\))\s(\d{3})\s(\d{3})\-(\d{3})`. 
+Regular expressions give us a search syntax to find patterns of text in a string. For example, to find all phone numbers like this one `(+57) 3XX XXX-XXX`, let's use `(\(\+\d{2}\))\s(\d{3})\s(\d{3})\-(\d{3})`. 
 
 * Learn the basics 
 	* Character sets: `[]` and `[^]`
@@ -128,25 +117,23 @@ Regular expressions give you a search syntax to find patterns of text in a strin
 	* Groups
 * Learn how to match and replace a regex in C#. Take a look at `Match`, `IsMatch`, `Replace` methods in `Regex` class. 
 * Learn how to acess named groups in C#
-* Read [Regular expressions Quickstart](https://www.regular-expressions.info/quickstart.html)
+* Read [Regular expressions' Quickstart](https://www.regular-expressions.info/quickstart.html)
 
-## async/await
+## 8. async/await
 
 Asyncronous code is code that doesn't block when executing long-running operations.
 
-* Learn the flow of control of a method marked with `async` and `await`. Read [Stephen Cleary async and await](http://blog.stephencleary.com/2012/02/async-and-await.html)
+* Learn the flow of control of a method marked with `async` and `await`. Read [Stephen Cleary's async and await](http://blog.stephencleary.com/2012/02/async-and-await.html)
 * Await your code all-the-way-down to avoid deadlocks. Read [Don't block on async code](http://blog.stephencleary.com/2012/07/dont-block-on-async-code.html)
 * Avoid `async void` methods, use `async Task` instead
 * Learn how to use `Task.WhenAny` and `Task.WhenAll`
-* Read [The Ultimate Guide to Asynchronous Programming in C# and ASP.NET](https://exceptionnotfound.net/asynchronous-programming-in-asp-net-csharp-ultimate-guide/)
+* Read [exceptionnotfound.net's The Ultimate Guide to Asynchronous Programming in C# and ASP.NET](https://exceptionnotfound.net/asynchronous-programming-in-asp-net-csharp-ultimate-guide/)
 
-## Some new features in C# since version 6
+## 9. New C# features
 
-C# is an evolving language. With every new version, we have more features to write more concise code. These are some of the new features in C# we use more often.
+C# is an evolving language. With every new version, we have more features to write more concise code. These are some of the new features in C# since C# 6.0.
 
-### C# 6.0
-
-#### String interpolation
+### String interpolation
 
 Before we wrote,
 
@@ -160,7 +147,7 @@ Now we can write,
 $"Hello, {name}";
 ```
 
-#### Null-conditional operators
+### Null-conditional operators
 
 There are two new operators to check for null values: `??` and `?.`.
 
@@ -181,9 +168,7 @@ string name = ReadNameFromSomewhere();
 name?.Trim() ?? "none"
 ```
 
-### C# 7.X
-
-#### Inlined out variables
+### Inlined out variables
 
 Now, we can inline the variable declaration next to the `out` keyword.
 
@@ -206,52 +191,7 @@ Or even,
 int.TryParse(readFromKey, out _)
 ```
 
-#### Reference Tuple Members by Name
-
-We can access values inside tuples by name, instead of `Item1` or `Item2`.
-
-Before,
-
-```csharp
-Tuple<string, string> Greet() { }
-
-var greeting = Greet()
-var name = greeting.Item1;
-```
-
-After,
-
-```csharp
-(string Salutation, string Name) Greet() { }
-
-var greeting = Greet()
-greeting.Name
-```
-
-### C# 8.0
-
-#### Null-coalescing assignment
-
-Now, there is the operator `??=` to only assign a variable if its value isn't null.
-
-Before,
-
-```csharp
-int? magicNumber = null;
-
-if (magicNumber == null)
-    magicNumber = 7;
-```
-
-After,
-
-```csharp
-int? magicNumber = null;
-
-magicNumber ??= 7;
-```
-
-#### Using declarations
+### Using declarations
 
 A variable preceded by `using` is disposed at the end of the scope.
 
@@ -280,18 +220,24 @@ while ((line = reader.ReadLine()) != null)
 }
 ```
 
-#### Nullable reference types
+### Nullable reference types
 
-All reference variables are non-nullable by default. Any attempt to dereference a nullable reference gets a warning from the compiler. _Goodbye, NullReferenceException!_. Be aware, you need to turn on this feature at the project level. Add `<Nullable>enable</Nullable>` inside the `PropertyGroup` in your csproj files.
+All reference variables are non-nullable by default. Any attempt to dereference a nullable reference gets a warning from the compiler. Goodbye, NullReferenceException!
+
+We need to turn on this feature at the project level in our csproj files.
 
 Before,
 
 ```csharp
-int notNull = null; // <- error CS0037: Cannot convert null to 'int'
+int notNull = null;
+//  ^^^^^
+// error CS0037: Cannot convert null to 'int'
 int? canBeNull = null;
 
 string name = null;
-SayHi(name) // <- System.NullReferenceException
+SayHi(name);
+// ^^^^^
+// System.NullReferenceException
 
 void SayHi(string name) => Console.WriteLine(name.Trim()); 
 ```
@@ -309,23 +255,15 @@ SayHi(name);
 // warning CS8604: Possible null reference argument for parameter 'name'
 ```
 
-### C# 9.0
+### Records
 
-#### Records
-
-A record is an immutable reference type with built-in equality methods. When you create a record, the compiler creates a `ToString` method, a value-based equality methods and other methods for you. Records are helpful to replace value-objects in your code.
+A record is an immutable reference type with built-in equality methods. When we create a record, the compiler creates a `ToString` method, a value-based equality methods and other methods for us.
 
 ```csharp
-public record Movie
-{
-    public string Title { get; }
-    public int ReleaseYear { get; }
-    
-    public Movie(string title, int releaseYear) => (Title, ReleaseYear) = (title, releaseYear);
-}
+public record Movie(string Title, string ReleaseYear);
 ```
 
-#### Top-level statements
+### Top-level statements
 
 All the boilerplate is now gone from `Main` methods.
 
@@ -349,20 +287,20 @@ namespace HelloWorld
 After,
 
 ```csharp
-using System;
-
 Console.WriteLine("Hello World!");
 ```
 
 To learn about other C# features, check my [top 10 or so best C# features]({% post_url 2021-09-13-TopNewCSharpFeatures%}).
 
-## Bonus Points
+## 10. Bonus Points
 
-* Learn how to type with all your fingers. _At least you will impress people_.
+* Learn how to type with all your fingers. At least we will impress people.
 * Learn some Vim. Read my post on [Learning Vim For Fun and Profit]({% post_url 2020-09-14-LearnVimForFunAndProfit %}). If you want to master every detail, take a look at the book "Practical Vim".
-* Learn about C# [extensions methods](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods). You will find them often.
+* Learn about C# [extensions methods](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods). We will find them often.
 * Read books on Clean Code. Check my takeaways for [The Art of Readable Code]({% post_url 2021-12-20-TheArtOfReadableCodeReview %}) and [Clean Code]({% post_url 2020-01-06-CleanCodeReview %}).
 
 Voilà! That's my take on what every intermediate C# developer should know! Don't be overwhelm by the amount of things to learn. Don't try to learn everything at once, either. Learn one subject at a time! And, start using it in your every day coding as you learn it.
+
+{%include linq_course.html %}
 
 _Happy coding!_
