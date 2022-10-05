@@ -348,15 +348,15 @@ var desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 var desktop = new DirectoryInfo(desktopPath);
 
 var largeFiles = from file in desktop.GetFiles()
-				         let sizeInMb = file.Length / 1024 / 1024
-				         //  ^^^^^
-				         // We can create intermediate variables with 'let'            
-				         where sizeInMb > 10
-				         select file.Name;
+                 let sizeInMb = file.Length / 1024 / 1024
+                 //  ^^^^^
+                 // We can create intermediate variables with 'let'
+                 where sizeInMb > 10
+                 select file.Name;
 
 foreach (var file in largeFiles)
 {
-	Console.WriteLine(file);
+    Console.WriteLine(file);
 }
 
 Console.ReadKey();
