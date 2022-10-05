@@ -38,7 +38,7 @@ When declaring `Func` references, the last type inside `<>` tells the return typ
 
 ## How to use Func and Action in a method?
 
-You have already used `Func`, if you have used LINQ. But, in general, you use them as lambda expressions.
+You have already used `Func`, if you have used [LINQ]({% post_url 2021-01-18-LinqGuide %}). But, in general, we use them as lambda expressions.
 
 **A lambda expression is a shorthand notation to write a method without a name, only with the body and the parameter list.**
 
@@ -63,14 +63,14 @@ To a declare a method that uses `Func` or `Action` as an input parameter, you ha
 Let's see an example of a method that uses `Func`.
 
 ```csharp
-public Employee DoSomething(Func<Employee, string> f)
+public Employee DoSomething(Func<Employee, string> func)
 {
-    // Create an employee
     var employee = new Employee();
     
-    // string result = f.Invoke(employee);
+    // var result = func.Invoke(employee);
     // Or simply
-    string result = f(employee);
+    var result = func(employee);
+    //           ^^^^^
     
     // Do something with the result here
 
@@ -99,6 +99,7 @@ public class RetryStrategy : IRetryStrategy
             try
             {
                 return func();
+                //     ^^^^^
             }
             catch (Exception ex)
             {
@@ -146,6 +147,6 @@ public class ReliableConnection : DbConnectionWrapper
 
 Voilà! That's the difference between `Func` and `Action`. Remember that they only represent the signature of a method. You can define or pass around the body later.
 
-If you want to know more about LINQ, check my [quick guide to LINQ]({% post_url 2021-01-18-LinqGuide %}). To learn how to use Insight.Database, check [how to create a CRUD API with ASP.NET Core and Insight.Database]({% post_url 2020-05-01-InsightDatabase %}).
+If you want to know more about LINQ, check my [quick guide to LINQ]({% post_url 2021-01-18-LinqGuide %}). All you need to know about LINQ in 15 minutes or less. To learn how to use Insight.Database, check [how to create a CRUD API with ASP.NET Core and Insight.Database]({% post_url 2020-05-01-InsightDatabase %}).
 
 _Happy Funcy time!_
