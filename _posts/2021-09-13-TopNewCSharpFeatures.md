@@ -576,6 +576,30 @@ public class Movie
 }
 ```
 
+### ThrowIfNull
+
+ArgumentNullException has a helper `ThrowIfNull()` to help us check for required parameters in our methods.
+
+Before,
+
+```csharp
+public void SomeMethod(string param1)
+{
+    if (string.IsNullOrEmpty(param1))
+        throw new ArgumentNullException(nameof(param1));
+        //                              ^^^^^
+}
+```
+After,
+
+```csharp
+public void SomeMethod(string param1)
+{
+    ArgumentNullException.ThrowIfNull(param1);
+    //                    ^^^^^
+}
+```
+
 ### Global using statements
 
 C# 10.0 reduces the boilerplate from our classes even further by hiding common using declarations.
