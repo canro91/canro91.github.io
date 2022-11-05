@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to write good unit tests: Two issues to avoid"
+title: "How to write good unit tests: Noise and Hidden Test Values"
 tags: tutorial csharp
 cover: WriteUnitTests.png
 cover-alt: Two issues to avoid to write good unit tests
@@ -10,7 +10,7 @@ These days, I needed to update some unit tests. I found two types of issues with
 
 **To write good unit tests, avoid complex setup scenarios and hidden test values. Often tests are bloated with unneeded or complex code in the Arrange part and full of magic or hidden test values. Unit tests should be even more readable than production code**.
 
-## The tests
+## The tests I had to update
 
 The tests I needed to update were for an ASP.NET Core API controller, `AccountController`. This controller created, updated, and suspended user accounts. Also, it sent a welcome email to new users.
 
@@ -92,7 +92,7 @@ public void AccountController_SenderEmailIsNull_ThrowsException()
         MakeAccountController(emailConfig.Object));
         // ^^^^^
     
-    // We don't need a return statement here
+    // We don't need a return statement here anymore
 }
 
 private AccountController MakeAccountController(IOptions<EmailConfiguration> emailConfiguration)
@@ -112,6 +112,7 @@ private AccountController MakeAccountController(IOptions<EmailConfiguration> ema
             accountPersonService.Object,
             emailService.Object,
             emailConfiguration,
+            // ^^^^^
             httpContextAccessor.Object);
 }
 ```
@@ -179,6 +180,6 @@ public void AccountController_SenderEmailIsNull_ThrowsException()
 
 Voilà! That's way easier to read. Do you have noise and hidden test values in your tests? Remember, readability is one of the pillars of unit testing. Don't make developers decode your tests.
 
-For other tips on writing unit tests, check my follow-up on [writting failing tests first]({% post_url 2021-02-05-FailingTest %}) and my [Unit Testing Best Practices]({% post_url 2021-07-05-UnitTestingBestPractices %}). Also, check my takeaways from the book [The Art of Unit Testing]({% post_url 2020-03-06-TheArtOfUnitTestingReview %}).
+For other tips on writing unit tests, check my follow-up on [writting failing tests first]({% post_url 2021-02-05-FailingTest %}) and my [Unit Testing Best Practices]({% post_url 2021-07-05-UnitTestingBestPractices %}). Also, check my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}).
 
 _Happy unit testing!_

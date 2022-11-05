@@ -12,7 +12,7 @@ A passing test isn't always the only thing to look for. It's important to see ou
 
 ## The Passing test
 
-Let's continue with the same example from our previous post on [how to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %}).
+Let's continue with the same example from our previous post on [how to write good unit tests by reducing noise and using obvious test values]({% post_url 2020-11-02-UnitTestingTips %}).
 
 From our last example, we had a controller to create, update and suspend user accounts. Inside its constructor, this controller validated some email addresses from an injected configuration object.
 

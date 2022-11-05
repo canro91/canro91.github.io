@@ -89,7 +89,7 @@ One easy alternative to writing simpler tests is to use builder methods.
 
 With a builder method, we only create the fakes we need inside our tests. And, inside the builder method, we create "empty" fakes for the collaborators we don't need for the tested scenario.
 
-We've used this idea of builder methods to [make our tests less noisy]({% post_url 2020-11-02-UnitTestingTips %}) and more readable.
+We've used this idea of builder methods to [write better tests by making our tests less noisy]({% post_url 2020-11-02-UnitTestingTips %}) and more readable.
 
 Our test with a builder method looks like this:
 
