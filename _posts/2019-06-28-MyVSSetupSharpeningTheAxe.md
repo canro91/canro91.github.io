@@ -31,7 +31,7 @@ These are the theme, settings and extensions I use to be more productive with Vi
 		* Error List
 		* C# Interactive: A [C# REPL](https://dzone.com/articles/c-interactive-in-visual-studio), so you don't have to create a Console project to try things out
 
-{% include image.html name="VSSetup.PNG" caption="My Visual Studio opened with a sample Console project" alt="My Visual Studio 2019 setup" width="500px" %}
+{% include image.html name="VSSetup.PNG" caption="My Visual Studio opened with a sample Console project" alt="My Visual Studio 2022 setup for C#" width="500px" %}
 
 ## 2. Settings
 
@@ -86,6 +86,7 @@ For shortcuts, add `Ctrl+Shift+w` to easily close all documents from the keyboar
 * [Multiline Search and Replace](https://marketplace.visualstudio.com/items?itemName=PeterMacej.MultilineSearchandReplace) No need to copy and paste your code into Notepad++ to replace multiple lines at once.
 * [Line Endings Unifier](https://marketplace.visualstudio.com/items?itemName=JakubBielawa.LineEndingsUnifier) Yes, it unifies the line endings of your files. You can choose the line ending you want to use in your files. Depending on the number of files in your solution, it could take a couple of seconds. But it does its job!
 * [Moq.Autocomplete](https://github.com/Litee/moq.autocomplete) If you use [Moq to create fakes]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}), this extension is for you. Inside the `Setup()` methods, it autocompletes the parameter list of the faked method using `It.IsAny<T>()` for each parameter. A time saver! I use this extension along with these [snippets for Moq]({% post_url 2021-02-22-VisualStudioMoqSnippets %}).
+* [Open Command Line](https://github.com/madskristensen/OpenCommandLine): Right click on a project or solution and open a Terminal in the folder of that solution or project. Or, simply press Alt + Space.
 
 ## 4. Presentation mode
 
