@@ -7,7 +7,7 @@ I'm Cesar Aguirre. I'm a [software engineer](https://github.com/canro91), lifelo
 
 ## What I do
 
-I’m a software engineer based in Colombia _(not Columbia)_ with more than 8 years of experience. I work remotely as a C# backend engineer. I specialize in building APIs and backend code with .NET technologies. Mainly ASP.NET Core, and SQL Server these days.
+I’m a software engineer based in Colombia _(not Columbia)_ with more than 8 years of experience. I work remotely as a C# backend engineer and technical writer. I specialize in building APIs and backend code with .NET technologies. Mainly ASP.NET Core, and SQL Server these days.
 
 <div class="message lead"><em>I help teams grow high-quality backend software through clean code and unit testing.</em></div>
 
@@ -20,21 +20,21 @@ In electronic invoicing, I updated a platform to comply with the latest regulati
 * I changed document creation to follow the latest standard for XML business documents.
 * I created a library to parse PDFs and plain-text files into XML files to feed a documents API.
 
+## What I write about
+
+I write about learning and programming. I want to share what I have learned in my journey as a software engineer. Often, I consider my blog as [my own time capsule]({% post_url 2020-07-20-TimeCapsule %}).
+
+In this blog, you can find tips and advice, libraries I use, issues I have solved, lessons learned the hard way, success and failure stories.
+
+I've been featured in <a href="https://exceptionnotfound.net/author/cesar-aguirre/" target="_blank" rel="noopener noreferrer">Exception Not Found</a> as a Guest Writer. And, I've written for SaaS companies like <a href="https://www.alachisoft.com/blogs/author/cesar-aguirre/" target="_blank" rel="noopener noreferrer">Alachisoft</a>.
+
+If you're interested, you can read [how I started blogging]({% post_url 2020-07-18-HowIStartedBlogging %}) and the story behind my first post.
+
 ## Fun facts
 
 I’m a ~~cat owner,~~ [vim user]({% post_url 2020-09-14-LearnVimForFunAndProfit %}), [plain-text lover]({% post_url 2020-08-29-HowITakeNotes %}), and [Zettelkasten practitioner]({% post_url 2020-11-18-HowToTakeSmartNotes %}).
 
-In my free time, I like to read books _(on paper)_ and learn _(foreign)_ languages. Currenlty, I'm learning Brazilian Portuguese. _(Oi, gente!)_
-
-## What I write about
-
-I write about learning and programming. I want to share what I have learned in my journey as a software engineer.
-
-In this blog, you can find tips and advice, libraries I use, issues I have solved, lessons learned the hard way, success and failure stories.
-
-I've been featured in <a href="https://exceptionnotfound.net/author/cesar-aguirre/" target="_blank" rel="noopener noreferrer">Exception Not Found</a> as a Guest Writer.
-
-If you're interested, you can read [how I started blogging]({% post_url 2020-07-18-HowIStartedBlogging %}) and the story behind my first post.
+In my free time, I like to read books _(on paper)_ and learn foreign languages. Currenlty, I'm learning Brazilian Portuguese. _(Oi, gente! Tudo bem?)_
 
 ## Start here
 
