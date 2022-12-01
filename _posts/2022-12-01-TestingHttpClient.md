@@ -6,6 +6,8 @@ cover: Cover.png
 cover-alt: "Car crashed in an accident"
 ---
 
+_This post is part of [my Advent of Code]({% post_url 2022-12-01-AdventOfCode2022 %})._
+
 These days I needed to unit test a service that used the built-in `HttpClient`. It wasn't as easy as creating a fake for `HttpClient`. This is how to write tests for `HttpClient` with Moq and a set of extension methods to make it easier.
 
 **To write tests for a service that requires a HttpClient, create a fake for HttpMessageHandler and set up the protected SendAsync() method to return a HttpResponseMessage. Then, create a new HttpClient passing the fake instance of HttpMessageHandler created before.**
