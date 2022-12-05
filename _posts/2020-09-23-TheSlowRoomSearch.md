@@ -1,14 +1,14 @@
 ---
 layout: post
-title: BugOfTheDay, The slow room search
+title: "BugOfTheDay: The slow room search"
 tags: bugoftheday csharp
 ---
 
 Another day at work! This time, the room search was running slow. For one of the big hotels, searching all available rooms in a week took about 15 seconds. This is how I optimized the room search functionality.
 
-This room search was a public page to book a room into a hotel without using any external booking system. This page used an ASP.NET Core API project to combine data from different microservices. 
+This room search was a public page to book a room into a hotel without using any external booking system. This page was like a custom Booking.com page. This page used an ASP.NET Core API project to combine data from different internal microservices to display the calendar, room images, and prices of a hotel.
 
-## Room type details
+## 1. Room type details
 
 At first glance, I found an N+1 query problem. This is a common anti-pattern. The code called the database per each element from an input set to find more details about each item.
 
@@ -18,6 +18,7 @@ This N+1 problem was in the code to find the details of each room type. The code
 public async Task<IEnumerable<RoomTypeViewModel>> GetRoomTypesAsync(int hotelId, IEnumerable<int> roomTypeIds)
 {
     var tasks = roomTypeIds.Select(roomTypeId => GetRoomTypeAsync(hotelId, roomTypeId));
+    //                      ^^^^^
     var results = await Task.WhenAll(tasks);
     return results;
 }
@@ -26,6 +27,7 @@ public async Task<RoomTypeViewModel> GetRoomTypeAsync(int hotelId, int roomTypeI
 {
     var endpoint = BuildEndpoint(hotelId, roomTypeId);
     var roomClass = await _apiClient.GetJsonAsync<RoomTypeViewModel>(endpoint);
+    //                               ^^^^^
     return roomClass;
 }
 ```
@@ -34,7 +36,7 @@ These two methods made a request per each room type found, instead of searching 
 
 I cloned the existing method in the appropriate microservice and renamed it. The new method received an array of room types. Also, I removed all unneeded queries from the store procedure it used. The store procedure returned three results sets. But, the room search only cared about one.
 
-Before any change, it took ~4 seconds to find a single room type. But, with the new method, it took ~600ms to find more than one room type in a single request. The client facing the problem had about 30 different room types. _Hurray!_
+Before any change, it took ~4 seconds to find a single room type. But, with the new method, it took ~600ms to find more than one room type in a single request. The hotel facing the problem had about 30 different room types. Hurray!
 
 After this first change, the room search made a single request to find all room types.
 
@@ -47,7 +49,7 @@ public async Task<IEnumerable<RoomTypeViewModel>> GetRoomTypesAsync(int hotelId,
 }
 ```
 
-But, when calling the room search from [Postman](https://www.postman.com/), the execution time didn't seem to improve at all. These were some of the times for the room search for one week. _What went wrong?_
+But, when calling the room search from Postman, the execution time didn't seem to improve at all. These were some of the times for the room search for one week. What went wrong?
 
 | Room Type | Time in seconds |
 |---|---|
@@ -59,7 +61,7 @@ But, when calling the room search from [Postman](https://www.postman.com/), the 
 <figcaption>Encuentro Guadalupe, El Porvenir, Mexico. <span>Photo by <a href="https://unsplash.com/@manuelmx?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Manuel Moreno</a> on <a href="https://unsplash.com/s/photos/hotel?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
 </figure>
 
-## Premature optimization
+## 2. Premature optimization
 
 To check what happened, I stepped back and went to the room search method again. The room search method looked for all available rooms, the best rates and any restrictions to book a room. This method was something like this: 
 
@@ -92,9 +94,9 @@ public async Task<IActionResult> RoomSearchAsync([FromQuery] RoomSearchRequest r
 }
 ```
 
-To find any bottlenecks, I wrapped some parts of the code using the `Stopwatch` class. The `Stopwatch` measures the elapsed time of a method. For more details, see [the Stopwatch documentation](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch?view=netcore-3.1).
+To find any bottlenecks, I wrapped some parts of the code using the `Stopwatch` class and log the elapsed time of them.
 
-On one hand, the log with the execution times before any change looked like this:
+These are the log messages with the execution times before any change looked like this:
 
 ```
 GetHotelTimeZoneAsync: 486ms
@@ -103,6 +105,7 @@ Task.WhenAll: 9641ms
     GetRoomListAsync: 7008ms
         FindAvailableRoomsAsync: 2792ms
         GetRoomTypesAsync:       4204ms
+                                 ^^^^^
     GetRulesAsync: 3030ms
 GetRoomTypeGaleriesAsync: 8228ms
 ```
@@ -116,6 +119,7 @@ Task.WhenAll: 8726ms
     GetRoomListAsync: 4171ms
         FindAvailableRoomsAsync: 3602ms
         GetRoomTypesAsync:        559ms
+                                  ^^^^^
     GetRulesAsync: 4223ms
 GetRoomTypeGaleriesAsync: 11486ms
 ```
@@ -126,9 +130,9 @@ The `GetRoomTypesAsync` method run concurrently next to the `GetRatesAsync` meth
 > 
 > -Donald Knuth
 
-I was looking at the wrong place! I rushed to optimize without measuring anything. I needed to start working either on `GetHotelTimeZoneAsync` or `GetRoomTypeGaleriesAsync`. 
+I was looking at the wrong place! I rushed to optimize without measuring anything. Lesson learned! I needed to start working either on `GetHotelTimeZoneAsync` or `GetRoomTypeGaleriesAsync`. 
 
-## Room gallery
+## 3. Room gallery
 
 This time to gain noticeable improvement, I moved to the `GetRoomTypeGaleriesAsync` method. Again, this method called another microservice. The code looked like this:
 
@@ -144,6 +148,7 @@ public async Task<IEnumerable<RoomGallery>> GetRoomGalleriesAsync(IEnumerable<in
     var hotelId = roomGalleries.First().HotelId;
     var roomGalleriesTasks = roomGalleries
         .Select(rg => Task.Run(()
+        // ^^^^^
             => MapToRoomGallery(rg.RoomTypeId, hotelId, roomGalleries)));
 
     return (await Task.WhenAll(roomGalleriesTasks)).AsEnumerable();
@@ -155,19 +160,20 @@ private RoomGallery MapToRoomGallery(int roomTypeId, int hotelId, IEnumerable<Ro
     {
         RoomTypeId = roomTypeId,
         HotelId = hotelId,
-        Images =  roomGalleries .Where(p => p.RoomTypeId == roomTypeId)
+        Images = roomGalleries.Where(p => p.RoomTypeId == roomTypeId)
+        //                     ^^^^^
             .OrderBy(x => x.SortOrder)
             .Select(r => new Image
             {
-                // Some mapping code
+                // Some mapping code here...
             })
     };
 }
 ```
 
-The `MapToRoomGallery` method was the problem. It filtered the collection of result images, `roomGalleries` with every element. It was a nested loop over the same collection, an `O(nm)` operation. Also, since all the code was synchronous, there was no need for `Task.Run` and `Task.WhenAll`.
+The `MapToRoomGallery` method was the problem. It filtered the collection of result images, `roomGalleries` with every element. Basically, it was a nested loop over the same collection, an `O(nm)` operation. Also, since all the code was synchronous, there was no need for `Task.Run` and `Task.WhenAll`.
 
-To fix this problem, the code grouped the images by room type first. And then, it passed a filtered collection to the mapping method, `MapToRoomGallery`.
+To fix this problem, I grouped the images by room type first. And then, I passed a filtered collection to the mapping method, `MapToRoomGallery`.
 
 ```csharp
 public async Task<IEnumerable<RoomGallery>> GetRoomGalleriesAsync(IEnumerable<int> roomTypeIds)
@@ -180,6 +186,7 @@ public async Task<IEnumerable<RoomGallery>> GetRoomGalleriesAsync(IEnumerable<in
 
     var hotelId = images.First().HotelId;
     var imagesByRoomTypeId = images.GroupBy(t => t.RoomTypeId, (key, result) => new { RoomTypeId = key, Images = result });
+    //                              ^^^^^
     var roomGalleries = imagesByRoomTypeId.Select(rg =>
     {
         return MapToRoomGallery(rg.RoomTypeId, hotelId, rg.Images);
@@ -193,16 +200,17 @@ private RoomGallery MapToRoomGallery(int roomTypeId, int hotelId, IEnumerable<Ro
     {
         RoomTypeId = roomTypeId,
         HotelId = hotelId,
-        Images =  roomGalleries.OrderBy(x => x.SortOrder)
+        Images = roomGalleries.OrderBy(x => x.SortOrder)
+        //                     ^^^^^
             .Select(r => new Image
             {
-                // Some mapping code
+                // Some mapping code here
             })
     };
 }
 ```
 
-After changing those three lines of code, the image gallery times went from ~4sec to ~900ms. And, the initial room search improved in ~2-3sec. The client with the slowness had about 70 images. So, it was a good move.
+After changing those three lines of code, the image gallery times went from ~4sec to ~900ms. And, the initial room search improved in ~2-3sec. The hotel with the slowness issue had about 70 images. It was a step in the right direction.
 
 These are the times of three requests to the initial room search using Postman:
 
@@ -211,7 +219,7 @@ These are the times of three requests to the initial room search using Postman:
 | Before | 13.96 13.49 17.64 |
 | After  | 11.74 11.19 11.23 |
 
-When checking the log, the room search had a noticeable improvement for the `GetRoomClassGaleriesAsync` method. From ~8-11s to ~3-4s. _Just three lines of code._
+When checking the log, the room search had a noticeable improvement for the `GetRoomClassGaleriesAsync` method. From ~8-11s to ~3-4s. Only by changing three lines of code.
 
 ```
 GetHotelTimeZoneAsync: 182ms
@@ -222,9 +230,11 @@ Task.WhenAll: 8349ms
         GetRoomTypesAsync:        263ms
     GetRulesAsync: 2376ms
 GetRoomClassGaleriesAsync: 3586ms
+                           ^^^^^ It was ~11sec
+                           
 ```
 
-## Room rates
+## 4. Room rates
 
 To make things faster, I needed to tackle the slowest of the methods inside the `Task.WhenAll`, the `GetRatesAsync` method. It looked like this:
 
@@ -233,7 +243,7 @@ protected async Task<IEnumerable<BestRateViewModel>> GetRatesAsync(int hotelId, 
 {
     var bestRatesRequest = new BestRatesRequest
     {
-        // Some mapping code
+        // Some mapping code here
     };
     var bestRates = await _rateService.GetBestRatesAsync(bestRatesRequest);
     if (!bestRates.Any())
@@ -256,10 +266,11 @@ Task.WhenAll: 12075ms
     GetRatesAsync: 12060ms
         GetBestRates: 5075ms
         UpdateRateDetailsAsync: 5741ms
+                                ^^^^^
         UpdatePackagesAsync: 1222ms
     GetRoomListAsync: 3774ms
         FindAvailableRoomsAsync: 2555ms
-        GetRoomTypesAsync:            1209ms
+        GetRoomTypesAsync:       1209ms
     GetRulesAsync: 2772ms
 GetRoomClassGaleriesAsync: 4851ms
 ```
@@ -272,6 +283,7 @@ public async Task<IEnumerable<RateDetailViewModel>> GetRateDetailsAsync([FromBod
 {    
     var results = new List<RateDetailViewModel>();
     foreach (var rateId in rateIds)
+    // ^^^^^
     {
         if (rateId <= 0)
         {
@@ -286,6 +298,7 @@ public async Task<IEnumerable<RateDetailViewModel>> GetRateDetailsAsync([FromBod
         try
         {
             var result = await _rateService.GetRateDetailAsync(rateId);
+            //                              ^^^^^
             results.Add(new RateDetailViewModel
             {
                 RateId = rateId,
@@ -306,7 +319,7 @@ public async Task<IEnumerable<RateDetailViewModel>> GetRateDetailsAsync([FromBod
 }
 ```
 
-Again, the N+1 query anti-pattern. The initial client had ~10 rates, it means 10 separate database calls. To fix this issue, the code validated all input ids and returned early if there wasn't any valid id to call the database. Then, it made a single request to the database. Either it succeeded or failed for all the valid input ids.
+Again, the N+1 query anti-pattern. Arrgggg! The hotel with the slowness issue had ~10 rates, it means 10 separate database calls. To fix this issue, I changed  the code to validate all input ids and return early if there wasn't any valid id to call the database. Then, I made a single request to the database. Either it succeeded or failed for all the valid input ids.
 
 
 ```csharp
@@ -320,6 +333,7 @@ public async Task<IEnumerable<RateDetailViewModel>> GetRateDetailsAsync([FromBod
                             Error = $"Invalid Rate Id: {rateId}"
                         });
     if (results.Count() == rateIds.Length)
+    // ^^^^^
     {
         return results;
     }
@@ -329,6 +343,7 @@ public async Task<IEnumerable<RateDetailViewModel>> GetRateDetailsAsync([FromBod
     try
     {
         var details = await m_rateService.GetRateDetailsAsync(validRateIds);
+        //                                ^^^^^
         results = results.Concat(BuildRateDetailViewModels(validRateIds, details));
     }
     catch (Exception e)
@@ -345,7 +360,7 @@ public async Task<IEnumerable<RateDetailViewModel>> GetRateDetailsAsync([FromBod
 }
 ```
 
-After removing this N+1 problem, the execution time of getting details for ~10 rates went from ~1.6s to ~200-300ms. For three consecutive calls, these were the times of calling the modified rate details method from Postman
+After removing this N+1 problem, the execution time of getting details for ~10 rates went from ~1.6s to ~200-300ms. For three consecutive calls, these were the times of calling the modified rate method from Postman:
 
 | Room Rates | Time in milliseconds |
 |---|---|
@@ -360,6 +375,7 @@ Task.WhenAll: 8349ms
     GetRatesAsync: 10838ms
         GetBestRates: 8072ms
         UpdateRateDetailsAsync: 2198ms
+                                ^^^^^ It was ~5sec
         UpdatePackagesAsync: 557ms
     GetRoomListAsync: 3207ms
         FindAvailableRoomsAsync: 2982ms
@@ -368,7 +384,9 @@ Task.WhenAll: 8349ms
 GetRoomClassGaleriesAsync: 6370ms
 ```
 
-It was the last low-hanging fruit issue I addressed. After the above three changes, the initial room search went from ~15-18sec to ~10-14sec. It was ~5 seconds faster. These were the times of three requests to the room search: 
+It was the last low-hanging fruit issue I addressed. After the above three changes, the initial room search went from ~15-18sec to ~10-14sec. It was ~5 seconds faster.
+
+These were the times of three requests to the room search after all these changes: 
 
 | All changes | Time in seconds |
 |---|---|
@@ -377,10 +395,14 @@ It was the last low-hanging fruit issue I addressed. After the above three chang
 
 ## Conclusion
 
-Voilà! That's how I optimized the room search functionality. Five seconds faster don't seem too much. But, that's the difference between someone booking a room in a hotel or not. From this task, I learned two things. First, don't assume a bottleneck is here or there until you measure it. And, avoid the N+1 query anti-pattern and nested loops on large collections.
+Voilà! That's how I optimized the room search functionality. Five seconds faster don't seem too much. But, that's the difference between someone booking a room in a hotel and someone leaving the page to find another hotel.
+
+From this task, I learned two things. First, don't assume a bottleneck is here or there until you measure it. And, avoid the N+1 query anti-pattern and nested loops on large collections.
 
 I didn't mess with any store procedure or SQL query trying to optimize it. But, I had some metrics in place and identified which was the store procedures to tune.
 
-The next step I tried was to cache the hotel details. You can take a look at my post on [how to add a caching layer with Redis and ASP.NET Core](https://canro91.github.io/2020/06/29/HowToAddACacheLayer/) for more details.
+To find the bottlenecks, I took the simplest route wrapping methods with a `Stopwatch`, the next time I will use another alternative like [MiniProfiler](https://github.com/MiniProfiler/dotnet). 
+
+The next step I tried was to cache the hotel timezone and other details. Until a hotel changes its address, its timezone won't change. You can take a look at my post on [how to add a caching layer with Redis and ASP.NET Core](https://canro91.github.io/2020/06/29/HowToAddACacheLayer/) for more details.
 
 _Happy coding!_
