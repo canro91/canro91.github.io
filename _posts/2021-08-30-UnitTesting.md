@@ -20,7 +20,7 @@ Identify and fix these [4 common mistakes]({% post_url 2021-03-29-UnitTestingCom
 <div class="message">Find these first three posts plus a summary of "The Art of Unit Testing" and my best tips from this series on my free ebook “Unit Testing 101”. <a href="https://imcsarag.gumroad.com/l/unittesting101" target="_blank" rel="noopener noreferrer" data-goatcounter-click="UnitTesting101eBook-Link">Download your free copy on my Gumroad page</a> or click on the image below.</div>
 
 <figure>
-<a href="https://imcsarag.gumroad.com/l/unittesting101" rel="noopener noreferrer" target="_blank" data-goatcounter-click="UnitTesting101eBook-Image"><img src="/assets/posts/2021-08-30-UnitTesting/GrabYourOwnCopy.png" alt="Grab your own copy of Unit Testing 101" /></a>
+<a href="/assets/posts/2021-08-30-UnitTesting/UnitTesting101.pdf" rel="noopener noreferrer" target="_blank" data-goatcounter-click="UnitTesting101eBook-Image"><img src="/assets/posts/2021-08-30-UnitTesting/GrabYourOwnCopy.png" alt="Grab your own copy of Unit Testing 101" /></a>
 </figure>
 
 When writing your unit tests, make sure you [don't duplicate logic in Asserts]({% post_url 2021-10-11-DontRepeatLogicInAssertions %}). That's THE most common mistake in unit testing. Tests should only contain assignments and method calls.
