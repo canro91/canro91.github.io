@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "BugOfTheDay: Tune a procedure to find reservations"
+title: "BugOfTheDay: How I tuned a procedure to find reservations"
 tags: bugoftheday sql
 ---
 
@@ -28,7 +28,7 @@ WHERE reservationID NOT IN (
 
 ```
 
-This query belonged to a store procedure to search reservations. Among its filters, a hotelier can find all reservations assigned to a client's internal account number.
+This query belonged to a store procedure to search reservations by a bunch of filters. Among its filters, a hotelier can find all reservations assigned to a client's internal account number.
 
 From the above query, the `#resTemp` table had reservations from previous queries in the same store procedure. The `DELETE` statement removes all reservations without the given account number.
 
@@ -36,7 +36,7 @@ Inside SQL Server Management Studio, the store procedure did about 193 millions 
 
 **For SQL Server, logical reads are the number of 8KB pages that SQL Server has to read to execute a query. Generally, the fewer logical reads, the faster a query runs.**
 
-## Remove extra joins
+## 1. Remove extra joins
 
 The subquery in the `DELETE`  joined the found reservations with the `dbo.reservations` table. And then, it joined the `dbo.accounts` table checking for any of the three columns with an `accountID`. _Yes, a reservation could have an accountID in three columns in the same table. Don't ask me why._
 
@@ -62,7 +62,7 @@ WHERE reservationID NOT IN (
         );
 ```
 
-## Use NOT EXISTS
+## 2. Use NOT EXISTS
 
 Then, instead of `NOT IN`, I used `NOT EXISTS`. This way, I could lead the subquery from the `dbo.accounts` table. Another JOIN gone!
 
@@ -87,9 +87,9 @@ Those ~4-5 seconds were good enough. But, there was still room for improvement.
 
 <div class="message">If you're wondering about that weird SELECT 1/0, check my post on <a href="/2020/10/08/ExistsSelectSQLServer/">EXISTS SELECT in SQL Server</a></div>
 
-## Don't use functions in WHERE's
+## 3. Don't use functions in WHERE's
 
-The `ISNULL()` functions in the `WHERE` look weird. Using functions in the `WHERE` clause is a common anti-pattern.
+The `ISNULL()` functions in the `WHERE` look weird. [Using functions around columns in WHERE clauses]({% post_url 2022-01-24-DontPutFunctionsInYourWheres %}) is a common anti-pattern.
 
 In this case, a computed column concatenating the two parts of account numbers would help. _Yes, account numbers were stored splitted into two columns. Again, don't ask me why._
 
@@ -99,12 +99,16 @@ ALTER TABLE dbo.accounts
     AS ISNULL(accountNumber, '') + ISNULL(accountNumberAlpha, '');
 ```
 
+I didn't use a persisted column. The `dbo.accounts` table was a huge table, creating a persisted columns would have required scanning the whole table. I only wanted SQL Server to have better statistics to run the DELETE statement.
+
 To take things even further, an index leading on the `ClientId` followed by that computed column could make things even faster.
 
 ```sql
 CREATE INDEX ClientID_AccountNumberComplete
     ON dbo.accounts(ClientID, AccountNumberComplete);
 ```
+
+I didn't need to include the `accountId` on the index definition since it was the primary key  of the table.
 
 Voilà! That's how I tuned this query. The lesson to take home is to reduce the number of joining tables and stay away from functions in your WHERE's. Often, a computed column can help SQL Server to run queries  with functions in the WHERE clause. Even, without rewriting the query to use the new computed column.
 
