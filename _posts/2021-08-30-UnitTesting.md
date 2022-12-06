@@ -3,7 +3,6 @@ layout: post
 title: "Unit Testing 101: From Zero to Hero"
 tags: tutorial csharp
 cover: Cover.png
-featured: true
 permalink: UnitTesting
 ---
 
