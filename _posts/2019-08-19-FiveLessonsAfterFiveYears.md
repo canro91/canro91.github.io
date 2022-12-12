@@ -44,6 +44,6 @@ A beautiful website or mobile app can make a huge difference. But, start small w
 
 In the beginning, you will have to set up the system through scripts or do some manual configuration. It's better to demo an entire feature with an unpolished UI than a very awesome UI that does simply nothing.
 
-Voilà! Those are my five lessons. Yours might be different. Interested in more career lessons? Check my lessons on [remote work]({% post_url 2020-08-08-LessonsOnRemoteWork %}).
+Voilà! Those are my five lessons. Yours might be different. Interested in more career lessons? Check my [lessons on remote work]({% post_url 2020-08-08-LessonsOnRemoteWork %}) and [the things I wished I knew before becoming a software engineer]({% post_url 2022-12-12-ThingsToKnowBeforeBeingSoftwareEngineer %}).
 
 _Happy coding!_

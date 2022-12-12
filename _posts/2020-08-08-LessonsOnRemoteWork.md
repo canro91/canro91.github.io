@@ -58,6 +58,6 @@ You could be working from home for weeks without getting outside. Don't be home 
 
 You don’t want your computer to restart updating the operating system in the middle of a presentation or an important meeting. This is a true story that happened to a friend of a friend of mine.
 
-Voilà! Ten lessons I learned after my first year of remote work. For more career lessons, check the five lessons I learned after [five years as a software engineer]({% post_url 2019-08-19-FiveLessonsAfterFiveYears %}) and my [takeaways from The Clean Coder]({% post_url 2020-06-15-CleanCoder %}).
+Voilà! Ten lessons I learned after my first year of remote work. For more career lessons, check [the lessons I learned after five years as a software engineer]({% post_url 2019-08-19-FiveLessonsAfterFiveYears %}) and [the things I wished I knew before becoming a software engineer]({% post_url 2022-12-12-ThingsToKnowBeforeBeingSoftwareEngineer %}). Don't miss my [takeaways from The Clean Coder]({% post_url 2020-06-15-CleanCoder %}). That's a good one on career advice.
 
 _Happy remote work!_
