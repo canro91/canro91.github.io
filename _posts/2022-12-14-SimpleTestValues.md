@@ -173,9 +173,9 @@ public void Merge_DuplicateKeys_ReturnNoDuplicates()
 }
 ```
 
-Notice this time, we boiled down the Arrange part of the first test to only two dictionaries with one item each, without duplicates.
+Notice this time, we boiled down [the Arrange part]({% post_url 2021-07-19-WriteBetterAssertions %}) of the first test to only two dictionaries with one item each, without duplicates.
 
-And for the second one, the one for duplicates, we wrote a `duplicateKey` variable and used it in both dictionaries as key to make the test scenario obvious. This way, after reading the test name, we don't have to decode where the duplicate keys are.
+And for the second one, the one for duplicates, we wrote a `duplicateKey` variable and used it in both dictionaries as key to [make the test scenario obvious]({% post_url 2020-11-02-UnitTestingTips %}). This way, after reading the test name, we don't have to decode where the duplicate keys are.
 
 Since we wrote simple tests, we could remove the `foreach` in the Assert parts and the funny multiplications.
 
