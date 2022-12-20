@@ -160,6 +160,6 @@ public void AccountController_NoSomeNewConfig_ThrowsException()
 
 Voilà! This task reminded me to see my tests fail for the right reasons. Do you have passing tests? Do they pass and fail when they should? I hope they do after reading this post.
 
-For more tips on unit testing, check my takeaways from the book [The Art of Unit Testing]({% post_url 2020-03-06-TheArtOfUnitTestingReview %}) and my post on [how to write fakes with Moq]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}). Don't miss the rest of my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}) where I also cover mocking, assertions, and best practices.
+For more tips on how to write good unit tests, check my follow-up on [using simple test values]({% post_url 2022-12-14-SimpleTestValues %}). Don't miss the rest of my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}) where I also cover mocking, assertions, and best practices.
 
 _Happy unit testing!_

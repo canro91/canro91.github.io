@@ -78,6 +78,6 @@ find . -path ./TestCoverageReport -prune -type f -o -name "*Old*" \
 
 Voilà! That's how to replace a keyword in the content and name of files. It took me some time to figure this out. But, we can rename files with two one-liners. It will save us time in the future. Kudos to StackOverflow.
 
-To read more productivity tips and tools, check these [programs that save me 100 hours]({% post_url 2020-04-13-ProgramThatSave100Hours %}) and [how to format commit messages with hooks]({% post_url 2020-09-02-TwoRecurringReviewComments %}).
+To read more productivity tips and tools, check these [programs that save me 100 hours]({% post_url 2020-04-13-ProgramThatSave100Hours %}), [how to format commit messages with hooks]({% post_url 2020-09-02-TwoRecurringReviewComments %}), and [how to rename Visual Studio projects]({% post_url 2022-12-09-RenameProjectsVisualStudio %}).
 
 _Happy coding!_

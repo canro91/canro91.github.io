@@ -8,7 +8,7 @@ cover-alt: "Disarmed laptop in pieces"
 
 _This post is part of [my Advent of Code 2022]({% post_url 2022-12-01-AdventOfCode2022 %})._
 
-These days I finished another internal project while working with one of my clients. I worked to connect a Property Management System with a third-party Point of Sales. I had to work with Hangfire and Ormlite. Today I want to share some of the technical things I learned along the way.
+These days I finished another internal project while working with one of my clients. I worked to connect a Property Management System with a third-party Point of Sales. I had to work with Hangfire and Ormlite. I used [Hangfire to replace ASP.NET BackgroundServices]({% post_url 2022-12-06-BackgroundServicesAndLiteHangfire %}). Today I want to share some of the technical things I learned along the way.
 
 ## 1. Hangfire lazy-loads configurations
 
@@ -34,9 +34,9 @@ public static class WebApplicationExtensions
         // Before, using the static version
         //
         // RecurringJob.AddOrUpdate<MyCoolJob>(
-			  //    MyCoolJob.JobId,
+        //    MyCoolJob.JobId,
         //    x => x.DoSomethingAsync());
-		    // RecurringJob.Trigger(MyCoolJob.JobId);
+        // RecurringJob.Trigger(MyCoolJob.JobId);
 				
         // After
         //

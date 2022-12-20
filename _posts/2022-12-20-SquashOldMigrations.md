@@ -18,7 +18,7 @@ In one of my client's projects, we had too many migration files that we started 
 
 For those projects, we use [Simple.Migrations to apply migration files]({% post_url 2020-08-15-Simple.Migrations %}) and a bunch of custom C# extension methods to write the `Up` and `Down` steps. Since we don't use an all-batteries-included migration framework, I needed to generate the dump of all database objects.
 
-I found [schemazen](https://github.com/sethreno/schemazen), a CLI tool to _"script and create SQL Server objects quickly."_
+I found [schemazen](https://github.com/sethreno/schemazen) in GitHub, a CLI tool to _"script and create SQL Server objects quickly."_
 
 This is how to script all objects and export data from reference tables with schemazen,
 

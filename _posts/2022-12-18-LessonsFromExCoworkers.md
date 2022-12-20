@@ -34,6 +34,6 @@ Also, from Paul, I learned to optimize for the most frequent scenario. Once we h
 
 Voilà! These are some of the lessons I learned from some of my post coworkers. What have you learned from your coworkers and bosses? I bet they have something to teach you.
 
-For more career lessons, check [things I wished I knew before becoming a software engineer]({% post_url 2022-12-12-ThingsToKnowBeforeBeingSoftwareEngineer %}) and [ten lessons learned after one year of remote work]({% post_url 2020-08-08-LessonsOnRemoteWork %}).
+For more career lessons, check [things I wished I knew before becoming a software engineer]({% post_url 2022-12-12-ThingsToKnowBeforeBeingSoftwareEngineer %}), [ten lessons learned after one year of remote work]({% post_url 2020-08-08-LessonsOnRemoteWork %}), and [things I learned after a failed project]({% post_url 2022-12-17-LessonsOnAFailedProject %}).
 
 _Happy coding!_

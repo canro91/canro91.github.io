@@ -180,6 +180,6 @@ public void AccountController_SenderEmailIsNull_ThrowsException()
 
 Voilà! That's way easier to read. Do you have noise and hidden test values in your tests? Remember, readability is one of the pillars of unit testing. Don't make developers decode your tests.
 
-For other tips on writing unit tests, check my follow-up on [writting failing tests first]({% post_url 2021-02-05-FailingTest %}) and my [Unit Testing Best Practices]({% post_url 2021-07-05-UnitTestingBestPractices %}). Also, check my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}).
+For other tips on writing good unit tests, check my follow-ups on [writing failing tests first]({% post_url 2021-02-05-FailingTest %}) and [using simple test values]({% post_url 2022-12-14-SimpleTestValues %}). Also, don't miss my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}) where I cover more subjects like this.
 
 _Happy unit testing!_
