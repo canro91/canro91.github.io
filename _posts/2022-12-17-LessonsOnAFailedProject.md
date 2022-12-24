@@ -22,7 +22,7 @@ With this decision, a one-month project ended up being a three-month project. Af
 
 For such a small project with a tight schedule, there was no room for experimentation.
 
-_"The best tool for a job is the tool you already know."_ I found this idea these days. I wish I could credit the source, but I don't remember where I found it. Maybe, it was on Reddit or Hacker News. At that time, the best tool for my team was N-tier architecture.
+_"The best tool for a job is the tool you already know."_ I found this idea these days. I wish I could credit the source, but I don't remember where I found it. Maybe, it was on a Reddit AMA or a Hacker News post. At that time, the best tool for my team was N-tier architecture.
 
 For my future projects, I will minimize the moving parts.
 

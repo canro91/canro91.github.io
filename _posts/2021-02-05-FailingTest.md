@@ -64,7 +64,7 @@ private AccountController MakeAccountController(IOptions<EmailConfiguration> ema
 
 This time, I had a new requirement. I needed to add a new method to our `AccountController`. This new method [read another configuration object]({% post_url 2020-08-21-HowToConfigureValues %}) injected into the controller.
 
-To follow the convention of validating required parameters inside constructors, I also checked for this new configuration object. I wrote a new test and a new `MakeAccountController()` builder method to call the constructor with only the parameters I needed.
+To follow the convention of [validating required parameters inside constructors]({% post_url 2022-12-02-ValidateInputParameters %}), I also checked for this new configuration object. I wrote a new test and a new `MakeAccountController()` builder method to call the constructor with only the parameters I needed.
 
 ```csharp
 [TestMethod]

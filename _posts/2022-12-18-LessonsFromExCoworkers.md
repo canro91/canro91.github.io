@@ -28,7 +28,7 @@ Also, from Jack, I learned to read other people's source code. He believed that'
 
 ## 3. Identify your users
 
-From Paul, I learned to keep in mind who our end users are. More than once, I remember Paul asking designers to change fonts and increase their size. He said :_"you aren’t the one who’s going to use this app. This is for your dad and granddad."_
+From Paul, I learned to keep in mind who our end users are. More than once, I remember Paul asking designers to change fonts and increase their size. He said: _"you aren’t the one who’s going to use this app. This is for your dad and granddad. This is for oldies."_
 
 Also, from Paul, I learned to optimize for the most frequent scenario. Once we had to read and validate XML files, Paul suggested storing the XML documents first and then validating them and continuing with the rest of the processing. Because _"90% of the time, those documents are valid."_
 

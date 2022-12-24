@@ -195,9 +195,9 @@ private static SendEmailCommand BuildCommand(IEnumerable<string> tos, IEnumerabl
         ccs);
 ```
 
-Notice we wrote a `BuildCommand()` method to create a `SendEmailCommand` only with the email addresses. That's what we care about in this test. And, to make our test values obvious, we declared a `duplicated` variable and used it in both destination email addresses.
+Notice we wrote a `BuildCommand()` method to create a `SendEmailCommand` only with the email addresses. That's what we care about in this test. Let's [reduce the noise in our tests]({% post_url 2020-11-02-UnitTestingTips %}). And, to make our test values obvious, we declared a `duplicated` variable and used it in both destination email addresses.
 
-To write the Assert part of this test, we can use the `Verify()` method from the fake repository to check that we have the `duplicated` email only once. Or we can use the Moq `Callback()` method to capture the `Email` being saved and write some assertions. Even better, we can create a [custom assertion]({% post_url 2021-08-16-WriteCustomAssertions %}) for that. Maybe, we can write a `WasCalledWithoutDuplicates()`.
+To write the Assert part of this test, we can use the `Verify()` method from the fake repository to check that we have the `duplicated` email only once. Or we can use the Moq `Callback()` method to capture the `Email` being saved and write some assertions. Even better, we can create a [custom assertion]({% post_url 2021-08-16-WriteCustomAssertions %}) for that. Maybe, we can write a `WasCalledWithoutDuplicates()` method.
 
 That's one of the two original tests. The other one is left as an exercise to the reader.
 

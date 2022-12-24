@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TIL: How to rename Visual Studio projects and folders with Git"
-tags: todayilearned visualstudio productivity showdev
+tags: todayilearned visualstudio productivity showdev git
 cover: Cover.png
 cover-alt: "How to rename Visual Studio projects and folders with Git" 
 ---
@@ -76,6 +76,6 @@ Using a Powershell prompt, from the folder containing the .sln file, run:
 
 With the `--no-commit` flag, ProjectRenamer will only stage the files. And, the `--no-review` skips the user confirmation. It's like the `-f` flag of some Unix commands.
 
-Voilà! That's how to rename a project inside a Visual Studio solution. The painful and the quick way. Another [tool that saved me like 100 hours]({% post_url 2020-04-13-ProgramThatSave100Hours %}). For more productivity tricks, check [how to use Git to format commit messages]({% post_url 2020-09-02-TwoRecurringReviewComments %}). I never did it by hand again.
+Voilà! That's how to rename a project inside a Visual Studio solution. The painful and the quick way. Another [tool that saved me like 100 hours]({% post_url 2020-04-13-ProgramThatSave100Hours %}). For more productivity tricks, check [how to use Git to format commit messages]({% post_url 2020-09-02-TwoRecurringReviewComments %}) and my [Visual Studio setup for C#]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %}). I never did it by hand again.
 
 _Happy coding!_

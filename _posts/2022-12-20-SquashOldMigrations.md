@@ -12,11 +12,11 @@ Recently, I stumbled upon the article [Get Rid of Your Old Database Migrations](
 
 ## 1. Export database objects and reference data with schemazen
 
-In one of my client's projects, we had too many migration files that we started to group them inside folders named after the year and month. Squashing migrations are a good idea here. For a three-month project, we wrote 27 migration files. This is the Migrator project,
+In one of my client's projects, we had too many migration files that we started to group them inside folders named after the year and month. Squashing migrations sounds like a good idea here. For example, for a three-month project, we wrote 27 migration files. This is the Migrator project,
 
 {% include image.html name="TooManyMigrations.png" caption="27 migration files for a short-term project" alt="List of migration files in one of my projects" width="200px" %}
 
-For those projects, we use [Simple.Migrations to apply migration files]({% post_url 2020-08-15-Simple.Migrations %}) and a bunch of custom C# extension methods to write the `Up` and `Down` steps. Since we don't use an all-batteries-included migration framework, I needed to generate the dump of all database objects.
+For those projects, we use [Simple.Migrations to apply migration files]({% post_url 2020-08-15-Simple.Migrations %}) and a bunch of custom C# extension methods to write the `Up()` and `Down()` steps. Since we don't use an all-batteries-included migration framework, I needed to generate the dump of all database objects.
 
 I found [schemazen](https://github.com/sethreno/schemazen) in GitHub, a CLI tool to _"script and create SQL Server objects quickly."_
 
@@ -57,7 +57,7 @@ After this first step, I had the database objects. But I still needed to write t
 
 ## 2. Process schemazen exported files
 
-To write the squash migration file, I wanted to have all scripts in a single file and turn the TSV files with the exported data into the INSERT statements.
+To write the squash migration file, I wanted to have all scripts in a single file and turn the TSV files with the exported data into INSERT statements.
 
 I could write a C# script file, but I wanted to stretch my Bash/Unix muscles. After some Googling, I came up with this,
 
@@ -96,7 +96,7 @@ The second part removes the `GO` keywords and blank lines.
 
 And the last part turns the TSV files into INSERT statements. It grabs table names from the file name and removes the base path and the TSV extension. It assumes reference tables only have an id and a name.
 
-With this compact script file, I removed the old migration files except the last one. For the project in the screenshot above, I kept `Migration0027`. Then, I used all the SQL statements from the dump file in the `Up` step of the migration. I have an squash migration now.
+With this compact script file, I removed the old migration files except the last one. For the project in the screenshot above, I kept `Migration0027`. Then, I used all the SQL statements from the dump file in the `Up()` step of the migration. I had an squash migration after that.
 
 Voilà! That's how I squashed old migrations in one of my client's projects using schemazen and a Bash script. The idea is to squash our migrations with after stable release of our projects. From the reference article, one commenter said he does this approach one or twice a year. Another one, after every breaking changes. 
 
