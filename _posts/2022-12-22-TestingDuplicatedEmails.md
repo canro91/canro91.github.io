@@ -107,7 +107,7 @@ public class SendEmailCommandHandler : IRequestHandler<SendEmailCommand, Trackin
         var recipients = CreateRecipients(command.Tos, command.Ccs);
         //               ^^^^^
         var email = Email.Create(
-            /* some other properties here */
+            /* some other properties here like body, subject, etc */
             recipients);
 
         await _emailRepository.CreateAsync(email);
@@ -137,7 +137,7 @@ public enum RecipientType
 }
 ```
 
-The `SendEmailCommandHandler` processes all requests to send an email. It grabs the input parameters, creates an `Email` class, and stores it using a repository. It uses the [MediatR library](https://github.com/jbogard/MediatR) to roll commands and command handlers. 
+The `SendEmailCommandHandler` processes all requests to send an email. It grabs the input parameters, creates an `Email` class, and stores it using a repository. It uses the [free MediatR library](https://github.com/jbogard/MediatR) to roll commands and command handlers. 
 
 Also, it parses the raw email addresses into a list of `Recipient` with the `CreateRecipients()` method. That's the method under test in our two tests. Here the `Recipient` and `EmailAddress` work like [Value Objects]({% post_url 2022-12-21-WhenToChooseValueObjects %}).
 
@@ -166,6 +166,7 @@ This is the test to validate that we remove duplicates,
 public async Task Handle_DuplicatedEmailInTosAndCc_CallsRepositoryWitouhtDuplicates()
 {
     var duplicated = "duplicated@email.com";
+    //  ^^^^^
     var tos = new List<string> { duplicated, "tomail@mail.com" };
     var ccs = new List<string> { duplicated, "ccmail@mail.com" };
 
@@ -190,12 +191,12 @@ public async Task Handle_DuplicatedEmailInTosAndCc_CallsRepositoryWitouhtDuplica
 
 private static SendEmailCommand BuildCommand(IEnumerable<string> tos, IEnumerable<string> ccs)
     => new SendEmailCommand(
-        /* Some other properties here */
+        /* Some other properties here, like body, subject, etc */
         tos,
         ccs);
 ```
 
-Notice we wrote a `BuildCommand()` method to create a `SendEmailCommand` only with the email addresses. That's what we care about in this test. Let's [reduce the noise in our tests]({% post_url 2020-11-02-UnitTestingTips %}). And, to make our test values obvious, we declared a `duplicated` variable and used it in both destination email addresses.
+Notice we wrote a `BuildCommand()` method to create a `SendEmailCommand` only with the email addresses. That's what we care about in this test. This way we [reduce the noise in our tests]({% post_url 2020-11-02-UnitTestingTips %}). And, to make our test values obvious, we declared a `duplicated` variable and used it in both destination email addresses.
 
 To write the Assert part of this test, we can use the `Verify()` method from the fake repository to check that we have the `duplicated` email only once. Or we can use the Moq `Callback()` method to capture the `Email` being saved and write some assertions. Even better, we can create a [custom assertion]({% post_url 2021-08-16-WriteCustomAssertions %}) for that. Maybe, we can write a `WasCalledWithoutDuplicates()` method.
 

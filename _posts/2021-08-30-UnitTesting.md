@@ -30,6 +30,8 @@ Learn how to write good unit tests, avoiding [complex setup scenarios and hidden
 
 Make sure to always [write a failing test first]({% post_url 2021-02-05-FailingTest %}). And make it fail for the right reasons.
 
+Write tests easy to follow [using simple test values]({% post_url 2022-12-14-SimpleTestValues %}).
+
 Use [Builders to create test data]({% post_url 2021-04-26-CreateTestValuesWithBuilders %}). And, learn [how to write tests that use DateTime.Now]({% post_url 2021-05-10-WriteTestsThatUseDateTimeNow %}).
 
 Strive for a set of always-passing tests, a "Safe Green Zone." For example, [use a culture when parsing numeric strings]({% post_url 2020-12-04-UseCultureWhenParsing %}), instead of relying on a default culture on developers' machines.
@@ -44,9 +46,11 @@ If you find yourself using lots of fakes, take advantage of [automocking with Ty
 
 ## Master it
 
-Read all the tips from this series on [Unit Testing Best Practices]({% post_url 2021-07-05-UnitTestingBestPractices %}). As an example, see how to [refactor a real-world test]({% post_url 2021-08-02-LetsRefactorATest %}) to follow some of those best practices.
+Read all the tips from this series on [Unit Testing Best Practices]({% post_url 2021-07-05-UnitTestingBestPractices %}). To see how to put these best practices in place, see how I refactored these real-world tests: [generating report in a payment system]({% post_url 2021-08-02-LetsRefactorATest %}), [storing and updating OAuth connections]({% post_url 2022-12-08-TestingOAuthConnections %}), and [removing duplicated email addresses]({% post_url 2022-12-22-TestingDuplicatedEmails %}).
 
 Deep into assertions, check [how to write better assertions]({% post_url 2021-07-19-WriteBetterAssertions %}) and [how to write custom assertions]({% post_url 2021-08-16-WriteCustomAssertions %}).
+
+If you work with ASP.NET Core, learn how to write tests for [HttpClient]({% post_url 2022-12-01-TestingHttpClient %}), [Authorization filters]({% post_url 2022-12-03-TestingAspNetAuthorizationFilters %}), and [logging and logging messages]({% post_url 2022-12-04-TestingLoggingAndLogMessages %}).
 
 If you want to practice writing some unit tests, check my [Unit Testing 101](https://github.com/canro91/Testing101) repository on GitHub.
 

@@ -106,11 +106,11 @@ Yes, those are the real tests I had to review. I slightly changed the namespaces
 
 Let's take a closer look at the first test. Do we need six dictionaries to test the `Merge()` method? No! And do we need 19 items? No! We can still cover the same scenario with only two single-item dictionaries without duplicate keys.
 
-And let's write separate tests to deal with edge cases. Let's write one test to work with null and another one with an empty dictionary. Again two dictionaries will be enough for each test.
+And let's write separate tests to deal with edge cases. Let's write one test to work with `null` and another one with an empty dictionary. Again two dictionaries will be enough for each test.
 
 Having too many dictionaries with too many items made us write that funny `foreach` with a funny multiplication inside. That's why some of the values are multiplied by 10, and others aren't. We don't need that with a simpler scenario. **Unit tests should only have assignments without branching or looping logic.**
 
-Looking at the second test, we noticed it followed the same pattern as the first one.
+Looking at the second test, we noticed it followed the same pattern as the first one. Too many items and a weird `foreach` with a multiplication inside.
 
 <figure>
 <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY1Njk1NDExMg&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="A simple bedroom" />
@@ -179,7 +179,7 @@ And for the second one, the one for duplicates, we wrote a `duplicateKey` variab
 
 Since we wrote simple tests, we could remove the `foreach` in the Assert parts and the funny multiplications.
 
-The test for the null and empty cases are exercises left to the reader.
+The test for the `null` and empty cases are exercises left to the reader. They're not difficult to write.
 
 Voilà! That's another tip to write good unit tests. Let's strive to have tests easier to follow with simple test values. Here we used dictionaries, but we can follow this tip when writing integration tests for the database. Often to prepare our test data, we insert multiple records when only one or two are enough to prove our point.
 

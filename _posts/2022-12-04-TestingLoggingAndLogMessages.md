@@ -29,10 +29,10 @@ public class SomethingController : ControllerBase
     private readonly IClientService _clientService;
     private readonly ILogger<SomethingController> _logger;
 
-    public SomethingController(IClientRepository clientRepository,
+    public SomethingController(IClientService clientService,
                                ILogger<SomethingController> logger)
     {
-        _clientRepository = clientRepository;
+        _clientService = clientService;
         _logger = logger;
     }
 
@@ -48,7 +48,7 @@ public class SomethingController : ControllerBase
         }
         catch (Exception exception)
         {
-            _logger.LogError(exception, $"Something horribly wrong happened. ClientId: [{request.ClientId}]");
+            _logger.LogError(exception, "Something horribly wrong happened. ClientId: [{clientId}]", request.ClientId);
             //      ^^^^^^^^
             // Logging things like good citizens of the world...
 
