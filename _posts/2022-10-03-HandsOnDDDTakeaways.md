@@ -90,6 +90,6 @@ I liked how the sample application doesn't use interfaces just for the sake of i
 
 But, I didn't like that the sample application ended up with "application services" instead of "command handlers." I was expecting a command handler per each command and API method. The only sample application service has a huge switch statement to handle every command. Argggg!
 
-For more takeaways, check [The Art of Readable Code: Takeaways]({% post_url 2021-12-20-TheArtOfReadableCodeReview %}) [Domain Modeling Made Functional: Takeaways]({% post_url 2021-12-13-DomainModelingMadeFunctional %}). Don't miss [A case of Primitive Obsession]({% post_url 2020-12-10-PrimitiveObsession %}), it shows how to put in place classes (or records) to replace primitive types.
+For more takeaways, check [Domain Modeling Made Functional: Takeaways]({% post_url 2021-12-13-DomainModelingMadeFunctional %}). Don't miss [A case of Primitive Obsession]({% post_url 2020-12-10-PrimitiveObsession %}), it shows how to put in place classes (or records) to replace primitive types. And, my heuristics to [choose Value Objects]({% post_url 2022-12-21-WhenToChooseValueObjects %}).
 
 _Happing coding!_
