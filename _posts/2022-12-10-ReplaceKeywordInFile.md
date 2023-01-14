@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TIL: How to replace keywords in a file name and content with Bash"
-tags: todayilearned visualstudio
+tags: todayilearned visualstudio productivity
 cover: Cover.png
 cover-alt: "Pile of cds" 
 ---

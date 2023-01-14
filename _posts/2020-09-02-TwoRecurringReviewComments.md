@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How I got rid of two recurring review comments (Git hook, VS extension)
-tags: productivity git visualstudio
+tags: productivity git visualstudio codereview
 ---
 
 These are two things I always forgot to do when opening my code to code review. To save my reviewers and me some time, I decided to do something about it. This is how I get rid of two recurrent comments I got getting my code reviewed.

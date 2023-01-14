@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "I stopped using leading or tricky questions in Code Reviews"
-tags: productivity
+tags: codereview
 cover: Cover.png
 cover-alt: "Reading a book using a finger"
 ---

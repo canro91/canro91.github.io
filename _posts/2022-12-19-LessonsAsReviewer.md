@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Lessons I learned as a code reviewer"
-tags: career
+tags: career codereview
 cover: Cover.png
 cover-alt: "Two engineers reading a report" 
 ---
