@@ -12,7 +12,9 @@ Recently, I stumbled upon the article [Get Rid of Your Old Database Migrations](
 
 ## 1. Export database objects and reference data with schemazen
 
-In one of my client's projects, we had too many migration files that we started to group them inside folders named after the year and month. Squashing migrations sounds like a good idea here. For example, for a three-month project, we wrote 27 migration files. This is the Migrator project,
+In one of my client's projects, we had too many migration files that we started to group them inside folders named after the year and month. Squashing migrations sounds like a good idea here.
+
+For example, for a three-month project, we wrote 27 migration files. This is the Migrator project,
 
 {% include image.html name="TooManyMigrations.png" caption="27 migration files for a short-term project" alt="List of migration files in one of my projects" width="200px" %}
 

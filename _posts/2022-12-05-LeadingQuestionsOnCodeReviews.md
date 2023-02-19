@@ -54,6 +54,6 @@ Voilà! That's why I don't like "leading" questions in code reviews. Let's alway
 
 Ah! Another thing, let's not forget about the magic word when writing comments: "please."
 
-If you want to read more about code reviews, check these [Tips and Tricks for Better Code Reviews]({% post_url 2019-12-17-BetterCodeReviews %}). Some of them are my own lessons and others are what I've found online.
+If you want to read more about code reviews, check these [Tips and Tricks for Better Code Reviews]({% post_url 2019-12-17-BetterCodeReviews %}) and these [lessons I learned about as code reviewer]({% post_url 2022-12-19-LessonsAsReviewer %}). And if you're interested in unit testing, this lesson came up during  a code review session: [how to use simple test values to write good unit tests]({% post_url 2022-12-14-SimpleTestValues %}).
 
 _Happy coding!_
