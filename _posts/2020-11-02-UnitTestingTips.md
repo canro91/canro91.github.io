@@ -76,11 +76,13 @@ After this change, our test looked like this:
 
 ```csharp
 [TestMethod]
-// We can make this test a void method
 public void AccountController_SenderEmailIsNull_ThrowsException()
+//     ^^^^
+// We can make this test a void method
 {
     var emailConfig = new Mock<IOptions<EmailConfiguration>>();
-    emailConfig.SetupGet(options => options.Value)
+    emailConfig
+        .SetupGet(options => options.Value)
         .Returns(new EmailConfiguration
         {
             ReplyToEmail = "email@email.com",
@@ -102,7 +104,7 @@ private AccountController MakeAccountController(IOptions<EmailConfiguration> ema
     var accountService = new Mock<IAccountService>();
     var accountPersonService = new Mock<IAccountPersonService>();
     var emailService = new Mock<IEmailService>();
-    var emailConfig = new Mock<IOptions<EmailConfiguration>>();
+    // We don't need Mock<IOptions<EmailConfiguration>> here
     var httpContextAccessor = new Mock<IHttpContextAccessor>();
 
     return new AccountController(
@@ -136,7 +138,8 @@ To make the test scenario obvious in our example, let's add `SenderEmail = null`
 public void AccountController_SenderEmailIsNull_ThrowsException()
 {
     var emailConfig = new Mock<IOptions<EmailConfiguration>>();
-    emailConfig.SetupGet(options => options.Value)
+    emailConfig
+        .SetupGet(options => options.Value)
         .Returns(new EmailConfiguration
         {
             // The test value is obvious now

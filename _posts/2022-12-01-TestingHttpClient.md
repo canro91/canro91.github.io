@@ -182,7 +182,7 @@ public static class MockHttpMessageHandlerExtensions
 
 We can add other methods like `WithNotFoundResponse()`, `WithInternalServerResponse()` or `WithTooManyRequestsResponse()` to cover other response codes. Even, we can setup the fake `HttpMessageHandler` passing an `Uri` with a method `ForUri()`, for example.
 
-Voilà! That's how to write tests with `HttpClient` and Moq. With some extension methods, we could have a small DSL to write more readable tests. For a more fully-featured alternative to write tests for `HttpClient`, check [mockhttp](https://github.com/richardszalay/mockhttp), "a testing layer for Microsoft's HttpClient library."
+Voilà! That's how to write tests with `HttpClient` and Moq. With some extension methods, we could have a small DSL to write more readable tests. For a more fully-featured alternative to write tests for `HttpClient`, check [mockhttp](https://github.com/richardszalay/mockhttp), _"a testing layer for Microsoft's HttpClient library."_
 
 If you want to read more about unit testing, check my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}) where we cover from what a unit test is, to fakes and mocks, to best practices.
 

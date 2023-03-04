@@ -8,7 +8,7 @@ cover-alt: "Stamped envelops with letters"
 
 _This post is part of [my Advent of Code 2022]({% post_url 2022-12-01-AdventOfCode2022 %})._
 
-Recently, I've been reviewing Pull Requests as one of my main activities. This time, let's refactor two tests I found on one code review session. The two tests check if an email doesn't have duplicated addresses before sending it. But, they have a common mistake: testing private methods directly. Let's refactor these tests to use the public facade of methods.
+Recently, I've been [reviewing Pull Requests]({% post_url 2022-12-05-LeadingQuestionsOnCodeReviews %}) as one of my main activities. This time, let's refactor two tests I found on one code review session. The two tests check if an email doesn't have duplicated addresses before sending it. But, they have a common mistake: testing private methods directly. Let's refactor these tests to use the public facade of methods.
 
 **Always write unit tests using the public methods of a class or a group of classes. Don't make private methods public and static to test them directly. Test the observable behavior of classes instead.**
 
@@ -107,7 +107,8 @@ public class SendEmailCommandHandler : IRequestHandler<SendEmailCommand, Trackin
         var recipients = CreateRecipients(command.Tos, command.Ccs);
         //               ^^^^^
         var email = Email.Create(
-            /* some other properties here like body, subject, etc */
+            command.Subject,
+            command.Body,
             recipients);
 
         await _emailRepository.CreateAsync(email);
@@ -191,7 +192,8 @@ public async Task Handle_DuplicatedEmailInTosAndCc_CallsRepositoryWitouhtDuplica
 
 private static SendEmailCommand BuildCommand(IEnumerable<string> tos, IEnumerable<string> ccs)
     => new SendEmailCommand(
-        /* Some other properties here, like body, subject, etc */
+        "Any Subject",
+        "Any Body",
         tos,
         ccs);
 ```
@@ -202,7 +204,7 @@ To write the Assert part of this test, we can use the `Verify()` method from the
 
 That's one of the two original tests. The other one is left as an exercise to the reader.
 
-Voilà! That was today's refactoring session. To take home, we shouldn't test private methods and always write tests using the public methods of the code under test. We can remember this principle with the mnemonic: "Don't let others touch our private parts." That's how I learned it.
+Voilà! That was today's refactoring session. To take home, we shouldn't test private methods and always write tests using the public methods of the code under test. We can remember this principle with the mnemonic: "Don't let others touch our private parts." That's how I remember it.
 
 For more refactoring sessions, check these two: [store and update OAuth connections]({% post_url 2022-12-08-TestingOAuthConnections %}) and [generate payment reports]({% post_url 2021-08-02-LetsRefactorATest %}). Don't miss my [Unit Testing 101 series]({%  post_url 2021-08-30-UnitTesting %}) where I cover from naming conventions to best practices.
 
