@@ -141,7 +141,7 @@ Notice that instead of waiting for NullReferenceException, we proactively preven
 
 Voilà! That's the NullReferenceException and how to fix it by checking for `null`. Remember, we shouldn't catch this exception but prevent and prepare for it.
 
-In the next post, we will see how to use some new operators to work with `null` and a new C# feature to prevent the NullReferenceException.
+In the next post, we will see how to use [some new operators to work with null]({% post_url 2023-03-06-NullableOperatorsAndReferences %}) and a new C# feature to prevent the NullReferenceException.
 
 In the meantime, if you want to read more C# content, check [my C# Definitive Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %}) and my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}). Sure, unit tests help us to prevent NullReferenceException too.
 
