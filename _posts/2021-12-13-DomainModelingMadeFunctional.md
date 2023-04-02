@@ -129,7 +129,7 @@ public static class Constants
     public static readonly string Refund = nameof(Refund).ToLower();
 }
 
-public PaymentResponse PeformOperation(string operation, PaymentRequest request)
+public PaymentResponse PerformOperation(string operation, PaymentRequest request)
 {
     // ...
 }
@@ -145,7 +145,7 @@ public enum OperationType
     Refund
 }
 
-public PaymentResponse PeformOperation(OperationType operation, PaymentRequest request)
+public PaymentResponse PerformOperation(OperationType operation, PaymentRequest request)
 {
     // ...
 }
@@ -186,6 +186,8 @@ public class SuccessfulPayment
     // ...
 }
 ```
+
+Also, as part of this last challenge, not only separate a class with a boolean type into two classes, but also [separate optional or nullable state to avoid NullReferenceException]({% post_url 2023-04-03-SeparateStateIntoSeparateObjects %}).
 
 ## Putting types into practice
 
