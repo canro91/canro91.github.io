@@ -6,7 +6,7 @@ cover: Cover.png
 cover-alt: "<PutYourCoverAltHere>" 
 ---
 
-In the [previous post of this series]({% post_url 2023-02-20-WhatNullReferenceExceptionIs %}), we covered two things to avoid the NullReferenceException: we should check for `null` before accessing the members of an object and check the input parameters of our methods.
+In the [previous post of this series]({% post_url 2023-02-20-WhatNullReferenceExceptionIs %}), we covered two ideas to avoid the NullReferenceException: we should check for `null` before accessing the members of an object and check the input parameters of our methods.
 
 Let's see some new C# operators to simplify null checking and a new feature to better signal possible `null` references.
 
@@ -33,7 +33,7 @@ else
 }
 ```
 
-If you have worked with the old ASP.NET framework, you might have done something like that. If not, don't worry. We're accessing a property down in a property chain, but any of those properties could be `null`.
+If you have worked with the [old ASP.NET framework]({% post_url 2020-03-23-GuideToNetCore %}), you might have done something like that. If not, don't worry. We're only accessing a property down in a property chain, but any of those properties could be `null`.
 
 Notice that to defend against `null`, we checked if every property was `null` to "fail fast" and use a default value.
 
@@ -69,6 +69,12 @@ path ??= "/some-default-path-here";
 ```
 
 Notice how we refactored our original example to only two lines of code with these three new operators. Again we could still have `null` values. These nullable operators make our lives easier by simplifying our null checks.
+
+<figure>
+<img src="https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4MDY0OTcyNw&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="Electronic devices in a workbench" />
+
+<figcaption>What if we could tell when something is null? Photo by <a href="https://unsplash.com/@nicolasthomas?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nicolas Thomas</a> on <a href="https://unsplash.com/photos/3GZi6OpSDcY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption>
+</figure>
 
 ## 2. C# Nullable References
 
@@ -184,10 +190,10 @@ Now with Nullable References, we have a way of telling when we should check for 
 
 Voilà! Those are the new C# operators to simplify our null checks. We said "new" operators, but we have had them since C# 6.0. And that's how we can tell if our references can be `null` or not using Nullable References.
 
-We have the nullable operators from this post available even if we're using the old .NET Framework. But, to use Nullable References, we should upgrade at least to .NET Core 3.0.
+We have these nullable operators available even if we're using the old .NET Framework. But, to use Nullable References, we should upgrade at least to .NET Core 3.0.
 
-In the next post, we will cover what functional languages have done instead of `null` references and how to avoid the NullReferenceException when working with LINQ.
+In the next post, we will cover [the Option type as an alternative to null]({% post_url 2023-03-20-UseOptionInsteadOfNull %}) and how to avoid the NullReferenceException when working with LINQ.
 
-If you want to read more C# content, check [my C# Definitive Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %}) and my [top of recent C# features]({% post_url 2021-09-13-TopNewCSharpFeatures %}).
+If you want to read more C# content, check [my C# Definitive Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %}) and my [top of recent C# features]({% post_url 2021-09-13-TopNewCSharpFeatures %}). These three operators and the nullable references are some of them.
 
 _Happy coding!_

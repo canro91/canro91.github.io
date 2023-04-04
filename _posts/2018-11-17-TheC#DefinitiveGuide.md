@@ -255,6 +255,8 @@ SayHi(name);
 // warning CS8604: Possible null reference argument for parameter 'name'
 ```
 
+To learn other techniques to prevent the NullReferenceException, start checking [what the NullReferenceException is and when it's thrown]({% post_url 2023-03-06-NullableOperatorsAndReferences %}).
+
 ### Records
 
 A record is an immutable reference type with built-in equality methods. When we create a record, the compiler creates a `ToString` method, a value-based equality methods and other methods for us.

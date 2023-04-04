@@ -8,7 +8,7 @@ cover-alt: "Dream catcher"
 
 This exception doesn't need an introduction. I bet you already have found the exception message: _"Object reference not set to an instance of an object."_ In this series of posts, let's see some techniques to completely eliminate the NullReferenceException from our code. In this post, let's see when NullReferenceException is thrown and a strategy to fix it.
 
-**NullReferenceException is thrown when we access a property or method of an uninitialized variable of a reference type. The easier way to solve this exception is to check for null values before accessing the members of an object. But, C# has introduced new operators and features to avoid this exception.**
+**NullReferenceException is thrown when we access a property or method of an uninitialized variable of a reference type. The easier way to solve this exception is to check for null before accessing the members of an object. But C# has introduced new operators and features to avoid this exception.**
 
 Let's write an example that throws NullReferenceException,
 
@@ -37,7 +37,7 @@ Notice we returned `null` from `FindMovie()`. That caused the NullReferenceExcep
 
 In our last example, we got a NullReferenceException when we returned `null` from a method. But, we could also find this exception when we try to loop through a `null` list or array, for example.
 
-Speaking of returning `null`, one way to prevent this exception is to **never pass null between objects**. Instead of returning `null`, let's use empty lists and strings, or the Null Object pattern. And let's [use intention-revealing defaults]({% post_url 2021-09-27-TwoCSharpIdiomsPart4 %}) for that.
+Speaking of returning `null`, **one way to prevent the NullReferenceException is to never pass null between objects**. Instead of returning `null`, let's use empty lists and strings, or the Null Object pattern. And let's [use intention-revealing defaults]({% post_url 2021-09-27-TwoCSharpIdiomsPart4 %}) for that.
 
 <figure>
 <img src="https://images.unsplash.com/photo-1570645053711-5767083d2518?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3Njc3NjY0Nw&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="Multicolored dream catcher" />
@@ -141,8 +141,8 @@ Notice that instead of waiting for NullReferenceException, we proactively preven
 
 Voilà! That's the NullReferenceException and how to fix it by checking for `null`. Remember, we shouldn't catch this exception but prevent and prepare for it.
 
-In the next post, we will see how to use [some new operators to work with null]({% post_url 2023-03-06-NullableOperatorsAndReferences %}) and a new C# feature to prevent the NullReferenceException.
+Don't miss the other posts in this series! In the next post, we cover how to use [Nullable Operators and Nullable References]({% post_url 2023-03-06-NullableOperatorsAndReferences %}) to prevent the NullReferenceException. In future posts, we're covering [the Option type and LINQ XOrDefault methods]({% post_url 2023-03-20-UseOptionInsteadOfNull %}) and [a design technique to encapsulate optional state]({% post_url 2023-04-03-SeparateStateIntoSeparateObjects %}).
 
-In the meantime, if you want to read more C# content, check [my C# Definitive Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %}) and my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}). Sure, unit tests help us to prevent NullReferenceException too.
+If you want to read more C# content, check [my C# Definitive Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %}) and my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}). Sure, unit tests help us to prevent NullReferenceException too.
 
 _Happy coding!_

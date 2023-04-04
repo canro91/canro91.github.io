@@ -8,6 +8,8 @@ cover-alt: "US Capitol"
 
 So far in this series about NullReferenceException, we have used [nullable operators and C# 8.0 Nullable References]({% post_url 2023-03-06-NullableOperatorsAndReferences %}) to avoid `null` and learned about [the Option type]({% post_url 2023-03-20-UseOptionInsteadOfNull %}) as an alternative to `null`. Let's see how to design our classes to avoid `null` when representing optional values.
 
+**Instead of writing a large class with methods that expect some nullable properties to be not null at some point, we're better off using separate classes to avoid dealing with null and getting NullReferenceException.**
+
 ## Multiple state in the same object
 
 Often we keep all possible combinations of properties of an object in a single class.
@@ -50,6 +52,12 @@ We ended up with a class with nullable properties and methods that only should b
 
 Inside `ChargeMonthlySubscription`, we could add some null checks before using the `CreditCard` property. But, if we have other methods that need other properties not to be `null`, our code will get bloated with null checks all over the place.
 
+<figure>
+<img src="https://images.unsplash.com/photo-1537806078416-64d8c0147e1e?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4MDY1MDk5Ng&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="Green grass near the gray road" />
+
+<figcaption>Photo by <a href="https://unsplash.com/@willfrancis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Will Francis</a> on <a href="https://unsplash.com/photos/Rm3nWQiDTzg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption>
+</figure>
+
 ## Separate State in Separate Objects
 
 Instead of checking for `null` inside `ChargeMonthlySubscription`, let's create two separate classes to represent regular and premiums users.
@@ -81,12 +89,12 @@ public record PremiumUser(Email Email, SaltedPassword Password, CreditCard Credi
 
 Notice we wrote two separate classes: `RegularUser` and `PremiumUser`. We don't have methods that should be called only when some optional properties have value. And we don't need to check for `null` anymore. For premium users, we're sure we have their credit card details. We eliminated a possible source of NullReferenceException.
 
-**Instead of writing a large class with methods that expect some nullable properties to be not null at some point, we're better off using separate classes to avoid dealing with null and getting NullReferenceException.**
+We're better off writing separate classes than writing a single large class with nullable properties that only have values at some point.
 
 I learned about this technique after reading [Domain Model Made Functional]({% post_url 2021-12-13-DomainModelingMadeFunctional %}). The book uses the mantra: "Make illegal state unrepresentable." In our example, the illegal state is the `CreditCard` being `null` for regular users. We made it unrepresentable by writing two classes.
 
 Voilà! This is another technique to prevent `null` and NullReferenceException by avoiding classes that only use some optional state at some point of the object lifecycle. We should split all possible combinations of the optional state into separate classes. Put separate state in separate objects.
 
-Don't miss the other posts in this series, [what is the NullReferenceException]({% post_url 2023-02-20-WhatNullReferenceExceptionIs %}), [Nullable Operators and References]({% post_url 2023-03-06-NullableOperatorsAndReferences %}), and [the Option type and LINQ XOrDefault methods]({% post_url 2023-03-20-UseOptionInsteadOfNull %}).
+Don't miss the other posts in this series, [what the NullReferenceException is and how to prevent it]({% post_url 2023-02-20-WhatNullReferenceExceptionIs %}), [Nullable Operators and References]({% post_url 2023-03-06-NullableOperatorsAndReferences %}), and [the Option type and LINQ XOrDefault methods]({% post_url 2023-03-20-UseOptionInsteadOfNull %}).
 
 _Happy coding!_
