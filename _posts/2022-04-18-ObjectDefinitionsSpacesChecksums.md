@@ -87,6 +87,6 @@ Often, [code reviews]({% post_url 2019-12-17-BetterCodeReviews %}) aren't enough
 
 Voilà! That's what I learned these days: read object definitions from SQL Server, polish my debugging skills and build processes around our everyday development practice.
 
-For more SQL Server content, check [how to do case sensitive searches]({% post_url 2022-02-21-CaseSensitiveSearchSQLServer %}), [when to follow index recommendations]({% post_url 2022-03-21-SQLServerIndexRecommendations %}) and [how to write constants in stored procedures]({% post_url 2022-04-04-TSQLDoesNotHaveConstants %}).
+For more content on SQL Server, check my other posts on [functions and WHERE clauses]({% post_url 2022-01-24-DontPutFunctionsInYourWheres %}), [implicit conversions]({% post_url 2022-02-07-WhatAreImplicitConversions %}) and [index recommendations]({% post_url 2022-03-21-SQLServerIndexRecommendations %}).
 
 _Happy debugging!_

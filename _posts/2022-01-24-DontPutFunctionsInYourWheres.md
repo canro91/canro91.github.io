@@ -6,7 +6,7 @@ cover: Cover.png
 cover-alt: "Warning sign in a street"
 ---
 
-There's one thing you could do to write faster queries in SQL Server: don't use functions around columns in your WHERE clauses. I learned it the hard way. Let me share this lesson with you.
+There's one thing we could do to write faster queries in SQL Server: don't use functions around columns in WHERE clauses. I learned it the hard way. Let me share this lesson with you.
 
 **Don't use user-defined or built-in functions around columns in the WHERE clause of queries. It prevents SQL Server from estimating the right amount of rows out of the function. Write queries with operators and comparisons to make SQL Server better use the indexes it has.**
 
@@ -57,7 +57,7 @@ It means that to find all users in Colombia, SQL Server had to go through all us
 
 **Write queries with comparisons, functions, and operators around parameters. This way SQL Server could properly use indexes and have better estimates of the contents of tables. But, don't write functions around columns in the WHERE clauses.**
 
-The same is true when joining tables. Don't put functions around the foreign keys in your JOINs.
+The same is true when joining tables. Don't put functions around the foreign keys in your JOINs either.
 
 ## Rewrite your queries to avoid functions around columns in WHERE
 
@@ -86,8 +86,8 @@ Notice, this time we have a thinner arrow on the first operator. Let's see how m
 
 After that change, SQL Server only read 463 records. That was way better than reading the whole index.
 
-Voilà! If you want to write faster queries, stop using functions around columns in your WHEREs. That screws SQL Server estimates. For example, don't use LOWER or UPPER around your columns. By the way, SQL Server string searches are case insensitive by default. You don't need those functions at all.
+Voilà! If we want to write faster queries, let's stop using functions around columns in our WHEREs. That screws SQL Server estimates. For example, let's not use LOWER or UPPER around our columns. By the way, [SQL Server string searches are case insensitive]({% post_url 2022-02-21-CaseSensitiveSearchSQLServer %}) by default. we don't need those functions at all.
 
-To read more SQL Server content, check [how to and not to write Dynamic queries]({% post_url 2021-03-08-HowNotToWriteDynamicSQL %}) and [six performance tuning tips from Pinal Dave]({% post_url 2020-09-28-SQLServerTuningTips %}).
+To read more SQL Server content, check [What are implicit conversions and why you should care]({% post_url 2022-02-07-WhatAreImplicitConversions %}), [how to optimize queries with GROUP BY]({% post_url 2022-03-07-OptimizeGroupBySQLServer %}), and [Just listen to SQL Server index recommendations]({% post_url 2022-03-21-SQLServerIndexRecommendations %}).
 
 _Happy SQL time!_

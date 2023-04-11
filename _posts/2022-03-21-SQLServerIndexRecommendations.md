@@ -161,9 +161,9 @@ Build as few indexes as possible to support your queries. Keep around 5 indexes 
 
 ## Parting words
 
-Voilà! These are some of the things I learned about SQL Server index recommendations. Remember, indexes aren't free. The more indexes you add, the slower your queries will get. 
+Voilà! These are some of the things I learned about SQL Server index recommendations. Remember, indexes aren't free. The more indexes we add, the slower our queries will get. 
 
-Next time you see index recommendations on your execution plans, check if you already have a similar index and modify it. If you don't, please remember to at least change its name. And not to include all the columns of your table.
+Next time we see index recommendations on our execution plans, let's check if we already have a similar index and modify that one. If we don't, please let's remember to at least change the recommended index's name. And not to include all the columns of our table.
 
 I learned these things following [Brent Ozar's Master Index Tuning]({% post_url 2022-05-02-BrentOzarMasteringCoursesReview %}) class. Great class!
 

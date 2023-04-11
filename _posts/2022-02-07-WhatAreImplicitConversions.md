@@ -101,10 +101,12 @@ This time we don't have a yellow bang on our execution plan. And, we have an Ind
 
 **In stored procedures and queries, use input parameters with the same types as the columns on the tables.**
 
-To identify which queries on your SQL Server have implicit conversions issues, use the third query from [six performance tuning tips]({% post_url 2020-09-28-SQLServerTuningTips %}). But, remember not all implicit conversions are bad. Check how many rows SQL Server reads to convert and compare things.
+To identify which queries on your SQL Server have implicit conversions issues, we can use the third query from [these six performance tuning tips from Pinal Dave]({% post_url 2020-09-28-SQLServerTuningTips %}). But, after taking [Brent Ozar's Mastering courses]({% post_url 2022-05-02-BrentOzarMasteringCoursesReview %}), I learned to start working with the most expensive queries instead of jumping to queires with implicit convertion issues right away.
 
-Voilà! Those are implicit conversions and why you should care. Remember to use input parameters with the right data types on your queries and store procedures. Otherwise, you will pay the performance penalty of converting and comparing types.
+Voilà! Those are implicit conversions and why you should care. Let's use input parameters with the right data types on your queries and store procedures. Otherwise, we will pay the performance penalty of converting and comparing types. Implicit conversions are like [functions around columns]({% post_url 2022-01-24-DontPutFunctionsInYourWheres %}), implicitly added by SQL Server itself.
 
-For more content on SQL Server, check [how to compare datetimes without the time part]({% post_url 2020-10-05-CompareDateTimeSQLServer %}) and [don't write functions in WHERE clauses]({% post_url 2022-01-24-DontPutFunctionsInYourWheres %}).
+Let's remember that not all implicit conversions are bad. When looking at execution plans, let's check how many rows SQL Server reads to convert and compare things.
+
+For more content on SQL Server, check [how to compare datetimes without the time part]({% post_url 2020-10-05-CompareDateTimeSQLServer %}), [how to write case-insensitive searches]({% post_url 2022-02-21-CaseSensitiveSearchSQLServer %}) and [how to optimize queries with GROUP BY]({% post_url 2022-03-07-OptimizeGroupBySQLServer %}).
 
 _Happy coding!_

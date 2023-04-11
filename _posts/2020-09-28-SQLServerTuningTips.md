@@ -9,7 +9,7 @@ Recently, I've needed to optimize some SQL Server queries. I decided to look out
 
 **At the database level, turn on automatic update of statistics, increase the file size autogrowth and update the compatibility level. At the table level, delete your unused indexes and create the missing ones, keeping around 5 indexes per table. And, at the query level, find and fix implicit conversions.**
 
-While looking up what I could do to tune my queries, I found Pinal Dave from [SQLAuthority](https://blog.sqlauthority.com/). Chances are you have already found one of his blog posts when searching for SQL Server tuning tips. He's been blogging about the subject for years.
+While looking up what I could do to tune my queries, I found [Pinal Dave from SQLAuthority](https://blog.sqlauthority.com/). Chances are you have already found one of his blog posts when searching for SQL Server tuning tips. He's been blogging about the subject for years.
 
 These are six tips from Pinal's blog and online presentations I've applied recently. Please, test these changes in a development or staging environment before making anything on your production servers.
 
@@ -197,6 +197,8 @@ Voilà! These are six tips I learned from Pinal Dave to start tuning your SQL Se
 
 I gained a lot of improvement only by fixing implicit conversions. In a store procedure, we had a `NVARCHAR` parameter to compare it with a `VARCHAR` column. Yes, implicit conversions happen between `VARCHAR` and `NVARCHAR`.
 
-For more SQL content, check my posts on [how to write dynamic SQL queries]({% post_url 2021-03-08-HowNotToWriteDynamicSQL %}) and the [differences between TRUNCATE and DELETE]({% post_url 2021-01-04-TruncateVsDelete %}).
+After taking [Brent Ozar's Mastering courses]({% post_url 2022-05-02-BrentOzarMasteringCoursesReview %}), I learned to look at the overall SQL Server server health, focusing on the top wait type and the most expensive queries. Also, I started to use some of the stored procedures from the [First Responder Kit repository on GitHub](https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit). 
+
+For more SQL and performance tuning content, check [don't use functions around columns in your WHEREs]({% post_url 2022-01-24-DontPutFunctionsInYourWheres %}), [what implicit conversions are and why you should care]({% post_url 2022-02-07-WhatAreImplicitConversions %}) and [just listen to index recommendations]({% post_url 2022-03-21-SQLServerIndexRecommendations %}).
 
 _Happy SQL time!_

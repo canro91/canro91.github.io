@@ -35,7 +35,7 @@ This is the execution plan. Notice, the Clustered Index Seek on the `dbo.Posts` 
 
 {% include image.html name="ExecutionPlan-Before.png" alt="StackOverflow most down-votes questions" caption="StackOverflow most down-votes questions" %}
 
-Then, these are the metrics grabbed with [sp_BlitzCache](https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit#sp_blitzcache-find-the-most-resource-intensive-queries). This stored procedure finds all the most CPU intensive queries SQL Server has recently executed.
+Then, these are the metrics grabbed with [the freely available First Responder Kit's sp_BlitzCache](https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit#sp_blitzcache-find-the-most-resource-intensive-queries). This stored procedure finds all the most CPU intensive queries SQL Server has recently executed.
 
 {% include image.html name="spBlitzCacheBefore.png" alt="Most CPU intensive queries" caption="Most CPU intensive queries" %}
 
@@ -79,11 +79,11 @@ Again, this is the execution plan of grouping inside a CTE first.
 
 Notice the Clustered Index Seek operator on the left branch. That's to find the body of only the 20 post SQL Server found as a result of grouping inside the CTE. This time, SQL Server is grouping and sorting fewer data. It made our stored procedure use less CPU time.
 
-Let's take another look at sp_BlitzCache. Before running the modified version of our store procedure five times, I ran `DBCC FREEPROCCACHE`.
+Let's take another look at sp_BlitzCache. Before running the modified version of our store procedure five times, I ran `DBCC FREEPROCCACHE` to free up SQL Server's plan cache.
 
 {% include image.html name="spBlitzCacheAfter.png" alt="Most CPU intensive queries" caption="Most CPU intensive queries with our modified stored proc" %}
 
-Notice the "Total CPU" and "Avg CPU" columns, we're using less CPU time after the change. I went from 36151ms of total CPU time to 35505ms. Hooray!
+Notice the "Total CPU" and "Avg CPU" columns, we're using less CPU time after the change. I went from 36.151ms of total CPU time to 35.505ms. Hooray!
 
 Now, imagine if that store procedure runs not only 5 times, but multiple times per minute. What if our stored procedure feeds a reporting screen in our app? That change with a CTE will make a huge difference in the overral CPU usage.
 
