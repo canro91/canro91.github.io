@@ -32,7 +32,7 @@ VALUES
 GO
 ```
 
-## WHERE clause
+## 1. TRUNCATE doesn't accept a WHERE clause
 
 The first difference is about the WHERE clause.
 
@@ -47,10 +47,10 @@ GO
 DELETE FROM dbo.Movies WHERE Name = 'Armageddon'
 GO
 TRUNCATE TABLE dbo.Movies WHERE Name = 'Armageddon'
-                          ~~~~~ Incorrect syntax near the keyword 'WHERE'
+                          // ^^^^^^^ Incorrect syntax near the keyword 'WHERE'
 ```
 
-## Identity columns
+## 2. TRUNCATE resets Identity columns
 
 **An identity column is a column with automatic incremented values.** It's used to create key values in tables.
 
@@ -96,7 +96,7 @@ GO
 
 Notice the Id of 'Platoon'. It's 1 again. When we created our `Movies` table, we used the default seed and increment.
 
-## Triggers
+## 3. TRUNCATE doesn't fire Triggers
 
 **A trigger is an special type of store procedure that runs when a given action has happened at the database or table level**.
 
