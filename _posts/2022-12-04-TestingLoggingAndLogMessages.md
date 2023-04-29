@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "On Unit Testing Logging and Log Messages"
+title: "On Unit Testing Logging Messages"
 tags: tutorial csharp
 cover: Cover.png
 cover-alt: "A pile of wooden logs"
@@ -197,7 +197,9 @@ public static class MoqExtensions
 }
 ```
 
-Voilà! That's how to make our test that checks logging messages more maintainable. By not rebuilding log messages inside tests and asserting that they contain keywords instead of expecting to be exact matches. Here we dealt with logging for diagnostic purposes (logging to make troubleshooting easier for developers). But if logging were a business requirement, we should have to make it a separate "concept" in our code. Not in logging statements scatter all over the place.
+Voilà! That's how to make our test that checks logging messages more maintainable. By not rebuilding log messages inside tests and asserting that they contain keywords instead of expecting to be exact matches.
+
+Here we dealt with logging for diagnostic purposes (logging to make troubleshooting easier for developers). But if logging were a business requirement, we should have to make it a separate "concept" in our code. Not in logging statements scatter all over the place. I learned by distinction about logging when reading [Unit Testing Principles, Practices, and Patterns]({% post_url 2022-10-17-UnitTestingPrinciplesPracticesTakeaways %})
 
 If you want to read more about unit testing, check [How to write tests for HttpClient using Moq]({% post_url 2022-12-01-TestingHttpClient %}), [How to test an ASP.NET Authorization Filter]({% post_url 2022-12-03-TestingAspNetAuthorizationFilters %}) and my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}) where we cover from what a unit test is, to fakes and mocks, to best practices.
 
