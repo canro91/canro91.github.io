@@ -333,7 +333,7 @@ Here you have all the commands we have used so far.
 
 Voilà! We have learned the most frequent Git commands for everyday use. We used Git from the command line. But, most IDE's offer Git integration through plugins or extensions. Now try to use Git from your favorite IDE.
 
-If you want to continue to practice these concepts, follow [First Contributions](https://github.com/firstcontributions/first-contributions) to open your first Pull Request. You can use my [Git Demo repository](https://github.com/canro91/GitDemo) too.
+If you want to practice these concepts, follow the [repo First Contributions on GitHub](https://github.com/firstcontributions/first-contributions) to open your first Pull Request to an opensource project.
 
 _Your mission, Jim, should you decide to accept it, is to get the latest changes from your repository. After pushing, clone your project in another folder, change any file and push this change. Next, go back to your first folder, modify another file and try to push. This post will self-destruct in five seconds. Good luck, Jim._
 
