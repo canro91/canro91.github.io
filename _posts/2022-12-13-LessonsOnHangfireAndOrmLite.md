@@ -169,7 +169,7 @@ private static bool DoesIndexExist<T>(IDbConnection connection, string tableName
     // After
     var result = connection.SqlScalar<int>(doesIndexExistSql);
     //                      ^^^^^
-	  return result > 0;
+    return result > 0;
 }
 ```
 
