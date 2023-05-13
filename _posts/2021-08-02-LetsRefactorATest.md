@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Unit Testing Best Practices: Let's refactor a test"
+title: "Let's refactor a test: Payment report"
 tags: tutorial csharp
 cover: Cover.png
 cover-alt: "Unit Testing Best Practices: Let's refactor a test"
