@@ -12,7 +12,9 @@ Today I reviewed a Pull Request and had a conversation about when to use Value O
 
 **Prefer Value Objects to encapsulate validations or custom methods on a primitive value. Otherwise, if a primitive value doesn't have a meaningful "business" sense and is only passed around, consider using the primitive value with a good name for simplicity.**
 
-In case you're not familiar with Domain-Driven Design and its artifacts. A Value Object represents a concept in a domain without requiring an "identifier." Value objects are immutable and compared by value. Value Objects represent elements of "broader" concepts. For example, in a Reservation Management System, we can use a Value Object to represent the payment method of a Reservation.
+In case you're not familiar with Domain-Driven Design and its artifacts. A Value Object represents a concept that doesn't have an "identifier" in a business domain. Value objects are immutable and compared by value.
+
+Value Objects represent elements of "broader" concepts. For example, in a Reservation Management System, we can use a Value Object to represent the payment method of a Reservation.
 
 ## TimeStamp vs DateTime
 
@@ -83,9 +85,9 @@ I'd dare to say that using a `TimeStamp` instead of a simple `DateTime` in the `
 
 This is my rationale to choose between value objects and primitive values:
 
-* If we need to enforce a domain rule or perform a business operation on a primitive value, let's use a Value Object.
-* If we only pass a primitive value around and it represents a concept in the language domain, let's wrap it around a record to give it a meaningful name.
-* Otherwise, let's stick to the plain primitive values.
+1. If we need to enforce a domain rule or perform a business operation on a primitive value, let's use a Value Object.
+2. If we only pass a primitive value around and it represents a concept in the language domain, let's wrap it around a record to give it a meaningful name.
+3. Otherwise, let's stick to the plain primitive values.
 
 In our `TimeStamp` class, apart from `Create()`, we didn't have any other methods. We might validate if the inner date is in this century. But that won't be a problem. I don't think that code will live that long.
 
@@ -111,7 +113,7 @@ public class DeliveryNotification : ValueObject
     }
 }
 
-// Or alternative, to use the same language
+// Or alternative, to use the same domain language
 //
 // public record TimeStamp(DateTime Value);
 
@@ -126,7 +128,7 @@ public enum DeliveryStatus
 
 If in the "email sending" domain, business analysts or stakeholders use "timestamp," for the sake of a ubiquitous language, we can add a simple record `TimeStamp` to wrap the date. Like `record TimeStamp(DateTime value)`.
 
-Voilà! That's a practical option to decide when to use Value Objects and primitive values. For me, the key is asking if there's a meaningful domain concept behind the primitive value.
+Voilà! That's a practical option to decide when to use Value Objects and primitive values. For me, the key is asking if there's a meaningful domain concept behind the primitive value. Otherwise we would end up with too many value objects or [obsessed with primitive values]({% post_url 2020-12-10-PrimitiveObsession %}).
 
 If you want to read more about Domain-Driven Design, check my takeaways from these books [ Hands-on Domain-Driven Design with .NET Core]({% post_url 	2022-10-03-HandsOnDDDTakeaways%}) and [Domain Modeling Made Functional]({% post_url 2021-12-13-DomainModelingMadeFunctional %}).
 
