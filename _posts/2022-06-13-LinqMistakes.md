@@ -119,7 +119,7 @@ Let's always check if we have a result when working with `FirstOrDefault`, `Last
 
 When any of the three above methods don't find results, they return the default value of the collection type.
 
-For objects, the default value would be a `null` reference. And, do you know what happens when we access a property or method on a `null` reference?... Yes, It throws the fearsome `NullReferenceException`. Arrggg!
+For objects, the default value would be a `null` reference. And, do you know what happens when we access a property or method on a `null` reference?... Yes, It throws [the fearsome NullReferenceException]({% post_url 2023-02-20-WhatNullReferenceExceptionIs %}). Arrggg!
 
 We have this mistake in the following code sample. We forgot to check if the `worst` variable has a value. An `if (worst != null)` would solve the problem.
 

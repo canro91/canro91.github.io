@@ -46,21 +46,21 @@ public record User(Email email, SaltedPassword password)
 }
 ```
 
-Notice that the `CreditCard` property only has value for premium users. We expect it to be `null` for regular users. And nothing is preventing us from calling `ChargeMonthlySubscription` with regular users (when `CreditCard` is `null`). We have a potential source of NullRefernceException.
+Notice that the `CreditCard` property only has value for premium users. We expect it to be `null` for regular users. And nothing is preventing us from calling `ChargeMonthlySubscription()` with regular users (when `CreditCard` is `null`). We have a potential source of NullReferenceException.
 
 We ended up with a class with nullable properties and methods that only should be called when some of those properties aren't `null`.
 
-Inside `ChargeMonthlySubscription`, we could add some null checks before using the `CreditCard` property. But, if we have other methods that need other properties not to be `null`, our code will get bloated with null checks all over the place.
+Inside `ChargeMonthlySubscription()`, we could add some null checks before using the `CreditCard` property. But, if we have other methods that need other properties not to be `null`, our code will get bloated with null checks all over the place.
 
 <figure>
 <img src="https://images.unsplash.com/photo-1537806078416-64d8c0147e1e?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4MDY1MDk5Ng&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="Green grass near the gray road" />
 
-<figcaption>Photo by <a href="https://unsplash.com/@willfrancis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Will Francis</a> on <a href="https://unsplash.com/photos/Rm3nWQiDTzg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption>
+<figcaption>Let's separate our state...Photo by <a href="https://unsplash.com/@willfrancis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Will Francis</a> on <a href="https://unsplash.com/photos/Rm3nWQiDTzg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption>
 </figure>
 
 ## Separate State in Separate Objects
 
-Instead of checking for `null` inside `ChargeMonthlySubscription`, let's create two separate classes to represent regular and premiums users.
+Instead of checking for `null` inside `ChargeMonthlySubscription()`, let's create two separate classes to represent regular and premiums users.
 
 ```csharp
 public record RegularUser(Email Email, SaltedPassword Password)
@@ -91,7 +91,7 @@ Notice we wrote two separate classes: `RegularUser` and `PremiumUser`. We don't 
 
 We're better off writing separate classes than writing a single large class with nullable properties that only have values at some point.
 
-I learned about this technique after reading [Domain Model Made Functional]({% post_url 2021-12-13-DomainModelingMadeFunctional %}). The book uses the mantra: "Make illegal state unrepresentable." In our example, the illegal state is the `CreditCard` being `null` for regular users. We made it unrepresentable by writing two classes.
+I learned about this technique after reading [Domain Model Made Functional]({% post_url 2021-12-13-DomainModelingMadeFunctional %}). The book uses the mantra: _"Make illegal state unrepresentable."_ In our example, the illegal state is the `CreditCard` being `null` for regular users. We made it unrepresentable by writing two classes.
 
 Voilà! This is another technique to prevent `null` and NullReferenceException by avoiding classes that only use some optional state at some point of the object lifecycle. We should split all possible combinations of the optional state into separate classes. Put separate state in separate objects.
 

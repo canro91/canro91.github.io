@@ -91,7 +91,7 @@ foreach (var (index, movie) in movies.Enumerated())
 }
 ```
 
-Voilà! These are some of my favorite extension methods to work with collections. Some of them are workarounds to avoid the NullReferenceException when working with collections. What extension methods do you use often?
+Voilà! These are some of my favorite extension methods to work with collections. Some of them are workarounds to [avoid the NullReferenceException]({% post_url 2023-02-20-WhatNullReferenceExceptionIs %}) when working with collections. What extension methods do you use often?
 
 If you want to learn more about LINQ, read my [Quick Guide to LINQ]({% post_url 2021-01-18-LinqGuide %}).
 
