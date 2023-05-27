@@ -14,7 +14,7 @@ If you’re a beginner or a seasoned developer new to unit testing, this is the 
 
 Learn to [write your first unit tests with MSTest]({% post_url 2021-03-15-UnitTesting101 %}). Read what a unit test is, why we need unit tests, and what makes a good unit test.
 
-Identify and fix these [4 common mistakes]({% post_url 2021-03-29-UnitTestingCommonMistakes %}) when writing your first unit tests. Learn one of these [4 naming conventions]({% post_url 2021-04-12-UnitTestNamingConventions %}) and stick to it. Don't worry about long test names.
+Identify and fix these [four common mistakes]({% post_url 2021-03-29-UnitTestingCommonMistakes %}) when writing your first unit tests. Learn one of these [four naming conventions]({% post_url 2021-04-12-UnitTestNamingConventions %}) and stick to it. Don't worry about long test names.
 
 <div class="message">Find these first three posts plus a summary of "The Art of Unit Testing" and my best tips from this series on my free ebook “Unit Testing 101”. <a href="https://imcsarag.gumroad.com/l/unittesting101" target="_blank" rel="noopener noreferrer" data-goatcounter-click="UnitTesting101eBook-Link">Download your free copy on my Gumroad page</a> or click on the image below.</div>
 
@@ -46,9 +46,17 @@ If you find yourself using lots of fakes, take advantage of [automocking with Ty
 
 ## Master it
 
-Read all the tips from this series on [Unit Testing Best Practices]({% post_url 2021-07-05-UnitTestingBestPractices %}). To see how to put these best practices in place, see how I refactored these real-world tests: [generating report in a payment system]({% post_url 2021-08-02-LetsRefactorATest %}), [storing and updating OAuth connections]({% post_url 2022-12-08-TestingOAuthConnections %}), and [removing duplicated email addresses]({% post_url 2022-12-22-TestingDuplicatedEmails %}).
+Read all the tips from this series on [Unit Testing Best Practices]({% post_url 2021-07-05-UnitTestingBestPractices %}).
 
 Deep into assertions, check [how to write better assertions]({% post_url 2021-07-19-WriteBetterAssertions %}) and [how to write custom assertions]({% post_url 2021-08-16-WriteCustomAssertions %}).
+
+To see how to put these best practices in place, see how I refactored these real-world tests:
+
+* [generating report in a payment system]({% post_url 2021-08-02-LetsRefactorATest %}),
+* [storing and updating OAuth connections]({% post_url 2022-12-08-TestingOAuthConnections %}),
+* [removing duplicated email addresses]({% post_url 2022-12-22-TestingDuplicatedEmails %}),
+* [updating email statuses]({% post_url 2023-05-15-TestingEmailStatusUpdates %}), and,
+* [speeding up a slow test suite]({% post_url 2023-05-29-SpeedingUpSomeTests %}).
 
 If you work with ASP.NET Core, learn how to write tests for [HttpClient]({% post_url 2022-12-01-TestingHttpClient %}), [Authorization filters]({% post_url 2022-12-03-TestingAspNetAuthorizationFilters %}), and [logging and logging messages]({% post_url 2022-12-04-TestingLoggingAndLogMessages %}).
 
