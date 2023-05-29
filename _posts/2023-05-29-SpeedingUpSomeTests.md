@@ -8,7 +8,7 @@ cover-alt: "A car speedometer"
 
 Do you have fast unit tests? This is how I speeded up a slow test suite from one of my client's projects by reducing the delay between retry attempts and initializing slow-to-build dependencies only once. There's a lesson behind this refactoring session.
 
-**Make sure to have a fast test suite. Fast enough that every developer could run the entire test suite after every code change. The slower the tests, the less frequently they're run.**
+**Make sure to have a fast test suite that every developer could run after every code change. The slower the tests, the less frequently they're run.**
 
 I learned to have some metrics before rushing to optimize anything. I learned it while trying to [optimize a slow room searching feature]({% post_url 2020-09-23-TheSlowRoomSearch %}). These are the tests and their execution time before any changes:
 

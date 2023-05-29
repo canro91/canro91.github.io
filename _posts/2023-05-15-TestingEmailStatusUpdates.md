@@ -111,7 +111,7 @@ Based on the [scenario in the test name]({% post_url 2021-04-12-UnitTestNamingCo
 
 In the second test, since we expect all recipients to have the same status, we don't care much about the order of recipients.
 
-**We shouldn't hide anything in builders or helpers and later use those hidden assumptions in other parts of our tests. That makes our test difficult to follow. And we shouldn't make our readers decode our tests.**
+**We shouldn't hide anything in builders or helpers and later use those hidden assumptions in other parts of our tests. That makes our tests difficult to follow. And we shouldn't make our readers decode our tests.**
 
 ## Explicit is better than implicit
 
