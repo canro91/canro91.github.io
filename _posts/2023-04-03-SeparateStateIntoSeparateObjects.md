@@ -97,4 +97,6 @@ Voilà! This is another technique to prevent `null` and NullReferenceException b
 
 Don't miss the other posts in this series, [what the NullReferenceException is and how to prevent it]({% post_url 2023-02-20-WhatNullReferenceExceptionIs %}), [Nullable Operators and References]({% post_url 2023-03-06-NullableOperatorsAndReferences %}), and [the Option type and LINQ XOrDefault methods]({% post_url 2023-03-20-UseOptionInsteadOfNull %}).
 
+{%include nre_course.html %}
+
 _Happy coding!_
