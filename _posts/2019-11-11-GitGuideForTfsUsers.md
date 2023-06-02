@@ -62,7 +62,7 @@ Every release has a separate branch, too. This release branch is also merged to 
 
 Some projects adopt another convention. Nobody pushes or syncs directly to the master or develop branch.
 
-Instead, every new task goes through a code review phase using a pull or merge request. During code review, your code is examined to find bugs and to stick to coding conventions.
+Instead, every new task goes through a [code review phase]({% post_url 2022-12-05-LeadingQuestionsOnCodeReviews %}) using a pull or merge request. During code review, your code is examined to find bugs and to stick to coding conventions.
 
 A pull or merge request means that "the author of the task asks to merge his changes from a branch into the current codebase".
 

@@ -8,7 +8,7 @@ cover-alt: "Stamped envelops with letters"
 
 _This post is part of [my Advent of Code 2022]({% post_url 2022-12-01-AdventOfCode2022 %})._
 
-Recently, I've been [reviewing Pull Requests]({% post_url 2022-12-05-LeadingQuestionsOnCodeReviews %}) as one of my main activities. This time, let's refactor two tests I found on one code review session. The two tests check if an email doesn't have duplicated addresses before sending it. But, they have a common mistake: testing private methods directly. Let's refactor these tests to use the public facade of methods.
+Recently, I've been [reviewing pull requests]({% post_url 2022-12-05-LeadingQuestionsOnCodeReviews %}) as one of my main activities. This time, let's refactor two tests I found on one code review session. The two tests check if an email doesn't have duplicated addresses before sending it. But, they have a common mistake: testing private methods directly. Let's refactor these tests to use the public facade of methods.
 
 **Always write unit tests using the public methods of a class or a group of classes. Don't make private methods public and static to test them directly. Test the observable behavior of classes instead.**
 

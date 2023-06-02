@@ -8,7 +8,7 @@ cover-alt: "Person holding a clock in his palm"
 
 _This post is part of [my Advent of Code 2022]({% post_url 2022-12-01-AdventOfCode2022 %})._
 
-Today I reviewed a Pull Request and had a conversation about when to use Value Objects instead of primitive values. This is the code that started the conversation and my rationale to promote a primitive value to a Value Object.
+Today I [reviewed a pull request]({% post_url 2022-12-05-LeadingQuestionsOnCodeReviews %}) and had a conversation about when to use Value Objects instead of primitive values. This is the code that started the conversation and my rationale to promote a primitive value to a Value Object.
 
 **Prefer Value Objects to encapsulate validations or custom methods on a primitive value. Otherwise, if a primitive value doesn't have a meaningful "business" sense and is only passed around, consider using the primitive value with a good name for simplicity.**
 

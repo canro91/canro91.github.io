@@ -16,7 +16,7 @@ After some reflection, these are three lessons I learned.
 
 ## 1. Minimize Moving Parts
 
-Before starting the project, we worked with an N-tier architecture. Controllers call Services that use Repositories to talk to a database. But, the new guideline was to "start doing DDD." That's not a bad thing per se. The thing was: almost nobody in the team was familiar with DDD. I had worked with some of the DDD artifacts before. But, we didn't know what the upper management wanted with "start doing DDD." 
+Before starting the project, we worked with an N-tier architecture. Controllers call Services that use Repositories to talk to a database. But, the new guideline was to "[start doing DDD]({% post_url 2022-10-03-HandsOnDDDTakeaways %})." That's not a bad thing per se. The thing was: almost nobody in the team was familiar with DDD. I had worked with some of the DDD artifacts before. But, we didn't know what the upper management wanted with "start doing DDD." 
 
 With this decision, a one-month project ended up being a three-month project. After reading posts and sneaking into GitHub template projects, two or three weeks later, we agreed on the project structure, aggregate and entity names, and an overall approach. We were already late.
 
@@ -38,7 +38,7 @@ For my future projects, I will define a clear path and have everybody on-boarded
 
 With a defined solution and everybody working on it, we started to estimate with poker planning. During some of the planning sessions, we joked about putting "in one month" as the completion date for all tickets and stopped doing those meetings. Why make everybody in the team vote for an estimation on a task somebody else was already working on? We all knew what we needed to do and what everybody else was doing. 
 
-It was time to focus on the goal and not get distracted by unproductive ceremonies or meetings. I don't mean stop writing unit tests or doing code reviews. 
+It was time to focus on the goal and not get distracted by unproductive ceremonies or meetings. I don't mean stop [writing unit tests]({% post_url 2021-03-15-UnitTesting101 %}) or [doing code reviews]({% post_url 2019-12-17-BetterCodeReviews %}). 
 
 For my future projects, I will focus on crossing the finish line.
 
