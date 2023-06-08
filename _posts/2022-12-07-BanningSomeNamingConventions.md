@@ -8,13 +8,13 @@ cover-alt: "Necklace with names"
 
 _This post is part of [my Advent of Code 2022]({% post_url 2022-12-01-AdventOfCode2022 %})._
 
-Names are important in programming. Good names could be the difference between a developer nodding his head in agreement or making funny faces in a "Wait, what?" moment. Names are so important that the [Clean Code]({% post_url 2020-01-06-CleanCodeReview %}) and [The Art of Readable Code]({% post_url 2021-12-20-TheArtOfReadableCodeReview %}) devote entire chapters to the subject. These are some words I'm banning from my method and class names.
+Names are important in programming. Good names could be the difference between a developer nodding his head in agreement or making funny faces in a "Wait, whaaaat?" moment. Names are so important that the [Clean Code]({% post_url 2020-01-06-CleanCodeReview %}) and [The Art of Readable Code]({% post_url 2021-12-20-TheArtOfReadableCodeReview %}) devote entire chapters to the subject. These are some words I'm banning from my method and class names.
 
 ## 1. Get and Set in method names
 
 I wish I could remember what Kevlin Henney's presentation has this idea. He argues that "Get" and "Set" are some words with more meanings in an English dictionary. Then why do we use them in our code when our names should be the least ambiguous as possible? He has a point!
 
-These days I reviewed a Pull Request that had a code block that reminded me about this point. It looked like this,
+These days I [reviewed a pull request]({% post_url 2022-12-05-LeadingQuestionsOnCodeReviews %}) that had a code block that reminded me about this point. It looked like this,
 
 ```csharp
 public record RoomCharge(
@@ -30,7 +30,7 @@ public record RoomCharge(
 }
 ```
 
-Maybe `WithReservationId()` or simply `ReservationId()` would be better alternatives.
+Maybe `WithReservationId()` or simply `ReservationId()` would be better alternatives. Even an old auto-implemented property would get our backs covered here.
 
 <figure>
 <img src="https://images.unsplash.com/photo-1568630341816-3087686712dc?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2ODcyNDE0MA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="Danger do not entry sign" />
@@ -88,13 +88,13 @@ public class PaymentMetadata
 }
 ```
 
-If a concept is important inside the business domain, we should promote it out of helper classes.
+**If a concept is important inside the business domain, we should promote it out of helper classes.**
 
 Often, we use Utility and Helper classes to dump all kinds of methods we couldn't find a good place for.
 
 ## 3. Constants classes
 
-The last thing I'm banning is Constant classes. I learned this lesson after reading [Domain Modeling Made Functional]({% post_url 2021-12-13-DomainModelingMadeFunctional %}).
+This isn't exactly a name. But the last thing I'm banning is Constant classes. I learned this lesson after reading [Domain Modeling Made Functional]({% post_url 2021-12-13-DomainModelingMadeFunctional %}).
 
 Recently, I found some code that looked like this,
 
@@ -129,7 +129,7 @@ But, any `int` won't work. Only those inside the Constants class are the valid o
 
 This gets worse when Constant classes start to proliferate, and every project of a solution has its own Constants class. Arggggg!
 
-Instead of Constants classes, let's use enums to restrict the values we can pass to methods. Or, at least, let's move the constants to their calling side. With an enum, the compiler helps us to check if we are passing a "good" value.
+Instead of Constants classes, let's use enums to restrict the values we can pass to methods. Or, at least, let's move the constants closer to where they're expected, not in a catch-all class. With an enum, the compiler helps us to check if we are passing a "good" value.
 
 Using an enum, our previous example looks like this,
 
