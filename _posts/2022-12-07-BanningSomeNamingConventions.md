@@ -141,7 +141,7 @@ public enum TransactionTypeId
     Tax
 }
 
-public void ItUsesATransactionTypeId(TransactionTypeId ledgerTypeId)
+public void ItUsesATransactionTypeId(TransactionTypeId transactionTypeId)
 //                                   ^^^^^^^^^^^^
 {
     // Beep, beep, boop...

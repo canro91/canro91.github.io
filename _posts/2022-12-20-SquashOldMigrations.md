@@ -100,7 +100,7 @@ And the last part turns the TSV files into INSERT statements. It grabs table nam
 
 With this compact script file, I removed the old migration files except the last one. For the project in the screenshot above, I kept `Migration0027`. Then, I used all the SQL statements from the dump file in the `Up()` step of the migration. I had an squash migration after that.
 
-Voilà! That's how I squashed old migrations in one of my client's projects using schemazen and a Bash script. The idea is to squash our migrations with after stable release of our projects. From the reference article, one commenter said he does this approach one or twice a year. Another one, after every breaking changes. 
+Voilà! That's how I squashed old migrations in one of my client's projects using schemazen and a Bash script. The idea is to squash our migrations after every stable release of our projects. From the reference article, one commenter said he does this approach one or twice a year. Another one, after every breaking changes. 
 
 By the way, recently, I got interested in the Unix tools again. Check [how to replace keywords in a file name and content with Bash]({% post_url 2022-12-10-ReplaceKeywordInFile %}) and [how to create ASP.NET Core Api project structure with dotnet cli]({% post_url 2022-12-15-CreateProjectStructureWithDotNetCli %}).
 
