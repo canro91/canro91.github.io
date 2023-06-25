@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TIL: Five or more lessons I learned after working with Hangfire and Ormlite"
+title: "TIL: Five or more lessons I learned after working with Hangfire and OrmLite"
 tags: todayilearned csharp showdev
 cover: Cover.png
 cover-alt: "Disarmed laptop in pieces" 
@@ -8,7 +8,7 @@ cover-alt: "Disarmed laptop in pieces"
 
 _This post is part of [my Advent of Code 2022]({% post_url 2022-12-01-AdventOfCode2022 %})._
 
-These days I finished another internal project while working with one of my clients. I worked to connect a Property Management System with a third-party Point of Sales. I had to work with Hangfire and Ormlite. I used [Hangfire to replace ASP.NET BackgroundServices]({% post_url 2022-12-06-BackgroundServicesAndLiteHangfire %}). Today I want to share some of the technical things I learned along the way.
+These days I finished another internal project while working with one of my clients. I worked to connect a Property Management System with a third-party Point of Sales. I had to work with Hangfire and OrmLite. I used [Hangfire to replace ASP.NET BackgroundServices]({% post_url 2022-12-06-BackgroundServicesAndLiteHangfire %}). Today I want to share some of the technical things I learned along the way.
 
 ## 1. Hangfire lazy-loads configurations
 
@@ -144,11 +144,11 @@ public class MyCoolJob
 }
 ```
 
-## 5. Ormlite IgnoreOnUpdate, SqlScalar, and CreateIndex
+## 5. OrmLite IgnoreOnUpdate, SqlScalar, and CreateIndex
 
-Ormlite has a `[IgnoreOnUpdate]` attribute. I found this attribute when reading Ormlite source code. When using `SaveAsync()`, Ormlite omits properties marked with this attribute when generating the SQL statement. [Source](https://github.com/ServiceStack/ServiceStack.OrmLite/blob/master/src/ServiceStack.OrmLite/OrmLiteDialectProviderBase.cs#L810).
+OrmLite has a `[IgnoreOnUpdate]` attribute. I found this attribute when reading OrmLite source code. When using `SaveAsync()`, OrmLite omits properties marked with this attribute when generating the SQL statement. [Source](https://github.com/ServiceStack/ServiceStack.OrmLite/blob/master/src/ServiceStack.OrmLite/OrmLiteDialectProviderBase.cs#L810).
 
-Ormlite `QueryFirst()` method requires an explicit transaction as a parameter. Unlike `SqlScalar()` which uses the same transaction from the input database connection. [Source](https://github.com/ServiceStack/ServiceStack.OrmLite/blob/master/src/ServiceStack.OrmLite/OrmLiteReadApi.cs#L524). I learned this because I had a `DoesIndexExists()` method inside a database migration and it failed with the message _"ExecuteReader requires the command to have a transaction..."_ This is what I had to change,
+OrmLite `QueryFirst()` method requires an explicit transaction as a parameter. Unlike `SqlScalar()` which uses the same transaction from the input database connection. [Source](https://github.com/ServiceStack/ServiceStack.OrmLite/blob/master/src/ServiceStack.OrmLite/OrmLiteReadApi.cs#L524). I learned this because I had a `DoesIndexExists()` method inside a database migration and it failed with the message _"ExecuteReader requires the command to have a transaction..."_ This is what I had to change,
 
 ```csharp
 private static bool DoesIndexExist<T>(IDbConnection connection, string tableName, string indexName)
@@ -173,10 +173,10 @@ private static bool DoesIndexExist<T>(IDbConnection connection, string tableName
 }
 ```
 
-Again, by looking at ORMLite source code, the `CreateIndex()` method, by default, creates indexes with names like: `idx_TableName_FieldName`. Then we can omit the index name parameter when working with this method. [Source](https://github.com/ServiceStack/ServiceStack.OrmLite/blob/master/src/ServiceStack.OrmLite/OrmLiteDialectProviderBase.cs#L1494)
+Again, by looking at OrmLite source code, the `CreateIndex()` method, by default, creates indexes with names like: `idx_TableName_FieldName`. Then we can omit the index name parameter when working with this method. [Source](https://github.com/ServiceStack/ServiceStack.OrmLite/blob/master/src/ServiceStack.OrmLite/OrmLiteDialectProviderBase.cs#L1494)
 
 Voilà! That's what I learned from this project. This gave me the idea to stop to reflect on what I learned from every project I work on. I really enjoyed figuring out the issue with the health check. It made me read the source code of the In-memory storage for Hangfire.
 
-For more content, check how I use the `IgnoreOnUpdate` attribute to [automatically insert and update audit fields with OrmLite]({% post_url 2022-12-11-AuditFieldsWithOrmLite %}) and [how to replace BackgroundServices with a lite Hangfire]({% post_url 2022-12-06-BackgroundServicesAndLiteHangfire %}).
+For more content, check how I use the `IgnoreOnUpdate` attribute to [automatically insert and update audit fields with OrmLite]({% post_url 2022-12-11-AuditFieldsWithOrmLite %}), [how to pass a DataTable as a parameter with OrmLite]({% post_url 2023-06-26-PassDataTableOrmLite %}) and [how to replace BackgroundServices with a lite Hangfire]({% post_url 2022-12-06-BackgroundServicesAndLiteHangfire %}).
 
 _Happy coding!_

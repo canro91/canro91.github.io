@@ -75,7 +75,7 @@ Let's create a unit test to show how to use those two filters,
 using ServiceStack.DataAnnotations;
 using ServiceStack.OrmLite;
 
-namespace ORMLiteAuditFields;
+namespace OrmLiteAuditFields;
 
 [TestClass]
 public class PopulateAuditFieldsTest
@@ -128,7 +128,7 @@ public class PopulateAuditFieldsTest
         var insertedMovie = await db.SingleByIdAsync<Movie>(movie.Id);
         Assert.IsNotNull(insertedMovie);
         Assert.AreNotEqual(default, insertedMovie.CreatedDate);
-        Assert.AreNotEqual(default, insertedMovie);
+        Assert.AreNotEqual(default, insertedMovie.UpdatedDate);
     }
 }
 ```
@@ -195,7 +195,7 @@ Let's modify our previous unit test to insert and update a movie,
 using ServiceStack.DataAnnotations;
 using ServiceStack.OrmLite;
 
-namespace ORMLiteAuditFields;
+namespace OrmLiteAuditFields;
 
 [TestClass]
 public class PopulateAuditFieldsTest
@@ -258,10 +258,10 @@ Notice this time, after inserting a movie for the first time, we created a separ
 
 At this point, if we don't annotate the `CreatedDate` properties with `[IgnoreOnUpdate]`, we get the exception: _"System.Data.SqlTypes.SqlTypeException: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM."_
 
-We don't want to change the `CreatedDate` on updates. That's why in the `UpdateFilter` we only change `UpdatedDate`. Since we're using a different `Movie` instance in the second update, `CreatedDate` stays uninitialized when OrmLite runs the UPDATE statement in the database. That's why we got that exception.
+We don't want to change the `CreatedDate` on updates. That's why in the `UpdateFilter` we only change `UpdatedDate`. Since we're using a different `Movie` instance in the second `SaveAsync()` call, `CreatedDate` stays uninitialized when OrmLite runs the UPDATE statement in the database. That's why we got that exception.
 
 Voilà! That's how to automate audit fields with OrmLite. After reading the OrmLite source code, I found out about these filters and attributes. I learned the lesson of reading our source code dependencies from a [past Monday Links episode]({% post_url 2022-01-17-MondayLinks %}).
 
-For more content, check [How to create a CRUD API with ASP.NET Core and Insight.Database]({% post_url 2020-05-01-InsightDatabase %}) and [How to keep your database schema updated with Simple.Migrations]({% post_url 2020-08-15-Simple.Migrations %})
+For more content, check [How to create a CRUD API with ASP.NET Core and Insight.Database]({% post_url 2020-05-01-InsightDatabase %}) and [How to keep your database schema updated with Simple.Migrations]({% post_url 2020-08-15-Simple.Migrations %}). To read more about OrmLite, check [How to pass a DataTable as a parameter with OrmLite]({% post_url 2023-06-26-PassDataTableOrmLite %}).
 
 _Happy coding!_
