@@ -20,7 +20,7 @@ Let's create an ASP.NET Core API site and install these NuGet packages:
 
 * Hangfire,
 * Hangfire.AspNetCore,
-* [Hangfire.MemoryStorage](https://github.com/HangfireIO/Hangfire.InMemory),
+* [Hangfire.InMemory](https://github.com/HangfireIO/Hangfire.InMemory),
 * [Hangfire.Console](https://github.com/pieceofsummer/Hangfire.Console) to bring color to our lives
 
 ### 1. Register Hangfire
@@ -56,7 +56,7 @@ To make things cleaner, we can use extension methods to keep all Hangfire config
 ```csharp
 using Hangfire;
 using Hangfire.Console;
-using Hangfire.MemoryStorage;
+using Hangfire.InMemory;
 using RecreatingFilterScenario.Jobs;
 
 namespace LiteHangfire.Extensions;
@@ -67,7 +67,7 @@ public static class ServiceCollectionExtensions
     {
         services.AddHangfire(configuration =>
         {
-            configuration.UseMemoryStorage();
+            configuration.UseInMemoryStorage();
             //            ^^^^^
             // Since we have good memory
             configuration.UseConsole();
