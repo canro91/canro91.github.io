@@ -7,9 +7,9 @@ I'm Cesar Aguirre. I'm a [software engineer](https://github.com/canro91), lifelo
 
 ## What I do
 
-I’m a software engineer based in Colombia _(not Columbia)_ with more than 8 years of experience. I work remotely as a C# backend engineer and technical writer. I specialize in building APIs and backend code with .NET technologies. Mainly ASP.NET Core, and SQL Server these days.
+I’m a software engineer based in Colombia _(not Columbia)_ with more than 10 years of experience _(I stopped counting)_. I work remotely as a backend engineer and technical writer. I specialize in building APIs and backend code with .NET technologies. Mainly [C#](/tags/csharp), [ASP.NET Core](/tags/asp.net), and [SQL Server](/tags/sql) these days.
 
-<div class="message lead"><em>I help teams grow high-quality backend software through clean code and unit testing.</em></div>
+<div class="message lead"><em>I help teams grow high-quality backend code. And by high-quality, I mean maintainable and performant.</em></div>
 
 ## What I've done
 
@@ -28,7 +28,7 @@ In this blog, you can find tips and advice, libraries I use, issues I have solve
 
 I've been featured in <a href="https://exceptionnotfound.net/author/cesar-aguirre/" target="_blank" rel="noopener noreferrer">Exception Not Found</a> as a Guest Writer. And, I've written for SaaS companies like <a href="https://www.alachisoft.com/blogs/author/cesar-aguirre/" target="_blank" rel="noopener noreferrer">Alachisoft</a>.
 
-If you're interested, you can read [how I started blogging]({% post_url 2020-07-18-HowIStartedBlogging %}) and the story behind my first post.
+If you're interested, this is [how I started blogging]({% post_url 2020-07-18-HowIStartedBlogging %}) and what I learned after [five years of blogging]({% post_url 2023-07-18-FiveYearsOfBlogging %}).
 
 ## Fun facts
 
@@ -42,7 +42,6 @@ If you don’t know where to start reading or if you want to find something to r
 
 ### Guides
 
-* [Let's React. Learn React in 30 days]({% post_url 2020-10-26-ReactIn30Days %})
 * [The C# Definitive Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %})
 * [Git Guide For TFS Users]({% post_url 2019-11-11-GitGuideForTfsUsers %})
 * [ASP.NET Core Guide for ASP.NET Framework Users]({% post_url 2020-03-23-GuideToNetCore %})
@@ -50,7 +49,6 @@ If you don’t know where to start reading or if you want to find something to r
 ### Tutorials
 
 * [Remote interview, here I go]({% post_url 2019-09-29-RemoteInterviewTips %})
-* [Postfix Notation: An Interview Exercise]({% post_url 2019-08-02-PostfixNotationAnInterviewExercise %})
 * My take on the difference between [Func and Action]({% post_url 2019-03-22-WhatTheFuncAction %})
 * My series on [C# idioms]({% post_url 2019-11-19-TwoCSharpIdioms %})
 
@@ -63,15 +61,13 @@ If you don’t know where to start reading or if you want to find something to r
 ### Productivity
 
 * [Just Vim It! Learning Vim For Fun and Profit]({% post_url 2020-09-14-LearnVimForFunAndProfit %})
-* [Programs that saved you 100 hours]({% post_url 2020-04-13-ProgramThatSave100Hours %})
-* [Two free tools to format SQL queries]({% post_url 2020-09-30-FormatSQL %})
-* Plugins and settings for [my Visual Studio setup]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %})
+* Plugins and settings for [my Visual Studio C# setup]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %})
 * [How I take notes]({% post_url 2020-08-29-HowITakeNotes %})
 
 ### _BugOfTheDay_
 
 * [The Slow Room Search]({% post_url 2020-09-23-TheSlowRoomSearch %})
-* [Search Reservations is timing out]({% post_url 2020-10-14-SearchingReservations %})
+* [Searching Reservations is timing out]({% post_url 2020-10-14-SearchingReservations %})
 
 ### Books
 
@@ -81,6 +77,6 @@ If you don’t know where to start reading or if you want to find something to r
 
 Follow me on <a href="{{ site.devto }}" target="_blank" rel="noopener noreferrer">dev.to</a>, <a href="{{ site.github }}" target="_blank" rel="noopener noreferrer">GitHub</a> and <a href="{{ site.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
 
-To support my work, check my <a href="https://www.educative.io/courses/getting-started-linq-c-sharp" target="_blank" rel="noopener noreferrer" data-goatcounter-click="LinqCourse-About">Getting Started with LINQ course</a> and download <a href="https://imcsarag.gumroad.com/" target="_blank" rel="noopener noreferrer" data-goatcounter-click="Gumroad-About">my ebooks</a>.
+To support my work, <a href="https://www.educative.io/profile/view/5684280228839424" target="_blank" rel="noopener noreferrer" data-goatcounter-click="Courses-About">check my courses</a> and <a href="https://imcsarag.gumroad.com/" target="_blank" rel="noopener noreferrer" data-goatcounter-click="Gumroad-About">download my ebooks</a>.
 
 _Thanks for reading!_
