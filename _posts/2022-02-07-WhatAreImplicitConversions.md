@@ -101,7 +101,7 @@ This time we don't have a yellow bang on our execution plan. And, we have an Ind
 
 **In stored procedures and queries, use input parameters with the same types as the columns on the tables.**
 
-To identify which queries on your SQL Server have implicit conversions issues, we can use the third query from [these six performance tuning tips from Pinal Dave]({% post_url 2020-09-28-SQLServerTuningTips %}). But, after taking [Brent Ozar's Mastering courses]({% post_url 2022-05-02-BrentOzarMasteringCoursesReview %}), I learned to start working with the most expensive queries instead of jumping to queires with implicit convertion issues right away.
+To identify which queries on your SQL Server have implicit conversions issues, we can use the third query from [these six performance tuning tips from Pinal Dave]({% post_url 2020-09-28-SQLServerTuningTips %}). But, after taking [Brent Ozar's Mastering courses]({% post_url 2022-05-02-BrentOzarMasteringCoursesReview %}), I learned to start working with the most expensive queries instead of jumping to queries with implicit convertion issues right away.
 
 Voilà! Those are implicit conversions and why you should care. Let's use input parameters with the right data types on your queries and store procedures. Otherwise, we will pay the performance penalty of converting and comparing types. Implicit conversions are like [functions around columns]({% post_url 2022-01-24-DontPutFunctionsInYourWheres %}), implicitly added by SQL Server itself.
 
