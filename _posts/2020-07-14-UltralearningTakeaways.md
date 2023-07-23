@@ -4,11 +4,11 @@ title: "Ultralearning: Takeaways"
 tags: books learning
 ---
 
-Scott Young describes in Ultralearning the strategy behind his own learning challenges, like "MIT Challenge in 1 year" and "A year without English." Let's learn what Ultralearning is all about.
+Scott Young describes in Ultralearning the strategy behind his own learning challenges, like "MIT Challenge in 1 year" and "A year without English." Let's learn what Ultralearning is all about. These are my takeaways.
 
-**Ultralearning is a strategy to learn that is self-directed and intense.** Ultralearning projects help you to advance your career or excel at a particular subject. Ultralearning is a perfect alternative to traditional learning methods.
+**Ultralearning is a self-directed and intense strategy to learn any subject. Ultralearning projects help to advance careers or excel at a particular subject. Ultralearning is a perfect alternative to traditional learning methods.**
 
-## Before starting
+## 1. Before starting
 
 Before starting an ultralearning project, answer why, what, and how you are going to ultralearn.
 
@@ -40,11 +40,11 @@ Look for syllabi of courses, textbooks, boot camps, and experts in that field. F
 <figcaption>Find how people are learning your study subject. <span>Photo by <a href="https://unsplash.com/@christianw?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Christian Wiediger</a> on <a href="https://unsplash.com/s/photos/studying?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
 </figure>
 
-## During
+## 2. During
 
 ### Learn in context
 
-Learning should be in the context where those skills will be applied. It's doing the thing you want to get good at where most of the learning happens. For example, solve problem sets instead of watching lectures and learn a language through conversations instead of vocabulary lists.
+**Learning should be in the context where those skills will be applied.** It's doing the thing you want to get good at where most of the learning happens. For example, solve problem sets instead of watching lectures and learn a language through conversations instead of vocabulary lists.
 
 Try project-based learning and immerse learning. For example, learn how to create a website in a month or go on a trip to learn a new language.
 
@@ -67,5 +67,9 @@ Identify the bottleneck components in your learning. Separate your skill into su
 ### Recall instead of concept mapping
 
 Recalling is better than concept maps and passive note reviewing. Recall concepts and facts. Your memory is a leaky bucket. Try space-repetition software or flashcards. After watching a lecture, write all you can remember. When practicing, avoid using your resources.
+
+Voilà! Those are my takeaways from the Ultralearning book. It changed how I approach learning. Instead of overloading my brain with information, I start by creating a plan and list of learning resources.
+
+For more learning content, check my takeaways from [Pragmatic Thinking and Learning]({% post_url 2020-05-07-PragmaticThinkingAndLearning %}), one of my favorite books on the subject, and my [advice on starting an Ultralearning project]({% post_url 2023-07-24-AdviceToStartAnUltralearningProject %}) to become a Software Engineer. 
 
 _Happy ultralearning!_
