@@ -17,7 +17,7 @@ Project-ThisIsTheTrueFinal/
 
 > _You can find the presentation version of this post [here]({% post_url 2020-04-09-FromZeroToPRWithGit %})._
 
-## What is a Version Control System?
+## 1. What is a Version Control System?
 
 First, what is a version control system? A [version control system](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control), VCS, is a piece of code that keeps track of changes of a file or set of files.
 
@@ -37,7 +37,7 @@ To better understand this concept, let's use an analogy.
 <figcaption>DeLorean from Back to the Future. Photo by <a href="https://commons.wikimedia.org/wiki/File:TeamTimeCar.com-BTTF_DeLorean_Time_Machine-OtoGodfrey.com-JMortonPhoto.com-04.jpg" title="via Wikimedia Commons">JMortonPhoto.com &amp; OtoGodfrey.com</a> / <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA</a></figcaption>
 </figure>
 
-## Centralized vs Distributed
+## 2. Centralized vs Distributed
 
 There is a distinction between version control systems that make them different. Centralized vs distributed.
 
@@ -47,7 +47,7 @@ But, **a distributed VCS doesn’t need a centralized server in the same sense**
 
 If you’re coming from TFS, I’ve written a [Git Guide for TFS Users]({% post_url 2019-11-11-GitGuideForTfsUsers %}).
 
-## What's Git anyways?
+## 3. What's Git anyways?
 
 Up to this point, Git doesn't need any further introduction. From its [official page](https://git-scm.com/), "_Git is a free and open-source distributed version control system designed to handle everything from small to very large projects with speed and efficiency._"
 
@@ -152,7 +152,7 @@ Depending on our workplace or project, we have to follow a naming convention for
 
 Keep your commits small and focused. Work with incremental commits. And, don't commit changes that break your project.
 
-## Branching and merging
+## 4. Branching and merging
 
 ### What's a Git Branch?
 
@@ -284,7 +284,7 @@ There is a convention for branch creation, [GitFlow](https://nvie.com/posts/a-su
 
 With Gitflow, we should have a _develop_ branch where everyday work happens. Every new task starts in a separate feature branch taken from _develop_. Once we're done with our task, we merge our feature branch back to _develop_.
 
-## GitHub: Getting our code to the cloud
+## 5. GitHub: Getting our code to the cloud
 
 Up until now, all our work lives on our computers. But, what if we want our project to live outside? We need a hosting solution. Among the most popular hosting solutions for Git, we can find [GitHub](https://github.com/), [GitLab](https://gitlab.com/) and [Bitbucket](https://bitbucket.org/).
 
@@ -306,7 +306,7 @@ $ git push -u origin master
 # Head to your GitHub account and refresh
 ```
 
-## Cheatsheet
+## 6. Cheatsheet
 
 Here you have all the commands we have used so far.
 
@@ -329,7 +329,7 @@ Here you have all the commands we have used so far.
 | `git remote add <remote-name> <url>` | Add a new remote pointing to _url_ |
 | `git push -u <remote-name> <branch-name>` | Push _branch-name_ to _remote-name_ |
 
-## Conclusion
+## 7. Conclusion
 
 Voilà! We have learned the most frequent Git commands for everyday use. We used Git from the command line. But, most IDE's offer Git integration through plugins or extensions. Now try to use Git from your favorite IDE.
 
