@@ -237,7 +237,7 @@ public class CreditCardValidationTests
         var creditCard = new CreditCardBuilder()
                         .WithExpirationYear(DateTime.Now.AddYears(-1).Year)
                         .Build();
-        var result = validator.TestValidate(request);
+        var result = validator.TestValidate(creditCard);
 
         result.ShouldHaveAnyValidationError();
     }
@@ -251,7 +251,7 @@ public class CreditCardValidationTests
         var creditCard = new CreditCardBuilder()
                         .WithExpirationMonth(DateTime.Now.AddMonths(-1).Month)
                         .Build();
-        var result = validator.TestValidate(request);
+        var result = validator.TestValidate(creditCard);
 
         result.ShouldHaveAnyValidationError();
     }
@@ -319,6 +319,6 @@ We used `DateTime.Now` in our tests, let's see [how to write tests that use Date
 
 If you're new to unit testing, read [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}) to write your first unit tests in C# and  learn how to name your test with [these 4 naming conventions]({% post_url 2021-04-12-UnitTestNamingConventions %}).
 
-For more advanced tips on unit testing, check my post on [how to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %}) and [always write failing tests]({% post_url 2021-02-05-FailingTest %}).
+For more advanced tips on unit testing, check my post on [how to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %}) and [always write failing tests]({% post_url 2021-02-05-FailingTest %}). And don't miss the rest of my [Unit Testing 101]({% post_url 2021-08-30-UnitTesting %}) series for more subjects on unit testing.
 
 _Happy testing!_

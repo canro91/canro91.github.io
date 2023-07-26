@@ -26,11 +26,11 @@ Inside the `Api.Tests`, I found tests for services with a retry mechanism. And, 
 
 My first solution was to reduce the delay between retry attempts to zero.
 
-### Set retryWaitSecond = 0
+### Set retryWaitSeconds = 0
 
 Some tests built retry policies manually and passed them to services. I only needed to pass `0` as a delay. Like this,
 
-{% include image.html name="ZeroDelay.png" alt="Diff of setting retryWaitSecond variable to zero" caption="Making retryWaitSecond = 0" %}
+{% include image.html name="ZeroDelay.png" alt="Diff of setting retryWaitSecond variable to zero" caption="Making retryWaitSeconds = 0" %}
 
 A simple [Bash one-liner to find and replace a pattern]({% post_url 2022-12-10-ReplaceKeywordInFile %}) got my back covered here.
 

@@ -26,7 +26,7 @@ public class RemoveTests
 }
 ```
 
-We find this naming convention in the book [The Art of Unit Testing](https://www.manning.com/books/the-art-of-unit-testing-second-edition) ([my takeaways]({% post_url 2020-03-06-TheArtOfUnitTestingReview %})). This convention uses underscores to separate the unit of work or entry point, the test scenario, and the expected behavior. 
+We find this naming convention in the book [The Art of Unit Testing](https://www.manning.com/books/the-art-of-unit-testing-second-edition) ([my takeaways here]({% post_url 2020-03-06-TheArtOfUnitTestingReview %})). This convention uses underscores to separate the unit of work or entry point, the test scenario, and the expected behavior. 
 
 With this convention, we can read our test names out loud like this: "When calling Remove with no parameters, then it returns empty."
 
@@ -54,7 +54,7 @@ This convention uses sentences in plain English for test names. We describe in a
 
 This convention considers smells adding method names and filler words like "should" or "should be" in our test names. For example, instead of writing, "should_remove_only_a_substring", we should write "removes_only_a_substring".
 
-You could read more about this convention in [You are naming your tests wrong!](https://enterprisecraftsmanship.com/posts/you-naming-tests-wrong/)
+You could read more about this convention in [Vladimir Khorikov's You are naming your tests wrong!](https://enterprisecraftsmanship.com/posts/you-naming-tests-wrong/)
 
 <figure>
 <img src="https://images.unsplash.com/photo-1524411289573-283bf2f298e8?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjE2NDQ3NzQ3&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="jar of blueberries" />

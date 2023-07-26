@@ -182,9 +182,7 @@ Again, stubs provides values and mocks are used to assert.
 
 **When to use fakes in our tests?** Use fakes when in your unit tests when you depend on external systems you don't control. For example, third-party APIs and message queues. Assert the right call were made or the right messages were sent.
 
-Notice, we used the `UnitOfWork_Scenario_ExpectedResult` naming convention in our test. For the expect result part, we used the keyword "Calls". It shows we expect the `OrderService` to call a payment gateway to charge credit cards.
-
-<div class="message">For more naming conventions, check <a href="/2021/04/12/UnitTestNamingConventions/">4 test naming conventions</a></div>
+Notice, we used [the UnitOfWork_Scenario_ExpectedResult naming convention]({% post_url 2021-04-12-UnitTestNamingConventions %}) in our test. For the expect result part, we used the keyword "Calls". It shows we expect the `OrderService` to call a payment gateway to charge credit cards.
 
 ## Other types of fakes: dummies, stubs, spies and mocks
 
