@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "Visual Studio 2019/2022 setup for C# (theme, settings, extensions)"
-description: Visual Studio 2019 is out. These are my settings, layout and extensions
+title: "Visual Studio 2022 setup for C# (theme, settings, extensions)"
 tags: productivity visualstudio
 ---
 
@@ -103,8 +102,13 @@ It will open a separate and clean instance with no configurations or extensions.
 To make Visual Studio work in Presentation mode:
 
 * Remove Navigation Outline, Server Explorer, Toolbox, Git changes, and Properties. Only keep Solution Explorer.
+* Disable CodeLens.
 * Use Cascadia Mono, 14pt.
+* Change Output and Developer Powershell font to Consolas 14pt.
+* Use 120% as default zoom level.
+* Optionally install the [GitHub theme](https://github.com/madskristensen/GitHubThemes).
 * Optionally install the [MarkdownEditor extension](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.MarkdownEditor) to present using markdown files.
+
 
 Voilà! That's how I use Visual Studio 2019 for C# coding. If you're wondering what's Vim and why you should learn it, check my post [Learning Vim for Fun and Profit]({% post_url 2020-09-14-LearnVimForFunAndProfit %}).
 
