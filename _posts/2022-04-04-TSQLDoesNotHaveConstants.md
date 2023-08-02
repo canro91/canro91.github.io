@@ -116,6 +116,6 @@ A more maintainable alternative while keeping good estimates.
 
 Voilà! That's how to use constants with a view in SQL Server. I found a proposal to introduce [a constant keyword](https://blog.greglow.com/2020/03/05/sql-t-sql-really-needs-constants/) in SQL Server. I learned about the trick with views while getting my code reviewed. But I also found the same idea in this [StackOverflow question](https://stackoverflow.com/questions/26652/is-there-a-way-to-make-a-tsql-variable-constant) and in [this one](https://stackoverflow.com/questions/6114826/sql-views-no-variables) too.
 
-For more content on SQL Server, check my other posts on [functions and WHERE clauses]({% post_url 2022-01-24-DontPutFunctionsInYourWheres %}), [implicit conversions]({% post_url 2022-02-07-WhatAreImplicitConversions %}) and [index recommendations]({% post_url 2022-03-21-SQLServerIndexRecommendations %}).
+For more content on SQL Server, check my other posts on [functions and WHERE clauses]({% post_url 2022-01-24-DontPutFunctionsInYourWheres %}), [implicit conversions]({% post_url 2022-02-07-WhatAreImplicitConversions %}) and [case-sensitive searches]({% post_url 2022-02-21-CaseSensitiveSearchSQLServer %}).
 
 _Happy coding!_

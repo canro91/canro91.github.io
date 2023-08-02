@@ -91,7 +91,7 @@ This is my rationale to choose between value objects and primitive values:
 
 In our `TimeStamp` class, apart from `Create()`, we didn't have any other methods. We might validate if the inner date is in this century. But that won't be a problem. I don't think that code will live that long.
 
-And, there are cleaner ways of [writing tests that use DateTime]({% post_url 2021-05-10-WriteTestsThatUseDateTimeNow %}) than using a static `SystemClock`. Maybe, if we can overwrite the `SystemClock` internal date.
+And, there are cleaner ways of [writing tests that use DateTime]({% post_url 2021-05-10-WriteTestsThatUseDateTimeNow %}) than using a static `SystemClock`. Maybe, it would be a better idea if we can overwrite the `SystemClock` internal date.
 
 I'd take a simpler route and use a plain `DateTime` value. I don't think there's a business case for `TimeStamp` here.
 

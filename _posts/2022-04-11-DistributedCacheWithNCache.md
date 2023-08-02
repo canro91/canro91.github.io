@@ -8,7 +8,7 @@ cover-alt: "Storage unit"
 
 As we learned last time, when I covered [in-memory caching with ASP.NET Core]({% post_url 2020-06-29-HowToAddACacheLayer %}), a cache is a storage layer between an application and an external resource (a database, for example) used to speed up future requests to that resource. In this post, let's use ASP.NET Core `IDistributedCache` abstractions to write a data caching layer using NCache.
 
-## What's NCache?
+## 1. What's NCache?
 
 From [NCache official page](https://www.alachisoft.com/ncache/), _"NCache is an Open Source in-memory distributed cache for .NET, Java, and Node.js applications."_
 
@@ -18,7 +18,7 @@ NCache comes in three editions: Open Source, Professional, and Enterprise. The O
 
 One of the NCache key features is performance. Based on [their own benchmarks](https://www.alachisoft.com/ncache/ncache-performance-benchmarks.html), "NCache can linearly scale to achieve 2 million operations per second with a 5-server cache cluster."
 
-## How to install NCache on a Windows machine?
+## 2. How to install NCache on a Windows machine?
 
 Let's see how to install an NCache server on a Windows machine. For this, we need a Windows installer and have a [trial license key](https://www.alachisoft.com/trial-key.html). Let's install NCache Enterprise edition, version 5.2 SP1.
 
@@ -58,7 +58,7 @@ So far, we have covered the installation instructions for a Windows machine. But
 <figcaption>A cache is a fast storage unit. Photo by <a href="https://unsplash.com/@jezar?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jezael Melgoza</a> on <a href="https://unsplash.com/s/photos/warehouse?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption>
 </figure>
 
-## How to add and retrieve data from an NCache cache?
+## 3. How to add and retrieve data from an NCache cache?
 
 Now, we're ready to start using our NCache server from a .NET app. In Visual Studio, let's create a solution with a .NET 6 "MSTest Test Project" and a class file to learn the basic caching operations with NCache.
 
@@ -85,7 +85,7 @@ public class NCacheTests
         var cacheName = "demoCache";
         ICache cache = CacheManager.GetCache(cacheName);
 
-		// We will fill in the details later
+        // We will fill in the details later
     }
 }
 ```
@@ -253,7 +253,7 @@ Notice we used the `InsertAsync()` method to add an item with the same key. When
 
 There's another basic method: `Remove()` and `RemoveAsync()`. We can guess what they do. Again, try to write a test to prove that.
 
-## How to use ASP.NET Core IDistributedCache with NCache?
+## 4. How to use ASP.NET Core IDistributedCache with NCache?
 
 Up to this point, we have NCache installed and know how to add, retrieve, update, and remove items.
 

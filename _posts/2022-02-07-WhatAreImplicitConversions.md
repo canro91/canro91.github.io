@@ -107,6 +107,6 @@ Voilà! Those are implicit conversions and why you should care. Let's use input 
 
 Let's remember that not all implicit conversions are bad. When looking at execution plans, let's check how many rows SQL Server reads to convert and compare things.
 
-For more content on SQL Server, check [how to compare datetimes without the time part]({% post_url 2020-10-05-CompareDateTimeSQLServer %}), [how to write case-insensitive searches]({% post_url 2022-02-21-CaseSensitiveSearchSQLServer %}) and [how to optimize queries with GROUP BY]({% post_url 2022-03-07-OptimizeGroupBySQLServer %}).
+For more content on SQL Server, check [how to compare datetimes without the time part]({% post_url 2020-10-05-CompareDateTimeSQLServer %}), [how to write case-sensitive searches]({% post_url 2022-02-21-CaseSensitiveSearchSQLServer %}) and [how to optimize queries with GROUP BY]({% post_url 2022-03-07-OptimizeGroupBySQLServer %}).
 
 _Happy coding!_
