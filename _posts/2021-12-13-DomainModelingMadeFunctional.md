@@ -10,19 +10,19 @@ If you are curious about the functional world, but you found it too hard to star
 
 **"Domain modeling made functional" teaches to start coding only after understanding the domain. And to capture requirements, constraints, and business rules using types in the system.**
 
-This book covers from Domain-Driven Design (DDD) to type systems to refining an existing domain model. It's a jump to functional world designing a system to price and ship orders in a supply store. No jargon or weird concepts needed.
+This book covers from Domain-Driven Design (DDD) to type systems to refining an existing domain model. It's a jump to the functional world by designing a system to price and ship orders in a supply store. No jargon or weird concepts needed.
 
 All the code samples are in F#. Most of the time, they're easy to understand. Since F# has a better type inference than C#, types aren't explicit all the time while writing functions. Some code listings are hard to translate to C#.
 
 To follow the code using C#, I had to rely upon libraries like [OneOf](https://github.com/mcintyre321/OneOf) and [Optional](https://github.com/nlkl/Optional) to bring discriminated unions and option types, not built into the C# language yet.
 
-## DDD and Ubiquitous language
+## 1. DDD and Ubiquitous language
 
-**The goal of DDD is to share the business model between developers and domain experts**. In DDD, the business domain drives the design. Not the database schema. Don't rush to think in terms of database tables.
+**The goal of DDD is to share the business model between developers and domain experts**. In DDD, the business domain drives the design, not the database schema. Don't rush to think in terms of database tables.
 
 **Write code using the same vocabulary from the business domain**. Domain experts or product owners don't think in integers or strings. But, in business concepts like OrderId, ProductCode. When in doubt, ask your domain expert what an `OrderBase`, `OrderHelper` mean.
 
-## Types everywhere
+## 2. Types everywhere
 
 A type is a name for all possible input and output values in a function. For example, Math functions from one set to another.
 
@@ -52,23 +52,23 @@ In the Object-Oriented (OO) world, types are like classes without behavior or si
 <figcaption>Who needs plumbing supplies? Photo by <a href="https://unsplash.com/@oksdesign?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Oxana Melis</a> on <a href="https://unsplash.com/s/photos/hardware-store?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption>
 </figure>
 
-## Restrictions, Errors, and Invalid State
+## 3. Restrictions, Errors, and Invalid State
 
 ### Restrictions
 
 **Express restrictions in your design and enforce constraints with new types**.
 
-To represent unit quantities in orders, don't use a plain integer. Unit is a concept in the business domain. It should be in a separate type, like `UnitQuantity`.
+For example, to represent unit quantities in orders, don't use a plain integer. "Unit" is a concept in the business domain. It should be in a separate type, like `UnitQuantity`.
 
 To restrict unit quantities between 1 and 1000, create a private constructor in the `UnitQuantity` type and only expose a factory method with the validation.
 
 To enforce that an order should have at least one line item, create a `NonEmptyList` instead of a possibly empty `List`.
 
-To represent optional values, use `Option<T>` instead of `null` values.
+To represent optional values, [use Option\<T\> instead of null]({% post_url 2023-03-20-UseOptionInsteadOfNull %}).
 
 ### Errors and Exceptions: Signature method honesty
 
-**Make errors part of your domain**. Follow the Signature Method honesty: document all possible outputs in the signature of types.
+**Make errors part of your domain**. Follow the Signature Method honesty. This means documenting all possible outputs in the signature of methods.
 
 For example, a `Divide` function shouldn't throw an exception. Instead write, `int Divide(int a, NonZeroInt b);`
 
@@ -94,7 +94,7 @@ To represent validated emails, don't create a `CustomerEmail` with an `IsVerifie
 
 With types, we don't need unit tests for invalid situations, we have compile-time unit tests. Also, types better document the business domain.
 
-## Transformation-oriented programming
+## 4. Transformation-oriented programming
 
 Write actions in your system as workflows or chains of transformations.
 
@@ -113,7 +113,7 @@ type CreateEvents = PricedOrder -> PlaceOrderEvent list
 type PlaceOrderWorflow = PlaceOrderCommand -> Result<PlaceOrderEvent list, PlaceOrderError>
 ``` 
 
-## Challenges
+## 5. Challenges
 
 After reading this book, there are two things I want to change in the codebases around me.
 
@@ -189,7 +189,7 @@ public class SuccessfulPayment
 
 Also, as part of this last challenge, not only separate a class with a boolean type into two classes, but also [separate optional or nullable state to avoid NullReferenceException]({% post_url 2023-04-03-SeparateStateIntoSeparateObjects %}).
 
-## Putting types into practice
+## 6. Putting types into practice
 
 I had the chance to practice what I've learned with this book, even before finishing it.
 
@@ -238,7 +238,7 @@ public enum DelayType
 }
 ```
 
-## Parting thoughts
+## 7. Parting thoughts
 
 Voilà! These are the lessons I learned from this book. It's a good introduction to DDD and functional programming. If you're not a functional programmer, you can still take advantage of the concepts of this book in your everyday programming. I did.
 
