@@ -60,7 +60,7 @@ There's a distinction between repositories and queries. Repositories deal with t
 
 We should write queries using the Ubiquitous Language too. For example, let's write `GetAdsPendingReview()` instead of `GetAds(ad => ad.State == State.PendingReview)`. And we can access the storage directly on our query handlers. That's fine.
 
-For example, this is a query to return active classified ads,
+For example, this is a query to return active classified ads. We can put it inside the API layer directly,
 
 ```csharp
 public static class Queries
@@ -79,6 +79,8 @@ public static class Queries
     }
 }
 ```
+
+I really like the simplicity of using queries instead of [too many artifacts and layers of indirection]({% post_url 2023-08-07-TooManyLayers %}) to read data.
 
 ## Parting Thoughts
 
