@@ -199,6 +199,8 @@ Notice that we expect a `PerformContext` as a parameter to change the color of t
 
 Voilà! That's how to use a lite Hangfire to replace BackgroundServices without adding too much overhead or a new database to store jobs. With the advantage that Hangfire has recurring jobs, retries, and a Dashboard out of the box.
 
+After solving a couple of issues, I learned some [lessons when working with Hangfire]({% post_url 2022-12-13-LessonsOnHangfireAndOrmLite %}).
+
 To read more content about ASP.NET Core, check [how to write tests for HttpClient]({% post_url 2022-12-01-TestingHttpClient %}) and [how to test an ASP.NET filter]({% post_url 2022-12-03-TestingAspNetAuthorizationFilters %}).
 
 _Happy coding!_
