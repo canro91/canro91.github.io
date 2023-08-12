@@ -12,7 +12,7 @@ These days I finished another internal project while working with one of my clie
 
 ## 1. Hangfire lazy-loads configurations
 
-Hangfire lazy loads configurations. We have to retrieve services from the ASP.NET dependencies container instead of using static alternatives.
+Hangfire lazy loads configurations. We have to retrieve services from the ASP.NET Core dependencies container instead of using static alternatives.
 
 I faced this issue after trying to run Hangfire in non-development environments without registering the Hangfire dashboard. This was the exception message I got: _"JobStorage.Current property value has not been initialized."_ When registering the Dashboard, Hangfire loads some of those configurations. That's why "it worked on my machine."
 
@@ -53,7 +53,7 @@ public static class WebApplicationExtensions
 
 ## 2. Hangfire Dashboard in non-Local environments
 
-By default, Hangfire only shows the Dashboard for local requests. A coworker pointed that out. It's in plain sight in [the Hanfire Dashboard documentation](https://docs.hangfire.io/en/latest/configuration/using-dashboard.html). Arrrggg!
+By default, Hangfire only shows the Dashboard for local requests. A coworker pointed that out. It's in plain sight in [the Hangfire Dashboard documentation](https://docs.hangfire.io/en/latest/configuration/using-dashboard.html). Arrrggg!
 
 To make it work in other non-local environments, we need an authorization filter. Like this,
 
@@ -79,7 +79,7 @@ app.UseHangfireDashboard("/hangfire", new DashboardOptions
 
 ## 3. InMemory-Hangfire SucceededJobs method
 
-For the In-Memory Hangfire implementation, the `SucceededJobs()` method from the monitoring API returns jobs from most recent to oldest. There's no need for pagination. Look at the `Reverse()` method in the [SucceededJobs source code](https://github.com/HangfireIO/Hangfire.InMemory/blob/master/src/Hangfire.InMemory/InMemoryMonitoringApi.cs#L259).
+For the In-Memory Hangfire implementation, the `SucceededJobs()` method from the monitoring API returns jobs from most recent to oldest. There's no need for pagination. Look at the `Reverse()` method in the [SucceededJobs() source code](https://github.com/HangfireIO/Hangfire.InMemory/blob/master/src/Hangfire.InMemory/InMemoryMonitoringApi.cs#L308).
 
 I had to find out why an ASP.NET health check was only working for the first time. It turned out that the code was paginating the successful jobs, always looking for the oldest successful jobs. Like this,
 
@@ -128,9 +128,11 @@ public class HangfireSucceededJobsHealthCheck : IHealthCheck
 }
 ```
 
+This is so confusing that there's an [issue on the Hangfire repo](https://github.com/HangfireIO/Hangfire/issues/2160) asking for clarification. Not all storage  implementations return successful jobs in reverse order. Arrrggg!
+
 ## 4. Prevent Concurrent execution of Hangfire jobs
 
-Hangfire has an attribute to prevent the concurrent execution of the same job: `DisableConcurrentExecutionAttribute`. [Source](https://github.com/HangfireIO/Hangfire/blob/master/src/Hangfire.Core/DisableConcurrentExecutionAttribute.cs). We can change the resource being locked to avoid executing jobs with the same parameters. For example, to run only one job per entity.
+Hangfire has an attribute to prevent the concurrent execution of the same job: `DisableConcurrentExecutionAttribute`. [Source](https://github.com/HangfireIO/Hangfire/blob/master/src/Hangfire.Core/DisableConcurrentExecutionAttribute.cs). Even we can change the resource being locked to avoid executing jobs with the same parameters. For example, we can run only one job per client id simultaneously.
 
 ```csharp
 [DisableConcurrentExecutionAttribute(timeoutInSeconds: 60)]
