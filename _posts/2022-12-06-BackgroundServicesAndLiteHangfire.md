@@ -113,7 +113,7 @@ public static class ServiceCollectionExtensions
 }
 ```
 
-Notice that we used the `UseMemoryStorage()` method to store jobs in memory instead of in a database and the `UseConsole()` to bring color to our logging messages in the Dashboard.
+Notice that we used the `UseInMemoryStorage()` method to store jobs in memory instead of a database and the `UseConsole()` to bring color to our logging messages in the Dashboard.
 
 <figure>
 <img src="https://images.unsplash.com/photo-1589320011103-48e428abcbae?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3MDAxODI0Mw&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="Car factory" />
