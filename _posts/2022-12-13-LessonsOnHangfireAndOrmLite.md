@@ -132,14 +132,28 @@ This is so confusing that there's an [issue on the Hangfire repo](https://github
 
 ## 4. Prevent Concurrent execution of Hangfire jobs
 
-Hangfire has an attribute to prevent the concurrent execution of the same job: `DisableConcurrentExecutionAttribute`. [Source](https://github.com/HangfireIO/Hangfire/blob/master/src/Hangfire.Core/DisableConcurrentExecutionAttribute.cs). Even we can change the resource being locked to avoid executing jobs with the same parameters. For example, we can run only one job per client id simultaneously.
+Hangfire has an attribute to prevent the concurrent execution of the same job: `DisableConcurrentExecutionAttribute`. [Source](https://github.com/HangfireIO/Hangfire/blob/master/src/Hangfire.Core/DisableConcurrentExecutionAttribute.cs).
 
 ```csharp
-[DisableConcurrentExecutionAttribute(timeoutInSeconds: 60)]
+[DisableConcurrentExecution(timeoutInSeconds: 60)]
 // ^^^^^
 public class MyCoolJob
 {
     public async Task DoSomethingAsync()
+    {
+        // Beep, beep, boop...
+    }
+}
+```
+
+Even we can change the resource being locked to avoid executing jobs with the same parameters. For example, we can run only one job per client simultaneously, like this,
+
+```csharp
+public class MyCoolJob
+{
+    [DisableConcurrentExecution("clientId:{0}", 60)]
+    //                          ^^^^^
+    public async Task DoSomethingAsync(int clientId)
     {
         // Beep, beep, boop...
     }
