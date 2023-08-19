@@ -54,6 +54,6 @@ In the beginning, you might think you don't know enough to [start a blog]({% pos
 
 Voilà! These are four things I wished I knew before starting a software engineer career. Remember, every journey is different. For sure, my circumstances have been different than yours, and that's why these four things. In any case, "Your career is your responsibility, not your employer's." I learned that from [The Clean Coder]({% post_url 2020-06-15-CleanCoder %}).
 
-Interested in more career lessons? Check [five lessons I learned on my first five years as software engineer]({% post_url 2019-08-19-FiveLessonsAfterFiveYears %}) and [ten lessons learned after one year of remote work]({% post_url 2020-08-08-LessonsOnRemoteWork %}).
+Interested in more career lessons? Check [five lessons I learned on my first five years as software engineer]({% post_url 2019-08-19-FiveLessonsAfterFiveYears %}),  [ten lessons learned after one year of remote work]({% post_url 2020-08-08-LessonsOnRemoteWork %}), and [three thoughts on layoffs]({% post_url 2023-08-21-OnLayoffs %}).
 
 _Happy coding!_
