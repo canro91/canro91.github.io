@@ -6,9 +6,9 @@ cover: Cover.png
 cover-alt: "Write simpler tests with Type Builders and AutoFixture"
 ---
 
-Writing tests for services with lots of collaborators can be tedious. I know. You will end up with complex Arrange parts and lots of fakes. Let's see three alternatives to write simpler tests with builder methods, Type Builders and AutoFixture.
+Writing tests for services with lots of collaborators can be tedious. I know! We will end up with complex Arrange parts and lots of fakes. Let's see three alternatives to write simpler tests with builder methods, Type Builders and AutoFixture.
 
-**To write simpler tests for services with lots of collaborators, use builder methods to create only the fakes needed in every test. As an alternative, use auto-mocking with a type builder or libraries like AutoFixture to create a service with its collaborators replaced by test doubles using a mocking library.**
+**To write simpler tests for services with lots of collaborators, use builder methods to create only the fakes needed in every test. As an alternative, use auto-mocking to create a service with its collaborators replaced by test doubles.**
 
 To show these three alternatives, let's bring back our `OrderService` class. We used it to show the [difference between stubs and mocks]({% post_url 2021-05-24-WhatAreFakesInTesting %}). Again, the `OrderService` checks if an item has stock available to then charge a credit card.
 
@@ -47,41 +47,42 @@ public class OrderService
 }
 ```
 
+I know, I know! We could argue our `OrderService` is doing a lot of things!
+
 Let's write a test to check if the payment gateway is called when we place an order. We're using [Moq to write fakes]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}). This test will look like this:
 
 ```csharp
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
-namespace WithoutAnyBuilders
+namespace WithoutAnyBuilders;
+
+[TestClass]
+public class OrderServiceTestsBefore
 {
-    [TestClass]
-    public class OrderServiceTestsBefore
+    [TestMethod]
+    public void PlaceOrder_ItemInStock_CallsPaymentGateway()
     {
-        [TestMethod]
-        public void PlaceOrder_ItemInStock_CallsPaymentGateway()
-        {
-            var stockService = new Mock<IStockService>();
-            stockService.Setup(t => t.IsStockAvailable(It.IsAny<Order>()))
-                        .Returns(true);
-            var paymentGateway = new Mock<IPaymentGateway>();
-            var deliveryService = new Mock<IDeliveryService>();
-            var orderRepository = new Mock<IOrderRepository>();
-            var service = new OrderService(paymentGateway.Object,
-                                           stockService.Object,
-                                           deliveryService.Object,
-                                           orderRepository.Object);
+        var stockService = new Mock<IStockService>();
+        stockService.Setup(t => t.IsStockAvailable(It.IsAny<Order>()))
+                    .Returns(true);
+        var paymentGateway = new Mock<IPaymentGateway>();
+        var deliveryService = new Mock<IDeliveryService>();
+        var orderRepository = new Mock<IOrderRepository>();
+        var service = new OrderService(paymentGateway.Object,
+                                       stockService.Object,
+                                       deliveryService.Object,
+                                       orderRepository.Object);
 
-            var order = new Order();
-            service.PlaceOrder(order);
+        var order = new Order();
+        service.PlaceOrder(order);
 
-            paymentGateway.Verify(t => t.ProcessPayment(It.IsAny<Order>()));
-        }
+        paymentGateway.Verify(t => t.ProcessPayment(It.IsAny<Order>()));
     }
 }
 ```
 
-Sometimes, we need to create fakes for our collaborators even when the tested behavior doesn't need them.
+Sometimes, we need to create fakes for our collaborators even when the behavior under test doesn't need them.
 
 ## 1. Builder methods
 
@@ -89,7 +90,7 @@ One easy alternative to writing simpler tests is to use builder methods.
 
 With a builder method, we only create the fakes we need inside our tests. And, inside the builder method, we create "empty" fakes for the collaborators we don't need for the tested scenario.
 
-We've used this idea of builder methods to [write better tests by making our tests less noisy]({% post_url 2020-11-02-UnitTestingTips %}) and more readable.
+We used this idea of builder methods to [write better tests by making our tests less noisy]({% post_url 2020-11-02-UnitTestingTips %}) and more readable.
 
 Our test with a builder method looks like this:
 
@@ -97,46 +98,45 @@ Our test with a builder method looks like this:
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
-namespace WithBuilderMethod
+namespace WithABuilderMethod;
+
+[TestClass]
+public class OrderServiceTestsBuilder
 {
-    [TestClass]
-    public class OrderServiceTestsBuilder
+    [TestMethod]
+    public void PlaceOrder_ItemInStock_CallsPaymentGateway()
     {
-        [TestMethod]
-        public void PlaceOrder_ItemInStock_CallsPaymentGateway()
-        {
-            var stockService = new Mock<IStockService>();
-            stockService.Setup(t => t.IsStockAvailable(It.IsAny<Order>()))
-                        .Returns(true);
-            var paymentGateway = new Mock<IPaymentGateway>();
-            // We add a new MakeOrderService method
-            var orderService = MakeOrderService(stockService.Object, paymentGateway.Object);
-            //                 ^^^^^
+        var stockService = new Mock<IStockService>();
+        stockService.Setup(t => t.IsStockAvailable(It.IsAny<Order>()))
+                    .Returns(true);
+        var paymentGateway = new Mock<IPaymentGateway>();
+        var orderService = MakeOrderService(stockService.Object, paymentGateway.Object);
+        //                 ^^^^^
+        // We add a new MakeOrderService method
 
-            var order = new Order();
-            orderService.PlaceOrder(order);
+        var order = new Order();
+        orderService.PlaceOrder(order);
 
-            paymentGateway.Verify(t => t.ProcessPayment(order));
-        }
+        paymentGateway.Verify(t => t.ProcessPayment(order));
+    }
 
-        // Notice we only pass the fakes we need
-        private OrderService MakeOrderService(IStockService stockService, IPaymentGateway paymentGateway)
-        //                   ^^^^^
-        {
-            var deliveryService = new Mock<IDeliveryService>();
-            var orderRepository = new Mock<IOrderRepository>();
-            var service = new OrderService(paymentGateway,
-                                            stockService,
-                                            deliveryService.Object,
-                                            orderRepository.Object);
+    private OrderService MakeOrderService(IStockService stockService, IPaymentGateway paymentGateway)
+    //                   ^^^^^
+    // Notice we only pass the fakes we need
+    {
+        var deliveryService = new Mock<IDeliveryService>();
+        var orderRepository = new Mock<IOrderRepository>();
+        var service = new OrderService(paymentGateway,
+                                        stockService,
+                                        deliveryService.Object,
+                                        orderRepository.Object);
 
-            return service;
-        }
+        return service;
     }
 }
 ```
 
-With the `MakeOrderService()` method, we only deal with the mocks we care about in every test. The ones for `IStockService` and `IPaymentService`.
+With the `MakeOrderService()` method, we only deal with the mocks we care about in our test: the ones for `IStockService` and `IPaymentService`.
 
 <figure>
 <img src="https://images.unsplash.com/photo-1512207736890-6ffed8a84e8d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIzNjkyODcw&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="Men at work" />
@@ -153,7 +153,7 @@ Let me introduce you to `TypeBuilder`. This is a helper class I've been using in
 
 This `TypeBuilder` class uses reflection to find all the parameters in the constructor of the service to build. And, it uses [Moq to build fakes]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}) for each parameter.
 
-`TypeBuilder` expects a single constructor. But, you can easily extend it to pick the one with more parameters.
+`TypeBuilder` expects a single constructor. But, we can easily extend it to pick the one with more parameters.
 
 ```csharp
 public class TypeBuilder<T>
@@ -248,33 +248,38 @@ Let's rewrite our sample test to use the `TypeBuilder` class.
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
-namespace WithTypeBuilder
+namespace WithTypeBuilder;
+
+[TestClass]
+public class OrderServiceTestsTypeBuilder
 {
-    [TestClass]
-    public class OrderServiceTestsTypeBuilder
+    [TestMethod]
+    public void PlaceOrder_ItemInStock_CallsPaymentGateway()
     {
-        [TestMethod]
-        public void PlaceOrder_ItemInStock_CallsPaymentGateway()
+        // 1. Create a builder
+        var typeBuilder = new TypeBuilder<OrderService>();
+        //                    ^^^^^
+        
+        // 2. Configure a IStockService fake with Moq
+        typeBuilder.WithMock<IStockService>(mock =>
+        //          ^^^^^
         {
-            // 1. Create a builder
-            var typeBuilder = new TypeBuilder<OrderService>();
-            // 2. Configure a IStockService fake with Moq
-            typeBuilder.WithMock<IStockService>(mock =>
-            {
-              mock.Setup(t => t.IsStockAvailable(It.IsAny<Order>()))
-                  .Returns(true);
-            });
-            // 3. Build an OrderService instance
-            var service = typeBuilder.Build();
+            mock.Setup(t => t.IsStockAvailable(It.IsAny<Order>()))
+                .Returns(true);
+        });
+        
+        // 3. Build an OrderService instance
+        var service = typeBuilder.Build();
+        //                        ^^^^^
 
-            var order = new Order();
-            service.PlaceOrder(order);
+        var order = new Order();
+        service.PlaceOrder(order);
 
-            // Retrieve a fake from the builder
-            typeBuilder.Mock<IPaymentGateway>()
-                  .Verify(t => t.ProcessPayment(It.IsAny<Order>()));
-          }
-    }
+        // Retrieve a fake from the builder
+        typeBuilder.Mock<IPaymentGateway>()
+        //          ^^^^
+              .Verify(t => t.ProcessPayment(It.IsAny<Order>()));
+      }
 }
 ```
 
@@ -294,7 +299,7 @@ typeBuilder.WithMock<IStockService>(mock =>
 
 After that, with the method `Build()` we got an instance of the `OrderService` class with fakes for all its parameters. But, the fake for `IStockService` has the behavior we added in the previous step.
 
-Finally, in the Assert part, we retrieved a fake from the builder with `Mock<T>()`. We use it to verify if the payment gateway was called or not. We did this here:
+Finally, in the Assert part, we retrieved a fake from the builder with `Mock<T>()`. We used it to verify if the payment gateway was called or not. We did this here:
 
 ```csharp
 typeBuilder.Mock<IPaymentGateway>()
@@ -338,40 +343,40 @@ using AutoFixture.AutoMoq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
-namespace WithAutoFixture
+namespace WithAutoFixture;
+
+[TestClass]
+public class OrderServiceTestsAutoFixture
 {
-    [TestClass]
-    public class OrderServiceTestsAutoFixture
+    // 1. Create a field for AutoFixture
+    private readonly IFixture Fixture = new Fixture()
+                        .Customize(new AutoMoqCustomization());
+                        //             ^^^^^
+
+    [TestMethod]
+    public void PlaceOrder_ItemInStock_CallsPaymentGateway()
     {
-        // 1. Create a field for AutoFixture
-        private readonly IFixture Fixture = new Fixture()
-                            .Customize(new AutoMoqCustomization());
+        var stockedService = Fixture.Freeze<Mock<IStockService>>();
+        //                   ^^^^^
+        // 2. Use Freeze to create a custom fake
+        stockedService.Setup(t => t.IsStockAvailable(It.IsAny<Order>()))
+                      .Returns(true);
+        var paymentGateway = Fixture.Freeze<Mock<IPaymentGateway>>();
+        var service = Fixture.Create<OrderService>();
+        //            ^^^^^
+        // 3. Use Create to grab an auto-mocked instance
 
-        [TestMethod]
-        public void PlaceOrder_ItemInStock_CallsPaymentGateway()
-        {
-            var stockedService = Fixture.Freeze<Mock<IStockService>>();
-            //                   ^^^^^
-            // 2. Use Freeze to create a custom fake
-            stockedService.Setup(t => t.IsStockAvailable(It.IsAny<Order>()))
-                          .Returns(true);
-            var paymentGateway = Fixture.Freeze<Mock<IPaymentGateway>>();
-            var service = Fixture.Create<OrderService>();
-            //            ^^^^^
-            // 3. Use Create to grab an auto-mocked instance
+        var order = new Order();
+        service.PlaceOrder(order);
 
-            var order = new Order();
-            service.PlaceOrder(order);
-
-            paymentGateway.Verify(t => t.ProcessPayment(order));
-        }
+        paymentGateway.Verify(t => t.ProcessPayment(order));
     }
 }
 ```
 
 Notice this time, we used a field in our test to hold a reference to AutoFixture `Fixture` class. Also, we needed to add the `AutoMoqCustomization` behavior to make AutoFixture a type builder.
 
-To retrieve a fake reference, we used the `Freeze()` method. We used these references to plug the custom behavior for the `IStockService` fake and to verify the `IPaymentGateway` fake.
+To retrieve a fake reference, we used the `Freeze<T>()` method. We used these references to plug the custom behavior for the `IStockService` fake and to verify the `IPaymentGateway` fake.
 
 Voilà! That's how we can use a `TypeBuilder` helper class and AutoFixture to simplify the Arrange parts of our tests. If you prefer a simple solution, use the `TypeBuilder` class. But, if you don't mind adding an external reference to your tests, use AutoFixture. Maybe, you can use it to create test data too.
 
