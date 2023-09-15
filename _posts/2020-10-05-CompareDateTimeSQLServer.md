@@ -8,9 +8,9 @@ If you use `DATEDIFF()` or `CAST()` to filter a table by a DATETIME column using
 
 **To compare dates without the time part, don't use the DATEDIFF() or any other function on both sides of the comparison in a WHERE clause. Instead, put CAST() on the parameter and compare using >= and < operators**.
 
-Let's use [StackOverflow database](https://www.brentozar.com/archive/2015/10/how-to-download-the-stack-overflow-database-via-bittorrent/) to find all user profiles created on a particular date.
+Let's use a local copy of the [StackOverflow database](https://www.brentozar.com/archive/2015/10/how-to-download-the-stack-overflow-database-via-bittorrent/) to find all user profiles created on a particular date.
 
-Inside StackOverflow database, there's `dbo.Users` table with a `CreationDate`. Let's use that column to find all users who created their profiles today.
+Inside StackOverflow database, there's `dbo.Users` table with a `CreationDate` column. Let's use that column to find all users who created their profiles today.
 
 Before we get started, let's create an index on `CreationDate` to make things faster.
 
