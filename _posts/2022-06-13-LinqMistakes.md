@@ -24,7 +24,9 @@ Instead of,
 movies.Count() > 0
 ```
 
-The `Any` method returns when it finds at least one element. The `Count` method could use the size of the underlying collection. But, it could evaluate the entire LINQ query for other collection types. And this could be a performance hit for large collections.
+The `Any` method returns when it finds at least one element.
+
+The `Count` method could use the size of the underlying collection. But, it could evaluate the entire LINQ query for other collection types. And this could be a performance hit for large collections.
 
 ## Mistake 2: Use Where followed by Any
 
@@ -42,7 +44,7 @@ Instead of,
 movies.Where(movie => movie.Rating == 5).Any()
 ```
 
-The same applies to the `Where` method followed by `FirstOrDefault`, `Count`, or any other method that receives a filter condition. We could use the filtering condition directly instead of relying on the `Where` method first.
+The same applies to the `Where` method followed by `FirstOrDefault`, `Count`, or any other method that receives a filter condition. Let's use the filtering condition directly instead of relying on the `Where` method first.
 
 <figure>
 <img src="https://images.unsplash.com/photo-1613963969191-2a77db9811d2?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY1MTkzODI4MA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="Spilled coffee on a street" />

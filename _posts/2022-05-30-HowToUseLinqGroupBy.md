@@ -63,13 +63,13 @@ record Movie(string Name, int ReleaseYear, float Rating);
 
 Notice, we used three [recent C# features]({% post_url 2021-09-13-TopNewCSharpFeatures %}): the Top-level statements, records, and global using statements. Now we can write Console applications without the Main declaration. All boilerplate code is gone!
 
-The `GroupBy` method [receives as a parameter a delegate]({% post_url 2019-03-22-WhatTheFuncAction %}) with the property to use as a key when grouping elements. In our previous example, we used the `Rating` property and wrote `movie => movie.Rating`;
+The `GroupBy` method [receives a delegate as a parameter]({% post_url 2019-03-22-WhatTheFuncAction %}) with the property to use as a key when grouping elements. In our previous example, we used the `Rating` property and wrote `movie => movie.Rating`;
 
 ## What does GroupBy return?
 
 **The result of GroupBy is a collection of groups or buckets. It returns `IEnumerable<IGrouping<TKey, TSource>>` where TKey is the type of the grouping key and TSource is the type of the elements inside the collection.**
 
-{% include image.html name="GroupByReturn.png" caption="GroupBy input and return types" alt="LINQ GroupBy method signature" %}
+{% include image.html name="GroupByReturn.png" caption="GroupBy return type" alt="LINQ GroupBy method signature" %}
 
 The `IGrouping` interface is a wrapper for a collection and its grouping key. Each group or bucket has a `Key` property.
 

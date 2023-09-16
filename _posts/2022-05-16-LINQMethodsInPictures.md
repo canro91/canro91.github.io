@@ -40,7 +40,7 @@ This query would be something like this,
 
 {% include image.html name="Where.png" caption="Let's keep the films with a rating greater than 4.5" alt="Favorite films filtered by rating" %}
 
-We're using arrows to display our LINQ queries. But, the output of a LINQ query is lazy-evaluated. It means the actual result of a LINQ query is evaluated until we loop through its result. 
+We're using arrows to display our LINQ queries. But, the output of [a LINQ query is lazy-evaluated]({% post_url 2022-06-13-LinqMistakes %}). It means the actual result of a LINQ query is evaluated until we loop through its result. 
 
 ## 2. Select
 
@@ -115,7 +115,7 @@ This query would be,
 
 {% include image.html name="First.png" caption="Let's find the oldest film we have watched" alt="Oldest film we have watched" %}
 
-Voilà! These are five LINQ methods I use often: Where, Select, Any, Group, and FirstOrDefault. Of course, LINQ has more methods like [Aggreate]({% post_url 2022-07-25-LinqAggregateExplained %}), [Intersect, Union, and Except]({% post_url 2022-08-22-IntersectUnionAndExcept %}), and [new overloads in .NET6]({% post_url 2022-06-27-NET6LinqMethods %}). But, you will get your back covered with the five methods we covered here.
+Voilà! These are five LINQ methods I use often: Where, Select, Any, Group, and FirstOrDefault. Of course, LINQ has more methods like [Aggreate]({% post_url 2022-07-25-LinqAggregateExplained %}), [Intersect, Union, and Except]({% post_url 2022-08-22-IntersectUnionAndExcept %}), and [new overloads in .NET6]({% post_url 2022-06-27-NET6LinqMethods %}). But, you will get your back covered with those five methods.
 
 To learn about LINQ and other methods, check my [quick guide to LINQ]({% post_url 2021-01-18-LinqGuide %}). All you need to know to start working with LINQ, in 15 minutes or less. For more C# content, check [C# Definitive Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %}) for a list of subjects every intermediate C# developer should know. And, my [top 10 best C# features]({% post_url 2021-09-13-TopNewCSharpFeatures%}) for other cool C# features.
 
