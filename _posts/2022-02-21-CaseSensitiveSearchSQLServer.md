@@ -18,17 +18,18 @@ Often by mistake, to do a case-sensitive search, we wrap a column around `LOWER(
 SELECT TOP 50 DisplayName, Location, CreationDate, Reputation
 FROM dbo.Users
 WHERE LOWER(DisplayName) LIKE 'john%'
+--    ^^^^^
 ORDER BY Reputation DESC;
 GO
 ```
 
 We tried to find the first 50 StackOverflow users with DisplayName containing lowercase 'john'.
 
-But, interestingly enough. Some results don't match our intended filter. They include both lowercase and uppercase 'john'.
+But, interestingly enough, some results don't match our intended filter. They include both lowercase and uppercase 'john'.
 
 {% include image.html name="LikeWithLower.png" alt="Result of finding users by wrapping a column with LOWER" caption="Naive case insensitive search using LOWER" width="600px" %}
 
-Don't try to use `UPPER()` either. It would be the same. In general, [don't use functions around columns in your WHEREs]({% post_url 2022-01-24-DontPutFunctionsInYourWheres %}). That's a common bad practice.
+It would be the same if we use `UPPER()` instead. In general, [let's not use functions around columns in our WHEREs]({% post_url 2022-01-24-DontPutFunctionsInYourWheres %}). That's a common bad practice.
 
 <figure>
 <img src="https://images.unsplash.com/photo-1597742200037-aa4d64d843be?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjI0ODU2MzAz&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="scrabble pieces" />
@@ -40,11 +41,11 @@ Don't try to use `UPPER()` either. It would be the same. In general, [don't use 
 
 In SQL Server, collations provide sorting rules and case and accent sensitivity for our data. For example, when we use an ORDER BY, the sort order of our results depends on the database collation.
 
-Find the database collation on the Database Properties option under the Maintenance menu.
+In SQL Server Management Studio, we find a database collation after clicking on the database Properties and then on General. It's under the Maintenance section.
 
 Here's mine.
 
-{% include image.html name="DatabaseProperties.png" alt="SQL Server database properties" caption="SQL Server database properties" width="600px" %}
+{% include image.html name="DatabaseProperties.png" alt="SQL Server database properties" caption="SQL Server database properties" width="800px" %}
 
 **The default collation for English is SQL_Latin1_General_CP1_CI_AS. This is a case-insensitive collation.**
 
