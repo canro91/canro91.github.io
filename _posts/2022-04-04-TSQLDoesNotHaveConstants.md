@@ -12,13 +12,13 @@ Today I learned how to use constants in SQL Server stored procedures. While gett
 
 ## Don't use variables as constants
 
-From C# and other programming languages, we've learned to use constants or enums instead of magic values all over our code. Often, we bring constants to our T-SQL queries. But...
+From C# and other programming languages, we've learned to use constants or enums instead of magic values all over our code. Often, we would like to bring constants to our T-SQL queries. But...
 
 **T-SQL doesn't have a keyword for constants. And, SQL Server engine doesn't inline variables when executing stored procedures.**
 
 The first thing we try by mistake to emulate constants is to use variables.
 
-For example, let's find all StackOverflow users with two reputation points. That's not a popular reputation among StackOverflow users. Something like this,
+For example, let's find all StackOverflow users with two reputation points. That's not a popular reputation among StackOverflow users. We write something like this,
 
 ```sql
 /* An index to speed things up a bit */
@@ -41,15 +41,15 @@ GO
 
 This is the execution plan. Let's keep an eye on the number of estimated users.
 
-{% include image.html name="Variable.png" alt="StackOverflow users with reputation = 2" caption="Execution plan of finding users with 2-point reputation" width="600px" %}
+{% include image.html name="Variable.png" alt="StackOverflow users with reputation = 2" caption="Execution plan of finding users with 2-point reputation" %}
 
 But, there's a downside. Variables inside stored procedures trigger a different behavior in SQL Server.
 
 ### Variables and execution plans
 
-When executing a stored procedure, SQL Server creates an execution plan for the first set of parameters it sees. And, SQL Server reuses the same execution plan the next time we run that stored procedure. We call this behavior **Parameter Sniffing**.
+When executing a stored procedure, SQL Server creates an execution plan for the first set of parameters it sees. And, the next time we run that stored procedure, SQL Server reuses the same execution plan, even if we use different parameters. We call this behavior **Parameter Sniffing**.
 
-SQL Server uses statistics (histograms built from samples of our data) to choose the shape of the execution plan. Which table to read first, how to read that table, the number of threads, the amount of memory, among other things.
+SQL Server uses statistics (histograms built from samples of our data) to choose the shape of the execution plan. SQL Server has to choose the first table to read, the number of threads, and the amount of memory, among other things.
 
 But, when there are variables in a stored procedure, SQL Server builds execution plans, not from statistics (e.i. samples of our data), but from an "average value."
 
@@ -79,7 +79,7 @@ This is the execution plan.
 
 {% include image.html name="LiteralAndComment.png" alt="StackOverflow users with reputation = 2" caption="This time, we're back to a literal value and a comment" width="600px" %}
 
-Do you remember the estimated number of users from our example with variables? Now, we have a more accurate estimated number. SQL Server isn't using an average value. It has better estimates this time.
+Do you remember the estimated number of users from our example with variables? It was 123 users. Now, we have a more accurate estimated number. It's 1,854 users. SQL Server isn't using an average value anymore. It has better estimates this time.
 
 We even have an index recommendation in our execution plan. By the way, [don't blindly follow index recommendations]({% post_url 2022-03-21-SQLServerIndexRecommendations %}), just listening to them. They're only a list of columns to consider indexing.
 
@@ -114,7 +114,7 @@ GO
 
 A more maintainable alternative while keeping good estimates.
 
-Voilà! That's how to use constants with a view in SQL Server. I found a proposal to introduce [a constant keyword](https://blog.greglow.com/2020/03/05/sql-t-sql-really-needs-constants/) in SQL Server. I learned about the trick with views while getting my code reviewed. But I also found the same idea in this [StackOverflow question](https://stackoverflow.com/questions/26652/is-there-a-way-to-make-a-tsql-variable-constant) and in [this one](https://stackoverflow.com/questions/6114826/sql-views-no-variables) too.
+Voilà! That's how to use constants with a view in SQL Server. I found a proposal to introduce [a constant keyword](https://blog.greglow.com/2020/03/05/sql-t-sql-really-needs-constants/) in SQL Server. I learned about the trick with views from this [StackOverflow question](https://stackoverflow.com/questions/26652/is-there-a-way-to-make-a-tsql-variable-constant) and in [this one](https://stackoverflow.com/questions/6114826/sql-views-no-variables) too.
 
 For more content on SQL Server, check my other posts on [functions and WHERE clauses]({% post_url 2022-01-24-DontPutFunctionsInYourWheres %}), [implicit conversions]({% post_url 2022-02-07-WhatAreImplicitConversions %}) and [case-sensitive searches]({% post_url 2022-02-21-CaseSensitiveSearchSQLServer %}).
 
