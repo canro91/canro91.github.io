@@ -24,7 +24,7 @@ After that aside...
 <figcaption>Rijksmuseum, Amsterdam, Netherlands. Photo by <a href="https://unsplash.com/@willvanw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Will van Wingerden</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption>
 </figure>
 
-The next time you see an index recommendation on actual execution plans or from the Tuning Advisor, don't rush to create it. Just listen to them.
+The next time you see an index recommendation on actual execution plans or from the Tuning Advisor, don't rush to create it. Just listen to them!
 
 To prove why we shouldn't blindly create every index recommendation, let's use the StackOverflow database to write queries and indexes.
 
@@ -38,13 +38,13 @@ FROM dbo.Users
 WHERE Location = 'Colombia'
 ```
 
-This is the execution plan. Do you see any index recommendations? Nope.
+This is the execution plan. Do you see any index recommendations? Nope!
 
-{% include image.html name="UsersFromColombia-NoRecommendation.png" alt="Users from Colombia with no index recommendation" caption="Execution plan of finding all users from Colombia" width="800px" %}
+{% include image.html name="UsersFromColombia-NoRecommendation.png" alt="Users from Colombia with no index recommendation" caption="Execution plan of finding all users from Colombia" width="500px" %}
 
 **If SQL Server has to scan the object, the actual execution plan won't show any index recommendations.**
 
-Now, let's change the query a bit. Let's find the first 1000 users from Colombia ordered by `Reputation` instead.
+Now, let's change the query a bit. Let's find the first 1,000 users from Colombia ordered by `Reputation` instead.
 
 ```sql
 SELECT TOP 1000 Id, DisplayName, Reputation, Location
@@ -78,13 +78,13 @@ ORDER BY Reputation DESC
 
 Let's see what the execution plan looks like.
 
-{% include image.html name="UsersFromColombia-AllColumns.png" alt="Execution plan for a 'SELECT *'" caption="Execution plan for a 'SELECT *'" width="800px" %}
+{% include image.html name="UsersFromColombia-AllColumns.png" alt="Execution plan for a 'SELECT *'" caption="Execution plan for a 'SELECT *'" width="700px" %}
 
 At first glance, the plan looks similar. But let's focus on what changed on the recommended index. Here it is.
 
 {% include image.html name="RecommendedIndex-AllColumns.png" alt="Recommended index with all columns in the Users table" caption="Recommended index with all columns in the Users table" width="800px" %}
 
-SQL Server recommended an index with all the columns in the table. Even NVARCHAR(MAX) columns. Arrrggg!
+SQL Server recommended an index with all the columns in the table, even NVARCHAR(MAX) columns. Arrrggg!
 
 **Often, SQL Server recommends adding all the columns from the table into the INCLUDE part of indexes.**
 
@@ -96,14 +96,14 @@ The next thing to know about index recommendations has to do with the keys in th
 
 **SQL Server index recommendations are based on the WHERE and SELECT clauses. SQL Server doesn't use GROUP BY or ORDER BY clauses to build index recommendations.**
 
-For our last query, let's add the recommended index and another one with the ORDER BY in mind. These are the two new indexes,
+For our last query, let's add the recommended index (without any included columns) and another one with the ORDER BY in mind. These are the two new indexes,
 
 ```sql
-/* This one has Reputation, which is on the ORDER BY */
-CREATE INDEX Location_Reputation ON dbo.Users(Location, Reputation);
-
 /* This is the recommended one */
 CREATE INDEX Location ON dbo.Users(Location);
+
+/* This one has Reputation, which is on the ORDER BY */
+CREATE INDEX Location_Reputation ON dbo.Users(Location, Reputation);
 GO
 ```
 
@@ -121,15 +121,15 @@ This time, the execution plan looks like this,
 
 {% include image.html name="RecommendedVsCustom.png" alt="Recommended index with all columns in the Users table" caption="Recommended index with all columns in the Users table" width="800px" %}
 
-SQL Server recommended one index but used another. Even when the recommended index was in place.
+SQL Server recommended one index but used another, even when the recommended index was in place.
 
-SQL Server only looks at WHERE and SELECT part of queries to build recommendations. We can create better indexes than the recommended ones for queries with ORDER BY and GROUP BY clauses.
+SQL Server only looks at the WHERE and SELECT clauses of queries to build recommendations. We can create better indexes than the recommended ones for queries with ORDER BY and GROUP BY clauses.
 
 ## Recommended indexes and key order
 
 Next, let's dig into the order of keys in recommended indexes.
 
-**Keys on the recommended indexes are based on equality and inequality comparisons on the WHERE. Columns with equality comparisons are shown first, followed by columns with inequality comparisons**.
+**Keys on recommended indexes are based on equality and inequality comparisons on the WHERE clause. Columns with equality comparisons are shown first, followed by columns with inequality comparisons**.
 
 Let's add another comparison to our sample query. This time, let's look for users from Colombia with more than 10 reputation points.
 
@@ -155,15 +155,15 @@ Last thing about recommended indexes.
 
 **Index recommendations don't take into account existing indexes.**
 
-Check your existing indexes. See if you can combine the recommended indexes with your existing ones. If your existing indexes overlap with the recommended ones, drop the old ones. 
+Let's check our existing indexes and see if we can combine the recommended indexes with our existing ones. If our existing indexes overlap with the recommended ones, let's drop the old ones. 
 
-Build as few indexes as possible to support your queries. Keep around 5 indexes per table with around 5 columns per index.
+Let's build as few indexes as possible to support our queries. Let's keep around 5 indexes per table with around 5 columns per index.
 
 ## Parting words
 
 Voilà! These are some of the things I learned about SQL Server index recommendations. Remember, indexes aren't free. The more indexes we add, the slower our queries will get. 
 
-Next time we see index recommendations on our execution plans, let's check if we already have a similar index and modify that one. If we don't, please let's remember to at least change the recommended index's name. And not to include all the columns of our table.
+Next time we see index recommendations on our execution plans, let's check if we already have a similar index and modify that one. If we don't, please let's remember to at least change the recommended index's name and not to include all the columns of our table.
 
 I learned these things following [Brent Ozar's Master Index Tuning]({% post_url 2022-05-02-BrentOzarMasteringCoursesReview %}) class. Great class!
 
