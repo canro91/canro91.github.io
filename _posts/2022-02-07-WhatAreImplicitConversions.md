@@ -12,7 +12,7 @@ SQL Server compares columns and parameters with the same data types. But, if the
 
 ## An implicit conversion that scans
 
-Let's see an implicit convention. For this, let's create a new table from the StackOverflow Users table. But, this time, let's change the Location data type from NVARCHAR to VARCHAR.
+Let's see an implicit convention! For this, let's create a new table from the StackOverflow `Users` table. But, this time, let's change the `Location` data type from NVARCHAR to VARCHAR.
 
 ```sql
 USE StackOverflow2013;
@@ -28,7 +28,7 @@ CREATE INDEX Location ON dbo.Users_Varchar(Location);
 GO
 ```
 
-Let's find all users from Colombia. To prove a point, let's query the `dbo.Users_Varchar` table.
+Let's find all users from Colombia. To prove a point, let's query the `dbo.Users_Varchar` table instead of the original `dbo.Users` table.
 
 ```sql
 DECLARE @Location NVARCHAR(20) = N'Colombia';
@@ -40,7 +40,7 @@ WHERE Location = @Location;
 GO
 ```
 
-Notice we have used as a parameter an NVARCHAR variable. We have a type mismatch between the column and the variable.
+Notice we have declared `@Location` as NVARCHAR. We have a type mismatch between the column and the variable.
 
 Let's see the execution plan.
 
@@ -50,37 +50,35 @@ SQL Server had to scan the index on Location. But, why?
 
 {% include image.html name="WarningSign.png" alt="Warning sign on execution plan of finding all users StackOverflow users from Colombia" caption="Warning sign on SELECT operator" width="500px" %}
 
-Notice the warning sign on the execution plan. When we hover over it, it shows the cause. SQL Server had to convert the two types. Yes, SQL Server converted between VARCHAR and NVARCHAR.
+Let's notice the warning sign on the execution plan. When we hover over it, it shows the cause: SQL Server had to convert the two types. Yes! SQL Server converted between VARCHAR and NVARCHAR.
 
 ## SQL Server data type precedence
 
-To determine what types to convert SQL Server follows a data type precedence table. This is a short version.
+To determine what types to convert, SQL Server follows a data type precedence order. This is a short version:
 
-| Data Types |
-|---|
-| datetimeoffset |
-| datetime2 |
-| datetime |
-| smalldatetime |
-| date |
-| time |
-| decimal |
-| bigint |
-| int |
-| timestamp |
-| uniqueidentifier |
-| nvarchar (including nvarchar(max)) |
-| varchar (including varchar(max)) |
+1. datetimeoffset
+1. datetime2
+1. datetime
+1. smalldatetime
+1. date
+1. time
+1. decimal
+1. bigint
+1. int
+1. timestamp
+1. uniqueidentifier
+1. nvarchar (including nvarchar(max))
+1. varchar (including varchar(max))
 
-Lower types in the table convert to higher ones. You don't need to memorize it. Remember, SQL Server always has to convert VARCHAR to other types.
+SQL Server convert "lower" types to "higher" types. We don't need to memorize this order. Let's remember SQL Server always has to convert VARCHAR to other types.
 
-For the complete list, check Microsoft docs on [SQL Server data Type precedence](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-type-precedence-transact-sql?view=sql-server-ver15).
+For the complete list of type precedence between all data types, check Microsoft docs on [SQL Server data Type precedence](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-type-precedence-transact-sql?view=sql-server-ver15).
 
 ## An implicit conversion that seeks
 
-In our example, the VARCHAR type was on the left of the comparison in the WHERE. It means SQL Server had to read the whole content of the index to convert and then compare. More than 2 million rows. That's why the index scan.
+In our example, the VARCHAR type was on the column, on the left side of the comparison in the WHERE. It means SQL Server had to read the whole content of the index to convert and then compare. That's more than 2 million rows. That's why the index scan.
 
-Let's use the original `dbo.Users` table with Location as NVARCHAR and repeat the query. This time, switching the variable type to VARCHAR. What would be different?
+Let's use the original `dbo.Users` table with `Location` as NVARCHAR and repeat the query. This time, switching the variable type to VARCHAR. What would be different?
 
 ```sql
 DECLARE @Location VARCHAR(20) = 'Colombia';
@@ -93,7 +91,7 @@ WHERE Location = @Location;
 GO
 ```
 
-Now, the VARCHAR type is on the right of the comparison. It means SQL Server has to do one single conversion. The parameter.
+Now, the VARCHAR type is on the right of the comparison. It means SQL Server has to do one single conversion: the parameter.
 
 {% include image.html name="IndexSeekOnLocation.png" alt="Execution plan of finding all users StackOverflow users from Colombia" caption="Index Seek on Location index when finding all users from Colombia" width="800px" %}
 
