@@ -6,11 +6,11 @@ cover: Cover.png
 cover-alt: "Object definitions, spaces, and checksums" 
 ---
 
-These days I was working with a database migration tool. This is what I learned after debugging an issue for almost an entire day.
+These days I was working with a database migration tool and ended up spending almost a day figuring out why my migration didn't work. This is what I learned after debugging an issue for almost an entire day.
 
-In one of my client's projects to create or update stored procedures, we use a custom migrator tool. A wrapper on top of [DbUp](https://github.com/DbUp/DbUp). I've already written about [Simple.Migrator]({% post_url 2020-08-15-Simple.Migrations %}), a similar tool.
+In one of my client's projects to create or update stored procedures, we use a custom migrator tool, a wrapper on top of [DbUp](https://github.com/DbUp/DbUp). I've already written about [Simple.Migrator]({% post_url 2020-08-15-Simple.Migrations %}), a similar tool.
 
-To avoid updating the wrong version of a stored procedure we rely on checksums. Before updating a stored procedure, we calculate the checksum of its definition at the database using a command-line tool.
+To avoid updating the wrong version of a stored procedure, we rely on checksums. Before updating a stored procedure, we calculate the checksum of the existing version of the stored procedure using a command-line tool.
 
 ## How to find object definitions in SQL Server?
 
@@ -33,7 +33,7 @@ Checksum: "A-SHA1-HERE-OF-THE-PREVIOUS-STORED-PROC"
 */
 ALTER PROC dbo.MyCoolStoredProc
 BEGIN
-  ...
+  -- ...
 END
 ```
 
@@ -43,11 +43,11 @@ Here comes the funny part. When I ran the migrator on my local machine, it alway
 
 After debugging for a while and [isolating the problem]({% post_url 2020-09-19-ThreeDebuggingTips %}) I found something. On the previous script for the same stored procedure, I started the script with `CREATE OR ALTER PROC`. There's nothing wrong with that.
 
-But, there's a difference in the object definitions of a stored procedure created with `CREATE` and with `CREATE OR ALTER`.
+But there's a difference in the object definitions of a stored procedure created with `CREATE` and with `CREATE OR ALTER`.
 
 ### CREATE PROC vs CREATE OR ALTER PROC
 
-Let me show you an example. We're creating the same stored procedure with `CREATE` and `CREATE OR ALTER` to see its object definition.
+Let me show you an example. Let's create the same stored procedure with `CREATE` and `CREATE OR ALTER` to see its object definition.
 
 ```sql
 /* With just CREATE */
@@ -56,7 +56,8 @@ AS
 SELECT 1
 GO
 
-SELECT LEN(OBJECT_DEFINITION(OBJECT_ID('dbo.Test'))) AS Length, OBJECT_DEFINITION(OBJECT_ID('dbo.Test')) AS Text
+SELECT LEN(OBJECT_DEFINITION(OBJECT_ID('dbo.Test'))) AS Length
+    , OBJECT_DEFINITION(OBJECT_ID('dbo.Test')) AS Text
 GO
 
 /* What about CREATE OR ALTER? */
@@ -65,7 +66,8 @@ AS
 SELECT 1
 GO
 
-SELECT LEN(OBJECT_DEFINITION(OBJECT_ID('dbo.Test'))) AS Length, OBJECT_DEFINITION(OBJECT_ID('dbo.Test')) AS Text
+SELECT LEN(OBJECT_DEFINITION(OBJECT_ID('dbo.Test'))) AS Length
+    , OBJECT_DEFINITION(OBJECT_ID('dbo.Test')) AS Text
 GO
 ```
 
@@ -73,15 +75,23 @@ Here's the output.
 
 {% include image.html name="CreateVsCreateOrAlter.png" alt="SQL Server object definitions" caption="Object definition of a stored procedure with CREATE and CREATE OR ALTER" width="500px" %}
 
-Notice the length of the two object definitions. They're different! Some spaces were making my life harder.
+Let's notice the length of the two object definitions. They're different! Some spaces were making my life harder. Arrrggg!
 
-The migrator compared checksums of the object definition from the database and the one in the header comment. They were different in some spaces.
+The migrator compared checksums of the object definition from the database and the one in the header comment. They were different in some spaces. Spaces!
 
-I made the mistake of writing `CREATE OR ALTER`, and the migrator didn't take into account spaces in object names before creating checksums. I had to rewrite the previous script to use `ALTER` and recreate the checksums.
+I made the mistake of writing `CREATE OR ALTER` on a previous migration, and the migrator didn't take into account spaces in object names before creating checksums. I had to rewrite the previous script to use `ALTER` and recreate the checksums.
 
 ## Parting thoughts
 
-But, what's in this story for you? We should create processes to prevent mistakes in the first place. Scripts to make sure developers commit the code formatted properly. Checks to avoid applying data migrations to the wrong environment. Extensions or plugins to follow naming conventions. Scripts to install the right tools and dependencies to run a project. Up to date documentation for internal tools.
+But, what's in this story for you? I believe we should create processes to prevent mistakes in the first place. For example:
+
+* [scripts to commit SQL code formatted properly]({% post_url 2023-09-18-FormatSqlFilesOnCommit %})
+* validations to avoid applying data migrations to the wrong environment
+* extensions or plugins to follow naming conventions
+* scripts to install the right tools and dependencies to run a project
+* up to date documentation for internal tools
+
+I hope you got the idea.
 
 Often, [code reviews]({% post_url 2019-12-17-BetterCodeReviews %}) aren't enough to enforce conventions. We're humans, and we all make mistakes. And, the more code someone reviews in a session, the more tired he will get. And, the more reviewers we add, the less effective the process gets.
 

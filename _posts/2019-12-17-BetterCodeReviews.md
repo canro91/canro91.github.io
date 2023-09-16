@@ -62,7 +62,7 @@ If we're a code reviewer, let's:
 * **Review only the code that has changed**. Let's stop saying things like _Now you're here, change that method over there too_.
 * **Find bugs instead of style issues**. Let's rely on linters, compiler warnings, and IDE extensions to find styling issues.
 
-Recently, I found out about [conventional comments](https://conventionalcomments.org/). With this convention, we start our comments with labels to show the type of comments (suggestion, nitpick, question) and their nature (blocking, non-blocking, if-minor).
+Recently, I found out about [Conventional Comments](https://conventionalcomments.org/). With this convention, we start our comments with labels to show the type of comments (suggestion, nitpick, question) and their nature (blocking, non-blocking, if-minor).
 
 I use Conventional Comments to avoid [tricky or pushy questions during code reviews]({% post_url 2022-12-05-LeadingQuestionsOnCodeReviews %}).
 
@@ -75,7 +75,7 @@ It's a good idea to wait for the CI/CD to build and run all tests before asking 
 If we're a reviewee, let's:
 
 * **Stop taking it personally**. It's the code under review, not us.
-* **Find in every code review an opportunity to learn**. Let's identify frequent comments and avoid them in the future. For example, this is how I avoided [some recurring comments while getting my code reviewed]({% post_url 2020-09-02-TwoRecurringReviewComments %}). 
+* **Find in every code review an opportunity to learn**. Let's identify frequent comments and avoid them in the future. For example, I use one Git hook to  [add ticket numbers to every commit message]({% post_url 2020-09-02-TwoRecurringReviewComments %}) and another hook to [format SQL files]({% post_url 2023-09-18-FormatSqlFilesOnCommit %}). 
 * **Give context**. Let's give enough context to our reviews. We can write an explanatory title and a description of what our code does and what decisions we made.
 * **Keep your work short and focused**. Let's not make reviewers go through thousands of lines of code in a single review session. For example, we can separate changes in business logic from formatting/styling.
 * **Keep all the discussion online**. If we contact reviewers by chat or email, let's bring relevant comments to the reviewing tool for others to see them.

@@ -18,7 +18,9 @@ In these projects, before opening a PR, we have to cover all major code changes 
 
 As a reviewee, before opening a PR, wear the reviewer hat and review your own code. It's frustrating when the code review process becomes a slow and expensive linting process.
 
-To have a smooth code review, let's automate some of the things checked during the review process. We can run a linter with a Git hook before committing our files or a [Visual Studio extension]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %}) to clean files every time we save our files. We can turn all warnings into errors.
+To have a smooth code review, let's automate some of the things checked during the review process. For example, let's clean and format our files with a Git hook or [Visual Studio extension]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %}). And let's turn all warnings into compilation errors.
+
+For example, with this idea of automation in mind, I ended up writing a [Git pre-commit hook to format sql files]({% post_url 2023-09-18-FormatSqlFilesOnCommit %}).
 
 ## 2. Surprising solution
 
