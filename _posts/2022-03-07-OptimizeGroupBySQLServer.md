@@ -12,7 +12,7 @@ Let me share this technique I learned to improve queries with GROUP BY in SQL Se
 
 ## Usual GROUP BY: Find StackOverflow most down-voted questions
 
-Let's use this technique to tune the store procedure to find [StackOverflow most down-voted questions](http://data.stackexchange.com/stackoverflow/query/36660/most-down-voted-questions).
+Let's use this technique to tune the store procedure to find [most down-voted questions on StackOverflow](http://data.stackexchange.com/stackoverflow/query/36660/most-down-voted-questions).
 
 Here's the store procedure. Let's fire our local copy of the [StackOverflow 2013 database](https://www.brentozar.com/archive/2021/03/download-the-current-stack-overflow-database-for-free-2021-02/) to run it.
 
@@ -31,15 +31,17 @@ GO
 
 I ran this stored procedure on my local machine  five times without any indexes. It took about 2 seconds each time. On my machine, SQL Server only had 8GB of RAM. Remember, by default [SQL Server uses all available RAM]({% post_url 2020-11-13-SQLServerMemory %}).
 
-This is the execution plan. Notice, the Clustered Index Seek on the `dbo.Posts` table. And, yes, SQL Server is asking for an index. But we're not adding it.
+This is the execution plan. Let's notice the Clustered Index Seek on the `dbo.Posts` table. And, yes, SQL Server is recommending an index. But we're not adding it.
 
 {% include image.html name="ExecutionPlan-Before.png" alt="StackOverflow most down-votes questions" caption="StackOverflow most down-votes questions" %}
 
-Then, these are the metrics grabbed with [the freely available First Responder Kit's sp_BlitzCache](https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit#sp_blitzcache-find-the-most-resource-intensive-queries). This stored procedure finds all the most CPU intensive queries SQL Server has recently executed.
+Then, these are the metrics grabbed with [sp_BlitzCache](https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit#sp_blitzcache-find-the-most-resource-intensive-queries) from the First Responder Kit. This stored procedure finds all the most CPU intensive queries SQL Server has recently executed.
 
 {% include image.html name="spBlitzCacheBefore.png" alt="Most CPU intensive queries" caption="Most CPU intensive queries" %}
 
-To find the most down-voted questions, our stored procedure is grouping by `Body`. And, that's an `NVARCHAR(MAX)` column. The actual content of StackOverflow posts. Sorting and grouping on large data types is a CPU expensive operation.
+To find the most down-voted questions, our stored procedure is grouping by `Body`. And, that's an `NVARCHAR(MAX)` column, the actual content of StackOverflow posts.
+
+Sorting and grouping on large data types is a CPU expensive operation.
 
 <figure>
 <img src="https://images.unsplash.com/photo-1509358271058-acd22cc93898?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYyNjk4NzY5MA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="Spoons full of Indian spices" />
