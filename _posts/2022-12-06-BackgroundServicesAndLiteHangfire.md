@@ -51,7 +51,7 @@ app.ConfigureRecurringJobs();
 app.Run();
 ```
 
-To make things cleaner, we can use extension methods to keep all Hangfire configurations in a single place. Like this,
+To make things cleaner, let's use extension methods to keep all Hangfire configurations in a single place. Like this,
 
 ```csharp
 using Hangfire;
@@ -123,7 +123,7 @@ Notice that we used the `UseInMemoryStorage()` method to store jobs in memory in
 
 ### 2. Change some Hangfire parameters
 
-Then, when we registered the Hangfire server, we used these parameters:
+In the previous step, when we registered the Hangfire server, we used these parameters:
 
 * `SchedulePollingInterval` is the time to wait between retries for recurring jobs. By default, it's 15 seconds. [Source](https://github.com/HangfireIO/Hangfire/blob/5b696d4174e13c3dd9489cc6a863d3417c632e31/src/Hangfire.Core/Server/RecurringJobScheduler.cs#L329)
 * `WorkerCount` is the number of processing threads. By default, it's the minimum between five times the processor count and 20. [Source](https://github.com/HangfireIO/Hangfire/blob/5b696d4174e13c3dd9489cc6a863d3417c632e31/src/Hangfire.Core/BackgroundJobServer.cs#L171)
@@ -137,7 +137,7 @@ Then, we registered the number of retry attempts. By default, Hangfire retries j
 
 ### 3. Write "Producer" and "Consumer" jobs
 
-The next step was to register a recurring job as a "producer." It looks like this,
+The next step is to register a recurring job as a "producer." It looks like this,
 
 ```csharp
 using Hangfire;

@@ -31,14 +31,14 @@ public static class WebApplicationExtensions
 {
     public static void ConfigureRecurringJobs(this WebApplication app)
     {
-        // Before, using the static version
+        // Before, using the static version:
         //
         // RecurringJob.AddOrUpdate<MyCoolJob>(
         //    MyCoolJob.JobId,
         //    x => x.DoSomethingAsync());
         // RecurringJob.Trigger(MyCoolJob.JobId);
 				
-        // After
+        // After:
         //
         var recurringJobManager = app.Services.GetRequiredService<IRecurringJobManager>();
         // ^^^^^
@@ -81,7 +81,7 @@ app.UseHangfireDashboard("/hangfire", new DashboardOptions
 
 For the In-Memory Hangfire implementation, the `SucceededJobs()` method from the monitoring API returns jobs from most recent to oldest. There's no need for pagination. Look at the `Reverse()` method in the [SucceededJobs() source code](https://github.com/HangfireIO/Hangfire.InMemory/blob/master/src/Hangfire.InMemory/InMemoryMonitoringApi.cs#L308).
 
-I had to find out why an ASP.NET health check was only working for the first time. It turned out that the code was paginating the successful jobs, always looking for the oldest successful jobs. Like this,
+I had to find out why an ASP.NET health check was only working the first time. It turned out that the code was paginating the successful jobs, always looking for the oldest successful jobs. Like this,
 
 ```csharp
 public class HangfireSucceededJobsHealthCheck : IHealthCheck
@@ -101,16 +101,14 @@ public class HangfireSucceededJobsHealthCheck : IHealthCheck
 
         var monitoringApi = JobStorage.Current.GetMonitoringApi();
 
-        // Before
-        //
+        // Before:
         // It used pagination to bring the oldest 10 jobs
         //
         // var succeededCount = (int)monitoringApi.SucceededListCount();
         // var succeededJobs = monitoringApi.SucceededJobs(succeededCount - CheckLastJobsCount, CheckLastJobsCount);
         //                                                 ^^^^^
 
-        // After
-        //
+        // After:
         // SucceededJobs returns jobs from newest to oldest 
         var succeededJobs = monitoringApi.SucceededJobs(0, CheckLastJobsCount);
         //                                            ^^^^^  
@@ -176,13 +174,12 @@ private static bool DoesIndexExist<T>(IDbConnection connection, string tableName
         AND object_id = OBJECT_ID('{tableName}')
       ) THEN 1 ELSE 0 END";
     
-    // Before
-    //
+    // Before:
     // return connection.QueryFirst<bool>(isIndexExistsSql);
     //                   ^^^^^
     // Exception: ExecuteReader requires the command to have a transaction...
 
-    // After
+    // After:
     var result = connection.SqlScalar<int>(doesIndexExistSql);
     //                      ^^^^^
     return result > 0;

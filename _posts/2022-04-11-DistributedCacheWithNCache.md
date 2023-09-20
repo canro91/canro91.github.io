@@ -354,7 +354,7 @@ Notice we used Newtonsoft.Json to serialize and deserialize objects.
 
 ### NCache and the IDistributedCache interface
 
-Now, let's use a .NET 6 "ASP.NET Core Web App," those extension methods on top of `IDistributedCache`, and NCache to speed up the `SettingsService`.
+Now, let's use a .NET 6.0 "ASP.NET Core Web App," those extension methods on top of `IDistributedCache`, and NCache to speed up the `SettingsService`.
 
 First, we need to install the NuGet package `NCache.Microsoft.Extensions.Caching`. This package implements the `IDistributedCache` interface using NCache, of course.
 
