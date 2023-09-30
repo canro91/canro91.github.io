@@ -4,109 +4,100 @@ title: How to read configuration values in ASP.NET Core
 tags: tutorial asp.net csharp
 ---
 
-ASP.NET Core has brought a lot of new features [compared to ASP.NET Framework](https://canro91.github.io/2020/03/23/GuideToNetCore/), the previous version. It has new project files, a dependency container, [a caching layer](https://canro91.github.io/2020/06/29/HowToAddACacheLayer/), among other features. Configuration has changed too. Let's see how to read and overwrite configuration values with ASP.NET Core using the Options pattern.
+Let's see how to read and overwrite configuration values with ASP.NET Core 6.0 using the Options pattern.
 
-**To read configuration values in ASP.NET Core, you need to follow the Options pattern. To implement it, define a configuration class matching the values you want to read from the appsetttings.json file and use the default dependency container to inject the read values.**
+**To read configuration values following the Options pattern, add a new section in the appsetttings.json file, create a matching class, and register it into the dependencies container using the Configure() method.**
 
 <figure>
 <img src="https://images.unsplash.com/photo-1589210212007-20415bd621b1?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop" alt="Macaroons in the showcase of a pastry shop" />
 
-<figcaption>Those are Macaroons options. Not the Options pattern. <span>Photo by <a href="https://unsplash.com/@veredcc?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Vered Caspi</a> on <a href="https://unsplash.com/s/photos/choices?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
+<figcaption>Those are Macaroon options. Not the Options pattern. <span>Photo by <a href="https://unsplash.com/@veredcc?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Vered Caspi</a> on <a href="https://unsplash.com/s/photos/choices?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
 </figure>
 
-### Options pattern
+Let's see how to use, step by step, the Options pattern to read configuration values.
 
-Let's see how to implement the Options pattern to read configuration values.
+## 1. Change the appsettings.json file
 
-### appsettings.json file
+After creating a new ASP.NET Core API project with Visual Studio or [the dotnet tool from a terminal]({% post_url 2022-12-15-CreateProjectStructureWithDotNetCli %}), let's add in the `appsettings.json` file the values we want to configure on a new JSON object.
 
-ASP.NET Core doesn't have a `ConfigurationManager` class to read configuration values. It doesn't have a `web.config` file either. ASP.NET Core has json files instead.
-
-With that in mind, first, add in the `appsettings.json` file, the values you want to configure.
-
-Inside the `appsettings.json` file, you can use booleans, integers and arrays, instead of only strings.
+Let's add a couple of configuration values inside a new `MySettings` object in our `appsettings.json` file like this,
 
 ```json
 {
   "MySettings": {
-    "ASetting": "Hello, world!",
-    "ABooleanSetting": true,
-    "AnIntegerSetting": 1,
-    "AnArraySetting": ["hello", ",", "world", "!"]
+    "AString": "Hello, there!",
+    "ABoolean": true,
+    "AnInteger": 1,
+    "AnArray": ["hello", ",", "there", "!"]
   }
 }
 ```
 
-Then, create a class `MySettings`. This class name matches your section name in the `appsettings.json` file. Also, property names should match the key names inside your section.
+Inside the `appsettings.json` file, we can use booleans, integers, and arrays, not only strings.
+
+## 2. Create and bind a configuration class
+
+Then, let's create a matching configuration class for our configuration section in the `appsettings.json` file.
+
+We should name our configuration class after our section name and its properties after the keys inside our section.
+
+This is the configuration class for our `MySettings` section,
 
 ```csharp
 public class MySettings
 {
-    public string ASetting { get; set; }
-    public bool ABooleanSetting { get; set; }
-    public int AnIntegerSetting { get; set; }
-    public string[] AnArraySetting { get; set; }
+    public string AString { get; set; }
+    public bool ABoolean { get; set; }
+    public int AnInteger { get; set; }
+    public string[] AnArray { get; set; }
 }
 ```
 
-Next, bind the custom section in the settings file and the `MySettings` configuration class. In the `ConfigureServices()` method of the `Startup` class, use the `Configure()` method. Like this, 
+Next, let's bind our configuration class to our custom section and register it into the built-in dependencies container. In our `Program.cs` class, let's use the `Configure()` method for that,
 
 ```csharp
-services.Configure<MySettings>(_configuration.GetSection("MySettings"));
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddControllers();
+
+var mySettingsSection = builder.Configuration.GetSection("MySettings");
+builder.Services.Configure<MySettings>(mySettingsSection);
+//               ^^^^^
+
+var app = builder.Build();
+app.MapControllers();
+app.Run();
 ```
 
-Notice how the `_configuration` field is injected into the `Startup` class.
+As an alternative, we can use `GetRequiredSection()` instead. It throws an `InvalidOperationException` if we forget to add the configuration section in our `appsettings.json` file.
 
-```csharp
-public class Startup
-{
-    private IConfiguration _configuration;
+## 3. Use sections and subsections
 
-    public Startup(IConfiguration configuration)
-    {
-        _configuration = configuration;
-    }
+Let's use sections and subsections to group our configuration values on `appsettings.json` files.
 
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.Configure<MySettings>(_configuration.GetSection("MySettings"));
-
-        services.AddControllers();
-    }
-
-    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-    {
-        // etc...
-    }
-}
-```
-
-### Sections and subsections
-
-You can use sections and subsections to group your configuration values.
-
-In the previous version of ASP.NET, to emulate sections and subsections, you needed a naming convention to prefix your configuration names with the section names.
-
-Now, let's say `MySettings` is inside another section `AllMyCoolSettings`.
-
-You need to nest `MySettings` inside a new configuration class `AllMyCoolSettings`. Like this,
+Now let's say `MySettings` is inside another section: `AllMyCoolSettings`. We need a new `AllMyCoolSettings` class containing a `MySettings` property like this,
 
 ```csharp
 public class AllMyCoolSettings
 {
     public MySettings MySettings { get; set; }
+    //     ^^^^^
 }
 ```
 
-And, in the `Configure()` method, for the section name, you need the two names separated by `:`. This way,
+Then, in the `Configure()` method, we separate the section and subsection names using a colon, `:`, like this,
 
 ```csharp
-services.Configure<MySettings>(_configuration.GetSection("AllMyCoolSettings:MySettings"));
+var mySettings = builder.Configuration.GetSection("AllMyCoolSettings:MySettings");
+//                                                 ^^^^^
+builder.services.Configure<MySettings>(mySettings);
 ```
 
-### IOptions interface
+## 4. Inject an IOptions interface
 
-To use these configuration values, add an `IOptions<MySettings>` parameter in the constructor of your service or controller.
+To use these configuration values, let's add an `IOptions<T>` parameter in the constructor of our service or controller.
+
+Let's create a simple controller that prints one of our configured values, 
 
 ```csharp
 [Route("api/[controller]")]
@@ -114,97 +105,109 @@ public class ValuesController : Controller
 {
     private readonly MySettings _mySettings;
 
-    public ValuesController(IOptions<MySettings> mySettingsOptions)
+    public ValuesController(
+        IOptions<MySettings> mySettingsOptions)
+        // ^^^^^
     {
         _mySettings = mySettingsOptions.Value;
+        //                              ^^^^^
     }
 
     [HttpGet]
-    public string Get(int id)
+    public string Get()
     {
         return _mySettings.ASetting;
+        //     ^^^^^   
     }
 }
 ```
 
-The `IOptions<T>` interface has a property `Value`. This property will hold an instance of your configuration class with the configuration values read.
+The `IOptions<T>` interface has a property `Value`. It holds an instance of our configuration class with the parsed values from the `appsettings.json` file.
 
-In your tests, you can use the method `Options.Create()` with an instance of the `MySettings` class to fake configuration values. You don't need any mock for that.
+In our controller we use the injected `MySettings` like any other object instance. 
 
-That's it! That's the Options pattern in action.
+**By default, if we forget to add a configuration value in the `appsettings.json` file, ASP.NET Core doesn't throw any exception.** Instead, ASP.NET Core initializes the configuration class to its default values.
 
-### Use multiple configuration files per environment
+That's why it's a good idea to always [validate for missing configuration values inside constructors]({% post_url 2022-12-02-ValidateInputParameters %}).
 
-**You can separate your configuration values per environment in different configuration files.**
+For unit testing, let's use the method `Options.Create()` with an instance of the `MySettings` class we want to use. We don't need a [stub or mock]({% post_url 2021-05-24-WhatAreFakesInTesting %}) for that!
 
-You could have settings files for Development, QA or any other environment. If a value isn't found in an environment-specific file, ASP.NET Core uses the default `appsettings.json` file.
+## 5. Use separate configuration files per environment
 
-You can change the current environment with the `ASPNETCORE_ENVIRONMENT` environment variable. On a develop machine, you can use [the launchSettings.json file](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-3.1#development-and-launchsettingsjson) to set environment variables.
+Let's separate our configuration values into different configuration files per environment.
+
+By default, ASP.NET Core creates two JSON files: `appsettings.json` and `appsettings.Development.json`. But we could have other configuration files, too.
+
+If ASP.NET Core doesn't find a value in an environment-specific file, it reads the default `appsettings.json` file instead.
+
+ASP.NET Core reads the current environment from the `ASPNETCORE_ENVIRONMENT` environment variable.
+
+On a development machine, we can use the `launchSettings.json` file to set environment variables.
+
+For example, let's override one configuration value using an environment variable in our `launchSettings.json` file,
 
 ```json
 {
-  // ...
-  "profiles": {
-    "IIS Express": {
-      "commandName": "IISExpress",
-      "launchBrowser": true,
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    },
     "<YourSolutionName>": {
       "commandName": "Project",
-      "launchBrowser": true,
       "applicationUrl": "http://localhost:5000",
+      
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "MySettings__ASetting": "A settting changed from an environment var"
+        // ^^^^^
+        "MySettings__AString": "This value comes from an environment variable"
+        // ^^^^^
       }
     }
   }
 }
 ```
 
-By default, ASP.NET Core reads configuration values from environment variables too.
+By default, ASP.NET Core reads configuration values from environment variables, too.
 
-Following the example, an environment variable `MySettings__ASetting` will change the value of `ASetting` read from the `appsettings.json` file.
+Environment variables have a higher precedence than JSON files.
 
-Notice, the separator for environment variables is a double undescore, `__`.
+For example, if we set an environment variable `MySettings__AString`, ASP.NET Core will use that value instead of the one on the `appsettings.json` file.
 
-### PostConfigure
+Notice that the separator for sections and subsections inside environment variables is a double undescore, `__`.
 
-Imagine one day, you start to work on a legacy project. But, you can't find some configuration values in any settings file. After asking a co-worker, those configuration values are read from environment variables. When you get the values for these environment variables to test, they are outdated. _Arggg!_
+## 6. Embrace PostConfigure
 
-You can add those environment variables in the `launchSettings.json` file. New developers won't have to struggle to find those values again.
+After registering our configuration classes, we can override their values using the `PostConfigure()` method.
 
-But, you can refactor the code to use the Options pattern instead of environment variables. To make things obvious, you can add the right values in the `appsettings.json` file.
-
-_What about the existing environment variables?_ If you can't rename the existing environment variables to follow your settings file, use [the PostConfigure method](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-3.1#options-post-configuration). You can overwrite the values read from the settings file using the existing environment variables.
+I used `PostConfigure()` when refactoring a legacy application. I grouped related values in the `appsetting.json` file into sections. But I couldn't rename the existing environment variables to match the new names. I did something like this instead,
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddControllers();
+
+var mySettingsSection = builder.Configuration.GetSection("MySettings");
+builder.Services.Configure<MySettings>();
+
+builder.Services.PostConfigure<MySettings>(options =>
+//               ^^^^^
 {
-    services.Configure<MySettings>(_configuration.GetSection("MySettings"));
-
-    // Other configurations and services...
-
-    services.PostConfigure<MySettings>((options) =>
+    var anOldSetting = Environment.GetEnvironmentVariable("AnOldSettingName");
+    //  ^^^^^
+    if (!string.IsNullOrEmpty(anOldSetting))
     {
-        var aSettingEnvVar = Environment.GetEnvironmentVariable("A_Setting");
-        if (!string.IsNullOrEmpty(aSettingEnvVar))
-        {
-            options.ASetting = aSettingEnvVar;
-        }
-    });
+        options.AString = anOldSetting;
+        //      ^^^^^
+    }
+});
 
-    services.AddControllers();
-}
+var app = builder.Build();
+app.MapControllers();
+app.Run();
 ```
 
 ### Conclusion
 
-Voilà! Now you know how to read configuration values with ASP.NET Core. Be aware, there are other [options interfaces](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-3.1#options-interfaces): `IOptionSnapshot` and `IOptionsMonitor`. Also, you can use other configuration providers to read your values from an ini file, an xml file or Azure Key Vault.
+Voilà! That's how to read configuration values with ASP.NET Core 6.0. Apart from the `IOptions` interface we used here, ASP.NET Core has `IOptionSnapshot` and `IOptionsMonitor`. Also, we can read values from INI files, XML files, or Azure Key Vault.
 
-If you're interested in more ASP.NET Core content, check my posts on [how to create a caching layer](https://canro91.github.io/2020/06/29/HowToAddACacheLayer/) and [how to create a CRUD API with Insight.Database](https://canro91.github.io/2020/05/01/InsightDatabase/).
+In the days of the [old ASP.NET framework]({% post_url 2020-03-23-GuideToNetCore %}), we had a `ConfigurationManager` class and a `web.config` file to read configuration values. Those days are gone! We have JSON files now.
+
+For more ASP.NET Core content, check [how to create a caching layer]({% post_url 2020-06-29-HowToAddACacheLayer %}), [how to create a CRUD API with Insight.Database]({% post_url 2020-05-01-InsightDatabase %}), and [how to use background services with Hangfire]({% post_url 2022-12-06-BackgroundServicesAndLiteHangfire %}).
 
 _Happy coding!_

@@ -1,87 +1,98 @@
 ---
 layout: post
-title: How to add an in-memory and a Redis-powered cache layer with ASP.NET Core 3
+title: "How to add an in-memory and a Redis-powered cache layer with ASP.NET Core"
 tags: tutorial asp.net csharp
 cover: Cover.png
 cover-alt: Caching with ASP.NET Core
 ---
 
-Imagine you have a service `SettingsService` that calls a microservice for the configurations of a property. But, it takes a couple of seconds to respond and it is accessed frequently. Let's see how to add a caching layer to the `SettingsService` using ASP.NET Core!
+Let's say we have a `SlowService` that calls a microservice and we need to speed it up. Let's see how to add a caching layer to a service using ASP.NET Core 6.0.
 
-**A cache is an storage layer used to speed up future requests. Reading from cache is faster than computing data or retrieving it from an external source every time it is requested. ASP.NET Core has built-in abstractions to implement a caching layer using memory and Redis.**
+**A cache is a storage layer used to speed up future requests. Reading from a cache is faster than computing data or retrieving it from an external source on every request. ASP.NET Core has built-in abstractions for a caching layer using memory and Redis.**
  
-## In-Memory cache
+## 1. In-Memory cache
 
-Let's start with an ASP.NET Core 3.1 API project with a controller that uses your `SettingsService` class. 
+Let's start with an ASP.NET Core 6.0 API project with a controller that uses our `SlowService` class. 
 
-First, install the `Microsoft.Extensions.Caching.Memory` NuGet package. Then, register the in-memory cache in the `ConfigureServices()` method of the `Startup` class. You need to use the `AddMemoryCache()` method.
+First, let's install the `Microsoft.Extensions.Caching.Memory` NuGet package. Then, let's register the in-memory cache using the `AddMemoryCache()` method.
+
+In our `Program.cs` file, let's do this,
 
 ```csharp
-// Startup.cs
-public void ConfigureServices(IServiceCollection services)
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddControllers();
+
+builder.Services.AddTransient<ISlowService, SlowService>();
+
+builder.Services.AddMemoryCache(options =>
+//               ^^^^^
 {
-    services.AddMemoryCache(options =>
-    {
-        options.SizeLimit = 1024;
-    });
-    
-    // ...
-}
+    options.SizeLimit = 1_024;
+    //      ^^^^^
+});
+
+var app = builder.Build();
+app.MapControllers();
+app.Run();
 ```
 
-Since memory isn't infinite, you want to limit the number of items stored in the cache. Use `SizeLimit`. It is the maximum number of "slots" or "places" the cache can hold. Also, you need to tell how many "places" a cache entry takes when stored. _More on that later!_
+Since memory isn't infinite, we need to limit the number of items stored in the cache. Let's use `SizeLimit`. It sets the number of "slots" or "places" the cache can hold. Also, we need to tell how many "places" a cache entry takes when stored. More on that later!
 
-### Decorator pattern
+### Decorate a service to add caching
 
-Next, let's use the [decorator pattern]({% post_url 2021-02-10-DecoratorPattern %}) to add caching to the existing `SettingsService` without modifying it.
+Next, let's use the [decorator pattern]({% post_url 2021-02-10-DecoratorPattern %}) to add caching to the existing `SlowService` without modifying it.
 
-To do that, create a new `CachedSettingsService`. It should inherit from the same interface as `SettingsService`. _That's the trick!_
+To do that, let's create a new `CachedSlowService`. It should inherit from the same interface as `SlowService`. That's the trick!
 
-Also, you need a constructor receiving `IMemoryCache` and `ISettingsService`. This last parameter will hold a reference to the existing `SettingService`.
+The `CachedSlowService` needs a constructor receiving `IMemoryCache` and `ISlowService`. This last parameter will hold a reference to the existing `SlowService`.
 
-Then, in the `GetSettingsAsync()` method of the decorator, you will call the existing service if the value isn't already cached.
+Then, inside the decorator, we will call the existing service if we don't have a cached value.
 
 ```csharp
-public class CachedSettingsService : ISettingsService
+public class CachedSlowService : ISlowService
 {
     private readonly IMemoryCache _cache;
-    private readonly ISettingsService _settingsService;
+    private readonly ISlowService _slowService;
 
-    public CachedSettingsService(IMemoryCache cache, ISettingsService settingsService)
+    public CachedSlowService(IMemoryCache cache, ISlowService SlowService)
+    //     ^^^^^
     {
         _cache = cache;
-        _settingsService = settingsService;
+        _slowService = slowService;
     }
 
-    public async Task<Settings> GetSettingsAsync(int propertyId)
+    public async Task<Something> DoSomethingSlowlyAsync(int someId)
     {
-        var key = $"{nameof(propertyId)}:{propertyId}";
-        return await _cache.GetOrSetValueAsync(key, async () => await _settingsService.GetSettingsAsync(propertyId));
+        var key = $"{nameof(someId)}:{someId}";
+        return await _cache.GetOrSetValueAsync(
+        //                  ^^^^^
+            key,
+            () => _slowService.DoSomethingSlowlyAsync(someId));
     }
 }
 ```
 
-### Size, Limits and Expiration Time
+### Set Size, Limits, and Expiration Time
 
-Now, let's create the `GetOrSetValueAsync()` extension method. It will check first if a key is in the cache. Otherwise, it will use a factory method to compute the value and store it on the cache. This method receives a custom `MemoryCacheEntryOptions` to overwrite the default values.
+**Let's always use expiration times when caching items**.
 
-**Make sure to use expiration times when storing items in cache**.
+Let's choose between sliding and absolute expiration times:
 
-You can choose between sliding and absolute expiration times:
-
-* `SlidingExpiration` resets the expiration time every time an entry is used before it expires
-* `AbsoluteExpirationRelativeToNow` expires an entry after a fixed time period, no matter how many times it's been used
-* If you use both, the entry expires when the first of the two times expire
+* `SlidingExpiration` resets the expiration time every time an entry is used before it expires.
+* `AbsoluteExpirationRelativeToNow` expires an entry after a fixed time, no matter how many times it's been used.
+* If we use both, the entry expires when the first of the two times expire
 
 <figure>
 <img src="https://images.unsplash.com/photo-1591976711776-4a91184e0bf7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop" alt="A child playing colorful videogames" />
 
-<figcaption>If parents used SlidingExpiration, kids would never stop watching TV or using smartphones! <span>Photo by <a href="https://unsplash.com/@sigmund?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Sigmund</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
+<figcaption>If parents used SlidingExpiration, kids would never stop watching Netflix or using smartphones! <span>Photo by <a href="https://unsplash.com/@sigmund?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Sigmund</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
 </figure>
 
-Don't forget to include a size for each cache entry, if you use `SizeLimit` when registering the in-memory cache into the dependency container. This `Size` tells how many "places" from `SizeLimit` an entry takes. 
+**Let's always add a size to each cache entry.** This `Size` tells how many "places" from `SizeLimit` an entry takes. 
 
-When the `SizeLimit` value is reached, the cache won't store any more entries until some of them expire. For more details, see ASP.NET Core documentation on [SetSize, Size, and SizeLimit](https://docs.microsoft.com/en-us/aspnet/core/performance/caching/memory?view=aspnetcore-3.1#use-setsize-size-and-sizelimit-to-limit-cache-size).
+When the `SizeLimit` value is reached, the cache won't store new entries until some expire.
+
+Now that we know about expiring entries, let's create the `GetOrSetValueAsync()` extension method. It checks first if a key is in the cache. Otherwise, it uses a factory method to compute and store a value into the cache. This method receives a custom `MemoryCacheEntryOptions` to overwrite the default values.
 
 ```csharp
 public static class MemoryCacheExtensions
@@ -91,12 +102,19 @@ public static class MemoryCacheExtensions
         = new MemoryCacheEntryOptions
         {
             AbsoluteExpirationRelativeToNow = TimeSpan.FromSeconds(60),
+            // ^^^^^
             SlidingExpiration = TimeSpan.FromSeconds(10),
+            // ^^^^^
             Size = 1
+            // ^^^^^
         };
 
-    public static async Task<TObject> GetOrSetValueAsync<TObject>(this IMemoryCache cache, string key, Func<Task<TObject>> factory, MemoryCacheEntryOptions options = null)
-        where TObject : class
+    public static async Task<TObject> GetOrSetValueAsync<TObject>(
+        this IMemoryCache cache,
+        string key,
+        Func<Task<TObject>> factory,
+        MemoryCacheEntryOptions options = null)
+            where TObject : class
     {
         if (cache.TryGetValue(key, out object value))
         {
@@ -113,33 +131,44 @@ public static class MemoryCacheExtensions
 }
 ```
 
-### Register your in-memory cache
+### Register a decorated service
 
-To start using the new `CachedSettingsService`, you need to register it into the dependency container. _Back to the `Startup` class!_ Register the existing `SettingsService` and the new decorated service. You can use [Scrutor](https://github.com/khellang/Scrutor) to register your decorators.
+To start using the new `CachedSlowService`, let's register it into the dependency container.
+
+Let's register the existing `SlowService` and the new decorated service,
 
 ```csharp
-// Startup.cs
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddTransient<SettingsService>();
-    services.AddTransient<ISettingsService>(provider =>
-    {
-        var cache = provider.GetRequiredService<IMemoryCache>();
-        var settingsService = provider.GetRequiredService<SettingsService>();
-        return new CachedSettingsService(cache, settingsService);
-    });
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddControllers();
 
-    // The same as before...
-    services.AddMemoryCache(options =>
-    {
-        options.SizeLimit = 1024
-    });
-    
-    // ...
-}
+// Before:
+//builder.Services.AddTransient<ISlowService, SlowService>();
+
+// After:
+builder.Services.AddTransient<SlowService>();
+//               ^^^^^
+builder.Services.AddTransient<ISlowService>(provider =>
+//               ^^^^^
+{
+    var cache = provider.GetRequiredService<IMemoryCache>();
+    var slowService = provider.GetRequiredService<SlowService>();
+    return new CachedSlowService(cache, SlowService);
+    //         ^^^^^
+});
+
+builder.Services.AddMemoryCache(options =>
+{
+    options.SizeLimit = 1_024;
+});
+
+var app = builder.Build();
+app.MapControllers();
+app.Run();
 ```
 
-Be aware of removing cached entries if you need to update or delete entities in you own code. You don't want to use an old value or, even worse, a deleted value read from your cache. In this case, you would need to use the `Remove()` method.
+As an alternative, we can use [Scrutor](https://github.com/khellang/Scrutor), an "assembly scanning and decoration" library, to register our decorators.
+
+Let's use the `Remove()` method to delete cached entries if needed. We don't want to use outdated or deleted values read from our cache by mistake.
 
 > _There are only two hard things in Computer Science: cache invalidation and naming things._
 >
@@ -147,108 +176,127 @@ Be aware of removing cached entries if you need to update or delete entities in 
 >
 > From [TwoHardThings](https://www.martinfowler.com/bliki/TwoHardThings.html)
 
-### Unit Test your in-memory cache
+### Unit Test a decorated service
 
-Let's see how you can create a test for this decorator.
+Let's see how to test our decorator.
 
-You will need to create a fake for the decorated service. Then, assert it's called only once after two consecutive calls to the cached method. Let's use [Moq to create fakes]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}).
+We need a fake for our decorator and assert it's called only once after two consecutive calls. Let's use [Moq to create fakes]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}).
 
 ```csharp
 [TestClass]
-public class CachedPropertyServiceTests
+public class CachedSlowServiceTests
 {
     [TestMethod]
-    public async Task GetSettingsAsync_ByDefault_UsesCachedValues()
+    public async Task DoSomethingSlowlyAsync_ByDefault_UsesCachedValues()
     {
-        var memoryCache = new MemoryCache(Options.Create(new MemoryCacheOptions()));
-        var fakeSettingsService = new Mock<ISettingsService>();
-        fakeSettingsService.Setup(t => t.GetSettingsAsync(It.IsAny<int>()))
-                           .ReturnsAsync(new Settings());
-        var service = new CachedSettingsService(memoryCache, fakeSettingsService.Object);
+        var cacheOptions = Options.Create(new MemoryCacheOptions());
+        var memoryCache = new MemoryCache(cacheOptions);
+        //                ^^^^^
+        var fakeSlowService = new Mock<ISlowService>();
+        fakeSlowService
+            .Setup(t => t.DoSomethingSlowlyAsync(It.IsAny<int>()))
+            .ReturnsAsync(new Something());
+        var service = new CachedSlowService(memoryCache, fakeSlowService.Object);
+        //            ^^^^^
 
-        var propertyId = 1;
-        var settings = await service.GetSettingsAsync(propertyId);
-
-        fakeSettingsService.Verify(t => t.GetSettingsAsync(propertyId), Times.Once);
-
-        settings = await service.GetSettingsAsync(propertyId);
-        decoratedService.Verify(t => t.GetSettingsAsync(propertyId), Times.Once);
+        var someId = 1;
+        await service.DoSomethingSlowlyAsync(someId);
+        await service.DoSomethingSlowlyAsync(someId);
+        //            ^^^^^
+        // Yeap! Twice!
+        
+        fakeSlowService.Verify(t => t.DoSomethingSlowlyAsync(someId), Times.Once);
+        // Yeap! Times.Once!
     }
 }
 ```
-
-## Distributed cache with Redis
 
 Now, let's move to the distribute cache.
 
-A distributed cache layer lives in a separate server. You aren't limited to the memory of the server running your API site.
+## 2. Distributed cache with Redis
 
-A distributed cache makes sense when you want to share your cache server among multiple applications. Or, when your site is running behind a load-balancer along many instances of the same server. For more advantages of distributed cache, see ASP.NET Docs on [Distributed caching in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/performance/caching/distributed?view=aspnetcore-3.1)
+A distributed cache layer lives in a separate server. We aren't limited to the memory of our application server.
+
+A distributed cache is helpful when we share our cache server among many applications or our application runs behind a load balancer.
 
 ### Redis and ASP.NET Core
 
-There is an implementation of the distributed cache using Redis for ASP.NET Core. [Redis](https://redis.io/) is _"an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker"_.
+[Redis](https://redis.io/) is "an open source (BSD licensed), in-memory data structure store, used as a database, cache, and message broker." ASP.NET Core supports distributed caching with Redis. 
 	
-Using a distributed cache is similar to the in-memory cache. This time you need to install `Microsoft.Extensions.Caching.StackExchangeRedis` NuGet package and use the `AddStackExchangeRedisCache()` method in your `ConfigureServices()` method.
+Using a distributed cache with Redis is like using the in-memory implementation. We need the `Microsoft.Extensions.Caching.StackExchangeRedis` NuGet package and the `AddStackExchangeRedisCache()` method.
 
-Also, you need a Redis connection string and an optional `InstanceName`. The `InstanceName` groups entries with a prefix. It's helpful when using a single Redis server with different sites.
+Now our `CachedSlowService` should depend on `IDistributedCache` instead of `IMemoryCache`.
 
-Notice, there are two similar NuGet packages to use Redis with ASP.NET Core: [Microsoft.Extensions.Caching.Redis and Microsoft.Extensions.Caching.StackExchangeRedis](https://stackoverflow.com/questions/59847571/differences-between-microsoft-extensions-cashing-redis-and-microsoft-extensions). They use different versions of the [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) client.
+Also we need a Redis connection string and an optional `InstanceName`. With an `InstanceName`, we group cache entries with a prefix.
+
+Let's register a distributed cache with Redis like this,
 
 ```csharp
-// Startup.cs
-public void ConfigureServices(IServiceCollection services)
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddControllers();
+
+builder.Services.AddTransient<SlowService>();
+builder.Services.AddTransient<ISlowService>(provider =>
 {
-    services.AddTransient<SettingsService>();
-    services.AddTransient<ISettingsService>(provider =>
-    {
-        var cache = provider.GetRequiredService<IDistributedCache>();
-        var settingsService = provider.GetRequiredService<SettingsService>();
-        return new CachedSettingsService(cache, settingsService);
-    });
+    var cache = provider.GetRequiredService<IDistributedCache>();
+    //                                      ^^^^^
+    var slowService = provider.GetRequiredService<SlowService>();
+    return new CachedSlowService(cache, SlowService);
+    //         ^^^^^
+});
 
-    services.AddStackExchangeRedisCache(options =>
-    {
-        var redisConnectionString = Configuration.GetConnectionString("Redis");
-        options.Configuration = redisConnectionString;
+builder.Services.AddStackExchangeRedisCache(options =>
+//               ^^^^^
+{ 
+    options.Configuration = "localhost";
+    //      ^^^^^
+    // I know, I know! We should put it in an appsettings.json
+    // file instead.
+    
+    var assemblyName = Assembly.GetExecutingAssembly().GetName();
+    options.InstanceName = assemblyName.Name;
+    //      ^^^^^
+});
 
-        var assemblyName = Assembly.GetExecutingAssembly().GetName();
-        options.InstanceName = assemblyName.Name;
-    });   
-}
+var app = builder.Build();
+app.MapControllers();
+app.Run();
 ```
 
-### Redecorate your service
+It's a good idea to read our Redis connection string from a [configuration file]({% post_url 2020-08-21-HowToConfigureValues %}) instead of hardcoding one.
 
-Make sure to change the cache interface from `IMemoryCache` to `IDistributedCache`.
+In previous versions of ASP.NET Core, we also had the `Microsoft.Extensions.Caching.Redis` NuGet package. It's deprecated. It uses an older version of the [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) client.
 
-Go to your `CachedSettingsService` class and to the `ConfigureService()` method in the `Startup` class.
+### Redecorate a service
+
+Let's change our `CachedSlowService` to use `IDistributedCache` instead of `IMemoryCache`,
 
 ```csharp
-public class CachedSettingsService : ISettingsService
+public class CachedSlowService : ISlowService
 {
     private readonly IDistributedCache _cache;
-    private readonly ISettingsService _settingsService;
+    private readonly ISlowService _slowService;
 
-    public CachedSettingsService(IDistributedCache cache, ISettingsService settingsService)
+    public CachedSlowService(IDistributedCache cache, ISlowService slowService)
+    //                       ^^^^^
     {
         _cache = cache;
-        _settingsService = settingsService;
+        _slowService = slowService;
     }
 
-    public async Task<Settings> GetSettingsAsync(int propertyId)
+    public async Task<Something> DoSomethingSlowlyAsync(int someId)
     {
-        var key = $"{nameof(propertyId)}:{propertyId}";
-        return await _cache.GetOrSetValueAsync(key, async () => await _settingsService.GetSettingsAsync(propertyId));
+        var key = $"{nameof(someId)}:{someId}";
+        return await _cache.GetOrSetValueAsync(
+            key,
+            () => _slowService.DoSomethingSlowlyAsync(someId));
     }
 }
 ```
 
-Now, let's create a new `GetOrSetValueAsync()` extension method to use the distributed cache.
+Now let's create a new `GetOrSetValueAsync()` extension method to use `IDistributedCache ` instead.
 
-This time, you need asynchronous methods to retrieve and store items. These methods are `GetStringAsync()` and `SetStringAsync()`. Also, you need a serializer to cache objects. We are using [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json).
-
-Notice, this time you don't need sizes for cache entries.
+This time, we need the `GetStringAsync()` and `SetStringAsync()` methods. Also, we need a serializer to cache objects. Let's use [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json).
 
 ```csharp
 public static class DistributedCacheExtensions
@@ -257,11 +305,19 @@ public static class DistributedCacheExtensions
         = new DistributedCacheEntryOptions
         {
             AbsoluteExpirationRelativeToNow = TimeSpan.FromSeconds(60),
+            // ^^^^^
             SlidingExpiration = TimeSpan.FromSeconds(10),
+            // ^^^^^
+            
+            // We don't need Size here anymore...
         };
 
-    public static async Task<TObject> GetOrSetValueAsync<TObject>(this IDistributedCache cache, string key, Func<Task<TObject>> factory, DistributedCacheEntryOptions options = null)
-        where TObject : class
+    public static async Task<TObject> GetOrSetValueAsync<TObject>(
+        this IDistributedCache cache,
+        string key,
+        Func<Task<TObject>> factory,
+        DistributedCacheEntryOptions options = null)
+            where TObject : class
     {
         var result = await cache.GetValueAsync<TObject>(key);
         if (result != null)
@@ -270,14 +326,15 @@ public static class DistributedCacheExtensions
         }
 
         result = await factory();
-
         await cache.SetValueAsync(key, result, options);
 
         return result;
     }
 
-    private static async Task<TObject> GetValueAsync<TObject>(this IDistributedCache cache, string key)
-        where TObject : class
+    private static async Task<TObject> GetValueAsync<TObject>(
+        this IDistributedCache cache,
+        string key)
+            where TObject : class
     {
         var data = await cache.GetStringAsync(key);
         if (data == null)
@@ -288,8 +345,12 @@ public static class DistributedCacheExtensions
         return JsonConvert.DeserializeObject<TObject>(data);
     }
 
-    private static async Task SetValueAsync<TObject>(this IDistributedCache cache, string key, TObject value, DistributedCacheEntryOptions options = null)
-        where TObject : class
+    private static async Task SetValueAsync<TObject>(
+        this IDistributedCache cache,
+        string key,
+        TObject value,
+        DistributedCacheEntryOptions options = null)
+            where TObject : class
     {
         var data = JsonConvert.SerializeObject(value);
 
@@ -298,49 +359,56 @@ public static class DistributedCacheExtensions
 }
 ```
 
-### Unit Test your distributed cache
+With `IDistributedCache`, we don't need sizes in the `DistributedCacheEntryOptions` when caching entries.
 
-For unit testing, you can use `MemoryDistributedCache`, an in-memory implementation of `IDistributedCache`. This way, you don't need a Redis server to test your code.
+### Unit Test a decorated service
 
-From the previous unit test, you need to replace the `MemoryCache` dependency with the `MemoryDistributedCache`.
+For unit testing, let's use `MemoryDistributedCache`, an in-memory implementation of `IDistributedCache`. This way, we don't need a Redis server in our unit tests.
+
+Let's replace the `MemoryCache` dependency with the `MemoryDistributedCache` like this,
 
 ```csharp
-var memoryCache = new MemoryDistributedCache(Options.Create(new MemoryDistributedCacheOptions()));
+var cacheOptions = Options.Create(new MemoryDistributedCacheOptions());
+var memoryCache = new MemoryDistributedCache(cacheOptions);         
 ```
 
-With this change, our unit test for the distributed cache looks like this:
+With this change, our unit test now looks like this,
 
 ```csharp
 [TestClass]
-public class CachedPropertyServiceTests
+public class CachedSlowServiceTests
 {
     [TestMethod]
-    public async Task GetSettingsAsync_ByDefault_UsesCachedValues()
+    public async Task DoSomethingSlowlyAsync_ByDefault_UsesCachedValues()
     {
-        // This time, CachedSettingsService uses an in-memory implementation of IDistributedCache
-        var memoryCache = new MemoryDistributedCache(Options.Create(new MemoryDistributedCacheOptions()));
-        var fakeSettingsService = new Mock<ISettingsService>();
-        fakeSettingsService.Setup(t => t.GetSettingsAsync(It.IsAny<int>()))
-                           .ReturnsAsync(new Settings());
-        var service = new CachedSettingsService(memoryCache, fakeSettingsService.Object);
+        var cacheOptions = Options.Create(new MemoryDistributedCacheOptions());
+        var memoryCache = new MemoryDistributedCache(cacheOptions);
+        //                ^^^^^
+        // This time, we're using an in-memory implementation
+        // of IDistributedCache
+        var fakeSlowService = new Mock<ISlowService>();
+        fakeSlowService
+            .Setup(t => t.DoSomethingSlowlyAsync(It.IsAny<int>()))
+            .ReturnsAsync(new Something());
+        var service = new CachedSlowService(memoryCache, fakeSlowService.Object);
+        //            ^^^^^
 
-        var propertyId = 1;
-        var settings = await service.GetSettingsAsync(propertyId);
+        var someId = 1;
+        await service.DoSomethingSlowlyAsync(someId);
+        await service.DoSomethingSlowlyAsync(someId);
+        // Yeap! Twice again!
 
-        fakeSettingsService.Verify(t => t.GetSettingsAsync(propertyId), Times.Once);
-
-        settings = await service.GetSettingsAsync(propertyId);
-        decoratedService.Verify(t => t.GetSettingsAsync(propertyId), Times.Once);
+        fakeSlowService.Verify(t => t.DoSomethingSlowlyAsync(someId), Times.Once);
     }
 }
 ```
 
+We don't need that many changes to migrate from the in-memory to the Redis implementation.
+
 ## Conclusion
 
-Voilà! Now you know how to cache the results of a slow service using an in-memory and a distributed cache implementing the Decorator pattern on your ASP.NET Core API sites. Additionally, you can turn on or off the cache layer using a toggle in your `appsettings.json` file to either create a decorated o a plain service.
+Voilà! That's how we cache the results of a slow service using an in-memory and a distributed cache with ASP.NET Core 6.0. Additionally, we can turn on or off the caching layer with a toggle in our `appsettings.json` file to create a decorated or raw service.
 
-If you need to cache outside of an ASP.NET Core site, you can use libraries like [CacheManager](https://github.com/MichaCo/CacheManager), [Foundatio](https://github.com/FoundatioFx/Foundatio#caching) and [Cashew](https://github.com/joakimskoog/Cashew).
-
-To learn more about configuration in ASP.NET Core, read my post on [how to read configuration values in ASP.NET Core]({% post_url 2020-08-21-HowToConfigureValues %}). To read more about fakes and unit testing, check [what are fakes in unit testing]({% post_url 2021-05-24-WhatAreFakesInTesting %}) and [how to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %}).
+For more ASP.NET Core content, read [how to compress responses]({% post_url 2020-10-01-CompressResponses %}) and [how to serialize dictionary keys]({% post_url 2021-10-25-LowerCaseDictionaryKeysOnSerialization %}). To read more about unit testing, check my [Unit Testing 101 guide]({% post_url 2021-08-30-UnitTesting %}) where I share what I've learned about unit testing all these years.
 
 _Happy caching time!_
