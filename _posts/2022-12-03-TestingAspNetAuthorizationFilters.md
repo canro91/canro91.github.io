@@ -8,7 +8,7 @@ cover-alt: "Coffee machine"
 
 _This post is part of [my Advent of Code 2022]({% post_url 2022-12-01-AdventOfCode2022 %})._
 
-These days I needed to work with a microservice for one of my clients. In that microservice, instead of validating incoming requests with the built-in model validations or FluentValidations, they use authorization filters. I needed to write some tests for that filter. This is what I learned.
+These days I needed to work with a microservice for one of my clients. In that microservice, instead of validating incoming requests with the built-in model validations or FluentValidation, they use authorization filters. I needed to write some tests for that filter. This is what I learned.
 
 Apart from validating the integrity of the incoming requests, the filter also validated that the referenced object in the request body matched the same "client."
 
@@ -252,6 +252,6 @@ With the `BuildContext()` method in place, we got the Arrange and Act parts of o
 
 Voilà! That's what I learned about unit testing ASP.NET authorization filters. Again, a Builder method helped to keep things simple and easier to reuse.
 
-If you want to read more about unit testing, check [How to write tests for HttpClient using Moq](% post_url XXX %) and my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}) where we cover from what a unit test is, to fakes and mocks, to best practices.
+If you want to read more about unit testing, check [How to write tests for HttpClient using Moq](% post_url 2022-12-01-TestingHttpClient %) and my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}) where we cover from what a unit test is, to fakes and mocks, to best practices.
 
 _Happy testing!_
