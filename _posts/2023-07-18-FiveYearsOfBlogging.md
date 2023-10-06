@@ -6,9 +6,9 @@ cover: Cover.png
 cover-alt: "Hand-written letters"
 ---
 
-Some days ago I found out this [Hacker News question](https://news.ycombinator.com/item?id=35164819) about what blogging has done for blog writers and realized, as this post title implies, that I published my first blog post five years ago. This is what blogging has done for me.
+Some days ago I found out this [Hacker News question](https://news.ycombinator.com/item?id=35164819) about what blogging has done for blog writers. I realized that I published my first blog post five years ago. I'd like to share what blogging has done for me.
 
-I already shared [how I started blogging]({% post_url 2020-07-18-HowIStartedBlogging %}) and the story behind my first post. Long story short: I didn't want to throw away some hours of Googling.
+In a past post, I shared [how I started blogging]({% post_url 2020-07-18-HowIStartedBlogging %}) and the story behind my first post. Long story short: I didn't want to throw away some hours of Googling.
 
 ## 1. What has my blog done for me?
 
@@ -44,7 +44,7 @@ In all these years, I have received inspiration from others in the process.
 
 In 2020, I found the [Guest Writer Program from exceptionnotfound.net](https://exceptionnotfound.net/guest-writer-program/) and accepted the challenge. I wrote [three guest posts](https://exceptionnotfound.net/author/cesar-aguirre/) there. That experience helped me to better structure and format a blog post. Thanks, Matthew, if you ever read this.
 
-The book [Show your work by Austin Kleon]({% post_url 2020-10-01-ShowYourWorkTakeaways %}) inspired me to keep writing. Not only do the end results matter, the process to get there too. I learned that from the book.
+The book [Show Your Work by Austin Kleon]({% post_url 2020-10-01-ShowYourWorkTakeaways %}) inspired me to keep writing. Not only do the end results matter, the process to get there, too. I learned that from the book.
 
 I follow the mantra: "If something takes you more than 20 minutes to figure out, it should be a post." I learned that from a YouTube video, I can't find any more.
 
@@ -52,7 +52,7 @@ I follow the mantra: "If something takes you more than 20 minutes to figure out,
 
 In these five years, I’ve written 152 posts, to be precise. Some blog posts came from my frustrations, curiosity, and learning. Often, I like to think of my blog as [my own time capsule]({% post_url 2020-07-20-TimeCapsule %}) and [a tool to preserve my keystrokes]({% post_url 2021-12-06-ItsNotWhatYouRead %}). 
 
-These are some of my favorites:
+These are some of my favorite posts:
 
 - [C# Definitive Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %}): This is my roadmap for C# intermediate developers.
 - [Parsinator: A tale of a PDF parser]({% post_url 2019-03-08-ATaleOfAPdfParser %}): This is about Parsinator, a small project I wrote in record time to keep one of my previous employers onboarding new clients.

@@ -6,19 +6,19 @@ cover: Cover.png
 cover-alt: "Stairs, paintings, and brushes" 
 ---
 
-This isn't a tutorial or a refactoring session. Today, I'd like to share my thoughts about those massive unrequested refactorings we often think are worth the effort but end up with unwanted consequences.
+This isn't a tutorial or a refactoring session. Today, I'd like to share my thoughts about those massive unrequested refactorings we often think are worth the effort but lead to unwanted consequences.
 
 ## Two massive refactorings stories
 
 ### Changing entities and value objects
 
-This first story happened to "a friend to a friend of mine." Wink, wink! As part of his task, some team-member decided to refactor the entire solution. The project was in its early stages. He changed every Domain Entity, [Value Object]({% post_url 2022-12-21-WhenToChooseValueObjects %}), and database table. Because what he found wasn't "scalable" in his experience. But the rest of the team was waiting for his task.
+This first story happened to "a friend to a friend of mine." Wink, wink! As part of his task, a team-member decided to refactor the entire solution. The project was in its early stages. He changed every Domain Entity, [Value Object]({% post_url 2022-12-21-WhenToChooseValueObjects %}), and database table. Because what he found wasn't "scalable" in his experience. But the rest of the team was waiting for his task.
 
 One week later, the team was still discussing names, [folder structure]({% post_url 2022-12-15-CreateProjectStructureWithDotNetCli %}), and the need for that refactoring in the first place. They all were blocked.
 
 ### Changing class and table names
 
-And I haven't told you the story of "another friend of a friend of mine." His team's architect decided to work on a weekend. And the next thing he knew next Monday morning was that almost all class and table names were different. The team's architect decided to rename everything. He simply didn't like the initial naming conventions. Arrrggg!
+And I haven't told you the story of "another friend of a friend of mine." His team's architect decided to work on a weekend. And the next thing he knew next Monday morning was that almost all class and table names had been changed. The team's architect decided to rename everything. He simply didn't like the initial naming conventions. Arrrggg!
 
 These are two examples of massive unrequested refactorings. Nobody asked those guys to change anything in the first place. There was no need or business case for that in the first place.
 
