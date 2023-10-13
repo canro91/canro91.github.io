@@ -24,7 +24,7 @@ After an interview, you can be remembered for the languages you speak. "Ah! The 
 
 ## 2. Always keep learning
 
-Let's be honest. University will teach you lots of things. Probably, you don't need most of them. You will have to study books, watch online conferences and read blog posts. Never stop learning! That would keep you in the game in the long run.
+Let's be honest. University will teach you lots of things. Probably, you don't need most of them. You will have to study books, watch online conferences, and read blog posts. Never stop learning! That would keep you in the game in the long run.
 
 But, it can be daunting if you try to learn everything about everything. "Learn something about everything, and everything about something," says popular wisdom.
 
@@ -38,7 +38,7 @@ Libraries and frameworks come and go. Stick to the principles.
 
 ## 3. Have an escape plan
 
-There is no safe place to work. Period! Companies have financial problems. Companies lay out employees without any further notice and apparent reason. You can get seriously injured or sicked. You won't be able to work forever.
+There is no safe place to work. Period! Companies have financial problems. [Companies lay off employees]({% post_url 2023-08-21-OnLayoffs %}) without any further notice and apparent reason. You can get seriously injured or sicked. You won't be able to work forever.
 
 If you're reading this from the future, ask your parents or grandparents about the year 2020. Lots of people lost their jobs or got their salaries cut by half in a few days. And, there were nothing they could do about it.
 
@@ -54,6 +54,6 @@ In the beginning, you might think you don't know enough to [start a blog]({% pos
 
 Voilà! These are four things I wished I knew before starting a software engineer career. Remember, every journey is different. For sure, my circumstances have been different than yours, and that's why these four things. In any case, "Your career is your responsibility, not your employer's." I learned that from [The Clean Coder]({% post_url 2020-06-15-CleanCoder %}).
 
-Interested in more career lessons? Check [five lessons I learned on my first five years as software engineer]({% post_url 2019-08-19-FiveLessonsAfterFiveYears %}),  [ten lessons learned after one year of remote work]({% post_url 2020-08-08-LessonsOnRemoteWork %}), and [three thoughts on layoffs]({% post_url 2023-08-21-OnLayoffs %}).
+Interested in more career lessons? Check [five lessons I learned on my first five years as software engineer]({% post_url 2019-08-19-FiveLessonsAfterFiveYears %}),  [ten lessons learned after one year of remote work]({% post_url 2020-08-08-LessonsOnRemoteWork %}), and [a case against massive unrequested refactorings]({% post_url 2023-09-04-AgainstMassiveUnrequestedRefactorings %}).
 
 _Happy coding!_
