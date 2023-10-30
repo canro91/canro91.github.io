@@ -152,7 +152,7 @@ record Movie(string Name, int ReleaseYear, float Rating);
 
 Notice we wrote a LINQ query with `FirstOrDefault` looking for the first movie with a rating lower than 2. But, we don't have any movie that matches that condition. The `FirstOrDefault` method returned `null`, and we forgot to check if the `worst` variable was different from `null` before using it.
 
-There are other alternatives to get rid of the `NullReferenceException` like [nullable reference types from C# 8.0]({% post_url 2021-09-13-TopNewCSharpFeatures %}), [the DefaultIfEmpty method]({% post_url 2020-11-17-DefaultOrEmpty %}) or [.NET6 FirstOrDefault with an default value]({% post_url 2022-06-27-NET6LinqMethods %}).
+There are other alternatives to get rid of the `NullReferenceException` like [nullable reference types from C# 8.0]({% post_url 2023-03-06-NullableOperatorsAndReferences %}), [the DefaultIfEmpty method]({% post_url 2020-11-17-DefaultOrEmpty %}) or [.NET6 FirstOrDefault with an default value]({% post_url 2022-06-27-NET6LinqMethods %}).
 
 ## Mistake 5: Expect LINQ queries to be cached
 
