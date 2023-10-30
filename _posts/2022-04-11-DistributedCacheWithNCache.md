@@ -268,16 +268,16 @@ using DistributedCacheWithNCache.Responses;
 
 namespace DistributedCacheWithNCache.Services;
 
-public class SettingsService
+public class SlowService
 {
-    public async Task<SettingsResponse> GetAsync(int propertyId)
+    public async Task<Something> DoSomethingSlowlyAsync(int someId)
     {
         // Beep, boop...Aligning satellites...
         await Task.Delay(3 * 1000);
 
-        return new SettingsResponse
+        return new Something
         {
-            PropertyId = propertyId,
+            SomeId = someId,
             Value = "Anything"
         };
     }
@@ -305,11 +305,12 @@ public static class DistributedCacheExtensions
             SlidingExpiration = TimeSpan.FromSeconds(10),
         };
 
-    public static async Task<TObject> GetOrSetValueAsync<TObject>(this IDistributedCache cache,
-                                                                  string key,
-                                                                  Func<Task<TObject>> factory,
-                                                                  DistributedCacheEntryOptions options = null)
-        where TObject : class
+    public static async Task<TObject> GetOrSetValueAsync<TObject>(
+        this IDistributedCache cache,
+        string key,
+        Func<Task<TObject>> factory,
+        DistributedCacheEntryOptions options = null)
+            where TObject : class
     {
         var result = await cache.GetValueAsync<TObject>(key);
         if (result != null)
@@ -324,9 +325,10 @@ public static class DistributedCacheExtensions
         return result;
     }
 
-    private static async Task<TObject> GetValueAsync<TObject>(this IDistributedCache cache,
-                                                              string key)
-        where TObject : class
+    private static async Task<TObject> GetValueAsync<TObject>(
+        this IDistributedCache cache,
+        string key)
+            where TObject : class
     {
         var data = await cache.GetStringAsync(key);
         if (data == null)
@@ -337,11 +339,12 @@ public static class DistributedCacheExtensions
         return JsonConvert.DeserializeObject<TObject>(data);
     }
 
-    private static async Task SetValueAsync<TObject>(this IDistributedCache cache,
-                                                     string key,
-                                                     TObject value,
-                                                     DistributedCacheEntryOptions options = null)
-        where TObject : class
+    private static async Task SetValueAsync<TObject>(
+        this IDistributedCache cache,
+        string key,
+        TObject value,
+        DistributedCacheEntryOptions options = null)
+            where TObject : class
     {
         var data = JsonConvert.SerializeObject(value);
 
@@ -354,7 +357,7 @@ Notice we used Newtonsoft.Json to serialize and deserialize objects.
 
 ### NCache and the IDistributedCache interface
 
-Now, let's use a .NET 6.0 "ASP.NET Core Web App," those extension methods on top of `IDistributedCache`, and NCache to speed up the `SettingsService`.
+Now, let's use a .NET 6.0 "ASP.NET Core Web App," those extension methods on top of `IDistributedCache`, and NCache to speed up the `SlowService`.
 
 First, we need to install the NuGet package `NCache.Microsoft.Extensions.Caching`. This package implements the `IDistributedCache` interface using NCache, of course.
 
@@ -369,14 +372,15 @@ using DistributedCacheWithNCache.Services;
 var (builder, services) = WebApplication.CreateBuilder(args);
 
 services.AddControllers();
-// We add the NCache implementation here...
 services.AddNCacheDistributedCache((options) =>
+//      ^^^^^
+// We add the NCache implementation here...
 {
     options.CacheName = "demoCache";
     options.EnableLogs = true;
     options.ExceptionsEnabled = true;
 });
-services.AddTransient<SettingsService>();
+services.AddTransient<SlowService>();
 
 var app = builder.Build();
 app.MapControllers();
@@ -385,7 +389,7 @@ app.Run();
 
 Notice, we continued to use the same cache name: `demoCache`. And, also we relied on a `Deconstruct` method to have the `builder` and `services` variables deconstructed. I took this idea from Khalid Abuhakmeh's [Adding Clarity To .NET Minimal Hosting APIs](https://khalidabuhakmeh.com/adding-clarity-to-dotnet-minimal-hosting).
 
-Back in the `SettingsService`, we can use the `IDistributedCache` interface injected into the constructor and the extension methods in the `DistributedCacheExtensions` class. Like this,
+Back in the `SlowService`, we can use the `IDistributedCache` interface injected into the constructor and the extension methods in the `DistributedCacheExtensions` class. Like this,
 
 ```csharp
 using DistributedCacheWithNCache.Responses;
@@ -393,37 +397,37 @@ using Microsoft.Extensions.Caching.Distributed;
 
 namespace DistributedCacheWithNCache.Services;
 
-public class SettingsService
+public class SlowService
 {
     private readonly IDistributedCache _cache;
 
-    public SettingsService(IDistributedCache cache)
+    public SlowService(IDistributedCache cache)
     {
         _cache = cache;
     }
 
-    public async Task<SettingsResponse> GetAsync(int propertyId)
+    public async Task<Something> DoSomethingSlowlyAsync(int someId)
     {
-        var key = $"{nameof(propertyId)}:{propertyId}";
-        // Here we wrap the GetSettingsAsync method around the cache logic
-        return await _cache.GetOrSetValueAsync(key, async () => await GetSettingsAsync(propertyId));
+        var key = $"{nameof(someId)}:{someId}";
+        // Here we wrap the DoSomethingAsync method around the cache logic
+        return await _cache.GetOrSetValueAsync(key, async () => await DoSomethingAsync(someId));
     }
 
-    private static async Task<SettingsResponse> GetSettingsAsync(int propertyId)
+    private static async Task<Something> DoSomethingAsync(int someId)
     {
         // Beep, boop...Aligning satellites...
         await Task.Delay(3 * 1000);
 
-        return new SettingsResponse
+        return new Something
         {
-            PropertyId = propertyId,
+            SomeId = someId,
             Value = "Anything"
         };
     }
 }
 ```
 
-Notice, we wrapped the `GetSettingsAsync()` with actual retrieving logic around the caching logic in the `GetOrSetValueAsync()`. At some point, we will have the same data in our caching and storage layers.
+Notice, we wrapped the `DoSomethingAsync()` with actual retrieving logic around the caching logic in the `GetOrSetValueAsync()`. At some point, we will have the same data in our caching and storage layers.
 
 With the caching in place, if we hit one endpoint that uses that service, we will see faster response times after the first call delayed by 3 seconds.
 

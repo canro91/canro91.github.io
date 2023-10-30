@@ -9,9 +9,9 @@ cover-alt: ASP.NET Core Guide for ASP.NET Framework Developers
 
 If you are a C# developer, chances are you have heard about this new .NET Core thing and the new version of the ASP.NET framework. You can continue to work with ASP.NET Web API or any other framework from the old ASP.NET you've known for years. But, ASP.NET Core is here to stay.
 
-In case you missed it, "[ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-3.1) is a cross-platform, high-performance, open-source framework for building modern, cloud-based, Internet-connected applications". "ASP.NET Core is a redesign of ASP.NET 4.x, with architectural changes that result in a leaner, more modular framework".
+In case you missed it, "[ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-3.1) is a cross-platform, high-performance, open-source framework for building modern, cloud-based, Internet-connected applications." "ASP.NET Core is a redesign of ASP.NET 4.x, with architectural changes that result in a leaner, more modular framework."
 
-ASP.NET Core has brought a lot of new features. For example, cross-platform development and deployment, built-in dependency injection, middlewares, health checks, out-of-the-box logging providers, hosted services, API versioning and much more.
+ASP.NET Core has brought a lot of new features. For example, cross-platform development and deployment, built-in dependency injection, middlewares, health checks, out-of-the-box logging providers, hosted services, API versioning, and much more.
 
 Don't worry if you haven't started to worked with ASP.NET Core yet. This is a new framework with lots of new features, but it has brought many other features from the previous version. So, you will feel like home. 
 
@@ -24,7 +24,7 @@ Don't worry if you haven't started to worked with ASP.NET Core yet. This is a ne
 > 5. There's no `Global.asax`, you have `Startup.cs` instead.
 > 6. You have a brand new dependency container.
 
-## Every journey begins with the first step
+## 1. Every journey begins with the first step
 
 <figure>
 <img src="https://source.unsplash.com/bJhT_8nbUA0/800x400" alt="toddler's standing in front of beige concrete stair" />
@@ -46,13 +46,13 @@ If you are adventurous, download and install the [ASP.NET Core developer (SDK)](
 
 ASP.NET Core has been created with other operating systems and IDEs in mind. Now, you can create a project, compile it, and run the tests from the command line.
 
-For example, to create a new empty Web project from the command line, you can use `$ dotnet new web`
+For example, to create a new empty Web project from the command line, you can use `dotnet new web`.
 
-## Where is the packages.config file?
+## 2. Where is the packages.config file?
 
 If you installed a NuGet package into your brand new ASP.NET Core project, one thing you could notice is the missing `packages.config` file. If you remember, it is an xml file that holds the packages installed.
 
-But, where in the world are those packages referenced in ASP.NET Core projects? In the csproj file of your project. 
+But, where in the world are those packages referenced in ASP.NET Core projects? In the csproj file of your project!
 
 Now, a csproj file looks like this:
 
@@ -72,19 +72,19 @@ Now, a csproj file looks like this:
 
 NuGet packages are referenced under `ItemGroup` in a `PackageReference` node. There you are [Newtonsoft.Json](https://www.newtonsoft.com/json)! Goodbye, `packages.config` file!
 
-## Wait! What happened to csproj files?
+## 3. Wait! What happened to csproj files?
 
 Csproj files have been simplified too. Before a csproj file listed every single file in the project. All your files with `.cs` extension were in it. Now, every `.cs` file within the folder structure of the project is part of it. 
 
 Before, things started to get complicated as time went by and the number of files increased. Sometimes, merge conflicts were a nightmare. There were files under version control not included in the csproj file. Were they meant to be excluded because they didn't apply anymore? Or somebody tried to solve a merge conflict and forgot to include them? This problem is no more!
 
-## Where is the Web.config file?
+## 4. Where is the Web.config file?
 
-Another missing file is the `Web.config` file. Instead you have a Json file: the `appsettings.json` file. You can use strings, integers, booleans and arrays in your config file.
+Another missing file is the `Web.config` file. Instead you have a Json file: the `appsettings.json` file. You can use strings, integers, booleans, and arrays in your config file.
 
 There is even support for sections and subsections. Before, if you wanted to achieve that, you had to come up with a naming convention for your keys. For example, prepending the section and subsection name in every key name. 
 
-Probably, you have used `ConfigurationManager` all over the place in your code to read configuration values. Now, you can have a class with properties mapped  to a section or subsection of your config file. And you can inject it into your services.
+Probably, you have used `ConfigurationManager` all over the place in your code to read configuration values. Now, you can have a class with properties mapped to a section or subsection of your config file. And you can inject it into your services.
 
 ```json
 // appsettings.json
@@ -112,17 +112,15 @@ public class YourService
 }
 ```
 
-> _You still need to register that configuration into the dependency container! More on that later._
+You still need to register that configuration into the dependency container. More on that later!
 
 Additionally, you can override keys per environment. You can use the name of your environment in the file name. For example, `appsettings.Development.json` or `appsettings.QA.json`. You can specify the current environment with an environment variable or in the `launchSettings.json` file.
 	
 There's even support for sensitive settings that you don't want to version control: `secrets.json` file. You can manage this file from the command line too.
 
-<div class="message">To learn more about configuration in ASP.NET Core, check <a href="/2020/08/21/HowToConfigureValues/">How to read configuration values in ASP.NET Core</a>.</div>
+## 5. Where is the Global.asax file?
 
-## Where is the Global.asax file?
-
-Yet another missing file: [`Global.asax`](https://stackoverflow.com/questions/2340572/what-is-the-purpose-of-global-asax-in-asp-net). You used it to perform actions on application or session events. For example, when application started or ended. It was the place to do one-time setups, register filters or define routes.
+Yet another missing file: [`Global.asax`](https://stackoverflow.com/questions/2340572/what-is-the-purpose-of-global-asax-in-asp-net). You used it to perform actions on application or session events. For example, when application started or ended. It was the place to do one-time setups, register filters, or define routes.
 
 But now we use the `Startup.cs` file. It contains the initialization and all the settings needed to run the application. An `Startup.cs` file looks like this:
 
@@ -146,23 +144,23 @@ public class Startup
 }
 ```
 
-It has [two methods](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/startup?view=aspnetcore-3.1#the-startup-class): `ConfigureServices` and `Configure`.
+It has [two methods](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/startup?view=aspnetcore-3.1#the-startup-class): `ConfigureServices()` and `Configure()`.
 
 The `Configure()` method replaces the `Global.asax` file. It creates the app's request processing pipeline. This is the place to register a filter or a default route for your controllers.
 
 And the `ConfigureServices()` is to configure the services to be injected into the dependency container...Wait, what?
 
-## A brand new dependency container
+## 6. A brand new dependency container
 
 Prior to ASP.NET Core, if you wanted to apply dependency injection, you had to bring a container and roll the discovery of services for your controllers. For example, you had an xml file to map your interfaces to your classes or did some assembly scanning to do it automatically. 
 
-Now, a brand new dependency container is included out-of-the-box. You can inject dependencies into your services, filters, middlewares and controllers. It lacks some of the features from your favorite dependency container, but it is meant to suit "90% of the scenarios".
+Now, a brand new dependency container is included out-of-the-box. You can inject dependencies into your services, filters, middlewares, and controllers. It lacks some of the features from your favorite dependency container, but it is meant to suit "90% of the scenarios."
 
-If you are familiar with the vocabulary from another containers, `AddTransient`, `AddScoped` and `AddSingleton` ring a bell. These are [the lifetimes](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.1#service-lifetimes) of the injected services, ranging from the shortest to the largest.
+If you are familiar with the vocabulary from another containers, `AddTransient()`, `AddScoped()`, and `AddSingleton()` ring a bell. These are [the lifetimes](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.1#service-lifetimes) of the injected services, ranging from the shortest to the largest.
 
 More specifically, a transient service is created every time a new instance is requested. An scoped service is created once per request. Plus, a singleton service is created only once per the application lifetime.
 
-To register your services, you have to do it inside of the `ConfigureServices` method of the `Startup` class. Also, you bind your classes to a section or subsection of the config file here.
+To register your services, you have to do it inside of the `ConfigureServices()` method of the `Startup` class. Also, you bind your classes to a section or subsection of the config file here.
 
 ```csharp
 // In the Startup.cs file
@@ -176,8 +174,14 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-## Conclusion
+## 7. Conclusion
 
 You have only scratched the surface of ASP.NET Core. You have learned about some of the changes ASP.NET Core has brought. But, if you haven't started with ASP.NET Core, go and try it. You may be surprise by how things are done now.
 
-> _This post was originally published on [exceptionnotfound.net](https://exceptionnotfound.net/asp-net-core-guide-for-asp-net-framework-developers/) as part of Guest Writer Program. I'd like to thank Matthew for the editing of this post._ 
+_**UPDATE (Oct 2023)**: I wrote this post back in the day when ASP.NET Core was brand new. This is the post I wish I had read back then. In recent versions, ASP.NET Core simplified configurations by ditching Startup.cs files. All other concepts remain the same._
+
+_This post was originally published on [exceptionnotfound.net](https://exceptionnotfound.net/asp-net-core-guide-for-asp-net-framework-developers/) as part of Guest Writer Program. Thanks Matthew for editing this post._
+
+For more ASP.NET Core content, read [how to read configuration values]({% post_url 2020-08-21-HowToConfigureValues %}), [how to create a caching layer]({% post_url 2020-06-29-HowToAddACacheLayer %}), and [how to create a CRUD API with Insight.Database]({% post_url 2020-05-01-InsightDatabase %}).
+
+_Happy coding!_

@@ -4,39 +4,58 @@ title: "TIL: How to add gzip compression to ASP.NET Core API responses"
 tags: todayilearned asp.net
 ---
 
-Today, I got the report that one API endpoint took minutes to respond. When I checked it, it returned hundreds of huge complex configuration objects. Imagine an object to customize booking pages in a reservation system. From branding colors to copy text to hotel configurations. This is how to add gzip compression to ASP.NET Core API responses.
+Today, I got the report that one API endpoint took minutes to respond. It turned out that it returned hundreds of large complex objects. Those objects contained branding colors, copy text, and hotel configurations in a reservation system. This is how to add response compression in ASP.NET Core 6.0.
 
-**To compress ASP.NET Core API responses, install the NuGet package "Microsoft.AspNetCore.ResponseCompression" and add UseResponseCompression() in the Configure() method of the Startup class.**
+**To compress responses with ASP.NET Core, register the default compression providers into the dependencies container with the UseResponseCompression() method.**
 
-```csharp
-public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-{
-    app.UseResponseCompression();
-    
-    // Rest of method...
-}
-```
-
-Then, configure the compression level with the `GzipCompressionProviderOptions` inside the `ConfigureServices()` method. And register the `GzipCompressionProvider` in the options of the `AddResponseCompression()` method.
+Something like this,
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.Configure<GzipCompressionProviderOptions>(options => 
-    {
-        options.Level = CompressionLevel.Fastest;
-    });
-    services.AddResponseCompression(options =>
-    {
-        options.Providers.Add<GzipCompressionProvider>();
-    });
-    
-    // Rest of method...
-}
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddControllers();
+builder.Services.AddResponseCompression();
+//               ^^^^^
+
+var app = builder.Build();
+app.UseResponseCompression();
+//  ^^^^^
+app.MapControllers();
+app.Run();
 ```
 
-The lowest hanging fruit to speed up this endpoint was to create a separate view model holding the few properties the consuming side needed. And a simple extension method `MapToMyNewViewModel()` did the trick.
+If we don't specify any compression provider, ASP.NET Core uses a default one.
 
-Voilà! That's how to add gzip compression to ASP.NET Core responses. That's what I learned today.
+If we want gzip compression, then let's register the `GzipCompressionProvider` inside `AddResponseCompression()` and set its compression level by configuring the `GzipCompressionProviderOptions`,
 
-_Source_: [Response compression in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/performance/response-compression?view=aspnetcore-3.1#gzip-compression-provider)
+```csharp
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddControllers();
+
+builder.Services.AddResponseCompression(options =>
+{
+    options.Providers.Add<GzipCompressionProvider>();
+    //                ^^^^^
+});
+
+builder.services.Configure<GzipCompressionProviderOptions>(options => 
+{
+    options.Level = CompressionLevel.Fastest;
+    //      ^^^^^
+});
+
+var app = builder.Build();
+app.UseResponseCompression();
+// ^^^^^
+app.MapControllers();
+app.Run();
+```
+
+For my slow endpoint, the easiest solution to speed it up was mapping my huge complex object to a new view model that only contained the properties the client side needed. I rolled a simple extension method `MapToMyNewSimplifiedViewModel()` for that.
+
+Voilà! That's how to add gzip compression to responses with ASP.NET Core 6.0. That's what I learned today.
+
+_**UPDATE (Oct 2023)**: In previous versions of ASP.NET Core, we needed the `Microsoft.AspNetCore.ResponseCompression` NuGet package. It's deprecated. ASP.NET Core has response compression built in now. We don't need NuGet packages for this._
+
+For more ASP.NET Core content, check [how to read configuration values]({% post_url 2020-08-21-HowToConfigureValues %}), [how to create a caching layer]({% post_url 2020-06-29-HowToAddACacheLayer %}), and [how to use background services with Hangfire]({% post_url 2022-12-06-BackgroundServicesAndLiteHangfire %}).
+
+_Source_: [Response compression in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/performance/response-compression?view=aspnetcore-6.0#gzip-compression-provider)
