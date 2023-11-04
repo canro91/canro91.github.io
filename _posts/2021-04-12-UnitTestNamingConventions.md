@@ -6,11 +6,11 @@ cover: Cover.png
 cover-alt: 4 test naming conventions
 ---
 
-From our previous post, we learned about [4 common mistakes]({% post_url 2021-03-29-UnitTestingCommonMistakes %}) we make when writing our first unit tests. One of them is not to follow a naming convention. Let's see four naming conventions for our unit tests.
+From our previous post, we learned about [four common mistakes]({% post_url 2021-03-29-UnitTestingCommonMistakes %}) we make when writing our first unit tests. One of them is not to follow a naming convention. Let's see four naming conventions for our unit tests.
 
 **Test names should tell the scenario under test and the expected result. Writing long names is acceptable since test names should show the purpose behind what they're testing. When writing tests, prefer good test names over assertion messages.**
 
-These are 4 common naming conventions we can use. Let's continue to use Stringie, a (fictional) library to manipulate strings. Stringie has a `Remove()` method to remove a substring from the beginning or end of an input string.
+These are four common naming conventions we can use. Let's continue to use Stringie, a (fictional) library to manipulate strings. Stringie has a `Remove()` method to remove a substring from the beginning or end of an input string.
 
 ## 1. UnitOfWork_Scenario_ExpectedResult
 

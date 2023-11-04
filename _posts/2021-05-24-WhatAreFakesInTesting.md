@@ -180,9 +180,9 @@ The `AlwaysAvailableStockService` fake is there to provide a value for our test.
 
 Again, stubs provides values and mocks are used to assert.
 
-**When to use fakes in our tests?** Use fakes when in your unit tests when you depend on external systems you don't control. For example, third-party APIs and message queues. Assert the right call were made or the right messages were sent.
+**Let's use fakes in our unit tests when we depend on external systems we don't control.** For example, third-party APIs and message queues. Let's assert the right call were made or the right messages were sent.
 
-Notice, we used [the UnitOfWork_Scenario_ExpectedResult naming convention]({% post_url 2021-04-12-UnitTestNamingConventions %}) in our test. For the expect result part, we used the keyword "Calls". It shows we expect the `OrderService` to call a payment gateway to charge credit cards.
+In our test, we used [the UnitOfWork_Scenario_ExpectedResult naming convention]({% post_url 2021-04-12-UnitTestNamingConventions %}). For the expect result part, we used the keyword "Calls". It shows we expect the `OrderService` to call a payment gateway to charge credit cards.
 
 ## Other types of fakes: dummies, stubs, spies and mocks
 
@@ -198,7 +198,9 @@ The book [xUnit Patterns](http://xunitpatterns.com/Mocks,%20Fakes,%20Stubs%20and
 
 **Mocks are testable replacements that check if they were used correctly**. We use mocks when we know in advanced the parameters the code under test will use. With mocks, we set the expected parameters to be used before calling the code under test. Then, we use a verification method in the mock itself to check if the mock was called with those exact same parameters.
 
-Don't get confused with all these terms. Let's stick to the types of fakes presented in the book [The Art of Unit Testing](https://www.manning.com/books/the-art-of-unit-testing-second-edition) ([My takeaways here]({% post_url 2020-03-06-TheArtOfUnitTestingReview %})). In there, there are only two types of fakes or test doubles: stubs and mocks. Everything else is a fake. Easier!
+Let's not get confused with all these terms. Let's stick to the types of fakes presented in the book [The Art of Unit Testing](https://www.manning.com/books/the-art-of-unit-testing-second-edition) ([My takeaways here]({% post_url 2020-03-06-TheArtOfUnitTestingReview %})). In there, there are only two types of fakes or test doubles: stubs and mocks. Everything else is a fake. Easier!
+
+## Parting thoughts
 
 Voilà! That's what fakes are in unit testing. Remember, stubs provide values for our tests and mocks assert that calls were made. That's the difference between them.
 

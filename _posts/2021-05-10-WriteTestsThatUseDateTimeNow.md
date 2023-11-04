@@ -17,38 +17,37 @@ using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace UsingBuilders
+namespace UsingBuilders;
+
+[TestClass]
+public class CreditCardValidationTests
 {
-    [TestClass]
-    public class CreditCardValidationTests
+    [TestMethod]
+    public void CreditCard_ExpiredYear_ReturnsInvalid()
     {
-        [TestMethod]
-        public void CreditCard_ExpiredYear_ReturnsInvalid()
-        {
-            var validator = new CreditCardValidator();
+        var validator = new CreditCardValidator();
 
-            var creditCard = new CreditCardBuilder()
-                            .WithExpirationYear(DateTime.Now.AddYears(-1).Year)
-                            //                  ^^^^^
-                            .Build();
-            var result = validator.TestValidate(request);
+        var creditCard = new CreditCardBuilder()
+                        .WithExpirationYear(DateTime.Now.AddYears(-1).Year)
+                        //                  ^^^^^
+                        .Build();
+        var result = validator.TestValidate(request);
 
-            result.ShouldHaveAnyValidationError();
-        }
+        result.ShouldHaveAnyValidationError();
+    }
 
-        [TestMethod]
-        public void CreditCard_ExpiredMonth_ReturnsInvalid()
-        {
-            var validator = new CreditCardValidator();
+    [TestMethod]
+    public void CreditCard_ExpiredMonth_ReturnsInvalid()
+    {
+        var validator = new CreditCardValidator();
 
-            var creditCard = new CreditCardBuilder()
-                            .WithExpirationMonth(DateTime.Now.AddMonths(-1).Month)
-                            //                   ^^^^^                            
-                            .Build();
-            var result = validator.TestValidate(request);
+        var creditCard = new CreditCardBuilder()
+                        .WithExpirationMonth(DateTime.Now.AddMonths(-1).Month)
+                        //                   ^^^^^                            
+                        .Build();
+        var result = validator.TestValidate(request);
 
-            result.ShouldHaveAnyValidationError();
-        }
+        result.ShouldHaveAnyValidationError();
     }
 }
 ```
@@ -61,7 +60,7 @@ We want our tests to be deterministic. We learned that from [Unit Testing 101]({
 
 To replace the `DateTime.Now` in our tests, we need seams.
 
-**A seam is a place to introduce testable behavior in our code under test. Two techniques to introduce seams are interfaces to declare dependencies in the constructor of a service and optional setter methods to plug in testable values.**.
+**A seam is a place to introduce testable behavior in our code under test. Two techniques to introduce seams are interfaces to declare dependencies in the constructor of a service and optional setter methods to plug in testable values.**
 
 Let's see these two techniques to replace the `DateTime.Now` in our tests.
 
@@ -140,6 +139,7 @@ public class CreditCardValidationTests
 
         var request = new CreditCardBuilder()
                         .WithExpirationYear(when.AddYears(-1).Year)
+                        //                  ^^^^
                         .Build();
         var result = validator.TestValidate(request);
 
@@ -156,6 +156,7 @@ public class CreditCardValidationTests
 
         var request = new CreditCardBuilder()
                         .WithExpirationMonth(when.AddMonths(-1).Month)
+                        //                   ^^^^
                         .Build();
         var result = validator.TestValidate(request);
 
@@ -318,5 +319,7 @@ public void CreditCard_ExpiredYear_ReturnsInvalid()
 Voilà! That's how we can write more reliable tests that use the current date and time. You can either create an interface or pass a fixed date.
 
 If you're new to unit testing, read [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}) and [4 test naming conventions]({% post_url 2021-04-12-UnitTestNamingConventions %}). For more advanced tips on unit testing, check my posts on [how to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %}) and [how to write fakes with Moq]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}).
+
+And don't miss the rest of my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}) where I cover more subjects like this one.
 
 _Happy testing!_

@@ -14,7 +14,7 @@ A passing test isn't always the only thing to look for. It's important to see ou
 
 Let's continue with the same example from our previous post on [how to write good unit tests by reducing noise and using obvious test values]({% post_url 2020-11-02-UnitTestingTips %}).
 
-From our last example, we had a controller to create, update and suspend user accounts. Inside its constructor, this controller validated some email addresses from an injected configuration object.
+From our last example, we had a controller to create, update, and suspend user accounts. Inside its constructor, this controller validated some email addresses from an injected configuration object.
 
 After we refactored our test from the last post, we ended up with this:
 
@@ -31,9 +31,12 @@ public void AccountController_SenderEmailIsNull_ThrowsException()
 
     Assert.ThrowsException<ArgumentNullException>(() =>
         MakeAccountController(emailConfig));
+        // ^^^^^
 }
 
-private AccountController MakeAccountController(IOptions<EmailConfiguration> emailConfiguration)
+private AccountController MakeAccountController(
+    IOptions<EmailConfiguration> emailConfiguration)
+    // ^^^^^
 {
     var mapper = new Mock<IMapper>();
     var logger = new Mock<ILogger<AccountController>>();
@@ -50,6 +53,7 @@ private AccountController MakeAccountController(IOptions<EmailConfiguration> ema
             accountPersonService.Object,
             emailService.Object,
             emailConfiguration,
+            // ^^^^^
             httpContextAccessor.Object);
 }
 ```
@@ -83,7 +87,9 @@ private AccountController MakeAccountController(IOptions<SomeNewConfig> someNewC
     return CreateAccountController(emailConfig.Object, someNewConfig);
 }
 
-private AccountController MakeAccountController(IOptions<EmailConfiguration> emailConfig, IOptions<SomeNewConfig> someNewConfig)
+private AccountController MakeAccountController(
+    IOptions<EmailConfiguration> emailConfig,
+    IOptions<SomeNewConfig> someNewConfig)
 {
     // It calls the constructor with mocks, except for emailConfig and someNewConfig
 }
@@ -104,13 +110,15 @@ public class AccountController : Controller
       IHttpContextAccessor httpContextAccessor,
       IOptions<SomeNewConfig> someNewConfig)
   {
-      var emailConfiguration = emailConfig?.Value ?? throw new ArgumentNullException($"EmailConfiguration");
+      var emailConfiguration = emailConfig?.Value
+            ?? throw new ArgumentNullException($"EmailConfiguration");
       if (string.IsNullOrEmpty(emailConfiguration.SenderEmail))
       {
           throw new ArgumentNullException($"SenderEmail");
       }
 
-      var someNewConfiguration = someNewConfig?.Value ?? throw new ArgumentNullException($"SomeNewConfig");
+      var someNewConfiguration = someNewConfig?.Value
+            ?? throw new ArgumentNullException($"SomeNewConfig");
       if (string.IsNullOrEmpty(someNewConfiguration.SomeKey)
       {
           throw new ArgumentNullException($"SomeKey");
@@ -127,22 +135,23 @@ I ran the test and it passed. Move on! But...Wait! There's something wrong with 
 
 Of course, that test is passing. The code throws an `ArgumentNullException`. But, that exception is coming from the wrong place. It comes from the validation for the email configuration, not from our new validation.
 
-I forgot to use a valid email configuration in the new `MakeAccountController()` builder method. I used a mock reference without setting up any values. I only realized that after getting my code reviewed. _Point for the code review!_
+I forgot to use a valid email configuration in the new `MakeAccountController()` builder method. I used a mock reference without setting up any values. I only realized that after getting my code reviewed. Point for the code review!
 
 ```csharp
 private AccountController MakeAccountController(IOptions<SomeNewConfig> someNewConfig)
 {
     var emailConfig = new Mock<IOptions<EmailConfiguration>());
+    //  ^^^^^
     // Here we need to setup a valid EmailConfiguration
     return CreateAccountController(emailConfig.Object, someNewConfig);
 }
 ```
 
-**Make sure to start always by writing a failing test. And, this test should fail for the right reasons.**
+**Let's make sure to start always by writing a failing test. And, this test should fail for the right reasons.**
 
-If you write your tests after writing your production code, comment some parts of your production code to see if your tests fail. Or change the assertions on purpose.
+If we write our tests after writing our production code, let's comment some parts of our production code to see if our tests fail or change the assertions on purpose.
 
-When you make a failed test pass, you're testing the test. You're making sure it fails and passes when it should. You know you aren't writing buggy tests or introducing false positives into your test suite.
+When we make a failed test pass, we're testing the test. We're making sure it fails and passes when it should. We know we aren't writing buggy tests or introducing false positives into our test suite.
 
 A better test for our example would check the exception message. Like this:
 

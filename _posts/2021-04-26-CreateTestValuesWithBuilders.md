@@ -8,55 +8,54 @@ cover-alt: How to create test values with the Builder pattern
 
 Last time, we learned [how to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %}) by reducing noise inside our tests. We used a factory method to simplify complex setup scenarios in our tests. Let's use the Builder pattern to create test data for our unit tests.
 
-**With the Builder pattern, an object creates another object. A builder has methods to change the state of an object and a Build() method to return that object ready to use. The Builder pattern is used to create input data inside unit tests**.
+**With the Builder pattern, an object creates another object. A builder has methods to change the state of an object and a Build() method to return that object ready to use. Often, the Builder pattern is used to create input data inside unit tests**.
 
 ## Tests without Builders
 
-To see the Builder pattern in action, let's validate credit cards. We will use the [FluentValidation library](https://fluentvalidation.net/) to create a validator class. We want to check if a credit card is expired or not. We can write these tests.
+To see the Builder pattern in action, let's validate credit cards. We will use the [FluentValidation library](https://fluentvalidation.net/) to create a validator class. We want to check if a credit card is expired or not. We can write these tests,
 
 ```csharp
 using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace UsingBuilders
+namespace UsingBuilders;
+
+[TestClass]
+public class CreditCardValidationTests
 {
-    [TestClass]
-    public class CreditCardValidationTests
+    [TestMethod]
+    public void CreditCard_ExpiredYear_ReturnsInvalid()
     {
-        [TestMethod]
-        public void CreditCard_ExpiredYear_ReturnsInvalid()
+        var validator = new CreditCardValidator();
+
+        var creditCard = new CreditCard
         {
-            var validator = new CreditCardValidator();
+            CardNumber = "4242424242424242",
+            ExpirationYear = DateTime.Now.AddYears(-1).Year,
+            ExpirationMonth = DateTime.Now.Month,
+            Cvv = 123
+        };
+        var result = validator.TestValidate(creditCard);
 
-            var creditCard = new CreditCard
-            {
-                CardNumber = "4242424242424242",
-                ExpirationYear = DateTime.Now.AddYears(-1).Year,
-                ExpirationMonth = DateTime.Now.Month,
-                Cvv = 123
-            };
-            var result = validator.TestValidate(creditCard);
+        result.ShouldHaveAnyValidationError();
+    }
 
-            result.ShouldHaveAnyValidationError();
-        }
+    [TestMethod]
+    public void CreditCard_ExpiredMonth_ReturnsInvalid()
+    {
+        var validator = new CreditCardValidator();
 
-        [TestMethod]
-        public void CreditCard_ExpiredMonth_ReturnsInvalid()
+        var creditCard = new CreditCard
         {
-            var validator = new CreditCardValidator();
+            CardNumber = "4242424242424242",
+            ExpirationYear = DateTime.Now.Year,
+            ExpirationMonth = DateTime.Now.AddMonths(-1).Month,
+            Cvv = 123
+        };
+        var result = validator.TestValidate(creditCard);
 
-            var creditCard = new CreditCard
-            {
-                CardNumber = "4242424242424242",
-                ExpirationYear = DateTime.Now.Year,
-                ExpirationMonth = DateTime.Now.AddMonths(-1).Month,
-                Cvv = 123
-            };
-            var result = validator.TestValidate(creditCard);
-
-            result.ShouldHaveAnyValidationError();
-        }
+        result.ShouldHaveAnyValidationError();
     }
 }
 ```
@@ -77,7 +76,7 @@ One alternative to abstract the creation of `CreditCard` objects is to use an ob
 
 **An object mother is a factory method or property holding a ready-to-use input object. Each test changes the properties of an object mother to match the scenario under test**. 
 
-For our example, we can create a `CreditCard` property with valid defaults and tweak it inside each test.
+For our example, let's create a `CreditCard` property with valid defaults and tweak it inside each test.
 
 Our tests with an object mother for credit cards will look like this,
 
@@ -90,10 +89,10 @@ public class CreditCardValidationTests
     {
         var validator = new CreditCardValidator();
 
-        // Instead of creating a new card object each time,
-        // we rely on this new CreditCard property
         var request = CreditCard;
         //            ^^^^^
+        // Instead of creating a new card object each time,
+        // we rely on this new CreditCard property
         request.ExpirationYear = DateTime.Now.AddYears(-1).Year;
         var result = validator.TestValidate(request);
 
@@ -136,7 +135,7 @@ Notice the `CreditCard` property in our test class and how we updated its values
 
 ## What are Test Builders?
 
-Object mothers are fine if you don't have lots of variations of the object being constructed. But, since this is a post on Builder pattern, let's create a Builder for credit cards.
+Object mothers are fine if we don't have lots of variations of the object being constructed. But, since this is a post on Builder pattern, let's create a Builder for credit cards.
 
 **A Builder is a regular class with two types of methods: a Build() method and one or more chainable WithX() methods.**
 
@@ -146,7 +145,7 @@ The `WithX()` methods update one or more properties of the object being built. I
 
 These `WithX()` methods return a reference to the builder itself. This way, we can chain many `WithX()` methods one after the other. One for each property we want to change.
 
-For our example, let's create a `CreditCardBuilder` with three methods: `WithExpirationYear()`, `WithExpirationMonth()` and `Build()`.
+For our example, let's create a `CreditCardBuilder` with three methods: `WithExpirationYear()`, `WithExpirationMonth()`, and `Build()`.
 
 ```csharp
 public class CreditCardBuilder
@@ -233,8 +232,8 @@ public class CreditCardValidationTests
 
         // Now, instead of creating cards with the new keyword
         // or using object mothers, we use a builder
-        //                   vvvvv
         var creditCard = new CreditCardBuilder()
+        //                   ^^^^^
                         .WithExpirationYear(DateTime.Now.AddYears(-1).Year)
                         .Build();
         var result = validator.TestValidate(creditCard);
@@ -247,8 +246,8 @@ public class CreditCardValidationTests
     {
         var validator = new CreditCardValidator();
 
-        //                   vvvvv
         var creditCard = new CreditCardBuilder()
+        //                   ^^^^^
                         .WithExpirationMonth(DateTime.Now.AddMonths(-1).Month)
                         .Build();
         var result = validator.TestValidate(creditCard);
@@ -275,8 +274,8 @@ public class BookRoomTests
 
         var request = new BookingRequestBuilder()
                         .WithGuest("John Doe")
-                        //              vvvvv
                         .WithCreditCard(new CreditCardBuilder()
+                        //              ^^^^^
                                             .ExpiredCreditCard()
                                             .Build())
                         .Build();
@@ -305,6 +304,7 @@ public class BookRoomTests
                         .WithCreditCard(new CreditCardBuilder()
                                             .ExpiredCreditCard())
                                             // ^^^^^
+                                            // No extra .Build() here
                         .Build();
 
         Assert.ThrowsException<InvalidCreditCardException>(()

@@ -6,7 +6,7 @@ cover: Cover.png
 permalink: UnitTesting
 ---
 
-Do you want to start writing unit tests? But, you don’t know where to start? Do you want to adopt unit testing in your team? I can help you.
+Do you want to start writing unit tests? But, you don’t know where to start? Do you want to adopt unit testing in your team? I can help you!
 
 If you’re a beginner or a seasoned developer new to unit testing, this is the place for you. No prerequisites are needed.
 

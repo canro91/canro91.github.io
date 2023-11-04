@@ -6,9 +6,9 @@ cover: Cover.png
 cover-alt: "Unit Testing Best Practices"
 ---
 
-In the last couple of months, we've covered the subject of Unit Testing quite a lot. From [how to write your first unit tests]({% post_url 2021-03-15-UnitTesting101 %}) to [create test data with Builders]({% post_url 2021-04-26-CreateTestValuesWithBuilders %}) to [how to write better fakes]({% post_url 2021-06-07-TipsForBetterStubsAndMocks %}). I hope I've helped you to start writing unit tests or write even better unit tests.
+As part of this series on unit testing, we've covered a lot of subjects. From [how to write your first unit tests]({% post_url 2021-03-15-UnitTesting101 %}) to [create test data with Builders]({% post_url 2021-04-26-CreateTestValuesWithBuilders %}) to [how to write better fakes]({% post_url 2021-06-07-TipsForBetterStubsAndMocks %}). I hope I've helped you to start writing unit tests or write even better unit tests.
 
-This time, I'm bringing some of the tips and best practices from my previous posts in one place. 
+This time, I'm bringing some of the tips and best practices from my previous posts in one single place. 
 
 ## 1. On Naming
 
@@ -22,7 +22,7 @@ This time, I'm bringing some of the tips and best practices from my previous pos
 
 **Don't use filler words like "Success" or "IsCorrect" in test names**. Instead, tell what "success" and "correct" means for that test. Is it a successful test because it doesn't throw exceptions? Is it successful because it returns a value different from null? Make your test names easy to understand.
 
-<div class="message">If you want to learn more about naming your tests, check <a href="/2021/04/12/UnitTestNamingConventions">How to name your test: 4 naming conventions</a> where we write test names for the same methods using 4 different naming conventions.</div>
+<div class="message">If you want to learn more about naming your tests, check <a href="/2021/04/12/UnitTestNamingConventions">How to name your test: four naming conventions</a> where we write test names for the same methods using for different naming conventions.</div>
 
 ## 2. On Organization
 
@@ -54,7 +54,7 @@ This time, I'm bringing some of the tips and best practices from my previous pos
 
 **Prefer assertion methods for strings** like `Contains()`, `StartsWith()` and `Matches()` instead of exactly comparing two strings.
 
-<div class="message">If you want to learn more about writing better assertions, check <a href="/2021/03/29/UnitTestingCommonMistakes/">4 common unit testing mistakes</a> where we learn not to duplicate logic in your assertions.</div>
+<div class="message">If you want to learn more about writing better assertions, check <a href="/2021/03/29/UnitTestingCommonMistakes/">four common unit testing mistakes</a> where we learn not to duplicate logic in your assertions.</div>
 
 ## 4. On Test Data
 
@@ -88,7 +88,7 @@ This time, I'm bringing some of the tips and best practices from my previous pos
 
 **Use descriptive names in your fakes.** Name your stubs to indicate the value they return or the exception they throw. For example, `ItemOutOfStockStockService` and `FixedDateClock`.
 
-<div class="message">Do you know what are stubs and mocks? Check <a href="/2021/05/24/WhatAreFakesInTesting">What are fakes in unit testing</a> to learn the difference between them. Check these <a href="/2021/06/07/TipsForBetterStubsAndMocks">Tips to write better stubs and mocks</a>.</div>
+<div class="message">Do you know what are stubs and mocks? Check <a href="/2021/05/24/WhatAreFakesInTesting">What are fakes in unit testing?</a> to learn the difference between them. Check these <a href="/2021/06/07/TipsForBetterStubsAndMocks">Tips to write better stubs and mocks</a>.</div>
 
 Voilà! Those are my best practices to write ~~better~~ great unit tests. Don't forget to always start writing failing tests. And, make sure they fail for the right reasons. If you don't follow Test-Driven Development, comment some of your code under test or change the assertions on purpose to see your tests failing.
 
