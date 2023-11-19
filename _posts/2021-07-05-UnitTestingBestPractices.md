@@ -22,7 +22,7 @@ This time, I'm bringing some of the tips and best practices from my previous pos
 
 **Don't use filler words like "Success" or "IsCorrect" in test names**. Instead, tell what "success" and "correct" means for that test. Is it a successful test because it doesn't throw exceptions? Is it successful because it returns a value different from null? Make your test names easy to understand.
 
-<div class="message">If you want to learn more about naming your tests, check <a href="/2021/04/12/UnitTestNamingConventions">How to name your test: four naming conventions</a> where we write test names for the same methods using for different naming conventions.</div>
+<div class="message">If you want to learn more about naming your tests, check <a href="/2021/04/12/UnitTestNamingConventions">How to name your test: four naming conventions</a> where we write test names for the same methods using four different naming conventions.</div>
 
 ## 2. On Organization
 

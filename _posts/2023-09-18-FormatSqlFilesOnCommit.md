@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to automatically format SQL files with Git and Poor Man's T-SQL Formatter"
-tags: sql productivity showdev
+tags: sql git productivity showdev
 cover: Cover.png
 cover-alt: "Rules on a workbench" 
 ---

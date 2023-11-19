@@ -19,7 +19,7 @@ These tests belong to an email component in a Property Management Solution. This
 These are two tests to check we don't try to send an email to the same addresses. Let's pay attention to the class name and method under test.
 
 ```csharp
-public class SenEmailCommandHandlerTests
+public class SendEmailCommandHandlerTests
 {
     [Fact]
     public void CreateRecipients_NoDuplicates_ReturnsSameRecipients()
@@ -88,15 +88,15 @@ namespace MyCoolProject;
 
 public class SendEmailCommandHandler : IRequestHandler<SendEmailCommand, TrackingId>
 {
-    private readonly IEmailRepository _dispatchRepository;
+    private readonly IEmailRepository _emailRepository;
     private readonly ILogger<SendEmailCommandHandler> _logger;
 
     public CreateDispatchCommandHandler(
-        IDispatchRepository dispatchRepository,
+        IEmailRepository emailRepository,
         ILogger<CreateDispatchCommandHandler> logger)
     {
 
-        _dispatchRepository = dispatchRepository;
+        _emailRepository = emailRepository;
         _logger = logger;
     }
 

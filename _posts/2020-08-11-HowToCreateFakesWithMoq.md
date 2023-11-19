@@ -61,7 +61,7 @@ To test this service, let's create replacements for the real payment gateway and
 
 For our test name, let's follow the naming convention from [The Art of Unit Testing]({% post_url 2020-03-06-TheArtOfUnitTestingReview %}). With this naming convention, a test name shows the entry point, the scenario, and the expected result separated by underscores.
 
-Of course, that's not the only naming convention. There are other ways to name our tests]({% post_url 2021-04-12-UnitTestNamingConventions %}).
+Of course, that's not the only naming convention. There are other ways to [name our tests]({% post_url 2021-04-12-UnitTestNamingConventions %}).
 
 ```csharp
 [TestClass]

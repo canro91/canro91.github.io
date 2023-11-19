@@ -57,7 +57,7 @@ Technically, the objects inside the Domain were already there. By the way, we ca
 
 That's layering to the extreme. All those artifacts and about three mapping methods between layers are waaay too much to only read unprocessed entities from a database. Arrrggg! Too much complexity. We're only reading data, not loading domain objects to call methods on them.
 
-I believe simple things should be simple to achieve.
+I believe **simple things should be simple to achieve**.
 
 ## Query Services: A simpler alternative
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TIL: How to declutter sites with uBlock Origin filters"
-tags: til productivity
+tags: todayilearned productivity
 cover: Cover.png
 cover-alt: "A tidy office desk" 
 ---
