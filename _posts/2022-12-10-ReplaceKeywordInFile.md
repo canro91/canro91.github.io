@@ -29,16 +29,24 @@ After renaming my files by hand, I thought I could have used the command line to
 This is how to replace "Old" with "New" in all `.cs` files, [Source](https://stackoverflow.com/a/12517022)
 
 ```bash
-grep -irl --include \*.cs "Old" | xargs sed -i 's/Old/New/g'
+grep -irl --include \*.cs "Old" | xargs sed -bi 's/Old/New/g'
 ```
 
 With the `grep` command, we look for all `.cs` files (`--include \*.cs`) containing the "Old" keyword, no matter the case (`-i` flag), inside all child folders (`-r`), showing only the file path (`-l` flag).
 
 We could use the first command, before the pipe, to only list the `.cs` files containing a keyword.
 
-Then, with the `sed` command, we replace the file content in place (`-i` flag), changing all occurrences of "Old" with "New" (`s/Old/New/g`). Notice the `g` option in the replacement pattern.
+Then, with the `sed` command, we replace the file content in place (`-i` flag), changing all occurrences of "Old" with "New" (`s/Old/New/g`). Notice the `g` option in the replacement pattern. To avoid messing with line endings, we use the `-b` flag. [Source](https://stackoverflow.com/a/38998744)
 
-This first command does what Visual Studio "Find in Files" does.
+If we use spaces in filenames, that's weird in source files but just in case, we need to tell `grep` and `sed` to use a different separator,
+
+```bash
+grep -irlZ --include \*.cs "Old" | xargs -0 sed -bi 's/Old/New/g'
+```
+
+This time, we pass `Z` to `grep` and `-0` to `xargs`. [Source](https://stackoverflow.com/a/17296705)
+
+This first command and its variation does what Visual Studio "Find in Files" does.
 
 ### Rename 'old' with 'new' in filenames
 
@@ -69,7 +77,7 @@ Then, we feed the `sed` command to generate new names replacing "Old" with "New.
 
 With the last part, we split the `sed` output by the newline character and passed groups of two filenames to the `mv` command to finally rename the files.
 
-Another alternative to sed followed by mv would be to use the [rename command](http://plasmasturm.org/code/rename/), like this,
+Another alternative to `sed` followed by `mv` would be to use the [rename command](http://plasmasturm.org/code/rename/), like this,
 
 ```bash
 find . -path ./TestCoverageReport -prune -type f -o -name "*Old*" \
