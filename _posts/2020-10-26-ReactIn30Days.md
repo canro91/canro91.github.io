@@ -6,11 +6,11 @@ cover: LearnReact.png
 cover-alt: Resources to learn React in 30 days
 ---
 
-Do you want to learn React and you don't where to start? Don't look for any other curated list of resources. Let's learn React in 30 days.
+Do you want to learn React and you don't where to start? Don't look for any other curated list of resources. Let's learn React in 30 days!
 
-React is a JavaScript library to build user interfaces. It doesn't do a lot of things. It renders elements on the screen. Period. React isn't a Swiss-army knife framework full of functionalities.
+React is a JavaScript library to build user interfaces. It doesn't do a lot of things. It renders elements on the screen. Period! React isn't a Swiss-army knife framework full of functionalities.
 
-**To learn React in 30 days, start learning to create components and understand the difference between props and state. Next, learn about hooks and how to style components. After that, learn about managing state with hooks. But, don't rush to use Redux from the beginning.**
+**To learn React in 30 days, start learning to create components and understand the difference between props and state. Next, learn about hooks and how to style components. After that, learn about managing state with hooks. But don't rush to use Redux from the beginning.**
 
 <figure>
 <img src="https://images.unsplash.com/photo-1485783522162-1dbb8ffcbe5b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop&ixid=eyJhcHBfaWQiOjF9" alt="Building a rocket ship" width="800">
@@ -18,11 +18,11 @@ React is a JavaScript library to build user interfaces. It doesn't do a lot of t
 </figcaption>
 </figure>
 
-Instead of reading books from cover to cover or passively watching YouTube videos, let's learn React by doing. Let's recreate examples, build mini-projects and stop copy-pasting. If you're instered in learning strategies, check my takeaways from the [Ultralearning book]({% post_url 2020-07-14-UltralearningTakeaways %}).
+Instead of reading books from cover to cover or passively watching YouTube videos, let's learn React by doing, by getting our hands dirty. Let's recreate examples, build mini-projects, and stop copy-pasting. If you're instered in learning strategies, check my takeaways from the [Ultralearning book]({% post_url 2020-07-14-UltralearningTakeaways %}).
 
-These are some resources to learn React, its prerequisites and related subjects.
+These are some resources to learn React, its prerequisites, and related subjects.
 
-## Prerequisites
+## 1. Prerequisites
 
 Before starting to work with React, make sure to know about flexbox in CSS and ES6 JavaScript features. 
 
@@ -48,7 +48,7 @@ Some of these projects include the backend side using Node.js. You can find more
 
 Don't mess your environment with different versions of Node. Follow [Don't Install Node Until You've Read This](https://youknowfordevs.com/2018/07/01/dont-install-node-until-youve-read-this.html) and [Your Development Workflow Just Got Better, With Docker Compose](https://youknowfordevs.com/2018/07/02/your-development-workflow-just-got-better-with-docker-compose.html).
 
-## React
+## 2. React
 
 ### Study Plans
 
@@ -109,7 +109,7 @@ Don't mess your environment with different versions of Node. Follow [Don't Insta
 * [Reservation app](https://www.youtube.com/watch?v=LXJOvkVYQqA)
 * [Netflix clone](https://www.youtube.com/watch?v=x_EEwGe-a9o)
 
-## React and Redux
+## 3. React and Redux
 
 Redux could be the most challenging subject. You have to learn new concepts like: store, actions, reducers, thunks, sagas, dispatching.
 
@@ -133,7 +133,7 @@ Make sure to understand what to put into a Redux store and where you should make
 * [Movie app with Redux](https://www.youtube.com/watch?v=Ia0WWc5dyLE&list=PLG3RxIUKLJlbDDGeeoUCkinS2DUybp_1o) Again try to add Redux on your own. 
 * [Developing Games with React, Redux, and SVG](https://auth0.com/blog/developing-games-with-react-redux-and-svg-part-1/)
 
-## Courses
+## 4. Courses
 
 ### Paid
 
@@ -149,7 +149,7 @@ Make sure to understand what to put into a Redux store and where you should make
 * [30 days of React](https://www.newline.co/fullstack-react/30-days-of-react/)
 * [Learn Building Applications with React and Redux](https://www.youtube.com/watch?v=4lF7IiIHliU)
 
-## Practice and Project Ideas
+## 5. Practice and Project Ideas
 
 * [Cheat to Win: Learn React with Copywork](https://daveceddia.com/learn-react-with-copywork/). Two projects to copy: [React Snake](https://github.com/taming-the-state-in-react/react-snake), [GitHub issue viewer](https://github.com/dceddia/github-issues-viewer)
 * [Hands-on projects to learn the basics of React](https://hackernoon.com/hands-on-projects-to-learn-the-basics-of-react-3a06726514a8)
@@ -157,7 +157,7 @@ Make sure to understand what to put into a Redux store and where you should make
 * [5 React Projects You Need In Your Portfolio](https://codeartistry.io/5-react-projects-you-need/)
 * [10 React Starter Project Ideas to Get You Coding](https://medium.com/@dtkatz/10-react-starter-project-ideas-to-get-you-coding-5b35782e1831)
 
-## Other resources
+## 6. Other resources
 
 * [How to Structure Your React Project](https://daveceddia.com/react-project-structure/) or [React directory structure](https://marmelab.com/blog/2015/12/17/react-directory-structure.html)
 * [How to build Chrome extensions with React + Parcel](https://www.freecodecamp.org/news/building-chrome-extensions-in-react-parcel-79d0240dd58f/)
@@ -169,6 +169,6 @@ Voilà! Those are the resources and project ideas to learn React in 30 days. Sta
 
 [![canro91/LetsReact - GitHub](https://gh-card.dev/repos/canro91/LetsReact.svg)](https://github.com/canro91/LetsReact)
 
-You can read about my progress and takeaways on [Let's React. Day 18 of 30]({% post_url 2020-10-03-LetsReactDay18 %}) and [Let's React. Day 27 of 30]({% post_url 2020-10-19-LetsReactDay27 %}).
+If you're interested in learning projects, check [Let's Go]({% post_url 2020-07-05-LetsGoStudyPlan %}) and my [advice to start an ultralearning project]({% post_url 2023-07-24-AdviceToStartAnUltralearningProject %}).
 
 _Happy coding!_

@@ -4,7 +4,7 @@ title: A beginner's Guide to Git. A guide to time travel
 tags: tutorial git
 ---
 
-Do you store your code on folders named after the date of your changes? I did it back in school with my class projects. There's a better way. Let's use Git and GitHub to version control our projects.
+Do you store your files on folders named after the date of your changes? I did it back in school with my class projects. There's a better way! Let's use Git and GitHub to version control our projects.
 
 ```bash
 $ ls
@@ -14,8 +14,6 @@ Project-Final-Final/
 Project-ThisIsNOTTheFinal/
 Project-ThisIsTheTrueFinal/
 ```
-
-> _You can find the presentation version of this post [here]({% post_url 2020-04-09-FromZeroToPRWithGit %})._
 
 ## 1. What is a Version Control System?
 
