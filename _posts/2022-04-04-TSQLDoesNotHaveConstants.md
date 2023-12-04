@@ -10,11 +10,11 @@ Today I learned how to use constants in SQL Server stored procedures. While gett
 
 **SQL Server doesn't have a keyword for constants. To introduce constants in stored procedures, write literal values next to an explaining comment or use single-row views with the constant values as columns.**
 
-## Don't use variables as constants
+## 1. Don't use variables as constants
 
 From C# and other programming languages, we've learned to use constants or enums instead of magic values all over our code. Often, we would like to bring constants to our T-SQL queries. But...
 
-**T-SQL doesn't have a keyword for constants. And, SQL Server engine doesn't inline variables when executing stored procedures.**
+**T-SQL doesn't have a keyword for constants. And SQL Server engine doesn't inline variables when executing stored procedures.**
 
 The first thing we try by mistake to emulate constants is to use variables.
 
@@ -49,13 +49,13 @@ But, there's a downside. Variables inside stored procedures trigger a different 
 
 When executing a stored procedure, SQL Server creates an execution plan for the first set of parameters it sees. And, the next time we run that stored procedure, SQL Server reuses the same execution plan, even if we use different parameters. We call this behavior **Parameter Sniffing**.
 
-SQL Server uses statistics (histograms built from samples of our data) to choose the shape of the execution plan. SQL Server has to choose the first table to read, the number of threads, and the amount of memory, among other things.
+SQL Server uses statistics (histograms built from samples of our data) to choose the shape of execution plans. SQL Server has to choose the first table to read, the number of threads, and the amount of memory, among other things.
 
-But, when there are variables in a stored procedure, SQL Server builds execution plans, not from statistics (e.i. samples of our data), but from an "average value."
+But, when there are variables in a stored procedure, SQL Server builds execution plans, not from statistics (samples of our data), but from an "average value."
 
 Variables make SQL Server build different execution plans, probably not suited for the set of parameters we're calling our stored prcedures with. That's why variables aren't a good idea to replace constants.
 
-## Literal values and comments
+## 2. Literal values and comments
 
 **The simplest solution to constants in T-SQL is to use literal values.** 
 
@@ -79,11 +79,11 @@ This is the execution plan.
 
 {% include image.html name="LiteralAndComment.png" alt="StackOverflow users with reputation = 2" caption="This time, we're back to a literal value and a comment" width="600px" %}
 
-Do you remember the estimated number of users from our example with variables? It was 123 users. Now, we have a more accurate estimated number. It's 1,854 users. SQL Server isn't using an average value anymore. It has better estimates this time.
+Do you remember the estimated number of users from our example with variables? It was 123 users. Now, we have a more accurate estimated number. It's 1,854 users. SQL Server isn't using an average value anymore. It has better estimates this time!
 
 We even have an index recommendation in our execution plan. By the way, [don't blindly follow index recommendations]({% post_url 2022-03-21-SQLServerIndexRecommendations %}), just listening to them. They're only a list of columns to consider indexing.
 
-## Create a view for constants
+## 3. Create a view for constants
 
 The hardcoded value and an explanatory comment are OK if we have our "constant" in a few places. 
 
@@ -104,7 +104,7 @@ AS
 BEGIN
     SELECT *
     FROM dbo.Users u
-    /* The views with our constant */
+    /* The view with our constant */
     INNER JOIN dbo.vw_Constant c 
     ON u.Reputation = c.InterestingReputation
     ORDER BY u.CreationDate DESC;

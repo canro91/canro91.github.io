@@ -35,6 +35,8 @@ I use a similar trick with SQL Server Management Studio. When connecting to a ne
 
 Voilà! No more changes in the Production environment by mistake. No more time wasted looking at the wrong website. Colors are helpful for that.
 
+Even we can change Visual Studio title bar color with the [SolutionColor extension](https://marketplace.visualstudio.com/items?itemName=Wumpf.SolutionColor).
+
 For more productivity tricks, check [How to declutter sites with uBlock Origin filters]({% post_url 2023-11-13-DeclutteringUBlockOrigin %}) and [how to automatically format SQL files with Git]({% post_url 2023-09-18-FormatSqlFilesOnCommit %}).
 
 _Happy coding!_
