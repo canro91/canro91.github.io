@@ -3,11 +3,11 @@ layout: page
 title: About
 ---
 
-I'm Cesar Aguirre. I'm a [software engineer](https://github.com/canro91), lifelong learner, [language enthusiast]({% post_url 2020-10-23-ThreeLanguageLessons %}) and vivid reader.
+I'm Cesar Aguirre. I'm a [software engineer](https://github.com/canro91), lifelong learner, [language enthusiast]({% post_url 2020-10-23-ThreeLanguageLessons %}), and vivid reader.
 
 ## What I do
 
-I’m a software engineer based in Colombia _(not Columbia)_ with more than 10 years of experience _(I stopped counting)_. I work remotely as a backend engineer and technical writer. I specialize in building APIs and backend code with .NET technologies. Mainly [C#](/tags/csharp), [ASP.NET Core](/tags/asp.net), and [SQL Server](/tags/sql) these days.
+I’m a software engineer based in Colombia _(not Columbia)_ with more than 10 years of experience _(I stopped counting)_. I [work remotely]({% post_url 2020-08-08-LessonsOnRemoteWork %}) as a backend engineer and technical writer. I specialize in building APIs and backend code with .NET technologies. Mainly [C#](/tags/csharp), [ASP.NET Core](/tags/asp.net), and [SQL Server](/tags/sql) these days.
 
 <div class="message lead"><em>I help teams grow high-quality backend code. And by high-quality, I mean maintainable and performant.</em></div>
 
@@ -44,19 +44,19 @@ If you don’t know where to start reading or if you want to find something to r
 
 * [The C# Definitive Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %})
 * [Git Guide For TFS Users]({% post_url 2019-11-11-GitGuideForTfsUsers %})
-* [ASP.NET Core Guide for ASP.NET Framework Users]({% post_url 2020-03-23-GuideToNetCore %})
+* [A Quick Guide to LINQ with Examples]({% post_url 2021-01-18-LinqGuide %})
 
 ### Tutorials
 
-* [Remote interview, here I go]({% post_url 2019-09-29-RemoteInterviewTips %})
+* [Remote interviewing: Types and Tips]({% post_url 2019-09-29-RemoteInterviewTips %})
 * My take on the difference between [Func and Action]({% post_url 2019-03-22-WhatTheFuncAction %})
 * My series on [C# idioms]({% post_url 2019-11-19-TwoCSharpIdioms %})
 
 ### Unit Testing
 
-* [Unit Testing 101: Free ebook]({% post_url 2021-08-30-UnitTesting %})
-* [How to create fakes with Moq]({% post_url 2020-08-11-HowToCreateFakesWithMoq %})
-* [How to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %})
+* [How to name unit tests: Four naming conventions]({% post_url 2021-04-12-UnitTestNamingConventions %})
+* [How to create test data with Builders]({% post_url 2021-04-26-CreateTestValuesWithBuilders %})
+* [What fakes are in unit testing: mocks vs stubs]({% post_url 2021-05-24-WhatAreFakesInTesting %})
 
 ### Productivity
 
