@@ -77,6 +77,6 @@ If you don’t know where to start reading or if you want to find something to r
 
 Follow me on <a href="{{ site.devto }}" target="_blank" rel="noopener noreferrer">dev.to</a>, <a href="{{ site.github }}" target="_blank" rel="noopener noreferrer">GitHub</a> and <a href="{{ site.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
 
-To support my work, <a href="https://www.educative.io/profile/view/5684280228839424" target="_blank" rel="noopener noreferrer" data-goatcounter-click="Courses-About">check my courses</a> and <a href="https://imcsarag.gumroad.com/" target="_blank" rel="noopener noreferrer" data-goatcounter-click="Gumroad-About">download my ebooks</a>.
+To support my work, <a href="https://www.educative.io/profile/view/5684280228839424" target="_blank" rel="noopener noreferrer" data-goatcounter-click="Courses-About">check my courses</a>, <a href="https://imcsarag.gumroad.com/" target="_blank" rel="noopener noreferrer" data-goatcounter-click="Gumroad-About">download my ebooks</a>, and <a href="https://imcsarag.gumroad.com/l/buymeacoffee" target="_blank" rel="noopener noreferrer" data-goatcounter-click="Coffee-About">buy me a coffee</a>.
 
 _Thanks for reading!_
