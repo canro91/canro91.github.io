@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Monday links: Notebooks, Learning, and KPIs"
+title: "Monday Links: Notebooks, Learning, and KPIs"
 tags: tutorial csharp
 cover: Cover.png
 cover-alt: "A pile of folded newspapers on a desktop"
