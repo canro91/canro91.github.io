@@ -164,7 +164,7 @@ This is the test to validate that we remove duplicates,
 
 ```csharp
 [Fact]
-public async Task Handle_DuplicatedEmailInTosAndCc_CallsRepositoryWitouhtDuplicates()
+public async Task Handle_DuplicatedEmailInTosAndCc_CallsRepositoryWithoutDuplicates()
 {
     var duplicated = "duplicated@email.com";
     //  ^^^^^
@@ -185,7 +185,7 @@ public async Task Handle_DuplicatedEmailInTosAndCc_CallsRepositoryWitouhtDuplica
     // Let's write some assert/verifications in terms of the Email object
     fakeRepository
         .Verify(t => t.CreateAsync(It.Is<Email>(/* Assert something here using Recipients */), It.IsAny<CancellationToken>());
-    // Or
+    // Or, even better let's write a custom Verify()
     //
     // fakeRepository.WasCalledWithoutDuplicates();
 }

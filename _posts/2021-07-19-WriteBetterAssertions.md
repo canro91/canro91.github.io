@@ -36,36 +36,35 @@ For the sake of the example, we have put comments in each AAA part. You don't ne
 ```csharp
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Stringie.UnitTests
+namespace Stringie.UnitTests;
+
+[TestClass]
+public class RemoveTests
 {
-    [TestClass]
-    public class RemoveTests
+    [TestMethod]
+    public void Remove_ASubstring_RemovesThatSubstring()
     {
-        [TestMethod]
-        public void Remove_ASubstring_RemovesThatSubstring()
-        {
-            // Arrange
-            string str = "Hello, world!";
+        // Arrange
+        string str = "Hello, world!";
 
-            // Act
-            string transformed = str.Remove("Hello");
+        // Act
+        string transformed = str.Remove("Hello");
 
-            // Assert
-            Assert.AreEqual(", world!", transformed);
-        }
+        // Assert
+        Assert.AreEqual(", world!", transformed);
+    }
 
-        [TestMethod]
-        public void Remove_NoParameters_ReturnsEmpty()
-        {
-            // Arrange
-            string str = "Hello, world!";
+    [TestMethod]
+    public void Remove_NoParameters_ReturnsEmpty()
+    {
+        // Arrange
+        string str = "Hello, world!";
 
-            // Arrange
-            string transformed = str.Remove();
+        // Arrange
+        string transformed = str.Remove();
 
-            // Arrange
-            Assert.AreEqual(0, transformed.Length);
-        }
+        // Arrange
+        Assert.AreEqual(0, transformed.Length);
     }
 }
 ```
@@ -81,26 +80,25 @@ Let's take a look at the previous tests without line breaks between each AAA par
 ```csharp
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Stringie.UnitTests
-{
-    [TestClass]
-    public class RemoveTests
-    {
-        [TestMethod]
-        public void Remove_ASubstring_RemovesThatSubstring()
-        {
-            string str = "Hello, world!";
-            string transformed = str.Remove("Hello");
-            Assert.AreEqual(", world!", transformed);
-        }
+namespace Stringie.UnitTests;
 
-        [TestMethod]
-        public void Remove_NoParameters_ReturnsEmpty()
-        {
-            string str = "Hello, world!";
-            string transformed = str.Remove();
-            Assert.AreEqual(0, transformed.Length);
-        }
+[TestClass]
+public class RemoveTests
+{
+    [TestMethod]
+    public void Remove_ASubstring_RemovesThatSubstring()
+    {
+        string str = "Hello, world!";
+        string transformed = str.Remove("Hello");
+        Assert.AreEqual(", world!", transformed);
+    }
+
+    [TestMethod]
+    public void Remove_NoParameters_ReturnsEmpty()
+    {
+        string str = "Hello, world!";
+        string transformed = str.Remove();
+        Assert.AreEqual(0, transformed.Length);
     }
 }
 ```
@@ -121,7 +119,7 @@ In case you're wondering about those weird method names, they follow one of the 
 
 **Don't repeat the logic under test in your assertions.** And, please, don't copy the tested logic and paste it into private methods in your test files to use it in your assertions. That's [the most common mistake when writing tests]({% post_url 2021-10-11-DontRepeatLogicInAssertions %}).
 
-Use known, pre-calculated values. Declare constants for common expected values.
+Use known, pre-calculated values instead. Declare constants for common expected values.
 
 ```csharp
 [TestMethod]
@@ -131,8 +129,9 @@ public void Remove_ASubstring_RemovesThatSubstringFromTheEnd()
 
     string transformed = str.Remove("Hello").From(The.End);
 
-    // Notice how we hardcode an expected value here
     Assert.AreEqual("Hello, world! Again,", transformed);
+    //              ^^^^^
+    // Notice how we hardcode an expected value here
 }
 ```
 

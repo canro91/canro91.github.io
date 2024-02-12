@@ -116,7 +116,7 @@ Now, let's look at the test name.
 [TestMethod]
 public async Task GetPayoutDetailsAsync_HappyPath_SuccessWithoutTimezone()
 {
-    // Notice the test name
+    // Notice the test name...
     // The rest of the test remains the same,
     // but not for too long
 }
@@ -134,7 +134,7 @@ Let's rename our test.
 [TestMethod]
 public async Task GetPayoutDetailsAsync_NoTimeZone_ReturnsDetails()
 {
-    // Test body remains the same
+    // Test body remains the same...
 }
 ```
 
@@ -168,6 +168,7 @@ public async Task GetPayoutDetailsAsync_NoTimeZone_ReturnsDetails()
         },
         // Notice we explicitly set no timezone
         TimeZone = null
+        //        ^^^^^
     };
     var result = await service.GetPayoutDetailsAsync(request);
 

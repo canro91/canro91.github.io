@@ -21,12 +21,14 @@ Let's refactor one of our tests for [Stringie](https://github.com/canro91/Testin
 Let's create a `StringIsEmpty()` method,
 
 ```csharp
-internal static class CustomAssert
+public static class CustomAssert
 {
     public static void StringIsEmpty(this Assert assert, string actual)
     {
         if (string.IsNullOrEmpty(actual))
+        {
             return;
+        }
 
         throw new AssertFailedException($"Expect empty string but was {actual}");
     }
@@ -44,21 +46,20 @@ With this custom assertion in place, we can rewrite the Assert part of our tests
 ```csharp
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Stringie.UnitTests
+namespace Stringie.UnitTests;
+
+[TestClass]
+public class RemoveTests
 {
-    [TestClass]
-    public class RemoveTests
+    [TestMethod]
+    public void Remove_NoParameters_ReturnsEmpty()
     {
-        [TestMethod]
-        public void Remove_NoParameters_ReturnsEmpty()
-        {
-            string str = "Hello, world!";
+        string str = "Hello, world!";
 
-            string transformed = str.Remove();
+        string transformed = str.Remove();
 
-            Assert.That.StringIsEmpty(transformed);
-            //          ^^^^^
-        }
+        Assert.That.StringIsEmpty(transformed);
+        //          ^^^^^
     }
 }
 ```
@@ -87,45 +88,46 @@ using Moq;
 using System;
 using System.Threading.Tasks;
 
-namespace CustomAssertions
+namespace CustomAssertions;
+
+[TestClass]
+public class PaymentProxyTests
 {
-    [TestClass]
-    public class PaymentProxyTests
+    [TestMethod]
+    public async Task PayAsync_ByDefault_CallsLatestVersion()
     {
-        [TestMethod]
-        public async Task PayAsync_ByDefault_CallsLatestVersion()
-        {
-            var fakeClient = new Mock<IApiClient>();
-            var proxy = new PaymentProxy(fakeClient.Object);
+        var fakeClient = new Mock<IApiClient>();
+        var proxy = new PaymentProxy(fakeClient.Object);
 
-            await proxy.PayAsync(AnyPaymentRequest);
+        await proxy.PayAsync(AnyPaymentRequest);
 
-            // Here we verify we called the right url
-            fakeClient.Verify(x => x.PostAsync<PaymentRequest, ApiResult>(
-                It.Is<Uri>(t => t.AbsoluteUri.Contains("/v2/pay", StringComparison.InvariantCultureIgnoreCase)), It.IsAny<PaymentRequest>()),
-                Times.Once);
-        }
-
-        [TestMethod]
-        public async Task PayAsync_VersionNumber_CallsEndpointWithVersion()
-        {
-            var fakeClient = new Mock<IApiClient>();
-            var proxy = new PaymentProxy(fakeClient.Object, Version.V1);
-
-            await proxy.PayAsync(AnyPaymentRequest);
-
-            // Here we verify we called the right url again
-            fakeClient.Verify(x => x.PostAsync<PaymentRequest, ApiResult>(
-                It.Is<Uri>(t => t.AbsoluteUri.Contains("/v1/pay", StringComparison.InvariantCultureIgnoreCase)), It.IsAny<PaymentRequest>()),
-                Times.Once);
-        }
-
-        private PaymentRequest AnyPaymentRequest
-            => new PaymentRequest
-            {
-                // All initializations here...
-            };
+        // Here we verify we called the right url
+        fakeClient.Verify(x => x.PostAsync<PaymentRequest, ApiResult>(
+            //     ^^^^^
+            It.Is<Uri>(t => t.AbsoluteUri.Contains("/v2/pay", StringComparison.InvariantCultureIgnoreCase)), It.IsAny<PaymentRequest>()),
+            Times.Once);
     }
+
+    [TestMethod]
+    public async Task PayAsync_VersionNumber_CallsEndpointWithVersion()
+    {
+        var fakeClient = new Mock<IApiClient>();
+        var proxy = new PaymentProxy(fakeClient.Object, Version.V1);
+
+        await proxy.PayAsync(AnyPaymentRequest);
+
+        // Here we verify we called the right url again
+        fakeClient.Verify(x => x.PostAsync<PaymentRequest, ApiResult>(
+            //     ^^^^^            
+            It.Is<Uri>(t => t.AbsoluteUri.Contains("/v1/pay", StringComparison.InvariantCultureIgnoreCase)), It.IsAny<PaymentRequest>()),
+            Times.Once);
+    }
+
+    private PaymentRequest AnyPaymentRequest
+        => new PaymentRequest
+        {
+            // All initializations here...
+        };
 }
 ```
 
@@ -139,17 +141,16 @@ Let's create an extension method on top of our fake. Let's write the `VerifyItCa
 using Moq;
 using System;
 
-namespace CustomAssertions
+namespace CustomAssertions;
+
+public static class MockApiClientExtensions
 {
-    public static class MockApiClientExtensions
+    public static void VerifyItCalled(this Mock<IApiClient> mock, string relativeUri)
     {
-        public static void VerifyItCalled(this Mock<IApiClient> mock, string relativeUri)
-        {
-            mock.Verify(x => x.PostAsync<PaymentRequest, ApiResult>(
-                            It.Is<Uri>(t => t.AbsoluteUri.Contains(relativeUri, StringComparison.InvariantCultureIgnoreCase)),
-                            It.IsAny<PaymentRequest>()),
-                        Times.Once);
-        }
+        mock.Verify(x => x.PostAsync<PaymentRequest, ApiResult>(
+                        It.Is<Uri>(t => t.AbsoluteUri.Contains(relativeUri, StringComparison.InvariantCultureIgnoreCase)),
+                        It.IsAny<PaymentRequest>()),
+                    Times.Once);
     }
 }
 ```
@@ -161,43 +162,42 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Threading.Tasks;
 
-namespace CustomAssertions
+namespace CustomAssertions;
+
+[TestClass]
+public class PaymentProxyTests
 {
-    [TestClass]
-    public class PaymentProxyTests
+    [TestMethod]
+    public async Task PayAsync_ByDefault_CallsLatestVersion()
     {
-        [TestMethod]
-        public async Task PayAsync_ByDefault_CallsLatestVersion()
-        {
-            var fakeClient = new Mock<IApiClient>();
-            var proxy = new PaymentProxy(fakeClient.Object);
+        var fakeClient = new Mock<IApiClient>();
+        var proxy = new PaymentProxy(fakeClient.Object);
 
-            await proxy.PayAsync(AnyPaymentRequest);
+        await proxy.PayAsync(AnyPaymentRequest);
 
-            // Now, it's way more readable
-            fakeClient.VerifyItCalled("/v2/pay");
-            //         ^^^^^
-        }
-
-        [TestMethod]
-        public async Task PayAsync_VersionNumber_CallsEndpointWithVersion()
-        {
-            var fakeClient = new Mock<IApiClient>();
-            var proxy = new PaymentProxy(fakeClient.Object, Version.V1);
-
-            await proxy.PayAsync(AnyPaymentRequest);
-
-            // No more boilerplate code to check things
-            fakeClient.VerifyItCalled("/v1/pay");
-            //         ^^^^^
-        }
-
-        private PaymentRequest AnyPaymentRequest
-            => new PaymentRequest
-            {
-                // All initializations here
-            };
+        // Now, it's way more readable
+        fakeClient.VerifyItCalled("/v2/pay");
+        //         ^^^^^
     }
+
+    [TestMethod]
+    public async Task PayAsync_VersionNumber_CallsEndpointWithVersion()
+    {
+        var fakeClient = new Mock<IApiClient>();
+        var proxy = new PaymentProxy(fakeClient.Object, Version.V1);
+
+        await proxy.PayAsync(AnyPaymentRequest);
+
+        // No more boilerplate code to check things
+        fakeClient.VerifyItCalled("/v1/pay");
+        //         ^^^^^
+    }
+
+    private PaymentRequest AnyPaymentRequest
+        => new PaymentRequest
+        {
+            // All initializations here...
+        };
 }
 ```
 
