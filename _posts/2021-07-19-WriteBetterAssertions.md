@@ -172,4 +172,6 @@ Voilà! These are 5 tips to write better assertions. If you want a more complete
 
 If you're new to unit testing, start reading [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}) and [4 common unit testing mistakes]({% post_url 2021-03-29-UnitTestingCommonMistakes %}). For more advanced tips, check [how to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %}) and [always write failing tests]({% post_url 2021-02-05-FailingTest %}).
 
+And don't miss the rest of my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}) where I cover more subjects like this one.
+
 _Happy testing!_

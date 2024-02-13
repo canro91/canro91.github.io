@@ -225,6 +225,6 @@ Voilà! That looks better! Unit tests got our back when changing our code. It's 
 
 If you're new to unit testing, read [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}), [4 common mistakes when writing your first tests]({% post_url 2021-03-29-UnitTestingCommonMistakes %}) and [4 test naming conventions]({% post_url 2021-04-12-UnitTestNamingConventions %}).
 
-For more advanced content on unit testing, check [what are fakes in unit testing]({% post_url 2021-05-24-WhatAreFakesInTesting %}), [how to write fakes with Moq]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}) and these [tips to write better stubs and mocks]({% post_url 2021-06-07-TipsForBetterStubsAndMocks %}).
+For more advanced content on unit testing, check [what are fakes in unit testing]({% post_url 2021-05-24-WhatAreFakesInTesting %}) and don't miss the rest of my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}).
 
 _Happy testing!_

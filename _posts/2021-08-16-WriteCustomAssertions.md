@@ -207,6 +207,6 @@ Voilà! That's how to use custom assertions to write tests in the same terms as 
 
 In case you have plain assertions, not `Verify()` methods with Moq, simply write private methods to group your assertions and share them in a base test class. Or write extension methods on the output of the method being tested. For more details on this technique, check xUnitPatterns on [Custom Assertions](http://xunitpatterns.com/Custom%20Assertion.html).
 
-If you're new to fakes, mocks and stubs, read [What are fakes in unit testing]({% post_url 2021-05-24-WhatAreFakesInTesting %}) and [how to write better stubs and mocks]({% post_url 2021-06-07-TipsForBetterStubsAndMocks %}). Also, don't miss my [Unit testing best practices]({% post_url 2021-07-05-UnitTestingBestPractices %}) and [how to write better assertions]({% post_url 2021-07-19-WriteBetterAssertions %}).
+If you're new to fakes, mocks, and stubs, read [what are fakes in unit testing]({% post_url 2021-05-24-WhatAreFakesInTesting %}) and [how to write better stubs and mocks]({% post_url 2021-06-07-TipsForBetterStubsAndMocks %}). Also, don't miss my [unit testing best practices]({% post_url 2021-07-05-UnitTestingBestPractices %}) and the rest of my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}) where I cover more subjects like this one.
 
 _Happy testing!_

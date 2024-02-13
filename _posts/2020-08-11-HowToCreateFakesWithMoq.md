@@ -111,6 +111,8 @@ For Moq, `MockRepository` is a factory of mocks. We can verify all mocks created
 
 Voilà! That's how we create fakes and mocks with Moq. Moq is a great library! It keeps its promise. It's easy to set up dependencies in our tests. We need to know only a few methods to start using it. We only need: `Setup`, `Returns`, `Throws`, and `Verify`. It has chosen to lower the barrier of writing tests. Give it a try! _To mock or not to mock!_
 
-For more tips on writing unit tests, check my posts on how to write good unit tests by [reducing noise]({% post_url 2020-11-02-UnitTestingTips %}) and [writing failing tests]({% post_url 2021-02-05-FailingTest %}). If you use Moq often, avoid typing the same method names all the time with [these snippets I wrote for Visual Studio]({% post_url 2021-02-22-VisualStudioMoqSnippets %}).
+If you use Moq often, avoid typing the same method names all the time with [these snippets I wrote for Visual Studio]({% post_url 2021-02-22-VisualStudioMoqSnippets %}).
+
+For more tips on writing unit tests, check my posts on how to write good unit tests by [reducing noise]({% post_url 2020-11-02-UnitTestingTips %}) and [writing failing tests]({% post_url 2021-02-05-FailingTest %}).  And don't miss the rest of my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}) where I cover more subjects like this one.
 
 _Happy mocking time!_
