@@ -108,7 +108,9 @@ Let's take a closer look at the first test. Do we need six dictionaries to test 
 
 And let's write separate tests to deal with edge cases. Let's write one test to work with `null` and another one with an empty dictionary. Again two dictionaries will be enough for each test.
 
-Having too many dictionaries with too many items made us write that funny `foreach` with a funny multiplication inside. That's why some of the values are multiplied by 10, and others aren't. We don't need that with a simpler scenario. **Unit tests should only have assignments without branching or looping logic.**
+Having too many dictionaries with too many items made us write that funny `foreach` with a funny multiplication inside. That's why some of the values are multiplied by 10, and others aren't. We don't need that with a simpler scenario.
+
+**Unit tests should only have assignments without branching or looping logic.**
 
 Looking at the second test, we noticed it followed the same pattern as the first one. Too many items and a weird `foreach` with a multiplication inside.
 

@@ -156,7 +156,7 @@ public void AccountController_SenderEmailIsNull_ThrowsException()
 
 If we have similar scenarios, we can use a constant like `const string NoEmail = null`. Or prefer [object mothers and builders to create test data]({% post_url 2021-04-26-CreateTestValuesWithBuilders %}).
 
-### Don't write mocks for IOptions<T>
+## 3. Don't write mocks for IOptions<T>
 
 Finally, as an aside, we don't need a mock on `IOptions<EmailConfiguration>`.
 
