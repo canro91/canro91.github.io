@@ -190,7 +190,7 @@ If we have more than one test without a timezone, we can use a constant `NoTimeZ
 
 For our last refactor, let's remove those `Verify()` calls. We don't need them. [We don't need to assert on stubs]({% post_url 2021-06-07-TipsForBetterStubsAndMocks %}).
 
-If any of the stubs weren't in place, probably we will get a `NullReferenceException` somewhere in our code. Those extra verifications make our test harder to maintain.
+If any of the stubs weren't in place, probably we will get a [NullReferenceException]({% post_url 2023-02-20-WhatNullReferenceExceptionIs %}) somewhere in our code. Those extra verifications make our test harder to maintain.
 		
 ```csharp
 [TestMethod]

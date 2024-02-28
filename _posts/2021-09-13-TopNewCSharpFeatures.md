@@ -43,9 +43,9 @@ Now, it's clearer if we're missing a parameter or if we have them in the wrong o
 
 ### Null-conditional (?.) and null-coalescing operators (??)
 
-Starting from C# 6.0, we have two new operators: null-conditional `?.` and null-coalescing `??` operators. These two new operators helps us to get rid of null values and `NullReferenceException`.
+Starting from C# 6.0, we have two new operators: null-conditional `?.` and null-coalescing `??` operators. These two new operators helps us to get rid of null values and [NullReferenceException]({% post_url 2023-02-20-WhatNullReferenceExceptionIs %}).
 
-With the null-conditional `?.` operator, we access a member's object if the object isn't null. Otherwise, it returns null.
+With the null-conditional `?.` operator, we access a member's object if the object isn't null. Otherwise, it returns `null`.
 
 The null-coalescing `??` operator evaluates an alternative expression if the first one is null.
 
@@ -70,7 +70,7 @@ string name = ReadNameFromSomewhere();
 name?.Trim() ?? "none";
 ```
 
-It executes `Trim()` only if `name` isn't null. Otherwise, `name?.Trim()` returns `null`. But, with the `??` operator, the whole expression returns "none".
+It executes `Trim()` only if `name` isn't `null`. Otherwise, `name?.Trim()` returns `null`. But, with the `??` operator, the whole expression returns "none".
 
 ### Expression body definition (=>)
 
@@ -510,7 +510,7 @@ if (canBeNullName != null)
 
 ### Records
 
-A record is an immutable reference type with built-in equality methods. When we create a record, the compiler creates `ToString`, `GetHashCode`, value-based equality methods, a copy constructor and a deconstructor.
+A record is an immutable reference type with built-in equality methods. When we create a record, the compiler creates `ToString()`, `GetHashCode()`, value-based equality methods, a copy constructor and a deconstructor.
 
 Records are helpful to replace value-objects in our code.
 
