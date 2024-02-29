@@ -8,21 +8,19 @@ cover-alt: "Unit Testing Best Practices"
 
 As part of this series on unit testing, we've covered a lot of subjects. From [how to write your first unit tests]({% post_url 2021-03-15-UnitTesting101 %}) to [create test data with Builders]({% post_url 2021-04-26-CreateTestValuesWithBuilders %}) to [how to write better fakes]({% post_url 2021-06-07-TipsForBetterStubsAndMocks %}). I hope I've helped you to start writing unit tests or write even better unit tests.
 
-This time, I'm bringing some tips and best practices from my previous posts in one single place. 
+This time, I'm bringing some tips and best practices from my previous posts in one single place for quick reference.
 
 ## 1. On Naming
 
 ### Choose a naming convention and stick to it.
 
-**Every test name should tell the scenario under test and the expected result**. Don't worry about long test names. But don't name your tests: `Test1`, `Test2`, and so on.
+**Every test name should tell the scenario under test and the expected result**. [Don't worry about long test names]({% post_url 2021-04-12-UnitTestNamingConventions %}). But don't name your tests: `Test1`, `Test2`, and so on.
 
 **Describe in your test names what you're testing in a language easy to understand, even for non-programmers.**
 
 **Don't prefix your test names with "Test."** If you're using a testing framework that doesn't need keywords in your test names, don't do that. With MSTest, there are attributes like `[TestClass]` and `[TestMethod]` to mark methods as tests. Other testing frameworks have similar ones. 
 
 **Don't use filler words like "Success" or "IsCorrect" in test names**. Instead, tell what "success" and "correct" mean for that test. Is it a successful test because it doesn't throw exceptions? Is it successful because it returns a value different from null? Make your test names easy to understand.
-
-<div class="message">If you want to learn more about naming your tests, check <a href="/2021/04/12/UnitTestNamingConventions">How to name your test: four naming conventions</a> where we write test names for the same methods using four different naming conventions.</div>
 
 ## 2. On Organization
 
@@ -44,7 +42,7 @@ This time, I'm bringing some tips and best practices from my previous posts in o
 
 **Separate the body of your tests.** Use line breaks to visually separate the three AAA parts in the body of your tests.
 
-**Don't repeat the logic under test in your assertions.** And, please, don't copy the tested logic and paste it into private methods in your test files to use it in your assertions. Use known/pre-calculated values, instead.
+**[Don't repeat the logic under test in your assertions]({% post_url 2021-10-11-DontRepeatLogicInAssertions %}).** And, please, don't copy the tested logic and paste it into private methods in your test files to use it in your assertions. Use known or pre-calculated values, instead.
 
 **Don't make private methods public to test them.** Test private methods when calling your code under test through its public methods.
 
@@ -53,8 +51,6 @@ This time, I'm bringing some tips and best practices from my previous posts in o
 **Use the right assertion methods of your testing framework.** For example, use `Assert.IsNull(result);` instead of `Assert.AreEqual(null, result);`.
 
 **Prefer assertion methods for strings** like `Contains()`, `StartsWith()` and `Matches()` instead of exactly comparing two strings.
-
-<div class="message">If you want to learn more about writing better assertions, check <a href="/2021/03/29/UnitTestingCommonMistakes/">four common unit testing mistakes</a> where we learn not to duplicate logic in your assertions.</div>
 
 ## 4. On Test Data
 
@@ -68,9 +64,7 @@ This time, I'm bringing some tips and best practices from my previous posts in o
 
 **Use object mothers to create input test values.** Have a factory method or property holding a ready-to-use input object. Then, change what you need to match the scenario under test.
 
-**Prefer Builders to create complex object graphs.** Object mothers are fine if you don't have lots of variations of the object being constructed. If that's the case, use the Builder pattern. Compose builders to create complex objects in your tests.
-
-<div class="message">Do you want to see examples of Object Mothers and Builders? Check <a href="/2021/04/26/CreateTestValuesWithBuilders/">How to create test data with the Builder pattern </a> where we test a credit card validator.</div>
+**Prefer Builders to create complex object graphs.** Object mothers are fine if you don't have lots of variations of the object being constructed. If that's the case, use the [Builder pattern]({% post_url 2021-04-26-CreateTestValuesWithBuilders %}). Compose builders to create complex objects in your tests.
 
 ## 5. On Stubs and Mocks
 
@@ -80,7 +74,7 @@ This time, I'm bringing some tips and best practices from my previous posts in o
 
 **Avoid complex logic inside your fakes.** Don't add flags to your stubs to return one value or another. Write separate stubs instead.
 
-**Don't write assertions for stubs.** Assert on the output of your code under test or use mocks.
+**[Don't write assertions for stubs]({% post_url 2021-06-07-TipsForBetterStubsAndMocks %}).** Assert on the output of your code under test or use mocks. Remember there's a [difference between stubs and mocks]({% post_url 2021-05-24-WhatAreFakesInTesting %}).
 
 **Keep one mock per test.** Don't use multiple mocks per test. Write separate tests instead.
 
@@ -88,14 +82,12 @@ This time, I'm bringing some tips and best practices from my previous posts in o
 
 **Use descriptive names in your fakes.** Name your stubs to indicate the value they return or the exception they throw. For example, `ItemOutOfStockStockService` and `FixedDateClock`.
 
-<div class="message">Do you know what stubs and mocks are? Check <a href="/2021/05/24/WhatAreFakesInTesting">What are fakes in unit testing?</a> to learn the difference between them. Check these <a href="/2021/06/07/TipsForBetterStubsAndMocks">Tips to write better stubs and mocks</a>.</div>
-
 Voilà! Those are my best practices for writing ~~better~~ great unit tests. Don't forget to always start writing failing tests. And make sure they fail for the right reasons. If you don't follow Test-Driven Development, comment out some of your code under test or change the assertions on purpose to see your tests failing.
-
-If you want these best practices next to you, grab a copy of <a href="https://imcsarag.gumroad.com/l/unittesting101" target="_blank" rel="noopener noreferrer" data-goatcounter-click="UnitTesting101eBook-BestPractices-Gumroad">my Unit Testing 101 ebook on my Gumroad page</a>.
 
 We don't ship our tests to end users. But it doesn't mean we shouldn't care about the quality of our tests. Unit tests got our back when changing our code. They're our safety net.
 
 Don't miss the rest of my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}) where I cover all these subjects in depth.
+
+{%include ut201_course.html %}
 
 _Happy testing!_

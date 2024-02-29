@@ -35,25 +35,26 @@ Let's see Moq in action! Let's start with an `OrderService` that uses an `IPayme
 ```csharp
 public class OrderService 
 {
-  private readonly IPaymentGateway _paymentGateway;
-  private readonly IStockService _stockService;
-
-  public OrderService(IPaymentGateway paymentGateway, IStockService stockService)
-  {
-    _paymentGateway = paymentGateway;
-    _stockService = stockService;
-  }
-
-  public OrderResult PlaceOrder(Order order)
-  {
-    if (!_stockService.IsStockAvailable(order))
+    private readonly IPaymentGateway _paymentGateway;
+    private readonly IStockService _stockService;
+    
+    public OrderService(IPaymentGateway paymentGateway, IStockService stockService)
     {
-      throw new OutOfStockException();
+        _paymentGateway = paymentGateway;
+        _stockService = stockService;
     }
-
-    _paymentGateway.ProcessPayment(order);
-    return new PlaceOrderResult(order);
-  }
+    
+    public OrderResult PlaceOrder(Order order)
+    {
+        if (!_stockService.IsStockAvailable(order))
+        {
+            throw new OutOfStockException();
+        }
+        
+        _paymentGateway.ProcessPayment(order);
+            
+        return new PlaceOrderResult(order);
+    }
 }
 ```
 
@@ -67,31 +68,33 @@ Of course, that's not the only naming convention. There are other ways to [name 
 [TestClass]
 public class OrderServiceTests
 {
-  [TestMethod]
-  public void PlaceOrder_StockAvailable_CallsProcessPayment()
-  {
-    var fakePaymentGateway = new Mock<IPaymentGateway>();
+    [TestMethod]
+    public void PlaceOrder_StockAvailable_CallsProcessPayment()
+    {
+        var fakePaymentGateway = new Mock<IPaymentGateway>();
 
-    var fakeStockService = new Mock<IStockService>();
-    fakeStockService.Setup(t => t.IsStockAvailable(It.IsAny<Order>()))
-                    .Returns(true);
-    var orderService = new OrderService(fakePaymentGateway.Object, fakeStockService.Object);
+        var fakeStockService = new Mock<IStockService>();
+        fakeStockService
+            .Setup(t => t.IsStockAvailable(It.IsAny<Order>()))
+            .Returns(true);
+        var orderService = new OrderService(fakePaymentGateway.Object, fakeStockService.Object);
 
-    var order = new Order();
-    orderService.PlaceOrder(order);
+        var order = new Order();
+        orderService.PlaceOrder(order);
 
-    fakePaymentGateway.Verify(t => t.ProcessPayment(order), Times.Once);
-  }
+        fakePaymentGateway
+            .Verify(t => t.ProcessPayment(order), Times.Once);
+    }
 }
 ```
 
 What happened here? First, it creates a fake for `IPaymentGateway` with `new Mock<IPaymentGateway>()`. Moq can create fakes for classes too.
 
-Then, it creates another fake for `IStockService`. This fake returns `true` when the method `IsStockAvailable` is called with any order as a parameter.
+Then, it creates another fake for `IStockService`. This fake returns `true` when the method `IsStockAvailable()` is called with any order as a parameter.
 
 Next, it uses the `Object` property of the `Mock` class to create instances of the fakes. With these two instances, it builds the `OrderService`.
 
-Finally, using the `Verify` method, it checks if the method `ProcessPayment` was called once. A passing test now!
+Finally, using the `Verify()` method, it checks if the method `ProcessPayment()` was called once. A passing test now!
 
 ### Cut!...What I don't like about Moq
 
@@ -114,5 +117,7 @@ Voilà! That's how we create fakes and mocks with Moq. Moq is a great library! I
 If you use Moq often, avoid typing the same method names all the time with [these snippets I wrote for Visual Studio]({% post_url 2021-02-22-VisualStudioMoqSnippets %}).
 
 For more tips on writing unit tests, check my posts on how to write good unit tests by [reducing noise]({% post_url 2020-11-02-UnitTestingTips %}) and [writing failing tests]({% post_url 2021-02-05-FailingTest %}).  And don't miss the rest of my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}) where I cover more subjects like this one.
+
+{%include ut201_course.html %}
 
 _Happy mocking time!_

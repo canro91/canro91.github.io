@@ -109,4 +109,6 @@ Voilà! That's the most common mistake when writing unit tests. It seems silly! 
 
 If you're new to unit testing, read my post on [how to write your first unit tests in C# with MSTest]({% post_url 2021-03-15-UnitTesting101 %}) and check the [4 common mistakes when writing your first tests]({% post_url 2021-03-29-UnitTestingCommonMistakes %}). Also, don't miss my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}) where I cover more subjects like the ones from this post.
 
+{%include ut201_course.html %}
+
 _Happy testing!_

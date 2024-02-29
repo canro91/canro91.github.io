@@ -6,7 +6,7 @@ cover: Cover.png
 cover-alt: "<PutYourCoverAltHere>" 
 ---
 
-This book won't teach you how to write a unit test step by step. But, it will teach you how unit testing fits the larger picture of a software project. Also, This book shows how to write integration tests and test the database. These are my takeaways.
+This book won't teach you how to write a unit test step by step. But, it will teach you how unit testing fits the larger picture of a software project. Also, this book shows how to write integration tests and test the database. These are my takeaways.
 
 ## 1. What is a unit test?
 
@@ -14,8 +14,8 @@ This book won't teach you how to write a unit test step by step. But, it will te
 
 A successful test suite has the following properties:
 
-* It's integrated into the development cycle.
-* It targets only the most important parts of your codebase: the domain model.
+* It's integrated into the development cycle,
+* It targets only the most important parts of your codebase: the domain model,
 * It provides maximum value with minimum maintenance costs.
 
 A unit test is an automated test with three attributes:
@@ -79,14 +79,16 @@ When writing integration tests for the database:
 
 * Separate database connections from transactions. Use repositories and transactions.
 * Don't reuse database transactions or units of work between sections of the test. Integration tests should replicate the production environment as closely as possible. This means the Act part shouldn't share connections or database context with anyone else.
-* Clean up data at the beginning of each test. Create a base class and put all the deletion scripts there
+* Clean up data at the beginning of each test. Create a base class and put all the deletion scripts there.
 * Don't use in-memory databases. They don't have the same set of features. Use the same database system as production.
-* Extract technical, non-business-related parts into helper methods. For Arranges, use object mothers. And, for Asserts, create extension methods for data assertions. Like, `userFromDb.ShouldExist()`.
-* Test only the most complex or important read operations; disregard the rest.
+* Extract technical, non-business-related parts into helper methods. For Arrange parts, use object mothers. And, for Assert parts, create extension methods for data assertions, like, `userFromDb.ShouldExist()`.
+* Test only the most complex or important read operations. Forget about the rest.
 * Don't test repositories directly. Test them as part of an overarching integration test suite.
 
-Voilà! These are my takeaways. Although this book has "Unit Testing" in its title, I really liked it covers integration tests, especially testing the database and data-access layer. I'd say this isn't a beginners book. You would take more out of this book if you read [The Art Of Unit Testing]({% post_url 2020-03-06-TheArtOfUnitTestingReview %}) first.
+Voilà! These are my takeaways. Although this book has "Unit Testing" in its title, I really liked it covers integration tests, especially testing the database and data-access layer. I'd say this isn't a book for beginners. You would take more out of this book if you read [The Art Of Unit Testing]({% post_url 2020-03-06-TheArtOfUnitTestingReview %}) first.
 
 If you want to read more about unit testing, check my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}) where I cover from what unit testing is to unit testing best practices.
+
+{%include ut201_course.html %}
 
 _Happy testing!_

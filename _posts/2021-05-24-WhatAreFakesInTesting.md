@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "What are fakes in unit testing: mocks vs stubs"
+title: "What are fakes in unit testing? Mocks vs Stubs"
 tags: tutorial csharp
 cover: Cover.png
 cover-alt: "What are fakes in unit testing"
@@ -59,6 +59,7 @@ public class CreditCardValidationTests
     {
         var when = new DateTime(2021, 01, 01);
         var clock = new FixedDateClock(when);
+        //              ^^^^^
         var validator = new CreditCardValidator(clock);
 
         var request = new CreditCardBuilder()
@@ -172,6 +173,7 @@ public class OrderServiceTests
         service.PlaceOrder(order);
 
         Assert.IsTrue(paymentGateway.WasCalled);
+        //                           ^^^^^
     }
 }
 ```
@@ -198,7 +200,7 @@ The book [xUnit Patterns](http://xunitpatterns.com/Mocks,%20Fakes,%20Stubs%20and
 
 **Mocks are testable replacements that check if they were used correctly**. We use mocks when we know in advanced the parameters the code under test will use. With mocks, we set the expected parameters to be used before calling the code under test. Then, we use a verification method in the mock itself to check if the mock was called with those exact same parameters.
 
-Let's not get confused with all these terms. Let's stick to the types of fakes presented in the book [The Art of Unit Testing](https://www.manning.com/books/the-art-of-unit-testing-second-edition) ([My takeaways here]({% post_url 2020-03-06-TheArtOfUnitTestingReview %})). In there, there are only two types of fakes or test doubles: stubs and mocks. Everything else is a fake. Easier!
+Let's not get confused with all these terms. Let's stick to the types of fakes presented in the book [The Art of Unit Testing]({% post_url 2020-03-06-TheArtOfUnitTestingReview %}). In there, there are only two types of fakes or test doubles: stubs and mocks. Everything else is a fake. Easier!
 
 ## Parting thoughts
 
@@ -211,5 +213,7 @@ If you want to start writing fakes with a mocking library, read my post on [how 
 If you're new to unit testing, read [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}), [4 common mistakes when writing your first tests]({% post_url 2021-03-29-UnitTestingCommonMistakes %}) and [4 test naming conventions]({% post_url 2021-04-12-UnitTestNamingConventions %}).
 
 And don't miss the rest of my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}) where I cover more subjects like this one.
+
+{%include ut201_course.html %}
 
 _Happy testing!_

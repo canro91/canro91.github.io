@@ -47,7 +47,7 @@ public class OrderService
 }
 ```
 
-I know, I know! We could argue our `OrderService` is doing a lot of things!
+I know, I know! We could argue our `OrderService` is doing a lot of things! Bear with me.
 
 Let's write a test to check if the payment gateway is called when we place an order. We're using [Moq to write fakes]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}). This test will look like this:
 
@@ -381,5 +381,7 @@ To retrieve a fake reference, we used the `Freeze<T>()` method. We used these re
 Voilà! That's how we can use a `TypeBuilder` helper class and AutoFixture to simplify the Arrange parts of our tests. If you prefer a simple solution, use the `TypeBuilder` class. But, if you don't mind adding an external reference to your tests, use AutoFixture. Maybe, you can use it to create test data too.
 
 If you want to know what fakes and mocks are, check [What are fakes in unit testing: mocks vs stubs]({% post_url 2021-05-24-WhatAreFakesInTesting %}) and learn these [5 tips to write better stubs and mocks]({% post_url 2021-06-07-TipsForBetterStubsAndMocks %}). And, don't miss the rest of my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}) where I cover more subjects like this one.
+
+{%include ut201_course.html %}
 
 _Happy testing!_

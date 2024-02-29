@@ -10,7 +10,7 @@ In our last post about using [builders to create test data]({% post_url 2021-04-
 
 **To write tests that use DateTime.Now, create a wrapper for DateTime.Now and use a fake or test double with a fixed date. As an alternative, create a setter or an optional constructor to pass a reference date**.
 
-Let's continue where we left off. Last time, in our post about the [the Builder pattern]({% post_url 2021-04-26-CreateTestValuesWithBuilders %}), we wrote two tests to check if a credit card was expired. These are the tests we wrote at that time.
+Let's continue where we left off. Last time, we wrote two tests to check if a credit card was expired using [the Builder pattern]({% post_url 2021-04-26-CreateTestValuesWithBuilders %}). These are the tests we wrote at that time.
 
 ```csharp
 using FluentValidation.TestHelper;
@@ -321,5 +321,7 @@ Voilà! That's how we can write more reliable tests that use the current date an
 If you're new to unit testing, read [Unit Testing 101]({% post_url 2021-03-15-UnitTesting101 %}) and [4 test naming conventions]({% post_url 2021-04-12-UnitTestNamingConventions %}). For more advanced tips on unit testing, check my posts on [how to write good unit tests]({% post_url 2020-11-02-UnitTestingTips %}) and [how to write fakes with Moq]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}).
 
 And don't miss the rest of my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}) where I cover more subjects like this one.
+
+{%include ut201_course.html %}
 
 _Happy testing!_
