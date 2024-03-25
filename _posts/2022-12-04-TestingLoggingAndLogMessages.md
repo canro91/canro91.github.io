@@ -101,11 +101,13 @@ public class SomethingControllerTests
 }
 ```
 
-In that test, we used [Moq to create fakes]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}) for our dependencies. I prefer to call it fakes. There's a [difference between stubs and mocks]({% post_url 2021-05-24-WhatAreFakesInTesting %}).
+In that test, we used [Moq to create fakes]({% post_url 2020-08-11-HowToCreateFakesWithMoq %}) for our dependencies, even for the `ILogger` itself. I prefer to call them fakes. There's a [difference between stubs and mocks]({% post_url 2021-05-24-WhatAreFakesInTesting %}).
 
-Notice we're expecting the actual log message to be exactly the same as the one from the `SomethingController`. Can you already spot the duplication? In fact, we're rebuilding the log message inside our tests. We're [duplicating the logic under test]({% post_url 2021-10-11-DontRepeatLogicInAssertions %}).
+By the way, [.NET 8.0 added a FakeLogger]({% post_url 2024-04-01-NET8FakeLogger %}), a logging provider for unit testing, so we don't have to rely on fakes to test logging.
 
-Also, notice we used a [custom assertion method]({% post_url 2021-08-16-WriteCustomAssertions %}) to make our assertions less verbose. `VerifyWasCalled()` is an extension method that inspects the Moq instance to check if the actual and expected messages are equal. Here it is,
+In our test, we're expecting the actual log message to be exactly the same as the one from the `SomethingController`. Can you already spot the duplication? In fact, we're rebuilding the log message inside our tests. We're [duplicating the logic under test]({% post_url 2021-10-11-DontRepeatLogicInAssertions %}).
+
+Also, let's notice we used a [custom assertion method]({% post_url 2021-08-16-WriteCustomAssertions %}) to make our assertions less verbose. `VerifyWasCalled()` is an extension method that inspects the Moq instance to check if the actual and expected messages are equal. Here it is,
 
 ```csharp
 public static class MoqExtensions
@@ -199,7 +201,7 @@ public static class MoqExtensions
 
 Voilà! That's how to make our test that checks logging messages more maintainable. By not rebuilding log messages inside tests and asserting that they contain keywords instead of expecting to be exact matches.
 
-Here we dealt with logging for diagnostic purposes (logging to make troubleshooting easier for developers). But if logging were a business requirement, we should have to make it a separate "concept" in our code. Not in logging statements scatter all over the place. I learned by distinction about logging when reading [Unit Testing Principles, Practices, and Patterns]({% post_url 2022-10-17-UnitTestingPrinciplesPracticesTakeaways %})
+Here we dealt with logging for diagnostic purposes (logging to make troubleshooting easier for developers). But if logging were a business requirement, we should have to make it a separate "concept" in our code. Not in logging statements scatter all over the place. I learned by distinction about logging when reading [Unit Testing Principles, Practices, and Patterns]({% post_url 2022-10-17-UnitTestingPrinciplesPracticesTakeaways %}).
 
 If you want to read more about unit testing, check [How to write tests for HttpClient using Moq]({% post_url 2022-12-01-TestingHttpClient %}), [How to test an ASP.NET Authorization Filter]({% post_url 2022-12-03-TestingAspNetAuthorizationFilters %}) and my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}) where we cover from what a unit test is, to fakes and mocks, to best practices.
 
