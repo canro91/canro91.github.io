@@ -87,6 +87,8 @@ After that change, SQL Server only read 463 records. That was way better than re
 
 Voilà! If we want to write faster queries, let's stop using functions around columns in our WHEREs. That screws SQL Server estimates. For example, let's not use LOWER or UPPER around our columns. By the way, [SQL Server string searches are case insensitive]({% post_url 2022-02-21-CaseSensitiveSearchSQLServer %}) by default, we don't need those functions at all.
 
-To read more SQL Server content, check [What are implicit conversions and why you should care]({% post_url 2022-02-07-WhatAreImplicitConversions %}), [how to optimize queries with GROUP BY]({% post_url 2022-03-07-OptimizeGroupBySQLServer %}), and [Just listen to SQL Server index recommendations]({% post_url 2022-03-21-SQLServerIndexRecommendations %}).
+By the way, this is the same mistake we make when [comparing DateTime in our SQL queries]({% post_url 2020-10-05-CompareDateTimeSQLServer %}).
+
+To read more SQL Server content, check [what implicit conversions are and why you should care]({% post_url 2022-02-07-WhatAreImplicitConversions %}), [how to optimize queries with GROUP BY]({% post_url 2022-03-07-OptimizeGroupBySQLServer %}), and [just listen to SQL Server index recommendations]({% post_url 2022-03-21-SQLServerIndexRecommendations %}).
 
 _Happy SQL time!_

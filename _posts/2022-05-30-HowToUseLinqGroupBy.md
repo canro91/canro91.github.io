@@ -219,7 +219,7 @@ When we need to access properties from an anonymous object, we use their propert
 
 Voilà! That's the GroupBy method. It creates groups or buckets with the elements of a collection and transforms each group. If you noticed the output of our previous examples, the `GroupBy` method grouped the elements without sorting them. For that, we would need the `OrderBy` method.
 
-To learn about LINQ and other methods, check my [quick guide to LINQ]({% post_url 2021-01-18-LinqGuide %}) and [five LINQ methods in pictures]({% post_url 2022-05-16-LINQMethodsInPictures %}). For more C# content, check [C# Definitively Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %}) and my [top 10 best C# features]({% post_url 2021-09-13-TopNewCSharpFeatures%}).
+To learn about LINQ and other methods, check my [quick guide to LINQ]({% post_url 2021-01-18-LinqGuide %}), [five common LINQ methods in pictures]({% post_url 2022-05-16-LINQMethodsInPictures %}), and [three set-like LINQ methods: Intersect, Union, and Except]({% post_url 2022-08-22-IntersectUnionAndExcept %}). For more C# content, check [C# Definitively Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %}) and my [top 10 best C# features]({% post_url 2021-09-13-TopNewCSharpFeatures%}).
 
 {%include linq_course.html %}
 

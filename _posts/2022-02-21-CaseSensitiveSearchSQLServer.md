@@ -77,6 +77,6 @@ This time, we have the results we were expecting. Only users with lowercase 'joh
 
 Voilà! That's how we can write case-sensitive searches in SQL Server. Remember, don't use LOWER or UPPER. They won't work for case-sensitive searches. Use a different collation instead.
 
-For more content on SQL Server, check [what are implicit conversions and why you should care]({% post_url 2022-02-07-WhatAreImplicitConversions %}) and [how to optimize Group by queries in SQL Server]({% post_url 2022-03-07-OptimizeGroupBySQLServer %}).
+For more content on SQL Server, check [what are implicit conversions and why you should care]({% post_url 2022-02-07-WhatAreImplicitConversions %}), [how to optimize GROUP BY queries]({% post_url 2022-03-07-OptimizeGroupBySQLServer %}), and [just listen to index recommendations]({% post_url 2022-03-21-SQLServerIndexRecommendations %}).
 
 _Happy coding!_
