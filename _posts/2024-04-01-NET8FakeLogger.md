@@ -6,11 +6,11 @@ cover: Cover.png
 cover-alt: "A pile of wood logs" 
 ---
 
-Starting from .NET 8.0, we have a better alternative to test logging and logging messages. We don't need to roll our own mocks anymore. Let's learn how to use the new `FakeLogger<T>` inside our unit tests.
+Starting with .NET 8.0, we have a better alternative for testing logging and logging messages. We don't need to roll our own mocks anymore. Let's learn how to use the new `FakeLogger<T>` inside our unit tests.
 
-**.NET 8.0 added a FakeLogger, an in-memory logging provider for unit testing. It exposes methods and properties, like LatestRecord, to inspect the log entries recorded inside unit tests.**
+**.NET 8.0 introduces FakeLogger<T>, an in-memory logging provider designed for unit testing. It provides methods and properties, such us LatestRecord, to inspect the log entries recorded inside unit tests.**
 
-Let's revisit our post about [unit testing logging messages]({% post_url 2022-12-04-TestingLoggingAndLogMessages %}). In that post, we used a `Mock<ILogger<T>>` to test we logged the exception message thrown inside a controller method. This was the controller we wanted to test,
+Let's revisit our post on [unit testing logging messages]({% post_url 2022-12-04-TestingLoggingAndLogMessages %}). In that post, we used a `Mock<ILogger<T>>` to verify that we logged the exception message thrown inside a controller method. This was the controller we wanted to test,
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
@@ -130,11 +130,11 @@ We wrote `new FakeLogger<SomethingController>()` and passed it around. That's it
 
 ## 2. Asserting on FakeLogger
 
-`FakeLogger<T>` has a property `LatestRecord` with the last entry we logged. Its type is `FakeLogRecord` and contains a `Level`, `Message`, and `Exception`. And if there are no logs recorded, `LatestRecord` throws an `InvalidOperationException` with "No records logged" as the message.
+The `FakeLogger<T>` has a `LatestRecord` property that captures the last entry we logged. Its type is `FakeLogRecord` and contains a `Level`, `Message`, and `Exception`. And if no logs have been recorded, accessing `LatestRecord` will throw an `InvalidOperationException` with the message "No records logged."
 
-But, for [the Assert part]({% post_url 2021-07-19-WriteBetterAssertions %}) of our test, we followed the lesson from our previous post on [testing logging messages]({% post_url 2022-12-04-TestingLoggingAndLogMessages %}): **do not expect exact matches of logging messages in assertions**. Otherwise, any change in the structure of our logging messages will make our test break, even when the business logic is still the same.
+But, for [the Assert part]({% post_url 2021-07-19-WriteBetterAssertions %}) of our test, we followed the lesson from our previous post on [testing logging messages]({% post_url 2022-12-04-TestingLoggingAndLogMessages %}): **do not expect exact matches of logging messages in assertions**. Otherwise, any change in the structure of our logging messages will make our test break, even if the underlying business logic remains unchanged.
 
-Instead of expecting exact matches of the logging messages, we wrote an extension method `VerifyWasCalled()`, receiving a log level and a substring. Here it is,
+Instead of expecting exact matches of the logging messages, we wrote an extension method `VerifyWasCalled()`. This method receives a log level and a substring as parameters. Here it is,
 
 ```csharp
 public static void VerifyWasCalled<T>(this FakeLogger<T> fakeLogger, LogLevel logLevel, string message)
