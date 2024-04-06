@@ -8,7 +8,7 @@ cover-alt: "A pile of wood logs"
 
 Starting with .NET 8.0, we have a better alternative for testing logging and logging messages. We don't need to roll our own mocks anymore. Let's learn how to use the new `FakeLogger<T>` inside our unit tests.
 
-**.NET 8.0 introduces FakeLogger<T>, an in-memory logging provider designed for unit testing. It provides methods and properties, such us LatestRecord, to inspect the log entries recorded inside unit tests.**
+**.NET 8.0 introduces FakeLogger, an in-memory logging provider designed for unit testing. It provides methods and properties, such us LatestRecord, to inspect the log entries recorded inside unit tests.**
 
 Let's revisit our post on [unit testing logging messages]({% post_url 2022-12-04-TestingLoggingAndLogMessages %}). In that post, we used a `Mock<ILogger<T>>` to verify that we logged the exception message thrown inside a controller method. This was the controller we wanted to test,
 
