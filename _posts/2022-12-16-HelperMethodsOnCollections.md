@@ -91,6 +91,8 @@ foreach (var (index, movie) in movies.Enumerated())
 }
 ```
 
+[.NET 9 introduced the Index method]({% post_url 2024-04-15-NET9LinqMethods %}) that works like our `Enumerated()`. We don't need to roll our own method anymore in recent versions of .NET.
+
 Voilà! These are some of my favorite extension methods to work with collections. Some of them are workarounds to [avoid the NullReferenceException]({% post_url 2023-02-20-WhatNullReferenceExceptionIs %}) when working with collections. What extension methods do you use often?
 
 If you want to learn more about LINQ, read my [Quick Guide to LINQ]({% post_url 2021-01-18-LinqGuide %}).

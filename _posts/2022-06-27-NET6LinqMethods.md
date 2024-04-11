@@ -202,7 +202,7 @@ To use these new methods and overloads, install on your machine the latest versi
 
 Voilà! These are four new LINQ methods released in the .NET 6 updated. I really like the FirstOrDefault with a safe default. That help us to prevent one of the [common LINQ mistakes]({% post_url 2022-06-13-LinqMistakes %}): using the `XOrDefault` methods without null checking afterwards.
 
-To learn about LINQ and other methods, check my [quick guide to LINQ]({% post_url 2021-01-18-LinqGuide %}), these [five common LINQ methods in Pictures]({% post_url 2022-05-16-LINQMethodsInPictures %}) and [how to use LINQ GroupBy method]({% post_url 2022-05-30-HowToUseLinqGroupBy %}). For more C# content, check [C# Definitive Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %}) for a list of subjects every intermediate C# developer should know.
+To learn about LINQ and other methods, check my [quick guide to LINQ]({% post_url 2021-01-18-LinqGuide %}), these [five common LINQ methods in Pictures]({% post_url 2022-05-16-LINQMethodsInPictures %}), [how to use LINQ GroupBy method]({% post_url 2022-05-30-HowToUseLinqGroupBy %}) and [two new LINQ methods in .NET 9]({% post_url 2024-04-15-NET9LinqMethods %}).
 
 {%include linq_course.html %}
 
