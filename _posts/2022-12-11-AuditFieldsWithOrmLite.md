@@ -262,6 +262,6 @@ We don't want to change the `CreatedDate` on updates. That's why in the `UpdateF
 
 Voilà! That's how to automate audit fields with OrmLite. After reading the OrmLite source code, I found out about these filters and attributes. I learned the lesson of reading our source code dependencies from a [past Monday Links episode]({% post_url 2022-01-17-MondayLinks %}).
 
-For more content, check [How to create a CRUD API with ASP.NET Core and Insight.Database]({% post_url 2020-05-01-InsightDatabase %}) and [How to keep your database schema updated with Simple.Migrations]({% post_url 2020-08-15-Simple.Migrations %}). To read more about OrmLite, check [How to pass a DataTable as a parameter with OrmLite]({% post_url 2023-06-26-PassDataTableOrmLite %}).
+To read more about OrmLite, check [how to pass a DataTable as a parameter with OrmLite]({% post_url 2023-06-26-PassDataTableOrmLite %}), [how to join to subqueries with OrmLite]({% post_url 2023-10-16-SubqueriesAndOrmLite %}), and [five lessons while working with OrmLite]({% post_url 2023-10-30-LessonsOnOrmLite %}).
 
 _Happy coding!_
