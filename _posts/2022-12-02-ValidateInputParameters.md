@@ -18,7 +18,7 @@ This is what happened. I needed to import a feature from a shared Nuget package.
 
 When calling an API endpoint that used that feature, I got an `ArgumentNullException`: _"Value cannot be null. (Parameter 'uriString')."_ It seemed that I was missing a URI. But what URI?
 
-Without any XML docstrings on the `AddFeature()` method, I had no other solution than decompile that DLL. I found a service like this one, 
+Without any XML docstrings on the `AddFeature()` method, I had no other solution than to decompile that DLL. I found a service like this one, 
 
 ```csharp
 public class SomeService : ISomeService
@@ -78,7 +78,7 @@ public class SomeService : ISomeService
 }
 ```
 
-Even better, what if the `AddFeature()` method has an overload that receives the expected configuration value? Something like `AddFeature(AnyConfigOptions options)`. This way, the client of that package could decide the source of those options. Either read them from a configuration file or hardcode them.
+Even better, what if the `AddFeature()` method had an overload that receives the expected configuration value? Something like `AddFeature(AnyConfigOptions options)`. This way, the client of that package could decide the source of those options. Either read them from a configuration file or hardcode them.
 
 The book "Growing Object-Oriented Software Guided by Tests" suggests having a `StupidProgrammerMistakeException` or a specific exception for this type of scenario: missing configuration values. This would be a good use case for that exception type.
 
