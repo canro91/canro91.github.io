@@ -10,15 +10,57 @@ Some days ago, I got a message from someone starting his journey to become a Sof
 
 On the email, my reader explained that he wanted to become a professional Software Engineer with a one-year ultralearning project. Also, he wrote he had a list of resources compiled and already made some progress.
 
-I want to document my reply to help others and [preserve my keystrokes]({% post_url 2021-12-06-ItsNotWhatYouRead %}). This is my long reply:
+I want to document my reply to help others and [preserve my keystrokes]({% post_url 2021-12-06-ItsNotWhatYouRead %}).
 
-1. **Set milestones**: Keep yourself focused and motivated with milestones. For example, after 2 or 3 months of studying, make sure to complete an introductory CS course or have some features of a coding project ready. Often we underestimate what we can do in a year or get easily distracted.
-2. **Choose Math subjects wisely**: This might be controversial. But don't get too focused on learning advanced Math. Depending on the business domain you're working on as a Software Engineer, you might not need a lot of Math. Unless you're working on Computer Graphics, Finance, or Simulations. I'd stick to courses on Linear Algebra and Math for Computer Science.
-3. **Use roadmaps**: Find list of subjects to learn from roadmaps. If you search on Google or GitHub "programming roadmap \<insert year here\>," you will find good resources. But you don't need to learn all those subjects at once. Instead, understand how a particular subject or tool fits into the larger picture and when you need it.
-4. **Write an end-to-end coding project**: Write a coding project that reads data from a webpage, calls a backend, persists data into a relational database, and displays it back. You will learn a lot from this simple exercise. HTML/CSS, a UI library, HTTP/REST, a backend language, SQL, and a database engine. Quite a lot!
-5. **Be consistent**: Set a regular study time and put it in a calendar. I find the green squares on my GitHub profile inspiring to keep myself in the loop.
-6. **Learn the tech and tools companies are hiring for**: Probably, you will hear or read people arguing to learn X instead of Y or X pays more than Y. Instead, use a more tactical approach, find what companies around you (or on LinkedIn) are looking for, and learn those subjects.
-7. **Keep a journal**: Keep track of what you learn, the resources you use, and the subjects you find challenging. You don't need anything fancy. A simple .txt file works. I found this advice on "Never Stop Learning" by Bradley R. Staats.
+This is my long reply and how I would start an Ultralearning project:
+
+## 1. Set milestones
+
+Keep yourself focused and motivated with milestones.
+
+For example, after 2 or 3 months of studying, make sure to complete an introductory CS course or have some features of a coding project ready.
+
+Often we underestimate what we can do in a year or get easily distracted.
+
+## 2. Choose Math subjects wisely
+
+This might be controversial. But don't get too focused on learning advanced Math.
+
+Depending on the business domain you're working on as a Software Engineer, you might not need a lot of Math. Unless you're working on Computer Graphics, Finance, or Simulations.
+
+I'd stick to courses on Linear Algebra and Math for Computer Science.
+
+## 3. Use roadmaps as inspiration
+
+Find lists of subjects to learn from roadmaps.
+
+If you search on Google or DuckDuckGo or GitHub "programming roadmap \<insert year here\>," you will find good resources. But you don't need to learn all those subjects at once. Instead, understand how a particular subject or tool fits into the larger picture and when you need it.
+
+## 4. Write an end-to-end coding project
+
+Write a coding project that reads data from a webpage, calls a backend, persists data into a relational database, and displays it back.
+
+You will learn a lot from this simple exercise. HTML/CSS, a UI library, HTTP/REST, a backend language, SQL, and a database engine. Quite a lot!
+
+## 5. Be consistent
+
+I know this is cliche at this point. But...
+
+Set a regular study time and put it in a calendar. I find the green squares on my GitHub profile inspiring to keep myself in the loop.
+
+## 6. Learn the tech and tools companies are hiring for
+
+Probably, you will hear or read people arguing to "learn X instead of Y" or "X pays more than Y." Instead, use a more tactical approach, find what companies around you (or on LinkedIn) are looking for, and learn those subjects.
+
+Or, in any case, it seems there's always a shortage of COBOL developers. I've read they're well paid.
+
+## 7. Keep a journal
+
+Keep track of what you learn, the resources you use, and the subjects you find challenging.
+
+You don't need anything fancy. A simple .txt file works. Sorry, if you were expecting Notion. I'm a [plain-text lover]({% post_url 2020-08-29-HowITakeNotes %}).
+
+I found this advice about the journal on the book "Never Stop Learning" by Bradley R. Staats.
 
 Voilà! That's how I would approach a ultralearning project to become a Software Engineer. My last piece of advice is you don't need to learn everything at once. In the beginning, learn a handful of tools and learn them well. But don’t be afraid of learning something else. Later you could start expanding your toolbox and finding what you like the most.
 
