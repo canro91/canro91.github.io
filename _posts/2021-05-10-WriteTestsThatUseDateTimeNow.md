@@ -27,7 +27,7 @@ public class CreditCardValidationTests
     {
         var validator = new CreditCardValidator();
 
-        var creditCard = new CreditCardBuilder()
+        var request = new CreditCardBuilder()
                         .WithExpirationYear(DateTime.Now.AddYears(-1).Year)
                         //                  ^^^^^
                         .Build();
@@ -41,7 +41,7 @@ public class CreditCardValidationTests
     {
         var validator = new CreditCardValidator();
 
-        var creditCard = new CreditCardBuilder()
+        var request = new CreditCardBuilder()
                         .WithExpirationMonth(DateTime.Now.AddMonths(-1).Month)
                         //                   ^^^^^                            
                         .Build();
