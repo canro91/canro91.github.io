@@ -6,11 +6,13 @@ cover: Cover.png
 cover-alt: "Employer reading a resume" 
 ---
 
-I applied for a role as a software engineer at a FAANG or MAGMA or insert-newest-acronym here and I failed.
+Overconfidence killed all my chances of success.
+
+I applied for a role as a software engineer at a FAANG or MAGMA or insert-newest-acronym here.
+
+And I failed.
 
 I thought: "I have more than 10 years of experience. I've seen quite a lot."
-
-Overconfidence.
 
 A "short coding assessment" got me off guard. 80 minutes and 3 exercises made me feel like an impostor. An uppercut and 10-second countdown.
 
