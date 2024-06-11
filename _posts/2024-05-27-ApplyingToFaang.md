@@ -16,7 +16,7 @@ I thought: "I have more than 10 years of experience. I've seen quite a lot."
 
 A "short coding assessment" got me off guard. 80 minutes and 3 exercises made me feel like an impostor. An uppercut and 10-second countdown.
 
-I don't want this post to be another "hiring is broken" and "life is unfair" post.
+I don't want this post to be another "hiring is broken" and "life is unfair" post. So...
 
 If I could go back in time, this is what I'd tell myself before that coding assesment:
 
@@ -26,7 +26,9 @@ Take the time to review data structures. Lists, hash maps, queues, trees.
 
 Trees, is this you?
 
-I haven't used trees since my data structure class back in university. But, surprise, surprise. That was one of the questions.
+I haven't used trees since my data structure class back in university. And probably, I wouldn't use them if I had passed the interview and joined.
+
+But, surprise, surprise. That was one of the questions.
 
 ## 2. Practice using a timer and a coding editor without auto-completion
 
@@ -46,7 +48,7 @@ I could have nailed the second one first. It was way easier. And definitively, I
 
 Read all the questions and start with the easy ones. Old advice that I forgot. 
 
-Voila! That's what I'd tell myself before that coding assessment. Yeah, hiring is broken, but we have to go through gatekeepers. Or build a place for ourselves.
+Voila! That's what I'd tell myself before that coding assessment. Yeah, hiring is broken, but we have to go through gatekeepers. Or ditch our CVs and interviewing skills and build a place for ourselves.
 
 For more interview content, read [remote interview types and tips]({% post_url 2019-09-29-RemoteInterviewTips %}) and [ten tips to solve your next interview coding challenge]({% post_url 2021-11-22-CodingChallengeTips %}).
 
