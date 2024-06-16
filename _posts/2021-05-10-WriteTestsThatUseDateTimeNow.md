@@ -167,6 +167,8 @@ public class CreditCardValidationTests
 
 With a testable clock in our tests, we replaced all the references to `DateTime.Now` with a fixed date in the past.
 
+_**UPDATE (June 2024)**_: [.NET 8.0 introduced TimeProvider]({% post_url 2024-06-10-TestingTimeWithTimeProvider %}), a new abstraction to use and test time. With this new built-in abstraction, we don't need to roll our own `ISystemClock`.
+
 ### Create constants for common test values
 
 To make things cleaner, let's refactor our tests. Let's use a builder method and read-only fields for the fixed dates.
