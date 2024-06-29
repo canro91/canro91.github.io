@@ -254,4 +254,6 @@ Voilà! That's what I learned about unit testing ASP.NET authorization filters. 
 
 If you want to read more about unit testing, check [How to write tests for HttpClient using Moq](% post_url 2022-12-01-TestingHttpClient %) and my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}) where we cover from what a unit test is, to fakes and mocks, to best practices.
 
+{%include ut201_course.html %}
+
 _Happy testing!_

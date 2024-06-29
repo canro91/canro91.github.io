@@ -205,4 +205,6 @@ Here we dealt with logging for diagnostic purposes (logging to make troubleshoot
 
 If you want to read more about unit testing, check [How to write tests for HttpClient using Moq]({% post_url 2022-12-01-TestingHttpClient %}), [How to test an ASP.NET Authorization Filter]({% post_url 2022-12-03-TestingAspNetAuthorizationFilters %}) and my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}) where we cover from what a unit test is, to fakes and mocks, to best practices.
 
+{%include ut201_course.html %}
+
 _Happy testing!_
