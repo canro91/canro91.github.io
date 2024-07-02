@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Lessons I learned from my ex-coworkers"
+title: "Lessons I learned from my ex-coworkers about software engineering"
 tags: career
 cover: Cover.png
 cover-alt: "Engineers working in a office" 
@@ -8,7 +8,11 @@ cover-alt: "Engineers working in a office"
 
 _This post is part of [my Advent of Code 2022]({% post_url 2022-12-01-AdventOfCode2022 %})._
 
-Today I want to share some of the lessons I learned from three of my ex-coworkers. I didn't take the time to thank them when I worked with them. This is my thank you note.
+For better or worse, we all have something to learn from our bosses and co-workers.
+
+These are three lessons I learned from three of my ex-coworkers and ex-bosses about software engineering, designing, and programming.
+
+I didn't take the time to thank them when I worked with them. This is my thank you note.
 
 ## 1. Inspire Change
 
@@ -32,7 +36,7 @@ Recently, a coworker told me that reading an authorization token from a custom h
 
 Also, from Javier, I learned to read other people's source code. He believed that's the way of learning from others. By looking at his code.
 
-## 3. Identify your users
+## 3. Identify your users and their goals
 
 From Pedro, the boss, I learned to keep in mind who our end users are.
 
