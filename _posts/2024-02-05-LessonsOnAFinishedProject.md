@@ -6,9 +6,11 @@ cover: Cover.png
 cover-alt: "Two businessmen shaking their hands" 
 ---
 
-Today I want to take a moment and reflect on a finished project. Last year, I worked as an independent contractor and engaged in short projects with a client. This project was a six-month effort to support group events, like weddings, conferences, and retreats, in a property management system.
+This small project taught me more about leadership and communication than programming in general.
 
-This small project taught me more about leadership and communication than programming in general. These are the two lessons I learned from this project.
+Last year, I worked as an independent contractor and engaged in short projects with a client. This project was a six-month effort to support group events, like weddings, conferences, and retreats, in a property management system.
+
+These are the two lessons I learned from this project.
 
 ## Lesson 1: Have uncomfortable conversations earlier
 
@@ -48,4 +50,6 @@ Lesson learned! Once you touch it, you own it!
 
 Voilà! These are the lessons I learned from this project: have uncomfortable conversations and test already-working features. Also, this project made me think it's better to hire a decent developer who can be mentored and coached than a "rock star" who can't get along with the team. 
 
-For more career lessons, check [five lessons from my first five years as a software engineer]({% post_url 2019-08-19-FiveLessonsAfterFiveYears %}), [three lessons I learned after a "failed" project]({% post_url 2022-12-17-LessonsOnAFailedProject %}) and [things I wished I knew before working as a software engineer]({% post_url 2022-12-12-ThingsToKnowBeforeBeingSoftwareEngineer %}).
+For more career lessons, check [five lessons from my first five years as a software engineer]({% post_url 2019-08-19-FiveLessonsAfterFiveYears %}), [three lessons I learned after a "failed" project]({% post_url 2022-12-17-LessonsOnAFailedProject %}) and [things I wish I knew before working as a software engineer]({% post_url 2022-12-12-ThingsToKnowBeforeBeingSoftwareEngineer %}).
+
+{%include 7day_email_course.html %}

@@ -114,4 +114,6 @@ For more practical advice...
 * If you're studying C#, I wrote a guide with what I believe [every C# developer should know]({% post_url 2018-11-17-TheC#DefinitiveGuide %}).
 * Also, I challenged myself to learn enough [React in 30 days]({% post_url 2020-10-26-ReactIn30Days %}). Probably by the time you read it, there will be a new React version doing everything differently. And, if you're studying Golang, I studied enough [Go in 30 days]({% post_url 2020-07-05-LetsGoStudyPlan %}) too.
 
+{%include 7day_email_course.html %}
+
 _See you around and happy coding!_
