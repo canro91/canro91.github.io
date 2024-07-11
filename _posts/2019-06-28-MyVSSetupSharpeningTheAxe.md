@@ -105,10 +105,14 @@ To make Visual Studio work in Presentation mode:
 * Disable CodeLens.
 * Use Cascadia Mono, 14pt.
 * Change Output and Developer Powershell font to Consolas 14pt.
+* Increase size of tooltips:
+    * Change Statement Completion font size to 12pt.
+    * Change Editor Tooltip font size to 13pt.
+* Change text highlight color to yellow.
 * Use 120% as default zoom level.
+* Install [SaveAllTheTime](https://github.com/pragmatrix/SaveAllTheTime).
 * Optionally install the [GitHub theme](https://github.com/madskristensen/GitHubThemes).
 * Optionally install the [MarkdownEditor extension](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.MarkdownEditor) to present using markdown files.
-
 
 Voilà! That's how I use Visual Studio 2019 for C# coding. If you're wondering what's Vim and why you should learn it, check my post [Learning Vim for Fun and Profit]({% post_url 2020-09-14-LearnVimForFunAndProfit %}).
 
