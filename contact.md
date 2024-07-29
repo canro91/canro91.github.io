@@ -4,13 +4,9 @@ title: Contact
 sidebar_sort_order: 1
 ---
 
-### Hola!
+## Hello! Hola!
 
-You want to know where else to find me or get in touch? Have any questions or want to say Hi?
-
-You can follow me on <a href="{{ site.devto }}" target="_blank" rel="noopener noreferrer">dev.to</a>, <a href="{{ site.github }}" target="_blank" rel="noopener noreferrer">GitHub</a> and <a href="{{ site.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
-
-Send me a message using the form below and I’ll be in touch!
+Do you have any questions or just want to say Hi? Maybe did you find a typo? Send me a message using the form below and I’ll be in touch! No promises, though.
 
 <div class="contact-form">
 <form method="POST" action="https://formspree.io/f/xwkwzlkr">
@@ -24,3 +20,6 @@ Send me a message using the form below and I’ll be in touch!
 <button type="submit">Send</button>
 </form>
 </div>
+<br/>
+
+{% include 7day_email_course_longer.html %}
