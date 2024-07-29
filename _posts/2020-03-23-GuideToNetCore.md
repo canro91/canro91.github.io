@@ -27,7 +27,7 @@ Don't worry if you haven't started to worked with ASP.NET Core yet. This is a ne
 ## 1. Every journey begins with the first step
 
 <figure>
-<img src="https://source.unsplash.com/bJhT_8nbUA0/800x400" alt="toddler's standing in front of beige concrete stair" />
+<img src="https://images.unsplash.com/photo-1502101872923-d48509bff386?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=2000&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ" alt="toddler's standing in front of beige concrete stair" />
 
 <figcaption>Photo by <a href="https://unsplash.com/@tateisimikito?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Jukan Tateisi</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></figcaption>
 </figure>

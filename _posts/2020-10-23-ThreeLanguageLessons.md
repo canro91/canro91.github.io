@@ -9,9 +9,9 @@ This post is about one of my hobbies: learning new languages. But not programmin
 I want to share three lessons I learned while traveling to France to practice my French-speaking skills. Each lesson is behind a funny story that happened on my first visit to France.
 
 <figure>
-<img src="https://source.unsplash.com/xzoD4P7Lu7M/600x400" width="600" alt="Three language lessons I learned in my First visit to France" />
+<img src="https://images.unsplash.com/photo-1616937927892-074b4217febc?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixlib=rb-4.0.3&q=80&w=600&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA" width="600" alt="Three language lessons I learned in my First visit to France" />
 
-<figcaption>Eiffel Tower, Paris, France. <span>Photo by <a href="https://unsplash.com/@pl_gt?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Paul Gaudriault</a> on <a href="https://unsplash.com/s/photos/france?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
+<figcaption>Photo by <a href="https://unsplash.com/@bottlecow?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Byeong woo Kang</a> on <a href="https://unsplash.com/photos/eiffel-tower-under-white-clouds-during-daytime-CF6Ev7NCw_Y?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></figcaption>
 </figure>
 
 These are the three lessons I learned:

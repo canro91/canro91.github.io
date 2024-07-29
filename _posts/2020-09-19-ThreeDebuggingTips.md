@@ -21,8 +21,9 @@ Debugging is thinking. Pen and paper are your friends.
 Sometimes you have to explain your problem to somebody else. And, the answer seems to come by magic. You don't have anyone around?-you said. Think out loud or explain it to a rubber duck.
 
 <figure>
-<img src="https://source.unsplash.com/LhqLdDPcSV8/800x400" width="800" />
-<figcaption>Your best debugging friend. Photo by <a href="https://unsplash.com/@timothycdykes?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Timothy Dykes</a> on <a href="https://unsplash.com/s/photos/debug?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></figcaption>
+<img src="https://images.unsplash.com/photo-1669236767457-e1aa4678eadb?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixlib=rb-4.0.3&q=80&w=600&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA" width="600" />
+
+<figcaption>Your best debugging friend. Photo by <a href="https://unsplash.com/@_allieastorga_?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Allison Astorga</a> on <a href="https://unsplash.com/photos/a-yellow-rubber-ducky-E_HNTeajpG4?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></figcaption>
 </figure>
 
 ## 3. Find how others have solved your problem

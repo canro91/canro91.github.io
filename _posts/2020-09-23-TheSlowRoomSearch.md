@@ -57,7 +57,8 @@ But, when calling the room search from Postman, the execution time didn't seem t
 | After  | 19.48 17.61 18.65 |
 
 <figure>
-<img src="https://source.unsplash.com/DGa0LQ0yDPc/800x400" width="800">
+<img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixlib=rb-4.0.3&q=80&w=600&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA" width="600">
+
 <figcaption>Encuentro Guadalupe, El Porvenir, Mexico. <span>Photo by <a href="https://unsplash.com/@manuelmx?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Manuel Moreno</a> on <a href="https://unsplash.com/s/photos/hotel?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
 </figure>
 

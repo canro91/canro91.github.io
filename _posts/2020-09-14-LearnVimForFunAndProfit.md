@@ -32,7 +32,7 @@ Vim is a command-line editor. However, you can find it these days outside the co
 **Vim can be extended and customized**. You can bring your favorite color scheme and define your own key shortcuts. There are lots of plugins to enhance your experience with Vim.
 
 <figure>
-<img src="https://source.unsplash.com/AgQaMOQFWeA/800x400" alt="Macro typewriter ribbon" />
+<img src="https://images.unsplash.com/photo-1455329909767-7be9efff527d?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ" alt="Macro typewriter ribbon" />
 
 <figcaption><span>Photo by <a href="https://unsplash.com/@anhdung?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Dung Anh</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
 </figure>

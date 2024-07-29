@@ -18,7 +18,7 @@ Before using Poor Man's T-SQL Formatter and ApexSQL Refactor, I spent too much t
 I tried to use the "Find and Replace" option inside a text editor. But it only worked for making keywords uppercase. Sometimes, I ended up messing with variables, parameters, and other things inside my queries. 
 
 <figure>
-<img src="https://source.unsplash.com/-1_RZL8BGBM/800x400" alt="Macro typewriter ribbon" />
+<img src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixlib=rb-4.0.3&q=80&w=600&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA" alt="Macro typewriter ribbon" />
 
 <figcaption><span>Photo by <a href="https://unsplash.com/@kellysikkema?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Kelly Sikkema</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
 </figure>
