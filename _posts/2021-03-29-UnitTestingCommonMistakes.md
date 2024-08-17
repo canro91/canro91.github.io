@@ -42,9 +42,7 @@ Every test should tell the scenario under test and the expected result. We shoul
 
 Also, **don't use filler words like "Success" or "IsCorrect" in our test names**. Instead, let's tell what "success" and "correct" means for that test. Is it a successful test because it doesn't throw exceptions? Is it successful because it returns a value? Make your test names easy to understand.
 
-<div class="message">
-Grab a free copy of <a href="https://imcsarag.gumroad.com/l/unittesting101" target="_blank" rel="noopener noreferrer" data-goatcounter-click="UnitTesting101eBook-Mistakes">my Unit Testing 101 ebook on my Gumroad page</a> where I include these four mistakes and three more chapters to help you start writing unit tests with C# and MSTest. 
-</div>
+_Grab a free copy of my ebook <a href="https://imcsarag.gumroad.com/l/unittesting101" target="_blank" rel="noopener noreferrer" data-goatcounter-click="UnitTesting101eBook-Mistakes">Unit Testing 101: From Zero to Your First Tests</a> on my Gumroad page. I include these four mistakes and three more chapters to help you start writing your first unit tests in C#._
 
 ## Mistake 2: Do not use the right assertion methods
 
