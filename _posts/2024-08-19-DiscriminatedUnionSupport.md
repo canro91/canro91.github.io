@@ -29,9 +29,9 @@ public record Deposit(Charge Charge, Delay Delay);
 // This is invalid syntax
 public union record Charge // <--
 {
-	NightCount Nights;
-	FixedAmount Amount;
-	Percentage Percentage;
+    NightCount Nights;
+    FixedAmount Amount;
+    Percentage Percentage;
 }
 
 public record NightCount(int Count);
@@ -109,16 +109,16 @@ public union Charge
 // This is how to instantiate a union type
 Charge chargeOneNight = new NightCount(1); // <--
 var oneNightBeforeCheckin = new Deposit(
-		chargeOneNight
-		//  ^^^^^
-		new Delay(1, DelayType.BeforeCheckin));
+    chargeOneNight
+    //  ^^^^^
+    new Delay(1, DelayType.BeforeCheckin));
 
 // This is how to use it inside a switch
 var amountToCharge = charge switch {
-	NightCount n => DoSomethingHere(n),
-	FixedAmount a => DoSomethingElseHere(a),
-	Percentage p => DoSomethingDifferentHere(p)
-	// No need to declare a default case here...
+    NightCount n => DoSomethingHere(n),
+    FixedAmount a => DoSomethingElseHere(a),
+    Percentage p => DoSomethingDifferentHere(p)
+    // No need to declare a default case here...
 }
 ```
 
@@ -157,9 +157,9 @@ public record Percentage(decimal Amount);
 
 // Here's how to instantiate a OneOf type
 var oneNightBeforeCheckin = new Deposit(
-		new Charge(new NightCount(1)),
-		//         ^^^^^
-		new Delay(1, DelayType.BeforeCheckin));
+    new Charge(new NightCount(1)),
+    //         ^^^^^
+    new Delay(1, DelayType.BeforeCheckin));
 ```
 
 OneOf brings methods like `Match`, `Value`, and `AsT0`/`AsT1`/`AsT2` to work with and unwrap the underlying type.
@@ -194,8 +194,8 @@ public abstract record Charge
 
 // Here's how to instantiate a discriminated onion
 var oneNightBeforeCheckin = new Deposit(
-		new Charge.NightCount(1),
-		new Delay(1, DelayType.BeforeCheckin));
+    new Charge.NightCount(1),
+    new Delay(1, DelayType.BeforeCheckin));
 ```
 
 Voilà! That's what discriminated unions are, and the official proposal to bring them to the C# language.
