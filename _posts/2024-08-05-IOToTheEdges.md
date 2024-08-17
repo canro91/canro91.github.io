@@ -3,7 +3,7 @@ layout: post
 title: "For Cleaner Domains, Move IO to the Edges of Your App"
 tags: tutorial csharp
 cover: Cover.png
-cover-alt: "<PutYourCoverAltHere>" 
+cover-alt: "A man climbing a mountain" 
 ---
 
 Don't get too close with I/O.
@@ -55,18 +55,18 @@ This is how we might do that,
 ```csharp
 async static Task UpdateCustomer(Customer newCustomer)
 {
-    var existing = await CustomerDb.ReadCustomer(newCustomer.Id);
+    var existing = await CustomerDb.ReadCustomer(newCustomer.Id); // <--
 
     if (existing.Name != newCustomer.Name
         || existing.EmailAddress != newCustomer.EmailAddress)
     {
-        await CustomerDb.UpdateCustomer(newCustomer);
+        await CustomerDb.UpdateCustomer(newCustomer); // <--
     }
     
     if (existing.EmailAddress != newCustomer.EmailAddress)
     {
         var message = new EmailMessage(newCustomer.EmailAddress, "Some message here...");
-        await EmailServer.SendMessage(message);
+        await EmailServer.SendMessage(message); // <--
     }
 }
 ```
@@ -150,7 +150,7 @@ async static Task ImperativeShell(Customer newCustomer)
 
 With the imperative shell, we don't have to deal with database calls and email logic inside our `UpdateCustomer()`. And we can unit test it without mocks.
 
-As a side note, `UpdateCustomerDecision` and `UpdateCustomerResult` are a simple alternative to discriminated unions. Think of discriminated unions like enums where each member could be an object of a different type.
+As a side note, `UpdateCustomerDecision` and `UpdateCustomerResult` are a simple alternative to [discriminated unions]({% post_url 2024-08-19-DiscriminatedUnionSupport %}). Think of discriminated unions like enums where each member could be an object of a different type.
 
 In more complex codebases, `ImperativeShell()` would be like a use case class or command handler.
 

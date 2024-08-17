@@ -73,6 +73,10 @@ Some new features have lowered the barrier to entry. Now a "Hello, world" is a s
 
 Other C# features are making the language inconsistent and easier to write but not easier to read.
 
+Often C# doesn't feel like a single language, but three: the classic one from the early 2000s, another one between the classic and the .NET era, and the one we're living these days.
+
+Anyway, [still no discriminated unions]({% post_url 2024-08-19-DiscriminatedUnionSupport %}). Maybe in C# 20?
+
 For more C# content, read [my C# Definitive Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %}), [how to avoid exceptions when working with Dictionaries]({% post_url 2020-08-01-AnotherTwoCSharpIdiomsPart3 %}), and [Six helpful extension methods to work with Collections]({% post_url 2022-12-16-HelperMethodsOnCollections %}).
 
 _Happy coding!_

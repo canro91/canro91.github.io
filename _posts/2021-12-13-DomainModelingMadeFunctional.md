@@ -14,7 +14,7 @@ This book covers from Domain-Driven Design (DDD) to type systems to refining an 
 
 All the code samples are in F#. Most of the time, they're easy to understand. Since F# has a better type inference than C#, types aren't explicit all the time while writing functions. Some code listings are hard to translate to C#.
 
-To follow the code using C#, I had to rely upon libraries like [OneOf](https://github.com/mcintyre321/OneOf) and [Optional](https://github.com/nlkl/Optional) to bring discriminated unions and option types, not built into the C# language yet.
+To follow the code using C#, I had to rely upon libraries like [OneOf](https://github.com/mcintyre321/OneOf) and [Optional](https://github.com/nlkl/Optional) to bring [discriminated unions]({% post_url 2024-08-19-DiscriminatedUnionSupport %}) and option types, not built into the C# language yet.
 
 ## 1. DDD and Ubiquitous language
 
