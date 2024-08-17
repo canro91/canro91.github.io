@@ -1,14 +1,16 @@
 ---
 layout: post
-title: "Two Lessons I learned after a finished project"
+title: "This Project Taught Me More About Leadership Than Programming: Two Postmortem Lessons"
 tags: career
 cover: Cover.png
 cover-alt: "Two businessmen shaking their hands" 
 ---
 
-This small project taught me more about leadership and communication than programming in general.
+Leadership and communication are more important than coding for the success of a project.
 
-Last year, I worked as an independent contractor and engaged in short projects with a client. This project was a six-month effort to support group events, like weddings, conferences, and retreats, in a property management system.
+Last year, I worked as an independent contractor and engaged in short projects with an American client. This project was a six-month effort to bring group events, like weddings, conferences, and retreats, to a property management system.
+
+This was one of the projects that convinced me that unclear expectations and poor communication kill any software project, not libraries and tools.
 
 These are the two lessons I learned from this project.
 
@@ -36,19 +38,21 @@ This whole situation taught me to have uncomfortable conversations earlier.
 
 ## Lesson 2: Once you touch it, you own it
 
-At some point, we needed to extend an existing feature. We needed to import an Excel file with a list of guests into a group event.
+_"You only have to add your changes to this existing component. It's already working."_ 
 
-"You only have to add your changes on top of this existing component. It's already working." I bet you have heard that, too. That was what our Product Owner told us.
+I bet you have heard that, too. That was what our Product Owner told us to extend an existing feature. We needed to import an Excel file with a list of guests into a group event.
 
-The next thing we knew was that the already-working component had issues. The original team was [laid off]({% post_url 2023-08-21-OnLayoffs %}), and we couldn't get our questions answered or count on them to fix those issues.
+The next thing we knew was that the already-working component had issues. [The original team was laid off]({% post_url 2023-08-21-OnLayoffs %}), and we couldn't get our questions answered or count on them to fix those issues. We were in the dark.
 
-What was a simple coding task turned out to be a longer one.
+What was a simple coding task turned out to be a longer one. Weeks later, we were still fixing issues and closing tickets. Nothing related to our task.
 
-Before starting to work on top of an "already-working" feature, I learned to test it and give a list of existing issues. Otherwise, those existing issues will appear as bugs in our changes. And people will start asking questions: "Why are you taking so much time on this? It's a simple task."
+Before starting to work on top of an "already-working" feature, I learned to test it and give a list of existing issues. Otherwise, those existing issues will appear as bugs in our changes. And people will start asking questions: _"Why are you taking so much time on this? It's a simple task. It was already working."_
+
+After that time, I realized something similar had happened in every job I've been in. I didn't see that coming in this project.
 
 Lesson learned! Once you touch it, you own it!
 
-Voilà! These are the lessons I learned from this project: have uncomfortable conversations and test already-working features. Also, this project made me think it's better to hire a decent developer who can be mentored and coached than a "rock star" who can't get along with the team. 
+Voilà! These are the lessons I learned from this project: have uncomfortable conversations and test already-working features. Also, this project made me think it's better to hire a decent developer who can be mentored and coached than a "rock star" who can't get along with the team.
 
 For more career lessons, check [five lessons from my first five years as a software engineer]({% post_url 2019-08-19-FiveLessonsAfterFiveYears %}), [three lessons I learned after a "failed" project]({% post_url 2022-12-17-LessonsOnAFailedProject %}) and [things I wish I knew before working as a software engineer]({% post_url 2022-12-12-ThingsToKnowBeforeBeingSoftwareEngineer %}).
 
