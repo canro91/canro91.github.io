@@ -7,17 +7,21 @@ cover: LetsGo.png
 
 Do you want to learn a new programming language but don't know what language to choose? Have you heard about Go? Well, let's learn Go in 30 days!
 
-From its [official page](https://golang.org/), Go is _"an open source programming language that makes it easy to build simple, reliable, and efficient software"_. 
+From its [official page](https://go.dev/), Go is _"an open source programming language that makes it easy to build simple, reliable, and efficient software"_. 
 
-Go is a popular language. According to Stack Overflow 2020 Developer Survey, Go is in the top 5 of most loved languages. It ranks in the top 3 most wanted languages. Docker, Kubernetes, and a growing [list of projects](https://github.com/golang/go/wiki/GoUsers) use Go.
+Go is a popular language. According to [Stack Overflow Developer Survey](https://survey.stackoverflow.co/), since 2020, Go is in the top 10 of most admired/desired languages and in the top 15 of the most popular languages.
+
+Docker, Kubernetes, and a growing [list of projects](https://go.dev/wiki/GoUsers) use Go.
 
 ## Why to choose Go?
 
-**Go reduces the complexity of writing concurrent software**. Go uses the concept of **channels** and **goroutines**. These two constructs allow us to have a "queue" and "two threads" to write to and read from it, out-of-the-box.
+**Go reduces the complexity of writing concurrent software**.
+
+Go uses the concept of **channels** and **goroutines**. These two constructs allow us to have a "queue" and "two threads" to write to and read from it, out-of-the-box.
 
 In other languages, we would need error-prone code to achieve similar results. Threads, locks, semaphores, etc, ...
 
-Rob Pike, one of the creators of Go, explains channels and goroutines in his talk [Concurrency is not parallelism](https://blog.golang.org/waza-talk).
+Rob Pike, one of the creators of Go, explains channels and goroutines in his talk [Concurrency is not parallelism](https://go.dev/blog/waza-talk).
 
 <div class="video-container">
 <iframe src="https://www.youtube-nocookie.com/embed/oV9rvDllKEg?rel=0&fs=0" width="640" height="360" frameborder="0"></iframe>
@@ -25,11 +29,13 @@ Rob Pike, one of the creators of Go, explains channels and goroutines in his tal
 
 ## How to learn Go? Methodology
 
-To learn a new programming language, library or framework, stop passively reading tutorials and copy-pasting code you find online. Follow these two principles:
+To learn a new programming language, library or framework, stop passively reading tutorials and copy-pasting code you find online.
 
-**Learn something by doing**. This is one of the takeaways from the book [Pragmatic Thinking and Learning]({% post_url 2020-05-07-PragmaticThinkingAndLearning %}). Instead of watching videos or skimming books, recreate examples and build mini-projects.
+Instead, follow these two principles:
 
-**Don't Copy and Paste**. Instead of copy-pasting, read the sample code, "cover" it and reproduce it without looking at it. If you get stuck, search online instead of going back to the sample. For exercises, read the instructions and try to solve them by yourself. Then, check your solution.
+**1. Learn something by doing**. This is one of the takeaways from the book [Pragmatic Thinking and Learning]({% post_url 2020-05-07-PragmaticThinkingAndLearning %}). Instead of watching videos or skimming books, recreate examples and build mini-projects.
+
+**2. Don't Copy and Paste**. Instead of copy-pasting, read the sample code, "cover" it and reproduce it without looking at it. If you get stuck, search online instead of going back to the sample. For exercises, read the instructions and try to solve them by yourself. Then, check your solution.
 
 > _"Instead of dissecting a frog, build one"_.
 > 
@@ -41,7 +47,7 @@ Before starting to build something with Go, we can have a general overview of th
 
 To grasp the main concepts, we can follow [Learn Go with tests](https://github.com/quii/learn-go-with-tests). It teaches Go using the concept of Test-Driven Development (TDD). Red, green, and refactor.
 
-Other helpful resources to are [Go by Example](https://gobyexample.com/) and [Go documentation](https://golang.org/doc/).
+Other helpful resources to are [Go by Example](https://gobyexample.com/) and [Go documentation](https://go.dev/doc/).
 
 > “To me, legacy code is simply code without tests.”
 > 
@@ -58,7 +64,7 @@ Other helpful resources to are [Go by Example](https://gobyexample.com/) and [Go
 
 * [Fun weekend projects](https://www.opsdash.com/blog/fun-weekend-projects-golang.html) like an [Slack bot](https://www.opsdash.com/blog/slack-bot-in-golang.html) (a [Twitter bot](https://tutorialedge.net/golang/writing-a-twitter-bot-golang/) if you prefer Twitter) or a [simple key-value store](https://www.opsdash.com/blog/persistent-key-value-store-golang.html). You can find another take of a Slack bot [here](https://chrisrng.svbtle.com/building-a-slack-bot-in-golang)
 * Write a data structure like a linked list, a stack, or a queue
-* [Build a CLI wrapper for XKCD](https://eryb.space/2020/05/27/diving-into-go-by-building-a-cli-application.html)
+* [Build a CLI wrapper for XKCD](https://web.archive.org/web/20200606043514/https://eryb.space/2020/05/27/diving-into-go-by-building-a-cli-application.html)
 * [Build and test a REST API with PostgreSQL](https://semaphoreci.com/community/tutorials/building-and-testing-a-rest-api-in-go-with-gorilla-mux-and-postgresql) or [Build a REST API with Fiber and SQLite](https://tutorialedge.net/golang/basic-rest-api-go-fiber/)
 * [Build an API client](https://blog.gopheracademy.com/advent-2019/api-clients-humans/)
 * [The Super Tiny Compiler](https://github.com/hazbo/the-super-tiny-compiler)
@@ -66,6 +72,7 @@ Other helpful resources to are [Go by Example](https://gobyexample.com/) and [Go
 
 ### Advanced
 
+* [An HTTP Server in Go From scratch](https://www.krayorn.com/posts/http-server-go/)
 * [Write cleaner web servers](https://dev.to/chidiwilliams/writing-cleaner-go-web-servers-3oe4)
 * Create an FTP Client. You need to understand sockets
     * [Ping-pong](https://gist.github.com/kenshinx/5796276)
