@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "My Advice on Starting an Ultralearning Project"
+title: "This Is How I'd Start an Ultralearning Project To Become a Software Engineer"
 tags: learning
 cover: Cover.png
 cover-alt: "Pile of books and a notebook"
@@ -36,11 +36,23 @@ Find lists of subjects to learn from roadmaps.
 
 If you search on Google or DuckDuckGo or GitHub "programming roadmap \<insert year here\>," you will find good resources. But you don't need to learn all those subjects at once. Instead, understand how a particular subject or tool fits into the larger picture and when you need it.
 
+Only zoom in when you need a particular tool.
+
 ## 4. Write an end-to-end coding project
 
 Write a coding project that reads data from a webpage, calls a backend, persists data into a relational database, and displays it back.
 
-You will learn a lot from this simple exercise. HTML/CSS, a UI library, HTTP/REST, a backend language, SQL, and a database engine. Quite a lot!
+You will learn a lot from this simple exercise:
+* HTML/CSS,
+* a UI library,
+* HTTP/REST,
+* a backend language,
+* SQL, and
+* a database engine.
+
+Quite a lot!
+
+ou will be surprised by how many "real" applications boil down to read and write data from and to a database.
 
 ## 5. Be consistent
 
@@ -50,7 +62,9 @@ Set a regular study time and put it in a calendar. I find the green squares on m
 
 ## 6. Learn the tech and tools companies are hiring for
 
-Probably, you will hear or read people arguing to "learn X instead of Y" or "X pays more than Y." Instead, use a more tactical approach, find what companies around you (or on LinkedIn) are looking for, and learn those subjects.
+Probably, you will hear or read people arguing to "learn X instead of Y" or "X pays more than Y."
+
+Instead of looking for the best-paying languages, use a more tactical approach, find what companies around you (or on LinkedIn) are looking for, and learn those subjects.
 
 Or, in any case, it seems there's always a shortage of COBOL developers. I've read they're well paid.
 

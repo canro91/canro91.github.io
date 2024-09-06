@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "New Software Developers: Here's A Mentorship Session in 8 Lessons"
+title: "New Developers Looking for a Mentor: Here's a (Free) Mentorship Session in 8 Lessons"
 tags: career
 cover: Cover.png
 cover-alt: "A teacher and student seating in a table" 
