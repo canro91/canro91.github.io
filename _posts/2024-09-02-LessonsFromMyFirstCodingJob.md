@@ -84,6 +84,6 @@ I took these lessons to my next job. And every time I can, I give the same money
 
 Often what we value the most from past jobs is not the money, but the friendships and connections. From time to time, I meet with coworkers I met at this first job for coffee.
 
-For more context, read [8 lessons or so for new software developers]({% post_url 2024-06-24-LessonsForAMentee %}) and [my predictions for Software Engineering in 2034]({% post_url 2024-04-29-2034Predictions %}).
+For more content, read [8 lessons or so for new software developers]({% post_url 2024-06-24-LessonsForAMentee %}) and [my predictions for Software Engineering in 2034]({% post_url 2024-04-29-2034Predictions %}).
 
 {%include 7day_email_course.html %}
