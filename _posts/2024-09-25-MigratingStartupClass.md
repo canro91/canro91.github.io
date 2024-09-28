@@ -12,11 +12,11 @@ The Startup class is still available in newer versions. If we're migrating a pre
 
 Here are 3 alternatives to handle with the Startup class when migrating to newer versions:
 
-## 1. Official Docs approach
+## 1. Official Docs Approach
 
 Newer versions of ASP.NET Core work perfectly fine with the old Program.cs file and Startup class, we can choose to do nothing and keep them.
 
-Here are an old-style Program and Startup classes:
+Here's an old-style Program class:
 
 ```csharp
 using System;
@@ -40,6 +40,8 @@ public class Program
              });
 }
 ```
+
+And a Startup class:
 
 ```csharp
 using Microsoft.AspNetCore.Builder;
@@ -98,7 +100,7 @@ app.Run();
 
 We created a new instance of Startup inside the new Program.cs file.
 
-## 2. Hybrid approach
+## 2. Hybrid Approach
 
 If we really want to ditch the Startup class, Andrew Lock recommends [a hybrid approach in his blog](https://andrewlock.net/exploring-dotnet-6-part-12-upgrading-a-dotnet-5-startup-based-app-to-dotnet-6/#option-3-local-methods-in-program-cs):
 
@@ -136,7 +138,7 @@ static void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 }
 ```
 
-## 3. Do-it-yourself approach
+## 3. Do-It-Yourself Approach
 
 And if we want our Program.cs to look like the newer ones, there's no automatic tool for that (at least I couldn't find one in my Googling session). We have to copy the contents of the Startup class into the Program.cs file, by hand:
 
