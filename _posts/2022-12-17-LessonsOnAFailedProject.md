@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Three lessons I learned after a "failed" project'
+title: 'Three Postmortem Lessons From a "Failed" Project'
 tags: career
 cover: Cover.png
 cover-alt: "Past due invoices" 
@@ -10,19 +10,13 @@ _This post is part of [my Advent of Code 2022]({% post_url 2022-12-01-AdventOfCo
 
 Software projects don't fail because of the tech stack, programming languages, or frameworks.
 
-Choosing the right tech stack and tools is critical for the success of a software project.
-
-But software projects fail due to unclear expectations and communication issues. I've heard the same thing about marriages, by the way.
-
-Even unclear expectations are a communication issue too.
+Sure, choosing the right tech stack is critical for the success of a software project. But software projects fail due to unclear expectations and communication issues. Even unclear expectations are a communication issue too.
 
 This is a failed software project that was killed by unclear expectations and poor communication.
 
-Even though our team delivered the project, we made some mistakes and I learned a lesson.
-
-Before sharing the lessons, let me give you some context about this project.
-
 This was a one-month project to integrate a Property Management System (PMS) with a third-party Guest Messaging System. The idea was to sync reservations and guest data to this third-party system, so hotels could send their guests reminders and Welcome messages.
+
+Even though our team delivered the project, we made some mistakes and I learned a lesson or two.
 
 ## 1. Minimize Moving Parts
 
