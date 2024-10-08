@@ -4,9 +4,9 @@ title: "TIL: LINQ DefaultIfEmpty method in C#"
 tags: todayilearned csharp
 ---
 
-Today while I was reading the AutoFixture source code I found a LINQ method I didn't know about: DefaultIfEmpty. This is what the LINQ DefaultIfEmpty method does.
+Today I was reading the AutoFixture source code in GitHub and I found a LINQ method I didn't know about: `DefaultIfEmpty`.
 
-**LINQ DefaultIfEmpty method returns a collection containing a single default element if the source collection is empty. Otherwise, it returns the same source collection.**
+**DefaultIfEmpty returns a collection containing a single element if the source collection is empty. Otherwise, it returns the same source collection.**
 
 For example, let's find all the movies with a rating greater than 9. Otherwise, return our all-time favorite movie.
 
@@ -35,9 +35,9 @@ public static IEnumerable<T> DefaultIfEmpty<T>(this Enumerable<T> source, T @def
     => source.Any() ? source : new[]{ @default };
 ```
 
-Voilà! DefaultIfEmpty is helpful to make sure we always have a default value when filtering a collection. It's a good alternative to FirstOrDefault followed by checking for null values.
+Voilà! `DefaultIfEmpty` is helpful to make sure we always have a default value when filtering a collection. It's a good alternative to `FirstOrDefault` followed by a null guard.
 
-To learn more about LINQ, check my [Quick Guide to LINQ]({% post_url 2021-01-18-LinqGuide %}). Don't miss my [C# Definitive Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %}) for a list of subjects every intermediate C# developer should know.
+To learn more about LINQ, check my [Quick Guide to LINQ with Examples]({% post_url 2021-01-18-LinqGuide %}).
 
 {%include linq_course.html %}
 

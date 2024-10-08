@@ -6,9 +6,11 @@ cover: Cover.png
 cover-alt: "Cover" 
 ---
 
-One of the best C# features is LINQ. I would say it's the most distinctive of all [C# features]({% post_url 2021-09-13-TopNewCSharpFeatures %}). These are five of the most common LINQ method in pictures.
+If you're learning LINQ for the first time, it can be daunting to learn all LINQ methods at once. Don't try it.
 
-**LINQ is the declarative, immutable, and lazy-evaluated way of working with collections in C#. Some frequently used LINQ methods are Where, Select, Any, GroupBy, and FirstOrDefault.**
+Here are the five most common LINQ methods in pictures.
+
+**LINQ is the declarative, immutable, and lazy-evaluated way of working with collections in C#. And the most frequently used LINQ methods are Where, Select, Any, GroupBy, and FirstOrDefault.**
 
 Let's work with a list of our favorite movies. Let's write a `Movie` class with a name, release year, and a rating.
 
@@ -26,9 +28,9 @@ var movies = new List<Movie>
 
 ## 1. Where
 
-**The Where method returns a new collection with only the elements that meet a given condition.**
+**Where returns a new collection with only the elements that meet a given condition.**
 
-The `Where` method works like a filter on collections. Think of `Where` as a replacement for a `foreach` with an `if` in it. 
+`Where` works like a filter on collections. Think of `Where` as a replacement for a `foreach` with an `if` in it. 
 
 Let's filter our list of movies to keep only those with a rating greater than or equal to 4.5.
 
@@ -44,7 +46,7 @@ We're using arrows to display our LINQ queries. But, the output of [a LINQ query
 
 ## 2. Select
 
-**The Select method applies a function to transform every element of a collection.**
+**Select applies a function to transform every element of a collection.**
 
 Let's find only the names of our favorite movies.
 
@@ -65,7 +67,7 @@ This query would be,
 
 ## 3. Any
 
-**The Any method checks if a collection has at least one element matching a condition. Unlike Where and Select, Any doesn't return a new collection, but either true or false.**
+**Any checks if a collection has at least one element matching a condition. Unlike Where and Select, Any doesn't return a new collection, but either true or false.**
 
 Let's see if we have watched movies with a low rating.
 
@@ -79,7 +81,7 @@ This query would be,
 
 ## 4. GroupBy
 
-**The GroupBy method returns a collection of "buckets" organized by a key. Also, GroupBy transforms each bucket of elements.**
+**GroupBy returns a collection of "buckets" organized by a key. Also, GroupBy transforms each bucket of elements.**
 
 Let's count the films with the same rating.
 
@@ -92,7 +94,7 @@ var groupedByRating = movies.GroupBy(movie => movie.Rating,
                             });
 ```
 
-The second parameter of the `GroupBy` is a `Func` with the grouping key and the elements of each group as parameters. This `Func` works like a mapping function to transform each group or bucket found.
+The second parameter of `GroupBy` is a `Func` with the grouping key and the elements of each group as parameters. This `Func` works like a mapping function to transform each group or bucket found.
 
 This query would be,
 
@@ -102,7 +104,7 @@ This query would be,
 
 ## 5. First & FirstOrDefault
 
-**The First and FirstOrDefault methods return the first element in a collection or the first one matching a condition. Otherwise, First throws an exception, and FirstOrDefault returns the default value of the collection type.**
+**First and FirstOrDefault return the first element in a collection or the first one matching a condition. Otherwise, First throws an exception and FirstOrDefault returns the default value of the collection type.**
 
 Let's find the oldest film we have watched.
 
@@ -115,9 +117,11 @@ This query would be,
 
 {% include image.html name="First.png" caption="Let's find the oldest film we have watched" alt="Oldest film we have watched" %}
 
-Voilà! These are five LINQ methods I use often: Where, Select, Any, Group, and FirstOrDefault. Of course, LINQ has more methods like [Aggreate]({% post_url 2022-07-25-LinqAggregateExplained %}), [Intersect, Union, and Except]({% post_url 2022-08-22-IntersectUnionAndExcept %}), and [new overloads in .NET6]({% post_url 2022-06-27-NET6LinqMethods %}). But, you will get your back covered with those five methods.
+Voilà! Those are five LINQ methods we use more often: `Where`, `Select`, `Any`, `GroupBy`, and `FirstOrDefault`.
 
-To learn about LINQ and other methods, check my [quick guide to LINQ]({% post_url 2021-01-18-LinqGuide %}). All you need to know to start working with LINQ, in 15 minutes or less. For more C# content, check [C# Definitive Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %}) for a list of subjects every intermediate C# developer should know. And, my [top 10 best C# features]({% post_url 2021-09-13-TopNewCSharpFeatures%}) for other cool C# features.
+Of course, LINQ has more methods like [Aggreate]({% post_url 2022-07-25-LinqAggregateExplained %}), [Intersect, Union, and Except]({% post_url 2022-08-22-IntersectUnionAndExcept %}), and [new overloads from .NET6]({% post_url 2022-06-27-NET6LinqMethods %}). But, you will get your back covered with those five methods.
+
+To learn about LINQ and other methods, check my [quick guide to LINQ with examples]({% post_url 2021-01-18-LinqGuide %}). All you need to know to start working with LINQ, in 15 minutes or less.
 
 {%include linq_course.html %}
 

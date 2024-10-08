@@ -6,15 +6,17 @@ cover: Cover.png
 cover-alt: "Looking inside a box" 
 ---
 
-"Don't use libraries you can't read their source code." That's a bold statement I found and shared in a past [Monday Links]({% post_url 2022-01-17-MondayLinks %}). I decided to look into the LINQ DistinctBy source code. For a while, I thought the C# standard library was like a black box that only experienced ~~wizards~~ programmers could understand. I was wrong. Let's see what's inside the new LINQ DistinctyBy method.
+"Don't use libraries you can't read their source code." 
 
-## What LINQ DistinctBy method does?
+That's a bold statement I found and shared in a past [Monday Links]({% post_url 2022-01-17-MondayLinks %}) episode. Inspired by that, let's see what's inside the new LINQ `DistinctyBy` method.
+
+## What DistinctBy does
 
 **DistinctBy returns the objects containing unique values based on one of their properties. It works on collections of complex objects, not just on plain values.**
 
 DistinctBy is one of the [new LINQ methods introduced in .NET 6]({% post_url 2022-06-27-NET6LinqMethods %}).
 
-The next code sample shows how to find unique movies by release year.
+Here's how to find unique movies by release year.
 
 ```csharp
 var movies = new List<Movie>
@@ -44,7 +46,7 @@ foreach (var movie in distinctByReleaseYear)
 record Movie(string Name, int ReleaseYear, float Score);
 ```
 
-Notice we used the `DistinctBy` method on a list of movies. We didn't use it on a list of released years to then find one movie for each unique release year found.
+We used the `DistinctBy` method on a list of movies. We didn't use it on a list of released years to then find one movie for each unique release year found.
 
 Before looking at DistinctBy source code, how would you implement it?
 
@@ -64,11 +66,16 @@ Well, it doesn't look that complicated. Let's go through it.
 
 ### 1. Iterating over the input collection
 
-First, `DistinctBy()` starts by checking its parameters and calling `DistinctByIterator()`. This is a common pattern in other LINQ methods. Check parameters in one method and then call a child iterator method to do the actual logic. (See 1. in the image above)
+First, `DistinctBy()` starts by checking its parameters and calling `DistinctByIterator()`.
+
+This is a common pattern in other LINQ methods: Checking parameters in one method and then calling a child iterator method to do the actual logic. (See 1. in the image above)
 
 Then, the `DistinctByIterator()` initializes the underling enumerator of the input collection with a `using` declaration. The `IEnumerable` type has a `GetEnumerator()` method. (See 2.)
 
-The `IEnumerator` type has a `MoveNext()` method to advance the enumerator to the next position and a `Current` property to hold the element at the current position.
+The `IEnumerator` type has:
+
+* a `MoveNext()` method to advance the enumerator to the next position
+* a `Current` property to hold the element at the current position.
 
 If a collection is empty or if the iterator reaches the end of the collection, `MoveNext()` returns `false`. And, when `MoveNext()` returns `true`, `Current` gets updated with the element at that position. [Source](https://docs.microsoft.com/en-us/dotnet/api/system.collections.ienumerator?view=net-6.0)
 
@@ -88,9 +95,9 @@ If the current element's key was added to the set, the element is returned with 
 
 Step 5 is wrapped inside a `do-while` loop. It runs until the enumerator reaches the end of the collection. (See 6.)
 
-Voilà! That's the DistinctBy source code. Simple but effective. Not that intimidating, after all. By no means I want to diminish the work of .NET contributors. On the contrary, it's a good exercise to read the source code of standard libraries to pick conventions and patterns.
+Voilà! That's the DistinctBy source code. Simple but effective. Not that intimidating, after all. The trick was to use a set.
 
-To learn about LINQ, check my [quick guide to LINQ]({% post_url 2021-01-18-LinqGuide %}), [five common LINQ methods in Pictures]({% post_url 2022-05-16-LINQMethodsInPictures %}) and [What's new in LINQ with .NET 6]({% post_url 2022-06-27-NET6LinqMethods %}).
+To learn about LINQ, check my [quick guide to LINQ]({% post_url 2021-01-18-LinqGuide %}), [five common LINQ methods in pictures]({% post_url 2022-05-16-LINQMethodsInPictures %}) and [what's new in LINQ with .NET 6.0]({% post_url 2022-06-27-NET6LinqMethods %}).
 
 {%include linq_course.html %}
 
