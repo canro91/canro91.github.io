@@ -24,7 +24,7 @@ title: Blog
 
     {% include tags_for_page.html %}
 
-    <span class="post-date">{{ post.date | date_to_string }} {{ tags_content }}</span>
+    <span class="post-date"><em>Pinned</em> — {{ post.date | date_to_string }} {{ tags_content }}</span>
 
     {% include posts_in_series.html %}
 
@@ -55,11 +55,7 @@ title: Blog
 
     {% include posts_in_series.html %}
 
-    {% if post.layout == 'presentation' and post.description %}
-        {{ post.description | markdownify }}
-    {% else %}
-        {{ post.content }}
-    {% endif %}
+    {{ post.content }}
   </div>
   {% endfor %}
 </div>
