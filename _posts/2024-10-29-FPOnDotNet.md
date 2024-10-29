@@ -40,25 +40,25 @@ Expressions mean everything has a result. Think of old-style switch/case stateme
 // This is not an expression
 switch (cardBrand)
 {
-	case "Visa":
-		cardType = CardType.Visa;
-		break;
+    case "Visa":
+        cardType = CardType.Visa;
+        break;
 
-	case "Mastercard":
-		cardType = CardType.MasterCard;
-		break;
+    case "Mastercard":
+        cardType = CardType.MasterCard;
+        break;
 
-	default:
-		cardType = CardType.Unknown;
-		break;
+    default:
+        cardType = CardType.Unknown;
+        break;
 }
 
 // This is an expression
 var cardType = cardBrand switch
 {
-	"Visa" => CardType.Visa,
-	"MasterCard" => CardType.MasterCard,
-	_ => CardType.Unknown
+    "Visa" => CardType.Visa,
+    "MasterCard" => CardType.MasterCard,
+    _ => CardType.Unknown
 };
 ```
 
@@ -71,12 +71,12 @@ Following these two concepts, a dummy `Calculator` that looks like this
 ```csharp
 public class Calculator(ILogger _logger)
 {
-	private int Value { get; private set; }
-	public void Add(int a)
-	{
-		_logger.Log($"Adding {a}");
-		Value += a;
-	}
+    private int Value { get; private set; }
+    public void Add(int a)
+    {
+        _logger.Log($"Adding {a}");
+        Value += a;
+    }
 }
 ```
 
@@ -85,11 +85,11 @@ will look like this instead
 ```csharp
 public static class FunctionalishCalculator
 {
-	public int Add(Action<string> logger, int value, int a)
-	{
-		logger($"Adding {a}");
-		return value + a;
-	}
+    public int Add(Action<string> logger, int value, int a)
+    {
+        logger($"Adding {a}");
+        return value + a;
+    }
 }
 ```
 
