@@ -6,13 +6,13 @@ tags: misc
 
 The other day I had a weird DM exchange.
 
-A guy shared a cool LinkedIn tip. I rushed to apply it and DMed him to thank for that cool idea. You know I wanted to make friends in the DM.
+A guy shared a cool LinkedIn tip. I rushed to apply it and DMed him to say thanks for that cool idea. You know I wanted to make friends in the DM.
 
 He continued the conversation. I shared how my LinkedIn journey was going. I told him about my 100-post experiment and my future plans.
 
 After a couple of exchanges, the guy went on sale mode. He had an offering and I could potentially be one client. I got that!
 
-But, he wrote something in the lines of "Truth is I don't need more clients and I'm fully booked..." I stopped reading at that point. If he doesn't need clients, why he was on salesy mode with that line in the first place?
+But, he wrote something in the lines of _"Truth is I don't need more clients and I'm fully booked..."_ I stopped reading at that point. If he doesn't need clients, why he was on salesy mode with that line in the first place?
 
 People don't like those mind tricks. At least I don't. Those Jedi mind tricks don't work on me.
 
