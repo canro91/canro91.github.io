@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Passive Learning Is Just Entertainment"
+title: "Passive Learning Is Just Entertainment Unless You Follow These Two Strategies"
 tags: misc
 ---
 
