@@ -14,7 +14,7 @@ Since then, I've been binge-watching and binge-reading James Altucher's work in 
 
 A guy that has made millions and lost it all, not just once but at least twice has a lot to teach. Here is what I've learned from him.
 
-# 1. If you don't know what to do with your life, start with your health
+## 1. If you don't know what to do with your life, start with your health
 
 That's what I've been doing after losing my last job. An end and a start of something new that I still don't know what it will be.
 
