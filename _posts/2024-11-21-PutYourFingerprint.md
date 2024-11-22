@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Put Your Fingerprint on Something Every Day"
+title: "A Simple Way to Start Your Creative Journey? Put Your Fingerprint on Something Every Day"
 tags: misc
 ---
 
