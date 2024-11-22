@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Here's How I'm Answering: What Companies Should I Buy?"
+title: "From Now On Here's How I'm Answering: What Stocks Should I Buy?"
 tags: misc
 ---
 
