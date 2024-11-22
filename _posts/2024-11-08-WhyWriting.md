@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "This Is the Real Reason Why Coders (and Everyone) Should Write"
+title: "This Is the Real Reason Why Coders (and Everyone Else) Should Write"
 tags: misc
 ---
 
