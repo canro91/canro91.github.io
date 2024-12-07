@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "In a Couple of Decades, There Won't Be Many People Who Can Write"
-tags: misc
+tags: writing
 ---
 
 There will only be writes and write-nots.

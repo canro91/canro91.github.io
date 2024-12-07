@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Passive Learning Is Just Entertainment Unless You Follow These Two Strategies"
-tags: misc
+tags: learning
 ---
 
 Passive consumption is procrastination in disguise.

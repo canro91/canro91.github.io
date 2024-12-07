@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "This Is the Real Reason Why Coders (and Everyone Else) Should Write"
-tags: misc
+tags: writing
 ---
 
 Don't write to attract recruiters or create a brand. 

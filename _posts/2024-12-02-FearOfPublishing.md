@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Stop Being Afraid of Hitting Publish on LinkedIn With These 9 Proven Strategies"
-tags: misc
+tags: writing
 ---
 
 Publishing your first LinkedIn posts is scary.
