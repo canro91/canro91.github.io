@@ -4,7 +4,9 @@ title: "This Is Why We Don't Test Private Methods"
 tags: csharp
 ---
 
-I'm answering this question I found on [Reddit](https://www.reddit.com/r/csharp/comments/1gf2r6s/trying_to_understand_why_we_dont_test_private/):
+Trying to test private methods causes a lot of confusion.
+
+That's a common question we all have made when finding unit testing for the first time. These days, I found that very same question on [Reddit](https://www.reddit.com/r/csharp/comments/1gf2r6s/trying_to_understand_why_we_dont_test_private/):
 
 > Can someone explain to me why unit testing our private methods is bad?
 
