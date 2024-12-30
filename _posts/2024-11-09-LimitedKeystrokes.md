@@ -16,7 +16,7 @@ Make those private email threads or Slack messages public by turning them into w
 
 I'm answering almost all my questions in public to preserve my keystrokes.
 
-The other day, a subscriber replied to one of my emails with a question about writing. I replied and then turned that reply [into a post]({% post_url 2024-09-23-StrugglingToWrite %}).
+The other day, one of my <a href="https://imcsarag.gumroad.com/l/fridaylinks" target="_blank" rel="noopener noreferrer">email subscribers</a> replied to one of my emails with a question about writing. I replied and then turned that reply [into a post]({% post_url 2024-09-23-StrugglingToWrite %}).
 
 Another day, a reader contacted me after going through my takeaways from [Ultralearning]({% post_url 2020-07-14-UltralearningTakeaways %}). And again, I expanded my reply [into a separate post]({% post_url 2023-07-24-AdviceToStartAnUltralearningProject %}).
 

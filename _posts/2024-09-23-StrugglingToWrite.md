@@ -6,7 +6,7 @@ cover: Cover.png
 cover-alt: "A notebook opened at a blank page" 
 ---
 
-Last week, Syed, one of my email subscribers, shared his struggles with writing online.
+Last week, Syed, one of my <a href="https://imcsarag.gumroad.com/l/fridaylinks" target="_blank" rel="noopener noreferrer">email subscribers</a>, shared his struggles with writing online.
 
 Here's an edited version of Syed's email:
 
@@ -70,6 +70,6 @@ After [blogging for more than five years]({% post_url 2023-07-18-FiveYearsOfBlog
 
 Even if you don't make any money writing, it will give you clear thinking.
 
-And if you've made it this far, here's my challenge: [create an account on dev.to](https://dev.to/enter?state=new-user) and write your first 4 posts there and see where they take you. If you accept the challenge, contact me and share your first post.
+And if you've made it this far, here's my challenge: <a href="https://dev.to/enter?state=new-user" target="_blank" rel="noopener noreferrer">create an account on dev.to</a> and write your first 4 posts there and see where they take you. If you accept the challenge, contact me and share your first post.
 
 Write as if no one is reading and then keep writing because you don't know who's reading.

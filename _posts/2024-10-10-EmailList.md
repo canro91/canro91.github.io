@@ -18,6 +18,6 @@ For example, here's [Monday Links on Notebooks, Learning, and KPIs]({% post_url 
 
 If you have already downloaded any of my ebooks from <a href="https://imcsarag.gumroad.com/" target="_blank" rel="noopener noreferrer">my Gumroad page</a>, you're already receiving my emails.
 
-But if you haven't and want to receive them, <a href="https://imcsarag.gumroad.com/subscribe" target="_blank" rel="noopener noreferrer">subscribe here</a>.
+But if you haven't and want to receive them, <a href="https://imcsarag.gumroad.com/l/fridaylinks" target="_blank" rel="noopener noreferrer">subscribe here</a>.
 
 Feel free to reply to my Friday Links and comment or ask questions.
