@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "I'm Ditching My To-Do List: Here's What I'm Doing Instead"
-tags: misc
+tags: productivity
 ---
 
 I used to be a productivity freak with to-do lists.
