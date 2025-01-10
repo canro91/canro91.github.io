@@ -4,7 +4,9 @@ title: "If You Enjoy Coding, Think Twice About Joining the Management Track"
 tags: career
 ---
 
-It took me 10 years to learn this lesson: the higher up you go, the less it's about coding and more about all other skills.
+It took me 10 years to learn this lesson:
+
+_The higher up you go, the less it's about coding and more about all other skills._
 
 Being the best at coding won't get you higher on the corporate ladder. Well, the corporate ladder is a trap.
 
@@ -24,7 +26,7 @@ If you enjoy coding and are thinking about joining the management track, start b
 
 Your job is not to appear on screen, except for some cameos. Your job is to make sure your movie gets done as expected and on time.
 
-For that, you'll need coding skills, but much stronger soft skills.
+For that, you'll need coding skills. Sure. But much stronger soft skills.
 
 You'll spend most of your time in meetings, not coding:
 * Daily meetings with your team,
