@@ -200,4 +200,6 @@ Voilà! That's how to use the new .NET 8.0 abstraction to test time. We have the
 
 If you want to read more content, check [how to Test Logging Messages with FakeLogger]({% post_url 2024-04-01-NET8FakeLogger %}) and my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}) where we cover from what a unit test is, to fakes and mocks, to other best practices.
 
+{%include ut201_course.html %}
+
 _Happy testing!_
