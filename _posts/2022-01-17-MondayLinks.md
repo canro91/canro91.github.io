@@ -49,6 +49,6 @@ Maybe I don't have serious eye strain or carpal tunnel syndrome (yet?). But, I c
 
 Voilà! Another ~~five~~ six reads! Do you also think C# is getting too complex? Have you seen a clear career path at companies where you've been?
 
-Are you interested in unit testing? Grab a free copy of my ebook [Unit Testing 101]({% post_url 2021-08-30-UnitTesting %}). Don't miss the previous Monday Links on [Workplaces, studying and communication]({% post_url 2021-11-01-MondayLinks %}).
+{%include monday_links.html %}
 
 _Happy reading!_

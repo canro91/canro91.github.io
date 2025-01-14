@@ -54,6 +54,6 @@ This talk uses Queue Theory to tune how complex organization works. These are so
 
 Voilà! Another Monday Links episode. Do you AI as part of your daily work? What leadership lessons can you share?
 
-In the meantime, don't miss the previous [Monday Links on CQRS, Negotiating, and Project Managers]({% post_url 2023-10-02-MondayLinks %})
+{%include monday_links.html %}
 
 Happy coding!

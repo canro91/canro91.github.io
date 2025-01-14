@@ -63,6 +63,6 @@ From the article: _"Success is rarely based solely on process. Success mostly co
 
 Voilà! What are the KPIs of your team? Do you measure story points or percentage of completed vs planned tasks? Until next Monday Links.
 
-In the meantime, don't miss the previous [Monday Links on NDC Copenhagen]({% post_url 2024-01-22-MondayLinks %}).
+{%include monday_links.html %}
 
 _Happy coding!_

@@ -44,7 +44,7 @@ I've seen an increasing amount of Hacker News posts about burnout and job-relate
 
 [How to deal with burnout and its consequences?](https://news.ycombinator.com/item?id=33434742): Speaking about burnout: _"I really don't know how to get over this and how to move past it. I feel quite literally incapable of working...I'm trying to figure out what my future even looks like and how to move past this and any advice would be really appreciated."_
 
-A lot of good adive in there.
+A lot of good advice in there.
 
 ## What "Work" Looks Like
 
@@ -52,6 +52,6 @@ I think we've all been to those meetings where nobody cares or even listens to w
 
 Voilà! Another Monday Links. Have you experience burnout? How did you overcome it? What's different about work after burnout? What are you doing to prevent burnout?
 
-In the meantime, check my [Getting Started with LINQ course](https://www.educative.io/courses/getting-started-linq-c-sharp) where I cover from what LINQ is to its most recent methods and overloads introduced in .NET6. And don’t miss the previous [Monday Links on Time zones and NDC Conference]({% post_url 2022-09-05-MondayLinks %}).
+{%include monday_links.html %}
 
 _Happy coding!_
