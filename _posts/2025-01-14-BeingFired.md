@@ -6,7 +6,7 @@ tags: career
 
 I was fired from my first job. 10+ years ago.
 
-My first job taught me A LOT. I had 0 hours of flight time. Everything was new to me. I already [shared some of those lessons]({% post_url 2024-09-02-LessonsFromMyFirstCodingJob %}) the other day. But what I didn't say that day was that I was fired from that job.
+My first job taught me A LOT. I had 0 hours of flight time. Everything was new to me. I had to learn about the job and to navigate the corporate world at the same time. But I was fired.
 
 Yes, fired. Not laid off. Fired. Same result, different cause.
 
@@ -74,6 +74,6 @@ Don't let others decide by going on auto-pilot. Have your own exit plan. Always.
 
 After many years, I realized my first job was a launching platform. It put me in the right moment, next to the right people. It started a chain of events that brought me to where I'm now.
 
-At my first job, I learned some of my most valuable career lessons. The world isn't what my teachers told me in university. I had to learn and figure out things on my own. I started my financial journey by making my first deposit into an investment account. I got my first real hours of flight time. I paid for a family dinner with my money for the first time.
+At my first job, I [learned some of my most valuable career lessons]({% post_url 2024-09-02-LessonsFromMyFirstCodingJob %}). The world isn't what my teachers told me in university. I had to learn and figure out things on my own. I started my financial journey by making my first deposit into an investment account. I got my first real hours of flight time. I paid for a family dinner with my money for the first time.
 
 After every ending, there's a new beginning. Pastures are always greener on the other side.
