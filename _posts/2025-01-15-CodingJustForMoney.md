@@ -6,7 +6,7 @@ tags: career
 
 I hate seeing "passionate" listed as a requirement in job postings.
 
-How can we measure passion? Is there a quiz, like those magazine questionnaires? "Find out if you're a passionate coder in less than 5 minutes with 10 easy-to-answer questions."
+How can we measure passion? Is there a quiz, like those magazine questionnaires? _"Find out if you're a passionate coder in less than 5 minutes with 10 easy-to-answer questions."_
 
 The best coders I've met at past jobs weren't what we'd call passionate. By passionate, I mean making open source contributions, speaking at conferences, and writing posts. They were busy enough making money.
 
@@ -22,16 +22,16 @@ At some point in our careers, we all feel the same way. I know I have.
 
 Probably, it's because we're problem solvers at heart, and companies confine us to cubicles and box us in with SCRUM and its ceremonies. And [we don't get to solve problems]({% post_url 2024-11-18-CodersDontSolveProblems %}). Yes, "ceremony" is the right word.
 
-When I started coding over 10 years ago, I dreamed of joining a big tech company like Google or Microsoft too. Sliding between offices, having a chef cooking our meals, getting a massage...
+When I started coding over 10 years ago, I dreamed of joining a big tech company like Google or Microsoft too. Sliding between offices, having a chef cooking our meals, getting a massage, riding a bike between buildings...
 
 But, I realized big companies have their own challenges. More middle managers and more office politics. More of being a small cog in a machine. Even smaller cog and larger machine. They're not the best place for everyone.
 
-## Code for money, but don't let your work be your only source of meaning
+## Code for money, do a good job, but don't let your work be your only source of meaning
 
 There's nothing wrong with working at a coding job just to pay the bills.
 
 We have to do what we have to do to put a roof over our heads and bread on our tables. If it's coding, so be it.
 
-But if we're coding just for money, we should have hobbies, side projects, and other activities to find a sense of meaning and value outside work. Otherwise, the day job will become a burden.
+But if we're coding just for money, we should have hobbies, side projects, and other activities to find a sense of meaning and value outside work. Otherwise, the day job will become a burden. Trust me on this one, I showed up just for money and [ended up burned out and sick]({% post_url 2025-01-04-RealizationsFrom2024 %}).
 
-You don't need "passion" to be a great coder. It's fine to code just for money and clock out on time. Do a good job, of course. But remember to build multiple sources of fulfillment and meaning.
+You don't need "passion" to be a great coder. It's fine to code just for money and clock out on time. Do a good job, of course. But remember to build multiple sources of fulfillment and meaning outside work.
