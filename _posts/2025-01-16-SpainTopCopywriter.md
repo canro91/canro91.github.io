@@ -10,7 +10,7 @@ So far I've only been following English-speaking copywriters. I write landing pa
 
 In a podcast interview, he shared his best lessons. You can watch the [full interview here](https://www.youtube.com/watch?v=2fcW6QGUt6M) in Spanish. I only needed to watch that interview to start following his work.
 
-My favorite lessons from that interview? Here they are.
+You don't need to learn Spanish to watch that interview. Here are my favorite lessons from that interview:
 
 ## 1. Never run promotions or offer discounts
 
@@ -26,7 +26,7 @@ Isra's most popular book, "I Write Because I Like to Make Money," is an example 
 
 Here's what it says:
 
-_"I write because I like to make money. And I teach thousands of people, who also like making money, how to do it. My name is Isra Bravo and in 2017 I unloaded trucks, but not anymore..."_
+_"I write because I like to make money. And I teach thousands of people, who also like making money, how to do it. My name is Isra Bravo and in 2017 I unloaded trucks and was broke, but not anymore..."_
 
 Yes, that's on the book cover. And I only translated the first part for you.
 
