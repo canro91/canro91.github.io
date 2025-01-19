@@ -16,11 +16,11 @@ With lots of cash but no sense of purpose, he went hiking, broke up with his gir
 
 While I haven't had an exit yet, I found myself going through something a similar situation.
 
-I had my sense of value attached to my job. "Software Engineer." For some time, that was everything I was and did... until I lost my job after a layoff.
+I had my sense of value attached to my job. "Software Engineer." For some time, that was everything I was and did... until [I lost my job after a layoff]({% post_url 2023-08-21-OnLayoffs %}).
 
 All of a sudden I didn't have the title. I wasn't doing any coding. And I didn't want to do any more of it. I felt trapped in a label I decided to accept on my own. "Coder" and "Software Engineer."
 
-During that forced time off, I took the opportunity to take care of my health, get back to my hobbies, and reflect on what I truly wanted in life.
+During that forced time off, I took the opportunity to take care of my health, get back to my hobbies, and [reflect on what I truly wanted in life]({% post_url 2025-01-04-RealizationsFrom2024 %}).
 
 I realized that, above all job titles, I'm a learner. Software engineering? It was just a stint of that.
 
