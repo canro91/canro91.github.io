@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Writing Isn't Something That Only Writers Do"
-tags: misc
+tags: books writing
 ---
 
 What's the first thing that comes to your mind when you hear "writer"?
