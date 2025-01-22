@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TIL: Configure Default Values for Nullable Columns With Default Constraints in EntityFramework Core"
-tags: csharp til
+tags: csharp todayilearned
 ---
 
 **TL;DR**: For nullable columns with default constraints, you have to tell EntityFramework the default value of the mapping property via C#. Otherwise, when you create a new record, it will have NULL instead of the default value in the database. You're welcome! Bye!
