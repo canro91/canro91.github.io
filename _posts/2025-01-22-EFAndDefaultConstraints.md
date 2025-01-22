@@ -131,4 +131,4 @@ This behavior only adds up to my love and hate relationship with EntityFramework
 
 Et voilà!
 
-{%include _includes/7day_email_course_longer.html %}
+{% include 7day_email_course_longer.html %}
