@@ -44,7 +44,7 @@ public class IHateYouWilWheaton
             // To avoid explicitly mapping the fields because of the prefix
 
             // Before:
-            // cfg.CreateMap<CreateMovieRequest, Movie>(MemberList.Source);
+            // cfg.CreateMap<CreateMovieRequest, Movie>();
             //     ^^^^^
             // AutoMapper.AutoMapperConfigurationException: 
             // Unmapped members were found. Review the types and members below.
