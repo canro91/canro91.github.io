@@ -6,7 +6,7 @@ cover: Cover.png
 cover-alt: "A notebook opened at a blank page" 
 ---
 
-Last week, Syed, one of my <a href="https://imcsarag.gumroad.com/l/fridaylinks" target="_blank" rel="noopener noreferrer">email subscribers</a>, shared his struggles with writing online.
+Last week, Syed, one of my <a href="https://fridaylinks.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer">email subscribers</a>, shared his struggles with writing online.
 
 Here's an edited version of Syed's email:
 
