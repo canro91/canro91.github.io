@@ -34,4 +34,4 @@ We have to do what we have to do to put a roof over our heads and bread on our t
 
 But if we're coding just for money, we should have hobbies, side projects, and other activities to find a sense of meaning and value outside work. Otherwise, the day job will become a burden. Trust me on this one, I showed up just for money and [ended up burned out and sick]({% post_url 2025-01-04-RealizationsFrom2024 %}).
 
-You don't need "passion" to be a great coder. It's fine to code just for money and clock out on time. Do a good job, of course. But remember to build multiple sources of fulfillment and meaning outside work.
+You don't need "passion" to be a great coder. It's fine to code just for money and clock out on time. Do a good job, of course. But remember to [build multiple sources of fulfillment and meaning outside work]({% post_url 2025-01-07-DiversifyYourJoy %}).

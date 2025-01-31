@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Stop Chasing Shiny Objects as a Junior Coder"
+title: "Dear Junior Coders: Stop Chasing Shiny Objects"
 tags: career
 ---
 

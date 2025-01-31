@@ -14,7 +14,7 @@ tags: misc
 8. Any change in your life starts in your mind with your beliefs.
 9. Build multiple income sources right now. Your life depends on it.
 10. Start and double down on what works. There won't be a perfect time to start.
-11. Eat to have more energy and think better. You are what you put in your body.
+11. [Eat to have more energy and think better]({% post_url 2024-12-30-BestProductivityHack %}). You are what you put in your body.
 12. The right daily routine and habits can change your life. The wrong ones can destroy it.
 13. Your health and well-being are more important than a job. You can always find a new job. But a new body? Not that easy!
 
