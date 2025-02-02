@@ -6,7 +6,7 @@ cover: Cover.png
 permalink: UnitTesting
 ---
 
-Do you want to start writing unit tests? But, you don’t know where to start? Do you want to adopt unit testing in your team? I can help you!
+Do you want to start writing unit tests, but don’t know where to start? Do you want to adopt unit testing in your team? I can help you!
 
 If you’re a beginner or a seasoned developer new to unit testing, this is the place for you. No prerequisites are needed.
 
@@ -59,10 +59,6 @@ To see how to put these best practices in place, see how I refactored these real
 * [speeding up a slow test suite]({% post_url 2023-05-29-SpeedingUpSomeTests %}).
 
 If you work with ASP.NET Core, learn how to write tests for [HttpClient]({% post_url 2022-12-01-TestingHttpClient %}), [Authorization filters]({% post_url 2022-12-03-TestingAspNetAuthorizationFilters %}), and [logging and logging messages]({% post_url 2022-12-04-TestingLoggingAndLogMessages %}).
-
-If you want to practice writing some unit tests, check my [Unit Testing 101](https://github.com/canro91/Testing101) repository on GitHub.
-
-[![canro91/Testing101 - GitHub](https://gh-card.dev/repos/canro91/Testing101.svg)](https://github.com/canro91/Testing101)
 
 {%include ut201_course.html %}
 
