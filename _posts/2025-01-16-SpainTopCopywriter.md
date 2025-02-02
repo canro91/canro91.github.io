@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Never Run Promotions or Offer Discounts—Plus 4 More Lessons from Spain's Top Copywriter"
-tags: misc
+tags: writing
 ---
 
 He went from unloading cargo trucks to being Spain's best copywriter.
@@ -23,6 +23,8 @@ Instead of promotions and discounts, offer a launch price to your existing clien
 Good copy is more important than an outstanding design.
 
 Isra's most popular book, "I Write Because I Like to Make Money," is an example of bad design with a good copy. Its cover doesn't have bright colors or fancy fonts. It's full of text with some bold sentences. It's the type of book cover we would create in Microsoft Word with 0 design skills. But it reads like a good social media post or a persuasive email.
+
+{% include image.html name="BookCover.jpg" alt="I Write Because I Like to Make Money" caption="I Write Because I Like to Make Money. Via: goodreads.com" width="300px" %}
 
 Here's what it says:
 
