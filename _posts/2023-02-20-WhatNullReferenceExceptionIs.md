@@ -6,7 +6,9 @@ cover: Cover.png
 cover-alt: "Dream catcher" 
 ---
 
-This exception doesn't need an introduction. I bet you already have found the exception message: _"Object reference not set to an instance of an object."_ In this series of posts, let's see some techniques to completely eliminate the NullReferenceException from our code. In this post, let's see when NullReferenceException is thrown and a strategy to fix it.
+If you're here, I bet you already have found the exception message: _"Object reference not set to an instance of an object."_
+
+In this series of posts, let's see some techniques to completely eliminate the NullReferenceException from our code. Let's start by understanding when NullReferenceException is thrown and a strategy to fix it.
 
 **NullReferenceException is thrown when we access a property or method of an uninitialized variable of a reference type. The easier way to solve this exception is to check for null before accessing the members of an object. But C# has introduced new operators and features to avoid this exception.**
 
@@ -143,6 +145,6 @@ Voilà! That's the NullReferenceException and how to fix it by checking for `nul
 
 Don't miss the other posts in this series! In the next post, we cover how to use [Nullable Operators and Nullable References]({% post_url 2023-03-06-NullableOperatorsAndReferences %}) to prevent the NullReferenceException. In future posts, we're covering [the Option type and LINQ XOrDefault methods]({% post_url 2023-03-20-UseOptionInsteadOfNull %}) and [a design technique to encapsulate optional state]({% post_url 2023-04-03-SeparateStateIntoSeparateObjects %}).
 
-If you want to read more C# content, check [my C# Definitive Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %}) and my [Unit Testing 101 series]({% post_url 2021-08-30-UnitTesting %}). Sure, unit tests help us to prevent NullReferenceException too.
+{%include nre_course.html %}
 
 _Happy coding!_

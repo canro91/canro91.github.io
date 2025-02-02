@@ -12,7 +12,7 @@ Let's see some new C# operators to simplify null checking and a new feature to b
 
 ## 1. C# Nullable Operators
 
-C# has introduced new operators to simplify our null checks: `?.`, `??`, and `??=`. These operators don't prevent us from having `null` in the first place, but they help us to easily write our null checks.
+C# has three operators to simplify our null checks: `?.`, `??`, and `??=`. These operators don't prevent us from having `null` in the first place, but they help us to easily write our null checks.
 
 ### Without Nullable Operators
 
@@ -89,7 +89,7 @@ This is a breaking change. Therefore we need to turn on this feature at the proj
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <!--             ^^^^^^ -->
     <!-- We could use netcoreapp3.1|net5.0|net6.0|.net7.0 too -->
     <ImplicitUsings>enable</ImplicitUsings>
@@ -194,6 +194,6 @@ We have these nullable operators available even if we're using the old .NET Fram
 
 In the next post, we will cover [the Option type as an alternative to null]({% post_url 2023-03-20-UseOptionInsteadOfNull %}) and how to avoid the NullReferenceException when working with LINQ.
 
-If you want to read more C# content, check [my C# Definitive Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %}) and my [top of recent C# features]({% post_url 2021-09-13-TopNewCSharpFeatures %}). These three operators and the nullable references are some of them.
+{%include nre_course.html %}
 
 _Happy coding!_

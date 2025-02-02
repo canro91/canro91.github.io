@@ -6,7 +6,9 @@ cover: Cover.png
 cover-alt: "Collection of guitars hanging in a wall" 
 ---
 
-In the [previous post of this series]({% post_url 2023-03-06-NullableOperatorsAndReferences %}), we covered three C# operators to simplify null checks and C# 8.0 Nullable References to signal when things can be `null`. In this post, let's learn a more "functional" approach to removing `null` and how to use it to avoid `null` when working with LINQ `XOrDefault` methods.
+In the [previous post of this series]({% post_url 2023-03-06-NullableOperatorsAndReferences %}), we covered three C# operators to simplify null checks and C# 8.0 Nullable References to signal when things can be `null`.
+
+In this post, let's learn a more "functional" approach to removing `null` and how to use it to avoid `null` when working with LINQ `XOrDefault` methods.
 
 ## 1. Use Option: A More Functional Approach to Nulls
 
@@ -140,7 +142,9 @@ This is how we read `ApplicationPath`:
 
 ## 2. Option and LINQ XOrDefault methods
 
-Another source of NullReferenceException is when we don't check the result of the `FirstOrDefault`, `LastOrDefault`, and `SingleOrDefault` methods. These methods return `null` when the source collection has reference types, and there are no matching elements. In fact, this is one of the [most common mistakes when working with LINQ]({% post_url 2022-06-13-LinqMistakes %}).
+Another source of NullReferenceException is when we don't check the result of the `FirstOrDefault`, `LastOrDefault`, and `SingleOrDefault` methods.
+
+These methods return `null` when the source collection has reference types, and there are no matching elements. In fact, this is one of the [most common mistakes when working with LINQ]({% post_url 2022-06-13-LinqMistakes %}).
 
 There are some alternatives to prevent the NullReferenceException when working with `XOrDefault` methods. 
 
@@ -193,6 +197,6 @@ Even though we used a library to bring the Option type, we can implement our own
 
 Don't miss the other posts in this series, [what the NullReferenceException is and when it's thrown]({% post_url 2023-02-20-WhatNullReferenceExceptionIs %}), [nullable operators and references]({% post_url 2023-03-06-NullableOperatorsAndReferences %}), and [separate optional state into separate objects]({% post_url 2023-04-03-SeparateStateIntoSeparateObjects %}).
 
-If you want to learn more about LINQ, check my [Quick Guide to LINQ]({% post_url 2021-01-18-LinqGuide %}) to start learning about it. 
+{%include nre_course.html %}
 
 _Happy coding!_

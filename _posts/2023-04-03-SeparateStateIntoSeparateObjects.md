@@ -6,7 +6,9 @@ cover: Cover.png
 cover-alt: "US Capitol" 
 ---
 
-So far in this series about NullReferenceException, we have used [nullable operators and C# 8.0 Nullable References]({% post_url 2023-03-06-NullableOperatorsAndReferences %}) to avoid `null` and learned about [the Option type]({% post_url 2023-03-20-UseOptionInsteadOfNull %}) as an alternative to `null`. Let's see how to design our classes to avoid `null` when representing optional values.
+So far in this series about NullReferenceException, we have used [nullable operators and C# 8.0 Nullable References]({% post_url 2023-03-06-NullableOperatorsAndReferences %}) to avoid `null` and learned about [the Option type]({% post_url 2023-03-20-UseOptionInsteadOfNull %}) as an alternative to `null`.
+
+Let's see how to design our classes to avoid `null` when representing optional values.
 
 **Instead of writing a large class with methods that expect some nullable properties to be not null at some point, we're better off using separate classes to avoid dealing with null and getting NullReferenceException.**
 
