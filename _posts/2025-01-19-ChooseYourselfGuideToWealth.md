@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Four Lessons from Choose Yourself Guide to Wealth by James Altucher"
+title: "This Book Changed My Mind About To-Do Lists and Business"
 tags: books
 ---
 
