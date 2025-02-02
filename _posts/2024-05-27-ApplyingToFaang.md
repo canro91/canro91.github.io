@@ -52,4 +52,6 @@ Voila! That's what I'd tell myself before that coding assessment. Yeah, hiring i
 
 For more interview content, read [remote interview types and tips]({% post_url 2019-09-29-RemoteInterviewTips %}) and [ten tips to solve your next interview coding challenge]({% post_url 2021-11-22-CodingChallengeTips %}).
 
+{% include 7day_email_course_longer.html %}
+
 _Happy interviewing!_

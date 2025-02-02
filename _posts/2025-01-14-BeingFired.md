@@ -77,3 +77,6 @@ After many years, I realized my first job was a launching platform. It put me in
 At my first job, I [learned some of my most valuable career lessons]({% post_url 2024-09-02-LessonsFromMyFirstCodingJob %}). The world isn't what my teachers told me in university. I had to learn and figure out things on my own. I started my financial journey by making my first deposit into an investment account. I got my first real hours of flight time. I paid for a family dinner with my money for the first time.
 
 After every ending, there's a new beginning. Pastures are always greener on the other side.
+
+{% include 7day_email_course_longer.html %}
+
