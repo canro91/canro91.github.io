@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Schedule Rest the Same Way You Schedule Important Meetings"
-tags: misc
+tags: productivity
 ---
 
 For the first time after over 10 years of non-stop work, in 2024 I suddenly found myself with lots of free time.

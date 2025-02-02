@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How Do I Organize My Blogging Workflow"
+title: "How I Organize My Blogging Workflow"
 tags: writing
 ---
 

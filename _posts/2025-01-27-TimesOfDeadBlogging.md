@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "My Blogging Strategy in Times of Dead Blogging"
-tags: misc
+tags: writing
 ---
 
 Blogging is dead. At least, that's what almost everybody claims.

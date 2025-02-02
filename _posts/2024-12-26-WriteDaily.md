@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Surprising Lesson from My First Online Writing Class"
-tags: misc
+tags: writing
 ---
 
 This year, and for the first time since University, I took a writing class for the Internet.
