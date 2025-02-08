@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "As a Team Leader, You're Not the Best Coder Anymore"
-tags: misc
+tags: career
 ---
 
 Promoting the best coder to team leader is how projects go sideways.
