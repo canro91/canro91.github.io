@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Essential First Steps for Unit Testing in C#"
-tags: misc
+tags: csharp
 ---
 
 Today I got a question from Pierre on my contact page about unit testing. Here's an edited version of his question:
