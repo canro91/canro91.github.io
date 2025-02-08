@@ -8,7 +8,7 @@ Trying to test private methods causes a lot of confusion.
 
 That's a common question we all have made when finding unit testing for the first time. These days, I found that very same question on [Reddit](https://www.reddit.com/r/csharp/comments/1gf2r6s/trying_to_understand_why_we_dont_test_private/):
 
-> Can someone explain to me why unit testing our private methods is bad?
+> _Can someone explain to me why unit testing our private methods is bad?_
 
 Because we don't want to break encapsulation.
 
@@ -23,7 +23,7 @@ Let's take the `HasAdmin()` method from the question as an example,
 ```csharp
 private bool HasAdmin(List<string> relations, bool hasPermission)
 {
-	// Beep, beep, boop...
+    // Beep, beep, boop...
 }
 ```
 
@@ -37,5 +37,5 @@ You test private methods indirectly while testing the observable behavior expose
 
 Et voilà!
 
-To read more about unit testing, check [how to write your first unit test in C# with MSTest]({% post_url 2021-03-15-UnitTesting101 %}) and [four common mistakes when writing your first unit tests]({% post_url 2021-03-29-UnitTestingCommonMistakes %}).
+To read more about unit testing, check [how to write your first unit test in C# with MSTest]({% post_url 2021-03-15-UnitTesting101 %}) and [four common mistakes when writing your first unit tests]({% post_url 2021-03-29-UnitTestingCommonMistakes %}). Don't miss the rest of the [Unit Testing 101]({% post_url 2021-08-30-UnitTesting %}) series.
 

@@ -12,11 +12,11 @@ If you’re a beginner or a seasoned developer new to unit testing, this is the 
 
 ## Write it
 
-Learn to [write your first unit tests with MSTest]({% post_url 2021-03-15-UnitTesting101 %}). Read what a unit test is, why we need unit tests, and what makes a good unit test.
+Learn to [write your first unit tests with MSTest]({% post_url 2021-03-15-UnitTesting101 %}). Read what a unit test is, why we need unit tests, and what makes a good unit test. And understand [why we shouldn't try to test private methods]({% post_url 2024-11-30-TestingPrivateMethods %}).
 
 Identify and fix these [four common mistakes]({% post_url 2021-03-29-UnitTestingCommonMistakes %}) when writing your first unit tests. Learn one of these [four naming conventions]({% post_url 2021-04-12-UnitTestNamingConventions %}) and stick to it. Don't worry about long test names.
 
-<div class="message">Find these first three posts plus a summary of "The Art of Unit Testing" and my best tips from this series on my free ebook “Unit Testing 101”. <a href="https://imcsarag.gumroad.com/l/unittesting101" target="_blank" rel="noopener noreferrer" data-goatcounter-click="UnitTesting101eBook-Link">Download your free copy on my Gumroad page</a> or click on the image below.</div>
+<div class="message">Find the first posts from this series plus a summary of "The Art of Unit Testing" and my best tips from this series on my free ebook “Unit Testing 101”. <a href="https://imcsarag.gumroad.com/l/unittesting101" target="_blank" rel="noopener noreferrer" data-goatcounter-click="UnitTesting101eBook-Link">Download your free copy on my Gumroad page</a> or click on the image below.</div>
 
 <figure>
 <a href="https://imcsarag.gumroad.com/l/unittesting101" rel="noopener noreferrer" target="_blank" data-goatcounter-click="UnitTesting101eBook-Image"><img src="/assets/posts/2021-08-30-UnitTesting/GrabYourOwnCopy.png" alt="Grab your own copy of Unit Testing 101" /></a>

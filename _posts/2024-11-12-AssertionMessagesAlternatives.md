@@ -6,7 +6,7 @@ tags: csharp
 
 I got this question from Ankush on my contact page:
 
-> "I want to override the Assert method to avoid using Assert.True without a failure message. How can I achieve it?"
+> _"I want to override the Assert method to avoid using Assert.True without a failure message. How can I achieve it?"_
 
 Here are 2 alternatives to assertion messages and 2 ideas if you do want them:
 
