@@ -20,18 +20,22 @@ namespace TestProject1;
 [TestClass]
 public class IHateYouWilWheaton
 {
-    public record CreateMovieRequest(
-        string Name,
-        int ReleaseYear,
-        string IDontWantThisOneMapped);
+    public class CreateMovieRequest
+    {
+        public string Name { get; set; }
+        public int ReleaseYear { get; set; }
+        public string IDontWantThisOneMapped { get; set; }
+    }
 
-    public record Movie(
+    public class Movie
+    {
         // These two aren't mapped from the source
-        int Id,
-        int DurationInMinutes,
+        public int Id { get; set; }
+        public int DurationInMinutes { get; set; }
         // These two have the 'Movie' prefix
-        string MovieName,
-        int MovieReleaseYear);
+        public string MovieName { get; set; }
+        public int MovieReleaseYear { get; set; }
+    }
 
     [TestMethod]
     public void IgnoringNotMappedProps()
