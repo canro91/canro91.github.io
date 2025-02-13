@@ -88,18 +88,18 @@ options.CreateMap<CreateMovieRequest, Movie>(MemberList.Source)
 	.ForMember(
 		dest => dest.Rating,
 		opt => opt.ConvertUsing(
-				// ^^^^^
-				new FromBoolToMPARating(),
-				src => src.ICanWatchItWithKids));
+                       // ^^^^^
+                       new FromBoolToMPARating(),
+                       src => src.ICanWatchItWithKids));
 
 // And here's the converter:
 public class FromBoolToMPARating : IValueConverter<bool, MPARating>
 {
-	public MPARating Convert(bool sourceMember, ResolutionContext context)
-	{
-		// Here's the actual mapping:		
-		return sourceMember ? MPARating.General : MPARating.Restricted;
-	}
+    public MPARating Convert(bool sourceMember, ResolutionContext context)
+    {
+        // Here's the actual mapping:		
+        return sourceMember ? MPARating.General : MPARating.Restricted;
+    }
 }
 ```
 
