@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Forget Writer's Block: Here's the Real Problem and How to Fix It"
-tags: misc
+tags: writing
 ---
 
 Nothing is scarier than a blank page, but what if the problem isn't writer's block?
