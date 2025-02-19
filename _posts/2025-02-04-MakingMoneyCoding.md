@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How I Made Money Coding and How I'd Do It If I Had to Start Again"
-tags: misc
+tags: career
 ---
 
 These days, I got a question from Venkata on LinkedIn. Here's an edited version of that question:
