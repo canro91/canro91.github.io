@@ -31,6 +31,7 @@ You're not a programmer until...
 
 1. You write your first "Hello, world" program
 2. You stay awake until 3AM solving a coding issue
-3. Your code works on your machine, but not in Production
-4. You get a compilation error on line 123 on a 40-line code file
-5. You deploy a hotfix to Production at 17:55 (and you clock out at 18:00)
+3. You're fixing an issue, it works and you don't know why
+4. Your code works on your machine, but not in Production
+5. You get a compilation error on line 123 on a 40-line code file
+6. You deploy a hotfix to Production at 17:55 (and you clock out at 18:00)
