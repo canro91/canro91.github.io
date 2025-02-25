@@ -20,6 +20,4 @@ From [Just write](https://blog.chasingbrains.co/p/just-write-stuff) by "Chasing 
 
 No matter if it's a small bug fix or a career event, don't create, but document.
 
-***
-
 If you're interested in writing, read [four lessons for a coder struggling to write]({% post_url 2024-09-23-StrugglingToWrite %}) and [always write about what you do at work]({% post_url 2024-12-06-AlwaysWriting %}).
