@@ -6,7 +6,7 @@ tags: misc
 
 It isn't writing, marketing, or social media.
 
-With the possible threat of AI, there's something else we must learn to future-proof ourselves.
+With the possible [threat of AI]({% post_url 2024-04-29-2034Predictions %}), there's something else we must learn to future-proof ourselves.
 
 This time, Devon Eriksen sat down to talk to Dan Koe. Devon is a software engineer turned author. But he considers himself a libertarian. Devon wrote Theft of Fire, a sci-fi book.
 

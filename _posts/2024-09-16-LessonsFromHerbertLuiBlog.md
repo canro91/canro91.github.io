@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Four Writing Lessons I Learned After Binge-Reading Hertbert Lui's Blog"
+title: "Four Writing Lessons I Learned After Binge-Reading Herbert Lui's Blog"
 tags: writing
 cover: Cover.png
 cover-alt: "typewriter" 

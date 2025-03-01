@@ -16,7 +16,7 @@ Rewrites are expensive and time-consuming. Every rewrite starts with good intent
 
 Interestingly enough, I've been involved in full rewrites at every job I've had.
 
-At my first job, I had to rewrite a WebForms app into a WinForms app. That was the solution to a networking issue. By the time I left (actually, [I was fired]({% post_url 2025-01-14-BeingFired %})), there was an ongoing project to unify every separate department application into a single "unified" platform. Another rewrite.
+[At my first job]({% post_url 2024-09-02-LessonsFromMyFirstCodingJob %}), I had to rewrite a WebForms app into a WinForms app. That was the solution to a networking issue. By the time I left (actually, [I was fired]({% post_url 2025-01-14-BeingFired %})), there was an ongoing project to unify every separate department application into a single "unified" platform. Another rewrite.
 
 At my second job, similar story. A WebForms app backed by 1,000-LOC stored procedures. We rewrote it using ASP.NET Web API with NHibernate. But, by the time the president (a coder in a past life) found out that NHibernate was slower, he ordered another rewrite. A rewrite in the middle of another rewrite. It took us around five years to finish the first prototype of a working app.
 

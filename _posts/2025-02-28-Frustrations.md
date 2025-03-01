@@ -8,7 +8,7 @@ C# has put a roof over my head and food on my table for more than 10 years.
 
 At university, I learned Java. It was a relief coming from C/C++. Java didn't have all the things I hated about C. I'm looking at you, pointers.
 
-At my first job, I had to learn C#. The first program I wrote there was a Java program with C# keywords. Oops! Java was the only language I knew at that time.
+[At my first job]({% post_url 2024-09-02-LessonsFromMyFirstCodingJob %}), I had to learn C#. The first program I wrote there was a Java program with C# keywords. Oops! Java was the only language I knew at that time.
 
 I like C# and the entire .NET ecosystem. A typed language, multi-paradigm, with good tooling and stable support.
 

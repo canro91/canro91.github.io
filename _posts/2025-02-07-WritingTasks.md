@@ -14,7 +14,7 @@ There are still writing-related tasks (that are not writing) we can do on those 
 
 1. Proofread and edit future posts.
 2. Find cover images or create visuals.
-3. Steal headlines, hooks, and opening lines.
+3. [Steal headlines]({% post_url 2024-12-17-BetterHeadlines %}), hooks, and opening lines.
 4. Repost top-performing posts in social media.
 5. Hand-write book passages (or posts) from your favorite writers.
 6. Audit posts from past days: What headlines did you use? What type of visuals?

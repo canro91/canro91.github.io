@@ -18,7 +18,7 @@ And we'll lose the one against AI-generated content. Every day we have more and 
 
 If you're writing anywhere online, complaining about AI-generated content won't do anything. Complaining in general doesn't do anything.
 
-From James Altucher, one of my favorite writers, I've learned that:
+From [James Altucher]({% post_url 2024-11-11-LessonsFromJamesAltucher %}), one of my favorite writers, I've learned that:
 
 > "If AI can write it, you need to rewrite it."
 

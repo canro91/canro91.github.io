@@ -24,7 +24,7 @@ Instead of CVs, I'd try an indirect approach to look for jobs:
 
 1. Follow on LinkedIn, companies you'd like to work for and people (especially hiring managers) who work there.
 2. Start genuine conversations. Ask how working there is and ask for referral programs.
-3. If you use the company's product, [show up with ideas]({% post_url 2024-11-05-IdeaMachine %}) to improve the product. Or the company website or social media presence. Don't simply send your CV with an "I do anything coding-related for money" attitude. That's what I did with obviously poor results.
+3. If you use the company's product, [show up with ideas]({% post_url 2024-11-05-IdeaMachine %}) to improve the product. Or the company website or social media presence. Don't simply send your CV with an "I do anything coding-related for money" attitude. That's what I did with obviously poor results. And [don't appear desperate]({% post_url 2024-11-06-LookingNeedy %}) either.
 4. Go through your network, asking if anyone knows someone working at a place where you could fit. Repeat steps 1 to 3. Or ask for an introduction.
 
 I found my first job because I knew someone who knew someone at a company looking for coders. An introduction skipped the hiring line. And after [being fired from that job]({% post_url 2025-01-14-BeingFired %}), I found my next one through my network. I knew someone who knew someone.

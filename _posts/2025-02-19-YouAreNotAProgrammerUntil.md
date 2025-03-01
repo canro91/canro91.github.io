@@ -14,7 +14,7 @@ So, you're not a programmer until:
 3. You have an interview with a clueless recruiter
 4. You copy and paste a code block from StackOverflow
 5. You take down a database server with a bad written query
-6. You read the Clean Code and want to rewrite all code around you
+6. You read [the Clean Code]({% post_url 2020-01-06-CleanCodeReview %}) and want to rewrite all code around you
 7. You debug a program using `Console.WriteLine` or `console.log` or `printf` statements
 8. You get a Project Manager asking you how you're doing with your tasks more than once a day
 9. You google your error message and find an open issue on GitHub
