@@ -40,7 +40,7 @@ Ouch! That hurt. Directly in my ego. "Thanks for being honest," I thought.
 
 I knew I needed to set an aspirational rate (lesson from Naval Ravikant) and escape from the Matrix. That moment reinforced that decision. But my emergency fund was about to run out in a couple of months, so I had to swallow my pride and be the "cheap" one.
 
- ## How I should have picked my rates
+## How I should have picked my rates
 
 The next time you're asked about your rates, go with the advice from "The Secrets of Consulting" by Gerald Weinberg:
 
