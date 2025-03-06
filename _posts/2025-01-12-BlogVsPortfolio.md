@@ -8,13 +8,17 @@ I don't have a coding portfolio.
 
 By portfolio, I mean a webpage showcasing my best projects. My GitHub account is the closest thing to a coding portfolio. But it hasn't helped me land jobs.
 
-My blog has helped me more.
+My blog has helped me more. Here's how:
+
+## 1. A content collaboration
 
 Some time ago, the next day after interviewing for a small local company, I got a phone call.
 
 They wanted me to start a company blog for them. The interviewer read some of my blog posts. I had a link to it on my CV. He wanted me to write something similar for them.
 
 I wrote five blog posts for them with interview preparation material. Even though I decided not to continue the interview process, I declared it a win. Also, I made some lunch money with them.
+
+## 2. A smoother hiring process
 
 Years later, the last time I applied for a job, in the first interview, I shared my screen and walked the interviewer through my blog.
 
