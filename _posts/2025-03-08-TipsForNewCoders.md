@@ -66,7 +66,7 @@ Trust the process. The struggle is part of it.
 
 At the beginning, I tried to learn about everything at once.
 
-I was into Python, [learning C#]({% post_url 2018-11-17-TheC-DefinitiveGuide %}), reading [Clean Code]({% post_url 2020-01-06-CleanCodeReview %}), and keeping up with PHP...Lots of passion, without direction.
+I was into Python, [learning C#]({% post_url 2018-11-17-TheC#DefinitiveGuide %}), reading [Clean Code]({% post_url 2020-01-06-CleanCodeReview %}), and keeping up with PHP...Lots of passion, without direction.
 
 Coding isn't simply one skill, but lots of subskills: language syntax, problem solving, databases, development practices...Tackle them one by one. Only move to the next skill once you understand one enough.
 
