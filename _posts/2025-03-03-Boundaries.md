@@ -35,6 +35,6 @@ To start setting back those boundaries between work and non-work:
 
 If you're working from a different time zone than your coworkers, you don't have to reply after hours, not even to say it's already past your working hours. Reply the next work day.
 
-And if you're the one texting, start your messages with a disclaimer, something like "When you're back online tomorrow: blah, blah, blah" or schedule your messages.
+And if you're the one texting, start your messages with a disclaimer, something like "When you're back online tomorrow: blah, blah, blah" or schedule your messages. And, please [don't send "hello, how are you" messages]({% post_url 2024-11-27-BeingIgnoredAtWork %}). That's how you get ignored at work.
 
 Remember, working from home doesn't mean being available 24/7.
