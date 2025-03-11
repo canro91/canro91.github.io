@@ -32,7 +32,7 @@ All that to say, I've learned a thing or two about blogging and writing. Mostly,
 
 **#9. Write for 1 person**: Next time you sit down to write, picture yourself [explaining it to only one person]({% post_url 2024-12-24-WritingVoice %}): a friend, a coworker, or even your dog. It will give you the right tone to use and the right points to cover in your post. For example, again if you're writing about how to fix the air conditioning of your friend's car, you don't have to explain what a car is to him. He already knows it.
 
-**#10. Avoid summary-like conclusions**: Ditch conclusions the same way you ditch intros. And please avoid regurgitating everything back in a conclusion. Instead, ask your readers to do something after reading your post or promote other posts. Again see #1, #7, and #8.
+**#10. Avoid summary-like conclusions**: Ditch conclusions the same way you ditch intros. And please avoid regurgitating everything back in a conclusion. Instead, ask your readers to do something after reading your post or promote other posts. Again see #2, #7, and #8.
 
 I could give you more tips on SEO, but let's keep it like that. If you followed these tips, especially #1 and #4, search engines will like you. Search engines love when we write for humans.
 
