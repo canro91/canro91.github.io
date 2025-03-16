@@ -28,7 +28,7 @@ Taylor's breaking point was after graduating from his military training.
 
 It was partying and living "la vida loca" that got Taylor into trouble. It was the feeling of making it.
 
-My breaking point wasn't when I was making minimum wage at my first job.
+My breaking point wasn't when I was making minimum wage at [my first job]({% post_url 2024-09-02-LessonsFromMyFirstCodingJob %}).
 
 No! It was years later when I was making the most money I had made as a software engineer. It was when I had won a "reputation" and felt comfortable at work. That's when I got into trouble. I burned out.
 
@@ -48,7 +48,7 @@ But we can change our environment without leaving home by:
 * ditching social media, and
 * going to bed earlier.
 
-It took me months to start getting out of that burnout episode. But, it all started with a 5-kg dumbbell and a YouTube video to work out before showing up to work and with the type of content I was consuming online.
+It took me months to start [getting out of that burnout episode]({% post_url 2025-01-04-RealizationsFrom2024 %}). But, it all started with a 5-kg dumbbell and a YouTube video to work out before showing up to work and with the type of content I was consuming online.
 
 Move to another place or create the right conditions around you to flourish.
 
@@ -66,6 +66,6 @@ Change has to start in your mind first.
 
 After overcoming his messy life, now Taylor is a life coach.
 
-Me? Well, I took almost a year off to continue taking care of my health. I adopted a simple habit: doing something for my body, mind, and spirit every day. Every single day, without excuses.
+Me? Well, I took almost a year off to continue taking care of my health. I adopted a simple habit: [ditching my to-do list]({% post_url 2025-01-11-DitchingTodos %}) and doing something for my body, mind, and spirit every day. Every single day, without excuses.
 
 And that last quote summarizes Taylor's journey through recovery—and my journey too. It all starts in your mind with your beliefs. Because beliefs turn into actions, actions into habits, and habits into change.

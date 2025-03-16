@@ -6,7 +6,7 @@ tags: misc
 
 At one of my previous jobs, there was a new guideline:
 
-Format all SQL queries using right-aligned style.
+> _Format all SQL queries using right-aligned style._
 
 ## The problem?
 

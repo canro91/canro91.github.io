@@ -35,7 +35,7 @@ One day, I had to visit the office of the staffing company for some paperwork. N
 
 Well, the same type of receptacle offices used as trash bins. I guess it saved them the struggle of piling up and throwing away all the CVs from desperate people looking for a minimum wage job. They were already on a trash bin. That day, I knew the system was broken.
 
-Ditch your CV and appear professionally anywhere online.
+[Ditch your CV]({% post_url 2024-10-07-TipsToWriteBetterCVs %}) and [appear professionally anywhere online]({% post_url 2024-12-02-FearOfPublishing %}).
 
 ## 3. Pay raises won't change an unfulfilling job
 
@@ -119,4 +119,4 @@ They will remember your answers in meetings, your willingness to help others, yo
 
 Being easy to work with will pay off in your career. That's the easiest way to [stand out at work]({% post_url 2025-02-26-StandOutAtWork %}) and to leave a lasting impression.
 
-Remember, as Robert Martin said in the Clean Coder, "your career is your responsibility, not your employer's."
+Remember, as Robert Martin said in the [Clean Coder]({% post_url 2020-06-15-CleanCoder %}), _"your career is your responsibility, not your employer's."_

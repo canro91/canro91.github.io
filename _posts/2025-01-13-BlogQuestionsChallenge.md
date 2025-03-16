@@ -4,7 +4,7 @@ title: "I'm Answering the (Bear) Blog Questions Challenge"
 tags: writing
 ---
 
-I'm not pouring a bucket of cold water over my head, but I'm doing this challenge.
+I'm not pouring a bucket of cold water over my head, but I'm doing an Internet challenge.
 
 I found it in [Kev Quirk's blog](https://kevquirk.com/blog/blog-questions-challenge). And he found it on somebody else's blog. But the challenge started on Bear Blog. [Ava started it](https://blog.avas.space/bear-blog-challenge/).
 
@@ -16,7 +16,7 @@ Here I go:
 
 I started blogging as an excuse to become a better coder.
 
-Probably in the early 2010s, back in my first job, I googled "how to be a better developer." And among the many options, I found "start a blog."
+Probably in the early 2010s, back in [my first job]({% post_url 2024-09-02-LessonsFromMyFirstCodingJob %}), I googled "how to be a better developer." And among the many options, I found "start a blog."
 
 Then, years later, at my second job, I didn't want to throw away a couple of hours of Googling while looking for options to finish a task. And that's how I started writing and blogging.
 
@@ -72,7 +72,7 @@ But if I could remove all my posts and keep a handful of them, I'd keep [my seri
 
 Seth Godin has always inspired me. He's been writing daily for ~20 years.
 
-And since November 2024, I started writing daily about programming and other subjects. In fact, I created a new tag, [/misc](/tags/misc), to dump posts about all other subjects. My challenge is to write 100 daily posts. If I stick to my rhythm, I'm done next February 9th.
+And since [November 1st 2024]({% post_url 2024-11-01-SellingVsHelping %}), I started writing daily about programming and other subjects. In fact, I created a new tag, [/misc](/tags/misc), to dump posts about all other subjects. My challenge is to write 100 daily posts. If I stick to my rhythm, [I'm done next February 9th]({% post_url 2025-02-09-100DailyPosts %}).
 
 Chances are I'm keeping the daily rhythm after those 100 posts.
 
@@ -84,7 +84,7 @@ I'd like to give Substack a try, but it would be for anything else apart from co
 
 ## Parting Thought
 
-I owe my career growth to learning foreign languages and writing.
+I owe my career growth to [learning foreign languages]({% post_url 2024-10-14-LearningLanguages %}) and writing.
 
 Writing has opened doors for me. I made my first side income thanks to my blog. I skipped the hiring line when I applied to my last job.
 

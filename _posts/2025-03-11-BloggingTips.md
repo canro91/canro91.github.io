@@ -6,7 +6,7 @@ tags: writing
 
 I've written 321 posts.
 
-In fact, this is my post number 322. [Over five years ago, I wrote my first post]({% post_url 2023-07-18-FiveYearsOfBlogging %}). Well, "post" is a strong word. It was a word vomit. I still keep my first post unedited to remind me how I started.
+In fact, this is my post number 322. Over five years ago, [I wrote my first post]({% post_url 2023-07-18-FiveYearsOfBlogging %}). Well, "post" is a strong word. It was a word vomit. I still keep my first post unedited to remind me how I started.
 
 I only wrote when I thought I had something to say. It was once every full moon when I started. Then it was every other week. Since [Nov 1st, 2024]({% post_url 2024-11-01-SellingVsHelping %}), I've been doing it daily. I already passed the [100 daily posts mark]({% post_url 2025-02-09-100DailyPosts %}). My next goal: the 200 mark.
 
@@ -26,7 +26,7 @@ All that to say, I've learned a thing or two about blogging and writing. Mostly,
 
 **#6. Use simple words**: A post isn't a New York Times column or a school essay where you're chasing an A+ or a 10.
 
-**#7. Deliver your message fast**: It goes hand in hand with #2. Your headline is a promise. Fulfill your promise in your post body. If you're writing how to fix the air conditioning of your car, tell that in your post. Don't go on tangents. Leave those tangents for [separate posts]({% post_url 2025-01-28-DoubleYourPostCount %}). Give something and give it fast.
+**#7. Deliver your message fast**: It goes hand in hand with #2. Your headline is a promise. Fulfill your promise in your post body. If you're writing how to fix the air conditioning of your car, tell that in your post. Don't go on tangents. Leave those tangents to [write more posts]({% post_url 2025-01-28-DoubleYourPostCount %}). Give something and give it fast.
 
 **#8. Avoid meta sentences**: I blame writing in schools and their mantra: "tell readers what you're going to tell them, tell the thing, then tell what you just told them." Arrggg! Don't do that. Don't write "now, let's cover how to..." or anything like that. I used to do that after every section. See #7.
 
