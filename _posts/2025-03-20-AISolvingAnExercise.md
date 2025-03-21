@@ -10,7 +10,7 @@ Truth is hiring and interviewing have been broken for years. There wasn't much l
 
 I asked [Phind](https://www.phind.com/) and [Copilot](https://copilot.microsoft.com/) to solve an interview exercise. I might or might not have been asked that exercise when [applying to a FAANG]({% post_url 2024-05-27-ApplyingToFaang %}).
 
-Here's the "made-up" problem:
+Here's the "made-up" problem—Wink, wink:
 
 > _You're given a string containing the words "one" and "two", and the symbols "+" and "-" representing a math expression. Write a C# function called "Evaluate" to evaluate that expression after replacing "one" with 1 and "two" with 2. Assume the underlying expression is well-formed. For example, "one+one" should return 2, "two-two-one-two" should return -3, and "one+two-one-one+two+one" should return 4._
 
@@ -63,7 +63,7 @@ Nothing fancy! Probably I wouldn't have hired myself with that solution. But, he
 
 And, let's see what Phind and Copilot do. Place your bets...Drum rolls...
 
-## In this corner, with its "largest and most performant model to date," Phiiiiind
+## In this corner, with its "largest and most performant model to date," Phiiiiind:
 
 Here's Phind's exact solution (here's [my conversation](https://www.phind.com/search/cm8gf90xt0000356sfvlvirfn) but I don't know how long it's stored though):
 
@@ -111,7 +111,9 @@ Phind surprised me a lot.
 
 But that didn't surprise me as much as seeing all the tests turning green when I ran its solution. For a moment, I thought using a `DataTable` was a hallucination. [A veteran coder warned me about them]({% post_url 2025-02-24-AVeteranOnAI %}) the other day.
 
-OK, the thing was Phind referenced 4 sources. Two of them were Medium posts talking about evaluating math expressions, but nothing inside them related to the solution it used.
+If you're still skeptical, like me when I saw that function working, here's Microsoft official docs on [DataTable's Compute method](https://learn.microsoft.com/en-us/dotnet/api/system.data.datatable.compute?view=net-8.0). It's more Excel-like formulas inside a `DataTable`. The first parameter is an expression and the second one, a filter.
+
+OK, the thing was Phind referenced 4 sources. Two of them were StackOverflow questions, one of them had the trick with the `DataTable`. But two of them were Medium posts talking about evaluating math expressions, but nothing inside them related to the solution it used.
 
 ## And in this corner, backed by Microsoft, Copiiiiilot
 
