@@ -115,7 +115,7 @@ If you're still skeptical, like me when I saw that function working, here's Micr
 
 OK, the thing was Phind referenced 4 sources. Two of them were StackOverflow questions, one of them had the trick with the `DataTable`. But two of them were Medium posts talking about evaluating math expressions, but nothing inside them related to the solution it used.
 
-## And in this corner, backed by Microsoft, Copiiiiilot
+## And in this corner, backed by Microsoft, Copiiiiilot:
 
 Here's Copilot's solution:
 
