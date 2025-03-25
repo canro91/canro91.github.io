@@ -12,7 +12,7 @@ Here's the script I use—add it to any of your dotfiles:
 
 ```bash
 function did() {
-	vim +'normal Go' +'r! date "+\%Y-\%m-\%d \%H:\%M:\%S"' +'normal o' ~/did.txt
+    vim +'normal Go' +'r! date "+\%Y-\%m-\%d \%H:\%M:\%S"' +'normal o' ~/did.txt
 }
 ```
 
