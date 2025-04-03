@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Why You Should Change Jobs—According to Jesus"
-tags: misc
+tags: career
 ---
 
 I've finally understood why it's better to change jobs than to ask for a raise.
