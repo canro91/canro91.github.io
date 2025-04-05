@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "8 Lessons from a Conversation with @CulturalTutor and David Perell"
+title: "8 Lessons from a Conversation Between @CulturalTutor and David Perell"
 tags: misc
 ---
 
