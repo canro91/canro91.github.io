@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "8 Lessons from a Conversation Between @CulturalTutor and David Perell"
-tags: misc
+tags: writing
 ---
 
 From cleaning at McDonald's to 1.7 million followers on Twitter/X.
