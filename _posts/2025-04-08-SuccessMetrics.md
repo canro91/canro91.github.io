@@ -18,7 +18,7 @@ I was with a friend at a supermarket while the cashier passed the products along
 
 For a while, I thought success meant climbing the corporate ladder to the title of VP in Silicon Valley. Then, it was mastering coding, chasing the "expert" label. Then, it was sitting on a beach holding a piña colada while trading and enjoying financial freedom. Then, it was something else.
 
-But those weren't my own success metrics. They were success metrics I had absorbed without question. It took me [a burnout season]({% post_url 2025-01-04-RealizationsFrom2024 %}) to realize I had been trying to make this corporate dream work for over 10 years.
+But those weren't my own success metrics. They were success metrics I had absorbed without question. It took me [a burnout season]({% post_url 2025-01-04-RealizationsFrom2024 %}) to realize I had been trying to make this [corporate dream work for over 10 years]({% post_url 2024-10-21-QuickCareerLessons %}).
 
 My success metrics these days? Working on things I love and following my passions without worrying about money.
 
