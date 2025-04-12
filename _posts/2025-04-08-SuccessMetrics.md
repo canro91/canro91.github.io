@@ -12,14 +12,20 @@ I was with a friend at a supermarket while the cashier passed the products along
 
 "So...what happened? He worked for nothing?" the cashier asked me.
 
-"Well, maybe that was his success. Cleaning things for kids to study. That was what he enjoyed," I told her.
+"Well, maybe that was his success. Cleaning rooms for kids to study. That was what he enjoyed," I told her.
 
 "Nah, nah, nah," she said while she leaned back, stretching her arms behind her head, "I want to be doing nothing."
 
-For a while, I thought success meant climbing the corporate ladder to the title of VP in Silicon Valley. Then, it was mastering coding, chasing the "expert" label. Then, it was sitting on a beach holding a piña colada while trading and enjoying financial freedom. Then, it was something else.
+\# # #
 
-But those weren't my own success metrics. They were success metrics I had absorbed without question. It took me [a burnout season]({% post_url 2025-01-04-RealizationsFrom2024 %}) to realize I had been trying to make this [corporate dream work for over 10 years]({% post_url 2024-10-21-QuickCareerLessons %}).
+I've changed my mind about success lots of times.
 
-My success metrics these days? Working on things I love and following my passions without worrying about money.
+For a while, I thought success meant climbing the corporate ladder to the title of VP in a tech startup Silicon Valley. Then, it was mastering coding, chasing the "expert" label. Then, it was sitting on a beach holding a piña colada while trading and enjoying financial freedom. Then, it was something else.
+
+But those weren't my own success metrics.
+
+They were success metrics I had absorbed without question. From YouTube, from my peers, from the rich. It took me [a burnout season]({% post_url 2025-01-04-RealizationsFrom2024 %}) to realize I had been trying to make this [corporate dream work for over 10 years]({% post_url 2024-10-21-QuickCareerLessons %}). Better late than never.
+
+For the janitor, maybe it was a boring job. For the cashier, doing nothing. But my success metrics these days? Working on things I love and following my passions without worrying about money.
 
 Your success metrics don't have to be like mine or like anyone else's. And that's fine. But whatever they are, make sure they're truly yours.
