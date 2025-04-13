@@ -12,7 +12,7 @@ Don't smoke. And if you buy a pack of cigarettes and it comes with a picture of 
 
 But what about kidneys? I haven't seen any ads for them.
 
-### ***
+\# # #
 
 "She needs blood transfusions. Sign the consent here," I was told.
 
@@ -30,7 +30,7 @@ She got the highest priority in triage at the ER. And she didn't spend long time
 
 An internist, a urologist, and a nephrologist saw her. She wasn't fine at all.
 
-### ***
+\# # #
 
 Kidneys have two main functions:
 1. Remove excess liquid from your blood.
@@ -42,7 +42,7 @@ Drink enough water, exercise, stop smoking, and avoid salt. Take care of your ki
 
 Don't trust me. Trust the [US National Institute of Health](https://www.niddk.nih.gov/health-information/kidney-disease/chronic-kidney-disease-ckd). Or talk to your doctor.
 
-### ***
+\# # #
 
 "My life depends on a machine now," she told me.
 
