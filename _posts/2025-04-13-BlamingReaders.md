@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "This One Mistake Might Be Scaring Readers Away From Your Writing"
-tags: misc
+tags: writing
 ---
 
 Imagine stepping into a restaurant, only for the waiter to say, "You don't seem to have enough money to eat here." Would you stay? I know I wouldn't.
