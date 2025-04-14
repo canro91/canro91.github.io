@@ -6,7 +6,7 @@ tags: writing
 
 ## 1. Title your reaction posts with "Re:"
 
-I've written response or reaction posts before, but I named them with my own titles. But, yesterday I found this idea to [use "Re:" in titles](https://rubenerd.com/using-re-in-blog-titles/) for response posts.
+I've written response or reaction posts before, but I named them with my own titles. Yesterday I found this idea to [use "Re:" in titles](https://rubenerd.com/using-re-in-blog-titles/) for response posts.
 
 ## 2. Make your urls easy to pronounce.
 
