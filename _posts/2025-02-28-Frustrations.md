@@ -49,6 +49,14 @@ Apart from [nullable references]({% post_url 2023-03-06-NullableOperatorsAndRefe
 
 The worst part is features that look the same but work differently. Yes, I'm looking at you, primary constructors. They look like records, but surprise, surprise...They work differently.
 
+```csharp
+public record ThisIsARecord(string ThisIsAPublicProperty);
+
+public class ThisIsAClassUsingPrimaryConstructor(string ThisIsNotAPublicProperty)
+{
+}
+```
+
 This inconsistency makes the language harder to teach and learn.
 
 ## 4. AutoMapper
