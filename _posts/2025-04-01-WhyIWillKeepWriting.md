@@ -19,7 +19,7 @@ AI is getting faster, better, stronger, and cheaper. In seconds, it can produce 
 5. **Writing is free, public therapy**: In 2024, [I applied to FAANG and failed]({% post_url 2024-05-27-ApplyingToFaang %}). Instead of ranting that hiring is broken, I decided to write about it. It was liberating.
 6. **Writing is an exercise for my creative mind**: After [ditching my to-do lists]({% post_url 2025-01-11-DitchingTodos %}), writing is part of my daily routine to do something for my body, mind, and spirit each day.
 
-## And more importantly, writing helped me recover from burnout last year.
+## And more importantly, 7. writing helped me recover from burnout last year.
 
 Last year, I took officially [my first writing class]({% post_url 2024-12-26-WriteDaily %}).
 

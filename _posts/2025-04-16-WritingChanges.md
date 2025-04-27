@@ -14,7 +14,7 @@ I started to see more likes, comments, and shares on my content when I started d
 
 There's more to writing than just typing.
 
-Writing is a set of subskills to master: headlines, introductions, outlines, storytelling, copywriting, cliff-hangers, and conclusions.
+Writing is a set of subskills to master: [headlines]({% post_url 2024-12-17-BetterHeadlines %}), introductions, outlines, storytelling, copywriting, cliff-hangers, and conclusions.
 
 I took a notepad and wrote a list of 10 writing skills I wanted to learn. Then I started working on each of those subskills one by one.
 
@@ -40,7 +40,7 @@ There's a reason why a Wikipedia article or a scientific paper sounds soulless a
 
 The easiest way to make our writing memorable is with stories.
 
-I could tell you, "No job is safe." You'll probably nod in agreement and forget it. But if I tell you, "The day my boss called me to his office and asked me to hand in my company ID, I learned there was no safe job." Chances are you'll remember the second one more.
+I could tell you, _"No job is safe."_ You'll probably nod in agreement and forget it. But if I tell you, _"The day my boss called me to his office and asked me to hand in my company ID, I learned there was no safe job."_ Chances are you'll remember the second one more.
 
 We're driven by stories. That's what we've been doing as humans since we climbed down from trees and sat around the fire in caverns.
 

@@ -116,7 +116,9 @@ Some of those don't look like C# anymore. I still prefer the old `if (movie != n
 
 ## 3. Defense against null
 
-If the solution to NullReferenceException were to simply check for `null`, that wouldn't be the Billion-Dollar mistake. And I wouldn't be writing this series. But the thing is knowing when a reference might be `null` or not and, therefore, when we should check for it. That's when we should protect ourselves against `null`.
+If the solution to NullReferenceException were to simply check for `null`, that wouldn't be the Billion-Dollar mistake. And I wouldn't be writing this series.
+
+But the thing is knowing when a reference might be `null` or not and, therefore, when we should check for it. That's when we should protect ourselves against `null`.
 
 To protect against `null`, inside our methods, let's check our input parameters and throw a more detailed exception. C# has an exception for missing parameters: ArgumentNullException.
 
@@ -143,7 +145,7 @@ Notice that instead of waiting for NullReferenceException, we proactively preven
 
 Voilà! That's the NullReferenceException and how to fix it by checking for `null`. Remember, we shouldn't catch this exception but prevent and prepare for it.
 
-Don't miss the other posts in this series! In the next post, we cover how to use [Nullable Operators and Nullable References]({% post_url 2023-03-06-NullableOperatorsAndReferences %}) to prevent the NullReferenceException. In future posts, we're covering [the Option type and LINQ XOrDefault methods]({% post_url 2023-03-20-UseOptionInsteadOfNull %}) and [a design technique to encapsulate optional state]({% post_url 2023-04-03-SeparateStateIntoSeparateObjects %}).
+Don't miss the other posts in this series! In the next post, we cover how to use [Nullable Operators and Nullable References]({% post_url 2023-03-06-NullableOperatorsAndReferences %}) to prevent the NullReferenceException. In future posts, we're covering [why getting rid of null is a good idea]({% post_url 2024-11-14-NoNulIsAGoodIdea %}), [the Option type and LINQ XOrDefault methods]({% post_url 2023-03-20-UseOptionInsteadOfNull %}), and [a design technique to encapsulate optional state]({% post_url 2023-04-03-SeparateStateIntoSeparateObjects %}).
 
 {%include nre_course.html %}
 

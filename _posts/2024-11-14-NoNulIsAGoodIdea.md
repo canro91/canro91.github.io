@@ -8,7 +8,7 @@ These days I found a Medium article titled: [Why Eliminating NULLs From Your Cod
 
 Its point is that when we stop using null, we replace checking for null with checking for a default value or a wrapper like Result. And there's no major gain.
 
-But there is.
+## But there is a gain when eliminating null
 
 The advantage of returning a wrapper like [Option or Result instead of null]({% post_url 2023-03-20-UseOptionInsteadOfNull %}) is making the implicit explicit.
 
@@ -58,6 +58,8 @@ is a design choice. For C#, the first one looks like more "native."
 
 In either case, at some point, we have to convert the absence of data (either a null or a None) to something else like a status code or error message.
 
+## C# doesn't have an explicit type to avoid null
+
 C# didn't take the wrapper route and introduced [nullable references]({% post_url 2023-03-06-NullableOperatorsAndReferences %}) instead.
 
 With nullable references turned on, all our object references are not null by default. If we want a reference to accept null, we should annotate the type with a ?. The same way we do it for nullable ints.
@@ -73,3 +75,5 @@ Yes, that name is kind of misleading. It should be "not nullable" references.
 That's a feature we should turn on and make all nullable warnings as errors.
 
 With Option, Result, or nullable references, we make our method signatures honest. That's already a gain.
+
+{%include nre_course.html %}

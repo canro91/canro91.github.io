@@ -12,7 +12,7 @@ It made me think about when we can call ourselves programmers.
 
 So, you're not a programmer until:
 1. You write a to-do app or a recipe catalog
-2. You google how to become a better coder
+2. You google [how to become a better coder]({% post_url 2025-03-08-TipsForNewCoders %})
 3. You have an interview with a clueless recruiter
 4. You copy and paste a code block from StackOverflow
 5. You take down a database server with a badly written query
@@ -53,7 +53,7 @@ You're not a programmer until...
 5. You build a collection of most-used code snippets
 6. You set your git username to "User" so they can't blame you
 7. You use `git reset --hard` or delete your local repo and clone it again
-8. You start a blog to share your learning to save others debugging time
-9. You're stuck on a bug and your code works when you call a senior for help
-10. You've spent time installing your favorite editor/IDE's plugins and themes
+8. [You start a blog]({% post_url 2025-04-10-TilPosts %}) to share your learning to save others debugging time
+9. [You're stuck on a bug]({% post_url 2020-09-19-ThreeDebuggingTips %}) and your code works when you call a senior for help
+10. You've spent time installing [your favorite editor/IDE's plugins and themes]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %})
 11. You feel stupid by constantly trying to learn things you do not know what they're for
