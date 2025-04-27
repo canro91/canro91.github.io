@@ -6,7 +6,7 @@ tags: misc
 
 "[Users] don't care about your code—they care about results."
 
-That's a controversial statement I found on [this dev.to post](https://dev.to/wraith/building-for-users-the-real-purpose-of-software-development-a3a). It got some virtual stones in the comments from "Clean Code" police officers. I used to be one too. I've changed my mind about it.
+That's a controversial statement I found on [this dev.to post](https://dev.to/wraith/building-for-users-the-real-purpose-of-software-development-a3a). It got some virtual stones in the comments from "Clean Code" police officers. I used to be one too. [I've changed my mind about it]({% post_url 2025-03-19-ChangedMyMind %}).
 
 ## We don't write code for the sake of writing code.
 
@@ -22,6 +22,10 @@ The other day, the VP of a software company I was contracting with taught me a l
 
 It was a lesson I won't forget, especially coming from a VP of a software company who had been a coder too.
 
-We write code for humans. For two audiences: our future selves and end users.
+## We write code for humans. For two audiences: our future selves and end users.
 
-Both audiences don't necessarily intersect. Both audiences don't care about the same things. For us and our future selves, it's about maintaining code quality to add new features and solve bugs. For end users, connecting with loved ones, finding a romantic partner, getting a cheap room, and keeping clients happy and sales high. They care about what our code could do for them, not about the code by itself. Quality is there to support that mission.
+Both audiences don't necessarily intersect. Both audiences don't care about the same things.
+
+For us and our future selves, it's about maintaining code quality to add new features and solve bugs.
+
+For end users, connecting with loved ones, finding a romantic partner, getting a cheap room, and keeping clients happy and sales high. They care about what our code could do for them, not about the code by itself. Quality is there to support that mission.
