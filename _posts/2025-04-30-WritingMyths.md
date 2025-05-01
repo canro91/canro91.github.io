@@ -32,7 +32,7 @@ Write in your native language.
 
 ## 5. I'm not good at explaining things
 
-If you're a coder, you are already good at explaining things. Coding is explaining things to a computer. Try to do the same in writing. Don't try to write like a "writer," share an algorithm.
+If you're a coder, you are already good at explaining things. Coding is explaining things to a computer. Try to do the same in writing. Don't try to write like a "writer," share an algorithm. [Start by writing TIL Posts]({% post_url 2025-04-10-TilPosts %})
 
 ## 6. I don't have anything to share
 
