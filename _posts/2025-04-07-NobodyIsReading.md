@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Want to Write for Years? Start by Writing Like No One's Watching"
-tags: misc
+tags: writing
 ---
 
 "Hey, how's your LinkedIn posting doing?" he said.
