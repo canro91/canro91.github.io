@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Not-an-Architect Effect"
-tags: misc
+tags: career
 ---
 
 Has this also happened to you?
