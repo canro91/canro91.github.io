@@ -6,7 +6,7 @@ tags: misc
 
 ## Tagline?
 
-> "Sith Lord | On a mission to rule the galaxy"
+> "Sith Lord — On a mission to rule the galaxy"
 
 ## About page?
 
