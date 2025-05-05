@@ -8,13 +8,13 @@ Diversify your sources of purpose and joy, the same way you should diversify you
 
 Otherwise, if you lose your only source of purpose and joy, you'll feel lost.
 
-This happened to Vinay Hiremath, co-founder of Loom- the online screen recording tool. 
+## This happened to Vinay Hiremath, co-founder of Loom- the online screen recording tool. 
 
 After selling his company, [he's rich and has no idea what to do with his life](https://vinay.sh/i-am-rich-and-have-no-idea-what-to-do-with-my-life/). He wrote about it on his blog. All of a sudden the "co-founder of Loom" was gone.
 
 With lots of cash but no sense of purpose, he went hiking, broke up with his girlfriend, went to the Himalayas, tried getting to Washington, and on and on. All in an effort to find a sense of meaning.
 
-While I haven't had an exit yet, I found myself going through something a similar situation.
+## While I haven't had an exit yet, I found myself going through something a similar situation.
 
 I had my sense of value attached to my job. "Software Engineer." For some time, that was everything I was and did... until [I lost my job after a layoff]({% post_url 2023-08-21-OnLayoffs %}).
 
@@ -24,7 +24,8 @@ During that forced time off, I took the opportunity to take care of my health, g
 
 I realized that, above all job titles, I'm a learner. Software engineering? It was just a stint of that.
 
-If you're in a similar situation, 
+## If you're in a similar situation,
+
 1. Understand you're not your job. You're not a title. You are way more than that.
 2. Find new hobbies outside work. Learn new skills just for fun. Read books from different fields. Practice a physical activity. Do something with your hands, away from screens.
 
