@@ -12,15 +12,18 @@ Later on, I became a plain text lover and kept my to-do list in a .txt file I ed
 
 Same story as my notebook at my past job. Even worse. I had "todo.txt" files for work and non-work. One in my personal computer and another in my work computer. My to-do lists grew without control. I still have items in my "todo.txt" file from years ago. Oops!
 
-But there's something with to-do lists. They're stressful.
+## But there's something with to-do lists.
+
+To-do lists are stressful.
 
 Every item on our to-do lists is an item we haven't finished and probably won't finish either. In the meantime, they're another source of stress.
 
-I learned from Choose Yourself Guide to Wealth by James Altucher to ditch to-do lists and goals, and live by themes instead.
+I learned from [Choose Yourself Guide to Wealth]({% post_url 2025-01-19-ChooseYourselfGuideToWealth %}) by James Altucher to ditch to-do lists and goals, and live by themes instead.
 
 The theme I want to live by in 2025 is the Daily Practice: doing something for my mind, body, and spirit every day.
 
-As part of my Daily Practice, I'm sticking to:
+## As part of my Daily Practice, I'm sticking to:
+
 - A glass of water after waking up
 - A workout session
 - A moment of silence
