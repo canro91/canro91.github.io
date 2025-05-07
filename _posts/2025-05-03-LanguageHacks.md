@@ -12,7 +12,7 @@ But I learned French, my second foreign language, in about a year and a half. I 
 
 These are 10 tricks I've used (and recommend) to learn any language faster:
 
-## #1. Forget about grammar. Focus on your pronunciation
+## 1. Forget about grammar. Focus on your pronunciation
 
 When I started studying English, I was obsessed with grammar.
 
@@ -20,31 +20,31 @@ On the first day at my language school, our teacher asked us to open a textbook 
 
 But perfect grammar means nothing if you can't get your points across. Work on your pronunciation first.
 
-## #2. Learn phrases, not words
+## 2. Learn phrases, not words
 
 It's tempting to start memorizing individual words. A, aardvark, abacus, abandon, abase...
 
 Unless you want to sound like Tarzan, you need more than individual words. Start with simple phrases for casual conversations and combine them like Lego bricks.
 
-## #3. Change your phone language
+## 3. Change your phone language
 
 That's the easiest way to be immersed in your target language.
 
 We keep our phones with us all the time, even when going to bed. Turn them into language-learning companions.
 
-## #4. Change your phone's alarm sound to a song
+## 4. Change your phone's alarm sound to a song
 
 Again, an easy way to immerse yourself in your target language. Make sure you wake up to do something you love, or you'll hate that song.
 
-## #5. Create your own phrasebook
+## 5. Create your own phrasebook
 
 List situations you'll face when using your target language and the phrases you'll need for them. Learning a language for your next vacation isn't the same as learning it for a job interview. Use AI here as your tutor.
 
-## #6. Create flashcards with phrases from #2 and #5
+## 6. Create flashcards with phrases from #2 and #5
 
 Then, study them in every free slot in your agenda. Use spaced-repetition software like Anki for that.
 
-## #7. Use AI to generate stories with the most common words
+## 7. Use AI to generate stories with the most common words
 
 Try this prompt:
 
@@ -54,11 +54,11 @@ Then use a text-to-speech tool to generate audio for that story. Boom! Enough ma
 
 Again, remember to learn words in the context of phrases. That's from #2.
 
-## #8. Learn filler words and connectors to sound like a native
+## 8. Learn filler words and connectors to sound like a native
 
 Learn the "you know," "and uh," and "isn't it?" to help your words flow naturally like a native speaker.
 
-## #9. Watch children's stories multiple times
+## 9. Watch children's stories multiple times
 
 Watch each time with a different focus:
 * The first time, watch to understand the story.
@@ -69,7 +69,7 @@ This way, you can squeeze the most out of a single story.
 
 If you think children’s stories are too easy, try with a video from the YouTube channel "Easy Languages."
 
-## #10. Consume content about your hobbies in your target language
+## 10. Consume content about your hobbies in your target language
 
 Okay, call me a nerd.
 
