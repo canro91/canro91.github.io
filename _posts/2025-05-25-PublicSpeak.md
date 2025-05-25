@@ -1,6 +1,6 @@
 ---
 layout: post
-title: “Need to Public Speak? Write a Good Post First”
+title: "Need to Public Speak? Write a Good Post First"
 tags: misc
 ---
 
