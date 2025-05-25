@@ -18,7 +18,7 @@ This week, I tried Copilot (on the browser) to help me with some coding tasks. H
 
 **#4. Generate Builders for test data.** I gave it a sample [Builder class]({% post_url 2021-04-26-CreateTestValuesWithBuilders %}) and asked it to follow the same pattern but for some methods of a different class. Copilot nailed it.
 
-**#5. Replicate tests from a sample test class.** While refactoring away from logic-heavy controllers to handlers, I gave it an existing handler and its tests. Then, after giving it the signature of my new handler, I asked Copilot to rewrite my controller tests as handler tests, following the pattern from the other handler tests and keeping my original assertions. Again, Copilot nailed this one.
+**#5. Replicate tests from a sample test class.** While refactoring away from logic-heavy controllers to handlers, I gave it an existing handler and its tests. Then, after giving it the signature of my new handler, I asked Copilot to rewrite my controller tests as handler tests, following the pattern from the other handler tests and keeping [my original assertions]({% post_url 2021-07-19-WriteBetterAssertions %}). Again, Copilot nailed this one.
 
 And just for the record, I'm not using any fancy prompt, but this one,
 
