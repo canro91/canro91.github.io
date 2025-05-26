@@ -57,7 +57,7 @@ You'll be in a dead end if you try to chase every SEO update. Write for humans b
 Instead of trying SEO tricks, go with these rules:
 
 1. Write to answer a query people might search for in a search engine.
-2. Make your posts easy to read for humans: Don't use big chunks of text and use subheaders.
+2. Make your posts easy to read for humans: Don't use big chunks of text. Instead, use subheaders to break those big chunks of text.
 3. Link back to other posts using keywords: Don't use "click here" or "see more."
 
 You see? Another skill to master. Go with a social blog.
