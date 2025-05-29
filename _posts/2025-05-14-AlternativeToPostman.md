@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A Simpler and Faster Alternative to Postman"
+title: "cURL—A Simpler and Faster (and Free) Alternative to Postman"
 tags: productivity showdev
 ---
 
