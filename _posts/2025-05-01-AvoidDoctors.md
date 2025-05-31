@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "15 Simple Habits to Keep You Out of the Doctor’s Office"
+title: "These 15 Simple Habits Could Save You From the Doctor's Office—For Good"
 tags: misc
 ---
 
