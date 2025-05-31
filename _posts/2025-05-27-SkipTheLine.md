@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Six Proven Principles to Learn Any Skill Faster and Skip the Lines"
+title: "Six Proven Principles to Learn Any Skill Faster (Without Spending 10,000 Hours)"
 tags: learning books
 ---
 
