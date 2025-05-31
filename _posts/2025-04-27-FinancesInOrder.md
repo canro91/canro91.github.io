@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "7 Tips That Helped Me Get My Finances on Track"
+title: "I Followed These 7 Proven Money Tips—And Finally Got My Finances Under Control"
 tags: misc
 ---
 
