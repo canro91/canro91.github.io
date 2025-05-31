@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Want to Be More Creative and Change Your Life? Become an Idea Machine"
+title: "Want to Be More Creative? Become an Idea Machine—It'll Change Your Life"
 tags: misc
 ---
 
