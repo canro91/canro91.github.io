@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Working on Your Health Is the Foundation for Reinventing Your Life"
+title: "Two Years Ago, I Was Sick and Burned Out. But This Powerful Quote Changed It All"
 tags: misc
 ---
 
