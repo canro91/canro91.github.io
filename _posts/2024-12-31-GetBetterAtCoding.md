@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Best Way to Get Better at Writing Code Isn't Just Writing More Code"
-tags: misc
+tags: coding
 ---
 
 More than 10 years ago, I started my real coding journey with a Google search: "How to be a better developer."

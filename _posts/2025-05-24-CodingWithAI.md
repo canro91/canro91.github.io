@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "5 Ways Copilot Helped Me Code Smarter This Week"
-tags: misc
+tags: coding
 ---
 
 Rejecting AI is like rejecting calculators or computers.

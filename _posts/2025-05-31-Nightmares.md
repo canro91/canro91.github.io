@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "12 Nightmares Every Coder Faces (Junior or Senior, It Doesn't Matter)"
-tags: misc
+tags: coding
 ---
 
 **#1. A micromanaging boss.** Why trust your team members when you can ask them every 5 minutes how they're doing?

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Coders Often Don't Get To Solve Problems"
-tags: misc
+tags: coding
 ---
 
 Coding is about solving problems with automation.

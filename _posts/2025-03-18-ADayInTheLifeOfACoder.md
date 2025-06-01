@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A Day in the Life of a Random C# Backend Engineer"
-tags: career
+tags: career coding
 ---
 
 What exactly does a C# backend software engineer do?

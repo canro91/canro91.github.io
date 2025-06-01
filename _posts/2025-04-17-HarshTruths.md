@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "12 Hard Truths About Coding I Learned the Hard Way After 10 Years"
-tags: career
+tags: career coding
 ---
 
 I got fired from my first job, took down a database server with a badly written query, and was rejected from a FAANG. That all happened over the past 10 years.

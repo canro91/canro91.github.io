@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "When Specs Are Unclear, Wake Up the Experts"
-tags: misc
+tags: coding
 ---
 
 "Do anything to wake up the experts."

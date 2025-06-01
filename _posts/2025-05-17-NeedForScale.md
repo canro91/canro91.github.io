@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Stop Optimizing for Scale—Most Apps Don't Need It"
-tags: misc
+tags: coding
 ---
 
 In [my Friday Links email](https://fridaylinks.beehiiv.com/subscribe) yesterday, I shared one post called [Programming Myths We Desperately Need to Retire](https://amritpandey.io/programming-myths-we-desperately-need-to-retire/).

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "We Write Code for Two Audiences—with Two Different Priorities"
-tags: misc
+tags: coding
 ---
 
 "[Users] don't care about your code—they care about results."

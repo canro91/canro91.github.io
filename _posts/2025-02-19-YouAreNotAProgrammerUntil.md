@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "You're Not a Programmer Until..."
-tags: misc
+tags: coding
 ---
 
 Today I found a post claiming you're not a senior software engineer until you work on a legacy app.

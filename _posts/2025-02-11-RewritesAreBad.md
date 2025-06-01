@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Full Rewrites Are Bad But Be Ready For Them"
-tags: misc
+tags: coding
 ---
 
 Rewriting legacy code that works isn't a good idea.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Re: Will AI Take My Job? A Coder's Reality Check"
-tags: misc
+tags: coding
 ---
 
 Anita asked on [dev.to](https://dev.to/anitaolsen/will-ai-take-my-job-1ap0) if AI, given all the hype, will take her job.

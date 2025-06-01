@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "10 Ways New Coders Can Use AI Without Generating Code"
-tags: misc
+tags: coding
 ---
 
 If you don't know how to code, you shouldn't rely on AI to generate code.

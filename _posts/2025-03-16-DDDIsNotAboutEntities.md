@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Domain-Driven Design Isn't Just About Entities and Value Objects"
-tags: misc
+tags: coding
 ---
 
 What's the first thing that comes to mind when you think of Domain-Driven Design (DDD)? Entities and value objects?

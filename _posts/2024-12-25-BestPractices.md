@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "We Shouldn't Call Them Best Practices—And Blindly Follow Them"
-tags: misc
+tags: coding
 ---
 
 We, as coders, take pride in preaching and following best practices.

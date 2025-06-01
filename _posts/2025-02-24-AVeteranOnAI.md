@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "If a Veteran Is Skeptical About AI, We Shouldn't Worry About Our Jobs"
-tags: misc
+tags: coding
 ---
 
 Pierre started coding back in the 60s and still maintains a 30-year-old codebase.

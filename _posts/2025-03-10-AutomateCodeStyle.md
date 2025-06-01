@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Always Automate Code Style (and Other Best Practices)"
-tags: misc
+tags: coding
 ---
 
 At one of my previous jobs, there was a new guideline:

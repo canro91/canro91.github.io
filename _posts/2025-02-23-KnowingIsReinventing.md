@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Knowing Is Teaching, but Also Reinventing the Wheel"
-tags: misc
+tags: coding
 ---
 
 "What I cannot create, I do not understand."
