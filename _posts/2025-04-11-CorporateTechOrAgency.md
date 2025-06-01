@@ -47,3 +47,5 @@ With agencies, there are fewer chances of growth since you're sold as a pair of 
 Of course, YMMV.
 
 Rather than choosing a company for its benefits, start experimenting with your career, then make a 5-year career plan (or intention), and pick the jobs and places that take you closer to that plan. That's [a lesson I wish I had known 10 years ago]({% post_url 2025-03-04-CareerLessonIWishIKnew %}).
+
+{% include 7day_email_course_longer.html %}

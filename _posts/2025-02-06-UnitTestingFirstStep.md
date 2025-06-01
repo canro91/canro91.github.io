@@ -65,6 +65,6 @@ There are three options to invoke our tests—Again, we as developers, are the o
 
 So there's no one function that calls the whole cascade of unit tests, but a button on your IDE.
 
-Et voilà!
+Et voilà! To read more about unit testing, don't miss the rest of the series [Unit Testing 101]({% post_url 2021-08-30-UnitTesting %}).
 
-To read more about unit testing, check [four common mistakes when writing your first unit tests]({% post_url 2021-03-29-UnitTestingCommonMistakes %}) and the rest of the series [Unit Testing 101]({% post_url 2021-08-30-UnitTesting %}).
+_Grab a copy of my ebook, <a href="https://imcsarag.gumroad.com/l/unittesting101" target="_blank" rel="noopener noreferrer" data-goatcounter-click="UnitTesting101eBook-Intro">Unit Testing 101: From Zero to Your First Tests</a> and learn to write your first unit tests in C#._

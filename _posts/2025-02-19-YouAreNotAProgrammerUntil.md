@@ -57,3 +57,5 @@ You're not a programmer until...
 9. [You're stuck on a bug]({% post_url 2020-09-19-ThreeDebuggingTips %}) and your code works when you call a senior for help
 10. You've spent time installing [your favorite editor/IDE's plugins and themes]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %})
 11. You feel stupid by constantly trying to learn things you do not know what they're for
+
+{% include 7day_email_course_longer.html %}

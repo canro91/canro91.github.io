@@ -70,3 +70,5 @@ Even AutoMapper's author recommends not to use it if we're mapping more than 80%
 Just in the past weeks, I found two scenarios that got in my way, [ignoring unmapped fields in the destination type]({% post_url 2025-01-24-IgnoringPropertiesAutoMapper %}) and [getting mappings flagged as invalid]({% post_url 2025-02-13-AutoMapperValidations %}). Sure, I know I was abusing AutoMapper.
 
 I wanted to add EntityFramework Core to this list, but I'm starting to feel the frustration in my stomach. Probably, I'm hungry. But, frustrations aside, .NET is still my go-to platform and C#, my go-to language.
+
+{% include 7day_email_course_longer.html %}

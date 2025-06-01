@@ -89,3 +89,5 @@ Mmmm...Well, now that [AI is "taking" our jobs]({% post_url 2025-02-24-AVeteranO
 I don't want to be the best coder on a team anymore.
 
 I believed cracking symbols on a page was the way to go. I've learned that [the best coders stay coding]({% post_url 2024-12-01-WhoGetsPromoted %}). And there's more than symbols on a file. The hardest part of software engineering isn't the code, but "people and interactions." And that's where the real growth happens.
+
+{% include 7day_email_course_longer.html %}
