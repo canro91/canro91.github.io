@@ -8,7 +8,9 @@ tags: writing
 
 Credits to "Smart Brevity."
 
-## If we don't hook readers with a headline and an opening line, they will move on to the next search result or the next post in the feed.
+## No headline + no opening line = no readers
+
+If we don't hook readers with a headline and an opening line, they will move on to the next search result or the next post in the feed.
 
 Yesterday, this opening line made me click away and open the next post in my RSS reader:
 
