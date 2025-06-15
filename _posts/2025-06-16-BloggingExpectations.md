@@ -36,7 +36,7 @@ Apart from occasional virality and a bit of lunch money, my blog led to unexpect
 * People on Reddit roasting one of my posts
 * A reader compiling his favorite posts from my blog
 * [One of my blogging heroes]({% post_url 2024-09-16-LessonsFromHerbertLuiBlog %}) reacting to one of my posts
-* An interview going faster after I showed my unit testing posts
+* An interview going faster after I showed [my unit testing posts]({% post_url 2021-08-30-UnitTesting %})
 * [One veteran coder emailing me]({% post_url 2025-02-24-AVeteranOnAI %}) after one of my posts going viral
 * Readers emailing me to point typos or issues in my code samples
 * One reader emailing me to share how one of my posts resonated with them
