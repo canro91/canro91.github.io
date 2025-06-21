@@ -18,13 +18,17 @@ But if I had to start all over again, here are 10 actions I'd take:
 
 Writing online was just something cool I did on the side of my 9-to-5.
 
-For so long, I only thought my online presence would make me appear "attractive" to recruiters and hiring managers. I didn't know our online presence is our most valuable asset. It's our own one-person business.
+For so long, I only thought my online presence would make me appear "attractive" to recruiters and hiring managers. I didn't know our online presence is our most valuable asset.
+
+Our personal brand is our own one-person business.
 
 ## 2. Start on a social blog like Medium or Quora
 
 [I started a blog]({% post_url 2020-07-18-HowIStartedBlogging %}) because it was the only free advice I found.
 
 But the thing with blogs is that our content is at the mercy of search engines, SEO, and their bots. Social blogs have a "feed" and algorithm to match readers with content. And that's the best way to get faster feedback as a writer.
+
+As a coder, I'd start in a social blog like dev.to or Medium, sharing [TIL posts]({% post_url 2025-04-10-TilPosts %}).
 
 ## 3. Use a social platform like X or LinkedIn
 
@@ -34,7 +38,7 @@ And I only shared links to my posts, pretending to steal LinkedIn users for my b
 
 ## 4. Start a newsletter from day 1
 
-Subscribers are the real metric to track.
+Subscribers are the real metric to track. Not followers, likes, or comments.
 
 They are our true fans. From day 1, I'd invite readers to [join my newsletter](https://fridaylinks.beehiiv.com/subscribe) at the end of every post and I'd email them weekly.
 
@@ -70,7 +74,9 @@ Those first few dollars would motivate me to keep creating and fund higher-quali
 
 I've built my presence on rented land. Ooops!
 
-And when I tried to buy a domain under my name, it was already taken. It turns out there's a famous soccer player, a singer, and a film director with my same first and last name. Arrggg! I'd buy a domain name, even if I didn't use it.
+And when I tried to buy a domain under my name, it was already taken. It turns out there's a famous soccer player, a singer, and a film director with my same first and last name. Arrggg!
+
+I'd buy a domain name, even if I didn't use it. Or to simply point to a landing page linking to my newsletter and my other accounts.
 
 ## 10. Invest in courses, training, and coaching
 
