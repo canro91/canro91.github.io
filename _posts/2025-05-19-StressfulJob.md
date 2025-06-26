@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Key to Surviving a Stressful Job? Relationships"
+title: "The Key to Surviving a Stressful Job (While You Land a New One)"
 tags: career
 ---
 
