@@ -22,6 +22,8 @@ For the original poster and anyone else who wants to break free from AI, here ar
 
 Think of [AI as calculators in math classes]({% post_url 2025-03-31-AIAndCalculators %}). You can't use them until you know the procedure you want to automate by hand.
 
+Like any mom disciplining her kid, "No more AI until you do your homework..."
+
 ## 1. Study your main language syntax.
 
 Get to know the syntax of your language of choice: write variables, functions, loops, classes...
@@ -47,7 +49,7 @@ Learn to create tables, write queries aggregating results, and learn about JOINs
 
 OK, I'm not talking about reinventing the wheel to write your own text editor or something.
 
-I'm talking about building a recipe catalog, a todo app, or a wrapper around a free API. And build it from scratch: right click, then create new folder in your editor or IDE, and so on. It will teach you a lot.
+I'm talking about building a recipe catalog, a todo app, or a CLI wrapper around a free API. And build it from scratch: right click, then create new folder in your editor or IDE, and so on. It will teach you a lot.
 
 ## 5. Find your own answers.
 
@@ -57,7 +59,7 @@ Try to figure out errors and exceptions on your own. Start by googling the error
 
 ## 6. Learn the most common data structures.
 
-80% of the time, you'll only need lists and dictionaries. But there are more data structures.
+80% of the time, you'll only need lists and dictionaries. But there are more data structures of course.
 
 Learn to use them and how to implement them. You won't have to implement them from scratch at your daily job, but it will stretch your problem-solving muscles.
 
