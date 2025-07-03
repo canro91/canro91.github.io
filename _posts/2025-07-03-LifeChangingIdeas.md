@@ -8,19 +8,19 @@ tags: misc
 
 Last year, for the first time, I had no idea what to do with my life.
 
-I had just recovered from a stomach sickness. I was on my way out from a burnout season. And a layoff caught me off guard. No side income, no next offer waiting for me. No plan B.
+I had just recovered from a stomach sickness. I was on my way out from a burnout season. And [a layoff caught me off guard]({% post_url 2024-12-05-HowALayoffFeels %}). No side income, no next offer waiting for me. No plan B.
 
 I felt more lost than when I graduated high school. At that time, I believed in the "go to college, find a job, work hard" path in front of me. But this time? I realized that the default path was a lie. 
 
-By accident or luck, I found the idea of working on my health when I felt lost. And it worked. Slowly, it gave me clarity and momentum.
+By accident or luck, I found the idea of [working on my health]({% post_url 2025-05-13-PrioritizeHealth %}) when I felt lost. And it worked. Slowly, it gave me clarity and momentum.
 
 Truth is, to change our lives we don't need "passion" or a big master plan. We just need to start working on our health.
 
 ## #2. Do something for your body, mind, and spirit every day.
 
-After deciding to work on my health, I ditched my to-do list and focused on one single goal: working on my body, mind, and spirit every day.
+After deciding to work on my health, [I ditched my to-do list]({% post_url 2025-01-11-DitchingTodos %}) and focused on one single goal: working on my body, mind, and spirit every day.
 
-I found that idea in one of James Altucher's books. Probably Choose Yourself.
+I found that idea in one of [James Altucher's books]({% post_url 2024-11-11-LessonsFromJamesAltucher %}). Probably Choose Yourself.
 
 For me, it meant a workout session, writing 200 words, and a moment of silence every single day.
 
@@ -30,15 +30,15 @@ We're truly healthy when the three of them are healthy. Work on each one every d
 
 ## #3. Save 50% of your income
 
-Credit goes to an ex-coworker from my first job.
+Credit goes to an ex-coworker from [my first coding job]({% post_url 2024-09-02-LessonsFromMyFirstCodingJob %}).
 
 One day, out of the blue, he came close to my desk and shared this unsolicited advice. For free.
 
 He told me:
 
-> "Cesar, imagine you only make half of your salary. Save and invest the other half. Sooner rather than later, you will buy your own house."
+> _"Cesar, imagine you only make half of your salary. Save and invest the other half. Sooner rather than later, you will buy your own house."_
 
-That's the best piece of advice I've ever received.
+That's the best piece of advice I've ever received. Since then, I started to save. Sometimes 50%. Other times, less.
 
 ## #4. Learn a second (or third) language
 
@@ -52,9 +52,15 @@ For me, it was English. For you, maybe Arabic for work in the Middle East or Spa
 
 I don't remember much of my philosophy class in high school.
 
-But I won't forget our teacher's mantra. He repeated it all the time. "If you don't read, you won't learn anything."
+But I won't forget our teacher's mantra. He repeated it all the time:
 
-Many years later, I stumbled upon him at a mall and told him I still remembered his quote. He told me the second part: "If you don't read, you won't have anything to talk about." I had to wait more than 10 years to learn the full line. 
+> _"If you don't read, you won't learn anything."_
+
+Many years later, I stumbled upon him at a mall and told him I still remembered his quote. He told me the second part:
+
+> _"If you don't read, you won't have anything to talk about."_
+
+I had to wait more than 10 years to learn the full line. 
 
 Read one page or 10 or 15, but read something every day.
 
@@ -64,10 +70,10 @@ Apart from learning English, writing is one of the most helpful skills for my pr
 
 I made my first $100 online by sharing my words in a corner of the Internet.
 
-Start a blog or write tweets. Just write. It will teach you to think clearly and it can make you some money in the meantime.
+[Start a blog]({% post_url 2020-07-18-HowIStartedBlogging %}) or write tweets. Just write. It will teach you to think clearly and it can make you some money in the meantime.
 
 ## #7. The minute you learn something, teach it.
 
-I found this idea in "Show Your Work" by Austen Kleon.
+I found this idea in [Show Your Work]({% post_url 2020-10-01-ShowYourWorkTakeaways %}) by Austen Kleon.
 
 You don't need a lecture hall or scientific papers to teach. Simply share it with anyone over the phone. Or write it anywhere online. That's what has powered my online presence since I wrote my first blog post back in 2018. Sharing what I learn has not only helped others, it has changed my own life.
