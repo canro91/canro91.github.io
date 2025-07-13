@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How Copilot Has Helped Me Code Faster—With These 4 Boring Tasks"
+title: "How Copilot Has Helped Me Code Faster—With These 5 Boring Tasks"
 tags: coding
 ---
 
