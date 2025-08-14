@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "I'm Stealing Some of Reddit's C# Extension Methods"
-tags: misc
+tags: csharp
 ---
 
 Today, I found [this Reddit question](https://www.reddit.com/r/csharp/comments/1mkrlcc/what_is_the_lowest_effort_highest_impact_helper/) asking for the lower effort extension methods we've written.
