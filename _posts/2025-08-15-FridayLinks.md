@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Friday Links: PHP turning 30, reading code, and passion"
+title: "Friday Links: Live coding, spellcheckers, and AI rejection"
 tags: mondaylinks
 ---
 
