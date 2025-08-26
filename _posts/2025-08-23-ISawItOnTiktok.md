@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TikTok Isn't Your Life Coach Helping You Make Decisions"
+title: "TikTok Isn't a Life Coach Helping You Make Decisions"
 tags: misc
 ---
 
