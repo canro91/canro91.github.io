@@ -12,16 +12,17 @@ I'm writing this with tears in my eyes and a deep hole in my soul. We all know t
 
 Today I want to remember mi mamá with a whole lot of gratitude.
 
-* Thanks mom for teaching me faith
-* Thanks mom for fighting so strong for so long
-* Thanks mom for showing me love and kindness
-* Thanks mom for being the best mom you could ever be
-* Thanks mom for sacrificing your career to raising me and my sister
-* Thanks mom for worrying about me even when you were sick in a bed too
-* Thanks mom for staying up with me to study through the night
-* Thanks mom for being there for me when I was sick
-* Thanks mom for all that you sacrificed for me
-* Thanks mom for the 62 years you were with me
+Thanks mom:
+* For teaching me faith
+* For fighting so strong for so long
+* For showing me love and kindness
+* For being the best mom you could ever be
+* For sacrificing your career to raising me and my sister
+* For worrying about me even when you were sick in a bed too
+* For staying up with me to study through the night
+* For being there for me when I was sick
+* For all that you sacrificed for me
+* For the 62 years you were with us
 
 I will always remember you, mamá. All that I am and what I have is because of you.
 
