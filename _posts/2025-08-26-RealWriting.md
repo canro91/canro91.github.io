@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "There's No Such Thing As Real Writing. All Writing Is Real"
-tags: misc
+tags: writing
 ---
 
 For so long, I was afraid of putting "writer" on my bio online.
