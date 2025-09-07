@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Don't Learn Prompt Engineering. Here's What Matters More"
-tags: misc
+tags: coding
 ---
 
 Marcus Hutchins made me read his post [Every Reason Why I Hate AI and You Should Too](https://malwaretech.com/2025/08/every-reason-why-i-hate-ai.html) until the end.
