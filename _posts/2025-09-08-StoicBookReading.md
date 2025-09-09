@@ -25,3 +25,5 @@ After watching his videos with reading advice, here are 8 lessons I learned:
 **#7. Interact with the book you're reading.** Reading a book is like a conversation with the author. Highlight, fold corners, and take notes in the margins.
 
 **#8. Use notecards for notes.** After a break, go back to the parts you highlighted or the pages you folded, and turn those interesting passages into notes. Ryan's note-taking system sounds like [Luhmann's Zettelkasten method]({% post_url 2020-11-18-HowToTakeSmartNotes %}).
+
+And if you want to read more, here are [8 easy-to-implement tips to read one book a week]({% post_url 2025-04-28-OneBookAWeek %}).
