@@ -4,7 +4,7 @@ title: "I Could've Finished My Book in Half the Time—If I'd Known These Two Le
 tags: writing
 ---
 
-It took me 131 days to finish the first draft of my next book.
+It took me 131 days to finish the first draft of [my next book]({% post_url 2025-09-21-30Ways %}).
 
 That's 4 months and 8 days from creating a new file to typing the last word. I could have finished two books in that time. [James Altucher]({% post_url 2024-11-11-LessonsFromJamesAltucher %}) challenges his podcast listeners to [finish a non-fiction book in 30 days]({% post_url 2024-12-27-WritingABook %}). By that standard, I could have even finished four.
 
