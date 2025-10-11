@@ -37,7 +37,7 @@ That attitude will make you [stand out in any team]({% post_url 2025-02-26-Stand
 
 Product thinking will open doors to climb the corporate ladder faster.
 
-## There's more than symbols on text files.
+## There's more to coding than typing symbols on text files.
 
 After 10+ years, I've learned that [the more senior you become]({% post_url 2025-06-14-Senior %}), the less it's about syntax and the more it's about how you collaborate, [communicate]({% post_url 2025-07-14-CommAtWork %}), and solve business problems.
 
