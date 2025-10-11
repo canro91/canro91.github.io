@@ -38,4 +38,6 @@ Once you understand how a feature is implemented, try to recreate a bare-bones v
 
 I used this strategy when I learned about the [Specification pattern]({% post_url 2024-09-30-SpecificationPattern %}). I found a library implementing that pattern. I downloaded and read it. Once I got the main idea, I wrote my own dummy implementation. Then I wrote a post about it.
 
-Don't just write more code to get better at coding. Read more code. Actively.
+Reading code has been one of the most effective ways to improve my coding skills. That's why I made it one of the 30 proven strategies in my book, _Street-Smart Coding: 30 Ways to Get Better at Coding._ That's the roadmap I wish I had when I was starting out.
+
+_[Grab your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/l/streetsmartcoding)_.
