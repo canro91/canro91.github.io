@@ -22,7 +22,7 @@ Blame all [the misleading headlines]({% post_url 2024-12-08-CEOVsJanitor %}). _"
 
 AI is making coding faster and cheaper. Sure.
 
-But most of it happens through collaborating in meetings and discussions, not at the keyboard. [AI isn't replacing coders]({% post_url 2024-04-29-2034Predictions %}) (for real) anytime soon because coding is about thinking and problem-solving. Typing is just the surface.
+But most of the real work still happens through collaborating in meetings and discussions, not at the keyboard. [AI isn't replacing coders]({% post_url 2024-04-29-2034Predictions %}) (for real) anytime soon because coding is about thinking and problem-solving. Typing is just the surface.
 
 And that's why I wrote _Street-Smart Coding: 30 Ways to Get Better at Coding_, a practical guide to the skills that make you a confident, thoughtful coder. It's the roadmap I wish I had when I was starting out.
 
