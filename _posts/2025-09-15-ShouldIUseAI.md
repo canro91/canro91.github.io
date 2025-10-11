@@ -18,7 +18,9 @@ I get it! There's a lot of noise:
 
 Don't be discouraged by those headlines. (There's a lot of nuance behind them.) [We're living in the best time to learn coding]({% post_url 2025-08-18-TooLateToLearnCoding %}).
 
-You won't like it, but... Here's the rule:
+## You won't like it, but...
+
+Here's the rule:
 
 **Don't use AI to generate code until you're comfortable coding on your own.**
 
