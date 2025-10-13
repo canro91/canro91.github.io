@@ -4,7 +4,7 @@ title: "A Simple but Effective Test for Your Online Content Business"
 tags: writing
 ---
 
-Yesterday, I shared [the Article Funnel method]({% post_url 2025-10-11-ContentThatSells %})), a simple strategy to write content that sells.
+Yesterday, I shared [the Article Funnel method]({% post_url 2025-10-11-ContentThatSells %}), a simple strategy to write content that sells.
 
 And to test your content-based business (and that method) works, you need to pass **the $1-dollar test.** That's another lesson from Mark Thompson, apart from the Article Funnel.
 
