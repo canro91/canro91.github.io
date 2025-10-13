@@ -35,3 +35,9 @@ There's no need to go crazy with database normalization. Just:
 I wish they had followed those simple guidelines 10 years ago.
 
 But more surprisingly, I learned that you don't need a perfectly clean codebase to have a successful business. You will suffer? Sure. But running a business and writing good code are two completely separate skill sets.
+
+The freshly graduated me thought I was only going to always create systems from scratch following all principles and practices to the tee. But working with legacy code taught me more than any coding course.
+
+That's why I made it one of the 30 proven strategies in my book, _Street-Smart Coding: 30 Ways to Get Better at Coding._ That's the roadmap I wish I had when I was starting out.
+
+_[Grab your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/l/streetsmartcoding)_
