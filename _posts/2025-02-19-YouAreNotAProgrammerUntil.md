@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "You're Not a Programmer Until..."
+title: "20+ Signs You're a Real Programmer (Using 2 Monitors Isn't One)"
 tags: coding
 ---
 
@@ -58,4 +58,8 @@ You're not a programmer until...
 10. You've spent time installing [your favorite editor/IDE's plugins and themes]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %})
 11. You feel stupid by constantly trying to learn things you do not know what they're for
 
-{% include 7day_email_course_longer.html %}
+And you're not truly a coder until you grab a copy of my book, _Street-Smart Coding: 30 Ways to Get Better at Coding_.
+
+OK, jokes aside, for so long I thought coding was only about cracking symbols. But I had to learn coding is a wide range of skills like surviving on-call rotations, talking to non-tech managers, and many more I included in my book.
+
+_[Grab your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/l/streetsmartcoding)_—That's the roadmap I wish I had when I was starting out.
