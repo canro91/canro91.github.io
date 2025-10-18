@@ -14,7 +14,7 @@ A good bad example needs to be messy enough to teach from, but not so broken it 
 
 Since we have all seen a good movie or gone to the cinema, I've shifted to movies and TV shows. They're familiar enough to use as examples.
 
-In fact, for my book, [Street-Smart Coding]({% post_url 2025-09-21-30Ways %}), I chose a ticket pricing example that was clear but messy enough to teach a lesson.
+In fact, for my book, _[Street-Smart Coding](https://imcsarag.gumroad.com/streetsmartcoding)_, I chose a ticket pricing example that was clear but messy enough to teach a lesson.
 
 Here it is:
 
@@ -56,4 +56,12 @@ float CalculatePrice(MovieTicketRequest request)
 
 A method that prices movie tickets by day and age. Simple enough to highlight common issues, like duplication and branching logic, but not so complex that I need to explain its business rules.
 
-What would you refactor first? Can you spot the bug?
+That code block makes you say "Whaaaat?!!?" in more than one place, but what would you refactor first? Can you spot the bug?
+
+_Street-Smart Coding: 30 Ways to Get Better at Coding_ isn't exactly about clean code. It's a roadmap with 30 strategies to level up your coding skills. Writing code for humans is just one of them.
+
+Because coding isn't simply typing symbols fast and mastering syntax. Real coding is also about clear communication, thoughtful problem-solving, and knowing when to say no—and 27 skills more that I cover in the book.
+
+_[Get your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/streetsmartcoding)_
+
+
