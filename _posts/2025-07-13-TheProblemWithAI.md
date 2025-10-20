@@ -19,3 +19,11 @@ The problem? Last week, I was stuck on a stupid problem: finding a value in a di
 It's so tempting to go directly to the AI and outsource our thinking.
 
 Just the other day, I found a coder desperate because [he couldn't code without AI]({% post_url 2025-06-28-AIRecovery %}) anymore. If we're not careful enough, any one of us could become that coder.
+
+AI is faster at generating code than we are. No doubt!
+
+But being a good coder isn't about typing fast. It's about teamwork, clear communication, and other skills that don't show up in autocomplete.
+
+I've packed those lessons into my book: _Street-Smart Coding: 30 Ways to Get Better at Coding._ It's the roadmap I wish I had when I was starting out.
+
+_[Get your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/l/streetsmartcoding)_
