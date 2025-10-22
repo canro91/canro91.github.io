@@ -31,3 +31,9 @@ Absolutely! [AI is just like calculators in math class]({% post_url 2025-03-31-A
 You could have the most powerful calculator in your hands during an exam, but if you don't know what you want to compute, it's useless. You will fail that exam.
 
 AI is like an Iron Man suit. But it still needs Tony Stark inside it to save the day.
+
+Build the coding skills, then use AI to amplify them. Work on your debugging, problem-solving, and clear communication skills.
+
+If you want a guide to sharpen your coding skills, I wrote _Street-Smart Coding: 30 Ways to Get Better at Coding._ Some lessons are conventional. Some were learned the hard way. And a few are weird. But all battle-tested.
+
+_[Get your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/l/streetsmartcoding/?utm_source=blog&utm_medium=post&utm_campaign=programming-is-becoming-prompting)_ It's the roadmap I wish I had when I was starting out.
