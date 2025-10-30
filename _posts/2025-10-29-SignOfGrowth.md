@@ -11,19 +11,23 @@ You know you're growing when:
 
 But there's another subtle sign of growth:
 
-**You don't take critiques on your code personally.**
+**You let others into your code and you don't take critiques on your code personally.**
 
-Oh boy! In my first job, I didn't want anyone else to touch my code.
+## Being an overprotective coder
 
-Each team member worked solo, with almost no collaboration. And after finishing Clean Code, I thought only my code met all the standards. I didn't want anyone else to infect it.
+Oh boy! [In my first job]({% post_url 2024-09-02-LessonsFromMyFirstCodingJob %}), I didn't want anyone else to touch my code.
+
+Each team member worked solo, with almost no collaboration. And after finishing [Clean Code]({% post_url 2020-01-06-CleanCodeReview %}), I thought only my code met all the standards. I didn't want anyone else to infect it.
 
 Then at my next job, it was almost the same story.
 
-Along with a small team, I worked on the core features of the main app. Only a few touched it. And it hurt to see my code rewritten during the app redesign to make it "scale."
+Along with a small team, I worked on the core features of the main app. Only a few touched it. And it hurt to see my code rewritten during the app redesign to make it scale.
+
+## Learning not to be one with the code
 
 After moving between projects and companies, I eventually learned that I'm not my code.
 
-Critiquing my code isn't critiquing me. Bugs happen. Edge cases get missed. Requirements get misunderstood. And when that happens, someone will pick my code and say "Who wrote this crap?" The same way I said that when I inherited somebody else's codebase.
+Critiquing my code isn't critiquing me. [Bugs happen]({% post_url 2020-09-19-ThreeDebuggingTips %}). Edge cases get missed. Requirements get misunderstood. And when that happens, someone will pick my code and say "Who wrote this crap?" The same way I said that when I inherited somebody else's codebase.
 
 Get your code in front of others, let them change it, tweak it, and critique it.
 
