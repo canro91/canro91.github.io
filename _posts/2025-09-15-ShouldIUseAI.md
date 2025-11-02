@@ -5,7 +5,9 @@ tags: coding
 ---
 
 _"Is using AI totally forbidden?"_
+
 _"When and how should I use it?"_
+
 _"What's your take on vibecoding?"_
 
 I was on [a firechat with a community of new coders]({% post_url 2025-09-11-ALXSept2025 %}) last week. Those questions kept popping up. They all wanted to know about AI.
@@ -31,4 +33,4 @@ When in doubt, think of [AI as a powerful calculator in math class]({% post_url 
 AI can spit out code in seconds, even with a bad prompt. But coding is more than syntax. It's also about teamwork, clear communication, and problem solving. 
 That's why I wrote _Street-Smart Coding: 30 Ways to Get Better at Coding_, a practical guide to the skills that actually make you a better coder. It's the roadmap I wish I had when I was starting out.
 
-_[Get your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/l/streetsmartcoding)_
+_[Get your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/l/streetsmartcoding/?utm_source=blog&utm_medium=post&utm_campaign=junior-coders-one-rule-follow-adopt-ai)_
