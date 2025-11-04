@@ -39,4 +39,4 @@ Use AI if you want, but be the one dictating what to do. Draw the boundaries of 
 
 When AI can handle syntax, it's time to work on skills it can't, like collaboration, clear communication, and problem-solving. That's why I wrote _Street-Smart Coding: 30 Ways to Get Better at Coding,_ the roadmap I wish I had on my journey from junior to senior.
 
-_[Get your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/l/streetsmartcoding/?utm_source=medium&utm_medium=post&utm_campaign=real-problem-ai-writing-code)_
+_[Get your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/l/streetsmartcoding/?utm_source=blog&utm_medium=post&utm_campaign=real-problem-ai-writing-code)_
