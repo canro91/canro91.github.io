@@ -48,7 +48,9 @@ You shouldn't have one. But yes, it's normal.
 
 ***
 
-_Scroll...scroll...Nah! Boring! Scroll...scroll_
+_Scroll...scroll..._
+
+_Nah! Boring! Scroll...scroll..._
 
 ***
 
@@ -56,7 +58,9 @@ _Scroll...scroll...Nah! Boring! Scroll...scroll_
 
 Really?! Like, c'mon. We're seeing who has a larger file?!
 
-The other day, I shared that you know you're in trouble when you try to open a file on GitHub and it says _"(Sorry about that, but we can’t show files that are this big right now.)"_ Spoiler alert: The file has 69,923 and it's called `GlobalFunctions.vb`. You see? Helpers!
+The other day, I shared that you know you're in trouble when you try to open a file on GitHub and it says _"(Sorry about that, but we can’t show files that are this big right now.)"_ Spoiler alert: The file has 69,923 and it's called `GlobalFunctions.vb`.
+
+You see? Helpers!
 
 **#8. Is C# good for beginners?** [Source](https://www.reddit.com/r/csharp/comments/1ol9bm6/is_c_good_for_beginners/)
 
@@ -79,5 +83,7 @@ OK, let's call it a day! That's enough roasting for today. I should be writing a
 _This post is brought to you by..._ Check out my latest book, _Street-Smart Coding: 30 Ways to Get Better at Coding_. It's not a C# textbook. It's the roadmap I wish I had on my journey from junior/mid-level to senior. Some lessons are conventional. Others not so much. From Googling to debugging to clear communication.
 
 _[Get your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/l/streetsmartcoding/?utm_source=blog&utm_medium=post&utm_campaign=senior-c-dev-reacts-reddits-csharp)_
+
+***
 
 PS: In case you didn't notice, this was half-joking. And yes, I'm promoting my book.
