@@ -52,7 +52,7 @@ _Scroll...scroll...Nah! Boring! Scroll...scroll_
 
 ***
 
-**#7. After seeing that LOC post, can anyone beat this? :|** [Source](https://www.reddit.com/r/csharp/comments/1o88of3/after_seeing_that_loc_post_can_anyone_beat_this/)
+**#7. After seeing that LOC post, can anyone beat this?** [Source](https://www.reddit.com/r/csharp/comments/1o88of3/after_seeing_that_loc_post_can_anyone_beat_this/)
 
 Really?! Like, c'mon. We're seeing who has a larger file?!
 
