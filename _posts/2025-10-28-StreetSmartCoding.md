@@ -2,6 +2,7 @@
 layout: post
 title: "I'm Launching Street-Smart Coding: 30 Lessons to Help You Code Like a Pro (the Roadmap I Wish I Had Starting Out)"
 tags: coding
+featured: true
 ---
 
 I spent five years in college learning to code.
