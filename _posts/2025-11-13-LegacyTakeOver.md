@@ -13,10 +13,10 @@ I'm not alone. Recently I found [this question](https://www.reddit.com/r/csharp/
 > I'm about to take over an .NET Core + SQL Server + Knockout.js/Angular project at my company. The issue: There's zero documentation. I'll only get a short handover from a teammate...
 >
 > My main questions are:
-> 	* For legacy .NET projects, what's your process to get up to speed fast?
-> 	* Should I start writing my own documentation (README, architecture notes, etc.) while I learn?
-> 	* Any tools/tips for mapping out the database + system structure quickly?
-> 	* From your experience, what do you focus on first: business logic, database schema, or the code itself?
+> * For legacy .NET projects, what's your process to get up to speed fast?
+> * Should I start writing my own documentation (README, architecture notes, etc.) while I learn?
+> * Any tools/tips for mapping out the database + system structure quickly?
+> * From your experience, what do you focus on first: business logic, database schema, or the code itself?
 >
 > I'd love to hear how you’ve handled taking over undocumented C# / .NET projects before. Thanks!
 
