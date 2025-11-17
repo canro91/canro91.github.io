@@ -62,6 +62,6 @@ _Street-Smart Coding: 30 Ways to Get Better at Coding_ isn't exactly about clean
 
 Because coding isn't simply typing symbols fast and mastering syntax. Real coding is also about clear communication, thoughtful problem-solving, and knowing when to say no—and 27 skills more that I cover in the book.
 
-_[Get your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/streetsmartcoding)_
+_[Get your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/streetsmartcoding/?utm_source=blog&utm_medium=post&utm_campaign=best-bad-example-teach-clean-code-principles)_
 
 
