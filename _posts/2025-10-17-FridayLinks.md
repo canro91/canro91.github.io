@@ -32,7 +32,7 @@ And in case you missed it, I wrote on my blog about [the one rule I use to code 
 
 _(Bzzz...Radio voice)_ This email was brought to you by...
 
-[Preorder Street-Smart Coding here](https://imcsarag.gumroad.com/l/streetsmartcoding) (pay what you want just for these days) and read 5 of the 30 strategies just to start. If you've ever typed "how to get better at coding" on Google, YouTube, and more recently on ChatGPT, this is for you.
+[Preorder Street-Smart Coding here](https://imcsarag.gumroad.com/l/streetsmartcoding/??utm_source=blog&utm_medium=post&utm_campaign=friday-links-politics-highlighting-death-of-coding) (pay what you want just for these days) and read 5 of the 30 strategies just to start. If you've ever typed "how to get better at coding" on Google, YouTube, and more recently on ChatGPT, this is for you.
 
 See you next time,
 
