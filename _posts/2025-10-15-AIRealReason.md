@@ -30,4 +30,4 @@ But coding is also about clear communication, thoughtful problem-solving, and kn
 
 And that's why wrote, _Street-Smart Coding: 30 Ways to Get Better at Coding_, to share the skills I wish I'd learned earlier, the ones that help you become a confident, hype-proof coder.
 
-_[Get your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/l/streetsmartcoding)_
+_[Get your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/l/streetsmartcoding/??utm_source=blog&utm_medium=post&utm_campaign=real-reason-why-dev-companies-are-forcing-ai)_
