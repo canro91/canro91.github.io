@@ -37,4 +37,4 @@ Being senior means meeting the needs of all three groups.
 
 For so long, I thought coding was only typing syntax. That realization inspired me to write _Street-Smart Coding: 30 Ways to Get Better at Coding,_ a roadmap to help you move from junior or mid-level to senior without losing your mind. It's the roadmap I wish I had starting out.
 
-[Grab your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/l/streetsmartcoding/?utm_source=medium&utm_medium=post&utm_campaign=truth-coding-changes-everything)
+[Grab your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/l/streetsmartcoding/?utm_source=blog&utm_medium=post&utm_campaign=truth-coding-changes-everything)
