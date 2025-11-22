@@ -5,7 +5,7 @@ tags: coding
 featured: true
 ---
 
-{% include image.html name="Cover.png" alt="Street-Smart Coding cover" caption="Street-Smart Coding: 30 Ways to Get Better at Coding Without Losing Your Mind. <a href="https://imcsarag.gumroad.com/l/streetsmartcoding/?utm_source=blog&utm_medium=banner&utm_campaign=my-new-book-is-here" width="800px" target="_blank" rel="noopener noreferrer">Grab your copy of Street-Smart Coding here</a>" %}
+{% include image.html name="Cover.png" width="800px" alt="Street-Smart Coding cover" caption="Street-Smart Coding: 30 Ways to Get Better at Coding Without Losing Your Mind" %}
 
 I spent five years in college learning to code.
 
@@ -27,7 +27,7 @@ I had to survive on-call shifts, talk to stakeholders, and say "no" politely. Mo
 
 That's why I wrote **Street-Smart Coding**— a roadmap of 30 lessons I wish I had when I started. For every dev who's ever typed “how to get better at coding” into Google or ChatGPT. (Back in my days, I didn’t have ChatGPT... Wait, I sound like a nostalgic grandpa...)
 
-{% include image.html name="ScrollingThruStreetSmartCoding.gif" alt="Scrolling through the first pages of Street-Smart Coding" caption="Preview of the first ~12 pages. <a href="https://imcsarag.gumroad.com/l/streetsmartcoding/?utm_source=blog&utm_medium=animation&utm_campaign=my-new-book-is-here" width="800px" target="_blank" rel="noopener noreferrer">Grab your copy of Street-Smart Coding here</a>" %}
+{% include image.html name="ScrollingThruStreetSmartCoding.gif" width="800px" alt="Scrolling through the first pages of Street-Smart Coding" caption="Preview of the first ~12 pages" %}
 
 ## Inside "Street-Smart Coding"
 
