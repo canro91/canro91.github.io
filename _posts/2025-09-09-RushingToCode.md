@@ -23,3 +23,7 @@ If you're like me, eager to jump into the code, confident in your solution, hold
 A simple question would have saved me from wasting two days of work. Make sure everyone agrees on your solution before you start. It could save you from building the wrong thing.
 
 It's better to annoy people by asking too many questions than by making mistakes for not asking any questions at all. Strive for context before coding. Always.
+
+I cover 30 lessons like the one in this post in my book, _Street-Smart Coding: 30 Ways to Get Better at Coding._ That's the roadmap I wish I had on my journey from junior to senior.
+
+[Grab your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/l/streetsmartcoding/?utm_source=blog&utm_medium=post&utm_campaign=tips-avoid-rushing-code-building-wrong-thing)—Because typing isn't the hardest part of coding, but knowing what to type.
