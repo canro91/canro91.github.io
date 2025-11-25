@@ -27,4 +27,4 @@ I used to think coding was only about cracking symbols. That's where AI shines. 
 
 And that's why I wrote, _Street-Smart Coding: 30 Ways to Get Better at Coding_, to share the skills I wish I'd learned to become a confident coder.
 
-[Get your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/l/streetsmartcoding). It's the roadmap I wish I had when I was starting out.
+[Get your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/l/streetsmartcoding/?utm_source=blog&utm_medium=post&utm_campaign=dont-learn-prompt-engineering-heres-what-matters). It's the roadmap I wish I had when I was starting out.
