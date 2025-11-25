@@ -40,4 +40,4 @@ I used this strategy when I learned about the [Specification pattern]({% post_ur
 
 Reading code has been one of the most effective ways to improve my coding skills. That's why I made it one of the 30 proven strategies in my book, _Street-Smart Coding: 30 Ways to Get Better at Coding._ That's the roadmap I wish I had when I was starting out.
 
-_[Grab your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/l/streetsmartcoding)_.
+_[Grab your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/l/streetsmartcoding/?utm_source=blog&utm_medium=post&utm_campaign=best-way-get-better-coding-isnt-writing-code)_.
