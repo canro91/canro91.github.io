@@ -32,5 +32,5 @@ That's why it's so tempting to [rewrite legacy code]({% post_url 2025-11-13-Lega
 
 As a junior coder, I thought I'd only work on shiny projects with the latest tools. In reality, every job has involved legacy system. And each one taught me valuable skills that I included in my book, _Street-Smart Coding: 30 Ways to Get Better at Coding._
 
-[Grab your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/l/streetsmartcoding/?utm_source=medium&utm_medium=post&utm_campaign=real-definition-legacy-code). It's the roadmap I wish I had moving from junior to senior, and the one I hope guides you too.
+[Grab your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/l/streetsmartcoding/?utm_source=blog&utm_medium=post&utm_campaign=real-definition-legacy-code). It's the roadmap I wish I had moving from junior to senior, and the one I hope guides you too.
 
