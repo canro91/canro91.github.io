@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Now I See Why Translators Are Panicking Over AI (Should Coders Panick Too?)"
+title: "Now I See Why Translators Are Panicking Over AI (Should Coders Panic Too?)"
 tags: misc
 ---
 
