@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Friday Links: Becoming a senior dev, coding, and phones"
+title: "Friday Links: Coding, Space Jam, and people problems"
 tags: mondaylinks
 ---
 
