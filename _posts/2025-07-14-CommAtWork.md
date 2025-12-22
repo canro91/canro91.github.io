@@ -46,4 +46,4 @@ Ten years ago, I thought coding was just cracking symbols. It took me years to l
 
 That's why working on our communication skills is one of the 30 proven strategies in my book, _Street-Smart Coding: 30 Ways to Get Better at Coding._ That's the roadmap I wish I had when I was starting out.
 
-_[Grab your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/streetsmartcoding)_
+_[Grab your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/streetsmartcoding/?utm_source=blog&utm_medium=post&utm_campaign=two-tiny-fixes-that-could-transform-your-communication-work)_
