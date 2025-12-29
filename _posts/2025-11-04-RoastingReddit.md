@@ -8,6 +8,8 @@ I didn't have writer's block today. Naaah! I was just scrolling down the /csharp
 
 Scrolling through, I realized I had answers and reactions. And to follow the popular YouTube format, here I go reacting/roasting/responding to the front page of /csharp:
 
+{% include image.html name="ReactingToCSharp.gif" width="800px" alt="Reddit r/csharp front page" caption="Reddit r/csharp front page" %}
+
 **#1. I wrote a cross-platform TUI podcast player in .NET 9 (mpv / VLC / native engine fallback)** [Source](https://www.reddit.com/r/csharp/comments/1oocaue/i_wrote_a_crossplatform_tui_podcast_player_in_net/)
 
 Great! Put it on your portfolio.
