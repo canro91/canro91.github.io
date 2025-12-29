@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "What Coders Could Offer Instead of Writing Lines of Code If AI Takes Over"
-tags: misc
+tags: coding
 ---
 
 What happens when AI codes better than we do?
