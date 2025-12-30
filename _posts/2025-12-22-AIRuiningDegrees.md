@@ -32,4 +32,4 @@ Don't use AI to do your homework. Use it as your teaching assistant instead. To 
 
 If you want to strengthen your coding skills, my book _Street-Smart Coding_ covers 30 lessons to help you level up, from Googling to communication to problem-solving.
 
-[Grab your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/streetsmartcoding/?utm_source=blog&utm_medium=post&utm_campaign=vibe-coding-ruining-my-degree)—That's the roadmap I wish I had  on my journey to senior coder.
+[Grab your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/l/streetsmartcoding/?utm_source=blog&utm_medium=post&utm_campaign=vibe-coding-ruining-my-degree)—That's the roadmap I wish I had  on my journey to senior coder.
