@@ -19,4 +19,4 @@ Instead of venting into the void, why not share "here's what I learned and what 
 
 Keep blogging. One day, [your blog becomes your portfolio]({% post_url 2025-01-12-BlogVsPortfolio %}), and interviews turn into discussions about your posts. That has happened to me only once.
 
-Blogging won't fix hiring overnight. But it can fix how you stand out. That's why it's one of the lessons in [Street-Smart Coding](https://imcsarag.gumroad.com/l/streetsmartcoding/?utm_source=medium&utm_medium=post&utm_campaign=hiring-broken-law), the roadmap I wish I had staring out.
+Blogging won't fix hiring overnight. But it can fix how you stand out. That's why it's one of the lessons in [Street-Smart Coding](https://imcsarag.gumroad.com/l/streetsmartcoding/?utm_source=blog&utm_medium=post&utm_campaign=hiring-broken-law), the roadmap I wish I had staring out.
