@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TIL: What Entity Framework Core Do With Nullable Foreign Keys"
-tags: #csharp #todayilearned
+tags: csharp todayilearned
 ---
 
 In another episode of _Adventures with Entity Framework..._
