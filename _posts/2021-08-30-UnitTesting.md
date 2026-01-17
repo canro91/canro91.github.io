@@ -6,9 +6,9 @@ cover: Cover.png
 permalink: UnitTesting
 ---
 
-Do you want to start writing unit tests, but don’t know where to start? Do you want to adopt unit testing in your team? I can help you!
+Do you want to start writing unit tests, but don’t know where to start? Do you want to adopt unit testing in your team? Keep reading!
 
-If you’re a beginner or a seasoned developer new to unit testing, this is the place for you. No prerequisites are needed.
+If you’re a beginner or a seasoned developer new to unit testing, this is the place for you.
 
 ## Write it
 
@@ -16,7 +16,7 @@ Learn to [write your first unit tests with MSTest]({% post_url 2021-03-15-UnitTe
 
 Identify and fix these [four common mistakes]({% post_url 2021-03-29-UnitTestingCommonMistakes %}) when writing your first unit tests. Learn one of these [four naming conventions]({% post_url 2021-04-12-UnitTestNamingConventions %}) and stick to it. Don't worry about long test names.
 
-<div class="message">Find the first posts from this series plus a summary of "The Art of Unit Testing" and my best tips from this series on my free ebook “Unit Testing 101”. <a href="https://imcsarag.gumroad.com/l/unittesting101" target="_blank" rel="noopener noreferrer" data-goatcounter-click="UnitTesting101eBook-Link">Download your free copy on my Gumroad page</a> or click on the image below.</div>
+<div class="message">I've expanded the first posts in this series (and added more lessons) in <a href="https://imcsarag.gumroad.com/l/unittesting101" target="_blank" rel="noopener noreferrer" data-goatcounter-click="UnitTesting101eBook-Link"><em>Start Testing</em></a>, your step-by-step guide to writing C# unit tests with confidence.</div>
 
 <figure>
 <a href="https://imcsarag.gumroad.com/l/unittesting101" rel="noopener noreferrer" target="_blank" data-goatcounter-click="UnitTesting101eBook-Image"><img src="/assets/posts/2021-08-30-UnitTesting/GrabYourOwnCopy.png" alt="Grab your own copy of Unit Testing 101" /></a>

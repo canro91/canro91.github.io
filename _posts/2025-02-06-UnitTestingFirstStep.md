@@ -67,4 +67,4 @@ So there's no one function that calls the whole cascade of unit tests, but a but
 
 Et voilà! To read more about unit testing, don't miss the rest of the series [Unit Testing 101]({% post_url 2021-08-30-UnitTesting %}).
 
-_Grab a copy of my ebook, <a href="https://imcsarag.gumroad.com/l/unittesting101" target="_blank" rel="noopener noreferrer" data-goatcounter-click="UnitTesting101eBook-Intro">Unit Testing 101: From Zero to Your First Tests</a> and learn to write your first unit tests in C#._
+_I've included these answers and more lessons in my book <a href="https://imcsarag.gumroad.com/l/unittesting101" target="_blank" rel="noopener noreferrer" data-goatcounter-click="UnitTesting101eBook-Intro">Start Testing</a>. A step-by-step guide to writing your first C# unit tests with confidence._
