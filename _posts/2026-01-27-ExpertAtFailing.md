@@ -6,7 +6,7 @@ tags: misc
 
 _"I'm not an expert at anything. Only at failing."_
 
-A friend and ex-coworker told me that when we caught up over coffee after many years. Well, I was giving him a paperback copy of my latest book. Shameless plug.
+A friend and ex-coworker told me that when we caught up over coffee after many years. Well, I was giving him a paperback copy of [my latest book]({% post_url 2025-10-28-StreetSmartCoding %}). Shameless plug.
 
 I don't know why, but our conversation shifted after that line. I had to ask him why he said that.
 
