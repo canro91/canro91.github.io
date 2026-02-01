@@ -40,7 +40,10 @@ You'll have to ask lots and lots of questions. Like a lot.
 
 For me, everything was new at [my first job]({% post_url 2024-09-02-LessonsFromMyFirstCodingJob %}). The coding part, the business domain, working on a corporate job...
 
-Always ask why. Why this task? What's the real problem? And why solve it now?
+Always ask why:
+* Why this task?
+* What's the real problem?
+* And why solve it now?
 
 It's better if you annoy people with questions than with mistakes from not asking.
 
@@ -50,7 +53,7 @@ A good mentor will make a huge difference in your career.
 
 But don't simply ask, "would you like to be my mentor?" Everybody will tell you no. Being a "mentor" implies commitment, most of the time, for free. [Find alternative ways to be mentored]({% post_url 2024-11-26-FindingMentors %}).
 
-Often, books are your best mentors too.
+Often, books are your best mentors too. _If only someone had written a book sharing his coding lessons...Wink, wink!_
 
 ## 5. Be comfortable with the struggle
 
@@ -68,7 +71,13 @@ At the beginning, I tried to learn about everything at once.
 
 I was into Python, [learning C#]({% post_url 2018-11-17-TheC#DefinitiveGuide %}), reading [Clean Code]({% post_url 2020-01-06-CleanCodeReview %}), and keeping up with PHP...Lots of passion, without direction.
 
-Coding isn't simply one skill, but lots of subskills: language syntax, problem solving, databases, development practices...Tackle them one by one. Only move to the next skill once you understand one enough.
+Coding isn't simply one skill, but lots of subskills:
+* Language syntax
+* Problem solving
+* Databases
+* Development practices...
+
+Tackle them one by one. Only move to the next skill once you understand one enough.
 
 Remember you don't need to know everything. And you don't need to know everything at once either.
 
@@ -98,8 +107,14 @@ And when you get an introduction, say you're starting out and you're willing to 
 
 ## 10. Real coding isn't like University or bootcamps
 
-In real life, often there's no documentation, standard procedures, development workflows, or software methodologies. Or it's more like a zombie methodology disguised as Agile. And on top of that, the existing code is a mess. Welcome to coding!
+In real life, often there's no documentation, standard procedures, development workflows, or software methodologies.
 
-**My last piece of advice:** Once you're in a job, forget about the job description you read before joining. Learn and absorb everything you can, don't be afraid to experiment. Embrace every opportunity to grow and challenge yourself. When your current role becomes second nature, it's your signal to move one for new challenges. Never stop learning!
+Or it's more like a zombie methodology disguised as Agile. And on top of that, the existing code is a mess. Welcome to coding in the real world!
+
+## (Bonus) My last piece of advice
+
+Once you're in a job, forget about the job description you read before joining. Learn and absorb everything you can, don't be afraid to experiment. Embrace every opportunity to grow and challenge yourself.
+
+When your current role becomes second nature, it's your signal to move one for new challenges. Never stop learning!
 
 If you liked these 10 tips, I cover similar tips (and others) in more depth in my book, **_[Street-Smart Coding](https://imcsarag.gumroad.com/l/streetsmartcoding/?utm_source=blog&utm_medium=post&utm_campaign=tips-every-new-coder-know-succeed)_**—It's the roadmap I wish I had on my journey from junior to senior.
