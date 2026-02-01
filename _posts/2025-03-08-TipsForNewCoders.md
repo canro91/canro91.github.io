@@ -100,6 +100,6 @@ And when you get an introduction, say you're starting out and you're willing to 
 
 In real life, often there's no documentation, standard procedures, development workflows, or software methodologies. Or it's more like a zombie methodology disguised as Agile. And on top of that, the existing code is a mess. Welcome to coding!
 
-My last piece of advice: once you're in a job, forget about the job description you read before joining. Learn and absorb everything you can, don't be afraid to experiment. Embrace every opportunity to grow and challenge yourself. When your current role becomes second nature, it's your signal to move one for new challenges. Never stop learning.
+**My last piece of advice:** Once you're in a job, forget about the job description you read before joining. Learn and absorb everything you can, don't be afraid to experiment. Embrace every opportunity to grow and challenge yourself. When your current role becomes second nature, it's your signal to move one for new challenges. Never stop learning!
 
-To read more, here's [a free mentorship session in 8 lessons]({% post_url 2024-06-24-LessonsForAMentee %}) and [four lessons I wished I knew before becoming a Software Engineer]({% post_url 2022-12-12-ThingsToKnowBeforeBeingSoftwareEngineer %}).
+If you liked these 10 tips, I cover similar tips (and others) in more depth in my book, **_[Street-Smart Coding](https://imcsarag.gumroad.com/l/streetsmartcoding/?utm_source=blog&utm_medium=post&utm_campaign=tips-every-new-coder-know-succeed)_**—It's the roadmap I wish I had on my journey from junior to senior.
