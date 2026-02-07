@@ -32,4 +32,4 @@ In the meantime, [AI is making us rediscover the practice of coding]({% post_url
 
 When AI shines at coding, we need strong product thinking, communication, and other skills I cover in _Street-Smart Coding: 30 Ways to Get Better at Coding._ That's the roadmap I wish I had to become a senior coder.
 
-[Grab your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/streetsmartcoding/?utm_source=blog&utm_medium=post&utm_campaign=what-coders-could-offer-instead-of-writing-code)
+[Grab your copy of Street-Smart Coding here](https://imcsarag.gumroad.com/l/streetsmartcoding/?utm_source=blog&utm_medium=post&utm_campaign=what-coders-could-offer-instead-of-writing-code)
