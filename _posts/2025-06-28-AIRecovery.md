@@ -84,4 +84,4 @@ Pull out the Mozilla's Web Docs, Microsoft Learn, and any other official source 
 
 AI is a blessing for learning. Ask any veteran who learned from reference manuals, language specifications, and magazines, they'll tell you. Just don't let AI think for you. OK, let's slightly lift the AI ban, [don't use it to generate code]({% post_url 2025-03-24-NewCodersAndAI %}). Use it as your copilot, not as your captain.
 
-If you're new at coding, [stop chasing shiny objects]({% post_url 2025-01-30-ChasingShinyObjects %}) and follow these [10 tips every new coder should know to succeed]({% post_url 2025-03-08-TipsForNewCoders %}).
+To help you build hype-proof skills, I wrote **[Street-Smart Coding](https://imcsarag.gumroad.com/l/streetsmartcoding/?utm_source=blog&utm_medium=post&utm_campaign=quick-recovery-guide-aidependent-coders)**. The roadmap I wish I had on my journey from junior/mid-level to senior.
