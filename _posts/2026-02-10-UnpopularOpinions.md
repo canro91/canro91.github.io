@@ -22,4 +22,4 @@ According to [a recent Sonar survey]({% post_url 2026-02-06-AIStats %}), only 48
 
 **#4. AI is like a semi-autonomous car.** You trust it to steer, but you never take your hand off the wheel. Otherwise, [AI could be a sloppy coder with bad memory]({% post_url 2025-10-20-SloppyAI %}).
 
-AI alone won't make you a great coder. It only amplifies the skills you already have. That's why I wrote [Street-Smart Coding](https://imcsarag.gumroad.com/l/streetsmartcoding/)—because you need more than syntax to stand out.
+AI alone won't make you a great coder. It only amplifies the skills you already have. That's why I wrote [Street-Smart Coding](https://imcsarag.gumroad.com/l/streetsmartcoding/?utm_source=blog&utm_medium=post&utm_campaign=unpopular-opinions-aiassisted-coding-that-may-annoy-you)—because you need more than syntax to stand out.
