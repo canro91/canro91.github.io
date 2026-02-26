@@ -48,8 +48,8 @@ public class Director
     public int Id { get; set; }
     public string Name { get; set; }
     public int? MovieId { get; set; }
-	//     ^^^^
-	// A nullable property here
+    //     ^^^^
+    // A nullable property here
     public Movie Movie { get; set; }
 }
 
@@ -77,23 +77,23 @@ public class MovieTests
 
         using (var context = new MovieContext(options))
         {
-			// An orphan director
+            // An orphan director
             context.Directors.Add(new Director
             {
                 Name = "Quentin Tarantino"
             });
-			// A movie and its director
+            // A movie and its director
             context.Movies.Add(new Movie
-			{
-				Name = "Titanic",
-				Directors =
-				[
-					new Director
-					{
-						Name = "James Cameron",
-					}
-				]
-			});
+            {
+                Name = "Titanic",
+                Directors =
+                [
+                    new Director
+                    {
+                        Name = "James Cameron",
+                    }
+                ]
+            });
             context.SaveChanges();
         }
 
