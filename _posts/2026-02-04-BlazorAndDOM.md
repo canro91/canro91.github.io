@@ -21,18 +21,18 @@ Here's a Blazor page that recreates the scenario. A simple modal with a form tha
 
 <ModalDialog Title="Add Director" @ref="_editDialog">
     <BodyContent>
-		@if (_directorSavedSuccessfully)
-		{
-			<div class="alert alert-success alert-dismissible fade show" role="alert">
-				Director saved successfully.
-				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-				@*                                      ^^^^^ *@
-			</div>
-		}
+        @if (_directorSavedSuccessfully)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                Director saved successfully.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                @*                                      ^^^^^ *@
+            </div>
+        }
 
-		<EditForm Model="_editDirector" OnValidSubmit="SaveDirectorClicked" id="directorForm">
-			<InputText @bind-Value="_editDirector.Name" class="form-control" />
-		</EditForm>
+        <EditForm Model="_editDirector" OnValidSubmit="SaveDirectorClicked" id="directorForm">
+            <InputText @bind-Value="_editDirector.Name" class="form-control" />
+        </EditForm>
     </BodyContent>
     <FooterContent>
         <button type="button" class="btn btn-secondary" @onclick="CloseClicked">Close</button>
