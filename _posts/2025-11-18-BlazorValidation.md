@@ -13,20 +13,20 @@ Here's a form using a custom `MeasurementInput`,
 ```html
 @* MyCoolForm.razor *@
 <EditForm Model="MyCoolRequest" OnValidSubmit="OnValidSubmit">
-	<DataAnnotationsValidator />
-	<ValidationSummary />
+    <DataAnnotationsValidator />
+    <ValidationSummary />
 
-	<div class="row">
-		<div class="col-sm-3">
-			<label for="length" class="form-label">Length</label>
-			<MeasurementInput id="length" @bind-Value="MyCoolRequest.Length" class="form-control" />
-			@* ^^^^^ *@
-			@* A custom input. Notice the class attribute *@
-			<ValidationMessage For="() => MyCoolRequest.Length" class="invalid-feedback" />
-		</div>
-	</div>
+    <div class="row">
+        <div class="col-sm-3">
+            <label for="length" class="form-label">Length</label>
+            <MeasurementInput id="length" @bind-Value="MyCoolRequest.Length" class="form-control" />
+            @* ^^^^^ *@
+            @* A custom input. Notice the class attribute *@
+            <ValidationMessage For="() => MyCoolRequest.Length" class="invalid-feedback" />
+        </div>
+    </div>
 
-	<button type="submit" class="btn btn-primary">@SubmitButtonText</button>
+    <button type="submit" class="btn btn-primary">@SubmitButtonText</button>
 </EditForm>
 ```
 
