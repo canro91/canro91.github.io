@@ -10,6 +10,6 @@ But then I realized I didn’t have enough quotes. I needed at least ten. I didn
 
 That’s when I wish I had been a quote collector.
 
-I remember Austen Kleon, author of [Steal Like an Artist]({% post_url 2025-11-08-StealLikeAnArtist %}) and [Show Your Work]({% post_url 2020-10-01-ShowYourWorkTakeaways/ %}), who has a notebook for quotes and then he transcribe them.
+I remember Austen Kleon, author of [Steal Like an Artist]({% post_url 2025-11-08-StealLikeAnArtist %}) and [Show Your Work]({% post_url 2020-10-01-ShowYourWorkTakeaways %}), who has a notebook for quotes and then he transcribe them.
 
 I wish I had joined [the notebook cult]({% post_url 2026-01-29-RandomThoughts %}).
