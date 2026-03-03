@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Your Keystrokes Are Limited, Here's How You Preserve Them"
-tags: misc
+tags: writing productivity
 ---
 
 Preserve your keystrokes. They're limited.

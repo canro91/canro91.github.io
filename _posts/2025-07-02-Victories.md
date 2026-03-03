@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Trick That Keeps Me Writing When Nobody's Watching"
-tags: misc
+tags: writing
 ---
 
 Writing isn't hard. It's doing it when nobody is reading.

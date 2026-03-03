@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "If a Language Learning Forum Were Like a Coding Forum:"
-tags: misc
+tags: coding
 ---
 
 Question: Guys, how do I say "I love you" in Japanese?

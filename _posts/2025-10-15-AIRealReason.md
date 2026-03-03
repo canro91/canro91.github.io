@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Real Reason Why Some Dev Companies Are Forcing AI"
-tags: misc
+tags: coding
 ---
 
 I haven't stumbled upon any client or company forcing me to use AI.

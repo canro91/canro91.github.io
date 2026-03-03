@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Two Ways to Think of AI Without Outsourcing Your Mind"
-tags: misc
+tags: coding
 ---
 
 ## #1. AI is a powerful calculator in math class

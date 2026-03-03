@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Being In A Self-Managed Team Made Me Try The Most Expensive Hamburgers I've Eaten"
-tags: misc
+tags: career
 ---
 
 I didn't pay for the most expensive hamburgers I've eaten. An ex-employer did.

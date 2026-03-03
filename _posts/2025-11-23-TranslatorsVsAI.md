@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Now I See Why Translators Are Panicking Over AI (Should Coders Panic Too?)"
-tags: misc
+tags: coding
 ---
 
 Last year, I met a young translator reinventing herself.

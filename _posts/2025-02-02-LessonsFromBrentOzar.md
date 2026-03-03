@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Stand Next to Expensive Things: 10 Lessons from SQL Server Master Brent Ozar"
-tags: misc
+tags: career
 ---
 
 You don't know where you will find him next. In a bathtub, a garage, an exotic beach in Mexico, somewhere in Iceland, or his office.

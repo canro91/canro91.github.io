@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "5 Examples That Show How to Write Headlines Readers Can't Ignore"
-tags: misc
+tags: writing
 ---
 
 What started as mindless scrolling on Medium yesterday turned into a headline-writing exercise.
