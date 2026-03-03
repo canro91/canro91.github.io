@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "7 Lessons From the Mini Book Model to Write Shorter, More Impactful Books"
-tags: books
+tags: books bookwriting
 ---
 
 Forget 30,000 words. Forget publishers.

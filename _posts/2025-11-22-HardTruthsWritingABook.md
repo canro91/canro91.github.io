@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Four Hard Truths No One Told Me About Launching My First Book"
-tags: misc
+tags: bookwriting
 ---
 
 Last month, I launched [Street-Smart Coding]({% post_url 2025-10-28-StreetSmartCoding %}), my first "official" book. It felt exciting and terrifying.

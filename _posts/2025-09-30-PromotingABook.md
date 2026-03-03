@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Surprisingly Effective Way to Promote Your First Book"
-tags: misc
+tags: bookwriting
 ---
 
 [With a book coming out]({% post_url 2025-09-21-30Ways %}), my next question is how to promote it.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "7 Hard-Earned Lessons from Launching Street-Smart Coding"
-tags: books
+tags: bookwriting
 ---
 
 Last month, I launched [Street-Smart Coding]({% post_url 2025-10-28-StreetSmartCoding %}), my most ambitious writing project so far.

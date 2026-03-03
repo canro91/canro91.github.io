@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "7 Surprising Lessons I Learned While Writing and Launching My First Book"
-tags: books
+tags: bookwriting
 ---
 
 I have a new writing challenge: I'm writing a book. One about [how to improve our coding skills]({% post_url 2025-09-21-30Ways %}).

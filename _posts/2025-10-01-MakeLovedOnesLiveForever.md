@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Simplest Way to Make Our Loved Ones Stories Live Forever"
-tags: writing books
+tags: writing bookwriting
 ---
 
 Imagine an FBI agent arresting a Nazi spy while someone else urges his country to declare war against Germany.

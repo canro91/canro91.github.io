@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "What to Do After Finishing Your First Draft: An Update on My Book Experiment"
-tags: misc
+tags: bookwriting experiments
 ---
 
 After a week of typing, my next book's first draft is done.

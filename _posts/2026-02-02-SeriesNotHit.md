@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Forget the Hit Book. Write a Series"
-tags: misc
+tags: bookwriting
 ---
 
 _"Is there a next part? Are you covering the next stage after being a good coder?"_ a friend texted me.
