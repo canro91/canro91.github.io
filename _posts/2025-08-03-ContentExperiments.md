@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "7 Fast Content Experiments I'm Running This Month (to Make a Buck or Two)"
-tags: misc
+tags: experiments
 ---
 
 Recently, I learned about the 10,000 experiment rule.

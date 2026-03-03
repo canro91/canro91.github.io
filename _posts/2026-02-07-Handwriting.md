@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Why I'm Writing Some of My Posts By Hand (Plus An Update On My Book Experiment)"
-tags: misc
+tags: experiments writing
 ---
 
 I've started writing some of my posts by hand.

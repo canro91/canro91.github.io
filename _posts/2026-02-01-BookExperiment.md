@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "I'm Running a Book Experiment This February"
-tags: misc
+tags: experiments
 ---
 
 I'm writing a book backwards.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "7 Content Experiments I Ran in August—and What Happened"
-tags: misc
+tags: experiments
 ---
 
 Back in August, I shared [7 content experiments]({% post_url 2025-08-03-ContentExperiments %}) I wanted to try.

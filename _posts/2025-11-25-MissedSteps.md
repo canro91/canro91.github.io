@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Two Steps I Missed When Writing Street-Smart Coding"
-tags: book
+tags: books
 ---
 
 Ever had that moment after turning in an exam when all the answers suddenly hit you? Too late!
