@@ -36,42 +36,41 @@ In my free time, I like to read books _(on paper)_ and learn foreign languages. 
 
 ## Start here
 
-If you don’t know where to start reading or if you want to find something to read, head to any of these posts:
+If you don’t know where to start reading, here are some of my most popular posts:
 
-### Guides
+### Career
 
-* [The C# Definitive Guide]({% post_url 2018-11-17-TheC#DefinitiveGuide %})
-* [Git Guide For TFS Users]({% post_url 2019-11-11-GitGuideForTfsUsers %})
-* [A Quick Guide to LINQ With Examples]({% post_url 2021-01-18-LinqGuide %})
+* [9 Subjects I've Changed My Mind About as a Software Engineer]({% post_url 2025-03-19-ChangedMyMind %})
+* [10 Ways to Stand Out at Work—Other than Work Hard]({% post_url 2025-02-26-StandOutAtWork %})
+* [10 Life-Changing Lessons I Learned the Hard Way—from the Worst Moment of My Career]({% post_url 2025-06-12-WorstMoments %})
 
-### Tutorials
+### Coding
 
-* [Remote Interviewing: Types and Tips]({% post_url 2019-09-29-RemoteInterviewTips %})
-* My take on the difference between [Func and Action]({% post_url 2019-03-22-WhatTheFuncAction %})
-* My series on [C# Idioms]({% post_url 2019-11-19-TwoCSharpIdioms %})
+* [5 Lessons from My Team's Architect That Helped Me Become a Senior Developer]({% post_url 2025-10-25-LessonsFromMentor %})
+* [12 Hard Truths About Coding I Learned the Hard Way After 10 Years]({% post_url 2025-04-17-HarshTruths %})
+* [Three Tips to Read Code More Effectively]({% post_url 2025-03-26-ReadCode %})
 
-### Unit Testing
+### AI
 
-* [How To Name Unit Tests: Four Naming Conventions]({% post_url 2021-04-12-UnitTestNamingConventions %})
-* [How To Create Test Data With Builders]({% post_url 2021-04-26-CreateTestValuesWithBuilders %})
-* [What Fakes Are in Unit Testing: Mocks vs Stubs]({% post_url 2021-05-24-WhatAreFakesInTesting %})
-
-### Productivity
-
-* [Just Vim It! Learning Vim For Fun and Profit]({% post_url 2020-09-14-LearnVimForFunAndProfit %})
-* Plugins and settings for [My Visual Studio C# Setup]({% post_url 2019-06-28-MyVSSetupSharpeningTheAxe %})
-* [How I Take Notes]({% post_url 2020-08-29-HowITakeNotes %})
-
-### _BugOfTheDay_
-
-* [The Slow Room Search]({% post_url 2020-09-23-TheSlowRoomSearch %})
-* [Searching Reservations Is Timing Out]({% post_url 2020-10-14-SearchingReservations %})
+* [What Coders Could Offer Instead of Writing Lines of Code If AI Takes Over]({% post_url 2025-12-21-Offerings %})
+* [A Quick Recovery Guide for AI-Dependent Coders]({% post_url 2025-06-28-AIRecovery %})
+* [The Numbers That Deflate the AI Hype About Replacing Coders—and Ease FOMO]({% post_url 2026-02-06-AIStats %})
 
 ### Books
 
-* [Pragmatic Thinking and Learning]({% post_url 2020-05-07-PragmaticThinkingAndLearning %})
-* [How to Take Smart Notes]({% post_url 2020-11-18-HowToTakeSmartNotes %})
-* [Ultralearning]({% post_url 2020-07-14-UltralearningTakeaways %})
+* [Six Proven Principles to Learn Any Skill Faster (Without Spending 10,000 Hours)]({% post_url 2025-05-27-SkipTheLine %})
+* [Don't Write the Next Atomic Habits. Write Mini-Books]({% post_url 2025-10-07-MiniBooks %})
+* [8 Reading Habits I Learned from Ryan Holiday, the Stoic Book Master]({% post_url 2025-09-08-StoicBookReading %})
+
+### Self growth
+
+* [7 Surprisingly Simple Ideas That Changed My Life (And Could Change Yours Too)]({% post_url 2025-07-03-LifeChangingIdeas %})
+* [Two Years Ago, I Was Sick and Burned Out. But This Powerful Quote Changed It All]({% post_url 2025-05-13-PrioritizeHealth %})
+
+### Productivity
+
+* [I've Replaced My Second Brain With a Simpler Method]({% post_url 2025-06-22-SimplerNoteTaking %})
+* [5 Lessons I Learned from a World-Class Peak Performance Expert]({% post_url 2025-06-18-PeakPerformance %})
 
 {% include 7day_email_course_longer.html %}
 
