@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A Simple Idea to Reduce My Phone Time"
-tags: misc
+tags: wellness selfgrowth
 ---
 
 I tell myself I'm not addicted to my phone. That's exactly what addicts say.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TikTok Isn't a Life Coach Helping You Make Decisions"
-tags: misc
+tags: selfgrowth
 ---
 
 "I saw it on TikTok," she told me.

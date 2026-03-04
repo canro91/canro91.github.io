@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "You Don't Need Superpowers to Be a Hero—Save Lives Today!"
-tags: misc
+tags: wellness
 ---
 
 You don't need X-ray vision, super strength, or any other superpower to save lives.

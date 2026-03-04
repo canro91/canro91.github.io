@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "10 Life-Changing Lessons I Learned the Hard Way—from the Worst Moment of My Career"
-tags: misc
+tags: career selfgrowth wellness
 ---
 
 Two years ago, my life sucked. Completely. I felt like a complete loser.

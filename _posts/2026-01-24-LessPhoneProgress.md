@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Progress Report: Breaking My Phone Habit"
-tags: misc
+tags: wellness selfgrowth
 ---
 
 Two days ago, I decided it was time to [reduce my phone use]({% post_url 2026-01-22-LessScrolling %}).

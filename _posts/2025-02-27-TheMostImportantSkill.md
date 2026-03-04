@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Most Important Skill To Learn In The Next 10 Years"
-tags: misc
+tags: selfgrowth
 ---
 
 It isn't writing, marketing, or social media.

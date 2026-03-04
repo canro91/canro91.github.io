@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Why You're Still Hungry After Eating—And How to Fix It"
-tags: misc
+tags: wellness books
 ---
 
 Right after lunch today, I was already craving a snack.

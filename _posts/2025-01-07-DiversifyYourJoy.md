@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "You Need Multiple Sources of Joy—A Job Alone Isn't an Option"
-tags: misc
+tags: selfgrowth
 ---
 
 Diversify your sources of purpose and joy, the same way you should diversify your income.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Stop Time Traveling—Yes, You're Already Doing It"
-tags: misc
+tags: wellness selfgrowth
 ---
 
 You don't need to speed a DeLorean to 88mph to time travel. In fact, you're already doing it.

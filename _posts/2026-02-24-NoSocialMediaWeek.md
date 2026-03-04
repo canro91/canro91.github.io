@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "I Spent a Week Without Social Media—And Realized I'm Just Another Junkie"
-tags: misc
+tags: wellness selfgrowth
 ---
 
 One LinkedIn post pushed me to quit social media for a week.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "These 15 Simple Habits Could Save You From the Doctor's Office—For Good"
-tags: misc
+tags: wellness
 ---
 
 Few things are more frustrating than going to the doctor.

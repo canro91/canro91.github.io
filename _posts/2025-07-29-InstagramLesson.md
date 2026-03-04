@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Life Lesson I Learned Doom-Scrolling on Instagram"
-tags: misc
+tags: selfgrowth
 ---
 
 We all know doom-scrolling is the worst.

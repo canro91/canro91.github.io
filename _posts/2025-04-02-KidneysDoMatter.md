@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "I Never Knew Kidneys Mattered—Until Dialysis Hit Close to Home"
-tags: misc
+tags: wellness
 ---
 
 All marketing goes to hearts and lungs.

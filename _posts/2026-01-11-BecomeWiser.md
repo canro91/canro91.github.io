@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A Short Story to Become Wiser (and Be More Present)"
-tags: misc
+tags: selfgrowth
 ---
 
 One day, a man approached a Zen master with a question.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Some Days You Just Have to Stop and Do Nothing"
-tags: misc
+tags: wellness
 ---
 
 Earlier today, I crossed the city for some blood tests. Regular checkups. Hot and sunny outside.

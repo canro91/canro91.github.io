@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "3 Health Habits to Live Longer—from the Man Trying to Live Forever"
-tags: misc
+tags: wellness
 ---
 
 His name is Bryan Johnson and he has one single obsession: to stop and reverse his aging.

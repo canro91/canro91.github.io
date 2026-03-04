@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "10 Simple Habits That Improved My Digestion"
-tags: misc
+tags: wellness
 ---
 
 Burnout brought stomach issues I couldn't ignore.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Is Burnout Inevitable in the World of Tech?"
-tags: career
+tags: career wellness
 ---
 
 In 2023, I burned out.

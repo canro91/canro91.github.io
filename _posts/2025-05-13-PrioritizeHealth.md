@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Two Years Ago, I Was Sick and Burned Out. But This Powerful Quote Changed It All"
-tags: misc
+tags: wellness selfgrowth
 ---
 
 In 2023, I felt sick to my stomach.

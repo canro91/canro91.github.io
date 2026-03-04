@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to Be an Expert at Failing (and Survive to Tell the Story)"
-tags: misc
+tags: selfgrowth
 ---
 
 _"I'm not an expert at anything. Only at failing."_

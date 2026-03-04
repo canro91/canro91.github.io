@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "7 Surprisingly Simple Ideas That Changed My Life (And Could Change Yours Too)"
-tags: misc
+tags: selfgrowth
 ---
 
 ## #1. If you feel lost in life, start by working on your health.

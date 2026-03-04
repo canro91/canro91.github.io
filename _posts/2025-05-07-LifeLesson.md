@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "One Life Lesson That Took Me 10 Years to Learn"
-tags: misc
+tags: selfgrowth
 ---
 
 If you don't come up with your own plan, society, the system, or the Matrix will give you its plan:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Change Starts in Your Mind, not Anywhere Else"
-tags: misc
+tags: selfgrowth
 ---
 
 Hollywood often glorifies Navy SEALs portraying them as indestructible and focused men.

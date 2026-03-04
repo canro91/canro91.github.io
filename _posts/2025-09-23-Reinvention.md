@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The First Step to Reinvent Your Life (When You Feel Lost)"
-tags: misc
+tags: selfgrowth
 ---
 
 Today, I found a post promising an "upgraded" roadmap for growth in life.

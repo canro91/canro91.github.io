@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "4 Surprising Lessons I've Learned Recently—While Taking a Loved One to a Hospital"
-tags: misc
+tags: wellness
 ---
 
 During a recent hospital visit, I found inspiration to write.

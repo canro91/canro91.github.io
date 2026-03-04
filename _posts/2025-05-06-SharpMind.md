@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Secret to a Sharp Mind from a 102-Year-Old Practicing Doctor"
-tags: misc
+tags: wellness
 ---
 
 Dr. Howard Tucker, at 102, still works as a neurologist. He holds the Guinness World Record for the world's oldest practicing doctor.
