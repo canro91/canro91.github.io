@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "I Compiled The 10 Simple Ideas That *Truly* Changed My Life Into A Book"
-tags: misc
+tags: selfgrowth books
 ---
 
 {% include image.html name="Cover.png" width="800px" alt="10 Surprisingly Simple Ideas That Changed My Life cover" caption="10 Surprisingly Simple Ideas That Changed My Life And Could Change Yours Too" %}
