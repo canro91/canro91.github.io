@@ -27,3 +27,5 @@ But what helped me recover from burnout and "get clear in life" was to focus on 
 My reinvention phase started with a YouTube workout session, writing 200 words, and a moment of silence every day... And reading books from people who had gone through something similar, like Borja Vilaseca and [James Altucher]({% post_url 2024-11-11-LessonsFromJamesAltucher %}).
 
 James' books taught me that we don't need a master goal or passion, whatever that means, to reinvent ourselves. We already have one goal, one passion: taking care of ourselves. That's an easy place to start and maybe the most important one.
+
+Focusing on my health was the foundation of my reinvention after burning out. That's why it became Idea #1 in [10 Surprisingly Simple Ideas That Changed My Life And Could Change Yours Too](https://imcsarag.gumroad.com/l/10simpleideas/?utm_source=blog&utm_medium=post&utm_campaign=first-step-reinvent-your-life-you-feel-lost). A collection of tiny daily actions that actually change your life.

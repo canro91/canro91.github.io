@@ -41,3 +41,5 @@ I still don't know what to do with my life. Probably, I never will. But working 
 Life doesn't come with an instruction manual. We have to figure things out. We all are figuring life out as we go. Sometimes it's easy. Sometimes it's not. Sometimes we know what we want out of life. Sometimes it's easier to tell what we don't want to do.
 
 No matter where you are in life, work on your health. That's the first step to change.
+
+Focusing on my health was the lever that brought real change after burning out. That's why I made it Idea #1 in [10 Surprisingly Simple Ideas That Changed My Life And Could Change Yours Too](https://imcsarag.gumroad.com/l/10simpleideas/?utm_source=blog&utm_medium=post&utm_campaign=this-powerful-quote-changed-it). Because small daily actions create big change.

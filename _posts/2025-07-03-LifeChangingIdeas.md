@@ -77,3 +77,5 @@ I made my first $100 online by sharing my words in a corner of the Internet.
 I found this idea in [Show Your Work]({% post_url 2020-10-01-ShowYourWorkTakeaways %}) by Austen Kleon.
 
 You don't need a lecture hall or scientific papers to teach. Simply share it with anyone over the phone. Or write it anywhere online. That's what has powered my online presence since I wrote my first blog post back in 2018. Sharing what I learn has not only helped others, it has changed my own life.
+
+I expand these ideas, and cover more, in [10 Surprisingly Simple Ideas That Changed My Life And Could Change Yours Too](https://imcsarag.gumroad.com/l/10simpleideas/?utm_source=blog&utm_medium=post&utm_campaign=surprisingly-simple-ideas-that-changed-my-life-could-change-yours). Real change doesn't come from master plan or New Year's resolutions, but from tiny daily actions.
