@@ -8,7 +8,7 @@ Last February, I decided to [write another book]({% post_url 2026-02-01-BookExpe
 
 I started from a validated idea. I turned [my most popular personal development post]({% post_url 2025-07-03-LifeChangingIdeas %}), into [a mini book]({% post_url 2025-10-07-MiniBooks %}). Instead of starting with the first words, I began with the outline, title, sales page, and cover. I wrote it backwards.
 
-Here's the final result: _[10 Surprisingly Simple Ideas That Changed My Life And Could Change Yours Too](https://imcsarag.gumroad.com/l/10simpleideas/?utm_source=blog&utm_medium=post&utm_campaign=simple-ideas-truly-changed-life-book)_.
+Here's the final result: _[10 Surprisingly Simple Ideas That Changed My Life And Could Change Yours Too](https://imcsarag.gumroad.com/l/10simpleideas/?utm_source=blog&utm_medium=post&utm_campaign=my-february-book-experiment-success)_.
 
 My success metric was a single sale.
 
