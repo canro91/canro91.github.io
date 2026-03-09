@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "I Thought I Had Seen Short Books—Until I Found This One"
-tags: books
+tags: bookwriting
 ---
 
 For writers, the real challenge is to make readers finish books.
