@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "An Update After Three Months of Launching Street-Smart Coding"
-tags: books
+tags: bookwriting
 ---
 
 Three months ago, I launched my first book, _Street-Smart Coding_. A persistence test.
