@@ -38,7 +38,7 @@ using Microsoft.JSInterop;
 
 namespace MyCoolComponents.HtmlEditor;
 
-public partial class Summernote : IDisposable
+public partial class Summernote : IAsyncDisposable
 {
     private readonly string _id = $"summernote_{Guid.NewGuid()}";
 
@@ -88,8 +88,13 @@ public partial class Summernote : IDisposable
         return await Task.FromResult(true);
     }
 
-    public void Dispose()
+    public async ValueTask DisposeAsync()
     {
+        if (_module is not null)
+        {
+            await _module.DisposeAsync();
+        }
+
         _dotnetRef?.Dispose();
     }
 }
