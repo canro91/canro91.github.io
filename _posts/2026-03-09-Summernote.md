@@ -23,7 +23,7 @@ In Summernote.razor:
     <link rel="stylesheet" href="css/summernote.css" />
 </HeadContent>
 
-<div id="@_id">@_markup</div>
+<div id="@_id">@((MarkupString)Value)</div>
 
 <SectionContent SectionName="scripts">
     <script src="js/summernote.js" type="text/javascript"></script>
@@ -45,20 +45,9 @@ public partial class Summernote : IAsyncDisposable
     private IJSObjectReference? _module;
     private DotNetObjectReference<Summernote>? _dotnetRef;
     private bool _editorInitialized = false;
-    private MarkupString _markup = new MarkupString();
 
     [Parameter]
-    public string Value
-    {
-        get
-        {
-            return _markup.ToString();
-        }
-        set
-        {
-            _markup = (MarkupString)value;
-        }
-    }
+    public string Value { get; set; }
 
     [Parameter]
     public EventCallback<string> ValueChanged { get; set; }
@@ -82,7 +71,7 @@ public partial class Summernote : IAsyncDisposable
     [JSInvokable]
     public async Task<bool> OnTextChange(string editorText)
     {
-        _markup = (MarkupString)editorText;
+        Value = editorText;
         await ValueChanged.InvokeAsync(editorText);
 
         return await Task.FromResult(true);
