@@ -95,8 +95,6 @@ After rendering the component, it calls a JavaScript function that initializes t
 
 Notice it stores content in a `MarkupString` but it binds as a string.
 
-## How to use it
-
 In Summernote.razor.js:
 
 ```javascript
@@ -111,6 +109,8 @@ export function edit(id, dotnetRef, callback) {
     });
 }
 ```
+
+## How to use it
 
 And here's a sample form using the editor:
 
