@@ -69,12 +69,10 @@ public partial class Summernote : IAsyncDisposable
     }
 
     [JSInvokable]
-    public async Task<bool> OnTextChange(string editorText)
+    public async Task OnTextChange(string editorText)
     {
         Value = editorText;
         await ValueChanged.InvokeAsync(editorText);
-
-        return await Task.FromResult(true);
     }
 
     public async ValueTask DisposeAsync()
