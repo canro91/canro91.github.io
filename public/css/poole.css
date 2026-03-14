@@ -485,3 +485,19 @@ button, input[type="submit"] {
   width: 100%;
   height: 100%;
 }
+
+/* Book page */
+.book-card {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 48em) {
+  .book-card {
+    flex-direction: column;
+  }
+}
+.book-cover {
+  width: 120px;
+  height: auto;
+  margin-right: 1rem;
+}
