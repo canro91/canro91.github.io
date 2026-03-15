@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Don't Write the Next Atomic Habits. Write Mini-Books"
-tags: writing
+tags: writing bookwriting
 ---
 
 You don't need a publisher and 100,000 words to write a book that matters.
