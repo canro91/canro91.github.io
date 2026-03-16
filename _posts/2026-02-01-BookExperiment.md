@@ -32,3 +32,5 @@ I'm even stealing cover ideas before writing a word.
 **#6. Price it incrementally.** I'm following the "$0.99 is the new free" idea. If it gains traction, I'll raise the price by $1 every other month until it hits $5.
 
 **#7. Hit one reader milestone.** Just like I set it for [Street-Smart Coding]({% post_url 2025-10-28-StreetSmartCoding %}), if even one reader beyond my circle buys it, the experiment is a success.
+
+_**Update (Mar 2026):**_ [This experiment was a success]({% post_url 2026-03-07-BookExperiment %}).
