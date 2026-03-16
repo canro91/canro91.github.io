@@ -23,3 +23,5 @@ Now that the first draft is done, here's what I'm doing:
 7. Print it and read it with pen in hand.
 8. Ask someone else to read it.
 9. Give it another break before revisiting.
+
+_**Update (Mar 2026):**_ [This experiment was a success]({% post_url 2026-03-07-BookExperiment %}).
