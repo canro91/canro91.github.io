@@ -20,7 +20,7 @@ Learn to work with Excel in your language of choice to:
 
 1. Download an Excel file with existing records.
 2. Upload an Excel file with updated columns, using an ID column to find matching records.
-3. Bulk-update the records from the file using a background processor.
+3. Bulk-update the records from the file using [a background processor]({% post_url 2022-12-06-BackgroundServicesAndLiteHangfire %}).
 4. Send an email once the file is processed.
 
 I've seen those tasks in every single job I've had.
