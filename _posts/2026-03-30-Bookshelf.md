@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "You Have A Story to Tell Hidden in Plane Sight"
+title: "You Have A Story to Tell Hidden in Plain Sight"
 tags: writing
 ---
 
