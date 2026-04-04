@@ -6,7 +6,7 @@ tags: books
 
 Forget LLCs or investors. Starting a business is simpler.
 
-Being an entrepreneur is often mistaken for hustling and grinding long hours. In _Purpose and Profit,_ Dan Koe, [a millionaire creator]({% post_url 2025-06-01-DanKoe %}), shares a different view of entrepreneurship.
+Being an entrepreneur is often mistaken for hustling and grinding long hours. In _Purpose and Profit,_ Dan Koe, [a millionaire creator]({% post_url 2025-06-01-DanKoe %}), shares [a different view of entrepreneurship]({% post_url 2026-04-03-PurposeAndProfit %}).
 
 ## #1. Entrepreneurship doesn't have to be complicated
 
