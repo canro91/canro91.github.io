@@ -6,7 +6,7 @@ tags: coding
 
 Last week, for the nth time, I had to bulk-import records using Excel.
 
-No matter how advanced your code, it often boils down to reading and writing Excel files.
+No matter how advanced and complex your business rules and code, they often circle back to reading and writing Excel files.
 
 I should call it _The Excel paradox of coding._
 
@@ -20,9 +20,10 @@ Learn to work with Excel in your language of choice to:
 
 1. Download an Excel file with existing records.
 2. Upload an Excel file with updated columns, using an ID column to find matching records.
-3. Bulk-update the records from the file using [a background processor]({% post_url 2022-12-06-BackgroundServicesAndLiteHangfire %}).
-4. Send an email once the file is processed.
+3. Validate data integrity of the file. Be careful with date and numeric columns.
+4. Bulk-update the records from the file. Optionally, use [a background processor]({% post_url 2022-12-06-BackgroundServicesAndLiteHangfire %}).
+5. Report once the file is processed. Optionally, report the progress with a completion bar on a page and send an email when done.
 
-I've seen those tasks in every single job I've had.
+It'll save you countless headaches. You'll use it a lot! I've seen those tasks in every single job I've had.
 
 That lesson didn't make it into [Street‑Smart Coding](https://imcsarag.gumroad.com/l/streetsmartcoding/?utm_source=blog&utm_medium=post&utm_campaign=excel-paradox-of-coding), but inside you'll find 30 practical lessons to level up your coding skills.
