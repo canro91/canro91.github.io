@@ -10,6 +10,8 @@ That's a lesson I learned from [Isra Bravo, Spain's top copywriter]({% post_url 
 
 When everybody is doing sales calls, putting chatbots on their websites, or offering personalized demos, it's time to stand out by doing something completely different.
 
+## This company ditched the "Book a call" button
+
 Recently, I discovered Keygen, a licensing software and [its no calls policy](https://keygen.sh/blog/no-calls/).
 
 The founder, probably being an introvert, wanted to ditch sales calls and in a moment of frustration, he deleted the "Book a call" button from his company's website.
@@ -22,8 +24,12 @@ And when someone requests a sales call, they simply reply:
 
 Some of Keygen's prospects loved the #nocalls policy. Too many calls are boring, draining, and time-consuming.
 
+## When you sell to the right people, you're not leaving money on the table
+
 Sure, they might be leaving money on the table. But we don't want money from just anyone, only from the right clients. The ones that trust us, respect us, and pay the right price.
 
 With a clear message and open pricing policies, we attract the right clients. We attract clients based on the messaging and the values we project. And that works for anything else in life.
 
-#nocalls is an idea worth copying and stealing, especially if selling feels draining and if you prefer to think of in terms of [helping, not selling]({% post_url 2024-11-01-SellingVsHelping %}). Better messaging = more sales.
+#nocalls is an idea worth copying and stealing, especially if selling feels draining and if you prefer to think of in terms of [helping, not selling]({% post_url 2024-11-01-SellingVsHelping %}).
+
+Better messaging = more sales.
