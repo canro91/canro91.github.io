@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "10 Lessons To Run a Successful Business from Derek Sivers' Anything You Want"
-tags: misc
+tags: books
 ---
 
 What started as a hobby became a millionaire business.
