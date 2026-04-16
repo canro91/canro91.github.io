@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Jesus on prototyping, C# union types, and taste"
+title: "Friday Links: Jesus on prototyping, C# union types, and taste"
 tags: mondaylinks
 ---
 
