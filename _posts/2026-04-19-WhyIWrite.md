@@ -34,7 +34,7 @@ I write because people already ask me about [my first books](/books).
 
 \* * *
 
-I write because I want my future kids to read my books.
+I write because I want [my future kids to read my books]({% post_url 2025-04-22-BookForGrandkids %}).
 
 I write because one day I'd like to see my books in bookstores.
 
