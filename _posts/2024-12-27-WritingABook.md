@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "An Easy (And Clever) Way to Write a Non-Fiction Book"
-tags: writing
+tags: bookwriting
 ---
 
 Writing a book is a sign of prestige and a synonym of expertise.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Three Language Lessons I Learned on my First Visit to France
-tags: writing 
+tags: misc 
 ---
 
 This post is about one of my hobbies: learning new languages. But not programming languages. Foreign languages.

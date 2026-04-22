@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Steal This Strategy: How to Work with Beta Readers to Launch Your Book"
-tags: writing
+tags: bookwriting
 ---
 
 I stole the process of working with beta readers. Borrow it, let's say.

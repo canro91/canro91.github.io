@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "I Could've Finished My Book in Half the Time—If I'd Known These Two Lessons"
-tags: writing
+tags: bookwriting
 ---
 
 It took me 131 days to finish the first draft of [my next book]({% post_url 2025-09-21-30Ways %}).

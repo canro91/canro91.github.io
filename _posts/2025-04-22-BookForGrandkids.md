@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "You Don't Have to Write a New York Times Bestseller to Tell Your Story"
-tags: writing
+tags: bookwriting
 ---
 
 The definition of book has changed.
