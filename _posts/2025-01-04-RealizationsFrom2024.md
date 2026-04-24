@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "I Got Laid Off and Recovered From Burnout in 2024. Here are 13 Lessons and Realizations"
-tags: misc
+tags: wellness selfgrowth
 ---
 
 1. Writing is free therapy.
