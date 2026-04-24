@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Friday Links: AI adoption, cheap stack, and obfuscation"
+title: "Friday Links: Agile guilty, software laws, and Postman pains"
 tags: mondaylinks
 ---
 
