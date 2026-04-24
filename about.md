@@ -21,11 +21,13 @@ Long time ago in a galaxy far away, I updated an invoicing platform to meet new 
 
 ## What I write about
 
-I [started blogging]({% post_url 2020-07-18-HowIStartedBlogging %}) to share my learning as a software engineer. Coding tricks, tutorials, bugs I solved...
+In 20218, I [started blogging]({% post_url 2020-07-18-HowIStartedBlogging %}) to share my learning as a software engineer. Coding tricks, tutorials, bugs I solved...
 
 But over the years, this blog has become [my own time capsule]({% post_url 2020-07-20-TimeCapsule %}) where I share lessons, stories, books, and anything I find interesting.
 
 [To recover from burnout]({% post_url 2025-05-13-PrioritizeHealth %}), in [November 1st, 2024]({% post_url 2024-11-01-SellingVsHelping %}), I started [writing daily]({% post_url 2026-04-08-WriteDaily %}). I haven't stopped since then.
+
+All the words here are written by me. [A human, not by AI]({% post_url 2025-10-23-AIManifesto %}). For coding? That's a different story.
 
 ## Fun facts
 
