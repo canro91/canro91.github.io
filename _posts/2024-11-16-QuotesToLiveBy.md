@@ -4,7 +4,7 @@ title: "Two Quotes I'm Trying to Live By"
 tags: misc
 ---
 
-#1. "I'm a simple man making his way through the galaxy, like my father before me"
+## #1. "I'm a simple man making his way through the galaxy, like my father before me"
 
 If you're a Star Wars fan, you recognize that phrase. That's by Boba Fett from The Mandalorian.
 
@@ -12,7 +12,7 @@ We're all here trying to figure out our paths. Some are more intentional about i
 
 Every stage in life will bring its own challenges and paths to figure out.
 
-#2. "The minute you learn something, teach it"
+## #2. "The minute you learn something, teach it"
 
 That's from [Show Your Work]({% post_url 2020-10-01-ShowYourWorkTakeaways %}) by Austen Kleon. "A book for people who hate the very idea of self promotion."
 
