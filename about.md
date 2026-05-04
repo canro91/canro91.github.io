@@ -21,7 +21,7 @@ Long time ago in a galaxy far away, I updated an invoicing platform to meet new 
 
 ## What I write about
 
-In 20218, I [started blogging]({% post_url 2020-07-18-HowIStartedBlogging %}) to share my learning as a software engineer. Coding tricks, tutorials, bugs I solved...
+In 2018, I [started blogging]({% post_url 2020-07-18-HowIStartedBlogging %}) to share my learning as a software engineer. Coding tricks, tutorials, bugs I solved...
 
 But over the years, this blog has become [my own time capsule]({% post_url 2020-07-20-TimeCapsule %}) where I share lessons, stories, books, and anything I find interesting.
 
