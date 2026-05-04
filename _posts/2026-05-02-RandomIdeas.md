@@ -25,7 +25,7 @@ Or [in your head or in your notes]({% post_url 2026-04-28-YourRoomAndHead %}).
 
 **#5. Three interesting questions from Tim Ferriss's Tools of Titans:**
 * What if you only solve a problem by removing something?
-* What if you only had [two hours to create[Why I'm Writing Some of My Posts By Hand (Plus An Update On My Book Experiment)]({% post_url 2026-02-07-Handwriting %})]({% post_url 2025-12-30-TwoHours %})?
+* What if you only had [two hours to create]({% post_url 2025-12-30-TwoHours %})?
 * What's the least crowded place to go?
 
 **#6. When writing anything emotional, [write by hand]({% post_url 2026-02-07-Handwriting %}).**
