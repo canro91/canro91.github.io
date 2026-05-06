@@ -17,3 +17,5 @@ tags: misc
 **#6. Work with your garage door open.** If marketing and sales sound daunting, just [show your progress]({% post_url 2020-10-01-ShowYourWorkTakeaways %}). Open your garage door and let people see what you're building.
 
 **#7. Read one book about work per year.** I haven't read a coding book since [my burnout and layoff in 2024]({% post_url 2025-01-04-RealizationsFrom2024 %}). This idea inspired me to pick one again. I opened my Books folder and started reading _Dependency Injection: Principles, Practices, and Patterns_ by Mark Seeman.
+
+_If you're a coder who wants to read something about work, you'll find [my books here](/books)._
