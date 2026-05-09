@@ -6,7 +6,7 @@ tags: misc
 
 _Here's May photo prompt from [100 word story](https://100wordstory.org/photo-prompt/) and my story._
 
-{% include image.html name="RoadSign.png" caption="Game at sunset. Photo by Chris Fithall on flickr.com" alt="Game at sunset" %}
+{% include image.html name="RoadSign.png" caption="Nullarbor Warning Sign. Photo by Chris Fithall on flickr.com" alt="Nullarbor Warning Sign" %}
 
 _When some friends came over and you had some beers..._
 
