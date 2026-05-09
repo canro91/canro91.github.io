@@ -46,3 +46,5 @@ Again, in _Mini Book Model_, Chris used the W's technique to present his mini-bo
 **#9. As a bonus, use chapters of your next book as preview.** It makes your book thick enough to display your name and title on the spine.
 
 **#10. Not only write books, but create a whole identity and brand around them.** After 20 books or more, Chris is the "Mini Book" guy. His emails, tagline, and even book titles use the same concept. Mini-books everywhere. That's how he stands out.
+
+_Mini books have become my go-to way of sharing ideas in coding and personal growth. If you’re curious, you’ll find [my books here](/books)._
