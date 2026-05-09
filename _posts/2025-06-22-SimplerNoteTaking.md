@@ -21,3 +21,5 @@ And after reading some of [James Altucher's books]({% post_url 2024-11-11-Lesson
 Instead of to-do lists and goals, I've started to write 10 ideas a day to [become an idea machine]({% post_url 2024-11-05-IdeaMachine %}). It has changed my note-taking habits too. Now, after every book, podcast, or course, I write down 10 key lessons. It forces me to recall the main ideas from the content I consume. I don't need to write every single detail but rather remember the 10 points that resonate the most. That effort makes the learning stick.
 
 I still write down the quotes I like the most from books I read. But I've stopped chasing second-brain systems and testing every new AI-powered app. I simply write 10 ideas. It's simple and more useful than any system I've tried.
+
+_Writing 10-idea lists is Idea #5 in [10 Surprisingly Simple Ideas That Changed My Life And Could Change Yours Too]({% post_url 2026-03-04-10SimpleIdeas %})._
