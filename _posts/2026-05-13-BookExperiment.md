@@ -23,7 +23,7 @@ To keep the experiment going, I tried two promotion strategies:
 I paid for a mention on [RobinReads](https://robinreads.com/).
 
 The day of the mention, my book got 19 sales on Amazon and 9 the next day.
-It went from #165 to hitting #1 in _Personal Success & Spirituality._
+It went from #165 to hitting #1 in _Personal Transformation & Spirituality._
 
 {% include image.html name="10SI-Rankings.png" caption="10 Surprisingly Simple Ideas hitting #1 on Amazon" alt="10 Surprisingly Simple Ideas hitting #1 on Amazon" %}
 
@@ -43,7 +43,7 @@ Not much, but it was enough to test the ad copy and to learn about book ads.
 
 Here are the stats of the ads I tried:
 
-{% include image.html name="10SI-BookBubAds" caption="10 Surprisingly Simple Ideas BookBub ads" alt="BookBub ads" %}
+{% include image.html name="10SI-BookBubAds.png" caption="10 Surprisingly Simple Ideas BookBub ads" alt="BookBub ads" %}
 
 Over 22,000 people saw my book cover in one day. Wow!
 
