@@ -19,3 +19,5 @@ Here's the review on Amazon:
 One sale plus one review. Proof that the experiment is working.
 
 _"Short but sweet"_ shows you don't need thousands of pages to write a book that matters.
+
+_**Update (May 2026):**_ After months of testing, [here are the final results]({% post_url 2026-05-13-BookExperiment %}).

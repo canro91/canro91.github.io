@@ -34,3 +34,5 @@ I'm even stealing cover ideas before writing a word.
 **#7. Hit one reader milestone.** Just like I set it for [Street-Smart Coding]({% post_url 2025-10-28-StreetSmartCoding %}), if even one reader beyond my circle buys it, the experiment is a success.
 
 _**Update (Mar 2026):**_ [This experiment was a success]({% post_url 2026-03-07-BookExperiment %}).
+
+_**Update (May 2026):**_ After months of testing, [here are the final results]({% post_url 2026-05-13-BookExperiment %}).

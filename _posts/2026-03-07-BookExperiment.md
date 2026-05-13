@@ -22,3 +22,5 @@ With that milestone reached, here's how I'm continuing the experiment:
 2. Promote my book via a book promotion email list for more reach.
 
 This experiment will shape my launching strategy for future books. The real works begins after the writing is done.
+
+_**Update (May 2026):**_ After months of testing, [here are the final results]({% post_url 2026-05-13-BookExperiment %}).
