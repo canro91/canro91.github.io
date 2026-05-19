@@ -177,3 +177,5 @@ That's the book I wish I had 10+ years ago when I started coding.
 
 And thanks for taking the time to reach out and for your questions.
 May the Force be with you...Live long and prosper...Happy coding...Peace!
+
+_PS: If you're a Turkish speaker, here's [the Turkish version](https://www.ismailsevik.com/2026/05/cesar-aguirre-roportaji.html) of the interview on Ismael's site._
