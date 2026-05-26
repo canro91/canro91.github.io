@@ -4,8 +4,6 @@ title: "How a Membership Roundup Helped Shaped My Horizon Goal"
 tags: misc
 ---
 
-# How a Membership Roundup Helped Shaped My Horizon Goal
-
 This writer made me say, _"Wow! I want to do that too."_
 
 I don't know how I landed on [Craig Mod's site](https://craigmod.com/).
