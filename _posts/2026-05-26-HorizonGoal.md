@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How a Membership Roundup Helped Shaped My Horizon Goal"
+title: "How a Membership Roundup Helped Shape My Horizon Goal"
 tags: misc
 ---
 
