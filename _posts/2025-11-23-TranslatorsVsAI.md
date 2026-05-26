@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Now I See Why Translators Are Panicking Over AI (Should Coders Panic Too?)"
+title: "Now I See Why Translators Are Panicking Over AI—Should Coders Panic Too?"
 tags: coding
 ---
 
@@ -22,18 +22,24 @@ I was surprised by the results.
 
 Copilot translated chapters with almost no fixes. Of course, there were places where the phrasing made it clear the text was machine-generated.
 
-In English, we say "wear all hats" when someone has to do multiple tasks alone. Copilot translated word by word. The same expression in Spanish ("usar todos los sombreros") makes no sense at all. 
+In English, we say _"wear all hats"_ when someone has to do multiple tasks alone. Copilot translated word by word. The same expression in Spanish (_"usar todos los sombreros"_) makes no sense at all. 
 
-Copilot struggled with coding terms like "parser combinators." In Spanish, we use a completely different term. Direct translation doesn't work either.
+Copilot struggled with coding terms like _"parser combinators."_ In Spanish, we use a completely different term. Direct translation doesn't work either.
 
 That's when I jumped in. But Copilot handled most of the job in just a couple of work sessions.
 
 ## What if it isn't only translation, but coding too?
 
-This made me rethink [one of the lines I heard the other day]({% post_url 2025-11-15-LinesThatMadeMeThink %}). _"AI won't take your job. It will change your job description."_
+This made me rethink [one of the lines I heard the other day]({% post_url 2025-11-15-LinesThatMadeMeThink %}):
+
+> _"AI won't take your job. It will change your job description."_
+> 
+> (Credits to Kevin Kelly)
 
 AI may already be turning translators into proofreaders. Coders could be next. Maybe the world won't need as many coders, and coding may no longer mean typing symbols anymore. Who knows?
 
 In any case, I predicted [AI won't take our jobs by 2034]({% post_url 2024-04-29-2034Predictions %}). Let's see if I was right. In the meantime, I'd like to pick a DIY skill and double down on my creative skills, just in case. And [I'm still learning foreign languages]({% post_url 2024-11-19-WhyLearnForeignLanguages %}) just for fun.
 
 Let's revisit this in 10 years and see how right or wrong I was.
+
+_When AI generates code faster than any of us, you need more than syntax to stand out. That's why I wrote [Street-Smart Coding](https://imcsarag.gumroad.com/l/streetsmartcoding/?utm_source=blog&utm_medium=post&utm_campaign=translators-are-panicking-should-coders-panic), a roadmap to build hype-proof skills._
