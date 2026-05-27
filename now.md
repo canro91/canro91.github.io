@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "What I'm Doing Now"
+title: "Now"
 ---
 
 As of May 2026, here's what I'm up to these days:
