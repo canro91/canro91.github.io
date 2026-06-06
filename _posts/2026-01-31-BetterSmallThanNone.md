@@ -15,3 +15,7 @@ But writing, coding, or any creative pursuit is like exercising. Skip the gym on
 Whether it's [a post slightly longer than a Tweet]({% post_url 2024-11-13-BlogMore %}), some [random]({% post_url 2026-01-15-10Thougths %}) [thoughts]({% post_url 2026-01-29-RandomThoughts %}), a few lines of code, or quick sketches, [a small, imperfect repetition]({% post_url 2024-12-14-Consistency %}) is better than breaking a habit.
 
 Your small reps won't make you lose credibility. They prove that when life throws curveballs, your habit stays intact.
+
+What small rep can you do today?
+
+_For simple daily habits that bring big life changes, check out [10 Surprisingly Simple Ideas That Changed My Life And Could Change Yours Too]({% post_url 2026-03-04-10SimpleIdeas %})._
