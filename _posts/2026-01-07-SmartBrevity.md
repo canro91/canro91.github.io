@@ -6,7 +6,9 @@ tags: books writing
 
 As writers, your job is to adapt to how your readers consume words.
 
-**Why this matters:** Content is free and abundant. We are drowning in emails, Slack messages, and beeps and buzzes. In seconds, we decide to read or keep scrolling.
+## Why this matters
+
+Content is free and abundant. We are drowning in emails, Slack messages, and beeps and buzzes. In seconds, we decide to read or keep scrolling.
 
 A wall of text makes us stop reading. [I learned that the hard way]({% post_url 2025-09-28-TooLong %}). And you and I do the same.
 
@@ -38,3 +40,5 @@ In [Mastery]({% post_url 2026-01-03-Mastery %}), Robert Greene used "Understand"
 * Use 5 or 6 slides and one point per slide.
 
 For fiction, we want authors to take us to new, imaginary worlds. But for emails, presentations, and social media posts, we need shorter, clear text. Even in non-fiction, why make readers flip through pages for one points? Brevity always wins!
+
+_If you're looking for short and clear books on coding or personal growth, you'll find mine in [my books page](/books)._
