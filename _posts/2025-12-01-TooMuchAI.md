@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Here's What's Wrong with Too Much AI"
+title: "Four Pitfalls of Over-Relying on AI When Coding"
 tags: coding
 ---
 
@@ -16,4 +16,8 @@ Here are 4 issues I've found with using AI too much:
 
 **#3.** [It makes you feel you're cheating]({% post_url 2025-11-11-Cheating %}). Copy-pasting without understanding has always been cheating, even in the days of forums and StackOverflow.
 
+AI generated code you don't understand is worse than technical debt. It's cognitive debt.
+
 **#4.** [It doesn't let you build mental models to solve problems]({% post_url 2025-11-03-AIProblem %}). It's like asking someone else to go to the gym for us, then wondering why our muscles are still weak.
+
+_To build future-proof coding skills, check out [Street-Smart Coding](https://imcsarag.gumroad.com/l/streetsmartcoding/?utm_source=blog&utm_medium=post&utm_campaign=four-pitfalls-of-overrelying-ai-coding), the roadmap with 30 lessons I wish I had on my coding journey._
