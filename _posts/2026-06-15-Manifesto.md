@@ -20,7 +20,7 @@ A manifesto for mastering the skills that create real impact.
 I'm calling it: _**Street-Smart Coding Manifesto**_.
 This one is about the why, while _Street-Smart Coding_ is about the how.
 
-It's for junior and intermediate coders—and my younger self—wants to create impact beyond code.
+It's for junior and intermediate coders—and my younger self—who want to create impact beyond code.
 
 ## A writing and marketing experiment
 
