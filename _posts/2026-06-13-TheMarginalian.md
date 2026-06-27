@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Five Lessons From Maria Popova's 20-Year Journey With The Marginalian"
-tags: misc
+tags: writing
 ---
 
 It started as an email to 7 friends. Now it's part of the Library of Congress.
