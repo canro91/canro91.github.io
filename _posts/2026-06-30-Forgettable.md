@@ -24,7 +24,7 @@ Open Amazon and you'll see the same books.
 AI makes you faster.
 But it will make you look and sound the same.
 _[In today's fast-moving...]({% post_url 2025-06-04-OpeningLines %})_ or _"In the world of..."_
-That's why [I don't use AI for my writing]({% post_url 2025-10-23-AI %}).
+That's why [I don't use AI for my writing]({% post_url 2025-10-23-AIManifesto %}).
 
 What's the point of AI if it makes you forgettable?
 What's the point of [generating content]({% post_url 2026-06-13-TheMarginalian %}) if people scroll past it?
