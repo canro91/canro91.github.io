@@ -26,7 +26,9 @@ And in case you missed it, I wrote on my blog about [syntax not being the edge a
 
 ***
 
-_(Bzzz...Radio voice)_ This email was brought to you by... [Street-Smart Coding Manifesto](https://imcsarag.gumroad.com/l/streetsmartcodingmanifesto/?utm_source=blog&utm_medium=post&utm_campaign=friday-links-smolweb-couriers-arguing). Preorder for just $1 and become a coder who stands out beyond syntax. If you'd like to support the work, contribute $5 or more, and I'll thank you in the Acknowledgments.
+_(Bzzz...Radio voice)_ This email was brought to you by... [Street-Smart Coding Manifesto](https://imcsarag.gumroad.com/l/streetsmartcodingmanifesto/?utm_source=blog&utm_medium=post&utm_campaign=friday-links-smolweb-couriers-arguing). My case against syntax obsession to stand out. _Because real impact comes from skills outside your IDE._
+
+Preorder for just $1 and become a coder who stands out beyond syntax. If you'd like to support the work, contribute $5 or more, and I'll thank you in the Acknowledgments.
 
 See you next time,
 
