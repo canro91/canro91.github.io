@@ -8,10 +8,10 @@ title: Books
   <article class="book-card">
     <img class="book-cover" src="/assets/books/StreetSmartCodingManifesto.png" width="300px" alt="Street-Smart Coding Manifesto Cover">
     <div>
-      <h2>Street-Smart Coding Manifesto: How to Stand Out as a Coder Without Obsessing Over Syntax (PREORDER)</h2>
+      <h2>Street-Smart Coding Manifesto: How to Stand Out as a Coder Without Obsessing Over Syntax</h2>
       <p>A short and actionable guide to stand out as a coder not by obsessing over syntax, but by mastering the right skills—most of which lie outside your IDE.</p>
       <p>
-        <a href="https://imcsarag.gumroad.com/l/streetsmartcodingmanifesto/?utm_source=blog&utm_medium=post&utm_campaign=books" target="_blank">Gumroad</a>
+        <a href="https://imcsarag.gumroad.com/l/streetsmartcodingmanifesto/?utm_source=blog&utm_medium=post&utm_campaign=books" target="_blank">Gumroad</a> · <a href="https://www.amazon.com/dp/B0G5XCWKR9" target="_blank">Amazon</a>
       </p>
     </div>
   </article>
