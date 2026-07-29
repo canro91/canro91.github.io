@@ -3,7 +3,7 @@ layout: page
 title: "Now"
 ---
 
-As of May 2026, here's what I'm up to these days:
+As of July 2026, here's what I'm up to these days:
 
 ## #1. Healthy lifestyle
 
@@ -31,7 +31,7 @@ I don't want to do it for a living anymore.
 
 But before I retire, I want to leave 10+ years of lessons in a trilogy.
 That would be my _magnum opus._
-[Street-Smart Coding]({% post_url 2025-10-28-StreetSmartCoding %}) is the second installment, and the first I wrote.
+The first two books, [Street-Smart Coding Manifesto]({% post_url 2026-07-28-StreetSmartCodingManifesto %}) and [Street-Smart Coding]({% post_url 2025-10-28-StreetSmartCoding %}), are already out.
 
 ## 4. Less screen time
 
