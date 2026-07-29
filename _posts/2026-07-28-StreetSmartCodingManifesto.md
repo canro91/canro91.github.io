@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "I'm Launching Street-Smart Coding Manifesto (A Case Against Syntax Obsession)"
-tags: coding book
+tags: coding books
 ---
 
 {% include image.html name="Cover.png" width="800px" alt="Street-Smart Coding Manifesto cover" caption="Street-Smart Coding Manifesto" %}
