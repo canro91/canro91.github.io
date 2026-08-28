@@ -24,6 +24,8 @@ And in case you missed it, here are my two rules for AI-assisted coding: [don't 
 
 _(Bzzz...Radio voice)_ This email was brought to you by... [Street-Smart Coding Manifesto](https://imcsarag.gumroad.com/l/streetsmartcodingmanifesto/?utm_source=blog&utm_medium=post&utm_campaign=friday-links-ai-agents-joy). A case against syntax obsession. _Because real impact comes from skills outside your IDE._
 
-Keep coding smart,
+Keep coding smart.
+
+See you next Friday,
 
 Cesar
