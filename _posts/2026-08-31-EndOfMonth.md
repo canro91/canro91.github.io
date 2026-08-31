@@ -14,4 +14,4 @@ _As part of [my daily idea habit]({% post_url 2025-06-17-TenIdeas %}), yesterday
 6. Create next month's expense note on my phone.
 7. Sketch next month's habit tracker grid on my notebook.
 
-If you're curious, here's my [digital decluttering plan]({% post_url 2025-12-29-Decluttering %}), useful at the end of every month too.
+_If you're curious, here's my [digital decluttering plan]({% post_url 2025-12-29-Decluttering %}), useful at the end of every month too._
