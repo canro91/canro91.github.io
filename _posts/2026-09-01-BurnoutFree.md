@@ -8,7 +8,7 @@ Two years! That's how long it took me to wake up with purpose again.
 
 A combination of factors broke me: I was at a comfortable job, I stopped exercising, I stopped blogging. I thought only my career and job title defined me, and those frustrations spread to all other areas of my life.
 
-It was a slow process to get back up. It started with small daily actions: a digital detox, a 10-minute workout, and writing. I cover most of those habits in my book _[10 Surprisingly Simple Ideas That Changed My Life]({% post_url 2026-03-04-10SimpleIdeas %})_.
+It was a slow process to get back up. It started with small daily actions: a digital detox, a 10-minute workout, and writing. I cover most of those habits in my book _[10 Surprisingly Simple Ideas That Changed My Life](https://imcsarag.gumroad.com/l/10simpleideas/)_.
 
 It was the lowest, darkest moment of my life so far. Just thinking about going back to where I was makes me anxious.
 
