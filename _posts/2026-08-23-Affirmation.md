@@ -21,4 +21,4 @@ I was wrong! There was a way out.
 
 Like a YouTuber recording a video for his future self, [my horizon goal is to make a living writing]({% post_url 2026-05-26-HorizonGoal %}).
 
-_My recovery started simply: caring about my health. That's the first idea in [10 Surprisingly Simple Ideas That Changed My Life]({% post_url 2026-03-04-10SimpleIdeas %})_
+_My recovery started simply: caring about my health. That's the first idea in [10 Surprisingly Simple Ideas That Changed My Life](https://imcsarag.gumroad.com/l/10simpleideas/)_

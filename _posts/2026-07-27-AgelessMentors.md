@@ -26,4 +26,4 @@ But I've also learned from [a 4-year-old about productivity]({% post_url 2026-05
 
 Don't be stubborn to think you have nothing to learn. Lessons and mentors are everywhere. Books are the best mentors.
 
-_If you're looking for a life mentor, check out [10 Surprisingly Simple Ideas That Changed My Life And Could Change Yours Too]({% post_url 2026-03-04-10SimpleIdeas %})._
+_If you're looking for a life mentor, check out [10 Surprisingly Simple Ideas That Changed My Life And Could Change Yours Too](https://imcsarag.gumroad.com/l/10simpleideas/)._

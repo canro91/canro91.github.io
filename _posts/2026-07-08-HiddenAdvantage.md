@@ -18,4 +18,4 @@ A blog leaves breadcrumbs and success clues for yourself.
 
 That's the real advantage and a good reason to keep writing.
 
-_Find some of my best pieces of life advice on **10 Surprisingly Simple Ideas That Changed My Life And Could Change Yours Too**. Find it on [my books](/books) page._
+_Find some of my best pieces of life advice on [10 Surprisingly Simple Ideas That Changed My Life And Could Change Yours Too](https://imcsarag.gumroad.com/l/10simpleideas/)._

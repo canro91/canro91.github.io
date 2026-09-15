@@ -17,4 +17,4 @@ A little reminder that:
 
 Nobody is normal. We're all figuring out life as we go. We're all just holding ourselves together.
 
-_Want to change your life, but not sure how to start? Check out [10 Surprisingly Simple Ideas That Changed My Life]({% post_url 2026-03-04-10SimpleIdeas %})._
+_Want to change your life, but not sure how to start? Check out [10 Surprisingly Simple Ideas That Changed My Life](https://imcsarag.gumroad.com/l/10simpleideas/)._

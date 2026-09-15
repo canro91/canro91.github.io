@@ -10,7 +10,7 @@ Back then, by pure chance, I found the concept of [becoming an idea machine]({% 
 That's writing 10 bad ideas about anything. Every. Single. Day.
 
 That habit has helped me write [books](/books) and [keep my creative juices flowing]({% post_url 2025-06-17-TenIdeas %}).
-It's been so helpful that I made it Idea #5 in my book, [10 Surprisingly Simple Ideas That Changed My Life And Could Change Yours Too]({% post_url 2026-03-04-10SimpleIdeas %}).
+It's been so helpful that I made it Idea #5 in my book, [10 Surprisingly Simple Ideas That Changed My Life And Could Change Yours Too](https://imcsarag.gumroad.com/l/10simpleideas/).
 That book itself started as a 10-idea list.
 
 But before starting to write bad ideas, I faced the question of where to write them.

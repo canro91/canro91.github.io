@@ -14,4 +14,4 @@ Among other things, he told me, _"you can't think like an engineer all the time.
 
 _"Live without regrets,"_ he said near the end of our call. That's what I needed to hear because I was about to give up.
 
-_That's my best friend's advice. You'll find mine in [10 Surprisingly Simple Ideas That Changed My Life And Could Change Yours Too]({% post_url 2026-03-04-10SimpleIdeas %})._
+_That's my best friend's advice. You'll find mine in [10 Surprisingly Simple Ideas That Changed My Life And Could Change Yours Too](https://imcsarag.gumroad.com/l/10simpleideas/)._

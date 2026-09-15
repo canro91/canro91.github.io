@@ -50,4 +50,4 @@ This is from a product marketplace I can't remember...
 Its only requirement is to use 10 words to describe your product.
 Excellent idea for [a book one-liner]({% post_url 2025-11-09-OneLine %}).
 
-_For more interesting ideas, check out **10 Surprisingly Simple Ideas That Changed My Life And Could Change Yours Too**. It's on [my books](/books) page._
+_For more interesting ideas, check out [10 Surprisingly Simple Ideas That Changed My Life And Could Change Yours Too](https://imcsarag.gumroad.com/l/10simpleideas/)._
