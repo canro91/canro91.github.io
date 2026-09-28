@@ -19,7 +19,7 @@ In the Spanish edition, the last line reads more like _"for keeping my arm warm.
 Maybe a reference to baseball or other sports.
 
 Wow! A Nobel-winning writer lost his touches if he stopped writing.\
-He practiced with opinion columns, something shorter, less complex than a full-length novel.
+He practiced with opinion columns: something shorter, less complex than a full-length novel.
 
 Every post is a repetition, a push-up, a practice session,\
 Even if it's just a few sentences that nobody seems to be reading.\
