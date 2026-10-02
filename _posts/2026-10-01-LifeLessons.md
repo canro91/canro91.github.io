@@ -22,10 +22,11 @@ Struggling is always part of the journey.
 
 **#4. You get what you expect when you detach from the outcome.**\
 The more you chase something, the more it gets further away.\
-It's true for money, relationships, and pretty much anything else in life.
+It's true for money, relationships, and pretty much anything else in life.\
+Do your part and surrender the outcome.
 
 **#5. _"Better to have one handful with quietness than two handfuls with hard work and chasing the wind."_**\
-From Ecclesiastes 4:6 (NLT).
+From Ecclesiastes 4:6 (NLT).\
 Another proverb from one of the wisest man in history.
 
 It came to my mind on a Monday evening when I was drinking a green smoothie and eating some olives at a cafe.\
