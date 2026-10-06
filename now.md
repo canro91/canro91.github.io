@@ -24,7 +24,7 @@ I'm keeping the daily rhythm.
 Last March, I hit [the 500 daily post milestone]({% post_url 2026-03-16-500DailyPosts %}).
 
 
-## 3. Coding trilogy
+## #3. Coding trilogy
 
 After many years, I have [a love-hate relationship with coding]({% post_url 2026-04-29-Coding %}).
 I don't want to do it for a living anymore.
@@ -33,7 +33,7 @@ But before I retire, I want to leave 10+ years of lessons in a trilogy.
 That would be my _magnum opus._
 The first two books, [Street-Smart Coding Manifesto]({% post_url 2026-07-28-StreetSmartCodingManifesto %}) and [Street-Smart Coding]({% post_url 2025-10-28-StreetSmartCoding %}), are already out.
 
-## 4. Less screen time
+## #4. Less screen time
 
 Two hours a day on my phone pushed me to change.
 And one week away from social media made me realize [I was addicted]({% post_url 2026-02-24-NoSocialMediaWeek %}).
@@ -43,7 +43,7 @@ To reduce my phone and screen time, I'm:
 * [Restricting my social media use]({% post_url 2026-01-19-LinkedIn %}), and
 * [Going analog every Sunday]({% post_url 2026-05-18-AnalogSundays %}).
 
-## 5. A more useful note-taking system
+## #5. A more useful note-taking system
 
 After failing to build a second brain, [I started a physical Zettelkasten]({% post_url 2026-04-14-Zettelkasten %}).
 The challenge is to file 100 notes (~30 so far) and [write my next book from them]({% post_url 2026-04-28-YourRoomAndHead %}).
