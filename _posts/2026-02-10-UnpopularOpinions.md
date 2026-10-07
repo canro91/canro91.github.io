@@ -14,7 +14,7 @@ To turn the conversation around, he asked for our unpopular opinions about AI-as
 
 **#2. Don't let AI touch code directly.** That's [my go-to rule for coding with AI]({% post_url 2025-10-14-AIRule %}). Unproductive? Maybe. But it forces me to decompose problems and validates AI-generated code.
 
-**#3. Use AI for opposite tasks.** [This is my most recent rule]({% post_url 2025-10-20-SloppyAI %}):
+**#3. Use AI for opposite tasks.** [This is my most recent rule]({% post_url 2026-01-26-AnotherAIRule %}):
 
 _If I write code, AI reviews it. If AI generates it, I review it._
 
