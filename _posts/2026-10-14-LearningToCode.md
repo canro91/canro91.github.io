@@ -20,7 +20,7 @@ Yes! Here's why:
 
 **#4. AI is only making code generation faster.** There's more to be a coder or software engineer than writing lines of code.
 
-**#5. AI isn't 100% replacing coders yet.** Even [if AI takes over, there's work to do[]({% post_url 2025-12-21-Offerings %}). The job description will be (or already is) different.
+**#5. AI isn't 100% replacing coders yet.** Even [if AI takes over, there's work to do]({% post_url 2025-12-21-Offerings %}). The job description will be (or already is) different.
 
 **#6. AI can't be hold accountable.** When things break, you can't simply say, _"AI did that."_
 
