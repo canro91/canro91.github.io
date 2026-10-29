@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "10 Words (or Phrases) to Ban In Any Piece of Copy"
-tags: misc
+tags: writing
 ---
 
 It was a joke, but it made me update the sales page of [my books](/books).
