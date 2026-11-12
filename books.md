@@ -29,6 +29,17 @@ title: Books
   </article>
 
   <article class="book-card">
+    <img class="book-cover" src="/assets/books/StreetSmartCodingInTheAgeOfAI.png" width="300px" alt="Street-Smart Coding In The Age Of AI Cover">
+    <div>
+      <h2>Street-Smart Coding in the Age of AI: How to Leverage AI Without Losing Your Coding Skills</h2>
+      <p>A short and practical guide to leveraging AI without falling for the hype, losing your coding skills, or outsourcing your thinking.</p>
+      <p>
+        <a href="https://imcsarag.gumroad.com/l/streetsmartcodingintheageofai/?utm_source=blog&utm_medium=post&utm_campaign=books" target="_blank">Gumroad</a>
+      </p>
+    </div>
+  </article>
+  
+  <article class="book-card">
     <img class="book-cover" src="/assets/books/StartTesting.png" width="300px" alt="Start Testing Cover">
     <div>
       <h2>Start Testing: How to Write Your First Unit Tests</h2>
