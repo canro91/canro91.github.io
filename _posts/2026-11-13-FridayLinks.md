@@ -8,7 +8,7 @@ Hey there.
 
 **Quick update:** [Street-Smart Coding in the Age of AI](https://imcsarag.gumroad.com/l/streetsmartcodingintheageofai/?utm_source=blog&utm_medium=post&utm_campaign=friday-links-maya-site-rediscovered-socrates-ai-top) has now its cover. 
 
-In case you missed it, I'm writing _Street-Smart Coding in the Age of AI_, the prequel of _Street-Smart Coding_ and book #3 in my Street-Smart Coding collection.
+In case you missed it, I'm writing _Street-Smart Coding in the Age of AI_, the prequel of _Street-Smart Coding_ and book #3 in my _Street-Smart Coding Collection_.
 
 It's a short and actionable guide to help you leverage AI without becoming dependent on it. You can preorder your ebook copy starting at just $1.
 
