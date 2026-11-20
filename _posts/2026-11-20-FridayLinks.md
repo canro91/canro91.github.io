@@ -8,7 +8,7 @@ Hey there.
 
 **Quick update:** I heard back from one of my beta readers for [Street-Smart Coding in the Age of AI](https://imcsarag.gumroad.com/l/streetsmartcodingintheageofai/?utm_source=blog&utm_medium=post&utm_campaign=friday-links-better-open-source-fake-hometests-b-usd). While I give the final polishes—my beta reader gave a lot of good ideas, you can preorder your ebook copy starting at just $1. 
 
-In case you missed it, I'm writing Street-Smart Coding in the Age of AI, the prequel of Street-Smart Coding: A short and actionable guide to help you leverage AI without becoming dependent on it.
+In case you missed it, I'm writing _Street-Smart Coding in the Age of AI_, the prequel of _Street-Smart Coding_: A short and actionable guide to help you leverage AI without becoming dependent on it.
 
 ***
 
