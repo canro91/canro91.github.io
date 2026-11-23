@@ -9,7 +9,8 @@ What if you commit to your craft to make it work no matter what?
 That's what Elizabeth Gilbert did as a teenager.\
 She's an American journalist and writer, author of _Big Magic_ and _Eat, Pray, Love_.
 
-This time, I watched [her interview with David Perell](https://www.youtube.com/watch?v=r6Gmgr-ytf0), here's what I learned:
+This time, I watched [her interview with David Perell](https://www.youtube.com/watch?v=r6Gmgr-ytf0).\
+Here's what I learned:
 
 **#1. Don't quit your day job... and don't get into debt.**\
 I've repeated plenty of times I wanted to quit coding and write full time.
