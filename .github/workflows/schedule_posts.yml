@@ -1,8 +1,8 @@
-name: Build every day at 8AM
+name: Build every day at 2AM
 
 on:
   schedule:
-   - cron: '0 8 * * *'
+   - cron: '0 2 * * *'
 jobs:
   curl:
     runs-on: ubuntu-latest
